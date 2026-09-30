@@ -4,25 +4,74 @@
   "description": "GoogleがAI OverviewsやAI Mode、Geminiで使ったコンテンツの対価を払う相手は約100のパブリッシャーにとどまり、中小サイトでは広告収入の0.1%未満だとThe Informationが報じた。計算方法は非公開だ。",
   "date": "2026-09-30T20:40:00+09:00",
   "category": "marketing",
-  "tags": ["Google", "AI Overviews", "検索", "SEO", "パブリッシャー", "広告"],
+  "tags": [
+    "Google",
+    "AI Overviews",
+    "検索",
+    "SEO",
+    "パブリッシャー",
+    "広告"
+  ],
   "summary": [
     "Googleが対価を払うのは約100のデジタルパブリッシャーで、額は数か月で1,000ドル未満の例も",
     "支払いはSearch Console上の試験的な仕組みで、回答への貢献度で決まるが計算式は非公開",
     "AI要約が出ると検索結果のクリックは約半分に減るとの調査もあり、対価より流入減の影響が大きい"
   ],
   "sources": [
-    {"title": "AI features and your website", "publisher": "Google Search Central", "url": "https://developers.google.com/search/docs/appearance/ai-features"},
-    {"title": "AI in Search is driving more queries and higher quality clicks", "publisher": "Google", "url": "https://blog.google/products/search/ai-search-driving-more-queries-higher-quality-clicks/"},
-    {"title": "Google users are less likely to click on links when an AI summary appears in the results", "publisher": "Pew Research Center", "url": "https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/"},
-    {"title": "Google Is Paying About 100 Digital Publishers for AI Overviews", "publisher": "The Information", "url": "https://www.theinformation.com/articles/google-paying-100-digital-publishers-ai-overviews"},
-    {"title": "Google rolls out pay-per-value AI licensing program to publishers", "publisher": "Digiday", "url": "https://digiday.com/media/google-rolls-out-pay-value-ai-licensing-program-to-publishers/"},
-    {"title": "Google is paying almost no publishers almost nothing for content used in AI answers", "publisher": "The Decoder", "url": "https://the-decoder.com/google-is-paying-almost-no-publishers-almost-nothing-for-content-used-in-ai-answers/"},
-    {"title": "Google pays 100 publishers for AI-powered search content- The Information", "publisher": "Investing.com", "url": "https://ca.investing.com/news/stock-market-news/google-pays-100-publishers-for-aipowered-search-content-the-information-93CH-4859026"},
-    {"title": "Google Tests Paying Publishers For AI Answers Via Search Console", "publisher": "Search Engine Journal", "url": "https://searchenginejournal.com/google-tests-paying-publishers-for-ai-answers-via-search-console/589414/"},
-    {"title": "Google Al Contribution Pilot - Paying Publishers For Use Of Content In AI", "publisher": "Search Engine Roundtable", "url": "https://seroundtable.com/google-al-contribution-pilot-42076.html"},
-    {"title": "Mirror publisher Reach cuts 220 editorial jobs as Google's AI summaries hit traffic", "publisher": "The Next Web", "url": "https://thenextweb.com/news/reach-cuts-220-editorial-jobs"}
+    {
+      "title": "AI features and your website",
+      "publisher": "Google Search Central",
+      "url": "https://developers.google.com/search/docs/appearance/ai-features"
+    },
+    {
+      "title": "AI in Search is driving more queries and higher quality clicks",
+      "publisher": "Google",
+      "url": "https://blog.google/products/search/ai-search-driving-more-queries-higher-quality-clicks/"
+    },
+    {
+      "title": "Google users are less likely to click on links when an AI summary appears in the results",
+      "publisher": "Pew Research Center",
+      "url": "https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/"
+    },
+    {
+      "title": "Google Is Paying About 100 Digital Publishers for AI Overviews",
+      "publisher": "The Information",
+      "url": "https://www.theinformation.com/articles/google-paying-100-digital-publishers-ai-overviews"
+    },
+    {
+      "title": "Google rolls out pay-per-value AI licensing program to publishers",
+      "publisher": "Digiday",
+      "url": "https://digiday.com/media/google-rolls-out-pay-value-ai-licensing-program-to-publishers/"
+    },
+    {
+      "title": "Google is paying almost no publishers almost nothing for content used in AI answers",
+      "publisher": "The Decoder",
+      "url": "https://the-decoder.com/google-is-paying-almost-no-publishers-almost-nothing-for-content-used-in-ai-answers/"
+    },
+    {
+      "title": "Google pays 100 publishers for AI-powered search content- The Information",
+      "publisher": "Investing.com",
+      "url": "https://ca.investing.com/news/stock-market-news/google-pays-100-publishers-for-aipowered-search-content-the-information-93CH-4859026"
+    },
+    {
+      "title": "Google Tests Paying Publishers For AI Answers Via Search Console",
+      "publisher": "Search Engine Journal",
+      "url": "https://searchenginejournal.com/google-tests-paying-publishers-for-ai-answers-via-search-console/589414/"
+    },
+    {
+      "title": "Google Al Contribution Pilot - Paying Publishers For Use Of Content In AI",
+      "publisher": "Search Engine Roundtable",
+      "url": "https://seroundtable.com/google-al-contribution-pilot-42076.html"
+    },
+    {
+      "title": "Mirror publisher Reach cuts 220 editorial jobs as Google's AI summaries hit traffic",
+      "publisher": "The Next Web",
+      "url": "https://thenextweb.com/news/reach-cuts-220-editorial-jobs"
+    }
   ],
-  "editor_note": ""
+  "editor_note": "",
+  "thumb_text": "AI Overviews",
+  "thumb_kicker": "Google"
 }
 ---
 GoogleがAI Overviews（検索結果の上に出るAI要約）やAI Mode、Geminiで使ったコンテンツへの対価を払っている相手は、約100のデジタルパブリッシャーにとどまると米The Informationが現地時間9月29日に報じました。中小のブログやサイトでは、支払額が広告収入の0.1%未満だといいます。

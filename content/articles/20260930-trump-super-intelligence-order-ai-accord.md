@@ -4,23 +4,64 @@
   "description": "トランプ大統領は9月29日、行政機関にAIを「Super Intelligence（SI）」と呼ぶよう命じる大統領令に署名した。同日、Google、Anthropic、OpenAIなどの経営者と法的拘束力のない安全協定にも署名した。",
   "date": "2026-09-30T20:22:00+09:00",
   "category": "policy",
-  "tags": ["米国政府", "規制", "安全性", "Anthropic", "OpenAI", "NVIDIA"],
+  "tags": [
+    "米国政府",
+    "規制",
+    "安全性",
+    "Anthropic",
+    "OpenAI",
+    "NVIDIA"
+  ],
   "summary": [
     "大統領令で行政機関の文書やサイトは「AI」をやめ「Super Intelligence（SI）」を使う",
     "AI大手6社の経営者が、内部統制と外部監査など4段階の管理を約束する協定に署名",
     "協定に法的拘束力はなく、トランプ氏は「道義的には拘束力がある」と述べるにとどめた"
   ],
   "sources": [
-    {"title": "Inaugurating The Era Of Super Intelligence", "publisher": "The White House", "url": "https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/"},
-    {"title": "Fact Sheet: President Donald J. Trump Inaugurates the Era of Super Intelligence", "publisher": "The White House", "url": "https://www.whitehouse.gov/fact-sheets/2026/09/fact-sheet-president-donald-j-trump-inaugurates-the-era-of-super-intelligence/"},
-    {"title": "Trump orders US government to call AI 'Super Intelligence'", "publisher": "The Verge", "url": "https://www.theverge.com/policy/1002468/trump-ai-superintelligence-executive-order-ai"},
-    {"title": "Top AI executives sign commitment to 'self-police' after meeting at White House", "publisher": "CNN", "url": "https://www.cnn.com/2026/09/29/business/amodei-huang-karp-trump"},
-    {"title": "Trump says AI leaders signed a 'constitution' to police themselves", "publisher": "ABC News", "url": "https://abcnews.com/Politics/top-ai-leaders-meet-trump-white-house-amid/story?id=136832988"},
-    {"title": "Three takeaways from Trump's 'Super Intelligence' summit", "publisher": "BBC", "url": "https://www.bbc.com/news/articles/cme30dz5vkzko"},
-    {"title": "Trump and tech CEOs sign an AI code of conduct that's only morally binding", "publisher": "The Decoder", "url": "https://the-decoder.com/trump-and-tech-ceos-sign-an-ai-code-of-conduct-thats-only-morally-binding/"},
-    {"title": "Trump, Xi agree to establish AI communication channel, oppose tolls on int'l waterways: White House", "publisher": "The Korea Times", "url": "https://www.koreatimes.co.kr/foreignaffairs/20260926/trump-xi-agree-to-establish-ai-communication-channel-oppose-tolls-on-intl-waterways-white-house"}
+    {
+      "title": "Inaugurating The Era Of Super Intelligence",
+      "publisher": "The White House",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/"
+    },
+    {
+      "title": "Fact Sheet: President Donald J. Trump Inaugurates the Era of Super Intelligence",
+      "publisher": "The White House",
+      "url": "https://www.whitehouse.gov/fact-sheets/2026/09/fact-sheet-president-donald-j-trump-inaugurates-the-era-of-super-intelligence/"
+    },
+    {
+      "title": "Trump orders US government to call AI 'Super Intelligence'",
+      "publisher": "The Verge",
+      "url": "https://www.theverge.com/policy/1002468/trump-ai-superintelligence-executive-order-ai"
+    },
+    {
+      "title": "Top AI executives sign commitment to 'self-police' after meeting at White House",
+      "publisher": "CNN",
+      "url": "https://www.cnn.com/2026/09/29/business/amodei-huang-karp-trump"
+    },
+    {
+      "title": "Trump says AI leaders signed a 'constitution' to police themselves",
+      "publisher": "ABC News",
+      "url": "https://abcnews.com/Politics/top-ai-leaders-meet-trump-white-house-amid/story?id=136832988"
+    },
+    {
+      "title": "Three takeaways from Trump's 'Super Intelligence' summit",
+      "publisher": "BBC",
+      "url": "https://www.bbc.com/news/articles/cme30dz5vkzko"
+    },
+    {
+      "title": "Trump and tech CEOs sign an AI code of conduct that's only morally binding",
+      "publisher": "The Decoder",
+      "url": "https://the-decoder.com/trump-and-tech-ceos-sign-an-ai-code-of-conduct-thats-only-morally-binding/"
+    },
+    {
+      "title": "Trump, Xi agree to establish AI communication channel, oppose tolls on int'l waterways: White House",
+      "publisher": "The Korea Times",
+      "url": "https://www.koreatimes.co.kr/foreignaffairs/20260926/trump-xi-agree-to-establish-ai-communication-channel-oppose-tolls-on-intl-waterways-white-house"
+    }
   ],
-  "editor_note": ""
+  "editor_note": "",
+  "thumb_text": "Super Intelligence",
+  "thumb_kicker": "米国政府"
 }
 ---
 トランプ米大統領は現地時間9月29日、連邦政府の行政機関に対し、「Artificial Intelligence（AI）」に代えて「Super Intelligence（SI）」という言葉を使うよう命じる大統領令に署名しました。同じ日、ホワイトハウスでAI大手の経営者と会合を開き、6人とともに自主的な安全協定に署名しています。協定に法的な拘束力はありません。

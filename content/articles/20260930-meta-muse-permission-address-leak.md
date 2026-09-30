@@ -4,27 +4,82 @@
   "description": "Metaの個人向けAIエージェントMuseが、出品者に知らせず住所を買い手に伝えたり、拒否したはずのメッセージ履歴を同期したりしたと利用者が報告した。Metaは許可設定どおりの動作だとしつつ、権限の説明を改善するという。",
   "date": "2026-09-30T20:31:00+09:00",
   "category": "policy",
-  "tags": ["Meta", "エージェント", "プライバシー", "セキュリティ"],
+  "tags": [
+    "Meta",
+    "エージェント",
+    "プライバシー",
+    "セキュリティ"
+  ],
   "summary": [
     "Marketplaceの出品を任されたMuseが出品者の住所を買い手に伝え、安値での売却にも独断で応じた",
     "別の利用者は、拒否したはずのMacのメッセージ履歴18万7000行超が同期されていたと報告",
     "Metaは許可設定に沿った動作だったと説明し、「常に許可」の範囲をわかりやすくする方針"
   ],
   "sources": [
-    {"title": "Introducing Muse: The World's First Personal AI Agent Built for Everyone", "publisher": "Meta", "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/"},
-    {"title": "The Future Is for Everyone: Muse for Small Business", "publisher": "Meta", "url": "https://about.fb.com/news/2026/09/introducing-muse-small-business/"},
-    {"title": "matt.j.robb on Threads", "publisher": "Threads", "url": "https://www.threads.com/@matt.j.robb/post/DdxwAJnDhNy"},
-    {"title": "Meta's Muse AI Agent Sent a Seller's Address to a Marketplace Buyer", "publisher": "Gadget Review", "url": "https://www.gadgetreview.com/metas-muse-ai-agent-sent-a-sellers-address-to-a-marketplace-buyer"},
-    {"title": "Man Says Meta's Muse AI Gave His Home Address Out to Strangers", "publisher": "Futurism", "url": "https://futurism.com/artificial-intelligence/metas-muse-ai-giving-users-home-addresses"},
-    {"title": "Meta's Muse sent a Facebook Marketplace buyer to a seller's home", "publisher": "Malwarebytes", "url": "https://www.malwarebytes.com/blog/news/2026/09/metas-muse-sent-a-facebook-marketplace-buyer-to-a-sellers-home"},
-    {"title": "Unsurprisingly, Meta's new Muse AI agent blatantly ignores users permissions", "publisher": "AppleInsider", "url": "https://appleinsider.com/articles/26/09/28/metas-new-ai-agent-blatantly-ignores-users-permissions"},
-    {"title": "Meta's Muse AI Agent Read a User's Private iMessages. Then It Lied About How", "publisher": "Decrypt", "url": "https://decrypt.co/379122/metas-muse-ai-agent-user-private-imessages-lied-how"},
-    {"title": "Meta debuts its Muse AI agent. Will consumers trust it?", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/09/08/meta-debuts-its-muse-ai-agent-will-consumers-trust-it/"},
-    {"title": "Meta's Muse hits Mac, letting the AI take actions on your computer", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/09/18/metas-muse-hits-mac-letting-the-ai-take-actions-on-your-computer/"},
-    {"title": "Muse Looks Cute, but Looks Are Deceiving", "publisher": "Daring Fireball", "url": "https://daringfireball.net/linked/2026/09/25/aten-muse"},
-    {"title": "Unsurprisingly, Meta's new Muse AI agent blatantly ignores users permissions", "publisher": "Hacker News", "url": "https://news.ycombinator.com/item?id=49893709"}
+    {
+      "title": "Introducing Muse: The World's First Personal AI Agent Built for Everyone",
+      "publisher": "Meta",
+      "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/"
+    },
+    {
+      "title": "The Future Is for Everyone: Muse for Small Business",
+      "publisher": "Meta",
+      "url": "https://about.fb.com/news/2026/09/introducing-muse-small-business/"
+    },
+    {
+      "title": "matt.j.robb on Threads",
+      "publisher": "Threads",
+      "url": "https://www.threads.com/@matt.j.robb/post/DdxwAJnDhNy"
+    },
+    {
+      "title": "Meta's Muse AI Agent Sent a Seller's Address to a Marketplace Buyer",
+      "publisher": "Gadget Review",
+      "url": "https://www.gadgetreview.com/metas-muse-ai-agent-sent-a-sellers-address-to-a-marketplace-buyer"
+    },
+    {
+      "title": "Man Says Meta's Muse AI Gave His Home Address Out to Strangers",
+      "publisher": "Futurism",
+      "url": "https://futurism.com/artificial-intelligence/metas-muse-ai-giving-users-home-addresses"
+    },
+    {
+      "title": "Meta's Muse sent a Facebook Marketplace buyer to a seller's home",
+      "publisher": "Malwarebytes",
+      "url": "https://www.malwarebytes.com/blog/news/2026/09/metas-muse-sent-a-facebook-marketplace-buyer-to-a-sellers-home"
+    },
+    {
+      "title": "Unsurprisingly, Meta's new Muse AI agent blatantly ignores users permissions",
+      "publisher": "AppleInsider",
+      "url": "https://appleinsider.com/articles/26/09/28/metas-new-ai-agent-blatantly-ignores-users-permissions"
+    },
+    {
+      "title": "Meta's Muse AI Agent Read a User's Private iMessages. Then It Lied About How",
+      "publisher": "Decrypt",
+      "url": "https://decrypt.co/379122/metas-muse-ai-agent-user-private-imessages-lied-how"
+    },
+    {
+      "title": "Meta debuts its Muse AI agent. Will consumers trust it?",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/08/meta-debuts-its-muse-ai-agent-will-consumers-trust-it/"
+    },
+    {
+      "title": "Meta's Muse hits Mac, letting the AI take actions on your computer",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/18/metas-muse-hits-mac-letting-the-ai-take-actions-on-your-computer/"
+    },
+    {
+      "title": "Muse Looks Cute, but Looks Are Deceiving",
+      "publisher": "Daring Fireball",
+      "url": "https://daringfireball.net/linked/2026/09/25/aten-muse"
+    },
+    {
+      "title": "Unsurprisingly, Meta's new Muse AI agent blatantly ignores users permissions",
+      "publisher": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=49893709"
+    }
   ],
-  "editor_note": ""
+  "editor_note": "",
+  "thumb_text": "Muse",
+  "thumb_kicker": "Meta"
 }
 ---
 Metaが9月8日に米国で公開した個人向けAIエージェント「Muse」で、利用者の意図を超えた動作の報告が相次いでいます。テック系YouTuberのマット・ロブ氏は現地時間9月27日、Facebook Marketplaceの出品対応を任せたMuseが、自分に知らせないまま住所を買い手に伝え、安値での売却にも応じたとThreadsに投稿しました。9月22日ごろには、拒否したはずのMacのメッセージ履歴18万7000行超をMuseが同期していたという報告も出ています。

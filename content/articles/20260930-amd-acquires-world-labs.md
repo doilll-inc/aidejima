@@ -4,25 +4,72 @@
   "description": "AMDは、3D空間を生成・再現する世界モデルを開発するWorld Labsを約82億ドルの株式交換で買収すると発表した。創業者のフェイフェイ・リー氏は最高科学責任者に就く。モデルまで手がけるNVIDIAに対抗する狙いがある。",
   "date": "2026-09-30T20:37:00+09:00",
   "category": "hardware",
-  "tags": ["AMD", "買収", "世界モデル", "NVIDIA"],
+  "tags": [
+    "AMD",
+    "買収",
+    "世界モデル",
+    "NVIDIA"
+  ],
   "summary": [
     "AMDがWorld Labsを約82億ドルで買収、対価は全額AMD株で2026年末までの完了を見込む",
     "フェイフェイ・リー氏がAMDの上級副社長兼最高科学責任者に就き、リサ・スーCEOの直属に",
     "World Labsは3D世界を生成するMarbleやAtlasを開発、2月の調達時の評価額は約50億ドル"
   ],
   "sources": [
-    {"title": "AMD to Acquire World Labs to Advance the Future of AI Compute", "publisher": "AMD", "url": "https://ir.amd.com/news-events/press-releases/detail/1299/amd-to-acquire-world-labs-to-advance-the-future-of-ai-compute"},
-    {"title": "World Labs is Joining AMD", "publisher": "World Labs", "url": "https://www.worldlabs.ai/blog/amd-announcement"},
-    {"title": "ADVANCED MICRO DEVICES INC - Form 8-K", "publisher": "SEC EDGAR", "url": "https://www.sec.gov/Archives/edgar/data/0000002488/000000248826000182/amd-20260926.htm"},
-    {"title": "World Labs is joining AMD", "publisher": "Fei-Fei Li（Substack）", "url": "https://drfeifei.substack.com/p/worldlabs-joining-amd"},
-    {"title": "AMD will acquire Fei-Fei Li's World Labs for $8.2B", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/09/28/amd-will-acquire-fei-fei-lis-world-labs-for-8-2-billion/"},
-    {"title": "AMD buys AI world model startup World Labs for $8.2 billion", "publisher": "The Decoder", "url": "https://the-decoder.com/amd-buys-ai-world-model-startup-world-labs-for-8-2-billion/"},
-    {"title": "Fei-Fei Li's World Labs raises one billion dollars for \"spatial intelligence\"", "publisher": "The Decoder", "url": "https://the-decoder.com/fei-fei-lis-world-labs-raises-one-billion-dollars-for-spatial-intelligence/"},
-    {"title": "AMD and Anthropic Announce Strategic Partnership to Deploy Up to 2 Gigawatts of AMD Instinct MI450 Series GPUs", "publisher": "AMD", "url": "https://ir.amd.com/news-events/press-releases/detail/1292"},
-    {"title": "Exporting from Marble", "publisher": "World Labs Docs", "url": "https://docs.worldlabs.ai/marble/export/gaussian-splat"},
-    {"title": "World Labs is Joining AMD", "publisher": "Hacker News", "url": "https://news.ycombinator.com/item?id=49883760"}
+    {
+      "title": "AMD to Acquire World Labs to Advance the Future of AI Compute",
+      "publisher": "AMD",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/1299/amd-to-acquire-world-labs-to-advance-the-future-of-ai-compute"
+    },
+    {
+      "title": "World Labs is Joining AMD",
+      "publisher": "World Labs",
+      "url": "https://www.worldlabs.ai/blog/amd-announcement"
+    },
+    {
+      "title": "ADVANCED MICRO DEVICES INC - Form 8-K",
+      "publisher": "SEC EDGAR",
+      "url": "https://www.sec.gov/Archives/edgar/data/0000002488/000000248826000182/amd-20260926.htm"
+    },
+    {
+      "title": "World Labs is joining AMD",
+      "publisher": "Fei-Fei Li（Substack）",
+      "url": "https://drfeifei.substack.com/p/worldlabs-joining-amd"
+    },
+    {
+      "title": "AMD will acquire Fei-Fei Li's World Labs for $8.2B",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/28/amd-will-acquire-fei-fei-lis-world-labs-for-8-2-billion/"
+    },
+    {
+      "title": "AMD buys AI world model startup World Labs for $8.2 billion",
+      "publisher": "The Decoder",
+      "url": "https://the-decoder.com/amd-buys-ai-world-model-startup-world-labs-for-8-2-billion/"
+    },
+    {
+      "title": "Fei-Fei Li's World Labs raises one billion dollars for \"spatial intelligence\"",
+      "publisher": "The Decoder",
+      "url": "https://the-decoder.com/fei-fei-lis-world-labs-raises-one-billion-dollars-for-spatial-intelligence/"
+    },
+    {
+      "title": "AMD and Anthropic Announce Strategic Partnership to Deploy Up to 2 Gigawatts of AMD Instinct MI450 Series GPUs",
+      "publisher": "AMD",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/1292"
+    },
+    {
+      "title": "Exporting from Marble",
+      "publisher": "World Labs Docs",
+      "url": "https://docs.worldlabs.ai/marble/export/gaussian-splat"
+    },
+    {
+      "title": "World Labs is Joining AMD",
+      "publisher": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=49883760"
+    }
   ],
-  "editor_note": ""
+  "editor_note": "",
+  "thumb_text": "World Labs",
+  "thumb_kicker": "AMD"
 }
 ---
 AMDは現地時間9月28日、AI研究者のフェイフェイ・リー氏が2024年に創業したWorld Labsを約82億ドルで買収することで最終合意したと発表しました。対価はすべてAMD株で、規制当局の承認などを経て2026年末までの完了を見込みます。リー氏はAMDのエグゼクティブ・バイスプレジデント（上級副社長）兼最高科学責任者に就き、リサ・スーCEOの直属になります。

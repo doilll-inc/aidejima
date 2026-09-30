@@ -4,23 +4,64 @@
   "description": "Anthropicは、中国Zhipu AIのオープンウェイトモデルGLM-5.3の攻撃コード作成能力が、限定公開のClaude Mythos Previewに近いと報告した。安全策も簡単な手法で64〜100%回避できたという。",
   "date": "2026-09-30T20:25:00+09:00",
   "category": "policy",
-  "tags": ["Anthropic", "Zhipu", "GLM", "セキュリティ", "中国AI", "オープンソース"],
+  "tags": [
+    "Anthropic",
+    "Zhipu",
+    "GLM",
+    "セキュリティ",
+    "中国AI",
+    "オープンソース"
+  ],
   "summary": [
     "Chrome V8の既知の脆弱性を使う試験で、GLM-5.3は410回中50回攻撃コードを完成させた",
     "Claude Mythos Previewは56回で、GLM-5.2やClaude Opus 4.6はほぼ0%だった",
     "拒否機能の除去は約4,400ドルの計算費で可能。Anthropicは政府による安全性試験を求めた"
   ],
   "sources": [
-    {"title": "GLM-5.3 and the spread of advanced cyber capabilities", "publisher": "Anthropic", "url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities"},
-    {"title": "CAISI's Assessment of Z.ai's GLM-5.3 Cyber Capabilities", "publisher": "NIST", "url": "https://www.nist.gov/news-events/news/2026/09/caisis-assessment-zais-glm-53-cyber-capabilities"},
-    {"title": "zai-org/GLM-5.3", "publisher": "Hugging Face", "url": "https://huggingface.co/zai-org/GLM-5.3"},
-    {"title": "Anthropic says Zhipu's open-weight GLM-5.3 nearly matches Claude Mythos Preview at building exploits", "publisher": "The Decoder", "url": "https://the-decoder.com/anthropic-says-zhipus-open-weight-glm-5-3-nearly-matches-claude-mythos-preview-at-building-exploits/"},
-    {"title": "A quote from Anthropic Frontier Red Team", "publisher": "Simon Willison's Weblog", "url": "https://simonwillison.net/2026/Sep/29/anthropic-frontier-red-team/"},
-    {"title": "GLM-5.3 and the spread of advanced cyber capabilities", "publisher": "Hacker News", "url": "https://news.ycombinator.com/item?id=49897075"},
-    {"title": "Anthropic CEO Dario Amodei says he does not support open-weight AI ban", "publisher": "Axios", "url": "https://axios.com/2026/07/27/anthropic-open-weight-ban-china-dario-amodei"},
-    {"title": "Anthropic Says Never Sought Ban on Open-Weights AI Models", "publisher": "Bloomberg Law", "url": "https://news.bloomberglaw.com/artificial-intelligence/anthropic-says-never-sought-ban-on-open-weights-ai-models"}
+    {
+      "title": "GLM-5.3 and the spread of advanced cyber capabilities",
+      "publisher": "Anthropic",
+      "url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities"
+    },
+    {
+      "title": "CAISI's Assessment of Z.ai's GLM-5.3 Cyber Capabilities",
+      "publisher": "NIST",
+      "url": "https://www.nist.gov/news-events/news/2026/09/caisis-assessment-zais-glm-53-cyber-capabilities"
+    },
+    {
+      "title": "zai-org/GLM-5.3",
+      "publisher": "Hugging Face",
+      "url": "https://huggingface.co/zai-org/GLM-5.3"
+    },
+    {
+      "title": "Anthropic says Zhipu's open-weight GLM-5.3 nearly matches Claude Mythos Preview at building exploits",
+      "publisher": "The Decoder",
+      "url": "https://the-decoder.com/anthropic-says-zhipus-open-weight-glm-5-3-nearly-matches-claude-mythos-preview-at-building-exploits/"
+    },
+    {
+      "title": "A quote from Anthropic Frontier Red Team",
+      "publisher": "Simon Willison's Weblog",
+      "url": "https://simonwillison.net/2026/Sep/29/anthropic-frontier-red-team/"
+    },
+    {
+      "title": "GLM-5.3 and the spread of advanced cyber capabilities",
+      "publisher": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=49897075"
+    },
+    {
+      "title": "Anthropic CEO Dario Amodei says he does not support open-weight AI ban",
+      "publisher": "Axios",
+      "url": "https://axios.com/2026/07/27/anthropic-open-weight-ban-china-dario-amodei"
+    },
+    {
+      "title": "Anthropic Says Never Sought Ban on Open-Weights AI Models",
+      "publisher": "Bloomberg Law",
+      "url": "https://news.bloomberglaw.com/artificial-intelligence/anthropic-says-never-sought-ban-on-open-weights-ai-models"
+    }
   ],
-  "editor_note": ""
+  "editor_note": "",
+  "thumb_text": "GLM-5.3",
+  "thumb_kicker": "Zhipu"
 }
 ---
 Anthropicで最先端モデルの危険な能力を検証するFrontier Red Teamは現地時間9月29日、中国Zhipu AI（海外ではZ.ai）のオープンウェイトモデル「GLM-5.3」の分析を公表しました。攻撃コード（エクスプロイト）を自力で組み上げる能力は、Anthropicが限定公開にとどめている「Claude Mythos Preview」に迫るとしています。一方で安全策は、簡単な手法で64〜100%の割合で回避できたと報告しました。
