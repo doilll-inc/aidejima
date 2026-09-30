@@ -1,0 +1,57 @@
+{
+  "_comment": "X公式APIで監視するアカウント（scripts/collect.py の kind=x）。公式アカウントと、発表を本人が先に投稿する著名人。増やすほど読み取り件数＝費用が増える（1件0.005ドル）。role=official(公式) / person(著名人)",
+  "accounts": [
+    { "handle": "OpenAI", "name": "OpenAI", "role": "official" },
+    { "handle": "OpenAIDevs", "name": "OpenAI Developers", "role": "official" },
+    { "handle": "sama", "name": "Sam Altman（OpenAI CEO）", "role": "person" },
+    {
+      "handle": "gdb",
+      "name": "Greg Brockman（OpenAI 社長）",
+      "role": "person"
+    },
+    { "handle": "kevinweil", "name": "Kevin Weil（OpenAI）", "role": "person" },
+    { "handle": "AnthropicAI", "name": "Anthropic", "role": "official" },
+    { "handle": "claudeai", "name": "Claude", "role": "official" },
+    {
+      "handle": "DarioAmodei",
+      "name": "Dario Amodei（Anthropic CEO）",
+      "role": "person"
+    },
+    {
+      "handle": "GoogleDeepMind",
+      "name": "Google DeepMind",
+      "role": "official"
+    },
+    {
+      "handle": "demishassabis",
+      "name": "Demis Hassabis（Google DeepMind CEO）",
+      "role": "person"
+    },
+    {
+      "handle": "sundarpichai",
+      "name": "Sundar Pichai（Google CEO）",
+      "role": "person"
+    },
+    { "handle": "JeffDean", "name": "Jeff Dean（Google）", "role": "person" },
+    { "handle": "xai", "name": "xAI", "role": "official" },
+    { "handle": "elonmusk", "name": "Elon Musk（xAI）", "role": "person" },
+    { "handle": "MistralAI", "name": "Mistral AI", "role": "official" },
+    { "handle": "deepseek_ai", "name": "DeepSeek", "role": "official" },
+    { "handle": "Alibaba_Qwen", "name": "Qwen（Alibaba）", "role": "official" },
+    {
+      "handle": "satyanadella",
+      "name": "Satya Nadella（Microsoft CEO）",
+      "role": "person"
+    },
+    {
+      "handle": "mustafasuleyman",
+      "name": "Mustafa Suleyman（Microsoft AI CEO）",
+      "role": "person"
+    },
+    { "handle": "karpathy", "name": "Andrej Karpathy", "role": "person" },
+    { "handle": "AndrewYNg", "name": "Andrew Ng", "role": "person" },
+    { "handle": "ylecun", "name": "Yann LeCun", "role": "person" },
+    { "handle": "huggingface", "name": "Hugging Face", "role": "official" },
+    { "handle": "nvidia", "name": "NVIDIA", "role": "official" }
+  ]
+}

@@ -1,12 +1,14 @@
 {% extends "base.html" %}
-{% from "_macros.html" import cat_label, editor_card %}
+{% from "_macros.html" import cat_label, editor_card, models_box %}
 {% set title = a.title %}{% set desc = a.description %}{% set og_type = 'article' %}
 {% block head %}
 <meta property="article:published_time" content="{{ a.date.isoformat() }}">
 {% if a.updated %}<meta property="article:modified_time" content="{{ a.updated.isoformat() }}">{% endif %}
 <meta property="article:section" content="{{ a.cat.name }}">
+<meta property="article:author" content="{{ abs_url('/about/editor/') }}">
 {% for t in a.tags %}<meta property="article:tag" content="{{ t }}">
 {% endfor %}
+<link rel="preload" as="image" href="{{ u('/og/' ~ a.slug ~ '.eye.webp') }}">
 {% endblock %}
 {% block body_class %}article-page{% endblock %}
 {% block main %}
@@ -15,15 +17,16 @@
   <div class="layout layout-article">
     <article class="post">
       <header class="post-head">
-        <div class="meta">{{ cat_label(a) }}</div>
+        <div class="meta">{{ cat_label(a) }}{% if a.primary_count %}<span class="primary-mark">一次情報</span>{% endif %}</div>
         <h1 class="post-title">{{ a.title }}</h1>
         <div class="byline">
           <time datetime="{{ a.date.isoformat() }}">{{ fmt_dt(a.date) }}</time>
           {% if a.updated %}<span class="updated">更新 <time datetime="{{ a.updated.isoformat() }}">{{ fmt_dt(a.updated) }}</time></span>{% endif %}
+          <span class="read-min">約{{ a.read_min }}分で読めます</span>
           <span class="by">文：AIデジマ編集部 ／ 編集：<a href="{{ u('/about/editor/') }}">{{ site.editor.name }}</a></span>
         </div>
       </header>
-      <figure class="post-eyecatch"><img src="{{ u('/og/' ~ a.slug ~ '.eye.webp') }}" width="1200" height="630" alt="" fetchpriority="high"></figure>
+      <figure class="post-eyecatch"><img src="{{ u('/og/' ~ a.slug ~ '.eye.webp') }}" width="1200" height="675" alt="" fetchpriority="high"></figure>
 
       <section class="tldr" aria-label="3行でわかる">
         <p class="tldr-h">3行でわかる</p>
@@ -49,17 +52,17 @@
       <section class="sources">
         <h2>情報源</h2>
         <ul>
-          {% for s in a.sources %}<li><span class="pub">{{ s.publisher }}</span><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.title }}</a></li>{% endfor %}
+          {% for s in a.sources %}<li><span class="kind kind-{{ loop.index }}" data-kind="{{ s.kind }}">{{ s.kind }}</span><span class="pub">{{ s.publisher }}</span><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.title }}</a></li>{% endfor %}
         </ul>
-        <p class="sources-note">AIデジマは海外の公式発表・報道・論文を確認し、日本語で要点と背景をまとめています。誤りを見つけた場合は<a href="{{ u('/about/#corrections') }}">訂正のご連絡</a>をお願いします。</p>
+        <p class="sources-note">AIデジマは、公式発表・X投稿・論文などの一次情報を起点に、複数の情報源を照合して日本語でまとめています。情報の収集・翻訳・下書き・照合にはAIを使い、編集方針と最終責任は編集長が負います（<a href="{{ u('/about/#ai') }}">AIの活用について</a>）。誤りを見つけた場合は<a href="{{ u('/about/#corrections') }}">訂正のご連絡</a>をお願いします。</p>
       </section>
 
       <div class="post-tags">{% for t in a.tag_items %}<a class="tag" href="{{ u('/tag/' ~ t.slug ~ '/') }}">#{{ t.name }}</a>{% endfor %}</div>
 
       {% set share_url = abs_url(a.path) %}
       <div class="share" aria-label="シェア">
-        <a class="share-x" href="https://x.com/intent/post?text={{ (a.title ~ ' | AIデジマ') | urlencode }}&amp;url={{ share_url | urlencode }}" target="_blank" rel="noopener">Xでシェア</a>
-        <a class="share-hb" href="https://b.hatena.ne.jp/entry/s/{{ share_url.split('://')[1] }}" target="_blank" rel="noopener">はてブ</a>
+        <a class="share-x" href="https://x.com/intent/post?text={{ (a.share_text ~ ' | AIデジマ') | urlencode }}&amp;url={{ share_url | urlencode }}" target="_blank" rel="noopener">Xでシェア</a>
+        <a class="share-hb" href="https://b.hatena.ne.jp/entry/s/{{ share_url.split('://')[1] }}" target="_blank" rel="noopener">はてブ <img class="hb-count" src="https://b.hatena.ne.jp/entry/image/{{ share_url }}" alt="" height="13" loading="lazy"></a>
         <a class="share-line" href="https://social-plugins.line.me/lineit/share?url={{ share_url | urlencode }}" target="_blank" rel="noopener">LINE</a>
         <button class="share-copy" type="button" data-url="{{ share_url }}">リンクをコピー</button>
       </div>
@@ -71,6 +74,7 @@
           <a class="editor-name" href="{{ u('/about/editor/') }}">{{ site.editor.name }}</a>
           <p class="editor-title">{{ site.editor.title }}</p>
           <p class="editor-bio">{{ site.editor.short_bio }}</p>
+          <p class="editor-links"><a class="more-link" href="{{ u('/about/editor/') }}">プロフィール</a>{% if site.editor.x_handle %}<a class="x-link" href="https://x.com/{{ site.editor.x_handle }}" target="_blank" rel="noopener">X @{{ site.editor.x_handle }}</a>{% endif %}</p>
         </div>
       </section>
 
@@ -85,7 +89,7 @@
         <div class="related-grid">
           {% for r in related %}
           <a class="rel" href="{{ u(r.path) }}">
-            <img src="{{ u('/og/' ~ r.slug ~ '.webp') }}" width="640" height="336" alt="" loading="lazy" decoding="async">
+            <img src="{{ u('/og/' ~ r.slug ~ '.webp') }}" width="640" height="360" alt="" loading="lazy" decoding="async">
             <span class="rel-cat" style="--c:{{ r.cat.color }}">{{ r.cat.name }}</span>
             <span class="rel-title">{{ r.title }}</span>
           </a>
@@ -102,6 +106,7 @@
       </nav>
       {% endif %}
       {{ editor_card(site) }}
+      {{ models_box(models_top) }}
     </aside>
   </div>
 </div>
@@ -112,4 +117,5 @@ document.querySelectorAll('.share-copy').forEach(function(b){b.addEventListener(
   navigator.clipboard.writeText(b.dataset.url).then(function(){b.textContent='コピーしました';setTimeout(function(){b.textContent='リンクをコピー'},1600)});
 });});
 </script>
+{% if a.has_x_embed %}<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>{% endif %}
 {% endblock %}

@@ -232,6 +232,10 @@ a:hover {
 .catnav a[aria-current="page"] {
   color: var(--ink);
 }
+.catnav-models {
+  margin-left: auto;
+  color: var(--accent-text) !important;
+}
 
 /* ---------- 共通パーツ ---------- */
 .meta {
@@ -295,6 +299,12 @@ a:hover {
   font-size: 18px;
   font-weight: 800;
 }
+.section-h small {
+  margin-left: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-text);
+}
 .section-h::before {
   content: "";
   width: 4px;
@@ -342,7 +352,7 @@ a:hover {
 }
 .hero-img img {
   width: 100%;
-  aspect-ratio: 1200/630;
+  aspect-ratio: 16/9;
   object-fit: cover;
   border-radius: var(--radius);
 }
@@ -397,7 +407,7 @@ a:hover {
 }
 .mini-img img {
   border-radius: 8px;
-  aspect-ratio: 640/336;
+  aspect-ratio: 16/9;
   object-fit: cover;
 }
 .mini-title {
@@ -450,7 +460,7 @@ a:hover {
 }
 .thumb img {
   border-radius: 8px;
-  aspect-ratio: 640/336;
+  aspect-ratio: 16/9;
   object-fit: cover;
   transition: opacity 0.15s;
 }
@@ -1022,7 +1032,7 @@ a:hover {
 }
 .rel img {
   border-radius: 8px;
-  aspect-ratio: 640/336;
+  aspect-ratio: 16/9;
   object-fit: cover;
   margin-bottom: 8px;
 }
@@ -1245,4 +1255,195 @@ a:hover {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* ---------- 一次情報・NEW・情報源の種別 ---------- */
+.new {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+}
+.primary-mark {
+  display: inline-block;
+  padding: 1px 6px;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  color: var(--accent-text);
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+.read-min {
+  color: var(--muted);
+}
+.sources .kind {
+  flex: none;
+  min-width: 4.5em;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--bg-soft);
+  color: var(--ink-2);
+  font-size: 11px;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.6;
+  align-self: flex-start;
+  margin-top: 2px;
+}
+.sources .kind[data-kind="公式発表"],
+.sources .kind[data-kind="公式ドキュメント"] {
+  background: var(--accent);
+  color: #fff;
+}
+.sources .kind[data-kind="X投稿"] {
+  background: #111418;
+  color: #fff;
+}
+.sources .kind[data-kind="論文"] {
+  background: #8b5cf6;
+  color: #fff;
+}
+.hb-count {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+.x-embed {
+  margin: 0 0 1.35em;
+}
+.x-embed blockquote {
+  margin: 0;
+  padding: 12px 18px;
+  border-left: 4px solid var(--ink);
+  background: var(--bg-soft);
+  border-radius: 0 8px 8px 0;
+}
+.x-embed blockquote a {
+  color: var(--ink-2);
+  font-weight: 700;
+}
+.editor-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  align-items: center;
+  margin: 0;
+}
+.editor-links .more-link {
+  margin-top: 10px;
+}
+.x-link {
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-2);
+}
+.x-link::before {
+  content: "𝕏 ";
+}
+.btn-x {
+  display: block;
+  margin: 10px 0 0;
+  padding: 12px;
+  text-align: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+.btn-x:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+.side-months a span:first-child::before {
+  display: none;
+}
+.side-models {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.side-models a {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 7px 0;
+  font-size: 14px;
+  font-weight: 700;
+  border-bottom: 1px dashed var(--line);
+}
+.side-models li:last-child a {
+  border-bottom: 0;
+}
+.side-models .n {
+  flex: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- AIモデル図鑑 ---------- */
+.models-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+.models-table th,
+.models-table td,
+.spec-table th,
+.spec-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.models-table th,
+.spec-table th {
+  background: var(--bg-soft);
+  font-weight: 800;
+  white-space: nowrap;
+  font-size: 13px;
+}
+.models-table tr:last-child td,
+.spec-table tr:last-child td {
+  border-bottom: 0;
+}
+.models-table td small {
+  color: var(--muted);
+}
+.models-table .is-deprecated td {
+  color: var(--muted);
+}
+.models-table a {
+  color: var(--accent-text);
+}
+.spec-table {
+  margin: 12px 0 0;
+}
+.spec-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+.spec-table th {
+  width: 12em;
+}
+.models-note {
+  margin: 10px 0 28px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.content .btn-more {
+  display: inline-block;
+  padding: 10px 24px;
 }

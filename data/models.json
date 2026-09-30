@@ -1,0 +1,65 @@
+{
+  "_comment": "AIモデル図鑑（/models/）の元データ。記事で公式の料金・仕様を確認したときに記者が追加・更新する（公式ページで確認できた値だけ。不明な項目は入れない）。料金は100万トークンあたりの米ドル。context/max_output はトークン数。released は提供開始日（現地）。article は根拠になる当サイトの記事パス。status=current / deprecated / preview",
+  "models": [
+    {
+      "slug": "gpt-6-1-sol",
+      "name": "GPT-6.1 Sol",
+      "vendor": "OpenAI",
+      "tier": "中位",
+      "released": "2026-09-29",
+      "input_per_m": 2.0,
+      "cached_input_per_m": 0.1,
+      "output_per_m": 10.0,
+      "context": 1050000,
+      "max_output": 128000,
+      "knowledge_cutoff": "2026-04-30",
+      "api_id": "gpt-6.1-sol",
+      "status": "current",
+      "note": "GPT-6 Solの改良版。27.2万トークン超の入力は入力2倍・出力1.5倍の単価。ChatGPTではChatGPT WorkとCodexで提供",
+      "official_url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+      "article": "/news/20260930-openai-gpt-6-1-sol/"
+    },
+    {
+      "slug": "gpt-6-astra",
+      "name": "GPT-6 Astra",
+      "vendor": "OpenAI",
+      "tier": "最上位",
+      "released": "2026-09-03",
+      "input_per_m": 10.0,
+      "cached_input_per_m": 1.0,
+      "output_per_m": 50.0,
+      "status": "current",
+      "note": "GPT-6世代の最上位。OpenAIは最も難しい研究用途にAstraを推奨",
+      "official_url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+      "article": "/news/20260930-openai-gpt-6-1-sol/"
+    },
+    {
+      "slug": "gpt-6-sol",
+      "name": "GPT-6 Sol",
+      "vendor": "OpenAI",
+      "tier": "中位",
+      "released": "2026-09-22",
+      "input_per_m": 2.0,
+      "cached_input_per_m": 0.2,
+      "output_per_m": 10.0,
+      "status": "deprecated",
+      "note": "公開7日後にGPT-6.1 Solに置き換え",
+      "official_url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+      "article": "/news/20260930-openai-gpt-6-1-sol/"
+    },
+    {
+      "slug": "gpt-6-luna",
+      "name": "GPT-6 Luna",
+      "vendor": "OpenAI",
+      "tier": "軽量",
+      "released": "2026-09-22",
+      "input_per_m": 0.1,
+      "cached_input_per_m": 0.01,
+      "output_per_m": 0.5,
+      "status": "current",
+      "note": "GPT-6世代の軽量モデル",
+      "official_url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+      "article": "/news/20260930-openai-gpt-6-1-sol/"
+    }
+  ]
+}

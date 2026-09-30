@@ -10,10 +10,10 @@ import argparse
 import hashlib
 import html
 import json
-import math
 import re
 import shutil
 import sys
+import urllib.parse
 from collections import Counter, defaultdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -34,9 +34,20 @@ REQUIRED = ("title", "description", "date", "category", "tags", "summary", "sour
 
 SITE = json.loads((ROOT / "data" / "site.json").read_text(encoding="utf-8"))
 TAXO = json.loads((ROOT / "data" / "taxonomy.json").read_text(encoding="utf-8"))
+MODELS = json.loads((ROOT / "data" / "models.json").read_text(encoding="utf-8"))["models"]
 CATS = {c["slug"]: c for c in TAXO["categories"]}
 BASE_PATH = SITE["base_path"].rstrip("/")
 BASE_URL = SITE["base_url"].rstrip("/")
+TAG_INDEX_MIN = SITE.get("tag_index_min", 3)  # タグページをこの本数未満なら noindex（薄いページを検索に出さない）
+NEW_HOURS = SITE.get("new_badge_hours", 12)
+
+# 情報源の種別（記事ページで「公式発表／X投稿／論文／報道」と見せる）。sources[].kind で明示しなければドメインで判定
+SOURCE_KINDS = TAXO.get("source_kinds", {})
+OFFICIAL_DOMAINS = SOURCE_KINDS.get("official_domains", [])
+PAPER_DOMAINS = SOURCE_KINDS.get("paper_domains", [])
+COMPANY_NAMES = set(SOURCE_KINDS.get("company_tags", []))
+# 記事本文で使わない言い回し（煽り・空疎な締め）。ビルドは止めず注意として出す
+BANNED_PHRASES = ["今後の動向に注目", "注目していきましょう", "目が離せません", "革命的", "衝撃", "ヤバい", "ゲームチェンジャー", "と言えるでしょう", "ではないでしょうか", "！"]
 
 
 # ---------- URL・日付のヘルパ ----------
@@ -68,16 +79,83 @@ def fmt_date(d: datetime) -> str:
     return f"{d.year}年{d.month}月{d.day}日（{WEEKDAYS[d.weekday()]}）"
 
 
-def fmt_ago(d: datetime, now: datetime) -> str:
-    mins = int((now - d).total_seconds() // 60)
-    if mins < 60:
-        return f"{max(mins, 1)}分前"
-    if mins < 60 * 24:
-        return f"{mins // 60}時間前"
-    return f"{d.month}月{d.day}日"
+def fmt_short(d: datetime) -> str:
+    return f"{d.month}月{d.day}日 {d.strftime('%H:%M')}"
+
+
+def host_of(url: str) -> str:
+    try:
+        return urllib.parse.urlsplit(url).netloc.lower().removeprefix("www.")
+    except ValueError:
+        return ""
+
+
+def source_kind(s: dict) -> str:
+    if s.get("kind"):
+        return s["kind"]
+    url = s.get("url", "")
+    h = host_of(url)
+    if h in ("x.com", "twitter.com"):
+        return "X投稿"
+    if any(h == d or h.endswith("." + d) for d in PAPER_DOMAINS) or "/papers/" in url or "arxiv" in h:
+        return "論文"
+    if any(h == d or h.endswith("." + d) for d in OFFICIAL_DOMAINS):
+        if re.search(r"/docs?/|/documentation/|/changelog|/release-notes|developers\.|platform\.|/api/", url):
+            return "公式ドキュメント"
+        return "公式発表"
+    return "報道"
 
 
 # ---------- 記事の読み込み ----------
+
+X_EMBED_RE = re.compile(r"\{\{\s*x:\s*(https?://(?:x\.com|twitter\.com)/[^\s}]+)\s*\}\}")
+
+
+def expand_embeds(md_text: str) -> tuple[str, bool]:
+    """本文の {{x:https://x.com/<user>/status/<id>}} を X の公式埋め込みに置き換える"""
+    found = False
+
+    def rep(m: re.Match) -> str:
+        nonlocal found
+        found = True
+        url = m.group(1).replace("twitter.com", "x.com")
+        user = re.search(r"x\.com/([^/]+)/status/", url)
+        label = f"@{user.group(1)} の投稿を見る（X）" if user else "Xの投稿を見る"
+        return (
+            f'\n\n<figure class="x-embed"><blockquote class="twitter-tweet" data-dnt="true" data-lang="ja">'
+            f'<a href="{html.escape(url)}">{html.escape(label)}</a></blockquote></figure>\n\n'
+        )
+
+    return X_EMBED_RE.sub(rep, md_text), found
+
+
+def pick_thumb_text(meta: dict) -> tuple[str, str]:
+    """カード画像に大きく出す語（製品名など）と、小さく添える語（社名）。
+    優先: thumb_text の指定 → タイトルの「」内 → タイトルに出てくる社名以外のタグ → 先頭タグ"""
+    tags = meta["tags"]
+    title = meta["title"]
+    big = meta.get("thumb_text")
+    in_title = [t for t in tags if t in title]
+    if not big:
+        # 「」内は製品名（英数字を含むもの）のときだけ使う。「引用される情報」のような一般語は絵にならない
+        m = re.search(r"「([^」]{2,20})」", title)
+        if m and re.search(r"[A-Za-z0-9]", m.group(1)):
+            big = m.group(1)
+    if not big:
+        # 製品名（英字を含む・社名ではない）→ 社名 → 日本語の一般語（「買収」「エージェント」等は絵にならない）
+        product = [t for t in in_title if t not in COMPANY_NAMES and re.search(r"[A-Za-z0-9]", t)]
+        company = [t for t in in_title if t in COMPANY_NAMES] or [t for t in tags if t in COMPANY_NAMES]
+        big = (product or company or in_title or tags)[0]
+    kicker = meta.get("thumb_kicker")
+    if kicker is None:
+        # 大きい語がすでに社名なら添えない（別の社名が並ぶと、どの会社の話か紛らわしい）
+        if big in COMPANY_NAMES:
+            kicker = ""
+        else:
+            # タイトルに出てくる社名だけ添える（タグにあるだけの社名は、話の主役とは限らない）
+            kicker = next((t for t in in_title if t in COMPANY_NAMES and t not in big), "")
+    return big, kicker
+
 
 def parse_article(path: Path) -> tuple[dict | None, list[str]]:
     errs: list[str] = []
@@ -106,13 +184,19 @@ def parse_article(path: Path) -> tuple[dict | None, list[str]]:
     for s in meta.get("sources") or []:
         if not str(s.get("url", "")).startswith("http"):
             errs.append(f"{path.name}: sources のURLが不正 ({s})")
+    if not re.fullmatch(r"\d{8}-[a-z0-9-]+", path.stem):
+        errs.append(f"{path.name}: ファイル名は YYYYMMDD-<英小文字とハイフン>.md にする")
     if errs:
         return None, errs
 
     slug = path.stem
-    body_md = m.group(2).strip()
+    body_md, has_x = expand_embeds(m.group(2).strip())
     body_html, toc = render_body(body_md)
     updated = datetime.fromisoformat(meta["updated"]) if meta.get("updated") else None
+    sources = [{**s, "kind": source_kind(s), "host": host_of(s.get("url", ""))} for s in meta["sources"]]
+    kinds = [s["kind"] for s in sources]
+    chars = len(re.sub(r"\s", "", re.sub(r"<[^>]+>", "", body_html)))
+    big, kicker = pick_thumb_text(meta)
     a = {
         **meta,
         "slug": slug,
@@ -123,9 +207,15 @@ def parse_article(path: Path) -> tuple[dict | None, list[str]]:
         "toc": toc,
         "cat": CATS[meta["category"]],
         "tag_items": [{"name": t, "slug": tag_slug(t)} for t in meta["tags"]],
-        "chars": len(re.sub(r"\s", "", re.sub(r"<[^>]+>", "", body_html))),
-        "thumb_text": meta.get("thumb_text") or meta["tags"][0],
-        "publishers": list(dict.fromkeys(s.get("publisher", "") for s in meta["sources"] if s.get("publisher"))),
+        "chars": chars,
+        "read_min": max(1, round(chars / 600)),
+        "thumb_text": big,
+        "thumb_kicker": kicker,
+        "sources": sources,
+        "publishers": list(dict.fromkeys(s.get("publisher", "") for s in sources if s.get("publisher"))),
+        "primary_count": sum(1 for k in kinds if k in ("公式発表", "公式ドキュメント", "X投稿", "論文")),
+        "has_x_embed": has_x,
+        "share_text": meta.get("share_text") or meta["title"],
     }
     return a, []
 
@@ -168,19 +258,35 @@ def load_articles() -> list[dict]:
     return arts
 
 
-def related(a: dict, arts: list[dict], n: int = 4) -> list[dict]:
-    tags = set(a["tags"])
-    scored = []
-    for b in arts:
-        if b is a:
-            continue
-        s = 2.0 * len(tags & set(b["tags"])) + (1.0 if b["category"] == a["category"] else 0)
-        if s <= 0:
-            continue
-        days = abs((a["date"] - b["date"]).total_seconds()) / 86400
-        scored.append((s - 0.05 * days, b))
-    scored.sort(key=lambda x: x[0], reverse=True)
-    return [b for _, b in scored[:n]]
+def build_related(arts: list[dict], n: int = 4) -> dict[str, list[dict]]:
+    """タグ・カテゴリの重なりで関連記事を選ぶ。全記事×全記事にしない（数千本でも速いように、タグ索引から候補を出す）"""
+    by_tag: dict[str, list[dict]] = defaultdict(list)
+    by_cat: dict[str, list[dict]] = defaultdict(list)
+    for a in arts:
+        by_cat[a["category"]].append(a)
+        for t in a["tags"]:
+            by_tag[t].append(a)
+    out: dict[str, list[dict]] = {}
+    for a in arts:
+        cand: dict[str, float] = {}
+        objs: dict[str, dict] = {}
+        for t in a["tags"]:
+            for b in by_tag[t]:
+                if b is not a:
+                    cand[b["slug"]] = cand.get(b["slug"], 0.0) + 2.0
+                    objs[b["slug"]] = b
+        for b in by_cat[a["category"]][:200]:  # 同カテゴリは新しい200本まで
+            if b is not a:
+                cand[b["slug"]] = cand.get(b["slug"], 0.0) + 1.0
+                objs[b["slug"]] = b
+        scored = []
+        for slug, s in cand.items():
+            b = objs[slug]
+            days = abs((a["date"] - b["date"]).total_seconds()) / 86400
+            scored.append((s - 0.05 * days, b))
+        scored.sort(key=lambda x: x[0], reverse=True)
+        out[a["slug"]] = [b for _, b in scored[:n]]
+    return out
 
 
 # ---------- 構造化データ ----------
@@ -193,9 +299,17 @@ def org_ld() -> dict:
         "alternateName": SITE["site_name_en"],
         "url": abs_url("/"),
         "logo": {"@type": "ImageObject", "url": abs_url("/assets/logo-600.png"), "width": 600, "height": 120},
-        "parentOrganization": {"@type": "Organization", "name": SITE["operator"]["name"], "url": SITE["operator"]["url"]},
+        "parentOrganization": {
+            "@type": "Organization",
+            "name": SITE["operator"]["name"],
+            "url": SITE["operator"]["url"],
+            "address": {"@type": "PostalAddress", "addressLocality": "渋谷区", "addressRegion": "東京都", "addressCountry": "JP"},
+        },
+        "founder": {"@id": abs_url("/about/editor/#person")},
+        "masthead": abs_url("/about/"),
         "publishingPrinciples": abs_url("/about/#policy"),
         "correctionsPolicy": abs_url("/about/#corrections"),
+        "actionableFeedbackPolicy": abs_url("/about/#corrections"),
     }
 
 
@@ -207,22 +321,27 @@ def editor_ld() -> dict:
         "name": e["name"],
         "alternateName": e["name_en"],
         "jobTitle": e["title"],
+        "description": e["short_bio"],
         "url": abs_url("/about/editor/"),
         "worksFor": {"@type": "Organization", "name": SITE["operator"]["name"], "url": SITE["operator"]["url"]},
         "alumniOf": {"@type": "CollegeOrUniversity", "name": "東京大学"},
+        "knowsAbout": ["AI", "広告", "デジタルマーケティング"],
         "sameAs": e["same_as"],
     }
 
 
+def article_images(a: dict) -> list[str]:
+    return [abs_url(f"/og/{a['slug']}.png"), abs_url(f"/og/{a['slug']}.eye.webp"), abs_url(f"/og/{a['slug']}.4x3.webp"), abs_url(f"/og/{a['slug']}.1x1.webp")]
+
+
 def article_ld(a: dict) -> list[dict]:
-    img = abs_url(f"/og/{a['slug']}.png")
     return [
         {
             "@context": "https://schema.org",
             "@type": "NewsArticle",
             "headline": a["title"],
             "description": a["description"],
-            "image": [img],
+            "image": article_images(a),
             "datePublished": a["date"].isoformat(),
             "dateModified": (a["updated"] or a["date"]).isoformat(),
             "author": {"@type": "Organization", "name": f"{SITE['site_name']}編集部", "url": abs_url("/about/")},
@@ -232,6 +351,8 @@ def article_ld(a: dict) -> list[dict]:
             "articleSection": a["cat"]["name"],
             "keywords": a["tags"],
             "inLanguage": "ja",
+            "isAccessibleForFree": True,
+            "wordCount": a["chars"],
             "citation": [s["url"] for s in a["sources"]],
         },
         breadcrumb_ld([("ホーム", "/"), (a["cat"]["name"], f"/category/{a['category']}/"), (a["title"], a["path"])]),
@@ -245,6 +366,14 @@ def breadcrumb_ld(items: list[tuple[str, str]]) -> dict:
         "itemListElement": [
             {"@type": "ListItem", "position": i + 1, "name": name, "item": abs_url(path)} for i, (name, path) in enumerate(items)
         ],
+    }
+
+
+def itemlist_ld(items: list[dict]) -> dict:
+    return {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": abs_url(a["path"])} for i, a in enumerate(items[:30])],
     }
 
 
@@ -282,6 +411,22 @@ def group_by_day(arts: list[dict]) -> list[dict]:
     return list(groups.values())
 
 
+def model_pages(arts: list[dict]) -> list[dict]:
+    """data/models.json とモデル名を含む記事を結びつける"""
+    out = []
+    for m in MODELS:
+        name = m["name"].lower()
+        rel = [a for a in arts if any(t.lower() == name for t in a["tags"]) or name in a["title"].lower()]
+        d = None
+        try:
+            d = datetime.strptime(m["released"], "%Y-%m-%d") if m.get("released") else None
+        except ValueError:
+            pass
+        out.append({**m, "path": f"/models/{m['slug']}/", "articles": rel[:20], "released_dt": d})
+    out.sort(key=lambda m: (m.get("released") or "", m["name"]), reverse=True)
+    return out
+
+
 def build(now: datetime | None = None) -> None:
     now = now or datetime.now(JST)
     arts = load_articles()
@@ -293,13 +438,20 @@ def build(now: datetime | None = None) -> None:
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape(["html"]))
     by_cat: dict[str, list] = defaultdict(list)
     by_tag: dict[str, list] = defaultdict(list)
+    by_month: dict[str, list] = defaultdict(list)
     tag_names: dict[str, str] = {}
+    new_cut = now - timedelta(hours=NEW_HOURS)
     for a in arts:
+        a["is_new"] = a["date"] >= new_cut
         by_cat[a["category"]].append(a)
+        by_month[a["date"].strftime("%Y/%m")].append(a)
         for t in a["tag_items"]:
             by_tag[t["slug"]].append(a)
             tag_names[t["slug"]] = t["name"]
     top_tags = sorted(by_tag.items(), key=lambda kv: (-len(kv[1]), tag_names[kv[0]]))[:24]
+    months = sorted(by_month.keys(), reverse=True)
+    models = model_pages(arts)
+    related = build_related(arts)
 
     env.globals.update(
         site=SITE,
@@ -308,13 +460,17 @@ def build(now: datetime | None = None) -> None:
         abs_url=abs_url,
         fmt_dt=fmt_dt,
         fmt_date=fmt_date,
-        ago=lambda d: fmt_ago(d, now),
+        fmt_short=fmt_short,
         v=asset_version(),
         now=now,
         year=now.year,
         top_tags=[{"slug": s, "name": tag_names[s], "count": len(v)} for s, v in top_tags],
         latest_update=arts[0]["date"] if arts else now,
+        today_count=sum(1 for a in arts if a["date"].date() == now.date()),
         cat_counts={k: len(v) for k, v in by_cat.items()},
+        months=[{"key": m, "label": f"{m[:4]}年{int(m[5:])}月", "count": len(by_month[m]), "path": f"/archive/{m}/"} for m in months[:12]],
+        models_top=models[:6],
+        total_articles=len(arts),
     )
 
     def render(tpl: str, **ctx) -> str:
@@ -331,7 +487,7 @@ def build(now: datetime | None = None) -> None:
             render(
                 "article.html",
                 a=a,
-                related=related(a, arts),
+                related=related[a["slug"]],
                 newer=arts[i - 1] if i > 0 else None,
                 older=arts[i + 1] if i + 1 < len(arts) else None,
                 ld=article_ld(a),
@@ -350,8 +506,8 @@ def build(now: datetime | None = None) -> None:
     per = SITE["articles_per_page"]
     write("/", render("index.html", hero=arts[:5], days=group_by_day(arts[5:per]), more=len(arts) > per, ld=ld_home, canonical="/"))
 
-    # 一覧（全記事・カテゴリ・タグ）
-    def list_pages(base: str, items: list, title: str, desc: str, crumbs: list, heading: str) -> None:
+    # 一覧（全記事・カテゴリ・タグ・月別）
+    def list_pages(base: str, items: list, title: str, desc: str, crumbs: list, heading: str, noindex_all: bool = False, intro: str = "") -> None:
         pages = paginate(items, per)
         for n, chunk in enumerate(pages, 1):
             path = base if n == 1 else f"{base}page/{n}/"
@@ -362,13 +518,14 @@ def build(now: datetime | None = None) -> None:
                     title=title if n == 1 else f"{title}（{n}ページ目）",
                     heading=heading,
                     desc=desc,
+                    intro=intro,
                     days=group_by_day(chunk),
                     page=n,
                     pages=len(pages),
                     base=base,
                     canonical=path,
-                    ld=[breadcrumb_ld(crumbs)],
-                    noindex=not chunk,
+                    ld=[breadcrumb_ld(crumbs)] + ([itemlist_ld(chunk)] if chunk else []),
+                    noindex=noindex_all or not chunk,
                 ),
             )
 
@@ -383,10 +540,22 @@ def build(now: datetime | None = None) -> None:
         name = tag_names[slug]
         list_pages(
             f"/tag/{slug}/", items, f"{name}の最新ニュース・情報まとめ",
-            f"{name}に関する海外の最新ニュースを日本語でまとめています。公式発表・論文・海外メディアの報道をもとに、ビジネスへの影響まで解説します。",
+            f"{name}に関する海外の最新ニュース{len(items)}本を日本語でまとめています。公式発表・論文・海外メディアの報道をもとに、ビジネスへの影響まで解説します。",
             [("ホーム", "/"), (f"#{name}", f"/tag/{slug}/")], f"#{name}",
+            noindex_all=len(items) < TAG_INDEX_MIN,
+        )
+    for mkey, items in by_month.items():
+        label = f"{mkey[:4]}年{int(mkey[5:])}月"
+        list_pages(
+            f"/archive/{mkey}/", items, f"{label}のAIニュース一覧", f"{label}に公開したAIニュース{len(items)}本の一覧です。",
+            [("ホーム", "/"), (label, f"/archive/{mkey}/")], f"{label}のニュース",
         )
     write("/tag/", render("tags.html", tags=sorted(({"slug": s, "name": tag_names[s], "count": len(v)} for s, v in by_tag.items()), key=lambda t: (-t["count"], t["name"])), canonical="/tag/", ld=[]))
+
+    # AIモデル図鑑（記事データから自動更新される、長く検索されるページ）
+    write("/models/", render("models.html", models=models, canonical="/models/", ld=[breadcrumb_ld([("ホーム", "/"), ("AIモデル図鑑", "/models/")])], updated=max((a["date"] for m in models for a in m["articles"]), default=now)))
+    for m in models:
+        write(m["path"], render("model.html", m=m, canonical=m["path"], noindex=not m["articles"], ld=[breadcrumb_ld([("ホーム", "/"), ("AIモデル図鑑", "/models/"), (m["name"], m["path"])])]))
 
     # 固定ページ
     for p in sorted(PAGES.glob("*.md")):
@@ -404,14 +573,14 @@ def build(now: datetime | None = None) -> None:
 
     # 検索用インデックス・フィード・サイトマップ
     write("/search.json", json.dumps(
-        [{"t": a["title"], "d": a["description"], "u": u(a["path"]), "c": a["cat"]["name"], "g": a["tags"], "p": a["date"].strftime("%Y/%m/%d")} for a in arts],
+        [{"t": a["title"], "d": a["description"], "u": u(a["path"]), "c": a["cat"]["name"], "g": a["tags"], "p": a["date"].strftime("%Y/%m/%d")} for a in arts[: SITE.get("search_index_max", 3000)]],
         ensure_ascii=False, separators=(",", ":"),
     ))
     write("/feed.xml", rss(arts[:40], now))
-    write("/sitemap.xml", sitemap(arts, by_cat, by_tag, now))
+    write("/sitemap.xml", sitemap(arts, by_cat, by_tag, by_month, models, now))
     write("/news-sitemap.xml", news_sitemap(arts, now))
     write("/robots.txt", robots())
-    write("/llms.txt", llms(arts))
+    write("/llms.txt", llms(arts, models))
     if SITE.get("indexnow_key"):
         write(f"/{SITE['indexnow_key']}.txt", SITE["indexnow_key"])
     write("/.nojekyll", "")
@@ -422,7 +591,10 @@ def build(now: datetime | None = None) -> None:
 
 
 def warn_quality(arts: list[dict]) -> None:
-    """ビルドは止めないが、編集方針から外れているものを知らせる"""
+    """ビルドは止めないが、編集方針から外れているものを知らせる（記者はこれを見て直す）"""
+    heads_by_day: dict[str, Counter] = defaultdict(Counter)
+    for a in arts:
+        heads_by_day[a["date"].strftime("%Y-%m-%d")][a["title"][:6]] += 1
     for a in arts:
         w = []
         if not 20 <= len(a["title"]) <= 60:
@@ -431,10 +603,23 @@ def warn_quality(arts: list[dict]) -> None:
             w.append(f"descriptionが{len(a['description'])}字")
         if a["chars"] < 1200:
             w.append(f"本文が{a['chars']}字と短い")
+        if a["chars"] > 3600:
+            w.append(f"本文が{a['chars']}字と長い（3,000字が上限の目安）")
         if a["tag_items"] and any(t["slug"].startswith("t-") for t in a["tag_items"]):
             w.append("未登録の日本語タグ: " + ", ".join(t["name"] for t in a["tag_items"] if t["slug"].startswith("t-")))
         if "日本のビジネスへの影響" not in a["body"]:
             w.append("「日本のビジネスへの影響」の見出しがない")
+        if a["primary_count"] == 0:
+            w.append("一次情報（公式発表・X投稿・論文）が sources にない")
+        elif a["sources"][0]["kind"] == "報道":
+            w.append("sources の先頭が報道（一次情報を先頭に）")
+        if a["updated"] and a["updated"] < a["date"]:
+            w.append("updated が date より前")
+        hit = [p for p in BANNED_PHRASES if p in re.sub(r"<[^>]+>", "", a["body"])]
+        if hit:
+            w.append("使わない言い回し: " + "、".join(hit))
+        if heads_by_day[a["date"].strftime("%Y-%m-%d")][a["title"][:6]] > 1:
+            w.append(f"同じ日の別記事とタイトル冒頭が同じ（{a['title'][:6]}…）。製品名から始めるなど変える")
         if w:
             print(f"  注意 {a['slug']}: " + " / ".join(w))
 
@@ -442,25 +627,34 @@ def warn_quality(arts: list[dict]) -> None:
 def rss(arts: list[dict], now: datetime) -> str:
     items = []
     for a in arts:
+        og_url = abs_url("/og/" + a["slug"] + ".png")
+        body = a["body"].replace(f'href="{BASE_PATH}/', f'href="{BASE_URL}/')
+        summary = "".join(f"<li>{html.escape(s)}</li>" for s in a["summary"])
+        full = f"<ul>{summary}</ul>{body}<p><a href=\"{abs_url(a['path'])}\">記事の全文と情報源はAIデジマで</a></p>"
         items.append(
             f"""<item><title>{xml_escape(a['title'])}</title><link>{abs_url(a['path'])}</link><guid isPermaLink="true">{abs_url(a['path'])}</guid>
-<pubDate>{a['date'].strftime('%a, %d %b %Y %H:%M:%S %z')}</pubDate><category>{xml_escape(a['cat']['name'])}</category>
-<description>{xml_escape(a['description'])}</description><enclosure url="{abs_url('/og/' + a['slug'] + '.png')}" type="image/png" length="0"/></item>"""
+<pubDate>{a['date'].strftime('%a, %d %b %Y %H:%M:%S %z')}</pubDate><dc:creator>{xml_escape(SITE['site_name'])}編集部</dc:creator><category>{xml_escape(a['cat']['name'])}</category>
+<description>{xml_escape(a['description'])}</description><content:encoded><![CDATA[{full}]]></content:encoded>
+<media:thumbnail url="{og_url}" width="1200" height="630"/><enclosure url="{og_url}" type="image/png" length="0"/></item>"""
         )
     return f"""<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/"><channel>
 <title>{xml_escape(SITE['site_name'])}</title><link>{abs_url('/')}</link><description>{xml_escape(SITE['tagline'])}</description><language>ja</language>
-<lastBuildDate>{now.strftime('%a, %d %b %Y %H:%M:%S %z')}</lastBuildDate><atom:link href="{abs_url('/feed.xml')}" rel="self" type="application/rss+xml"/>
+<lastBuildDate>{now.strftime('%a, %d %b %Y %H:%M:%S %z')}</lastBuildDate><atom:link href="{abs_url('/feed.xml')}" rel="self" type="application/rss+xml"/><atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<image><url>{abs_url('/assets/logo-600.png')}</url><title>{xml_escape(SITE['site_name'])}</title><link>{abs_url('/')}</link></image>
 {''.join(items)}
 </channel></rss>
 """
 
 
-def sitemap(arts: list[dict], by_cat: dict, by_tag: dict, now: datetime) -> str:
-    urls = [(abs_url("/"), now), (abs_url("/news/"), now)]
+def sitemap(arts: list[dict], by_cat: dict, by_tag: dict, by_month: dict, models: list[dict], now: datetime) -> str:
+    latest = arts[0]["date"] if arts else now
+    urls = [(abs_url("/"), latest), (abs_url("/news/"), latest), (abs_url("/models/"), latest)]
     urls += [(abs_url(a["path"]), a["updated"] or a["date"]) for a in arts]
     urls += [(abs_url(f"/category/{c}/"), v[0]["date"]) for c, v in by_cat.items()]
-    urls += [(abs_url(f"/tag/{t}/"), v[0]["date"]) for t, v in by_tag.items() if len(v) >= 2]
+    urls += [(abs_url(f"/tag/{t}/"), v[0]["date"]) for t, v in by_tag.items() if len(v) >= TAG_INDEX_MIN]
+    urls += [(abs_url(f"/archive/{m}/"), v[0]["date"]) for m, v in by_month.items()]
+    urls += [(abs_url(m["path"]), m["articles"][0]["date"]) for m in models if m["articles"]]
     urls += [(abs_url(p), None) for p in ("/about/", "/about/editor/", "/privacy/")]
     body = "".join(
         f"<url><loc>{xml_escape(loc)}</loc>" + (f"<lastmod>{d.isoformat()}</lastmod>" if d else "") + "</url>" for loc, d in urls
@@ -472,7 +666,7 @@ def news_sitemap(arts: list[dict], now: datetime) -> str:
     """Googleニュース用サイトマップ（直近48時間の記事だけ）"""
     cutoff = now - timedelta(hours=SITE["news_sitemap_hours"])
     body = "".join(
-        f"""<url><loc>{xml_escape(abs_url(a['path']))}</loc><news:news><news:publication><news:name>{xml_escape(SITE['site_name'])}</news:name><news:language>ja</news:language></news:publication><news:publication_date>{a['date'].isoformat()}</news:publication_date><news:title>{xml_escape(a['title'])}</news:title></news:news></url>"""
+        f"""<url><loc>{xml_escape(abs_url(a['path']))}</loc><news:news><news:publication><news:name>{xml_escape(SITE['site_name'])}</news:name><news:language>ja</news:language></news:publication><news:publication_date>{a['date'].isoformat()}</news:publication_date><news:title>{xml_escape(a['title'])}</news:title><news:keywords>{xml_escape(', '.join(a['tags']))}</news:keywords></news:news></url>"""
         for a in arts
         if a["date"] >= cutoff
     )
@@ -490,19 +684,21 @@ Sitemap: {abs_url('/news-sitemap.xml')}
 """
 
 
-def llms(arts: list[dict]) -> str:
+def llms(arts: list[dict], models: list[dict]) -> str:
     lines = [
         f"# {SITE['site_name']}（{SITE['site_name_en']}）",
         "",
         f"> {SITE['description']}",
         "",
         f"運営: {SITE['operator']['name']}（{SITE['operator']['url']}） / 編集長: {SITE['editor']['name']}",
-        f"編集方針: {abs_url('/about/')}",
+        f"編集方針: {abs_url('/about/')} / 情報源の種別（公式発表・X投稿・論文・報道）を各記事の末尾に明記しています。",
         "",
         "## 最新記事",
         "",
     ]
     lines += [f"- [{a['title']}]({abs_url(a['path'])}): {a['description']}" for a in arts[:50]]
+    lines += ["", "## AIモデル図鑑（料金・仕様の比較。記事から自動更新）", "", f"- {abs_url('/models/')}"]
+    lines += [f"- [{m['name']}]({abs_url(m['path'])}): {m['vendor']}" + (f"、入力${m['input_per_m']}/出力${m['output_per_m']}（100万トークン）" if m.get("input_per_m") is not None else "") for m in models[:30]]
     lines += ["", "## カテゴリ", ""]
     lines += [f"- [{c['name']}]({abs_url('/category/' + c['slug'] + '/')}): {c['desc']}" for c in TAXO["categories"]]
     return "\n".join(lines) + "\n"

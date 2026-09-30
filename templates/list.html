@@ -8,6 +8,7 @@
       <header class="list-head">
         <h1>{{ heading }}{% if page > 1 %}<small>{{ page }}ページ目</small>{% endif %}</h1>
         <p>{{ desc }}</p>
+        {% if intro %}<p>{{ intro }}</p>{% endif %}
       </header>
       {% if days and days[0]['items'] %}{{ day_list(days) }}{% else %}<p class="empty">まだ記事がありません。</p>{% endif %}
       {% if pages > 1 %}

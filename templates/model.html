@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% from "_macros.html" import item, sidebar %}
+{% set title = m.name ~ "の料金・提供開始日・仕様と関連ニュース" %}
+{% set desc = m.vendor ~ "の" ~ m.name ~ (("（" ~ m.released ~ "提供開始）") if m.released else "") ~ "の公式料金・コンテキスト長などの仕様と、AIデジマの関連記事をまとめています。" ~ (m.note or "") %}
+{% block main %}
+<div class="wrap">
+  <nav class="crumbs" aria-label="パンくず"><a href="{{ u('/') }}">ホーム</a><a href="{{ u('/models/') }}">AIモデル図鑑</a><span>{{ m.name }}</span></nav>
+  <div class="layout">
+    <div class="content">
+      <header class="list-head">
+        <p class="author-role">{{ m.vendor }}{% if m.tier %} ／ {{ m.tier }}{% endif %}</p>
+        <h1>{{ m.name }}</h1>
+        {% if m.note %}<p>{{ m.note }}</p>{% endif %}
+      </header>
+      <div class="table-wrap spec-table">
+        <table>
+          <tbody>
+            <tr><th>提供元</th><td>{{ m.vendor }}</td></tr>
+            <tr><th>提供開始日（現地）</th><td>{{ m.released or '未確認' }}</td></tr>
+            <tr><th>API料金（100万トークン）</th><td>{% if m.input_per_m is not none %}入力 ${{ '%.2f' | format(m.input_per_m) }}{% if m.cached_input_per_m is not none %} ／ キャッシュ入力 ${{ '%.2f' | format(m.cached_input_per_m) }}{% endif %} ／ 出力 ${{ '%.2f' | format(m.output_per_m) }}{% else %}未確認{% endif %}</td></tr>
+            <tr><th>コンテキスト長</th><td>{% if m.context %}約{{ '{:,}'.format(m.context) }}トークン{% else %}未確認{% endif %}</td></tr>
+            <tr><th>最大出力</th><td>{% if m.max_output %}{{ '{:,}'.format(m.max_output) }}トークン{% else %}未確認{% endif %}</td></tr>
+            <tr><th>知識の期限</th><td>{{ m.knowledge_cutoff or '未確認' }}</td></tr>
+            {% if m.api_id %}<tr><th>APIのモデル名</th><td><code>{{ m.api_id }}</code></td></tr>{% endif %}
+            <tr><th>状態</th><td>{% if m.status == 'deprecated' %}置き換え済み{% elif m.status == 'preview' %}プレビュー{% else %}提供中{% endif %}</td></tr>
+            {% if m.official_url %}<tr><th>公式発表</th><td><a href="{{ m.official_url }}" target="_blank" rel="noopener">{{ m.official_url }}</a></td></tr>{% endif %}
+          </tbody>
+        </table>
+      </div>
+      <p class="models-note">値は公式発表・公式ドキュメントで確認できたもののみ。料金や仕様は変わることがあるので、利用前に公式ページで確認してください。</p>
+      <h2 class="section-h">{{ m.name }}の記事</h2>
+      {% if m.articles %}{% for a in m.articles %}{{ item(a) }}{% endfor %}{% else %}<p class="empty">まだ記事がありません。</p>{% endif %}
+      <p><a class="btn-more" href="{{ u('/models/') }}">AIモデル図鑑に戻る</a></p>
+    </div>
+    {{ sidebar(site, cats, cat_counts, top_tags) }}
+  </div>
+</div>
+{% endblock %}

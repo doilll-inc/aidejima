@@ -1,6 +1,11 @@
-"""記事ごとのOG画像（SNSシェア用 1200x630 PNG）と一覧用サムネイル（640x336 WebP）、ロゴ画像を作る。
+"""記事ごとの画像を作る。元記事の画像は著作権上使えないので、社名・製品名を大きく置いた文字カードを自動生成する。
 
-元記事の画像は著作権上使えないので、社名・製品名を大きく置いた文字のカードを自動生成する。
+出力（dist/og/<slug>.*）
+  .png       1200x630  SNSシェア用（タイトル入り）
+  .eye.webp  1200x675  記事ページのアイキャッチ（16:9）
+  .webp       640x360  一覧のサムネイル（16:9）
+  .4x3.webp  1200x900  構造化データ用（Googleは16:9・4:3・1:1の3種を推奨）
+  .1x1.webp 1200x1200  同上
 同じ内容の画像は .cache/og/ から再利用する（CIでは actions/cache で持ち越す）。
 """
 from __future__ import annotations
@@ -15,13 +20,14 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parent
 FONTS = ROOT / "fonts"
-DESIGN_VERSION = "4"  # カードのデザインを変えたら上げる（キャッシュを捨てるため）
+DESIGN_VERSION = "5"  # カードのデザインを変えたら上げる（キャッシュを捨てるため）
 
 INK = (17, 20, 24)
 PAPER = (255, 255, 255)
 ORANGE = (255, 106, 26)
 MUTED = (138, 147, 160)
 TITLE = (214, 218, 224)
+VARIANTS = {"eye.webp": (1200, 675), "webp": (640, 360), "4x3.webp": (1200, 900), "1x1.webp": (1200, 1200)}
 
 
 def font(weight: str, size: int) -> ImageFont.FreeTypeFont:
@@ -121,8 +127,11 @@ def render_og(a: dict, cat: dict, out: Path) -> None:
     draw_fan(d, 64, 52, 56)
     d.text((132, 80), "AIデジマ", font=font("Heavy", 40), fill=PAPER, anchor="lm")
     chip(d, 64, 150, cat["name"], font("Bold", 26), hex_rgb(cat["color"]), 22, 50)
-    kw = fit_font(a["thumb_text"], "Heavy", 1070, 132, 64)
-    d.text((60, 300), a["thumb_text"], font=kw, fill=PAPER, anchor="lm")
+    y = 300
+    if a.get("thumb_kicker"):
+        d.text((64, 236), a["thumb_kicker"], font=font("Bold", 34), fill=MUTED, anchor="lm")
+    kw = fit_font(a["thumb_text"], "Heavy", 1070, 124, 60)
+    d.text((60, y), a["thumb_text"], font=kw, fill=PAPER, anchor="lm")
     tf = font("Bold", 40)
     for i, line in enumerate(wrap(a["title"], tf, 1070, 3)):
         d.text((64, 400 + i * 58), line, font=tf, fill=TITLE)
@@ -131,19 +140,24 @@ def render_og(a: dict, cat: dict, out: Path) -> None:
     im.save(out, "PNG", optimize=True)
 
 
-def render_card(a: dict, cat: dict) -> Image.Image:
-    """サイト内で使うカード（タイトルは画像の外に出るので入れない。社名・製品名を大きく）"""
-    W, H = 1200, 630
+def render_card(a: dict, cat: dict, W: int = 1200, H: int = 675) -> Image.Image:
+    """サイト内で使うカード（タイトルは画像の外に出るので入れない。社名を小さく、製品名を大きく）"""
     im = Image.new("RGB", (W, H), INK)
     d = ImageDraw.Draw(im)
     watermark(d, W, H)
     color = hex_rgb(cat["color"])
-    d.rectangle((0, 0, 18, H), fill=color)
-    d.text((78, 96), cat["name"], font=font("Bold", 42), fill=color, anchor="lm")
-    kw = fit_font(a["thumb_text"], "Heavy", 1040, 176, 72)
-    d.text((72, H / 2 + 20), a["thumb_text"], font=kw, fill=PAPER, anchor="lm")
-    draw_fan(d, 78, H - 120, 52)
-    d.text((142, H - 90), "AIデジマ", font=font("Heavy", 34), fill=(150, 157, 168), anchor="lm")
+    s = min(W, H) / 675  # 4:3・1:1 は縦が伸びるので、短辺基準で拡大
+    bar = int(18 * s)
+    d.rectangle((0, 0, bar, H), fill=color)
+    pad = int(78 * s)
+    d.text((pad, int(96 * s)), cat["name"], font=font("Bold", int(42 * s)), fill=color, anchor="lm")
+    cy = H / 2 + 20 * s
+    if a.get("thumb_kicker"):
+        d.text((pad - 4 * s, cy - 92 * s), a["thumb_kicker"], font=font("Bold", int(46 * s)), fill=MUTED, anchor="lm")
+    kw = fit_font(a["thumb_text"], "Heavy", int(W - pad - 60 * s), int(176 * s), int(64 * s))
+    d.text((pad - 6 * s, cy), a["thumb_text"], font=kw, fill=PAPER, anchor="lm")
+    draw_fan(d, pad, H - 120 * s, 52 * s)
+    d.text((pad + 64 * s, H - 90 * s), "AIデジマ", font=font("Heavy", int(34 * s)), fill=(150, 157, 168), anchor="lm")
     return im
 
 
@@ -154,16 +168,21 @@ def render_all(arts: list[dict], cats: dict, out_dir: Path, cache_dir: Path) -> 
     for a in arts:
         cat = cats[a["category"]]
         key = hashlib.sha1(
-            json.dumps([DESIGN_VERSION, a["thumb_text"], a["title"], cat["slug"], cat["color"], a["date"].strftime("%Y%m%d")], ensure_ascii=False).encode()
+            json.dumps(
+                [DESIGN_VERSION, a["thumb_text"], a.get("thumb_kicker", ""), a["title"], cat["slug"], cat["color"], a["date"].strftime("%Y%m%d")],
+                ensure_ascii=False,
+            ).encode()
         ).hexdigest()[:16]
-        files = {"png": cache_dir / f"{key}.png", "eye.webp": cache_dir / f"{key}.eye.webp", "webp": cache_dir / f"{key}.webp"}
+        files = {"png": cache_dir / f"{key}.png", **{ext: cache_dir / f"{key}.{ext}" for ext in VARIANTS}}
         if all(f.exists() for f in files.values()):
             stats["cached"] += 1
         else:
             render_og(a, cat, files["png"])
-            card = render_card(a, cat)
-            card.save(files["eye.webp"], "WEBP", quality=84, method=6)
-            card.resize((640, 336), Image.LANCZOS).save(files["webp"], "WEBP", quality=84, method=6)
+            for ext, (w, h) in VARIANTS.items():
+                if ext == "webp":
+                    render_card(a, cat, 1200, 675).resize((w, h), Image.LANCZOS).save(files[ext], "WEBP", quality=84, method=6)
+                else:
+                    render_card(a, cat, w, h).save(files[ext], "WEBP", quality=82, method=6)
             stats["new"] += 1
         for ext, f in files.items():
             shutil.copyfile(f, out_dir / f"{a['slug']}.{ext}")

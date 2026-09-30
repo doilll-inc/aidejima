@@ -2,7 +2,7 @@
   "site_name": "AIデジマ",
   "site_name_en": "AI DEJIMA",
   "tagline": "海外のAIニュースを、日本語で最速に。",
-  "description": "AIデジマは、海外に散らばるAIの一次情報（OpenAI・Google・Anthropicなどの公式発表、論文、開発者コミュニティ）を毎日集め、日本語で最速に届けるニュースメディアです。ビジネス・マーケティングでの使いどころまで解説します。",
+  "description": "AIデジマは、海外に散らばるAIの一次情報（OpenAI・Google・Anthropicなどの公式発表、著名人のX投稿、論文、開発者コミュニティ）を毎日集め、日本語で最速に届けるニュースメディアです。ビジネス・マーケティングでの使いどころまで解説します。",
   "base_url": "https://doilll-inc.github.io/aidejima",
   "base_path": "/aidejima",
   "lang": "ja",
@@ -13,9 +13,8 @@
     "title": "AIデジマ編集長／株式会社ドイル 代表取締役",
     "bio": "東京大学卒業。小学生時代をルクセンブルクで過ごす。Googleで広告営業・コンサルティングに3年間従事し、中小企業から大企業まで500社以上を担当。2026年に株式会社ドイルを設立し、広告運用・クリエイティブ制作とAIエージェント開発を手がける。海外の一次情報を日本のビジネスの言葉に置き換えることをテーマに、AIデジマを立ち上げた。",
     "short_bio": "株式会社ドイル代表。元Googleで広告営業・コンサルティングに従事し500社以上を担当。広告運用とAIエージェント開発を手がける。",
-    "same_as": [
-      "https://doilll.com"
-    ]
+    "x_handle": "tomo_doilll",
+    "same_as": ["https://doilll.com", "https://x.com/tomo_doilll"]
   },
   "operator": {
     "name": "株式会社ドイル",
@@ -27,5 +26,8 @@
   "google_site_verification": "",
   "indexnow_key": "b9dc6017626b95299c4b519387d383af",
   "articles_per_page": 30,
-  "news_sitemap_hours": 48
+  "news_sitemap_hours": 48,
+  "tag_index_min": 3,
+  "new_badge_hours": 12,
+  "search_index_max": 3000
 }

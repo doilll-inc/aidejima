@@ -14,8 +14,11 @@
 <meta property="og:description" content="{{ desc or site.description }}">
 <meta property="og:url" content="{{ abs_url(canonical) }}">
 <meta property="og:image" content="{{ abs_url(og_image or '/assets/og-default.png') }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
+{% if site.editor.x_handle %}<meta name="twitter:creator" content="@{{ site.editor.x_handle }}">{% endif %}
 <meta name="theme-color" content="#111418">
 <link rel="icon" href="{{ u('/assets/favicon.svg') }}" type="image/svg+xml">
 <link rel="icon" href="{{ u('/assets/favicon-48.png') }}" sizes="48x48" type="image/png">
@@ -33,9 +36,9 @@
 <a class="skip" href="#main">本文へ移動</a>
 <div class="topbar">
   <div class="wrap topbar-inner">
-    <span class="topbar-date">{{ fmt_date(now) }}</span>
+    <span class="topbar-date" data-today>{{ fmt_date(now) }}</span>
     <span class="topbar-tag">{{ site.tagline }}</span>
-    <span class="topbar-upd">最終更新 <time datetime="{{ latest_update.isoformat() }}">{{ latest_update.strftime('%m/%d %H:%M') }}</time></span>
+    <span class="topbar-upd">最終更新 <time datetime="{{ latest_update.isoformat() }}" data-rel="{{ latest_update.strftime('%m/%d %H:%M') }}">{{ latest_update.strftime('%m/%d %H:%M') }}</time></span>
   </div>
 </div>
 <header class="masthead">
@@ -54,6 +57,7 @@
       <a href="{{ u('/') }}" {% if canonical == '/' %}aria-current="page"{% endif %}>ホーム</a>
       <a href="{{ u('/news/') }}" {% if canonical == '/news/' or canonical.startswith('/news/page/') %}aria-current="page"{% endif %}>新着</a>
       {% for c in cats %}<a href="{{ u('/category/' ~ c.slug ~ '/') }}" style="--c:{{ c.color }}" {% if canonical.startswith('/category/' ~ c.slug ~ '/') %}aria-current="page"{% endif %}>{{ c.name }}</a>{% endfor %}
+      <a class="catnav-models" href="{{ u('/models/') }}" {% if canonical.startswith('/models/') %}aria-current="page"{% endif %}>モデル図鑑</a>
     </div>
   </nav>
 </header>
@@ -69,7 +73,9 @@
     <nav class="footer-nav" aria-label="サイト情報">
       <a href="{{ u('/about/') }}">AIデジマについて・編集方針</a>
       <a href="{{ u('/about/editor/') }}">編集長 {{ site.editor.name }}</a>
+      <a href="{{ u('/models/') }}">AIモデル図鑑</a>
       <a href="{{ u('/tag/') }}">タグ一覧</a>
+      {% if months %}<a href="{{ u(months[0].path) }}">月別アーカイブ</a>{% endif %}
       <a href="{{ u('/feed.xml') }}">RSS</a>
       <a href="{{ u('/privacy/') }}">プライバシーポリシー</a>
       <a href="{{ site.operator.url }}" target="_blank" rel="noopener">運営会社 {{ site.operator.name }}</a>
@@ -77,6 +83,20 @@
   </div>
   <p class="wrap copyright">© {{ year }} {{ site.operator.name }} / {{ site.site_name }}</p>
 </footer>
+<script>
+(function(){
+  // 静的サイトなので「n分前」「今日の日付」はブラウザ側で計算する（ビルド時刻のまま古くならないように）
+  var n=Date.now(),W="月火水木金土日";
+  document.querySelectorAll('time[data-rel]').forEach(function(t){
+    var d=new Date(t.getAttribute('datetime')),m=Math.round((n-d)/60000);
+    if(isNaN(m))return;
+    if(m<1)m=1;
+    if(m<60)t.textContent=m+'分前';else if(m<1440)t.textContent=Math.floor(m/60)+'時間前';else t.textContent=t.getAttribute('data-rel');
+  });
+  var d=new Date(),el=document.querySelector('[data-today]');
+  if(el)el.textContent=d.getFullYear()+'年'+(d.getMonth()+1)+'月'+d.getDate()+'日（'+W[(d.getDay()+6)%7]+'）';
+})();
+</script>
 {% block scripts %}{% endblock %}
 </body>
 </html>

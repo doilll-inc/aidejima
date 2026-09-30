@@ -2,11 +2,15 @@
 <a class="cat" href="{{ u('/category/' ~ a.category ~ '/') }}" style="--c:{{ a.cat.color }}">{{ a.cat.name }}</a>
 {%- endmacro %}
 
+{% macro when(a, mode='time') -%}
+{% if mode == 'rel' %}<time datetime="{{ a.date.isoformat() }}" data-rel="{{ fmt_short(a.date) }}">{{ fmt_short(a.date) }}</time>{% else %}<time datetime="{{ a.date.isoformat() }}">{{ a.date.strftime('%H:%M') }}</time>{% endif %}
+{%- endmacro %}
+
 {% macro item(a, heading='h3') -%}
-<article class="item">
-  <a class="thumb" href="{{ u(a.path) }}" tabindex="-1" aria-hidden="true"><img src="{{ u('/og/' ~ a.slug ~ '.webp') }}" width="640" height="336" alt="" loading="lazy" decoding="async"></a>
+<article class="item{% if a.is_new %} is-new{% endif %}">
+  <a class="thumb" href="{{ u(a.path) }}" tabindex="-1" aria-hidden="true"><img src="{{ u('/og/' ~ a.slug ~ '.webp') }}" width="640" height="360" alt="" loading="lazy" decoding="async"></a>
   <div class="item-body">
-    <div class="meta">{{ cat_label(a) }}<time datetime="{{ a.date.isoformat() }}">{{ a.date.strftime('%H:%M') }}</time></div>
+    <div class="meta">{{ cat_label(a) }}{{ when(a) }}{% if a.is_new %}<span class="new">NEW</span>{% endif %}{% if a.primary_count %}<span class="primary-mark" title="公式発表・X投稿・論文などの一次情報を確認した記事">一次情報</span>{% endif %}</div>
     <{{ heading }} class="item-title"><a href="{{ u(a.path) }}">{{ a.title }}</a></{{ heading }}>
     <p class="item-desc">{{ a.description }}</p>
     {% if a.publishers %}<p class="item-src">出典：{{ a.publishers[:3] | join('・') }}</p>{% endif %}
@@ -34,8 +38,20 @@
     </div>
   </div>
   <p class="editor-bio">{{ site.editor.short_bio }}</p>
-  <a class="more-link" href="{{ u('/about/editor/') }}">プロフィールを見る</a>
+  <p class="editor-links"><a class="more-link" href="{{ u('/about/editor/') }}">プロフィールを見る</a>{% if site.editor.x_handle %}<a class="x-link" href="https://x.com/{{ site.editor.x_handle }}" target="_blank" rel="noopener">X @{{ site.editor.x_handle }}</a>{% endif %}</p>
 </section>
+{%- endmacro %}
+
+{% macro models_box(models_top) -%}
+{% if models_top %}
+<section class="side-box">
+  <p class="side-h">AIモデル図鑑</p>
+  <ul class="side-models">
+    {% for m in models_top %}<li><a href="{{ u(m.path) }}"><span>{{ m.name }}</span><span class="n">{% if m.input_per_m is not none %}${{ m.input_per_m }} / ${{ m.output_per_m }}{% else %}{{ m.vendor }}{% endif %}</span></a></li>{% endfor %}
+  </ul>
+  <a class="more-link" href="{{ u('/models/') }}">料金・仕様を比べる</a>
+</section>
+{% endif %}
 {%- endmacro %}
 
 {% macro sidebar(site, cats, cat_counts, top_tags) -%}
@@ -47,6 +63,7 @@
       {% for c in cats %}<li><a href="{{ u('/category/' ~ c.slug ~ '/') }}" style="--c:{{ c.color }}"><span>{{ c.name }}</span><span class="n">{{ cat_counts.get(c.slug, 0) }}</span></a></li>{% endfor %}
     </ul>
   </section>
+  {{ models_box(models_top) }}
   {% if top_tags %}
   <section class="side-box">
     <p class="side-h">注目のタグ</p>
@@ -54,9 +71,18 @@
     <a class="more-link" href="{{ u('/tag/') }}">タグ一覧</a>
   </section>
   {% endif %}
+  {% if months %}
+  <section class="side-box">
+    <p class="side-h">月別アーカイブ</p>
+    <ul class="side-cats side-months">
+      {% for m in months %}<li><a href="{{ u(m.path) }}"><span>{{ m.label }}</span><span class="n">{{ m.count }}</span></a></li>{% endfor %}
+    </ul>
+  </section>
+  {% endif %}
   <section class="side-box side-follow">
     <p class="side-h">毎日の新着を受け取る</p>
     <a class="btn-rss" href="{{ u('/feed.xml') }}">RSSで購読する</a>
+    {% if site.editor.x_handle %}<a class="btn-x" href="https://x.com/{{ site.editor.x_handle }}" target="_blank" rel="noopener">編集長のXをフォロー</a>{% endif %}
   </section>
 </aside>
 {%- endmacro %}
