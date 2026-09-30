@@ -1,5 +1,5 @@
 /* AIデジマ — 海外のAIニュースを、日本語で最速に。
-   墨（#111418）× 出島のオレンジ（#ff6a1a）。本文は読みやすさ優先でシステムフォント */
+   白地×墨の文字×出島のオレンジ（#ff6a1a）。読みやすさ優先で常に白地（ダークモードにしない）。本文はシステムフォント */
 :root {
   --bg: #ffffff;
   --bg-soft: #f5f6f7;
@@ -9,8 +9,8 @@
   --line: #e4e6e9;
   --accent: #ff6a1a;
   --accent-text: #c2410c;
-  --topbar: #111418;
-  --topbar-ink: #c9ced6;
+  --topbar: #f5f6f7;
+  --topbar-ink: #3d444e;
   --shadow: 0 1px 2px rgba(17, 20, 24, 0.06);
   --radius: 10px;
   --wrap: 1180px;
@@ -20,21 +20,6 @@
     Meiryo, sans-serif;
   color-scheme: light;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0e1114;
-    --bg-soft: #161a1f;
-    --ink: #e8eaed;
-    --ink-2: #bcc2ca;
-    --muted: #8a93a0;
-    --line: #262b32;
-    --accent-text: #ff8a4c;
-    --topbar: #07090b;
-    --shadow: none;
-    color-scheme: dark;
-  }
-}
-
 *,
 *::before,
 *::after {
@@ -105,6 +90,7 @@ a:hover {
   background: var(--topbar);
   color: var(--topbar-ink);
   font-size: 12px;
+  border-bottom: 1px solid var(--line);
 }
 .topbar-inner {
   display: flex;
@@ -115,7 +101,7 @@ a:hover {
   overflow: hidden;
 }
 .topbar-tag {
-  color: #fff;
+  color: var(--ink);
   font-weight: 600;
 }
 .topbar-upd {
@@ -123,7 +109,7 @@ a:hover {
   font-variant-numeric: tabular-nums;
 }
 .topbar-upd time {
-  color: var(--accent);
+  color: var(--accent-text);
   font-weight: 700;
 }
 .masthead {
@@ -633,7 +619,7 @@ a:hover {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: var(--ink);
+  background: #fff1e8;
 }
 .editor-avatar .fan {
   width: 32px;
@@ -830,8 +816,9 @@ a:hover {
 .post-body pre {
   padding: 16px;
   overflow-x: auto;
-  background: #111418;
-  color: #e8eaed;
+  background: var(--bg-soft);
+  color: var(--ink);
+  border: 1px solid var(--line);
   border-radius: 8px;
   font-size: 14px;
   line-height: 1.6;
@@ -1112,13 +1099,14 @@ a:hover {
 
 /* ---------- フッター ---------- */
 .footer {
-  background: var(--topbar);
-  color: var(--topbar-ink);
+  background: var(--bg-soft);
+  color: var(--ink-2);
+  border-top: 1px solid var(--line);
   padding: 40px 0 24px;
   font-size: 13px;
 }
 .footer .logo {
-  color: #fff;
+  color: var(--ink);
 }
 .footer-inner {
   display: grid;
@@ -1137,13 +1125,13 @@ a:hover {
   align-content: start;
 }
 .footer-nav a:hover {
-  color: #fff;
+  color: var(--accent-text);
 }
 .copyright {
   margin-top: 32px;
   padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: #7c8490;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
   font-size: 12px;
 }
 
@@ -1302,7 +1290,7 @@ a:hover {
   color: #fff;
 }
 .sources .kind[data-kind="X投稿"] {
-  background: #111418;
+  background: #1f2937;
   color: #fff;
 }
 .sources .kind[data-kind="論文"] {
@@ -1446,4 +1434,64 @@ a:hover {
 .content .btn-more {
   display: inline-block;
   padding: 10px 24px;
+}
+
+/* ---------- 記事の連続表示（TechCrunch型） ---------- */
+.post-col {
+  min-width: 0;
+}
+.chain-on .post-nav {
+  display: none; /* 次の記事が下に続くので、前後リンクは出さない（HTMLには残す） */
+}
+.chain-sep {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 56px 0 8px;
+  color: var(--accent-text);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+.chain-sep::before,
+.chain-sep::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background: var(--line);
+}
+.chain-sep::before {
+  flex: 0 0 24px;
+  background: var(--accent);
+}
+.post.chained .post-head {
+  padding-top: 0;
+}
+.chain-status {
+  min-height: 40px;
+  margin: 32px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* ---------- 出典：一次情報と参考にした報道 ---------- */
+.sources h2 + ul {
+  margin-bottom: 4px;
+}
+.press {
+  margin-top: 10px;
+  font-size: 13px;
+}
+.press summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-weight: 700;
+  padding: 4px 0;
+}
+.press ul {
+  margin-top: 6px;
+}
+.press li {
+  font-size: 13px;
 }

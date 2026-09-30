@@ -20,13 +20,25 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parent
 FONTS = ROOT / "fonts"
-DESIGN_VERSION = "5"  # カードのデザインを変えたら上げる（キャッシュを捨てるため）
+DESIGN_VERSION = "6"  # カードのデザインを変えたら上げる（キャッシュを捨てるため）
 
 INK = (17, 20, 24)
 PAPER = (255, 255, 255)
 ORANGE = (255, 106, 26)
 MUTED = (138, 147, 160)
-TITLE = (214, 218, 224)
+TITLE = (61, 68, 78)
+SUB = (107, 115, 128)
+
+
+def mix(c, other, t: float) -> tuple[int, int, int]:
+    """c に other を t の割合で混ぜる（t=0.9 なら other 寄り）"""
+    return tuple(round(a * (1 - t) + b * t) for a, b in zip(c, other))  # type: ignore[return-value]
+
+
+def palette(cat: dict) -> dict:
+    """カテゴリ色から、明るいカードの配色を作る（白地に近い淡い色＋濃い文字。黒地は読みにくいので使わない）"""
+    c = hex_rgb(cat["color"])
+    return {"bg": mix(c, PAPER, 0.9), "mark": mix(c, PAPER, 0.8), "accent": c, "label": mix(c, INK, 0.3)}
 VARIANTS = {"eye.webp": (1200, 675), "webp": (640, 360), "4x3.webp": (1200, 900), "1x1.webp": (1200, 1200)}
 
 
@@ -121,43 +133,45 @@ def watermark(d: ImageDraw.ImageDraw, W: int, H: int, color=(24, 28, 34)) -> Non
 def render_og(a: dict, cat: dict, out: Path) -> None:
     """SNSシェア用（タイトル入り）"""
     W, H = 1200, 630
-    im = Image.new("RGB", (W, H), INK)
+    pal = palette(cat)
+    im = Image.new("RGB", (W, H), pal["bg"])
     d = ImageDraw.Draw(im)
-    watermark(d, W, H)
+    watermark(d, W, H, pal["mark"])
     draw_fan(d, 64, 52, 56)
-    d.text((132, 80), "AIデジマ", font=font("Heavy", 40), fill=PAPER, anchor="lm")
-    chip(d, 64, 150, cat["name"], font("Bold", 26), hex_rgb(cat["color"]), 22, 50)
+    d.text((132, 80), "AIデジマ", font=font("Heavy", 40), fill=INK, anchor="lm")
+    chip(d, 64, 150, cat["name"], font("Bold", 26), pal["accent"], 22, 50)
     y = 300
     if a.get("thumb_kicker"):
-        d.text((64, 236), a["thumb_kicker"], font=font("Bold", 34), fill=MUTED, anchor="lm")
+        d.text((64, 236), a["thumb_kicker"], font=font("Bold", 34), fill=SUB, anchor="lm")
     kw = fit_font(a["thumb_text"], "Heavy", 1070, 124, 60)
-    d.text((60, y), a["thumb_text"], font=kw, fill=PAPER, anchor="lm")
+    d.text((60, y), a["thumb_text"], font=kw, fill=INK, anchor="lm")
     tf = font("Bold", 40)
     for i, line in enumerate(wrap(a["title"], tf, 1070, 3)):
         d.text((64, 400 + i * 58), line, font=tf, fill=TITLE)
-    d.text((W - 64, H - 44), a["date"].strftime("%Y.%m.%d"), font=font("Medium", 26), fill=MUTED, anchor="rm")
+    d.text((W - 64, H - 44), a["date"].strftime("%Y.%m.%d"), font=font("Medium", 26), fill=SUB, anchor="rm")
     d.rectangle((0, H - 10, W, H), fill=ORANGE)
     im.save(out, "PNG", optimize=True)
 
 
 def render_card(a: dict, cat: dict, W: int = 1200, H: int = 675) -> Image.Image:
     """サイト内で使うカード（タイトルは画像の外に出るので入れない。社名を小さく、製品名を大きく）"""
-    im = Image.new("RGB", (W, H), INK)
+    pal = palette(cat)
+    im = Image.new("RGB", (W, H), pal["bg"])
     d = ImageDraw.Draw(im)
-    watermark(d, W, H)
-    color = hex_rgb(cat["color"])
+    watermark(d, W, H, pal["mark"])
+    color = pal["accent"]
     s = min(W, H) / 675  # 4:3・1:1 は縦が伸びるので、短辺基準で拡大
     bar = int(18 * s)
     d.rectangle((0, 0, bar, H), fill=color)
     pad = int(78 * s)
-    d.text((pad, int(96 * s)), cat["name"], font=font("Bold", int(42 * s)), fill=color, anchor="lm")
+    d.text((pad, int(96 * s)), cat["name"], font=font("Bold", int(42 * s)), fill=pal["label"], anchor="lm")
     cy = H / 2 + 20 * s
     if a.get("thumb_kicker"):
-        d.text((pad - 4 * s, cy - 92 * s), a["thumb_kicker"], font=font("Bold", int(46 * s)), fill=MUTED, anchor="lm")
+        d.text((pad - 4 * s, cy - 92 * s), a["thumb_kicker"], font=font("Bold", int(46 * s)), fill=SUB, anchor="lm")
     kw = fit_font(a["thumb_text"], "Heavy", int(W - pad - 60 * s), int(176 * s), int(64 * s))
-    d.text((pad - 6 * s, cy), a["thumb_text"], font=kw, fill=PAPER, anchor="lm")
+    d.text((pad - 6 * s, cy), a["thumb_text"], font=kw, fill=INK, anchor="lm")
     draw_fan(d, pad, H - 120 * s, 52 * s)
-    d.text((pad + 64 * s, H - 90 * s), "AIデジマ", font=font("Heavy", int(34 * s)), fill=(150, 157, 168), anchor="lm")
+    d.text((pad + 64 * s, H - 90 * s), "AIデジマ", font=font("Heavy", int(34 * s)), fill=SUB, anchor="lm")
     return im
 
 
@@ -204,12 +218,12 @@ def render_brand(assets: Path, site: dict) -> None:
         ic.save(assets / name, "PNG", optimize=True)
     # サイト全体のデフォルトOG
     W, H = 1200, 630
-    im = Image.new("RGB", (W, H), INK)
+    im = Image.new("RGB", (W, H), (255, 246, 240))
     d = ImageDraw.Draw(im)
     for poly in fan_polygons(1010, 420, 520, 190, spread=100, panels=3, gap=4):
-        d.polygon(poly, fill=(26, 30, 36))
+        d.polygon(poly, fill=(255, 226, 208))
     draw_fan(d, 72, 150, 120)
-    d.text((72, 360), site["site_name"], font=font("Heavy", 120), fill=PAPER, anchor="ls")
+    d.text((72, 360), site["site_name"], font=font("Heavy", 120), fill=INK, anchor="ls")
     d.text((76, 440), site["tagline"], font=font("Bold", 44), fill=TITLE, anchor="ls")
     d.rectangle((0, H - 10, W, H), fill=ORANGE)
     im.save(assets / "og-default.png", "PNG", optimize=True)

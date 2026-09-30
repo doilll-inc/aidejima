@@ -15,7 +15,8 @@
 <div class="wrap">
   <nav class="crumbs" aria-label="パンくず"><a href="{{ u('/') }}">ホーム</a><a href="{{ u('/category/' ~ a.category ~ '/') }}">{{ a.cat.name }}</a><span>{{ a.title }}</span></nav>
   <div class="layout layout-article">
-    <article class="post">
+    <div class="post-col">
+    <article class="post" data-url="{{ u(a.path) }}" data-title="{{ a.title }} - {{ site.site_name }}" data-next="{{ u(older.path) if older else '' }}">
       <header class="post-head">
         <div class="meta">{{ cat_label(a) }}{% if a.primary_count %}<span class="primary-mark">一次情報</span>{% endif %}</div>
         <h1 class="post-title">{{ a.title }}</h1>
@@ -49,11 +50,23 @@
       </aside>
       {% endif %}
 
+      {% set prim = a.sources | rejectattr('kind', 'equalto', '報道') | list %}
+      {% set press = a.sources | selectattr('kind', 'equalto', '報道') | list %}
       <section class="sources">
-        <h2>情報源</h2>
+        {% if prim %}
+        <h2>一次情報</h2>
         <ul>
-          {% for s in a.sources %}<li><span class="kind kind-{{ loop.index }}" data-kind="{{ s.kind }}">{{ s.kind }}</span><span class="pub">{{ s.publisher }}</span><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.title }}</a></li>{% endfor %}
+          {% for s in prim %}<li><span class="kind" data-kind="{{ s.kind }}">{{ s.kind }}</span><span class="pub">{{ s.publisher }}</span><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.title }}</a></li>{% endfor %}
         </ul>
+        {% endif %}
+        {% if press %}
+        <details class="press"{% if not prim %} open{% endif %}>
+          <summary>参考にした報道（{{ press | length }}件）</summary>
+          <ul>
+            {% for s in press %}<li><span class="pub">{{ s.publisher }}</span><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.title }}</a></li>{% endfor %}
+          </ul>
+        </details>
+        {% endif %}
         <p class="sources-note">AIデジマは、公式発表・X投稿・論文などの一次情報を起点に、複数の情報源を照合して日本語でまとめています。情報の収集・翻訳・下書き・照合にはAIを使い、編集方針と最終責任は編集長が負います（<a href="{{ u('/about/#ai') }}">AIの活用について</a>）。誤りを見つけた場合は<a href="{{ u('/about/#corrections') }}">訂正のご連絡</a>をお願いします。</p>
       </section>
 
@@ -98,6 +111,9 @@
       </section>
       {% endif %}
     </article>
+    <div class="chain" aria-live="polite"></div>
+    <div class="chain-status" data-list="{{ u('/news/') }}"></div>
+    </div>
     <aside class="sidebar sidebar-article">
       {% if a.toc | length >= 3 %}
       <nav class="side-box side-toc" aria-label="目次">
@@ -112,10 +128,6 @@
 </div>
 {% endblock %}
 {% block scripts %}
-<script>
-document.querySelectorAll('.share-copy').forEach(function(b){b.addEventListener('click',function(){
-  navigator.clipboard.writeText(b.dataset.url).then(function(){b.textContent='コピーしました';setTimeout(function(){b.textContent='リンクをコピー'},1600)});
-});});
-</script>
-{% if a.has_x_embed %}<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>{% endif %}
+<script src="{{ u('/assets/chain.js') }}?v={{ v }}" defer></script>
+{% if a.has_x_embed %}<script id="x-widgets" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>{% endif %}
 {% endblock %}
