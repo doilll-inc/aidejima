@@ -13,7 +13,9 @@ import json
 import re
 import shutil
 import sys
+import urllib.error
 import urllib.parse
+import urllib.request
 from collections import Counter, defaultdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -109,24 +111,129 @@ def source_kind(s: dict) -> str:
 # ---------- 記事の読み込み ----------
 
 X_EMBED_RE = re.compile(r"\{\{\s*x:\s*(https?://(?:x\.com|twitter\.com)/[^\s}]+)\s*\}\}")
+CARD_RE = re.compile(r"\{\{\s*card:\s*(https?://[^|}\s]+)\s*\|\s*([^|}]+?)\s*(?:\|\s*([^}]+?)\s*)?\}\}")
+YT_RE = re.compile(r"\{\{\s*youtube:\s*(https?://[^\s}]+)\s*\}\}")
+QUOTE_RE = re.compile(r"^:::quote[ \t]+(https?://\S+)[ \t]*\|[ \t]*(.+?)[ \t]*\n(.*?)\n:::[ \t]*$", re.M | re.S)
+OEMBED_CACHE = ROOT / ".cache" / "x_oembed"
+MAX_QUOTES = 3
 
 
-def expand_embeds(md_text: str) -> tuple[str, bool]:
-    """本文の {{x:https://x.com/<user>/status/<id>}} を X の公式埋め込みに置き換える"""
-    found = False
+def x_oembed(url: str) -> tuple[str | None, str]:
+    """Xの公開oEmbed（無料・APIキー不要）で投稿の実在を確かめ、埋め込みHTMLを返す。
+    戻り値: (html, 状態) 状態は ok / missing（存在しない・非公開） / offline（通信できずキャッシュもない）"""
+    m = re.search(r"/status/(\d+)", url)
+    if not m:
+        return None, "missing"
+    cache = OEMBED_CACHE / f"{m.group(1)}.json"
+    if cache.exists():
+        data = json.loads(cache.read_text(encoding="utf-8"))
+        return (data.get("html"), "ok") if data.get("html") else (None, "missing")
+    q = urllib.parse.urlencode({"url": url, "omit_script": "true", "dnt": "true", "lang": "ja", "hide_thread": "true"})
+    try:
+        req = urllib.request.Request(f"https://publish.twitter.com/oembed?{q}", headers={"User-Agent": "Mozilla/5.0 AIDejimaBuild"})
+        with urllib.request.urlopen(req, timeout=15) as r:
+            data = json.loads(r.read())
+    except urllib.error.HTTPError as e:
+        if e.code == 404:
+            OEMBED_CACHE.mkdir(parents=True, exist_ok=True)
+            cache.write_text(json.dumps({"html": None, "status": 404}), encoding="utf-8")
+            return None, "missing"
+        return None, "offline"
+    except (urllib.error.URLError, TimeoutError, OSError):
+        return None, "offline"
+    OEMBED_CACHE.mkdir(parents=True, exist_ok=True)
+    cache.write_text(json.dumps({"html": data.get("html"), "author": data.get("author_name")}, ensure_ascii=False), encoding="utf-8")
+    return data.get("html"), "ok"
 
-    def rep(m: re.Match) -> str:
-        nonlocal found
-        found = True
-        url = m.group(1).replace("twitter.com", "x.com")
-        user = re.search(r"x\.com/([^/]+)/status/", url)
-        label = f"@{user.group(1)} の投稿を見る（X）" if user else "Xの投稿を見る"
+
+def initial_badge(label: str) -> str:
+    ch = next((c for c in label if c.isalnum()), "?")
+    return html.escape(ch.upper())
+
+
+def render_quote(url: str, label: str, inner: str) -> tuple[str, list[str]]:
+    """:::quote の中身 → 公式発表の引用カード（原文＋日本語訳＋出典）"""
+    warns = []
+    orig = " ".join(ln.lstrip(">").strip() for ln in inner.splitlines() if ln.strip().startswith(">"))
+    ja = " ".join(ln.strip() for ln in inner.splitlines() if ln.strip() and not ln.strip().startswith(">"))
+    if not orig:
+        warns.append(f"引用カードに原文（> で始まる行）がない: {url}")
+    if not ja:
+        warns.append(f"引用カードに日本語訳がない: {url}")
+    if len(re.findall(r"[.!?](?:\s|$)", orig)) > 2:
+        warns.append(f"引用カードの原文が2文を超えている（引用は必要な範囲だけ）: {url}")
+    kind = source_kind({"url": url})
+    host = host_of(url)
+    e = html.escape
+    return (
+        f'\n\n<figure class="pq">'
+        f'<figcaption class="pq-head"><span class="pq-badge" aria-hidden="true">{initial_badge(label)}</span>'
+        f'<span class="pq-src">{e(label)}</span><span class="pq-kind" data-kind="{e(kind)}">{e(kind)}</span></figcaption>'
+        + (f'<blockquote class="pq-orig" cite="{e(url)}" lang="en"><p>{e(orig)}</p></blockquote>' if orig else "")
+        + (f'<p class="pq-ja">{e(ja)}</p>' if ja else "")
+        + f'<a class="pq-link" href="{e(url)}" target="_blank" rel="noopener">原文を読む（{e(host)}）</a></figure>\n\n'
+    ), warns
+
+
+def expand_embeds(md_text: str) -> tuple[str, bool, list[str]]:
+    """本文の埋め込み記法をHTMLに置き換える。
+      {{x:https://x.com/<user>/status/<id>}}   X投稿（ビルド時にoEmbedで実在を確認して本文ごと埋め込む）
+      :::quote <URL> | <発信元・ページ名> … :::  公式発表の引用カード（> 行=原文、それ以外=日本語訳）
+      {{card:<URL>|<ページのタイトル>|<発信元>}}  公式ページへのリンクカード
+      {{youtube:<URL>}}                          公式動画（クリックで再生）
+    戻り値: (置き換え後のMarkdown, X埋め込みがあるか, 警告)"""
+    found_x = False
+    warns: list[str] = []
+    e = html.escape
+
+    def rep_x(m: re.Match) -> str:
+        nonlocal found_x
+        url = m.group(1).replace("twitter.com", "x.com").split("?")[0]
+        embed, state = x_oembed(url)
+        if state == "missing":
+            warns.append(f"X投稿が見つからない（存在しない・削除・非公開）ので埋め込みを外した: {url}")
+            return ""
+        found_x = True
+        if state == "offline" or not embed:
+            user = re.search(r"x\.com/([^/]+)/status/", url)
+            label = f"@{user.group(1)} の投稿を見る（X）" if user else "Xの投稿を見る"
+            embed = f'<blockquote class="twitter-tweet" data-dnt="true" data-lang="ja"><a href="{e(url)}">{e(label)}</a></blockquote>'
+        return f'\n\n<figure class="x-embed">{embed.strip()}</figure>\n\n'
+
+    def rep_quote(m: re.Match) -> str:
+        out, w = render_quote(m.group(1), m.group(2), m.group(3))
+        warns.extend(w)
+        return out
+
+    def rep_card(m: re.Match) -> str:
+        url, title, pub = m.group(1), m.group(2), m.group(3) or ""
+        kind = source_kind({"url": url})
         return (
-            f'\n\n<figure class="x-embed"><blockquote class="twitter-tweet" data-dnt="true" data-lang="ja">'
-            f'<a href="{html.escape(url)}">{html.escape(label)}</a></blockquote></figure>\n\n'
+            f'\n\n<a class="lcard" href="{e(url)}" target="_blank" rel="noopener"><span class="lcard-kind" data-kind="{e(kind)}">{e(kind)}</span>'
+            f'<span class="lcard-title">{e(title)}</span><span class="lcard-meta">{e(pub)}{" · " if pub else ""}{e(host_of(url))}</span></a>\n\n'
         )
 
-    return X_EMBED_RE.sub(rep, md_text), found
+    def rep_yt(m: re.Match) -> str:
+        url = m.group(1)
+        vid = re.search(r"(?:v=|youtu\.be/|/embed/|/shorts/|/live/)([A-Za-z0-9_-]{6,})", url)
+        if not vid:
+            warns.append(f"YouTubeのURLから動画IDが取れない: {url}")
+            return ""
+        v = e(vid.group(1))
+        return (
+            f'\n\n<figure class="yt"><a class="yt-embed" href="{e(url)}" data-id="{v}" data-title="YouTube" target="_blank" rel="noopener">'
+            f'<img src="https://i.ytimg.com/vi/{v}/hqdefault.jpg" width="480" height="360" alt="" loading="lazy" decoding="async"><span class="yt-play" aria-hidden="true"></span>'
+            f'<span class="visually-hidden">動画を再生</span></a><figcaption>公式動画（YouTube）</figcaption></figure>\n\n'
+        )
+
+    quotes = len(QUOTE_RE.findall(md_text))
+    if quotes > MAX_QUOTES:
+        warns.append(f"引用カードが{quotes}個ある（{MAX_QUOTES}個まで。記事の本文が主になるように）")
+    md_text = QUOTE_RE.sub(rep_quote, md_text)
+    md_text = X_EMBED_RE.sub(rep_x, md_text)
+    md_text = CARD_RE.sub(rep_card, md_text)
+    md_text = YT_RE.sub(rep_yt, md_text)
+    return md_text, found_x, warns
 
 
 def pick_thumb_text(meta: dict) -> tuple[str, str]:
@@ -190,7 +297,7 @@ def parse_article(path: Path) -> tuple[dict | None, list[str]]:
         return None, errs
 
     slug = path.stem
-    body_md, has_x = expand_embeds(m.group(2).strip())
+    body_md, has_x, embed_warns = expand_embeds(m.group(2).strip())
     body_html, toc = render_body(body_md)
     updated = datetime.fromisoformat(meta["updated"]) if meta.get("updated") else None
     sources = [{**s, "kind": source_kind(s), "host": host_of(s.get("url", ""))} for s in meta["sources"]]
@@ -215,6 +322,9 @@ def parse_article(path: Path) -> tuple[dict | None, list[str]]:
         "publishers": list(dict.fromkeys(s.get("publisher", "") for s in sources if s.get("publisher"))),
         "primary_count": sum(1 for k in kinds if k in ("公式発表", "公式ドキュメント", "X投稿", "論文")),
         "has_x_embed": has_x,
+        "embed_warns": embed_warns,
+        "quote_count": body_html.count('class="pq"'),
+        "x_count": body_html.count('class="x-embed"'),
         "share_text": meta.get("share_text") or meta["title"],
     }
     return a, []
@@ -596,7 +706,9 @@ def warn_quality(arts: list[dict]) -> None:
     for a in arts:
         heads_by_day[a["date"].strftime("%Y-%m-%d")][a["title"][:6]] += 1
     for a in arts:
-        w = []
+        w = list(a["embed_warns"])
+        if a["quote_count"] + a["x_count"] == 0:
+            w.append("一次情報の引用カード（:::quote）もX投稿の埋め込みもない。公式発表の原文かX投稿を1つ以上入れる")
         if not 20 <= len(a["title"]) <= 60:
             w.append(f"titleが{len(a['title'])}字")
         if not 70 <= len(a["description"]) <= 140:
