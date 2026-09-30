@@ -10,6 +10,7 @@ import argparse
 import hashlib
 import html
 import json
+import os
 import re
 import shutil
 import sys
@@ -27,7 +28,8 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 import og
 
 ROOT = Path(__file__).resolve().parent
-DIST = ROOT / "dist"
+# 出力先。複数の作業者が同時にビルドするときは AIDEJIMA_DIST で分ける
+DIST = Path(os.environ["AIDEJIMA_DIST"]) if os.environ.get("AIDEJIMA_DIST") else ROOT / "dist"
 CONTENT = ROOT / "content" / "articles"
 PAGES = ROOT / "content" / "pages"
 JST = timezone(timedelta(hours=9))
