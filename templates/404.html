@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% from "_macros.html" import item %}
+{% set title = "ページが見つかりません" %}
+{% block main %}
+<div class="wrap narrow">
+  <header class="list-head"><h1>ページが見つかりません</h1><p>URLが変わったか、削除された可能性があります。<a href="{{ u('/') }}">トップページ</a>か<a href="{{ u('/search/') }}">記事検索</a>からお探しください。</p></header>
+  <h2 class="section-h">新着ニュース</h2>
+  {% for a in latest %}{{ item(a) }}{% endfor %}
+</div>
+{% endblock %}

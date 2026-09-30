@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% from "_macros.html" import cat_label, editor_card %}
+{% set title = a.title %}{% set desc = a.description %}{% set og_type = 'article' %}
+{% block head %}
+<meta property="article:published_time" content="{{ a.date.isoformat() }}">
+{% if a.updated %}<meta property="article:modified_time" content="{{ a.updated.isoformat() }}">{% endif %}
+<meta property="article:section" content="{{ a.cat.name }}">
+{% for t in a.tags %}<meta property="article:tag" content="{{ t }}">
+{% endfor %}
+{% endblock %}
+{% block body_class %}article-page{% endblock %}
+{% block main %}
+<div class="wrap">
+  <nav class="crumbs" aria-label="パンくず"><a href="{{ u('/') }}">ホーム</a><a href="{{ u('/category/' ~ a.category ~ '/') }}">{{ a.cat.name }}</a><span>{{ a.title }}</span></nav>
+  <div class="layout layout-article">
+    <article class="post">
+      <header class="post-head">
+        <div class="meta">{{ cat_label(a) }}</div>
+        <h1 class="post-title">{{ a.title }}</h1>
+        <div class="byline">
+          <time datetime="{{ a.date.isoformat() }}">{{ fmt_dt(a.date) }}</time>
+          {% if a.updated %}<span class="updated">更新 <time datetime="{{ a.updated.isoformat() }}">{{ fmt_dt(a.updated) }}</time></span>{% endif %}
+          <span class="by">文：AIデジマ編集部 ／ 編集：<a href="{{ u('/about/editor/') }}">{{ site.editor.name }}</a></span>
+        </div>
+      </header>
+      <figure class="post-eyecatch"><img src="{{ u('/og/' ~ a.slug ~ '.eye.webp') }}" width="1200" height="630" alt="" fetchpriority="high"></figure>
+
+      <section class="tldr" aria-label="3行でわかる">
+        <p class="tldr-h">3行でわかる</p>
+        <ol>{% for s in a.summary %}<li>{{ s }}</li>{% endfor %}</ol>
+      </section>
+
+      {% if a.toc | length >= 3 %}
+      <nav class="toc" aria-label="目次">
+        <p class="toc-h">目次</p>
+        <ol>{% for t in a.toc %}<li><a href="#{{ t.id }}">{{ t.title }}</a></li>{% endfor %}</ol>
+      </nav>
+      {% endif %}
+
+      <div class="post-body">{{ a.body | safe }}</div>
+
+      {% if a.editor_note %}
+      <aside class="editor-note">
+        <p class="editor-note-h">編集長ひとこと <span>— {{ site.editor.name }}</span></p>
+        <p>{{ a.editor_note }}</p>
+      </aside>
+      {% endif %}
+
+      <section class="sources">
+        <h2>情報源</h2>
+        <ul>
+          {% for s in a.sources %}<li><span class="pub">{{ s.publisher }}</span><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.title }}</a></li>{% endfor %}
+        </ul>
+        <p class="sources-note">AIデジマは海外の公式発表・報道・論文を確認し、日本語で要点と背景をまとめています。誤りを見つけた場合は<a href="{{ u('/about/#corrections') }}">訂正のご連絡</a>をお願いします。</p>
+      </section>
+
+      <div class="post-tags">{% for t in a.tag_items %}<a class="tag" href="{{ u('/tag/' ~ t.slug ~ '/') }}">#{{ t.name }}</a>{% endfor %}</div>
+
+      {% set share_url = abs_url(a.path) %}
+      <div class="share" aria-label="シェア">
+        <a class="share-x" href="https://x.com/intent/post?text={{ (a.title ~ ' | AIデジマ') | urlencode }}&amp;url={{ share_url | urlencode }}" target="_blank" rel="noopener">Xでシェア</a>
+        <a class="share-hb" href="https://b.hatena.ne.jp/entry/s/{{ share_url.split('://')[1] }}" target="_blank" rel="noopener">はてブ</a>
+        <a class="share-line" href="https://social-plugins.line.me/lineit/share?url={{ share_url | urlencode }}" target="_blank" rel="noopener">LINE</a>
+        <button class="share-copy" type="button" data-url="{{ share_url }}">リンクをコピー</button>
+      </div>
+
+      <section class="author-box">
+        <span class="editor-avatar" aria-hidden="true">{% include "_fan.svg" %}</span>
+        <div>
+          <p class="author-role">この記事の編集責任者</p>
+          <a class="editor-name" href="{{ u('/about/editor/') }}">{{ site.editor.name }}</a>
+          <p class="editor-title">{{ site.editor.title }}</p>
+          <p class="editor-bio">{{ site.editor.short_bio }}</p>
+        </div>
+      </section>
+
+      <nav class="post-nav" aria-label="前後の記事">
+        {% if older %}<a class="prev" href="{{ u(older.path) }}"><span>前の記事</span>{{ older.title }}</a>{% endif %}
+        {% if newer %}<a class="next" href="{{ u(newer.path) }}"><span>次の記事</span>{{ newer.title }}</a>{% endif %}
+      </nav>
+
+      {% if related %}
+      <section class="related">
+        <h2>関連する記事</h2>
+        <div class="related-grid">
+          {% for r in related %}
+          <a class="rel" href="{{ u(r.path) }}">
+            <img src="{{ u('/og/' ~ r.slug ~ '.webp') }}" width="640" height="336" alt="" loading="lazy" decoding="async">
+            <span class="rel-cat" style="--c:{{ r.cat.color }}">{{ r.cat.name }}</span>
+            <span class="rel-title">{{ r.title }}</span>
+          </a>
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+    </article>
+    <aside class="sidebar sidebar-article">
+      {% if a.toc | length >= 3 %}
+      <nav class="side-box side-toc" aria-label="目次">
+        <p class="side-h">目次</p>
+        <ol>{% for t in a.toc %}<li><a href="#{{ t.id }}">{{ t.title }}</a></li>{% endfor %}</ol>
+      </nav>
+      {% endif %}
+      {{ editor_card(site) }}
+    </aside>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+document.querySelectorAll('.share-copy').forEach(function(b){b.addEventListener('click',function(){
+  navigator.clipboard.writeText(b.dataset.url).then(function(){b.textContent='コピーしました';setTimeout(function(){b.textContent='リンクをコピー'},1600)});
+});});
+</script>
+{% endblock %}

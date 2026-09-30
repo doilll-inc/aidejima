@@ -1,0 +1,89 @@
+{
+  "_comment": "categories=カテゴリ定義（EDITORIAL.mdと揃える）。tag_slugs=日本語タグのURL用の英語slug（英数字だけのタグは自動で小文字ハイフン化される）",
+  "categories": [
+    {
+      "slug": "models",
+      "name": "AIモデル",
+      "desc": "新しいAIモデルの性能・ベンチマーク・料金の最新情報",
+      "color": "#ff6a1a"
+    },
+    {
+      "slug": "products",
+      "name": "サービス・アプリ",
+      "desc": "ChatGPT・Gemini・Claudeなどの新機能やAIアプリ、エージェント製品の最新情報",
+      "color": "#3b82f6"
+    },
+    {
+      "slug": "business",
+      "name": "ビジネス・業界",
+      "desc": "AI企業の資金調達・買収・IPO・決算・提携などの業界ニュース",
+      "color": "#16a34a"
+    },
+    {
+      "slug": "research",
+      "name": "研究・論文",
+      "desc": "AIの最新論文と研究機関の発表をわかりやすく解説",
+      "color": "#8b5cf6"
+    },
+    {
+      "slug": "marketing",
+      "name": "マーケ・広告・検索",
+      "desc": "広告・SEO・検索・SNS・ECとAIの交差点で起きていること",
+      "color": "#e11d74"
+    },
+    {
+      "slug": "dev",
+      "name": "開発・オープンソース",
+      "desc": "API・SDK・開発ツール・オープンソースモデル・ローカルLLMの最新情報",
+      "color": "#0d9488"
+    },
+    {
+      "slug": "policy",
+      "name": "規制・安全性",
+      "desc": "AIの法規制・訴訟・安全性・セキュリティ事故と社会的な議論",
+      "color": "#d97706"
+    },
+    {
+      "slug": "hardware",
+      "name": "半導体・インフラ",
+      "desc": "GPU・AIチップ・データセンター・電力などAIインフラの動向",
+      "color": "#0891b2"
+    }
+  ],
+  "tag_slugs": {
+    "エージェント": "agents",
+    "開発者": "developers",
+    "資金調達": "funding",
+    "買収": "acquisition",
+    "安全性": "safety",
+    "セキュリティ": "security",
+    "プライバシー": "privacy",
+    "規制": "regulation",
+    "米国政府": "us-government",
+    "検索": "search",
+    "広告": "ads",
+    "パブリッシャー": "publishers",
+    "オープンソース": "open-source",
+    "中国AI": "china-ai",
+    "世界モデル": "world-models",
+    "プロンプト": "prompting",
+    "画像生成": "image-generation",
+    "動画生成": "video-generation",
+    "音声": "voice",
+    "ローカルLLM": "local-llm",
+    "ベンチマーク": "benchmarks",
+    "著作権": "copyright",
+    "訴訟": "lawsuits",
+    "半導体": "semiconductors",
+    "データセンター": "data-centers",
+    "論文": "papers",
+    "教育": "education",
+    "医療": "healthcare",
+    "ロボット": "robotics",
+    "決算": "earnings",
+    "人事": "people",
+    "料金": "pricing",
+    "オフィス": "office",
+    "日本": "japan"
+  }
+}

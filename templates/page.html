@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% set title = page.title %}{% set desc = page.description %}
+{% block main %}
+<div class="wrap narrow">
+  <nav class="crumbs" aria-label="パンくず"><a href="{{ u('/') }}">ホーム</a><span>{{ page.title }}</span></nav>
+  <article class="post page">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post-body">{{ body | safe }}</div>
+  </article>
+</div>
+{% endblock %}

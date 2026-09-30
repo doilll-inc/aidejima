@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% set title = page.title %}{% set desc = page.description %}{% set og_type = 'profile' %}
+{% block main %}
+<div class="wrap narrow">
+  <nav class="crumbs" aria-label="パンくず"><a href="{{ u('/') }}">ホーム</a><a href="{{ u('/about/') }}">AIデジマについて</a><span>編集長</span></nav>
+  <article class="post page profile">
+    <header class="profile-head">
+      <span class="editor-avatar editor-avatar-lg" aria-hidden="true">{% include "_fan.svg" %}</span>
+      <div>
+        <p class="author-role">AIデジマ 編集長</p>
+        <h1 class="post-title">{{ site.editor.name }}<small>{{ site.editor.name_kana }} / {{ site.editor.name_en }}</small></h1>
+        <p class="editor-title">{{ site.editor.title }}</p>
+      </div>
+    </header>
+    <div class="post-body">{{ body | safe }}</div>
+  </article>
+</div>
+{% endblock %}

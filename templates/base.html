@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% set full_title = (title ~ " - " ~ site.site_name) if title else (site.site_name ~ " | " ~ site.tagline) %}
+<title>{{ full_title }}</title>
+<meta name="description" content="{{ desc or site.description }}">
+<link rel="canonical" href="{{ abs_url(canonical) }}">
+{% if noindex %}<meta name="robots" content="noindex,follow">{% else %}<meta name="robots" content="max-image-preview:large">{% endif %}
+<meta property="og:site_name" content="{{ site.site_name }}">
+<meta property="og:type" content="{{ og_type or 'website' }}">
+<meta property="og:title" content="{{ title or site.site_name }}">
+<meta property="og:description" content="{{ desc or site.description }}">
+<meta property="og:url" content="{{ abs_url(canonical) }}">
+<meta property="og:image" content="{{ abs_url(og_image or '/assets/og-default.png') }}">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#111418">
+<link rel="icon" href="{{ u('/assets/favicon.svg') }}" type="image/svg+xml">
+<link rel="icon" href="{{ u('/assets/favicon-48.png') }}" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="{{ u('/assets/apple-touch-icon.png') }}">
+<link rel="alternate" type="application/rss+xml" title="{{ site.site_name }}" href="{{ u('/feed.xml') }}">
+<link rel="stylesheet" href="{{ u('/assets/style.css') }}?v={{ v }}">
+{% if site.google_site_verification %}<meta name="google-site-verification" content="{{ site.google_site_verification }}">{% endif %}
+{% block head %}{% endblock %}
+{% for item in ld %}<script type="application/ld+json">{{ item | tojson }}</script>
+{% endfor %}
+{% if site.ga4_id %}<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4_id }}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','{{ site.ga4_id }}');</script>{% endif %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+<a class="skip" href="#main">本文へ移動</a>
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <span class="topbar-date">{{ fmt_date(now) }}</span>
+    <span class="topbar-tag">{{ site.tagline }}</span>
+    <span class="topbar-upd">最終更新 <time datetime="{{ latest_update.isoformat() }}">{{ latest_update.strftime('%m/%d %H:%M') }}</time></span>
+  </div>
+</div>
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <a class="logo" href="{{ u('/') }}" aria-label="{{ site.site_name }} トップへ">
+      {% include "_fan.svg" %}
+      <span class="logo-text">AI<b>デジマ</b></span>
+    </a>
+    <p class="masthead-lead">海外のAI一次情報を、毎日日本語で。</p>
+    <form class="search-mini" action="{{ u('/search/') }}" role="search">
+      <input type="search" name="q" placeholder="記事を検索" aria-label="記事を検索">
+    </form>
+  </div>
+  <nav class="catnav" aria-label="カテゴリ">
+    <div class="wrap catnav-inner">
+      <a href="{{ u('/') }}" {% if canonical == '/' %}aria-current="page"{% endif %}>ホーム</a>
+      <a href="{{ u('/news/') }}" {% if canonical == '/news/' or canonical.startswith('/news/page/') %}aria-current="page"{% endif %}>新着</a>
+      {% for c in cats %}<a href="{{ u('/category/' ~ c.slug ~ '/') }}" style="--c:{{ c.color }}" {% if canonical.startswith('/category/' ~ c.slug ~ '/') %}aria-current="page"{% endif %}>{{ c.name }}</a>{% endfor %}
+    </div>
+  </nav>
+</header>
+<main id="main">
+{% block main %}{% endblock %}
+</main>
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <a class="logo logo-sm" href="{{ u('/') }}">{% include "_fan.svg" %}<span class="logo-text">AI<b>デジマ</b></span></a>
+      <p>{{ site.description }}</p>
+    </div>
+    <nav class="footer-nav" aria-label="サイト情報">
+      <a href="{{ u('/about/') }}">AIデジマについて・編集方針</a>
+      <a href="{{ u('/about/editor/') }}">編集長 {{ site.editor.name }}</a>
+      <a href="{{ u('/tag/') }}">タグ一覧</a>
+      <a href="{{ u('/feed.xml') }}">RSS</a>
+      <a href="{{ u('/privacy/') }}">プライバシーポリシー</a>
+      <a href="{{ site.operator.url }}" target="_blank" rel="noopener">運営会社 {{ site.operator.name }}</a>
+    </nav>
+  </div>
+  <p class="wrap copyright">© {{ year }} {{ site.operator.name }} / {{ site.site_name }}</p>
+</footer>
+{% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,138 @@
+name: publish
+
+# 1) 海外ソースを集める → 2) Claude が記事を書いてコミット → 3) ビルドして GitHub Pages に公開
+# push（手元からの記事追加・修正）では 3) だけ行う
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "30 22 * * *" # 07:30 JST（米国の夜のうちに出た発表を朝イチで）
+    - cron: "30 3 * * *" # 12:30 JST
+    - cron: "30 8 * * *" # 17:30 JST
+    - cron: "30 13 * * *" # 22:30 JST（米国の朝の発表）
+  workflow_dispatch:
+    inputs:
+      write:
+        description: "Claude に記事を書かせる"
+        type: boolean
+        default: true
+      count:
+        description: "最大で何本書くか"
+        default: "2"
+      model:
+        description: "記事を書くモデル（使えなかったときは自動で Opus に切り替わる）"
+        type: choice
+        options: [claude-fable-5-1, claude-opus-5-5]
+        default: claude-fable-5-1
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write # Pages のデプロイと Claude GitHub App の認証に必要
+
+env:
+  ARTICLES_PER_RUN: ${{ inputs.count || '2' }}
+  # 記事の質がブランドの顔なので、執筆は最上位モデル。失敗した回だけ Opus で書き直す
+  WRITER_MODEL: ${{ inputs.model || 'claude-fable-5-1' }}
+  FALLBACK_MODEL: claude-opus-5-5
+  WANT_WRITE: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.write) }}
+  HAS_CLAUDE: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' }}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: git identity
+        run: |
+          git config user.name "aidejima-bot"
+          git config user.email "aidejima-bot@users.noreply.github.com"
+
+      # 記事のOG画像は内容が同じなら再利用する
+      - uses: actions/cache@v4
+        with:
+          path: .cache/og
+          key: og-${{ github.run_id }}
+          restore-keys: og-
+
+      - name: 海外ソースを収集
+        if: env.WANT_WRITE == 'true'
+        run: python3 scripts/collect.py --hours 48 --print 25
+
+      - name: 執筆の指示を用意
+        if: env.WANT_WRITE == 'true' && env.HAS_CLAUDE == 'true'
+        id: prompt
+        run: |
+          {
+            echo "text<<PROMPT_EOF"
+            sed "s/{{COUNT}}/${ARTICLES_PER_RUN}/" scripts/writer_prompt.md
+            echo "PROMPT_EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: "Claude: 記事を書く"
+        id: write
+        if: env.WANT_WRITE == 'true' && env.HAS_CLAUDE == 'true'
+        continue-on-error: true
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          show_full_output: true
+          claude_args: |
+            --model ${{ env.WRITER_MODEL }}
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash,WebSearch,WebFetch"
+            --max-turns 120
+          prompt: ${{ steps.prompt.outputs.text }}
+
+      # 上の回が失敗したとき（モデルが使えない・混雑など）だけ、Opus で続きをやる。
+      # 書きかけの記事ファイルが残っていても、指示どおり既存記事を確認してから書くので二重にはならない
+      - name: "Claude: 記事を書く（予備のモデル）"
+        if: steps.write.outcome == 'failure'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          show_full_output: true
+          claude_args: |
+            --model ${{ env.FALLBACK_MODEL }}
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash,WebSearch,WebFetch"
+            --max-turns 120
+          prompt: ${{ steps.prompt.outputs.text }}
+
+      - name: push
+        if: env.WANT_WRITE == 'true'
+        run: |
+          if [ -n "$(git log origin/main..HEAD --oneline)" ]; then
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo "新しいコミットなし"
+          fi
+
+      - name: build
+        run: python3 build.py
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - id: deploy
+        uses: actions/deploy-pages@v4
+
+      - name: IndexNow に通知
+        run: python3 scripts/notify.py --hours 7
+        continue-on-error: true

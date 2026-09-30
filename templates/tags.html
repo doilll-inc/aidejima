@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% set title = "タグ一覧" %}{% set desc = "AIデジマの記事タグ一覧。企業名・製品名・技術名からAIの最新ニュースを探せます。" %}
+{% block main %}
+<div class="wrap narrow">
+  <nav class="crumbs" aria-label="パンくず"><a href="{{ u('/') }}">ホーム</a><span>タグ一覧</span></nav>
+  <header class="list-head"><h1>タグ一覧</h1><p>{{ desc }}</p></header>
+  <div class="tags tags-lg">{% for t in tags %}<a class="tag" href="{{ u('/tag/' ~ t.slug ~ '/') }}">#{{ t.name }}<span class="n">{{ t.count }}</span></a>{% endfor %}</div>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% from "_macros.html" import day_list, sidebar %}
+{% block main %}
+<div class="wrap">
+  <nav class="crumbs" aria-label="パンくず"><a href="{{ u('/') }}">ホーム</a><span>{{ heading }}</span></nav>
+  <div class="layout">
+    <div class="content">
+      <header class="list-head">
+        <h1>{{ heading }}{% if page > 1 %}<small>{{ page }}ページ目</small>{% endif %}</h1>
+        <p>{{ desc }}</p>
+      </header>
+      {% if days and days[0]['items'] %}{{ day_list(days) }}{% else %}<p class="empty">まだ記事がありません。</p>{% endif %}
+      {% if pages > 1 %}
+      <nav class="pager" aria-label="ページ送り">
+        {% if page > 1 %}<a href="{{ u(base if page == 2 else base ~ 'page/' ~ (page - 1) ~ '/') }}" rel="prev">前へ</a>{% endif %}
+        <span>{{ page }} / {{ pages }}</span>
+        {% if page < pages %}<a href="{{ u(base ~ 'page/' ~ (page + 1) ~ '/') }}" rel="next">次へ</a>{% endif %}
+      </nav>
+      {% endif %}
+    </div>
+    {{ sidebar(site, cats, cat_counts, top_tags) }}
+  </div>
+</div>
+{% endblock %}

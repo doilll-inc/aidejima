@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% from "_macros.html" import item, day_list, sidebar, cat_label %}
+{% block body_class %}home{% endblock %}
+{% block main %}
+<div class="wrap">
+  <h1 class="visually-hidden">{{ site.site_name }} - {{ site.tagline }}</h1>
+  {% if hero %}
+  <section class="hero" aria-label="最新のニュース">
+    {% set h = hero[0] %}
+    <article class="hero-main">
+      <a class="hero-img" href="{{ u(h.path) }}" tabindex="-1" aria-hidden="true"><img src="{{ u('/og/' ~ h.slug ~ '.eye.webp') }}" width="1200" height="630" alt="" fetchpriority="high"></a>
+      <div class="meta">{{ cat_label(h) }}<time datetime="{{ h.date.isoformat() }}">{{ ago(h.date) }}</time></div>
+      <h2 class="hero-title"><a href="{{ u(h.path) }}">{{ h.title }}</a></h2>
+      <ul class="hero-summary">{% for s in h.summary %}<li>{{ s }}</li>{% endfor %}</ul>
+    </article>
+    <div class="hero-sub">
+      {% for a in hero[1:] %}
+      <article class="mini">
+        <a class="mini-img" href="{{ u(a.path) }}" tabindex="-1" aria-hidden="true"><img src="{{ u('/og/' ~ a.slug ~ '.webp') }}" width="640" height="336" alt="" decoding="async"></a>
+        <div>
+          <div class="meta">{{ cat_label(a) }}<time datetime="{{ a.date.isoformat() }}">{{ ago(a.date) }}</time></div>
+          <h2 class="mini-title"><a href="{{ u(a.path) }}">{{ a.title }}</a></h2>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+  <div class="layout">
+    <div class="content">
+      <h2 class="section-h">新着ニュース</h2>
+      {{ day_list(days) }}
+      {% if more %}<a class="btn-more" href="{{ u('/news/page/2/') }}">もっと見る</a>{% endif %}
+    </div>
+    {{ sidebar(site, cats, cat_counts, top_tags) }}
+  </div>
+</div>
+{% endblock %}

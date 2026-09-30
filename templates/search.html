@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% set title = "記事検索" %}{% set desc = "AIデジマの記事をキーワードで検索できます。" %}
+{% block main %}
+<div class="wrap narrow">
+  <nav class="crumbs" aria-label="パンくず"><a href="{{ u('/') }}">ホーム</a><span>記事検索</span></nav>
+  <header class="list-head"><h1>記事検索</h1></header>
+  <form class="search-big" role="search" onsubmit="return false">
+    <input id="q" type="search" name="q" placeholder="例：OpenAI、エージェント、SEO" aria-label="キーワード" autofocus>
+  </form>
+  <p id="count" class="search-count"></p>
+  <div id="results" class="search-results"></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+(function(){
+  var q=document.getElementById('q'),out=document.getElementById('results'),cnt=document.getElementById('count'),data=[];
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function run(){
+    var words=q.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    history.replaceState(null,'',words.length?'?q='+encodeURIComponent(q.value.trim()):location.pathname);
+    if(!words.length){out.innerHTML='';cnt.textContent='';return}
+    var hits=data.filter(function(a){var s=(a.t+' '+a.d+' '+a.g.join(' ')+' '+a.c).toLowerCase();return words.every(function(w){return s.indexOf(w)>=0})});
+    cnt.textContent=hits.length+'件の記事';
+    out.innerHTML=hits.slice(0,100).map(function(a){return '<a class="sr" href="'+a.u+'"><span class="sr-meta">'+esc(a.c)+' ・ '+a.p+'</span><span class="sr-title">'+esc(a.t)+'</span><span class="sr-desc">'+esc(a.d)+'</span></a>'}).join('');
+  }
+  fetch('{{ u("/search.json") }}').then(function(r){return r.json()}).then(function(d){data=d;var p=new URLSearchParams(location.search).get('q');if(p){q.value=p}run()});
+  q.addEventListener('input',run);
+})();
+</script>
+{% endblock %}

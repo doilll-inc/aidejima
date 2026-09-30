@@ -1,0 +1,62 @@
+{% macro cat_label(a) -%}
+<a class="cat" href="{{ u('/category/' ~ a.category ~ '/') }}" style="--c:{{ a.cat.color }}">{{ a.cat.name }}</a>
+{%- endmacro %}
+
+{% macro item(a, heading='h3') -%}
+<article class="item">
+  <a class="thumb" href="{{ u(a.path) }}" tabindex="-1" aria-hidden="true"><img src="{{ u('/og/' ~ a.slug ~ '.webp') }}" width="640" height="336" alt="" loading="lazy" decoding="async"></a>
+  <div class="item-body">
+    <div class="meta">{{ cat_label(a) }}<time datetime="{{ a.date.isoformat() }}">{{ a.date.strftime('%H:%M') }}</time></div>
+    <{{ heading }} class="item-title"><a href="{{ u(a.path) }}">{{ a.title }}</a></{{ heading }}>
+    <p class="item-desc">{{ a.description }}</p>
+    {% if a.publishers %}<p class="item-src">出典：{{ a.publishers[:3] | join('・') }}</p>{% endif %}
+  </div>
+</article>
+{%- endmacro %}
+
+{% macro day_list(days) -%}
+{% for day in days %}
+<section class="day">
+  <h2 class="day-label"><span>{{ day.label }}</span></h2>
+  {% for a in day['items'] %}{{ item(a) }}{% endfor %}
+</section>
+{% endfor %}
+{%- endmacro %}
+
+{% macro editor_card(site, compact=false) -%}
+<section class="editor-card">
+  <p class="side-h">編集長</p>
+  <div class="editor-head">
+    <span class="editor-avatar" aria-hidden="true">{% include "_fan.svg" %}</span>
+    <div>
+      <a class="editor-name" href="{{ u('/about/editor/') }}">{{ site.editor.name }}</a>
+      <p class="editor-title">{{ site.editor.title }}</p>
+    </div>
+  </div>
+  <p class="editor-bio">{{ site.editor.short_bio }}</p>
+  <a class="more-link" href="{{ u('/about/editor/') }}">プロフィールを見る</a>
+</section>
+{%- endmacro %}
+
+{% macro sidebar(site, cats, cat_counts, top_tags) -%}
+<aside class="sidebar">
+  {{ editor_card(site) }}
+  <section class="side-box">
+    <p class="side-h">カテゴリ</p>
+    <ul class="side-cats">
+      {% for c in cats %}<li><a href="{{ u('/category/' ~ c.slug ~ '/') }}" style="--c:{{ c.color }}"><span>{{ c.name }}</span><span class="n">{{ cat_counts.get(c.slug, 0) }}</span></a></li>{% endfor %}
+    </ul>
+  </section>
+  {% if top_tags %}
+  <section class="side-box">
+    <p class="side-h">注目のタグ</p>
+    <div class="tags">{% for t in top_tags %}<a class="tag" href="{{ u('/tag/' ~ t.slug ~ '/') }}">#{{ t.name }}</a>{% endfor %}</div>
+    <a class="more-link" href="{{ u('/tag/') }}">タグ一覧</a>
+  </section>
+  {% endif %}
+  <section class="side-box side-follow">
+    <p class="side-h">毎日の新着を受け取る</p>
+    <a class="btn-rss" href="{{ u('/feed.xml') }}">RSSで購読する</a>
+  </section>
+</aside>
+{%- endmacro %}
