@@ -112,7 +112,7 @@
       <section aria-label="モデル別の料金">
         <h2 class="guide-h">モデル別のAPI料金（AIモデル図鑑より）</h2>
         <div class="table-wrap"><table class="guide-table"><thead><tr><th>モデル</th><th>提供元</th><th>入力</th><th>出力</th></tr></thead><tbody>
-          {% for m in embed %}<tr><th scope="row"><a href="{{ u(m.path) }}">{{ m.name }}</a></th><td>{{ m.vendor }}</td><td>{% if m.input_per_m is not none %}${{ m.input_per_m }}{% else %}—{% endif %}</td><td>{% if m.output_per_m is not none %}${{ m.output_per_m }}{% else %}—{% endif %}</td></tr>{% endfor %}
+          {% for m in embed %}<tr><th scope="row"><a href="{{ u(m.path) }}">{{ m.name }}</a></th><td>{{ m.vendor }}</td><td>{{ usd(m.input_per_m) }}</td><td>{{ usd(m.output_per_m) }}</td></tr>{% endfor %}
         </tbody></table></div>
         <p class="guide-note">100万トークンあたりの米ドル。詳しくは<a href="{{ u('/models/') }}">AIモデル図鑑</a>。</p>
       </section>

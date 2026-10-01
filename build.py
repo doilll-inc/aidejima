@@ -567,6 +567,16 @@ def fmt_price(f: dict | None) -> str:
     return f"{sym}{num}{unit}"
 
 
+def usd(v) -> str:
+    """100万トークン単価の表示。$0.075 を $0.07 と丸めないよう、1未満は有効数字3桁まで出す"""
+    if v is None:
+        return "—"
+    v = float(v)
+    if v >= 1:
+        return f"${v:,.2f}".replace(".00", "")
+    return "$" + (f"{v:.3g}" if v >= 0.001 else f"{v:.2e}")
+
+
 def source_label(url: str) -> str:
     low = url.lower()
     hints = TAXO.get("source_kinds", {}).get("pricing_path_hints", ["/pricing", "/plans"])
@@ -745,6 +755,7 @@ def build(now: datetime | None = None) -> None:
         guides_nav=[guides_by_slug[s] for s in guide_index.get("nav", []) if s in guides_by_slug] or guides[:6],
         has_guides=bool(guides),
         fmt_price=fmt_price,
+        usd=usd,
         total_articles=len(arts),
     )
 

@@ -21,9 +21,9 @@
               <td><a href="{{ u(m.path) }}"><strong>{{ m.name }}</strong></a>{% if m.tier %}<br><small>{{ m.tier }}</small>{% endif %}</td>
               <td>{{ m.vendor }}</td>
               <td>{{ m.released or '—' }}</td>
-              <td>{% if m.input_per_m is not none %}${{ '%.2f' | format(m.input_per_m) }}{% else %}—{% endif %}</td>
-              <td>{% if m.cached_input_per_m is not none %}${{ '%.2f' | format(m.cached_input_per_m) }}{% else %}—{% endif %}</td>
-              <td>{% if m.output_per_m is not none %}${{ '%.2f' | format(m.output_per_m) }}{% else %}—{% endif %}</td>
+              <td>{{ usd(m.input_per_m) }}</td>
+              <td>{{ usd(m.cached_input_per_m) }}</td>
+              <td>{{ usd(m.output_per_m) }}</td>
               <td>{% if m.context %}{{ '{:,}'.format(m.context) }}{% else %}—{% endif %}</td>
               <td>{% if m.status == 'deprecated' %}置き換え済み{% elif m.status == 'preview' %}プレビュー{% else %}提供中{% endif %}</td>
             </tr>

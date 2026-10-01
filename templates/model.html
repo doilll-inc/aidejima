@@ -17,7 +17,7 @@
           <tbody>
             <tr><th>提供元</th><td>{{ m.vendor }}</td></tr>
             <tr><th>提供開始日（現地）</th><td>{{ m.released or '未確認' }}</td></tr>
-            <tr><th>API料金（100万トークン）</th><td>{% if m.input_per_m is not none %}入力 ${{ '%.2f' | format(m.input_per_m) }}{% if m.cached_input_per_m is not none %} ／ キャッシュ入力 ${{ '%.2f' | format(m.cached_input_per_m) }}{% endif %} ／ 出力 ${{ '%.2f' | format(m.output_per_m) }}{% else %}未確認{% endif %}</td></tr>
+            <tr><th>API料金（100万トークン）</th><td>{% if m.input_per_m is not none %}入力 {{ usd(m.input_per_m) }}{% if m.cached_input_per_m is not none %} ／ キャッシュ入力 {{ usd(m.cached_input_per_m) }}{% endif %} ／ 出力 {{ usd(m.output_per_m) }}{% else %}未確認{% endif %}</td></tr>
             <tr><th>コンテキスト長</th><td>{% if m.context %}約{{ '{:,}'.format(m.context) }}トークン{% else %}未確認{% endif %}</td></tr>
             <tr><th>最大出力</th><td>{% if m.max_output %}{{ '{:,}'.format(m.max_output) }}トークン{% else %}未確認{% endif %}</td></tr>
             <tr><th>知識の期限</th><td>{{ m.knowledge_cutoff or '未確認' }}</td></tr>
