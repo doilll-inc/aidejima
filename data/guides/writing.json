@@ -592,6 +592,16 @@
             "checked": "2026-10-01"
           },
           {
+            "name": "Microsoft 365 Pro",
+            "amount": 16000,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "¥16,000/月",
+            "detail": "最も高い利用上限。月額請求のみ",
+            "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing/individuals",
+            "checked": "2026-10-01"
+          },
+          {
             "name": "Microsoft 365 Business Standard と Microsoft 365 Copilot Business",
             "amount": 3523,
             "currency": "JPY",
@@ -1232,6 +1242,11 @@
       "date": "2026-10-01",
       "text": "初回公開",
       "by": "researcher"
+    },
+    {
+      "date": "2026-10-01",
+      "text": "Microsoft 365 Copilot の個人向け料金に Microsoft 365 Pro（¥16,000/月）を追加",
+      "by": "reviewer"
     }
   ],
   "editor_note": "",
