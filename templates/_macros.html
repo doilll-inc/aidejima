@@ -54,6 +54,27 @@
 {% endif %}
 {%- endmacro %}
 
+{% macro guides_box(guides_nav) -%}
+{% if guides_nav %}
+<section class="side-box">
+  <p class="side-h">用途別AIガイド</p>
+  <ul class="side-guides">
+    {% for g in guides_nav %}<li><a href="{{ u(g.path) }}"><span>{{ g.short_name }}</span>{% if g.verdicts_sorted and g.verdicts_sorted[0]._pick %}<span class="n">{{ g.verdicts_sorted[0]._pick.name }}</span>{% endif %}</a></li>{% endfor %}
+  </ul>
+  <a class="more-link" href="{{ u('/best/') }}">目的別のおすすめと料金を見る</a>
+</section>
+{% endif %}
+{%- endmacro %}
+
+{% macro guide_box(guides_for) -%}
+{% if guides_for %}
+<aside class="guide-box">
+  <p class="guide-box-h">この製品の用途別ガイド</p>
+  {% for g in guides_for %}<a href="{{ u(g.path) }}"><span class="guide-box-t">{{ g.full_title }}</span><span class="guide-box-m">目的別のおすすめ・料金・商用利用を公式情報で比較（{{ g.reviewed.month }}月{{ g.reviewed.day }}日点検）</span></a>{% endfor %}
+</aside>
+{% endif %}
+{%- endmacro %}
+
 {% macro sidebar(site, cats, cat_counts, top_tags) -%}
 <aside class="sidebar">
   {{ editor_card(site) }}
@@ -63,6 +84,7 @@
       {% for c in cats %}<li><a href="{{ u('/category/' ~ c.slug ~ '/') }}" style="--c:{{ c.color }}"><span>{{ c.name }}</span><span class="n">{{ cat_counts.get(c.slug, 0) }}</span></a></li>{% endfor %}
     </ul>
   </section>
+  {{ guides_box(guides_nav) }}
   {{ models_box(models_top) }}
   {% if top_tags %}
   <section class="side-box">

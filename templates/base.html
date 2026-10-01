@@ -57,6 +57,7 @@
       <a href="{{ u('/') }}" {% if canonical == '/' %}aria-current="page"{% endif %}>ホーム</a>
       <a href="{{ u('/news/') }}" {% if canonical == '/news/' or canonical.startswith('/news/page/') %}aria-current="page"{% endif %}>新着</a>
       {% for c in cats %}<a href="{{ u('/category/' ~ c.slug ~ '/') }}" style="--c:{{ c.color }}" {% if canonical.startswith('/category/' ~ c.slug ~ '/') %}aria-current="page"{% endif %}>{{ c.name }}</a>{% endfor %}
+      {% if has_guides %}<a class="catnav-models" href="{{ u('/best/') }}" {% if canonical.startswith('/best/') %}aria-current="page"{% endif %}>用途別ガイド</a>{% endif %}
       <a class="catnav-models" href="{{ u('/models/') }}" {% if canonical.startswith('/models/') %}aria-current="page"{% endif %}>モデル図鑑</a>
     </div>
   </nav>
@@ -73,6 +74,7 @@
     <nav class="footer-nav" aria-label="サイト情報">
       <a href="{{ u('/about/') }}">AIデジマについて・編集方針</a>
       <a href="{{ u('/about/editor/') }}">編集長 {{ site.editor.name }}</a>
+      {% if has_guides %}<a href="{{ u('/best/') }}">用途別AIガイド</a>{% endif %}
       <a href="{{ u('/models/') }}">AIモデル図鑑</a>
       <a href="{{ u('/tag/') }}">タグ一覧</a>
       {% if months %}<a href="{{ u(months[0].path) }}">月別アーカイブ</a>{% endif %}

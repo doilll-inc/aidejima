@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+{% from "_macros.html" import item, editor_card, guides_box, models_box %}
+{% set title = g.full_title %}{% set desc = g.seo.description %}
+{% block body_class %}guide-page{% endblock %}
+{% macro fact_cell(label, f) -%}
+<span class="fact" title="{% if f and f.source_url %}出典: {{ f.source_url }}（{{ f.checked }}確認）{% endif %}">{{ label }}</span>
+{%- endmacro %}
+{% block main %}
+<div class="wrap">
+  <nav class="crumbs" aria-label="パンくず"><a href="{{ u('/') }}">ホーム</a><a href="{{ u('/best/') }}">用途別AIガイド</a><span>{{ g.short_name }}</span></nav>
+  <div class="layout layout-article">
+    <article class="post guide">
+      <header class="post-head">
+        <div class="meta"><a class="cat" href="{{ u('/best/') }}" style="--c:#ff6a1a">用途別AIガイド</a><span class="primary-mark">公式情報で確認</span></div>
+        <h1 class="post-title">{{ g.full_title }}</h1>
+        <div class="byline">
+          <span>最終更新 <time datetime="{{ g.modified.isoformat() }}">{{ g.modified.year }}年{{ g.modified.month }}月{{ g.modified.day }}日</time></span>
+          <span>最終点検 <time datetime="{{ g.reviewed.isoformat() }}">{{ g.reviewed.month }}月{{ g.reviewed.day }}日</time>（毎週点検）</span>
+          <span class="by">文：AIデジマ編集部 ／ 編集：<a href="{{ u('/about/editor/') }}">{{ site.editor.name }}</a></span>
+        </div>
+      </header>
+      {% if g.stale %}<p class="guide-stale">この情報は {{ g.reviewed.month }}月{{ g.reviewed.day }}日 に確認したものです。最新の料金・仕様は各社の公式ページでご確認ください。</p>{% endif %}
+
+      {% if g.intro %}<div class="post-body guide-intro">{{ g.intro | md }}</div>{% endif %}
+
+      {% if g.verdicts_sorted %}
+      <section class="verdicts" aria-label="目的別の答え">
+        <h2 class="guide-h">目的別の答え（{{ g.reviewed.month }}月{{ g.reviewed.day }}日時点）</h2>
+        <ul>
+          {% for v in g.verdicts_sorted %}
+          <li class="verdict">
+            <p class="verdict-q">{{ v.question }}</p>
+            <p class="verdict-a"><a href="#p-{{ v.pick }}">{{ v._pick.name if v._pick else v.pick }}</a>{% if v._runners %}<span class="verdict-runner">次点：{% for r in v._runners %}<a href="#p-{{ r.id }}">{{ r.name }}</a>{% if not loop.last %}、{% endif %}{% endfor %}</span>{% endif %}</p>
+            <p class="verdict-why">{{ v.answer }}</p>
+            {% if v.evidence %}<p class="verdict-ev">根拠：{% for e in v.evidence %}{% if e.kind == 'editorial' %}編集部の判断{% if e.note %}（{{ e.note }}）{% endif %}{% else %}<a href="{{ e.url }}" target="_blank" rel="noopener">{{ e.name }}</a>{% if e.note %}（{{ e.note }}）{% endif %}{% endif %}{% if not loop.last %} ／ {% endif %}{% endfor %}</p>{% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
+      <section aria-label="比較表">
+        <h2 class="guide-h">比較表</h2>
+        {% if g.scope %}<p class="guide-scope">{{ g.scope }}</p>{% endif %}
+        <div class="table-wrap guide-table-wrap">
+          <table class="guide-table">
+            <thead><tr><th>製品（最新モデル）</th><th>料金</th><th>日本語</th><th>商用利用</th><th>入力の学習利用</th><th>確認日</th></tr></thead>
+            <tbody>
+              {% for p in g.featured %}
+              {% set pr = p.pricing or {} %}
+              <tr id="p-{{ p.id }}"{% if p._stale %} class="is-stale"{% endif %}>
+                <th scope="row">
+                  <a class="gt-name" href="{{ p.url }}" target="_blank" rel="noopener">{{ p.name }}</a>
+                  <span class="gt-vendor">{{ p.vendor }}</span>
+                  {% if p.latest and p.latest.name %}<span class="gt-latest">{{ p.latest.name }}{% if p.latest.released %}（{{ p.latest.released }}）{% endif %}</span>{% endif %}
+                  {% if p._models %}<span class="gt-models">{% for m in p._models %}<a href="{{ u(m.path) }}">{{ m.name }}の仕様</a>{% endfor %}</span>{% endif %}
+                </th>
+                <td>
+                  {% if pr.free %}<span class="gt-free">{% if pr.free.available %}無料あり{% else %}無料なし{% endif %}</span>{% endif %}
+                  {% if p._min_plan %}<span class="gt-price" title="{{ p._min_plan.as_shown }}">{{ fmt_price(p._min_plan) }}〜</span>{% elif pr.usage %}<span class="gt-price" title="{{ pr.usage.as_shown }}">{{ fmt_price(pr.usage) }}</span>{% elif pr.plans %}<span class="gt-price">{{ pr.plans[0].as_shown }}</span>{% else %}<span class="gt-price">—</span>{% endif %}
+                </td>
+                <td>{{ fact_cell(p._labels.japanese, p.japanese) }}</td>
+                <td>{{ fact_cell(p._labels.commercial_use, p.commercial_use) }}</td>
+                <td>{{ fact_cell(p._labels.data_policy, p.data_policy) }}</td>
+                <td class="gt-checked">{{ p.checked or '—' }}{% if p._stale %}<span class="gt-recheck">要再確認</span>{% endif %}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <p class="guide-note">料金は公式ページの表記のまま（為替換算なし）。「—」は公式ページで確認できていない項目です。各製品の詳細と出典は下の一覧にあります。</p>
+      </section>
+
+      <section class="products" aria-label="製品ごとの詳細">
+        <h2 class="guide-h">製品ごとの詳細</h2>
+        {% for p in g.featured %}
+        {% set pr = p.pricing or {} %}
+        <div class="pcard" id="d-{{ p.id }}">
+          <h3><a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.name }}</a><span>{{ p.vendor }}</span></h3>
+          {% if p.strengths %}<ul class="pcard-pros">{% for s in p.strengths %}<li>{{ s }}</li>{% endfor %}</ul>{% endif %}
+          {% if p.weaknesses %}<ul class="pcard-cons">{% for s in p.weaknesses %}<li>{{ s }}</li>{% endfor %}</ul>{% endif %}
+          {% if p.editorial_take %}<p class="pcard-take">{{ p.editorial_take }}</p>{% endif %}
+          <dl class="pcard-facts">
+            {% if pr.free %}<dt>無料</dt><dd>{% if pr.free.available %}あり{% else %}なし{% endif %}{% if pr.free.detail %}（{{ pr.free.detail }}）{% endif %}</dd>{% endif %}
+            {% for pl in pr.plans or [] %}<dt>{{ pl.name }}</dt><dd>{{ pl.as_shown or fmt_price(pl) }}{% if pl.detail %}（{{ pl.detail }}）{% endif %}</dd>{% endfor %}
+            {% if pr.usage %}<dt>従量（API）</dt><dd>{{ pr.usage.as_shown or fmt_price(pr.usage) }}{% if pr.usage.detail %}（{{ pr.usage.detail }}）{% endif %}</dd>{% endif %}
+            {% if pr.note %}<dt>補足</dt><dd>{{ pr.note }}</dd>{% endif %}
+            {% if p.japanese %}<dt>日本語</dt><dd>画面 {{ {'yes':'対応','partial':'一部','no':'非対応'}.get(p.japanese.ui, '—') }} ／ 出力 {{ {'yes':'対応','partial':'一部','no':'非対応'}.get(p.japanese.output, '—') }}{% if p.japanese.note %}（{{ p.japanese.note }}）{% endif %}</dd>{% endif %}
+            {% if p.commercial_use %}<dt>商用利用</dt><dd>{{ p._labels.commercial_use }}{% if p.commercial_use.note %}（{{ p.commercial_use.note }}）{% endif %}</dd>{% endif %}
+            {% if p.data_policy %}<dt>入力の学習利用</dt><dd>{{ p._labels.data_policy }}{% if p.data_policy.note %}（{{ p.data_policy.note }}）{% endif %}</dd>{% endif %}
+            {% if p.availability_japan %}<dt>日本での提供</dt><dd>{{ p._labels.availability_japan }}{% if p.availability_japan.note %}（{{ p.availability_japan.note }}）{% endif %}</dd>{% endif %}
+          </dl>
+          {% if p._facts %}
+          <details class="pcard-src"><summary>出典（{{ p._facts | length }}件・{{ p.checked }}確認）</summary>
+            <ul>{% for f in p._facts %}<li><a href="{{ f.url }}" target="_blank" rel="noopener">{{ f.url | replace('https://', '') | truncate(70, True, '…') }}</a> <span>{{ f.checked }}</span></li>{% endfor %}</ul>
+          </details>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </section>
+
+      {% if g.listed %}
+      <section aria-label="その他の選択肢">
+        <h2 class="guide-h">その他の選択肢</h2>
+        <ul class="listed">
+          {% for p in g.listed %}<li{% if p.status == 'retired' %} class="retired"{% endif %}><a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.name }}</a><span class="gt-vendor">{{ p.vendor }}</span>{% if p.editorial_take %}<span class="listed-take">{{ p.editorial_take }}</span>{% elif p.strengths %}<span class="listed-take">{{ p.strengths[0] }}</span>{% endif %}{% if p.status == 'retired' and p.retired_note %}<span class="listed-take">{{ p.retired_note }}</span>{% endif %}</li>{% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
+      {% if embed %}
+      <section aria-label="モデル別の料金">
+        <h2 class="guide-h">モデル別のAPI料金（AIモデル図鑑より）</h2>
+        <div class="table-wrap"><table class="guide-table"><thead><tr><th>モデル</th><th>提供元</th><th>入力</th><th>出力</th></tr></thead><tbody>
+          {% for m in embed %}<tr><th scope="row"><a href="{{ u(m.path) }}">{{ m.name }}</a></th><td>{{ m.vendor }}</td><td>{% if m.input_per_m is not none %}${{ m.input_per_m }}{% else %}—{% endif %}</td><td>{% if m.output_per_m is not none %}${{ m.output_per_m }}{% else %}—{% endif %}</td></tr>{% endfor %}
+        </tbody></table></div>
+        <p class="guide-note">100万トークンあたりの米ドル。詳しくは<a href="{{ u('/models/') }}">AIモデル図鑑</a>。</p>
+      </section>
+      {% endif %}
+
+      {% if g.criteria %}
+      <section aria-label="選び方">
+        <h2 class="guide-h">選び方</h2>
+        <ol class="criteria">
+          {% for c in g.criteria %}<li><p class="criteria-n">{{ c.name }}</p><p>{{ c.why }}</p>{% if c.how_to_check %}<p class="criteria-how">確かめ方：{{ c.how_to_check }}</p>{% endif %}</li>{% endfor %}
+        </ol>
+      </section>
+      {% endif %}
+
+      {% if g.benchmarks %}
+      <section aria-label="評価の根拠">
+        <h2 class="guide-h">評価の根拠</h2>
+        <ul class="benches">
+          {% for b in g.benchmarks %}<li><a href="{{ b.url }}" target="_blank" rel="noopener">{{ b.name }}</a><span class="gt-vendor">{{ b.operator }}</span>{% if b.what %}<span class="bench-what">{{ b.what }}</span>{% endif %}{% if b.snapshot %}<span class="bench-snap">{{ b.snapshot }}</span>{% endif %}<span class="bench-chk">{{ b.checked }}確認</span></li>{% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
+      {% if g.recent or g.changelog_sorted %}
+      <section aria-label="最近の変更">
+        <h2 class="guide-h">最近の変更</h2>
+        {% if g.recent %}
+        <p class="guide-sub">関連するニュース</p>
+        {% for a in g.recent %}{{ item(a) }}{% endfor %}
+        {% endif %}
+        {% if g.changelog_sorted %}
+        <p class="guide-sub">このページの更新履歴</p>
+        <ul class="changelog">
+          {% for c in g.changelog_sorted[:10] %}<li><time>{{ c.date }}</time>{{ c.text }}{% if c.article %}（<a href="{{ u(c.article) }}">記事</a>）{% endif %}</li>{% endfor %}
+        </ul>
+        {% endif %}
+      </section>
+      {% endif %}
+
+      {% if g.editor_note %}
+      <aside class="editor-note">
+        <p class="editor-note-h">編集長ひとこと <span>— {{ site.editor.name }}</span></p>
+        <p>{{ g.editor_note }}</p>
+      </aside>
+      {% endif %}
+
+      {% if g.faq %}
+      <section aria-label="よくある質問">
+        <h2 class="guide-h">よくある質問</h2>
+        <dl class="faq">{% for f in g.faq %}<dt>{{ f.q }}</dt><dd>{{ f.a }}</dd>{% endfor %}</dl>
+      </section>
+      {% endif %}
+
+      <section class="sources">
+        <h2>情報源（公式ページ）</h2>
+        <ul>
+          {% for s in g.sources %}<li><span class="kind" data-kind="公式発表">{{ s.label }}</span><span class="pub">{{ s.product }}</span><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.host }}</a> <span class="src-chk">{{ s.checked }}</span></li>{% endfor %}
+        </ul>
+        <p class="sources-note">このページの料金・条件は、すべて各社の公式ページで確認した値と確認日です。料金・仕様は変わるので、利用前に公式ページで確かめてください。当サイトはアフィリエイトリンクを使っていません。誤りを見つけた場合は<a href="{{ u('/about/#corrections') }}">訂正のご連絡</a>をお願いします。</p>
+      </section>
+
+      {% if related_guides %}
+      <section class="related">
+        <h2>関連する用途別ガイド</h2>
+        <ul class="listed">{% for r in related_guides %}<li><a href="{{ u(r.path) }}">{{ r.full_title }}</a></li>{% endfor %}</ul>
+      </section>
+      {% endif %}
+    </article>
+    <aside class="sidebar sidebar-article">
+      {{ editor_card(site) }}
+      {{ guides_box(guides_nav) }}
+      {{ models_box(models_top) }}
+    </aside>
+  </div>
+</div>
+{% endblock %}

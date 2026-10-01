@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% from "_macros.html" import sidebar %}
+{% set title = "用途別AIガイド：目的別のおすすめAIと料金比較（毎週点検）" %}{% set desc = "画像生成・動画生成・チャット・コーディング・音声・調べものなど、用途ごとにいま選ぶべきAIと料金を比較。料金・商用利用・日本語対応はすべて公式ページで確認した値と確認日つきで、毎週点検しています。" %}
+{% block main %}
+<div class="wrap">
+  <nav class="crumbs" aria-label="パンくず"><a href="{{ u('/') }}">ホーム</a><span>用途別AIガイド</span></nav>
+  <div class="layout">
+    <div class="content">
+      <header class="list-head">
+        <h1>用途別AIガイド</h1>
+        <p>{{ desc }}</p>
+      </header>
+      {% for grp in groups if grp['items'] %}
+      <section class="guide-group">
+        <h2 class="section-h">{{ grp.name }}<small>{{ grp.desc }}</small></h2>
+        <div class="guide-cards">
+          {% for g in grp['items'] %}
+          <a class="guide-card" href="{{ u(g.path) }}">
+            <span class="guide-card-n">{{ g.short_name }}</span>
+            <span class="guide-card-t">{{ g.full_title }}</span>
+            {% if g.verdicts_sorted and g.verdicts_sorted[0]._pick %}<span class="guide-card-v">{{ g.verdicts_sorted[0].question }} → <b>{{ g.verdicts_sorted[0]._pick.name }}</b></span>{% endif %}
+            <span class="guide-card-m">{{ g.featured | length }}製品を比較 ・ {{ g.reviewed.month }}月{{ g.reviewed.day }}日点検</span>
+          </a>
+          {% endfor %}
+        </div>
+      </section>
+      {% endfor %}
+    </div>
+    {{ sidebar(site, cats, cat_counts, top_tags) }}
+  </div>
+</div>
+{% endblock %}

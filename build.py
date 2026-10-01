@@ -25,6 +25,7 @@ from xml.sax.saxutils import escape as xml_escape
 import markdown
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
+import guides as guides_mod
 import og
 
 ROOT = Path(__file__).resolve().parent
@@ -539,6 +540,159 @@ def model_pages(arts: list[dict]) -> list[dict]:
     return out
 
 
+# ---------- 用途別AIガイド（/best/） ----------
+
+ENUM_LABELS = {
+    "japanese": {"yes": "対応", "partial": "一部", "no": "非対応", "unknown": "—"},
+    "commercial_use": {"yes": "可", "conditional": "条件付き", "no": "不可", "unknown": "—"},
+    "data_policy": {"not_used": "学習に使わない", "opt_out_available": "設定で拒否可", "used": "学習に使う", "unknown": "—"},
+    "availability_japan": {"yes": "提供あり", "partial": "一部", "no": "提供なし", "unknown": "—"},
+}
+PER_LABEL = {"month": "/月", "year": "/年", "once": "（買い切り）", "seat_month": "/人・月", "credit": ""}
+CUR_SYMBOL = {"USD": "$", "JPY": "¥", "EUR": "€", "GBP": "£"}
+GUIDE_CAT = {"slug": "guide", "name": "用途別AIガイド", "color": "#ff6a1a"}
+
+
+def fmt_price(f: dict | None) -> str:
+    """料金の fact を「$20/月」「¥3,000/月」の形に（為替換算はしない）"""
+    if not f:
+        return "—"
+    amt = f.get("amount")
+    if amt is None:
+        return f.get("as_shown") or "—"
+    cur = f.get("currency", "USD")
+    sym = CUR_SYMBOL.get(cur, cur + " ")
+    num = f"{amt:,.0f}" if cur == "JPY" else (f"{amt:g}" if amt >= 1 else f"{amt:.4g}")
+    unit = f" / {f['unit']}" if f.get("unit") else PER_LABEL.get(f.get("per", ""), "")
+    return f"{sym}{num}{unit}"
+
+
+def source_label(url: str) -> str:
+    low = url.lower()
+    hints = TAXO.get("source_kinds", {}).get("pricing_path_hints", ["/pricing", "/plans"])
+    if any(h in low for h in hints):
+        return "公式料金"
+    if re.search(r"terms|legal|policy|privacy|tos|usage-polic", low):
+        return "公式の規約・ポリシー"
+    if re.search(r"/docs?/|/help|support\.|/faq|developers?\.|platform\.|/api/", low):
+        return "公式ドキュメント・ヘルプ"
+    return "公式発表・公式ページ"
+
+
+def guide_pages(arts: list[dict], models: list[dict], now: datetime) -> tuple[list[dict], list[str], list[str]]:
+    """data/guides/*.json（published だけ）に、表示用の派生値を足す"""
+    out, errors, warns = [], [], []
+    model_by_slug = {m["slug"]: m for m in models}
+    art_by_path = {a["path"]: a for a in arts}
+    for g in guides_mod.load_all():
+        if g.get("status") != "published":
+            continue
+        e, w = guides_mod.validate(g, OFFICIAL_DOMAINS)
+        errors += e
+        warns += w
+        edition, stale = guides_mod.month_edition(g, now)
+        prods = sorted(g.get("products") or [], key=lambda p: (p.get("rank", 99), p.get("name", "")))
+        by_id = {p["id"]: p for p in prods}
+        sources: dict[str, dict] = {}
+        for p in prods:
+            if p.get("status") == "watch":
+                continue
+            chk = guides_mod.parse_day(p.get("checked", ""))
+            p["_stale"] = bool(chk and (now.date() - chk).days > guides_mod.STALE_FACT_DAYS)
+            plans = [pl for pl in (p.get("pricing") or {}).get("plans") or [] if pl.get("amount") is not None]
+            p["_min_plan"] = min(plans, key=lambda pl: pl["amount"]) if plans else None
+            p["_models"] = [model_by_slug[s] for s in p.get("model_slugs") or [] if s in model_by_slug]
+            p["_facts"] = []
+            for fname, f in guides_mod.iter_facts(p):
+                if f.get("source_url"):
+                    p["_facts"].append({"name": fname, "url": f["source_url"], "checked": f.get("checked", "")})
+                    cur = sources.get(f["source_url"])
+                    if not cur or f.get("checked", "") > cur["checked"]:
+                        sources[f["source_url"]] = {"url": f["source_url"], "host": host_of(f["source_url"]), "label": source_label(f["source_url"]), "checked": f.get("checked", ""), "product": p.get("name", "")}
+            p["_labels"] = {k: ENUM_LABELS[k].get(((p.get(k) or {}).get("value") if k in ("commercial_use", "availability_japan") else (p.get(k) or {}).get("ui" if k == "japanese" else "training_default")) or "unknown", "—") for k in ENUM_LABELS}
+        order = {vid: i for i, vid in enumerate(guides_mod.VERDICT_ORDER)}
+        verdicts = []
+        for v in sorted(g.get("verdicts") or [], key=lambda v: order.get(v.get("id"), 99)):
+            ev = v.get("evidence") or []
+            verdicts.append({**v, "_pick": by_id.get(v.get("pick")), "_runners": [by_id[r] for r in v.get("runner_up") or [] if r in by_id], "_editorial_only": bool(ev) and all(x.get("kind") == "editorial" for x in ev)})
+        names = set((g.get("related") or {}).get("tags") or [])
+        for p in prods:
+            names |= set(p.get("tags") or [])
+            if p.get("name"):
+                names.add(p["name"])
+        names = {n for n in names if len(n) >= 3 or re.search(r"[ぁ-んァ-ン一-龥]", n)}
+        cutoff = now - timedelta(days=90)
+        recent = [a for a in arts if a["date"] >= cutoff and (names & set(a["tags"]) or any(n in a["title"] for n in names))][:8]
+        manual = [art_by_path[p] for p in (g.get("related") or {}).get("articles") or [] if p in art_by_path]
+        for a in manual:
+            if a not in recent:
+                recent.append(a)
+        lr = guides_mod.parse_day(g.get("last_reviewed", "")) or now.date()
+        up = guides_mod.parse_day(g.get("updated", "")) or lr
+        featured = [p for p in prods if p.get("status") == "featured"]
+        g.update(
+            path=f"/best/{g['slug']}/",
+            full_title=f"{g['title']}{edition}",
+            edition=edition,
+            stale=stale,
+            featured=featured,
+            listed=[p for p in prods if p.get("status") in ("listed", "retired")],
+            verdicts_sorted=verdicts,
+            recent=recent,
+            sources=sorted(sources.values(), key=lambda s: (s["label"], s["host"])),
+            noindex=len(featured) < 3,
+            reviewed=lr,
+            modified=max(lr, up),
+            match_names=names,
+            changelog_sorted=sorted(g.get("changelog") or [], key=lambda c: c.get("date", ""), reverse=True),
+        )
+        out.append(g)
+    idx = guides_mod.load_index()
+    rank = {s: i for i, s in enumerate(s for grp in idx.get("groups", []) for s in grp.get("guides", []))}
+    out.sort(key=lambda g: rank.get(g["slug"], 99))
+    return out, errors, warns
+
+
+def guide_ld(g: dict) -> list[dict]:
+    items = []
+    for i, p in enumerate(g["featured"], 1):
+        app = {"@type": "SoftwareApplication", "name": p.get("name"), "url": p.get("url"), "applicationCategory": g.get("short_name"), "publisher": {"@type": "Organization", "name": p.get("vendor", "")}}
+        offers = []
+        free = (p.get("pricing") or {}).get("free") or {}
+        if free.get("available") is True and free.get("source_url"):
+            offers.append({"@type": "Offer", "price": 0, "priceCurrency": "USD", "url": free["source_url"], "name": "無料プラン"})
+        mp = p.get("_min_plan")
+        if mp and mp.get("source_url"):
+            offers.append({"@type": "Offer", "price": mp["amount"], "priceCurrency": mp.get("currency", "USD"), "url": mp["source_url"], "name": mp.get("name", "")})
+        if offers:
+            app["offers"] = offers
+        items.append({"@type": "ListItem", "position": i, "item": app})
+    ld = [
+        {
+            "@context": "https://schema.org", "@type": "WebPage", "@id": abs_url(g["path"]), "name": g["full_title"], "description": g["seo"]["description"],
+            "datePublished": g.get("created") or g["updated"], "dateModified": g["modified"].isoformat(), "lastReviewed": g["reviewed"].isoformat(),
+            "reviewedBy": editor_ld(), "publisher": org_ld(), "inLanguage": "ja", "about": g.get("short_name"),
+            "isPartOf": {"@type": "WebSite", "@id": abs_url("/"), "name": SITE["site_name"]},
+        },
+        {"@context": "https://schema.org", "@type": "ItemList", "name": f"{g.get('short_name')}の比較表", "numberOfItems": len(items), "itemListElement": items},
+        breadcrumb_ld([("ホーム", "/"), ("用途別AIガイド", "/best/"), (g["full_title"], g["path"])]),
+    ]
+    if g.get("faq"):
+        ld.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": f["q"], "acceptedAnswer": {"@type": "Answer", "text": f["a"]}} for f in g["faq"]]})
+    return ld
+
+
+def guides_for_article(a: dict, guides: list[dict]) -> list[dict]:
+    """記事のタグ・タイトルに出てくる製品の用途別ガイド（1〜2件）"""
+    hits = []
+    for g in guides:
+        score = len(g["match_names"] & set(a["tags"])) + sum(1 for n in g["match_names"] if len(n) >= 4 and n in a["title"])
+        if score:
+            hits.append((score, g))
+    hits.sort(key=lambda x: -x[0])
+    return [g for _, g in hits[:2]]
+
+
 def build(now: datetime | None = None) -> None:
     now = now or datetime.now(JST)
     arts = load_articles()
@@ -564,6 +718,12 @@ def build(now: datetime | None = None) -> None:
     months = sorted(by_month.keys(), reverse=True)
     models = model_pages(arts)
     related = build_related(arts)
+    guides, guide_errors, guide_warns = guide_pages(arts, models, now)
+    if guide_errors:
+        print("用途別ガイドのエラー:\n  " + "\n  ".join(guide_errors), file=sys.stderr)
+        sys.exit(1)
+    guide_index = guides_mod.load_index()
+    guides_by_slug = {g["slug"]: g for g in guides}
 
     env.globals.update(
         site=SITE,
@@ -582,8 +742,15 @@ def build(now: datetime | None = None) -> None:
         cat_counts={k: len(v) for k, v in by_cat.items()},
         months=[{"key": m, "label": f"{m[:4]}年{int(m[5:])}月", "count": len(by_month[m]), "path": f"/archive/{m}/"} for m in months[:12]],
         models_top=models[:6],
+        guides_nav=[guides_by_slug[s] for s in guide_index.get("nav", []) if s in guides_by_slug] or guides[:6],
+        has_guides=bool(guides),
+        fmt_price=fmt_price,
         total_articles=len(arts),
     )
+
+    from markupsafe import Markup
+
+    env.filters["md"] = lambda text: Markup(render_body(text or "")[0])
 
     def render(tpl: str, **ctx) -> str:
         return env.get_template(tpl).render(**ctx)
@@ -591,6 +758,11 @@ def build(now: datetime | None = None) -> None:
     # 画像（OG兼サムネイル）
     og_stats = og.render_all(arts, CATS, DIST / "og", ROOT / ".cache" / "og")
     og.render_brand(DIST / "assets", SITE)
+    if guides:
+        og.render_all(
+            [{"slug": f"best-{g['slug']}", "thumb_text": g["short_name"], "thumb_kicker": "用途別AIガイド", "title": g["full_title"], "date": now, "category": "guide"} for g in guides],
+            {**CATS, "guide": GUIDE_CAT}, DIST / "og", ROOT / ".cache" / "og",
+        )
 
     # 記事ページ
     for i, a in enumerate(arts):
@@ -600,6 +772,7 @@ def build(now: datetime | None = None) -> None:
                 "article.html",
                 a=a,
                 related=related[a["slug"]],
+                guides_for=guides_for_article(a, guides),
                 newer=arts[i - 1] if i > 0 else None,
                 older=arts[i + 1] if i + 1 < len(arts) else None,
                 ld=article_ld(a),
@@ -669,6 +842,22 @@ def build(now: datetime | None = None) -> None:
     for m in models:
         write(m["path"], render("model.html", m=m, canonical=m["path"], noindex=not m["articles"], ld=[breadcrumb_ld([("ホーム", "/"), ("AIモデル図鑑", "/models/"), (m["name"], m["path"])])]))
 
+    # 用途別AIガイド（/best/）
+    if guides:
+        write("/best/", render(
+            "guides.html", groups=[{**grp, "items": [guides_by_slug[s] for s in grp.get("guides", []) if s in guides_by_slug]} for grp in guide_index.get("groups", [])],
+            canonical="/best/", og_image="/assets/og-default.png",
+            ld=[breadcrumb_ld([("ホーム", "/"), ("用途別AIガイド", "/best/")]),
+                {"@context": "https://schema.org", "@type": "CollectionPage", "name": "用途別AIガイド", "url": abs_url("/best/"), "inLanguage": "ja", "publisher": org_ld(),
+                 "hasPart": [{"@type": "WebPage", "name": g["full_title"], "url": abs_url(g["path"])} for g in guides]}],
+        ))
+        for g in guides:
+            write(g["path"], render(
+                "guide.html", g=g, canonical=g["path"], og_image=f"/og/best-{g['slug']}.png", noindex=g["noindex"], ld=guide_ld(g),
+                related_guides=[guides_by_slug[s] for s in (g.get("related") or {}).get("guides", []) if s in guides_by_slug],
+                embed=[m for m in models if m.get("status", "current") == "current"] if g.get("embed_models") else [],
+            ))
+
     # 固定ページ
     for p in sorted(PAGES.glob("*.md")):
         text = p.read_text(encoding="utf-8")
@@ -685,14 +874,15 @@ def build(now: datetime | None = None) -> None:
 
     # 検索用インデックス・フィード・サイトマップ
     write("/search.json", json.dumps(
-        [{"t": a["title"], "d": a["description"], "u": u(a["path"]), "c": a["cat"]["name"], "g": a["tags"], "p": a["date"].strftime("%Y/%m/%d")} for a in arts[: SITE.get("search_index_max", 3000)]],
+        [{"t": g["full_title"], "d": g["seo"]["description"], "u": u(g["path"]), "c": "用途別ガイド", "g": sorted(g["match_names"])[:12], "p": g["reviewed"].strftime("%Y/%m/%d")} for g in guides]
+        + [{"t": a["title"], "d": a["description"], "u": u(a["path"]), "c": a["cat"]["name"], "g": a["tags"], "p": a["date"].strftime("%Y/%m/%d")} for a in arts[: SITE.get("search_index_max", 3000)]],
         ensure_ascii=False, separators=(",", ":"),
     ))
     write("/feed.xml", rss(arts[:40], now))
-    write("/sitemap.xml", sitemap(arts, by_cat, by_tag, by_month, models, now))
+    write("/sitemap.xml", sitemap(arts, by_cat, by_tag, by_month, models, now, guides))
     write("/news-sitemap.xml", news_sitemap(arts, now))
     write("/robots.txt", robots())
-    write("/llms.txt", llms(arts, models))
+    write("/llms.txt", llms(arts, models, guides))
     if SITE.get("indexnow_key"):
         write(f"/{SITE['indexnow_key']}.txt", SITE["indexnow_key"])
     write("/.nojekyll", "")
@@ -700,6 +890,8 @@ def build(now: datetime | None = None) -> None:
     total = sum(1 for _ in DIST.rglob("index.html"))
     print(f"ビルド完了: 記事 {len(arts)} 本・{total} ページ（画像 新規{og_stats['new']}/再利用{og_stats['cached']}）→ dist/")
     warn_quality(arts)
+    for w in guide_warns:
+        print(f"  注意 ガイド {w}")
 
 
 def warn_quality(arts: list[dict]) -> None:
@@ -761,7 +953,7 @@ def rss(arts: list[dict], now: datetime) -> str:
 """
 
 
-def sitemap(arts: list[dict], by_cat: dict, by_tag: dict, by_month: dict, models: list[dict], now: datetime) -> str:
+def sitemap(arts: list[dict], by_cat: dict, by_tag: dict, by_month: dict, models: list[dict], now: datetime, guides: list[dict] | None = None) -> str:
     latest = arts[0]["date"] if arts else now
     urls = [(abs_url("/"), latest), (abs_url("/news/"), latest), (abs_url("/models/"), latest)]
     urls += [(abs_url(a["path"]), a["updated"] or a["date"]) for a in arts]
@@ -769,6 +961,10 @@ def sitemap(arts: list[dict], by_cat: dict, by_tag: dict, by_month: dict, models
     urls += [(abs_url(f"/tag/{t}/"), v[0]["date"]) for t, v in by_tag.items() if len(v) >= TAG_INDEX_MIN]
     urls += [(abs_url(f"/archive/{m}/"), v[0]["date"]) for m, v in by_month.items()]
     urls += [(abs_url(m["path"]), m["articles"][0]["date"]) for m in models if m["articles"]]
+    guides = guides or []
+    if guides:
+        urls.append((abs_url("/best/"), max(datetime.combine(g["modified"], datetime.min.time(), JST) for g in guides)))
+    urls += [(abs_url(g["path"]), datetime.combine(g["modified"], datetime.min.time(), JST)) for g in guides if not g["noindex"]]
     urls += [(abs_url(p), None) for p in ("/about/", "/about/editor/", "/privacy/")]
     body = "".join(
         f"<url><loc>{xml_escape(loc)}</loc>" + (f"<lastmod>{d.isoformat()}</lastmod>" if d else "") + "</url>" for loc, d in urls
@@ -798,7 +994,7 @@ Sitemap: {abs_url('/news-sitemap.xml')}
 """
 
 
-def llms(arts: list[dict], models: list[dict]) -> str:
+def llms(arts: list[dict], models: list[dict], guides: list[dict] | None = None) -> str:
     lines = [
         f"# {SITE['site_name']}（{SITE['site_name_en']}）",
         "",
@@ -811,6 +1007,12 @@ def llms(arts: list[dict], models: list[dict]) -> str:
         "",
     ]
     lines += [f"- [{a['title']}]({abs_url(a['path'])}): {a['description']}" for a in arts[:50]]
+    if guides:
+        lines += ["", "## 用途別AIガイド（目的別のおすすめAIと料金比較。公式ページで確認した事実と確認日つき・毎週点検）", "", f"- {abs_url('/best/')}"]
+        for g in guides:
+            v = g["verdicts_sorted"][0] if g["verdicts_sorted"] else None
+            head = f"（{v['question']}→{v['_pick']['name']}）" if v and v.get("_pick") else ""
+            lines.append(f"- [{g['full_title']}]({abs_url(g['path'])}): {g['seo']['description']}{head}")
     lines += ["", "## AIモデル図鑑（料金・仕様の比較。記事から自動更新）", "", f"- {abs_url('/models/')}"]
     lines += [f"- [{m['name']}]({abs_url(m['path'])}): {m['vendor']}" + (f"、入力${m['input_per_m']}/出力${m['output_per_m']}（100万トークン）" if m.get("input_per_m") is not None else "") for m in models[:30]]
     lines += ["", "## カテゴリ", ""]
