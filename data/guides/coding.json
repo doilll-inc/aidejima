@@ -1,0 +1,1193 @@
+{
+  "slug": "coding",
+  "status": "published",
+  "priority": 1,
+  "created": "2026-09-30",
+  "updated": "2026-10-01",
+  "last_reviewed": "2026-10-01",
+  "title": "コーディングAIのおすすめと料金比較（エージェント・IDE・CLI）",
+  "short_name": "コーディング",
+  "seo": {
+    "description": "Claude Code・Codex・GitHub Copilot・Cursor など主要なコーディングAIを、公式ページで確かめた料金、無料版の範囲、コードが学習に使われるか、対応環境で比較。公開評価にもとづく目的別のおすすめも掲載。",
+    "keywords": [
+      "コーディングAI",
+      "AIエージェント",
+      "おすすめ",
+      "料金",
+      "Claude Code",
+      "Codex",
+      "Copilot",
+      "Cursor"
+    ]
+  },
+  "intro": "品質で選ぶなら **Claude Code**（Opus 5.5）か **Codex**（GPT-6 Astra）、費用を抑えるなら月10ドルの **GitHub Copilot** Pro、無料で始めるなら **Google Antigravity** が出発点です。Code Arena の WebDev 部門では Claude Opus 5.5 が1位、Terminal-Bench 4.0 では GPT-6 Astra と Codex の組み合わせが1位です（2026年10月1日確認）。",
+  "scope": "コードを書く・直す・調べるAIを、自律的に作業するエージェント（CLI・クラウド）、IDE・エディタの補完、ブラウザで完結するアプリ生成の3つに分けて比べる。モデルそのもののAPI料金は「AI API」ガイドで扱う。",
+  "audience": [
+    "開発者",
+    "エンジニアリングマネージャー",
+    "非エンジニアでツールを作りたい人"
+  ],
+  "segments": [
+    {
+      "id": "agent",
+      "name": "エージェント・CLI",
+      "desc": "指示を受けて自律的にコードを書き、テストし、PRを作る"
+    },
+    {
+      "id": "ide",
+      "name": "IDE・エディタ",
+      "desc": "エディタ内の補完・チャット・修正"
+    },
+    {
+      "id": "cloud",
+      "name": "ブラウザ完結・アプリ生成",
+      "desc": "環境構築なしでアプリを作って公開する"
+    }
+  ],
+  "verdicts": [
+    {
+      "id": "best-quality",
+      "question": "最高品質で選ぶなら",
+      "pick": "claude-code",
+      "runner_up": [
+        "codex"
+      ],
+      "answer": "Code Arena の WebDev 部門で Claude Opus 5.5 が1818で1位（GPT-6 Astra は1789で2位）。第三者の Terminal-Bench 4.0 では GPT-6 Astra＋Codex 58.2%、Fable 5.1＋Claude Code 57.9%で、差は誤差の範囲です（2026年10月1日確認）。",
+      "evidence": [
+        {
+          "kind": "third_party",
+          "name": "Code Arena（WebDev）",
+          "url": "https://arena.ai/leaderboard/code",
+          "date": "2026-10-01",
+          "note": "1位 claude-opus-5.5-max 1818、2位 gpt-6-astra-max 1789（2026-09-30更新）"
+        },
+        {
+          "kind": "third_party",
+          "name": "Terminal-Bench 4.0",
+          "url": "https://www.tbench.ai/",
+          "date": "2026-10-01",
+          "note": "1位 GPT-6 Astra（max）＋Codex 58.2%±2.8、2位 Fable 5.1（max）＋Claude Code 57.9%±3.8。Opus 5.5 は未掲載（2026-10-01時点）"
+        },
+        {
+          "kind": "official",
+          "name": "Introducing Claude Opus 5.5",
+          "url": "https://www.anthropic.com/claude-opus-5-5",
+          "date": "2026-10-01",
+          "note": "Anthropic 公表値で Terminal-Bench 4.0 は Opus 5.5 66.4%、GPT-6 Astra 57.9%"
+        }
+      ]
+    },
+    {
+      "id": "best-value",
+      "question": "コスパで選ぶなら",
+      "pick": "github-copilot",
+      "runner_up": [
+        "codex"
+      ],
+      "answer": "GitHub Copilot Pro は月$10で、補完が無制限、月1,500 AI クレジット（$15相当）が付き、Claude Code や Codex などの外部エージェントも使えます。ChatGPT Plus（月3,000円）を契約済みなら Codex が追加料金なしで使えます。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "GitHub Copilot Plans & pricing",
+          "url": "https://github.com/features/copilot/plans",
+          "date": "2026-10-01",
+          "note": "Pro $10 USD per user / month、1,500 monthly AI credits（$15 value）、Access to 3rd party agents（Claude Code and Codex）"
+        },
+        {
+          "kind": "official",
+          "name": "ChatGPT 料金ページ",
+          "url": "https://chatgpt.com/ja-JP/pricing/",
+          "date": "2026-10-01",
+          "note": "Plus ￥3,000 / 月、Codex の利用上限が拡大"
+        }
+      ]
+    },
+    {
+      "id": "free",
+      "question": "無料で使うなら",
+      "pick": "antigravity",
+      "runner_up": [
+        "github-copilot"
+      ],
+      "answer": "Google Antigravity は無料で Gemini 3.8 Flash・3.1 Pro に加えて Claude Opus 4.6 もエージェントで使えます（週ごとのレート制限あり）。GitHub Copilot Free は月2,000回の補完と、制限付きのチャット・エージェントです。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Google Antigravity Pricing",
+          "url": "https://antigravity.google/pricing",
+          "date": "2026-10-01",
+          "note": "$0/month：Gemini 3.8 Flash・3.1 Pro、Claude Sonnet & Opus 4.6 など。週ごとの基本レート制限"
+        },
+        {
+          "kind": "official",
+          "name": "GitHub Copilot Plans & pricing",
+          "url": "https://github.com/features/copilot/plans",
+          "date": "2026-10-01",
+          "note": "Free：2,000 completions per month、チャットとエージェントは制限付き"
+        }
+      ]
+    },
+    {
+      "id": "business",
+      "question": "会社で安全に使うなら（入力が学習に使われない・管理機能）",
+      "pick": "github-copilot",
+      "runner_up": [
+        "cursor",
+        "claude-code"
+      ],
+      "answer": "GitHub Copilot Business（1ユーザー月$19）は学習利用の対象外で、知財免責と管理機能が付きます。Cursor の Teams はプライバシーモードが既定でオン、Claude Code の Team・Enterprise も学習に使いません。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "GitHub Copilot Plans & pricing（ビジネス向け）",
+          "url": "https://github.com/features/copilot/plans",
+          "date": "2026-10-01",
+          "note": "Business $19 USD ユーザー/月、知財免責とデータ プライバシー"
+        },
+        {
+          "kind": "official",
+          "name": "GitHub Copilot インタラクションデータ利用ポリシーの更新",
+          "url": "https://github.blog/jp/2026-03-26-updates-to-github-copilot-interaction-data-usage-policy/",
+          "date": "2026-10-01",
+          "note": "Business・Enterprise のユーザーは学習利用の対象外"
+        },
+        {
+          "kind": "official",
+          "name": "Cursor Privacy",
+          "url": "https://cursor.com/help/security-and-privacy/privacy",
+          "date": "2026-10-01",
+          "note": "Teams はプライバシーモードが既定でオン"
+        },
+        {
+          "kind": "official",
+          "name": "Claude Code Data usage",
+          "url": "https://code.claude.com/docs/en/data-usage",
+          "date": "2026-10-01",
+          "note": "Team・Enterprise・API は既存の方針（学習に使わない）"
+        }
+      ]
+    },
+    {
+      "id": "beginner",
+      "question": "初めて使うなら",
+      "pick": "lovable",
+      "runner_up": [
+        "replit"
+      ],
+      "answer": "Lovable はブラウザだけでアプリを作って公開でき、無料版はクレジットカード不要です。作ったアプリと AI の出力の所有権は利用者にあります。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Lovable Pricing",
+          "url": "https://lovable.dev/pricing",
+          "date": "2026-10-01",
+          "note": "Free $0 / month、No credit card needed"
+        },
+        {
+          "kind": "official",
+          "name": "Lovable Terms",
+          "url": "https://lovable.dev/terms",
+          "date": "2026-10-01",
+          "note": "作ったアプリと AI Output の所有権は利用者"
+        },
+        {
+          "kind": "editorial",
+          "name": "編集部の判断",
+          "url": "",
+          "date": "2026-10-01",
+          "note": "環境構築が不要で、非エンジニアでも結果を画面で確かめながら進められる点を重視"
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "vendor": "Anthropic",
+      "url": "https://claude.com/product/claude-code",
+      "status": "featured",
+      "rank": 1,
+      "segment": "agent",
+      "tags": [
+        "Claude Code",
+        "Claude Opus 5.5"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Claude Opus 5.5",
+        "released": "2026-09-22",
+        "source_url": "https://www.anthropic.com/claude-opus-5-5",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "cli",
+        "ide",
+        "desktop",
+        "web"
+      ],
+      "strengths": [
+        "Code Arena WebDev で Opus 5.5 が1位",
+        "ターミナル・VS Code・JetBrains・Web で動く",
+        "Pro（年払いで月$17）から使える"
+      ],
+      "weaknesses": [
+        "無料版では使えない",
+        "チャットと同じ利用上限を共有する"
+      ],
+      "editorial_take": "品質重視ならこれ。Opus 5.5 は Code Arena の WebDev 部門で1位で、Anthropic の公表値では Terminal-Bench 4.0 でも66.4%。",
+      "pricing": {
+        "free": {
+          "available": false,
+          "detail": "無料版には含まれない（有料プランすべてに含まれる）",
+          "source_url": "https://claude.com/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Pro",
+            "amount": 17,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$17 Per month with annual subscription discount ($200 billed up front). $20 if billed monthly.",
+            "detail": "Claude Code を含む。チャットと利用上限を共有",
+            "source_url": "https://claude.com/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Max",
+            "amount": 100,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "From $100 Per month",
+            "detail": "Pro の5倍か20倍の利用量",
+            "source_url": "https://claude.com/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Team（標準シート）",
+            "amount": 20,
+            "currency": "USD",
+            "per": "seat_month",
+            "as_shown": "$20 Per seat / month if billed annually. $25 if billed monthly.",
+            "detail": "2〜150人。プレミアムシートは年払い $100・月払い $125",
+            "source_url": "https://claude.com/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": "表示価格に税は含まない。Claude Console（API）の従量課金でも使える。"
+      },
+      "japanese": {
+        "ui": "partial",
+        "output": "yes",
+        "note": "設定 language に \"japanese\" などを指定すると、その言語で応答する。公式ドキュメントには日本語版もある（code.claude.com/docs/ja）",
+        "source_url": "https://code.claude.com/docs/en/settings-reference",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "Pro・Max は消費者向け規約で出力の権利を利用者に譲渡。Team・Enterprise・API は商用規約",
+        "source_url": "https://www.anthropic.com/legal/consumer-terms",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "opt_out_available",
+        "note": "Free・Pro・Max は設定がオンのとき Claude Code の利用データも学習に使われ、オフにできる。Team・Enterprise・API は既存の方針どおり学習に使わない",
+        "source_url": "https://code.claude.com/docs/en/data-usage",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "公式の提供国・地域一覧に日本",
+        "source_url": "https://www.anthropic.com/supported-countries",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "codex",
+      "name": "Codex",
+      "vendor": "OpenAI",
+      "url": "https://chatgpt.com/codex/",
+      "status": "featured",
+      "rank": 2,
+      "segment": "agent",
+      "tags": [
+        "Codex",
+        "GPT-6.1"
+      ],
+      "model_slugs": [
+        "gpt-6-1-sol",
+        "gpt-6-astra",
+        "gpt-6-luna"
+      ],
+      "latest": {
+        "name": "GPT-6.1 Sol",
+        "released": "2026-09-29",
+        "source_url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "cli",
+        "ide",
+        "web",
+        "app",
+        "desktop"
+      ],
+      "strengths": [
+        "Terminal-Bench 4.0 で1位（GPT-6 Astra）",
+        "ChatGPT Plus（月3,000円）に含まれる",
+        "クラウドで PC を閉じても作業を続ける"
+      ],
+      "weaknesses": [
+        "Plus の GPT-6 Astra は5時間で5〜45回が目安",
+        "無料版は GPT-6 Luna のみ（順次提供）"
+      ],
+      "editorial_take": "ChatGPT を契約しているなら追加料金なしで使える。第三者の Terminal-Bench 4.0 では GPT-6 Astra との組み合わせが1位。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "デスクトップアプリで GPT-6 Luna（標準速度、順次提供）",
+          "source_url": "https://developers.openai.com/codex/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "ChatGPT Plus",
+            "amount": 3000,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "￥3,000 / 月",
+            "detail": "Codex の利用上限が拡大",
+            "source_url": "https://chatgpt.com/ja-JP/pricing/",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "ChatGPT Pro",
+            "amount": 16800,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "月額 ￥16,800 から",
+            "detail": "3段階の利用枠。Codex と ChatGPT Work のセッションをより長く",
+            "source_url": "https://chatgpt.com/ja-JP/pricing/",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "ChatGPT Business（標準シート）",
+            "amount": 3050,
+            "currency": "JPY",
+            "per": "seat_month",
+            "as_shown": "￥3,050 / 月（年額課金。月額課金は ￥3,850 / 月）",
+            "detail": "ChatGPT・ChatGPT Work・Codex のすべての機能",
+            "source_url": "https://chatgpt.com/ja-JP/pricing/",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": true,
+        "note": "Plus の目安は5時間あたり GPT-6 Astra 5〜45回、GPT-6.1 Sol 15〜160回のローカルメッセージ（Codex 料金ページ）。API キーでの従量課金でも使える。"
+      },
+      "japanese": {
+        "ui": "unknown",
+        "output": "unknown",
+        "note": "Codex 単体の対応言語の記載は見つからず（ChatGPT の画面は日本語に対応）",
+        "source_url": "https://developers.openai.com/codex/pricing",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "利用規約で出力の権利は利用者に帰属。競合モデルの開発に使うことは禁止",
+        "source_url": "https://openai.com/policies/terms-of-use/",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "opt_out_available",
+        "note": "個人プランは「すべての人のためにモデルを改善する」が Codex のタスクにも適用され、オフにできる。環境の情報を学習に含めるかは Codex 設定で別に選ぶ。Business・Enterprise は既定で学習に使わない",
+        "source_url": "https://help.openai.com/en/articles/7730893-data-controls-faq",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "ChatGPT の公式の提供国一覧に日本",
+        "source_url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "github-copilot",
+      "name": "GitHub Copilot",
+      "vendor": "GitHub",
+      "url": "https://github.com/features/copilot",
+      "status": "featured",
+      "rank": 3,
+      "segment": "ide",
+      "tags": [
+        "GitHub Copilot"
+      ],
+      "model_slugs": [],
+      "access": [
+        "ide",
+        "cli",
+        "web",
+        "app",
+        "desktop"
+      ],
+      "strengths": [
+        "Pro は月$10で Claude Code・Codex も使える",
+        "GPT-6・Claude 5.5・Gemini 3.8 に対応",
+        "VS Code・JetBrains・Xcode などに対応"
+      ],
+      "weaknesses": [
+        "Chat の主な対応言語は英語（公式）",
+        "Free・Pro・Pro+ は既定で学習に使われる"
+      ],
+      "editorial_take": "費用を抑えて複数のモデルとエージェントを使い分けたいならこれ。会社で使うなら学習に使われない Business 以上。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "入門モデル、月2,000回のコード補完、チャットとエージェントは制限付き",
+          "source_url": "https://github.com/features/copilot/plans",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Pro",
+            "amount": 10,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$10 USD per user / month",
+            "detail": "補完無制限、外部エージェント（Claude Code・Codex）、月1,500 AI クレジット（$15相当）",
+            "source_url": "https://github.com/features/copilot/plans",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Pro+",
+            "amount": 39,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$39 USD per user / month",
+            "detail": "最先端モデル、監査ログ、Pro の4.6倍超のクレジット",
+            "source_url": "https://github.com/features/copilot/plans",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Max",
+            "amount": 100,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$100 USD per user / month",
+            "detail": "最先端モデルへの先行アクセス、Pro の13.3倍超のクレジット",
+            "source_url": "https://github.com/features/copilot/plans",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Business",
+            "amount": 19,
+            "currency": "USD",
+            "per": "seat_month",
+            "as_shown": "$19 USD ユーザー/月",
+            "detail": "1ユーザーにつき1,900クレジット、知財免責とデータプライバシー、管理機能",
+            "source_url": "https://github.com/features/copilot/plans",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Enterprise",
+            "amount": 39,
+            "currency": "USD",
+            "per": "seat_month",
+            "as_shown": "$39 USD ユーザー/月",
+            "detail": "Business の全特典＋1ユーザーにつきさらに2,000クレジット",
+            "source_url": "https://github.com/features/copilot/plans",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": "チャット・エージェント・コードレビューなどは GitHub AI クレジットを消費する。"
+      },
+      "japanese": {
+        "ui": "partial",
+        "output": "partial",
+        "note": "Copilot Chat の主な対応言語は英語で、他の言語では性能が異なる場合がある（公式のアプリケーションカード）。料金ページとドキュメントは日本語あり",
+        "source_url": "https://docs.github.com/en/copilot/responsible-use/chat",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "製品別規約で、GitHub は提案（Suggestions）の所有権を持たず、コードの所有権は利用者に残る",
+        "source_url": "https://github.com/customer-terms/github-copilot-product-specific-terms",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "opt_out_available",
+        "note": "2026年4月24日から Free・Pro・Pro+ の入力・出力・コード断片は、オプトアウトしない限り学習に使われる。Business・Enterprise と有料 Organization のリポジトリは対象外",
+        "source_url": "https://github.blog/jp/2026-03-26-updates-to-github-copilot-interaction-data-usage-policy/",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "日本から料金ページを開くと日本語で表示され、各プランを申し込める（提供国一覧は見つからず）",
+        "source_url": "https://github.com/features/copilot/plans",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "vendor": "Anysphere",
+      "url": "https://cursor.com/",
+      "status": "featured",
+      "rank": 4,
+      "segment": "ide",
+      "tags": [
+        "Cursor"
+      ],
+      "model_slugs": [],
+      "access": [
+        "desktop",
+        "cli",
+        "web"
+      ],
+      "strengths": [
+        "エディタ内のエージェントとクラウドエージェント",
+        "Teams はプライバシーモードが既定でオン",
+        "最先端モデルを選んで使える（Pro 以上）"
+      ],
+      "weaknesses": [
+        "個人はプライバシーモードを自分でオンにする",
+        "上位は Pro+ $60・Ultra $200 と高め"
+      ],
+      "editorial_take": "エディタごと乗り換えて、補完からエージェントまで1か所で済ませたい人向け。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "Hobby：クレジットカード不要、Agent リクエストは制限付き、Composer を利用可",
+          "source_url": "https://cursor.com/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Pro",
+            "amount": 20,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$20 / mo.",
+            "detail": "Agent の上限拡大、最先端モデル、クラウドエージェント",
+            "source_url": "https://cursor.com/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Pro+",
+            "amount": 60,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$60 / mo.",
+            "detail": "毎日エージェントを使う人向け（公式の推奨）",
+            "source_url": "https://cursor.com/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Ultra",
+            "amount": 200,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$200 / mo.",
+            "detail": "エージェントを大量に使う人向け",
+            "source_url": "https://cursor.com/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Teams（Standard）",
+            "amount": 40,
+            "currency": "USD",
+            "per": "seat_month",
+            "as_shown": "$40 / user / mo.",
+            "detail": "一括請求・管理、Bugbot のコードレビュー、SAML/OIDC SSO。Premium は $120 / user / mo.",
+            "source_url": "https://cursor.com/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Enterprise",
+            "currency": "USD",
+            "per": "seat_month",
+            "as_shown": "Custom",
+            "detail": "利用量の共有、請求書払い、SCIM",
+            "source_url": "https://cursor.com/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": "表示は月払い。料金ページで年払いに切り替えられる。"
+      },
+      "japanese": {
+        "ui": "partial",
+        "output": "unknown",
+        "note": "公式ドキュメントに日本語版あり。エディタ画面と応答の対応言語の記載は見つからず",
+        "source_url": "https://cursor.com/ja/docs",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "利用規約5.3で、提案（Suggestions）の権利を利用者に譲渡",
+        "source_url": "https://cursor.com/terms-of-service",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "opt_out_available",
+        "note": "プライバシーモードをオフにしているとコードやプロンプトが学習に使われることがある。設定でオンにすれば学習に使われない。Teams は既定でオン",
+        "source_url": "https://cursor.com/data-use",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "日本から料金ページを開くと日本語で表示され、各プランを申し込める（提供国一覧は見つからず）",
+        "source_url": "https://cursor.com/pricing",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "antigravity",
+      "name": "Google Antigravity",
+      "vendor": "Google",
+      "url": "https://antigravity.google/",
+      "status": "featured",
+      "rank": 5,
+      "segment": "ide",
+      "tags": [
+        "Antigravity",
+        "Gemini"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Gemini 3.8 Flash",
+        "released": "2026-09-02",
+        "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "desktop",
+        "cli",
+        "ide",
+        "web"
+      ],
+      "strengths": [
+        "無料で Gemini 3.8 Flash と Opus 4.6",
+        "IDE・CLI・他社 IDE の拡張で使える"
+      ],
+      "weaknesses": [
+        "Code Arena で Gemini 3.8 Flash は28位",
+        "操作データは既定で Google の改善に使われる"
+      ],
+      "editorial_take": "無料で試すなら最有力。個人向けの Gemini CLI は2026年6月18日に Antigravity CLI へ置き換わった。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "Gemini 3.8 Flash・3.7 Flash・3.6 Flash・3.1 Pro、Claude Sonnet・Opus 4.6、gpt-oss-120b。タブ補完は無制限、週ごとの基本レート制限あり",
+          "source_url": "https://antigravity.google/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Google AI Pro",
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "Google AI Pro プランに含まれる",
+            "detail": "個人向けより高いレート制限と AI クレジット",
+            "source_url": "https://antigravity.google/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Google AI Ultra",
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "Google AI Ultra プランに含まれる",
+            "detail": "さらに高いレート制限と AI クレジット",
+            "source_url": "https://antigravity.google/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Business（Google Cloud）",
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "API の従量課金（Gemini Enterprise 経由）",
+            "detail": "Google Cloud の規約、支出上限、管理機能",
+            "source_url": "https://antigravity.google/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": "Google AI Pro は月2,900円、Ultra は月14,500円から（Google AI プランのページ。チャットAIガイド参照）。"
+      },
+      "japanese": {
+        "ui": "unknown",
+        "output": "unknown",
+        "note": "対応言語の記載は見つからず",
+        "source_url": "https://antigravity.google/docs/faq/",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "個人向けは Google 利用規約などに基づく追加規約で提供。Google 利用規約では生成コンテンツの所有権を Google は主張しない。他社モデルを選んだ場合はそのモデルの規約が適用",
+        "source_url": "https://antigravity.google/terms",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "opt_out_available",
+        "note": "操作データ（Interactions）は Google の製品と機械学習技術の改善に使われ、社員や委託先が見ることがある。設定で変更でき、削除も依頼できる",
+        "source_url": "https://antigravity.google/terms",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "FAQ の提供国・地域一覧に日本（個人の Google アカウント）",
+        "source_url": "https://antigravity.google/docs/faq/",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "lovable",
+      "name": "Lovable",
+      "vendor": "Lovable",
+      "url": "https://lovable.dev/",
+      "status": "featured",
+      "rank": 6,
+      "segment": "cloud",
+      "tags": [
+        "Lovable"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web"
+      ],
+      "strengths": [
+        "ブラウザだけでアプリを作って公開できる",
+        "作ったアプリと AI 出力の所有権は利用者",
+        "無料版はクレジットカード不要"
+      ],
+      "weaknesses": [
+        "入力データは既定で学習に使われる",
+        "クレジット制で消費量が作業内容で変わる"
+      ],
+      "editorial_take": "環境構築なしでアプリを形にしたい非エンジニア向け。社外秘を扱うなら学習利用の停止を先に申し出る。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "クレジットカード不要。ワークスペース内の非公開プロジェクト、lovable.app ドメイン5つ",
+          "source_url": "https://lovable.dev/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Pro",
+            "amount": 25,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$25 / month",
+            "detail": "月100クレジット、ユーザー数無制限、クレジット繰り越し",
+            "source_url": "https://lovable.dev/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Business",
+            "amount": 50,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$50 / month",
+            "detail": "月100クレジット、Pro の全機能",
+            "source_url": "https://lovable.dev/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Enterprise",
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "Book a demo（要問い合わせ）",
+            "detail": "GitHub Enterprise 連携など",
+            "source_url": "https://lovable.dev/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": "年払いは2か月分無料（料金ページ）。"
+      },
+      "japanese": {
+        "ui": "unknown",
+        "output": "unknown",
+        "note": "対応言語の記載は見つからず",
+        "source_url": "https://lovable.dev/pricing",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "利用規約で、作ったアプリと AI 出力の所有権は利用者（基盤モデル側の権利を除く）。自社事業での公開・運用も許諾",
+        "source_url": "https://lovable.dev/terms",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "opt_out_available",
+        "note": "利用規約で、顧客データを AI モデルの開発・学習に使えるとする。申し出ればプランにかかわらず無料で以後の利用を止める",
+        "source_url": "https://lovable.dev/terms",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "unknown",
+        "note": "提供地域の記載は見つからず",
+        "source_url": "https://lovable.dev/terms",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "devin",
+      "name": "Devin",
+      "vendor": "Cognition",
+      "url": "https://devin.ai/",
+      "status": "listed",
+      "rank": 10,
+      "segment": "agent",
+      "tags": [
+        "Devin"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web",
+        "desktop"
+      ],
+      "editorial_take": "クラウドか手元で動き、PR を出すまで作業する自律型エージェント。windsurf.com も現在は Devin Desktop のページになっている。",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "grok-build",
+      "name": "Grok Build",
+      "vendor": "SpaceXAI",
+      "url": "https://x.ai/build",
+      "status": "listed",
+      "rank": 11,
+      "segment": "agent",
+      "tags": [
+        "Grok"
+      ],
+      "model_slugs": [],
+      "access": [
+        "cli",
+        "web"
+      ],
+      "editorial_take": "SpaceXAI のコーディングエージェント。Terminal-Bench 4.0 では Grok 4.7 との組み合わせが6位（37.6%）。",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "mistral-vibe",
+      "name": "Mistral Vibe",
+      "vendor": "Mistral AI",
+      "url": "https://mistral.ai/products/vibe",
+      "status": "listed",
+      "rank": 12,
+      "segment": "agent",
+      "tags": [
+        "Mistral"
+      ],
+      "model_slugs": [],
+      "access": [
+        "cli",
+        "ide",
+        "web"
+      ],
+      "editorial_take": "旧 Le Chat。チャットとコーディングエージェント（Vibe for code）を1つにまとめた製品。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "コーディングのセッションは制限付き",
+          "source_url": "https://mistral.ai/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Pro",
+            "amount": 14.99,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$14.99 /mo（Excluding taxes）",
+            "detail": "CLI・IDE・Web で終日コーディング",
+            "source_url": "https://mistral.ai/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": ""
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "augment-code",
+      "name": "Augment Code",
+      "vendor": "Augment Code",
+      "url": "https://www.augmentcode.com/",
+      "status": "listed",
+      "rank": 13,
+      "segment": "agent",
+      "tags": [
+        "Augment Code"
+      ],
+      "model_slugs": [],
+      "access": [
+        "ide",
+        "cli"
+      ],
+      "editorial_take": "大規模な組織向けに、仕様から検証までを回すエージェント基盤（Cosmos）を提供。",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "kiro",
+      "name": "Kiro",
+      "vendor": "Kiro",
+      "url": "https://kiro.dev/",
+      "status": "listed",
+      "rank": 14,
+      "segment": "ide",
+      "tags": [
+        "Kiro"
+      ],
+      "model_slugs": [],
+      "access": [
+        "desktop",
+        "cli"
+      ],
+      "editorial_take": "指示を実行可能な仕様に落としてから実装する、仕様駆動型の開発環境。",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "jetbrains-ai",
+      "name": "JetBrains AI",
+      "vendor": "JetBrains",
+      "url": "https://www.jetbrains.com/ai/",
+      "status": "listed",
+      "rank": 15,
+      "segment": "ide",
+      "tags": [
+        "JetBrains"
+      ],
+      "model_slugs": [],
+      "access": [
+        "ide"
+      ],
+      "editorial_take": "IntelliJ IDEA などの JetBrains 製 IDE に組み込まれる AI 支援とエージェント。",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "replit",
+      "name": "Replit",
+      "vendor": "Replit",
+      "url": "https://replit.com/",
+      "status": "listed",
+      "rank": 16,
+      "segment": "cloud",
+      "tags": [
+        "Replit"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web",
+        "app"
+      ],
+      "editorial_take": "言葉で指示してアプリやサイトを作り、そのまま公開・運用までできる開発環境。",
+      "pricing": {
+        "plans": [
+          {
+            "name": "Core",
+            "amount": 20,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$20（$18 / month, billed annually）",
+            "detail": "上位モデル向けに月$20分",
+            "source_url": "https://replit.com/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Pro",
+            "amount": 100,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$100（$90 / month, billed annually）",
+            "detail": "並列エージェント10、上位モデル向けに月$100分",
+            "source_url": "https://replit.com/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": ""
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "bolt",
+      "name": "Bolt",
+      "vendor": "StackBlitz",
+      "url": "https://bolt.new/",
+      "status": "listed",
+      "rank": 17,
+      "segment": "cloud",
+      "tags": [
+        "Bolt"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web"
+      ],
+      "editorial_take": "チャットでWebサイトやアプリ、試作品を作るブラウザ完結型のツール。",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "v0",
+      "name": "v0",
+      "vendor": "Vercel",
+      "url": "https://v0.app/",
+      "status": "listed",
+      "rank": 18,
+      "segment": "cloud",
+      "tags": [
+        "v0"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web"
+      ],
+      "editorial_take": "Vercel のアプリ生成。作ったアプリをすぐ公開でき、GitHub に直接プッシュできる。",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    }
+  ],
+  "criteria": [
+    {
+      "name": "自律性（どこまで任せられるか）",
+      "why": "計画・実装・テスト・PRまで通せるかで、人の関与の量が変わる",
+      "how_to_check": "公式の機能説明と、SWE-bench 等の公開評価の結果を見る"
+    },
+    {
+      "name": "対応環境",
+      "why": "使っているIDE・OS・言語に対応しているかが前提条件",
+      "how_to_check": "公式の対応一覧（VS Code・JetBrains・CLI・Web）を確認する"
+    },
+    {
+      "name": "料金の単位と上限",
+      "why": "定額・従量・クレジット・利用量の上限で、月の実費が大きく変わる",
+      "how_to_check": "公式料金ページでプラン別の上限（リクエスト数・トークン・時間）を確認する"
+    },
+    {
+      "name": "コードとデータの扱い",
+      "why": "コードが学習に使われるか、社内リポジトリを扱えるかで企業利用の可否が決まる",
+      "how_to_check": "公式のデータポリシーと法人プランの説明を確認する"
+    },
+    {
+      "name": "モデルの選択肢",
+      "why": "背後のモデルを選べるか、最新モデルにどれだけ早く対応するかで品質が変わる",
+      "how_to_check": "公式の対応モデル一覧を確認する"
+    },
+    {
+      "name": "評価結果",
+      "why": "エージェント性能は公開ベンチマーク（SWE-bench Verified、Terminal-Bench 等）で比較できる",
+      "how_to_check": "公式のモデルカードと公開リーダーボードの数値・日付を記録する"
+    }
+  ],
+  "benchmarks": [
+    {
+      "id": "terminal-bench-4",
+      "name": "Terminal-Bench 4.0",
+      "operator": "Terminal-Bench",
+      "url": "https://www.tbench.ai/",
+      "what": "ターミナル上で実際の開発・運用タスクを解けた割合（モデルとエージェントの組み合わせで計測）",
+      "snapshot": "1位 GPT-6 Astra（max）＋Codex 58.2%±2.8、2位 Fable 5.1（max）＋Claude Code 57.9%±3.8、3位 Opus 5（xhigh）＋Claude Code 53.9%、6位 Grok 4.7（xhigh）＋Grok Build 37.6%、11位 Gemini 3.8 Flash（high）＋mini-SWE-agent 19.1%。Claude Opus 5.5 は未掲載（2026-10-01時点）",
+      "checked": "2026-10-01"
+    },
+    {
+      "id": "arena-code-webdev",
+      "name": "Code Arena（WebDev）",
+      "operator": "LMArena",
+      "url": "https://arena.ai/leaderboard/code",
+      "what": "Webアプリ作成など、フロントエンド開発の出来を利用者が一対比較で投票したスコア",
+      "snapshot": "1位 claude-opus-5.5-max 1818、2位 gpt-6-astra-max 1789、3位 gpt-6.1-sol-max 1759、4位 claude-fable-5.1-max 1751、8位 gemini-4-argon-high 1679（暫定）、15位 grok-4.7-xhigh 1636、28位 gemini-3.8-flash-high 1583（2026-09-30更新・2026-10-01確認）",
+      "checked": "2026-10-01"
+    },
+    {
+      "id": "anthropic-opus-5-5",
+      "name": "Introducing Claude Opus 5.5（Anthropic 公式発表）",
+      "operator": "Anthropic",
+      "url": "https://www.anthropic.com/claude-opus-5-5",
+      "what": "開発元が公表した評価結果",
+      "snapshot": "Terminal-Bench 4.0 で Opus 5.5 66.4%、GPT-6 Astra 57.9%、Fable 5.1 55.8%（Anthropic の公表値。第三者の再計測ではない）",
+      "checked": "2026-10-01"
+    }
+  ],
+  "faq": [
+    {
+      "q": "エージェント型とIDE型はどう違いますか？",
+      "a": "エージェント型（Claude Code・Codex など）は、指示を受けてコードを書き、テストし、プルリクエストまで自律的に進めます。IDE型（Cursor・GitHub Copilot・Google Antigravity）はエディタの中で補完やチャットを使い、エージェント機能も組み込まれています。Lovable のようなブラウザ完結型は、環境構築なしでアプリを作って公開できます。"
+    },
+    {
+      "q": "書いたコードはAIの学習に使われますか？",
+      "a": "製品とプランで違います。GitHub Copilot の Free・Pro・Pro+ は2026年4月24日から、オプトアウトしない限り学習に使われます（Business・Enterprise は対象外）。Cursor はプライバシーモードをオンにすれば学習に使われません（Teams は既定でオン）。Claude Code は Pro・Max なら設定でオフにでき、Team・Enterprise は学習に使いません。"
+    },
+    {
+      "q": "無料で使えるコーディングAIは？",
+      "a": "Google Antigravity（Gemini 3.8 Flash や Claude Opus 4.6 を週ごとの上限内で利用）、GitHub Copilot Free（月2,000回の補完と制限付きのチャット）、Cursor の Hobby（Agent リクエストは制限付き）、Codex の無料版（GPT-6 Luna、順次提供）、Lovable の無料版があります。Claude Code は有料プランのみです。"
+    },
+    {
+      "q": "Claude Code と Codex はどちらが性能が高いですか？",
+      "a": "第三者の Terminal-Bench 4.0 では GPT-6 Astra＋Codex が58.2%、Fable 5.1＋Claude Code が57.9%でほぼ同じです。Code Arena の WebDev 部門では Claude Opus 5.5 が1位、GPT-6 Astra が2位です（2026年10月1日時点）。順位は短期間で入れ替わるので、自分のリポジトリで両方を試すのが確実です。"
+    },
+    {
+      "q": "Gemini CLI はもう使えませんか？",
+      "a": "Gemini CLI の公式サイトによると、無料枠と Google One の利用者向けには、2026年6月18日に Antigravity CLI へ置き換わりました。Antigravity は無料プランから CLI を使えます。"
+    }
+  ],
+  "related": {
+    "tags": [
+      "コーディング",
+      "Claude Code",
+      "Codex",
+      "GitHub Copilot",
+      "Cursor",
+      "エージェント",
+      "開発者"
+    ],
+    "guides": [
+      "api",
+      "chat",
+      "local-llm"
+    ],
+    "articles": [
+      "/news/20260930-chatgpt-office-apps-codex/",
+      "/news/20260930-claude-opus-5-5-prompting-guide/"
+    ]
+  },
+  "changelog": [
+    {
+      "date": "2026-10-01",
+      "text": "初回公開",
+      "by": "researcher"
+    }
+  ],
+  "editor_note": "",
+  "embed_models": false,
+  "research_plan": {
+    "candidates": [],
+    "verdict_questions": [],
+    "notes": ""
+  }
+}

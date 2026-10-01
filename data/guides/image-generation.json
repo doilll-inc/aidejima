@@ -1,0 +1,1376 @@
+{
+  "slug": "image-generation",
+  "status": "published",
+  "priority": 1,
+  "created": "2026-09-30",
+  "updated": "2026-10-01",
+  "last_reviewed": "2026-10-01",
+  "title": "画像生成AIのおすすめと料金比較",
+  "short_name": "画像生成",
+  "seo": {
+    "description": "画像生成AIを公式情報だけで比較。ChatGPTのGPT Image 2.5、GeminiのNano Banana 2、Midjourney、Adobe Fireflyの料金・商用利用・日本語対応と、第三者評価にもとづく目的別のおすすめ。",
+    "keywords": [
+      "画像生成AI",
+      "おすすめ",
+      "料金",
+      "商用利用",
+      "無料"
+    ]
+  },
+  "intro": "画質の第三者評価でいま最も高いのは、OpenAIの**GPT Image 2.5**（ChatGPT Images 2.5）で、Artificial AnalysisとArenaの3つの評価で1位。料金と日本語を重視するならGoogleの**Nano Banana 2**（Gemini）、広告素材の権利面を重視するなら**Adobe Firefly**が候補になる。料金・規約・日本語対応はすべて各社の公式ページで確認した値で、確認日を併記している。",
+  "scope": "テキストや参考画像から画像を作る・編集する（部分修正・背景差し替え・アップスケール）サービスとAPIを比べる。動画は「動画生成AI」ガイド、広告バナーの量産ツールは「広告・マーケティング向けAI」ガイドで扱う。",
+  "audience": [
+    "マーケター",
+    "デザイナー",
+    "広告運用者",
+    "EC担当"
+  ],
+  "segments": [],
+  "verdicts": [
+    {
+      "id": "best-quality",
+      "question": "最高品質で選ぶなら",
+      "pick": "gpt-image",
+      "runner_up": [
+        "grok-imagine",
+        "gemini"
+      ],
+      "answer": "OpenAIのGPT Image 2.5（ChatGPT Images 2.5）が、Artificial Analysis（Elo 1197）とArenaの生成（1424）・編集（1522）の3つの評価すべてで1位。次点はAAで4位のGrok Imagine Image 2.0、6位のNano Banana 2。",
+      "evidence": [
+        {
+          "kind": "third_party",
+          "name": "Artificial Analysis Text-to-Image Leaderboard",
+          "url": "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+          "date": "2026-10-01",
+          "note": "1位 GPT Image 2.5 Sunburst（Elo 1197）、4位 Grok Imagine Image 2.0、6位 Nano Banana 2（2026-10-01時点）"
+        },
+        {
+          "kind": "third_party",
+          "name": "Arena Text-to-Image Leaderboard",
+          "url": "https://arena.ai/leaderboard/text-to-image",
+          "date": "2026-10-01",
+          "note": "1位 gpt-image-2.5-sunburst（1424）、6位 grok-imagine-image-2.0、9位 Nano Banana 2（2026-09-24更新分）"
+        },
+        {
+          "kind": "third_party",
+          "name": "Arena Image Edit Leaderboard",
+          "url": "https://arena.ai/leaderboard/image-edit",
+          "date": "2026-10-01",
+          "note": "1位 gpt-image-2.5-sunburst（1522）、4位 grok-imagine-image-2.0（2026-09-29更新分）"
+        }
+      ]
+    },
+    {
+      "id": "best-value",
+      "question": "コスパで選ぶなら",
+      "pick": "gemini",
+      "runner_up": [
+        "grok-imagine"
+      ],
+      "answer": "GeminiのNano Banana 2は、アプリなら月725円のGoogle AI Plusから、APIなら1K画像1枚$0.067（Liteは$0.034）で使え、AAで6位の品質。API単価だけならAA 4位のGrok Imagine Image 2.0（1枚$0.04〜）も安い。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Google AI プラン（日本）",
+          "url": "https://gemini.google/jp/subscriptions/?hl=ja",
+          "date": "2026-10-01",
+          "note": "Google AI Plus ￥725 JPY / 月"
+        },
+        {
+          "kind": "official",
+          "name": "Gemini Developer API pricing",
+          "url": "https://ai.google.dev/gemini-api/docs/pricing",
+          "date": "2026-10-01",
+          "note": "Nano Banana 2 $0.067 per 1K image、Lite $0.034"
+        },
+        {
+          "kind": "official",
+          "name": "SpaceXAI API Pricing",
+          "url": "https://docs.x.ai/developers/pricing",
+          "date": "2026-10-01",
+          "note": "grok-imagine-image-2.0 $0.04 / img（1K・Low）"
+        },
+        {
+          "kind": "third_party",
+          "name": "Artificial Analysis Text-to-Image Leaderboard",
+          "url": "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+          "date": "2026-10-01",
+          "note": "Grok Imagine Image 2.0 4位、Nano Banana 2 6位（2026-10-01時点）"
+        }
+      ]
+    },
+    {
+      "id": "free",
+      "question": "無料で使うなら",
+      "pick": "gpt-image",
+      "runner_up": [
+        "gemini",
+        "adobe-firefly"
+      ],
+      "answer": "ChatGPTのImagesは全プランで使え、無料プランでも評価1位のImages 2.5で画像を作れる（回数制限あり）。無料版Geminiアプリ（Nano Banana 2）、1日の回数制限付きのAdobe Firefly無料プランも選択肢。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Images in ChatGPT（OpenAI Help Center）",
+          "url": "https://help.openai.com/en/articles/11084440-chatgpt-image-libraryopenai",
+          "date": "2026-10-01",
+          "note": "ChatGPT Images is available on all tiers"
+        },
+        {
+          "kind": "official",
+          "name": "ChatGPT Pricing",
+          "url": "https://openai.com/chatgpt/pricing/",
+          "date": "2026-10-01",
+          "note": "Free: Limited image creation"
+        },
+        {
+          "kind": "official",
+          "name": "Google AI プラン（日本）",
+          "url": "https://gemini.google/jp/subscriptions/?hl=ja",
+          "date": "2026-10-01",
+          "note": "無料版で画像の生成と編集"
+        },
+        {
+          "kind": "official",
+          "name": "Adobe Firefly プラン比較",
+          "url": "https://www.adobe.com/jp/products/firefly/plans.html",
+          "date": "2026-10-01",
+          "note": "1日あたりの生成回数に制限がある無料プラン"
+        }
+      ]
+    },
+    {
+      "id": "japanese",
+      "question": "日本語重視なら",
+      "pick": "gemini",
+      "runner_up": [
+        "gpt-image",
+        "ideogram"
+      ],
+      "answer": "Geminiは画面が日本語で、公式ヘルプが「サポートされているすべての言語で、スペルがより正確なテキストを画像に追加できる」と明記し、料金も円建て。ChatGPT（Images 2.0の発表で日本語の作例）とIdeogram（4.5で日本語への文字差し替え例）も公式に日本語の文字描画を示している。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Gemini アプリで画像を生成、編集する（Gemini アプリ ヘルプ）",
+          "url": "https://support.google.com/gemini/answer/14286560?hl=ja&co=GENIE.Platform%3DDesktop",
+          "date": "2026-10-01",
+          "note": "テキスト レンダリングの改善（すべてのサポート言語）"
+        },
+        {
+          "kind": "official",
+          "name": "Introducing ChatGPT Images 2.0",
+          "url": "https://openai.com/index/introducing-chatgpt-images-2-0/",
+          "date": "2026-10-01",
+          "note": "日本語の漫画ページなど多言語の作例"
+        },
+        {
+          "kind": "official",
+          "name": "Ideogram 4.5",
+          "url": "https://ideogram.ai/models/4.5/",
+          "date": "2026-10-01",
+          "note": "文字を日本語に翻訳する編集例"
+        }
+      ]
+    },
+    {
+      "id": "commercial",
+      "question": "商用利用（広告・納品物）なら",
+      "pick": "adobe-firefly",
+      "runner_up": [],
+      "answer": "Adobe Fireflyは自社モデルを許諾済み素材とパブリックドメインで学習したと説明し、生成物の商用利用を明記。顧客のコンテンツで学習しておらず、対象の法人顧客には知財補償もある（パートナーモデルの生成物は対象外で利用者が判断）。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Adobe Firefly プラン比較（よくある質問）",
+          "url": "https://www.adobe.com/jp/products/firefly/plans.html",
+          "date": "2026-10-01",
+          "note": "Fireflyモデルの生成物は商用利用可、法人向け知財補償"
+        },
+        {
+          "kind": "official",
+          "name": "Approach to generative AI with Adobe Firefly",
+          "url": "https://www.adobe.com/ai/overview/firefly/gen-ai-approach.html",
+          "date": "2026-10-01",
+          "note": "顧客のコンテンツで学習しない"
+        }
+      ]
+    },
+    {
+      "id": "developer",
+      "question": "APIで組み込むなら",
+      "pick": "gpt-image",
+      "runner_up": [
+        "gemini",
+        "flux"
+      ],
+      "answer": "品質を優先するならGPT Image 2.5（Flare／Sunburst、画像出力$30/100万トークン、Batchは半額）。単価を抑えるならNano Banana 2（1K画像$0.067、Liteは$0.034）や、メガピクセル課金のFLUX.2 [pro]（$0.03〜）。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "OpenAI API Pricing",
+          "url": "https://developers.openai.com/api/docs/pricing",
+          "date": "2026-10-01",
+          "note": "gpt-image-2.5-flare／sunburst Image output $30.00（Batch $15.00）/ 1M tokens"
+        },
+        {
+          "kind": "official",
+          "name": "Gemini Developer API pricing",
+          "url": "https://ai.google.dev/gemini-api/docs/pricing",
+          "date": "2026-10-01",
+          "note": "Nano Banana 2 $0.067 per 1K image"
+        },
+        {
+          "kind": "official",
+          "name": "Black Forest Labs Pricing",
+          "url": "https://docs.bfl.ai/quick_start/pricing",
+          "date": "2026-10-01",
+          "note": "FLUX.2 [pro] from $0.03"
+        },
+        {
+          "kind": "third_party",
+          "name": "Artificial Analysis Text-to-Image Leaderboard",
+          "url": "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+          "date": "2026-10-01",
+          "note": "1位 GPT Image 2.5 Sunburst（2026-10-01時点）"
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "gpt-image",
+      "name": "ChatGPT Images（GPT Image）",
+      "vendor": "OpenAI",
+      "url": "https://chatgpt.com/images",
+      "status": "featured",
+      "rank": 1,
+      "segment": "",
+      "tags": [
+        "OpenAI",
+        "ChatGPT",
+        "GPT Image"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "GPT Image 2.5（ChatGPT Images 2.5）",
+        "released": "2026-09-08",
+        "source_url": "https://help.openai.com/en/articles/6825453-chatgpt-image-generation-updates",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web",
+        "app",
+        "api"
+      ],
+      "strengths": [
+        "画像生成の2大リーダーボードで1位（9月末時点）",
+        "範囲を選んで部分修正できるエディタ付き",
+        "無料プランでも画像作成ができる（回数制限あり）"
+      ],
+      "weaknesses": [
+        "選択範囲の外まで編集が及ぶことがある（公式ヘルプ）",
+        "AA換算の単価は上位6モデルで最も高い"
+      ],
+      "editorial_take": "2026年9月公開のImages 2.5で、Arenaの生成・編集とArtificial Analysisの3つの評価で1位。APIではFlare（速さ重視）とSunburst（精度重視）を選べる。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "Freeプランは画像作成に制限あり",
+          "source_url": "https://openai.com/chatgpt/pricing/",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Go",
+            "amount": 8,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$8 / month",
+            "detail": "画像作成の上限が無料より多い",
+            "source_url": "https://openai.com/chatgpt/pricing/",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Plus",
+            "amount": 20,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$20 / month",
+            "detail": "より複雑で正確な画像作成・Thinkingを使った画像生成",
+            "source_url": "https://openai.com/chatgpt/pricing/",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Pro",
+            "amount": 100,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "From $100 / month",
+            "detail": "高速かつ無制限の画像作成（不正利用防止の制限あり）",
+            "source_url": "https://openai.com/chatgpt/pricing/",
+            "checked": "2026-10-01"
+          }
+        ],
+        "usage": {
+          "unit": "100万出力トークン（画像）",
+          "amount": 30,
+          "currency": "USD",
+          "as_shown": "Image output $30.00 / 1M tokens",
+          "detail": "API・gpt-image-2.5-flare／sunburst（Batchは$15）",
+          "source_url": "https://developers.openai.com/api/docs/pricing",
+          "checked": "2026-10-01"
+        },
+        "jpy_official": false,
+        "note": "英語版の公式料金ページの米ドル表記（日本語版ページでは金額を読み取れなかった）"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "yes",
+        "note": "画面は日本語に対応（対応言語一覧）。出力＝画像内の文字：Images 2.0の公式発表（2026-04-21）で日本語の漫画ページなど多言語の文字描画を作例として紹介",
+        "source_url": "https://help.openai.com/en/articles/8357869-how-to-change-your-language-setting-in-chatgpt",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "利用規約で出力の権利は利用者に帰属（Ownership of content）。利用ポリシーの順守が前提",
+        "source_url": "https://openai.com/policies/row-terms-of-use/",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "opt_out_available",
+        "note": "個人向けChatGPTは既定で学習に使われ得るが、設定の「Improve the model for everyone」をオフにすれば拒否できる。Business・Enterprise・APIは既定で学習に使わない",
+        "source_url": "https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "ChatGPTの対応国一覧に日本",
+        "source_url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini（Nano Banana 2）",
+      "vendor": "Google",
+      "url": "https://gemini.google/jp/overview/image-generation/?hl=ja-JP",
+      "status": "featured",
+      "rank": 2,
+      "segment": "",
+      "tags": [
+        "Google",
+        "Gemini",
+        "Nano Banana"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Nano Banana 2（Gemini 3.1 Flash Image）",
+        "released": "2026-02-26",
+        "source_url": "https://blog.google/innovation-and-ai/technology/ai/nano-banana-2/",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web",
+        "app",
+        "api"
+      ],
+      "strengths": [
+        "画像内の文字のスペル精度を全対応言語で改善（公式）",
+        "円建ての有料プラン（月725円から）",
+        "APIは1K画像1枚$0.067、Liteは$0.034"
+      ],
+      "weaknesses": [
+        "第三者評価ではGPT Image 2.5より下（AA 6位）",
+        "最上位のNano Banana Proは有料プランで利用"
+      ],
+      "editorial_take": "無料版のGeminiアプリでも画像の生成・編集ができ、APIは解像度別の1枚単価が公開されている。速さと単価重視のNano Banana 2 Liteも選べる。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "無料版のGeminiアプリで画像の生成と編集が可能",
+          "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Google AI Plus",
+            "amount": 725,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "￥725 JPY / 月",
+            "detail": "無料版の2倍の使用量上限",
+            "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Google AI Pro",
+            "amount": 2900,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "￥2,900 JPY / 月",
+            "detail": "無料版の4倍の使用量上限",
+            "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Google AI Ultra",
+            "amount": 14500,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "最小構成価格: ￥14,500 JPY/月",
+            "detail": "AI Proの5倍（￥32,000で20倍）の使用量上限",
+            "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
+            "checked": "2026-10-01"
+          }
+        ],
+        "usage": {
+          "unit": "1K画像1枚",
+          "amount": 0.067,
+          "currency": "USD",
+          "as_shown": "$0.067 per 1K image（Output $60.00 / 1M image tokens）",
+          "detail": "Gemini API・Nano Banana 2（gemini-3.1-flash-image）。Nano Banana 2 Liteは$0.034、Nano Banana Proは$0.134",
+          "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+          "checked": "2026-10-01"
+        },
+        "jpy_official": true,
+        "note": "アプリのプランは円建て（公式表記）。APIは米ドル"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "yes",
+        "note": "Geminiは日本語に対応。公式ヘルプに「サポートされているすべての言語で、スペルがより正確なテキストを画像に追加できます」と記載（出力＝画像内の文字）",
+        "source_url": "https://support.google.com/gemini/answer/14286560?hl=ja&co=GENIE.Platform%3DDesktop",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "Google利用規約で、生成されたオリジナルのコンテンツの所有権をGoogleは主張しないと明記",
+        "source_url": "https://policies.google.com/terms?hl=en",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "opt_out_available",
+        "note": "Geminiアプリは既定で会話がGoogleのAI改善に使われ、「Geminiアプリ アクティビティ」の設定で拒否できる。Gemini APIの有料枠は改善に使わない（無料枠は使う）",
+        "source_url": "https://support.google.com/gemini/answer/13594961?hl=en",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "Geminiウェブアプリの提供国に日本。画像生成はGeminiアプリを利用できるすべての国と言語で利用可",
+        "source_url": "https://support.google.com/gemini/answer/13575153?hl=en",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "midjourney",
+      "name": "Midjourney",
+      "vendor": "Midjourney, Inc.",
+      "url": "https://www.midjourney.com/",
+      "status": "featured",
+      "rank": 3,
+      "segment": "",
+      "tags": [
+        "Midjourney"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Midjourney V8.2",
+        "released": "2026-07-24",
+        "source_url": "https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web",
+        "discord"
+      ],
+      "strengths": [
+        "Personalizationで好みの作風を反映（V8.2）",
+        "V8.1以降は2K画像をアップスケールなしで生成",
+        "全プランで一般商用利用の条件を適用"
+      ],
+      "weaknesses": [
+        "生成物は既定で公開（非公開はPro・Megaのみ）",
+        "Midjourney本体の無料トライアルはない"
+      ],
+      "editorial_take": "作風の調整（Personalization・スタイル参照）に強みを置くサービス。主要な画像リーダーボードにV8系の順位はない（10月1日時点）。",
+      "pricing": {
+        "free": {
+          "available": false,
+          "detail": "Midjourney本体の無料トライアルは現在なし（niji・journeyアプリで限定トライアル）",
+          "source_url": "https://docs.midjourney.com/hc/en-us/articles/27870399340173-Free-Trials",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Basic",
+            "amount": 10,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$10（Annual: $96 = $8 / month）",
+            "detail": "Fast GPU 3.3時間/月",
+            "source_url": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Standard",
+            "amount": 30,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$30（Annual: $288 = $24 / month）",
+            "detail": "Fast GPU 15時間/月・Relaxで画像無制限",
+            "source_url": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Pro",
+            "amount": 60,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$60（Annual: $576 = $48 / month）",
+            "detail": "Fast GPU 30時間/月・Stealth Mode（非公開）",
+            "source_url": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Mega",
+            "amount": 120,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$120（Annual: $1,152 = $96 / month）",
+            "detail": "Fast GPU 60時間/月・Stealth Mode",
+            "source_url": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": "年払いで20%割引。追加のGPU時間は$4/時間"
+      },
+      "japanese": {
+        "ui": "unknown",
+        "output": "unknown",
+        "note": "公式ドキュメントに日本語の画面・画像内の日本語文字への対応の記載は見つけられず（2026-09-16にα版サイトで韓国語表示を追加）",
+        "source_url": "https://updates.midjourney.com/alpha-changelog-9-16-26/",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "conditional",
+        "note": "全プランで一般商用利用の条件。年間売上100万ドル超の企業はProまたはMegaが必要",
+        "source_url": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "unknown",
+        "note": "利用規約で入力と生成物にMidjourneyへの広い利用許諾を与える。学習利用を拒否する設定の記載は見つけられず。生成物は既定で公開",
+        "source_url": "https://docs.midjourney.com/hc/en-us/articles/32083055291277-Terms-of-Service",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "unknown",
+        "note": "提供国の一覧は公式に見つけられず（利用規約に国・地域の制限条項はない）",
+        "source_url": "https://docs.midjourney.com/hc/en-us/articles/32083055291277-Terms-of-Service",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "adobe-firefly",
+      "name": "Adobe Firefly",
+      "vendor": "Adobe",
+      "url": "https://www.adobe.com/jp/products/firefly.html",
+      "status": "featured",
+      "rank": 4,
+      "segment": "",
+      "tags": [
+        "Adobe",
+        "Firefly"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Firefly Image Model 5",
+        "released": "2025-10-28",
+        "source_url": "https://news.adobe.com/news/2025/10/adobe-max-2025-firefly",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web",
+        "app",
+        "desktop"
+      ],
+      "strengths": [
+        "Fireflyモデルは許諾済み素材などで学習（公式）",
+        "有料プランは標準の画像生成が無制限",
+        "GPT Image・Nano Banana 2なども同じ画面で選べる"
+      ],
+      "weaknesses": [
+        "パートナーモデルの生成物の適否は利用者が判断",
+        "動画やパートナーモデルは生成クレジットを消費"
+      ],
+      "editorial_take": "自社モデルの学習データを許諾済み素材とパブリックドメインに限ると公式に説明しており、広告・納品物の権利面を重視する場合の候補。法人向けには知財補償もある。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "1日あたりの生成回数に制限がある無料プラン",
+          "source_url": "https://www.adobe.com/jp/products/firefly/plans.html",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Firefly Standard",
+            "amount": 1580,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "1,580 円/月（税込）",
+            "detail": "生成クレジット2,000/月",
+            "source_url": "https://www.adobe.com/jp/products/firefly/plans.html",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Firefly Pro",
+            "amount": 3180,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "3,180 円/月（税込）",
+            "detail": "生成クレジット4,000/月",
+            "source_url": "https://www.adobe.com/jp/products/firefly/plans.html",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Firefly Pro Plus",
+            "amount": 6600,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "通常価格 : 6,600 円/月（税込）",
+            "detail": "生成クレジット10,000/月。10月12日まで初年度4,617円の特別価格",
+            "source_url": "https://www.adobe.com/jp/products/firefly/plans.html",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Firefly Premium",
+            "amount": 31680,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "通常価格 : 31,680 円/月（税込）",
+            "detail": "生成クレジット50,000/月＋Firefly Video Model無制限",
+            "source_url": "https://www.adobe.com/jp/products/firefly/plans.html",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": true,
+        "note": "全有料プランで標準の画像・ベクター生成は無制限。生成クレジットは動画・音声・パートナーモデルに使う。価格は税込"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "unknown",
+        "note": "画面は日本語に対応し、プロンプトも各言語で入力できる（技術要件ページ）。画像内の日本語文字の描画について公式の記載は見つけられず",
+        "source_url": "https://helpx.adobe.com/firefly/web/get-started/learn-the-basics/technical-requirements.html",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "Fireflyモデルの生成物は商用利用可。パートナーモデルの生成物は利用者が適否を判断。対象の法人顧客は知財補償を受けられる",
+        "source_url": "https://www.adobe.com/jp/products/firefly/plans.html",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "not_used",
+        "note": "顧客のコンテンツでFireflyを学習させたことはないと明記",
+        "source_url": "https://www.adobe.com/ai/overview/firefly/gen-ai-approach.html",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "日本向けの料金ページで円建て販売",
+        "source_url": "https://www.adobe.com/jp/products/firefly/plans.html",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "grok-imagine",
+      "name": "Grok Imagine",
+      "vendor": "SpaceXAI",
+      "url": "https://x.ai/grok",
+      "status": "featured",
+      "rank": 5,
+      "segment": "",
+      "tags": [
+        "xAI",
+        "Grok"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Grok Imagine Image 2.0",
+        "released": "2026-08-07",
+        "source_url": "https://x.ai/news/grok-imagine-image-2",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web",
+        "app",
+        "api"
+      ],
+      "strengths": [
+        "AAで4位、Arenaの画像編集で4位（9月末）",
+        "APIは1枚$0.04から（1K・low）",
+        "参照画像最大5枚の編集・背景透過の書き出し"
+      ],
+      "weaknesses": [
+        "Grokアプリの生成物には透かし（外す設定なし）",
+        "日本語対応・提供国の公式記載が見つからない"
+      ],
+      "editorial_take": "上位モデルの中ではAPI単価が低い。Grokアプリで作った画像には透かしが入り、除去は利用規約で禁止されている。",
+      "pricing": {
+        "plans": [
+          {
+            "name": "SuperGrok",
+            "amount": 30,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$30/month",
+            "detail": "画像・動画生成を含む",
+            "source_url": "https://x.ai/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "SuperGrok Plus",
+            "amount": 100,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$100/month",
+            "detail": "Imagineなどの利用量を大幅に拡大",
+            "source_url": "https://x.ai/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "usage": {
+          "unit": "1枚",
+          "amount": 0.04,
+          "currency": "USD",
+          "as_shown": "$0.04 / img（grok-imagine-image-2.0・1K・Low）",
+          "detail": "2K・Mediumは$0.08。画像入力は$0.01/枚",
+          "source_url": "https://docs.x.ai/developers/pricing",
+          "checked": "2026-10-01"
+        },
+        "jpy_official": false,
+        "note": "無料プラン（$0）で画像生成をどこまで使えるかは料金ページから読み取れなかった"
+      },
+      "japanese": {
+        "ui": "unknown",
+        "output": "unknown",
+        "note": "日本語の画面・画像内の日本語文字への対応の記載は公式に見つけられず",
+        "source_url": "https://x.ai/legal/faq",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "FAQで生成画像を含む出力は利用者のもので、商用を含め自由に使えると明記。Grokアプリの生成物の透かしは除去禁止",
+        "source_url": "https://x.ai/legal/faq",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "opt_out_available",
+        "note": "個人向けは会話を学習に使う場合があり、設定の「Improve the model」で拒否できる。Private Chatと法人向けは学習に使わない",
+        "source_url": "https://x.ai/legal/faq",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "unknown",
+        "note": "FAQに「地域によって無料・有料の提供範囲が異なる」とあるが、国別の一覧は見つけられず",
+        "source_url": "https://x.ai/legal/faq",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "ideogram",
+      "name": "Ideogram",
+      "vendor": "Ideogram, Inc.",
+      "url": "https://ideogram.ai/",
+      "status": "featured",
+      "rank": 6,
+      "segment": "",
+      "tags": [
+        "Ideogram"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Ideogram 4.5",
+        "source_url": "https://ideogram.ai/models/4.5/",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web",
+        "api"
+      ],
+      "strengths": [
+        "4.0はオープンウェイト（商用ライセンス）",
+        "4.0は多言語の文字描画をうたう（公式発表）",
+        "4.5は複数回の編集でも劣化しにくい設計"
+      ],
+      "weaknesses": [
+        "生成画像は既定で公開（非公開はPlus・Pro）",
+        "AAでの順位は34位（4.5 High、9月末）"
+      ],
+      "editorial_take": "文字入りのデザインに強みを置くサービス。2026年6月公開のIdeogram 4.0は重みを商用ライセンスで公開しており、自社環境で動かせる。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "対象アカウントに毎週スロークレジットを付与",
+          "source_url": "https://ideogram.ai/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Plus",
+            "amount": 20,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$20 / month（$15 per month, $180 billed annually）",
+            "detail": "優先クレジット1,000/月・スロー無制限",
+            "source_url": "https://ideogram.ai/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Pro",
+            "amount": 60,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$60 / month（$42 per month, $504 billed annually）",
+            "detail": "優先クレジット3,500/月",
+            "source_url": "https://ideogram.ai/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Team",
+            "amount": 30,
+            "currency": "USD",
+            "per": "seat_month",
+            "as_shown": "$30 per user/month（$20 billed annually）",
+            "detail": "優先クレジット1,500/人・月",
+            "source_url": "https://ideogram.ai/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": "年払いで最大33%割引"
+      },
+      "japanese": {
+        "ui": "unknown",
+        "output": "yes",
+        "note": "Ideogram 4.5の公式ページに、ブランドの文字を日本語に翻訳する編集例がある（出力＝画像内の文字）。日本語の画面の記載は見つけられず",
+        "source_url": "https://ideogram.ai/models/4.5/",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "生成画像の所有権を主張せず、商用を含め自由に使えると明記（料金ページのFAQ）",
+        "source_url": "https://ideogram.ai/pricing",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "unknown",
+        "note": "プライバシーポリシーで入力をサービス改善と製品・技術の開発に使うと記載。学習利用を拒否する設定の記載は見つけられず",
+        "source_url": "https://ideogram.ai/legal/privacy",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "unknown",
+        "note": "提供国の一覧は公式に見つけられず",
+        "source_url": "https://ideogram.ai/legal/tos",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "flux",
+      "name": "FLUX.2",
+      "vendor": "Black Forest Labs",
+      "url": "https://bfl.ai/",
+      "status": "featured",
+      "rank": 7,
+      "segment": "",
+      "tags": [
+        "FLUX",
+        "Black Forest Labs"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "FLUX.2 [max]",
+        "released": "2025-12-16",
+        "source_url": "https://docs.bfl.ai/release-notes",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "api",
+        "web"
+      ],
+      "strengths": [
+        "サブスクなしの従量課金（[pro]は1枚$0.03〜）",
+        "[max]はWeb検索の情報を反映して生成できる",
+        "[klein]・[dev]は重みを自社運用できる（有償ライセンス）"
+      ],
+      "weaknesses": [
+        "AAでの最上位は22位（FLUX.2 [flex]、9月末）",
+        "既定で入力・出力が学習に使われる（メールで拒否）"
+      ],
+      "editorial_take": "API専業の画像モデル。解像度に応じたメガピクセル課金で、自社ツールへの組み込みや大量生成のコスト見積もりがしやすい。",
+      "pricing": {
+        "usage": {
+          "unit": "1枚（1メガピクセル）",
+          "amount": 0.03,
+          "currency": "USD",
+          "as_shown": "FLUX.2 [pro] from $0.03（Text-to-Image）",
+          "detail": "[max] from $0.07、[flex] from $0.05、[klein] 4B from $0.014。解像度で変動。1クレジット=$0.01",
+          "source_url": "https://docs.bfl.ai/quick_start/pricing",
+          "checked": "2026-10-01"
+        },
+        "jpy_official": false,
+        "note": "サブスクリプションや席料はない従量課金（公式料金ページ）"
+      },
+      "japanese": {
+        "ui": "unknown",
+        "output": "unknown",
+        "note": "日本語の画面・画像内の日本語文字への対応の記載は公式に見つけられず",
+        "source_url": "https://bfl.ai/models/flux-2-max",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "conditional",
+        "note": "API・Playgroundの出力はBlack Forest Labsが所有権を主張しない。重みを公開しているFLUX.2 [dev]を自社運用で商用に使うには有償ライセンスが必要",
+        "source_url": "https://bfl.ai/legal/terms-of-service",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "opt_out_available",
+        "note": "利用規約で入力・出力を学習に使うと明記。legal@blackforestlabs.aiへの連絡で学習利用を拒否できる",
+        "source_url": "https://bfl.ai/legal/terms-of-service",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "unknown",
+        "note": "提供国の一覧は公式に見つけられず",
+        "source_url": "https://bfl.ai/legal/terms-of-service",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "mai-image",
+      "name": "MAI-Image",
+      "vendor": "Microsoft",
+      "url": "https://microsoft.ai/models/mai-image-2-6/",
+      "status": "listed",
+      "rank": 21,
+      "segment": "",
+      "tags": [
+        "Microsoft"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "MAI-Image-2.6",
+        "released": "2026-08-10",
+        "source_url": "https://microsoft.ai/news/mai-image-2-6-launches-at-no-2-on-arena-ahead-of-google-meta-and-xai/",
+        "checked": "2026-10-01"
+      },
+      "access": [],
+      "strengths": [
+        "AAで5位・Arenaで4位。Microsoft Foundryで提供"
+      ],
+      "weaknesses": [],
+      "editorial_take": "",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "seedream",
+      "name": "Seedream",
+      "vendor": "ByteDance Seed",
+      "url": "https://seed.bytedance.com/en/seedream5_0_pro",
+      "status": "listed",
+      "rank": 22,
+      "segment": "",
+      "tags": [
+        "ByteDance",
+        "Seedream"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Seedream 5.0 Pro",
+        "released": "2026-07-08",
+        "source_url": "https://seed.bytedance.com/en/blog/beyond-generation-it-understands-design-introducing-seedream-5-0-pro",
+        "checked": "2026-10-01"
+      },
+      "access": [],
+      "strengths": [
+        "画像を独立したレイヤーに分離する機能を搭載"
+      ],
+      "weaknesses": [],
+      "editorial_take": "",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "qwen-image",
+      "name": "Qwen-Image",
+      "vendor": "Qwen Team（Alibaba）",
+      "url": "https://qwen.ai/",
+      "status": "listed",
+      "rank": 23,
+      "segment": "",
+      "tags": [
+        "Alibaba",
+        "Qwen"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Qwen-Image-3.0",
+        "released": "2026-07-21",
+        "source_url": "https://qwen.ai/blog?id=qwen-image-3.0",
+        "checked": "2026-10-01"
+      },
+      "access": [],
+      "strengths": [
+        "12言語の文字描画にネイティブ対応（公式発表）"
+      ],
+      "weaknesses": [],
+      "editorial_take": "",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "reve",
+      "name": "Reve",
+      "vendor": "Reve AI Inc.",
+      "url": "https://reve.com/",
+      "status": "listed",
+      "rank": 24,
+      "segment": "",
+      "tags": [
+        "Reve"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Reve 2.1",
+        "released": "2026-06-03",
+        "source_url": "https://reve.com/model",
+        "checked": "2026-10-01"
+      },
+      "access": [],
+      "strengths": [
+        "Arenaで5位。ネイティブ4K（16MP）で生成"
+      ],
+      "weaknesses": [],
+      "editorial_take": "",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "recraft",
+      "name": "Recraft",
+      "vendor": "Recraft, Inc.",
+      "url": "https://www.recraft.ai/",
+      "status": "listed",
+      "rank": 25,
+      "segment": "",
+      "tags": [
+        "Recraft"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Recraft V4.1 Flash",
+        "released": "2026-09-23",
+        "source_url": "https://www.recraft.ai/blog/meet-recraft-v4-1-flash",
+        "checked": "2026-10-01"
+      },
+      "access": [],
+      "strengths": [
+        "ベクター画像生成用のV4.1 Vectorモデルを提供"
+      ],
+      "weaknesses": [],
+      "editorial_take": "",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "krea",
+      "name": "Krea",
+      "vendor": "Krea",
+      "url": "https://www.krea.ai/",
+      "status": "listed",
+      "rank": 26,
+      "segment": "",
+      "tags": [
+        "Krea"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Krea 2",
+        "released": "2026-05-12",
+        "source_url": "https://www.krea.ai/krea-2",
+        "checked": "2026-10-01"
+      },
+      "access": [],
+      "strengths": [
+        "ムードボードで画風を指定して生成できる"
+      ],
+      "weaknesses": [],
+      "editorial_take": "",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "leonardo",
+      "name": "Leonardo.Ai",
+      "vendor": "Leonardo Interactive Pty Ltd",
+      "url": "https://leonardo.ai/",
+      "status": "listed",
+      "rank": 27,
+      "segment": "",
+      "tags": [
+        "Leonardo"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Lucid Origin",
+        "released": "2025-08-05",
+        "source_url": "https://leonardo.ai/news/lucid-origin-ai-image-model",
+        "checked": "2026-10-01"
+      },
+      "access": [],
+      "strengths": [
+        "自社モデルと他社モデルを使い分けられる制作ツール"
+      ],
+      "weaknesses": [],
+      "editorial_take": "",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "stable-diffusion",
+      "name": "Stable Diffusion",
+      "vendor": "Stability AI Ltd",
+      "url": "https://stability.ai/stable-image",
+      "status": "listed",
+      "rank": 28,
+      "segment": "",
+      "tags": [
+        "Stable Diffusion",
+        "Stability AI"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Stable Diffusion 3.5",
+        "released": "2024-10-22",
+        "source_url": "https://stability.ai/news/introducing-stable-diffusion-3-5",
+        "checked": "2026-10-01"
+      },
+      "access": [],
+      "strengths": [
+        "Large・Turbo・Mediumの3種を重み公開"
+      ],
+      "weaknesses": [],
+      "editorial_take": "",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "luma-uni",
+      "name": "Luma Uni",
+      "vendor": "Luma",
+      "url": "https://lumalabs.ai/uni-1",
+      "status": "listed",
+      "rank": 29,
+      "segment": "",
+      "tags": [
+        "Luma"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Uni-1.1",
+        "released": "2026-05-05",
+        "source_url": "https://lumalabs.ai/news/uni-1-1-api",
+        "checked": "2026-10-01"
+      },
+      "access": [],
+      "strengths": [
+        "1リクエストで最大9枚の参照画像を指定できる"
+      ],
+      "weaknesses": [],
+      "editorial_take": "",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "canva",
+      "name": "Canva AI（画像生成）",
+      "vendor": "Canva",
+      "url": "https://www.canva.com/ai-image-generator/",
+      "status": "listed",
+      "rank": 30,
+      "segment": "",
+      "tags": [
+        "Canva"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web",
+        "app"
+      ],
+      "strengths": [
+        "10種以上のスタイルを選んで画像を生成できる"
+      ],
+      "weaknesses": [],
+      "editorial_take": "",
+      "checked": "2026-10-01",
+      "retired_note": "",
+      "latest": {
+        "name": "Canva AI（Text to Image）",
+        "source_url": "https://www.canva.com/ai-image-generator/",
+        "checked": "2026-10-01"
+      }
+    },
+    {
+      "id": "meta-muse-image",
+      "name": "Muse Image",
+      "vendor": "Meta",
+      "status": "watch",
+      "rank": 99,
+      "tags": [
+        "Meta"
+      ],
+      "note": "Meta系の公式ドメインは社内ルールで開かないため未調査（Arena・Artificial Analysisの画像生成リーダーボードに掲載あり）"
+    }
+  ],
+  "criteria": [
+    {
+      "name": "画質と指示への忠実さ",
+      "why": "構図・人数・小物の指定どおりに出るかで、作り直しの回数が変わる",
+      "how_to_check": "公開の画像アリーナ（人間の一対比較）の順位と、自分の定番プロンプトでの出力を見る"
+    },
+    {
+      "name": "画像内の文字（日本語）",
+      "why": "バナーやサムネイルでは文字の正確さが実用性を決める",
+      "how_to_check": "商品名を日本語で入れた同じ指示で出力を比べる。公式が日本語の文字描画をうたっているか確認する"
+    },
+    {
+      "name": "編集機能と一貫性",
+      "why": "部分修正・背景差し替え・同じ人物や商品の使い回しができるかで制作フローが変わる",
+      "how_to_check": "公式の機能一覧（範囲指定の編集・参照画像の枚数・複数回の編集）と、画像編集のアリーナ順位を確認する"
+    },
+    {
+      "name": "商用利用と権利",
+      "why": "生成物を広告や納品物に使えるか、学習データの扱いや補償（インデムニティ）の有無が契約上の論点になる",
+      "how_to_check": "公式の利用規約・商用利用FAQで、プラン別の商用可否・売上規模の条件・透かしの有無を確認する"
+    },
+    {
+      "name": "公開範囲と入力データの扱い",
+      "why": "既定で生成物が公開されるサービスや、入力が学習に使われるサービスがあり、未発表の商品画像を扱うときに問題になる",
+      "how_to_check": "公式のプライバシーポリシーと料金ページで、非公開設定の有無と学習利用を拒否する方法を確認する"
+    },
+    {
+      "name": "料金の単位",
+      "why": "枚数・クレジット・解像度・生成速度で単価が変わり、月額の比較だけでは分からない",
+      "how_to_check": "公式料金ページで1枚あたりの換算（標準解像度）を出す"
+    },
+    {
+      "name": "APIの有無と単価",
+      "why": "自社ツールに組み込むならAPIの単価と制限が本体",
+      "how_to_check": "公式の開発者向け料金ページで、画像1枚またはトークンあたりの単価とBatch割引を確認する"
+    }
+  ],
+  "benchmarks": [
+    {
+      "id": "aa-t2i",
+      "name": "Artificial Analysis Text-to-Image Leaderboard（AA-Image-T2I v2.0）",
+      "operator": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+      "what": "採用した評価者パネルの盲検一対比較によるElo（2026年1月1日以前の公開投票を含む）",
+      "snapshot": "1位 GPT Image 2.5 Sunburst（Elo 1197）、2位 GPT Image 2.5 Flare（1190）、3位 GPT Image 2（1172）、4位 Grok Imagine Image 2.0（1155）、5位 MAI-Image-2.6（1150）、6位 Nano Banana 2（1125）。FLUX.2 [flex] 22位、Ideogram 4.5 (High) 34位（2026-10-01時点）",
+      "checked": "2026-10-01"
+    },
+    {
+      "id": "arena-t2i",
+      "name": "Arena（旧LMArena）Text-to-Image Leaderboard",
+      "operator": "Arena",
+      "url": "https://arena.ai/leaderboard/text-to-image",
+      "what": "利用者の匿名一対比較による投票スコア（約648万票・80モデル）",
+      "snapshot": "1位 gpt-image-2.5-sunburst（1424）、2位 gpt-image-2.5-flare（1401）、3位 gpt-image-2（1383）、4位 mai-image-2.6（1335）、5位 reve-2.1（1302）、6位 grok-imagine-image-2.0（1301）、9位 Nano Banana 2（1261）（2026-09-24更新分、10-01確認）",
+      "checked": "2026-10-01"
+    },
+    {
+      "id": "arena-image-edit",
+      "name": "Arena（旧LMArena）Image Edit Leaderboard",
+      "operator": "Arena",
+      "url": "https://arena.ai/leaderboard/image-edit",
+      "what": "画像編集の匿名一対比較による投票スコア",
+      "snapshot": "1位 gpt-image-2.5-sunburst（1522）、2位 gpt-image-2.5-flare（1478）、3位 gpt-image-2（1461）、4位 grok-imagine-image-2.0（1427）、5位 mai-image-2.6（1427）（2026-09-29更新分、10-01確認）",
+      "checked": "2026-10-01"
+    }
+  ],
+  "faq": [
+    {
+      "q": "無料で使える画像生成AIはある？",
+      "a": "ChatGPT（無料プランでも画像作成可、回数制限あり）、Geminiアプリの無料版、1日の生成回数に制限があるAdobe Fireflyの無料プラン、毎週スロークレジットがもらえるIdeogramの無料プランがある。Midjourney本体には無料トライアルがない（2026年10月1日、各社の公式料金ページで確認）。"
+    },
+    {
+      "q": "生成した画像を広告やクライアントへの納品物に使ってよい？",
+      "a": "表の製品の多くは規約上、生成物の権利を利用者に認めている。ただしMidjourneyは年間売上100万ドル超の企業はPro以上が必要、Grokアプリの生成物には除去禁止の透かしが入る、Adobe Fireflyはパートナーモデル（GPT Image等）で作った画像の適否は利用者が判断、といった条件がある。各製品の「商用利用」欄の出典で条件を確認してほしい。"
+    },
+    {
+      "q": "画像の中に日本語の文字を入れられる？",
+      "a": "公式に日本語の文字描画を示しているのは、Gemini（全対応言語でスペル精度を改善と明記）、ChatGPT Images（Images 2.0の発表で日本語の作例）、Ideogram（4.5で日本語への文字差し替え例）。それ以外は公式の記載を見つけられなかった。商品名など正確さが要る文字は、生成後に必ず目視で確認したい。"
+    },
+    {
+      "q": "入力した画像やプロンプトは学習に使われる？",
+      "a": "Adobe Fireflyは顧客のコンテンツで学習しないと明記している。ChatGPT・Gemini・Grokの個人向けは既定で学習に使われ得るが、設定で拒否できる（ChatGPTのBusiness・API、Gemini APIの有料枠は既定で使わない）。FLUX（Black Forest Labs）はメールでの申し出で拒否できる。Midjourney・Ideogramは拒否設定の記載を見つけられなかった。"
+    },
+    {
+      "q": "いちばん画質が良いのはどれ？",
+      "a": "第三者の評価では、OpenAIのGPT Image 2.5がArtificial Analysis（Elo 1197）とArenaの画像生成（1424）・画像編集（1522）の3つで1位（2026年10月1日確認）。順位は新モデルの公開で入れ替わるため、このページでは毎週確認し直している。"
+    }
+  ],
+  "related": {
+    "tags": [
+      "画像生成",
+      "画像編集",
+      "GPT Image",
+      "Nano Banana",
+      "Gemini",
+      "Midjourney",
+      "Firefly",
+      "FLUX",
+      "Grok",
+      "Ideogram",
+      "Stable Diffusion"
+    ],
+    "guides": [
+      "video-generation",
+      "marketing",
+      "slides"
+    ],
+    "articles": []
+  },
+  "changelog": [
+    {
+      "date": "2026-10-01",
+      "text": "初回公開",
+      "by": "researcher"
+    }
+  ],
+  "editor_note": "",
+  "embed_models": false,
+  "research_plan": {
+    "candidates": [],
+    "verdict_questions": [],
+    "notes": ""
+  }
+}
