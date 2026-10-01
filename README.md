@@ -16,7 +16,7 @@ build.py  静的サイトを dist/ に生成（記事・カテゴリ・タグ・
 GitHub Pages に公開 → scripts/notify.py で IndexNow と WebSub に通知
 ```
 
-自動実行は `.github/workflows/publish.yml`。**1日4回（7:00・12:00・17:00・21:00 JST）**、収集して最大3本ずつ執筆し公開する（1日の安全上限 `MAX_PER_DAY`）。手動実行は Actions タブの「publish」→ Run workflow（本数・時間幅を指定可）。
+自動実行は `.github/workflows/publish.yml`。**1日4回（7:00・12:00・17:00・21:00 JST）**、収集して最大3本ずつ執筆し、**別の Opus が引用・転載の観点で校閲してから**公開する（1日の安全上限 `MAX_PER_DAY`。校閲の指示は `scripts/copyright_review_prompt.md`）。手動実行は Actions タブの「publish」→ Run workflow（本数・時間幅を指定可）。
 
 用途別AIガイド（`/best/`）の点検は `.github/workflows/guides.yml`。毎日06:30 JSTに、点検日が古い順に2本ずつ公式ページを開き直して料金・条件・評価の根拠を更新する（約1週間で全ガイドを一巡）。記事を書いたときに料金や新モデルが分かれば、記者もその場でガイドを直す。
 

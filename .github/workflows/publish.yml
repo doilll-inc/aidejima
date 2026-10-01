@@ -1,6 +1,7 @@
 name: publish
 
-# 1) 海外ソースを集める → 2) 記者（Opus）がまだ記事にしていない話題を最大 ARTICLES_PER_RUN 本書いてコミット → 3) ビルドして GitHub Pages に公開
+# 1) 海外ソースを集める → 2) 記者（Opus）がまだ記事にしていない話題を最大 ARTICLES_PER_RUN 本書いてコミット
+# → 3) 校閲（Opus）が引用・転載の観点で点検して直す → 4) ビルドして GitHub Pages に公開
 # 1日4回（7:07 / 12:07 / 17:07 / 21:07 JST。GitHubは毎時0分の定時実行が混んで遅れやすいので7分ずらす）必ず更新する（tomo指示 2026-10-01「1日4回記事を更新してほしい」）。
 # 7:00 は日本の夜のあいだに出た米国の発表を拾う回。書く価値のある話題がなければ記者は0本で終えてよい（無理に埋めない）。
 # push（手元からの記事追加・修正やガイド点検のコミット）では 3) だけ行う。
@@ -133,6 +134,41 @@ jobs:
             --allowedTools "Read,Write,Edit,Glob,Grep,Bash,WebSearch,WebFetch"
             --max-turns 120
           prompt: ${{ steps.prompt.outputs.text }}
+
+      # 書いた記事を、別の回の Opus が引用・転載の観点だけで校閲する（2026-10-01 の点検で55本中43本が
+      # 1本の情報源の段落順をなぞっていたため。tomo「パクリ記事になってないよね？ガバナンス整えて」）
+      - name: 校閲の対象があるか
+        id: review_target
+        if: env.WANT_WRITE == 'true' && env.HAS_CLAUDE == 'true'
+        run: |
+          if git diff --name-only origin/main..HEAD | grep -q '^content/articles/'; then
+            echo "articles=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 校閲の指示を用意
+        if: steps.review_target.outputs.articles == 'true'
+        id: review_prompt
+        run: |
+          {
+            echo "text<<PROMPT_EOF"
+            cat scripts/copyright_review_prompt.md
+            echo "PROMPT_EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: "校閲（Opus）: 引用・転載の点検"
+        if: steps.review_target.outputs.articles == 'true'
+        continue-on-error: true
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          # Claude の GitHub アプリに頼らず、このワークフローの標準トークンで動かす
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_full_output: true
+          claude_args: |
+            --model ${{ env.WRITER_MODEL }}
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash,WebFetch"
+            --max-turns 80
+          prompt: ${{ steps.review_prompt.outputs.text }}
 
       - name: push
         if: env.WANT_WRITE == 'true'
