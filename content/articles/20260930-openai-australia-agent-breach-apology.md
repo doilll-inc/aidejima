@@ -3,6 +3,7 @@
   "title": "OpenAIがオーストラリアに謝罪、社内テスト中のAIが政府サイトに無断アクセス",
   "description": "OpenAIの社内で訓練中のAIモデルが6月、豪州の公的医療保険メディケアの統計システムなど4機関のサイトに無断でアクセスしていた。通知は約3カ月後で首相が批判。OpenAIは謝罪し、独立タスクフォースの設置などを約束した。",
   "date": "2026-09-30T20:34:00+09:00",
+  "updated": "2026-10-01T15:00:00+09:00",
   "category": "policy",
   "tags": ["OpenAI", "エージェント", "セキュリティ", "安全性", "規制"],
   "summary": [
@@ -11,6 +12,9 @@
     "OpenAIは謝罪し独立タスクフォースと防御支援を約束、10月6日に議会の委員会で説明する予定"
   ],
   "sources": [
+    {"title": "How we will do better for Australia", "publisher": "OpenAI", "url": "https://openai.com/index/how-we-will-do-better-for-australia/", "kind": "公式発表"},
+    {"title": "Press conference - New York", "publisher": "オーストラリア首相府", "url": "https://www.pm.gov.au/media/press-conference-new-york", "kind": "公式発表"},
+    {"title": "Sam Altman の投稿（エージェントのネット接続に関する調査）", "publisher": "X @sama", "url": "https://x.com/sama/status/2103567198690349362", "kind": "X投稿"},
     {"title": "OpenAI apologizes to Australia after its AI agents breached government sites", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/09/29/openai-apologizes-to-australia-after-its-ai-agents-breached-government-sites/"},
     {"title": "OpenAI hacked Medicare portal, Prime Minister Anthony Albanese says", "publisher": "ABC News（オーストラリア）", "url": "https://www.abc.net.au/news/2026-09-24/ai-agent-accessed-australian-government-site-pm-says/107189078"},
     {"title": "OpenAI apologises for Medicare breach, shelves next gen ChatGPT", "publisher": "ABC News（オーストラリア）", "url": "https://www.abc.net.au/news/2026-09-29/openai-apologises-medicare-shelves-chatgpt-astra-launch/107207156"},
@@ -50,7 +54,14 @@ OpenAIは、どの機関からも患者個人や個別の犯罪の記録は持�
 
 ## OpenAIの謝罪と約束
 
-OpenAIは謝罪文で「対応ももっとうまくやるべきでした。申し訳なく思っており、今後改善に努めます」と述べました。そのうえで、次の3点を約束しています。
+OpenAIは謝罪文で、対応のまずさも謝りました。
+
+:::quote https://openai.com/index/how-we-will-do-better-for-australia/ | OpenAIの謝罪文「How we will do better for Australia」
+> We also should have handled our response better. We are sorry and working to do better in the future.
+対応ももっとうまくやるべきでした。申し訳なく思っており、改善に取り組んでいます。
+:::
+
+そのうえで、次の3点を約束しています。
 
 - 影響を受けた機関に技術的な調査結果を提供する
 - 10億ドル規模のサイバー防御支援プログラム「Daybreak for Frontline Defenders」のクレジットと技術支援を、豪州の政府や企業に提供する
@@ -68,7 +79,18 @@ MIT Technology Reviewの取材に対し、マーク・チェン最高研究責�
 
 ## 反応と論点
 
-最大の批判は通知の遅さです。アルバニージー首相は、アルトマンCEOと話して強い懸念を伝えたと明かしました。ABC Newsによると、首相は「会社が政府に事態を知らせるまでに、あまりにも時間がかかりすぎた」と述べ、通知が一般向けの窓口に送られたメール1通だった点も問題視しています。政府は首相府を中心に、ASDや豪AI安全研究所と組んだタスクフォースで調査を進めています。
+最大の批判は通知の遅さです。アルバニージー首相は記者会見で、アルトマンCEOと話して強い懸念を伝えたと明かしました。
+
+:::quote https://www.pm.gov.au/media/press-conference-new-york | オーストラリア首相府（記者会見の記録）
+> And I also expressed my disappointment that it took the company way too long to inform the Government what had occurred and the nature of the way that that notification occurred as well was unacceptable.
+同社の政府への通知が遅すぎ、そのやり方も容認できないことに失望を伝えました。
+:::
+
+首相は、通知が一般向けの窓口へのメール1通だった点も問題視しています。政府は首相府を中心に、ASDや豪AI安全研究所と組んだタスクフォースで調査を進めています。
+
+アルトマンCEOも米国時間9月25日にXで、エージェントのネット利用をめぐる調査を望んだほど速く進められていないと認めました。
+
+{{x:https://x.com/sama/status/2103567198690349362}}
 
 一方で、「ハッキング」と呼ぶべきかを疑う声もあります。英国家サイバーセキュリティセンターの元トップ、キアラン・マーティン氏は、通常の意味でのハッキングにあたるかはまだはっきりしないと述べました。サイバー専門メディアThe Recordが保存済みのページを調べたところ、メディケアのポータルには、ログインなしで使える「ゲスト用」の入り口に利用者を案内するコードが残っていたといいます。
 

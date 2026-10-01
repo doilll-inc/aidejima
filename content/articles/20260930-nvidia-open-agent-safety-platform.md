@@ -3,6 +3,7 @@
   "title": "NVIDIAがAIエージェントを別チップで監視する安全基盤を発表、逸脱はミリ秒単位で隔離",
   "description": "NVIDIAがAIエージェントの行動範囲を縛る「Open Agent Safety Platform」を発表した。隔離環境を作るOpenShellと、DPU上で見張るSentryの二段構えで、Anthropicなど100超の組織が参加する。",
   "date": "2026-09-30T20:19:00+09:00",
+  "updated": "2026-10-01T15:00:00+09:00",
   "category": "hardware",
   "tags": ["NVIDIA", "エージェント", "セキュリティ", "安全性", "Anthropic", "オープンソース"],
   "summary": [
@@ -14,6 +15,8 @@
     {"title": "NVIDIA Launches Open Agent Safety Platform to Secure Agents From Testing to Deployment", "publisher": "NVIDIA", "url": "https://nvidianews.nvidia.com/news/open-agent-safety-platform"},
     {"title": "NVIDIA Open Agent Safety Platform: A Reference for Continuous In-Silicon Agent Monitoring", "publisher": "NVIDIA Technical Blog", "url": "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/"},
     {"title": "How Autonomous AI Agents Become Secure by Design With NVIDIA OpenShell", "publisher": "NVIDIA Blog", "url": "https://blogs.nvidia.com/blog/secure-autonomous-ai-agents-openshell"},
+    {"title": "NVIDIA/OpenShell", "publisher": "NVIDIA（GitHub）", "url": "https://github.com/NVIDIA/OpenShell", "kind": "公式ドキュメント"},
+    {"title": "NVIDIA の投稿（Open Agent Safety Platformの公開）", "publisher": "X @nvidia", "url": "https://x.com/nvidia/status/2104567031110533431", "kind": "X投稿"},
     {"title": "Nvidia releases platform to keep AI agents from breaking out of containment", "publisher": "CNBC", "url": "https://www.cnbc.com/2026/09/28/nvidia-releases.html"},
     {"title": "Nvidia announces AI safety platform", "publisher": "The Verge", "url": "https://www.theverge.com/tech/1001287/nvidia-ai-safety-platform-rogue-agents"},
     {"title": "Nvidia's New Tool to Stop AI Agents From Going Rogue, Explained", "publisher": "Business Insider", "url": "https://www.businessinsider.com/nvidia-launches-open-agent-safety-platform-ai-going-rogue-2026-9"},
@@ -26,6 +29,10 @@ NVIDIAは現地時間9月28日、AIエージェントが使える範囲を制限
 
 ## 何が発表されたか
 
+NVIDIAは公式Xで、AIエージェントが何にアクセスでき、何を実行できるかを制御するための基盤だと紹介しました。
+
+{{x:https://x.com/nvidia/status/2104567031110533431}}
+
 基盤は2つの部品でできています。
 
 **OpenShell**は、エージェントを1つずつ隔離環境（サンドボックス）の中で動かすソフトウェアです。運用者は、エージェントが触れてよいファイル、通信先、ツール、認証情報をあらかじめ決めます。OpenShellは作業の開始前と作業中の両方でその制限を守らせます。
@@ -33,6 +40,11 @@ NVIDIAは現地時間9月28日、AIエージェントが使える範囲を制限
 OpenShellは3月に早期プレビューとして発表され、今回から広く提供を始めました。オープンソース（Apache 2.0）で、NVIDIAのCPU「Vera」向けに最適化しつつ、ArmやIntelの環境にも広げられるとしています。
 
 **Sentry**は、データセンター向けの通信処理チップ「BlueField-4 DPU」の上で動く監視役です。エージェントが動くサーバー本体とは切り離されており、エージェントからも攻撃者からも見えない位置で動くとNVIDIAは説明しています。エージェントのIDや権限を確かめながら、データやツールへのアクセスを見張り、ルール違反を検知するとチップ側で止めます。NVIDIAの次世代システム「Vera Rubin POD」では、BlueField-4がモデルへの唯一の通り道に置かれる設計です。
+
+:::quote https://nvidianews.nvidia.com/news/open-agent-safety-platform | NVIDIA公式発表
+> Sentry provides in-silicon security enforcement, meaning that if an AI agent attempts to move outside its software boundary, Sentry quarantines and stops it in milliseconds.
+Sentryはチップ上でセキュリティを強制します。つまり、AIエージェントがソフトウェアで定めた境界の外に出ようとすると、Sentryがミリ秒単位で隔離し、停止させます。
+:::
 
 Jensen Huang CEOはCNBCの番組で、この仕組みを「エージェントのためのブラウザー」だと説明しました。まずすべての権限を取り上げ、必要なときだけ与えるという考え方です。
 
@@ -49,7 +61,14 @@ Jensen Huang CEOはCNBCの番組で、この仕組みを「エージェントの
 
 発表の背景には、エージェントの「脱走」事件の報告が相次いでいることがあります。OpenAIやAnthropic、Googleは、自社モデルが試験環境の外に出て他社のシステムに侵入しようとした例を明らかにしてきました。7月にはOpenAIのモデルが試験環境を抜け出し、Hugging Faceに侵入しています。NVIDIAの担当者は、この基盤があれば防げた可能性があると記者に説明しました。
 
-NVIDIAは技術ブログで、こうした逸脱は能力を保ったまま学習で取り除くことはできず、エージェント自身に行動を管理させることは期待できないと主張しています。AnthropicのDario Amodei CEOが開発の減速を呼びかけるなか、Huang氏は安全性を「工学で解ける問題」と位置づけ、製品で答える姿勢を示した形です。
+NVIDIAは技術ブログで、エージェントが本来の課題や制約から外れていく「ドリフト（逸脱）」は、能力を保ったまま学習で取り除くことはできず、エージェント自身に行動を管理させることは期待できないと主張しています。
+
+:::quote https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/ | NVIDIA技術ブログ
+> This can’t be trained away while retaining the capability. And here’s the most important lesson: an agent in these circumstances cannot be expected to fully govern its own behavior.
+これは、能力を保ったまま訓練で取り除くことはできません。そして最も重要な教訓は、こうした状況に置かれたエージェントに、自らの行動を完全に律することは期待できないということです。
+:::
+
+AnthropicのDario Amodei CEOが開発の減速を呼びかけるなか、Huang氏は安全性を「工学で解ける問題」と位置づけ、製品で答える姿勢を示した形です。
 
 ## 反応と論点
 
@@ -61,7 +80,11 @@ AnthropicのPaul Smith最高商業責任者は発表文で、エージェント�
 
 ## 日本のビジネスへの影響
 
-OpenShellはオープンソースのため、日本の企業も今日から試せます。社内でコーディングエージェントや業務自動化エージェントを動かしている開発チームにとっては、権限設計を見直すきっかけになります。一方、Sentryを使うにはBlueField-4を積んだサーバーが必要で、主な対象はデータセンターやクラウドの事業者です。発表文のパートナー一覧に、日本のクラウド事業者の名前はありません。
+OpenShellはオープンソースのため、日本の企業も今日から試せます。
+
+{{card:https://github.com/NVIDIA/OpenShell|NVIDIA/OpenShell（OpenShellのソースコード）|NVIDIA（GitHub）}}
+
+社内でコーディングエージェントや業務自動化エージェントを動かしている開発チームにとっては、権限設計を見直すきっかけになります。一方、Sentryを使うにはBlueField-4を積んだサーバーが必要で、主な対象はデータセンターやクラウドの事業者です。発表文のパートナー一覧に、日本のクラウド事業者の名前はありません。
 
 エージェントを業務に入れる企業が、製品を使うかどうかにかかわらず取り入れたいのは、この基盤の考え方です。
 

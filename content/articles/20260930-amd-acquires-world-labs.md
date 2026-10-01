@@ -3,6 +3,7 @@
   "title": "AMDが世界モデルのWorld Labsを82億ドルで買収、NVIDIAを追いモデル開発へ",
   "description": "AMDは、3D空間を生成・再現する世界モデルを開発するWorld Labsを約82億ドルの株式交換で買収すると発表した。創業者のフェイフェイ・リー氏は最高科学責任者に就く。モデルまで手がけるNVIDIAに対抗する狙いがある。",
   "date": "2026-09-30T20:37:00+09:00",
+  "updated": "2026-10-01T15:00:00+09:00",
   "category": "hardware",
   "tags": [
     "AMD",
@@ -35,6 +36,18 @@
       "title": "World Labs is joining AMD",
       "publisher": "Fei-Fei Li（Substack）",
       "url": "https://drfeifei.substack.com/p/worldlabs-joining-amd"
+    },
+    {
+      "title": "Lisa Su の投稿（World Labsとフェイフェイ・リー氏を歓迎）",
+      "publisher": "X @LisaSu",
+      "url": "https://x.com/LisaSu/status/2104665313170354674",
+      "kind": "X投稿"
+    },
+    {
+      "title": "World Labs の投稿（AMDへの参加を発表）",
+      "publisher": "X @theworldlabs",
+      "url": "https://x.com/theworldlabs/status/2104665621120311465",
+      "kind": "X投稿"
     },
     {
       "title": "AMD will acquire Fei-Fei Li's World Labs for $8.2B",
@@ -76,7 +89,9 @@ AMDは現地時間9月28日、AI研究者のフェイフェイ・リー氏が202
 
 ## 何が発表されたか
 
-World Labsは「世界モデル」と呼ばれるAIを開発する企業です。世界モデルとは、文章や画像、動画をもとに3Dの空間を生成・再現し、その中で物がどう動くかまでシミュレーションできるモデルを指します。AMDの発表によると、買収後もWorld Labsのチームはこうした空間知能のモデルと、ロボットの学習・シミュレーション技術の研究を続けます。World Labs側の発表では、共同創業者のジャスティン・ジョンソン氏とベン・ミルデンホール氏がAMD内で引き続きチームを率います。
+World Labsは「世界モデル」と呼ばれるAIを開発する企業です。世界モデルとは、文章や画像、動画をもとに3Dの空間を生成・再現し、その中で物がどう動くかまでシミュレーションできるモデルを指します。AMDの発表によると、買収後もWorld Labsのチームはこうした空間知能のモデルと、ロボットの学習・シミュレーション技術の研究を続けます。World Labs側の発表では、共同創業者のジャスティン・ジョンソン氏とベン・ミルデンホール氏がAMD内で引き続きチームを率います。World Labsは公式Xでも、AMDに加わることを発表しました。
+
+{{x:https://x.com/theworldlabs/status/2104665621120311465}}
 
 買収の条件は、SECに提出された書類（8-K）で補足されています。
 
@@ -84,7 +99,16 @@ World Labsは「世界モデル」と呼ばれるAIを開発する企業です�
 - 株数の決め方：買収完了の2営業日前までの10営業日の出来高加重平均株価で算出
 - 発行方法：公募ではなく、登録義務が免除される私募形式で発行
 
-スーCEOは発表文で「次世代AIのための計算基盤を作るには、モデルがどう進化しているかを深く理解する必要がある」と述べました。AMDは買収の狙いとして、推論やロボット、シミュレーション、物理世界で動くAIといった新しい用途の負荷を深く知り、今後の半導体や製品の計画に生かすことを挙げています。オープンなAIのエコシステムを強める方針も示しました。
+スーCEOは発表文で「次世代AIのための計算基盤を作るには、モデルがどう進化しているかを深く理解する必要がある」と述べました。AMDは、推論やロボット、シミュレーション、物理世界で動くAIへと用途が広がり、計算基盤に求められるものが多様になっていると説明し、買収の狙いを次のように書いています。
+
+:::quote https://ir.amd.com/news-events/press-releases/detail/1299/amd-to-acquire-world-labs-to-advance-the-future-of-ai-compute | AMD公式発表「AMD to Acquire World Labs to Advance the Future of AI Compute」
+> World Labs’ expertise in developing advanced models will give AMD deeper insight into how workloads are evolving and help shape its future technology roadmaps.
+高度なモデルの開発で培ったWorld Labsの専門性によって、AMDは処理の負荷がどう変わっていくかをより深く理解できるようになり、今後の技術ロードマップづくりにも生かせます。
+:::
+
+オープンなAIのエコシステムを強める方針も示しました。スーCEOはXでも、World Labsが持つAIと世界モデルの専門性と、AMDの計算基盤の強みを組み合わせると書き、リー氏らを歓迎しています。
+
+{{x:https://x.com/LisaSu/status/2104665313170354674}}
 
 ## 背景
 
@@ -99,6 +123,11 @@ World Labsは、画像認識の研究を大きく進めたデータセット「I
 7月にはロボット向けシミュレーションを手がけるSceniXも買収しており、ロボット分野に軸足を広げていました。
 
 AMDとWorld Labsは2025年から、AMDのGPUでモデルを効率よく動かすための協力を続けてきました。リー氏は自身のSubstackで、ハードウェアに近づかなければAIは効率面で足かせを抱え、現実世界での応用も限られると書いています。
+
+:::quote https://drfeifei.substack.com/p/worldlabs-joining-amd | フェイフェイ・リー氏のSubstack「World Labs is joining AMD」
+> To do this requires scaling our efforts, widening our reach, and getting closer to the hardware. Without having a focused hardware effort, AI is hobbled in efficiency.
+そのためには、取り組みを拡大し、届く範囲を広げ、ハードウェアにもっと近づく必要があります。ハードウェアに集中した取り組みがなければ、AIは効率の面で足かせをはめられたままです。
+:::
 
 AMDは半導体の外へ手を広げています。7月にはAnthropicと提携し、最大2ギガワット分のGPU「Instinct MI450」シリーズを2027年前半から順次供給し、AMDがAnthropicに最大50億ドルを出資すると発表しました。一方のNVIDIAは、すでに「Cosmos」という公開型の世界モデル群を持っています。TechCrunchによると、AMDがこれまで一般に公開してきたのは文章や動画を扱うモデルにとどまっていました。
 
