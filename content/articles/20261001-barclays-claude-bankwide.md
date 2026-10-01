@@ -1,0 +1,79 @@
+---
+{
+  "title": "英BarclaysがClaudeを全行に拡大、行員1.6万人が利用しメールは1日12万通を仕分け",
+  "description": "英大手銀行BarclaysがAnthropicのClaudeを全行に広げる。行員向けの検索アシスタントは1万6,000人以上が使い、市場部門では1日約12万通のメールを分類。Claude Codeは2026年末に開発者の50%へ広げる計画だ。",
+  "date": "2026-10-01T17:46:00+09:00",
+  "category": "usecases",
+  "tags": ["Barclays", "Claude", "Anthropic", "金融", "導入事例", "活用事例"],
+  "summary": [
+    "英大手銀行BarclaysはAnthropicとの提携を広げ、Claudeを開発・業務・顧客対応に全行で使う",
+    "行員向けの社内検索アシスタントは2025年から稼働し、1万6,000人以上が使って検索は100万回を超えた",
+    "市場部門ではClaudeが1日約12万通のメールを仕分け、Claude Codeは2026年末に開発者の50%へ広げる"
+  ],
+  "sources": [
+    {"title": "Barclays scales Claude to upgrade operations and improve client experience", "publisher": "Anthropic", "url": "https://www.anthropic.com/news/barclays-scales-claude", "kind": "公式発表"},
+    {"title": "Claude Code", "publisher": "Anthropic（Claude）", "url": "https://claude.com/product/claude-code", "kind": "公式発表"},
+    {"title": "Financial services | Claude by Anthropic", "publisher": "Anthropic（Claude）", "url": "https://claude.com/solutions/financial-services", "kind": "公式発表"}
+  ],
+  "thumb_text": "Barclays×Claude",
+  "share_text": "英BarclaysがClaudeを全行に拡大。行員1.6万人が社内検索に使い、市場部門のメールは1日12万通をAIが仕分け",
+  "editor_note": ""
+}
+---
+英国の大手銀行Barclaysが、AnthropicのAI「Claude」を全行の業務に広げると、Anthropicが現地時間10月1日に公式ブログで発表しました。顧客対応を支える行員向けの検索アシスタントはすでに1万6,000人以上が使い、市場部門ではClaudeが1日約12万通のメールを仕分けています。開発者向けのClaude Codeは、2026年末までに開発者の50%に広げる計画です。
+
+## 何に使っているか
+
+Barclaysは、個人向けの銀行業務から投資銀行業務までを手がける英国のユニバーサルバンクです。今回の発表は、Anthropicとの提携を広げ、安全性を確保した企業向けAIを世界の業務に組み込むという内容です。用途は大きく3つあります。
+
+1つ目は、行員向けの社内検索「Colleague Knowledge Assistant」です。英国の個人向け部門Barclays UKの行員が、2,000万人を超える英国の個人顧客に対応するとき、必要な情報や回答をすばやく探せるようにする道具です。
+
+:::quote https://www.anthropic.com/news/barclays-scales-claude | Anthropic公式ブログ「Barclays scales Claude to upgrade operations and improve client experience」
+> The capability, which has been live since 2025, is powered by Claude through a retrieval-augmented generation architecture. More than 16,000 colleagues have adopted the assistant, and it has handled over one million searches.
+この機能は2025年から稼働しており、Claudeが検索拡張生成（RAG）の構成で動いています。1万6,000人以上の行員が使い、検索は100万回を超えました。
+:::
+
+RAGとは、AIが答える前に社内文書を検索し、見つけた資料をもとに回答を作る方式です。AIが知らない社内規程や商品の情報にも答えられます。
+
+2つ目は、市場部門（Global Markets）での顧客からの問い合わせメールの処理です。Claudeが届いたメールを分類し、必要な情報を補い、どの担当に回すのが最適かを判断します。依頼に必要な情報がそろっているかも確かめ、担当者がすぐ動ける状態にして渡します。
+
+:::quote https://www.anthropic.com/news/barclays-scales-claude | Anthropic公式ブログ「Barclays scales Claude to upgrade operations and improve client experience」
+> The platform processes approximately 120,000 emails each day, reducing manual handling activity while helping colleagues identify and act on relevant information more efficiently.
+この仕組みは1日に約12万通のメールを処理し、手作業を減らしながら、行員が必要な情報を見つけて対応しやすくしています。
+:::
+
+3つ目はソフトウェア開発です。開発の高速化、古いシステムの刷新、業務の効率化にClaudeを使います。コードを書くAIエージェント「Claude Code」の利用者は、2026年末に開発者全体の50%、2027年にはソフトウェアエンジニアの過半数に広げる見込みです。
+
+## どう進めているか
+
+発表が繰り返し強調しているのは、統制です。Barclaysは、AIの用途ごとにガバナンス、セキュリティ管理、人による監督をかけて展開しているといいます。
+
+グループ共同COO（最高執行責任者）のAnne Marie Darling氏は、定型作業の時間を減らし意思決定を簡素にすることで、行員が専門性を複雑な問題に向けられるようにすると説明しました。もう1人の共同COOのCraig Bright氏は、ソフトウェア開発とサイバーセキュリティはAIで作り変えられつつあるとし、作る・試す・守る・運用する工程にAIエージェントを組み込んでいく方針を示しています。
+
+## 公表された数字
+
+| 用途 | 公表された数字 |
+|---|---|
+| 行員向けの社内検索 | 2025年から稼働、利用者1万6,000人以上、検索100万回超 |
+| 市場部門のメール仕分け | 1日約12万通 |
+| Claude Code | 2026年末に開発者の50%、2027年にエンジニアの過半数（計画） |
+
+作業時間の短縮幅や費用の削減額は公表されていません。示されたのは利用規模の数字です。
+
+## 日本で真似するなら
+
+順番が参考になります。Barclaysはまず、社内の情報を探す「行員向けの検索」から始め、次に大量に届く問い合わせの「仕分け」、そして開発の現場へと広げました。どれも、最後に判断して動くのは行員で、AIは探す・分ける・下準備をする役です。
+
+- **社内検索**：商品説明書、事務手続きのマニュアル、FAQを集め、RAGで検索できるようにする。最初はコールセンターや支店など、問い合わせが多い部署から
+- **メールの仕分け**：分類のラベルと「処理に必要な情報」の一覧を先に決め、AIには分類と不足情報の指摘だけを任せる
+- **開発**：Claude Codeの対象者と普及率の目標を、Barclaysのように数字で決めて段階的に広げる
+
+## 日本のビジネスへの影響
+
+ClaudeとClaude Codeは日本からも使えます。データを日本国内で処理したい場合の選択肢は「[Amazon BedrockのClaude、ソウルとシンガポールで推論を国内完結に](/news/20261001-aws-bedrock-claude-in-region-seoul-singapore/)」で整理しています。
+
+関係が深いのは、銀行・保険・証券の情報システム部門と、顧客対応の部門の責任者です。規制の厳しい英国の大手銀行が、1万人規模で行員にAIを使わせ、顧客対応の裏側に組み込んでいる点は、社内の説得材料になります。
+
+今すぐやれるのは、問い合わせメールを1週間分抜き出し、分類のラベルと必要情報の一覧を作ってClaudeに仕分けさせ、担当者の判断とどれだけ一致するかを比べることです。一致率が見えれば、どこまで任せられるかを議論できます。開発での使い方は「[コーディングAIのおすすめと料金比較](/best/coding/)」を参考にしてください。
+
+注意点として、今回の数字はAnthropicの発表によるもので、効果の大きさはまだ示されていません。顧客の個人情報を含むメールや文書をAIに渡す前に、社内規程やFISC（金融情報システムセンター）の安全対策基準など、既存のルールとの整合を確かめてください。
