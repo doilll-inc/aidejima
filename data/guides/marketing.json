@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 2,
   "created": "2026-09-30",
-  "updated": "2026-10-01",
+  "updated": "2026-10-02",
   "last_reviewed": "2026-10-01",
   "title": "広告・マーケティング向けAIのおすすめ：広告クリエイティブ・SNS・LP制作",
   "short_name": "広告・マーケ",
@@ -1201,6 +1201,24 @@
       "note": "Meta 系ドメインは社内ルールで開かないため未調査（名前のみ）",
       "checked": "",
       "retired_note": ""
+    },
+    {
+      "id": "shopify-canvas",
+      "name": "Shopify Canvas（Sidekick）",
+      "vendor": "Shopify",
+      "url": "https://www.shopify.com/news/introducing-canvas",
+      "status": "watch",
+      "tags": [
+        "Shopify",
+        "Canvas",
+        "Sidekick"
+      ],
+      "latest": {
+        "name": "Canvas",
+        "released": "2026-10-01",
+        "source_url": "https://changelog.shopify.com/posts/design-a-fully-bespoke-store-with-canvas",
+        "checked": "2026-10-02"
+      }
     }
   ],
   "criteria": [
@@ -1287,6 +1305,12 @@
       "date": "2026-10-01",
       "text": "初回公開",
       "by": "researcher"
+    },
+    {
+      "date": "2026-10-02",
+      "text": "ShopifyのAIストアデザイン画面「Canvas」を調査中の候補に追加",
+      "article": "/news/20261002-shopify-canvas-sidekick-store-design/",
+      "by": "writer"
     }
   ],
   "editor_note": "",
