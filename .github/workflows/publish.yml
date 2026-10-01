@@ -1,23 +1,27 @@
 name: publish
 
-# 1) 海外ソースを集める → 2) 書く価値のある新しい候補があるときだけ記者（Opus）が書いてコミット → 3) ビルドして GitHub Pages に公開
-# push（手元からの記事追加・修正）では 3) だけ行う。
-# 毎時走るが、Claude を呼ぶのは collect.py の gate（大手の一次情報の出たて・複数媒体が報じている等でスコアが閾値以上）を通った回だけ。
-# 1日の本数は MAX_PER_DAY で頭打ちにする（Claude の利用枠と記事の質の両方を守るため）
+# 1) 海外ソースを集める → 2) 記者（Opus）がまだ記事にしていない話題を最大 ARTICLES_PER_RUN 本書いてコミット → 3) ビルドして GitHub Pages に公開
+# 1日4回（7:00 / 12:00 / 17:00 / 21:00 JST）必ず更新する（tomo指示 2026-10-01「1日4回記事を更新してほしい」）。
+# 7:00 は日本の夜のあいだに出た米国の発表を拾う回。書く価値のある話題がなければ記者は0本で終えてよい（無理に埋めない）。
+# push（手元からの記事追加・修正やガイド点検のコミット）では 3) だけ行う。
+# MAX_PER_DAY は手で記事を足した日にClaudeの利用枠を使いすぎないための安全弁
 on:
   push:
     branches: [main]
   schedule:
-    - cron: "5 * * * *" # 毎時5分（米国の発表から1〜2時間以内に出すため。書くかどうかは gate が決める）
+    - cron: "0 22 * * *" # 07:00 JST（米国の夜〜朝の発表）
+    - cron: "0 3 * * *" # 12:00 JST
+    - cron: "0 8 * * *" # 17:00 JST
+    - cron: "0 12 * * *" # 21:00 JST（米国の朝の発表）
   workflow_dispatch:
     inputs:
       write:
-        description: "Claude に記事を書かせる（gate を通さず必ず書く）"
+        description: "Claude に記事を書かせる"
         type: boolean
         default: true
       count:
         description: "最大で何本書くか"
-        default: "2"
+        default: "3"
       hours:
         description: "候補を集める時間幅（時間）"
         default: "24"
@@ -32,10 +36,9 @@ permissions:
   id-token: write # Pages のデプロイと Claude GitHub App の認証に必要
 
 env:
-  ARTICLES_PER_RUN: ${{ inputs.count || '2' }}
+  ARTICLES_PER_RUN: ${{ inputs.count || '3' }}
   COLLECT_HOURS: ${{ inputs.hours || '24' }}
-  MAX_PER_DAY: 12 # 1日の記事数の上限（速報を優先し、薄い記事で埋めない）
-  GATE_SCORE: "2.6" # collect.py --gate の閾値。下げると書く回数が増える
+  MAX_PER_DAY: 20 # 1日の記事数の上限（4回×3本=12本が通常。手で足した日の使いすぎを防ぐ）
   WRITER_MODEL: claude-opus-5-5 # 記事の執筆モデル（固定）
   WANT_WRITE: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.write) }}
   HAS_CLAUDE: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' }}
@@ -71,7 +74,7 @@ jobs:
             cache-
             og-
 
-      - name: 海外ソースを収集して、書く価値があるか判定
+      - name: 海外ソースを収集
         if: env.WANT_WRITE == 'true'
         id: gate
         env:
@@ -80,14 +83,9 @@ jobs:
           today=$(TZ=Asia/Tokyo date +%Y%m%d)
           done_today=$(ls content/articles/${today}-*.md 2>/dev/null | wc -l | tr -d ' ')
           echo "今日の記事数: ${done_today} / 上限 ${MAX_PER_DAY}"
-          if python3 scripts/collect.py --hours "$COLLECT_HOURS" --print 25 --gate --gate-score "$GATE_SCORE"; then
-            gate=true
-          else
-            gate=false
-          fi
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            gate=true
-          fi
+          python3 scripts/collect.py --hours "$COLLECT_HOURS" --print 25
+          # 1日4回の定時更新なので毎回書く（話題の良し悪しは記者が EDITORIAL.md の基準で判断し、無ければ0本）
+          gate=true
           if [ "$done_today" -ge "$MAX_PER_DAY" ]; then
             echo "1日の上限に達したので今回は書かない"
             gate=false

@@ -9,7 +9,6 @@
 
 ```
 scripts/collect.py  公式サイト・RSS・Hacker News・HF Papers・X公式API（鍵があるとき）を収集 → data/candidates.json（一次情報を優遇した話題度順・既出は除外/印付け）
-        ↓  --gate: 書く価値のある新しい候補があるときだけ次へ（毎時走るが Claude を呼ぶのはこのときだけ）
 Claude Opus 5.5（GitHub Actions）  候補から最大2本選び、一次情報を読んで裏取りして content/articles/*.md を書く
         ↓
 build.py  静的サイトを dist/ に生成（記事・カテゴリ・タグ・月別・AIモデル図鑑・RSS・sitemap・Googleニュース用sitemap・構造化データ・OG画像）
@@ -17,7 +16,7 @@ build.py  静的サイトを dist/ に生成（記事・カテゴリ・タグ・
 GitHub Pages に公開 → scripts/notify.py で IndexNow と WebSub に通知
 ```
 
-自動実行は `.github/workflows/publish.yml`。毎時5分に収集し、gate を通った回だけ執筆（1日の上限 `MAX_PER_DAY`）。手動実行は Actions タブの「publish」→ Run workflow（本数・時間幅を指定可。手動は gate を通さず必ず書く）。
+自動実行は `.github/workflows/publish.yml`。**1日4回（7:00・12:00・17:00・21:00 JST）**、収集して最大3本ずつ執筆し公開する（1日の安全上限 `MAX_PER_DAY`）。手動実行は Actions タブの「publish」→ Run workflow（本数・時間幅を指定可）。
 
 用途別AIガイド（`/best/`）の点検は `.github/workflows/guides.yml`。毎日06:30 JSTに、点検日が古い順に2本ずつ公式ページを開き直して料金・条件・評価の根拠を更新する（約1週間で全ガイドを一巡）。記事を書いたときに料金や新モデルが分かれば、記者もその場でガイドを直す。
 

@@ -3,8 +3,8 @@ name: guides
 # 用途別AIガイド（/best/、data/guides/*.json）の総点検。
 # 毎日 06:30 JST に、last_reviewed が古い順に MAX_GUIDES 本を点検担当（Opus）が公式ページを開いて確かめ、差分を直してコミットする。
 # 13本を2本ずつ回すので、各ガイドは約1週間に1回点検される（＝週1の総点検を毎日の小さな実行に分けたもの。1回で全部開くと Claude の1実行に収まらないため）。
-# ここではデプロイしない。GITHUB_TOKEN での push は他のワークフローを起動しないので、毎時の publish.yml（schedule）が
-# 次の回に main を取り込んでビルド・公開する（最大1時間ほどで反映）。
+# ここではデプロイしない。GITHUB_TOKEN での push は他のワークフローを起動しないので、次の publish.yml の定時実行
+# （1日4回。06:30 の点検なら 07:00 の回）が main を取り込んでビルド・公開する。
 # 手動: Actions → guides → Run workflow で slug をカンマ区切り（または all）で指定できる。
 on:
   schedule:
