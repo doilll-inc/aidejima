@@ -4,25 +4,64 @@
   "description": "音声AIのElevenLabsは、従業員が保有株を売る3億ドルのテンダーオファーを完了し、評価額が2月の110億ドルから220億ドルに倍増したと発表した。売上の55%を企業向けが占め、音声エージェントの会話は週1500万件を超えた。",
   "date": "2026-10-01T15:10:00+09:00",
   "category": "business",
-  "tags": ["ElevenLabs", "ElevenAgents", "資金調達", "音声合成", "エージェント"],
+  "tags": [
+    "ElevenLabs",
+    "ElevenAgents",
+    "資金調達",
+    "音声合成",
+    "エージェント"
+  ],
   "summary": [
     "ElevenLabsは3億ドルの従業員向けテンダーオファーを完了し、評価額は2月の110億ドルの2倍の220億ドルになった",
     "取引はWellingtonとT. Rowe Priceが主導し、Goldman SachsやGIC、EQTなどが新たに株主に加わった",
     "売上に占める企業向けは55%で、音声エージェントElevenAgentsの会話数は2月から3倍の週1500万件超に"
   ],
   "sources": [
-    {"title": "ElevenLabs valuation increases to $22 billion fueled by enterprise demand for conversational agents", "publisher": "ElevenLabs", "url": "https://elevenlabs.io/blog/tender-22bn"},
-    {"title": "Ethan Tandowsky joins ElevenLabs as Chief Financial Officer", "publisher": "ElevenLabs", "url": "https://elevenlabs.io/blog/cfo"},
-    {"title": "Eleven v4", "publisher": "ElevenLabs", "url": "https://elevenlabs.io/blog/eleven-v4"},
-    {"title": "Models（Supported languages）", "publisher": "ElevenLabs Docs", "url": "https://elevenlabs.io/docs/overview/models"},
-    {"title": "Pricing", "publisher": "ElevenLabs", "url": "https://elevenlabs.io/pricing"},
-    {"title": "AI voice startup ElevenLabs doubles valuation to $22B", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/09/30/ai-voice-startup-elevenlabs-doubles-valuation-to-22b/"},
-    {"title": "ElevenLabs doubles its valuation to $22bn in a $300m share sale", "publisher": "The Next Web", "url": "https://thenextweb.com/news/elevenlabs-valuation-22bn-300m-tender-wellington-t-rowe-price"},
-    {"title": "ElevenLabs' valuation doubles to $22BN, as completes $300M employee tender offer", "publisher": "Tech.eu", "url": "https://tech.eu/2026/09/30/elelvenlabs-doubles-valuation-to-22bn-with-300m-employee-tender-offer/"}
+    {
+      "title": "ElevenLabs valuation increases to $22 billion fueled by enterprise demand for conversational agents",
+      "publisher": "ElevenLabs",
+      "url": "https://elevenlabs.io/blog/tender-22bn"
+    },
+    {
+      "title": "Ethan Tandowsky joins ElevenLabs as Chief Financial Officer",
+      "publisher": "ElevenLabs",
+      "url": "https://elevenlabs.io/blog/cfo"
+    },
+    {
+      "title": "Eleven v4",
+      "publisher": "ElevenLabs",
+      "url": "https://elevenlabs.io/blog/eleven-v4"
+    },
+    {
+      "title": "Models（Supported languages）",
+      "publisher": "ElevenLabs Docs",
+      "url": "https://elevenlabs.io/docs/overview/models"
+    },
+    {
+      "title": "Pricing",
+      "publisher": "ElevenLabs",
+      "url": "https://elevenlabs.io/pricing"
+    },
+    {
+      "title": "AI voice startup ElevenLabs doubles valuation to $22B",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/30/ai-voice-startup-elevenlabs-doubles-valuation-to-22b/"
+    },
+    {
+      "title": "ElevenLabs doubles its valuation to $22bn in a $300m share sale",
+      "publisher": "The Next Web",
+      "url": "https://thenextweb.com/news/elevenlabs-valuation-22bn-300m-tender-wellington-t-rowe-price"
+    },
+    {
+      "title": "ElevenLabs' valuation doubles to $22BN, as completes $300M employee tender offer",
+      "publisher": "Tech.eu",
+      "url": "https://tech.eu/2026/09/30/elelvenlabs-doubles-valuation-to-22bn-with-300m-employee-tender-offer/"
+    }
   ],
   "thumb_text": "評価額220億ドル",
   "share_text": "ElevenLabsの評価額が220億ドルに倍増。売上の55%が企業向けで、音声エージェントの会話は週1500万件超",
-  "editor_note": ""
+  "editor_note": "",
+  "updated": "2026-10-01T18:59:00+09:00"
 }
 ---
 音声AIのElevenLabsは現地時間9月30日、従業員が保有株の一部を投資家に売る3億ドル規模のテンダーオファー（既存株の買い付け）を完了し、評価額が220億ドルになったと発表しました。2月のシリーズDで付いた110億ドルの2倍です。取引は大手機関投資家のWellingtonとT. Rowe Priceが主導しました。
@@ -60,7 +99,7 @@ ElevenLabsは2022年創業で、ニューヨークとロンドンに拠点を置
 | 2026年2月 | 5億ドルのシリーズD | 110億ドル |
 | 2026年9月 | 3億ドルの従業員向けテンダー | 220億ドル |
 
-The Next Webは、今回の取引はブルームバーグが7月に協議中と報じていたものだと伝えています。企業向けの比率は1年前の40%から55%に上がりました。9月8日には、決済大手Adyenで2018年の上場に関わり、2023年から財務責任者を務めたイーサン・タンドウスキー氏を最高財務責任者（CFO）に迎えています。
+The Next Webは、今回の取引はブルームバーグが7月に協議中と報じていたものだと伝えています。9月8日には、決済大手Adyenで2018年の上場に関わり、2023年から財務責任者を務めたイーサン・タンドウスキー氏を最高財務責任者（CFO）に迎えています。
 
 ## 反応と論点
 

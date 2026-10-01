@@ -3,6 +3,7 @@
   "title": "Googleが「Gemini 4 Argon」を公開、まず信頼できるサイバー防御者だけに提供",
   "description": "Google DeepMindが新しいフロンティアモデルGemini 4 Argonを発表した。出力は最大100万トークンに拡大し、導入価格は入力2ドル・出力10ドル。提供はFairwind Programのサイバー防御組織が先行する。",
   "date": "2026-10-01T15:20:00+09:00",
+  "updated": "2026-10-01T18:55:00+09:00",
   "category": "models",
   "tags": ["Google", "Gemini 4 Argon", "セキュリティ", "ベンチマーク", "料金"],
   "summary": [
@@ -17,6 +18,7 @@
     {"title": "Sundar Pichai の投稿", "publisher": "X @sundarpichai", "url": "https://x.com/sundarpichai/status/2105387952478277979"},
     {"title": "Artificial Analysis の投稿", "publisher": "X @ArtificialAnlys", "url": "https://x.com/ArtificialAnlys/status/2105392625788637299"},
     {"title": "Arena.ai の投稿", "publisher": "X @arena", "url": "https://x.com/arena/status/2105394855644139908"},
+    {"title": "Gemini 4 Argon（Hacker Newsの議論）", "publisher": "Hacker News", "url": "https://news.ycombinator.com/item?id=49913571"},
     {"title": "Google releases Gemini 4 Argon, called its most powerful model yet", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/09/30/google-releases-gemini-4-argon-called-its-most-powerful-model-yet/"},
     {"title": "Google announces Gemini 4 and says it’s so capable that only ‘trusted cyber defenders’ can have it right now", "publisher": "The Verge", "url": "https://www.theverge.com/tech/1002980/google-gemini-4-argon"},
     {"title": "Google Gemini 4 Argon closes the gap with OpenAI and Anthropic but doesn't take a clear lead", "publisher": "The Decoder", "url": "https://the-decoder.com/google-gemini-4-argon-closes-the-gap-with-openai-and-anthropic-but-doesnt-take-a-clear-lead/"},
@@ -70,7 +72,7 @@ Googleは社内での使用例も公開しました。Argonのエージェント
 
 ただしArtificial Analysisによると、Argonは1タスクあたり平均62,000出力トークンを使い、Astraの27,000トークンの2倍以上です。単価の安さがそのまま総額の安さにはならない点は注意が必要です。人手による比較評価のArena.aiでは、Text Arenaで1,525点を取り1位になりました。
 
-Hacker Newsの投稿は1,200ポイントを超えました。Rustへの大規模移行を評価する声がある一方、「結局また出せないモデルか」「発表だけで誰も試せない」といった不満も目立ちます。Google AI Ultraを契約していても当面使えないことへの指摘もありました。
+Hacker Newsの投稿は1,200ポイントを超えました。利用者の書き込みでは、社内のC/C++をRustへ大規模に移している事例を評価する声が多く出ています。一方で、誰も試せない段階で発表し、一般公開の日付も示さないことへの不満も目立ちました。Google AI Ultraを契約していても当面使えない点を問題にする書き込みもあります。
 
 ## 日本のビジネスへの影響
 

@@ -3,6 +3,7 @@
   "title": "Micronの四半期売上が前年の4.8倍の542億ドルに、AI向けメモリ不足で値上げ続く",
   "description": "Micronの9月3日までの四半期の売上は542億ドルで、前年同期の約4.8倍になった。AI向けのHBMやデータセンター用SSDの需要に供給が追いつかず値上げが進み、粗利率は86.8%に達した。2027年は不足がさらに強まるとみる。",
   "date": "2026-10-01T18:00:00+09:00",
+  "updated": "2026-10-01T18:53:00+09:00",
   "category": "hardware",
   "tags": [
     "Micron",
@@ -80,12 +81,7 @@ AI向けで中心になるのがHBMです。HBMとは、DRAMを積み重ねてGP
 
 顧客は長期の供給確保を急いでいます。Micronは、数年にわたり引き取りを約束する「戦略的顧客契約」を26件結び、2030年までの売上の35%超に当たると見積もります。顧客からの資金拠出の約束は320億ドルで、大半が現金の預け金です。
 
-次の四半期の売上見通しは615億ドル（上下15億ドル）です。会社は、需給の逼迫が2027〜28年にかけて2026年以上に強まるとみています。
-
-:::quote https://s25.q4cdn.com/621799436/files/doc_financials/2026/q4/Q4-FY26-Prepared-Remarks.pdf | Micron「Fiscal Q4 2026 Earnings Call Prepared Remarks」
-> Even with additional industry DRAM cleanroom space plans, with robust demand trends including new upside requests from customers, we do not have line of sight to when supply and demand will return to balance.
-業界でDRAMのクリーンルームを増やす計画があっても、顧客からの上積みの要望を含む強い需要が続いており、需給がいつ均衡に戻るか見通せません。
-:::
+次の四半期の売上見通しは615億ドル（上下15億ドル）です。会社は、需給の逼迫が2027〜28年にかけて2026年以上に強まるとみています。業界各社がDRAMのクリーンルームを増やす計画を立てても、顧客から上積みの注文が続いており、需給が釣り合う時期は見えないという説明です。
 
 このため2027年度は設備投資を当初計画より増やし、上半期で約250億ドルを見込みます。増える分の多くは工場の建屋に充て、2028年後半以降にクリーンルームを使えるようにします。日本ではDRAM工場の拡張に着工しており、2028年後半に生産を始める予定です。
 

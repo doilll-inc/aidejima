@@ -3,6 +3,7 @@
   "title": "Oídoは5ドルのマイコンで動く音声認識、Whisper tinyより低い誤り率をうたうOSS",
   "description": "スペインのLokutorが、マイコンESP32-S3だけで英語を文字起こしするオープンソースの音声認識「Oído」を公開した。LibriSpeechの単語誤り率は3.7%で、ノートPCで動かしたWhisper tiny.enの6.3%を下回ると公表している。",
   "date": "2026-10-01T17:48:00+09:00",
+  "updated": "2026-10-01T18:55:00+09:00",
   "category": "usecases",
   "tags": ["Lokutor", "Oído", "活用事例", "文字起こし", "オープンソース"],
   "summary": [
@@ -14,7 +15,8 @@
     {"title": "Oído: speech recognition that fits in a $5 chip（README）", "publisher": "GitHub lokutor-ai", "url": "https://github.com/lokutor-ai/oido", "kind": "公式ドキュメント"},
     {"title": "Oído: Conformer-CTC Small, int8, for the ESP32-S3", "publisher": "Hugging Face lokutor-ai", "url": "https://huggingface.co/lokutor-ai/oido-ctc-small-int8", "kind": "公式ドキュメント"},
     {"title": "Commercial licensing（COMMERCIAL.md）", "publisher": "GitHub lokutor-ai", "url": "https://github.com/lokutor-ai/oido/blob/main/COMMERCIAL.md", "kind": "公式ドキュメント"},
-    {"title": "Oído: Open-vocabulary speech recognition on a $5 ESP32-S3（Lokutorの投稿）", "publisher": "Hacker News", "url": "https://news.ycombinator.com/item?id=49907387", "kind": "公式発表"}
+    {"title": "Oído: Open-vocabulary speech recognition on a $5 ESP32-S3（Lokutorの投稿）", "publisher": "Hacker News", "url": "https://news.ycombinator.com/item?id=49907387", "kind": "公式発表"},
+    {"title": "Oído: speech recognition that beats Whisper-tiny, running on a $5 microcontroller (open source)（Lokutorチームの投稿）", "publisher": "Reddit r/LocalLLaMA", "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wu2jjy/oído_speech_recognition_that_beats_whispertiny/", "kind": "公式発表"}
   ],
   "thumb_text": "Oído",
   "share_text": "5ドルのマイコンESP32-S3で動く音声認識Oído。誤り率3.7%でWhisper tinyを下回るとうたうOSS",
@@ -58,11 +60,15 @@ READMEによると、必要な機材はESP32-S3-DevKitC-1のN16R8モデル（16M
 
 雑音や残響を加えた14条件の平均でも、Oídoは8.4%で、Whisper tiny.enの12.1%を下回ったとしています。int8にしたことによる精度の低下はわずかで、元のモデルの3.68%に対して3.70%だったと説明しています。
 
-## 論点
+## 論点：公表値をどう読むか
 
-数字の前提は作者自身が明記しています。現時点の結果はすべて、ファームウェアと計算結果が一致するPC版と、Espressifのエミュレーター（QEMU）で得たもので、実機での計測は数日中に追加するとしています。速度も実測ではなく、エミュレーターでの命令数から実時間係数0.7〜0.95と推定した値です。2〜4秒の命令を話すと、話し終えてから約3秒で文字が出ます。
+数字を使う前に、押さえておきたい前提が3つあります。
 
-比較の条件にも差があります。チップ上の結果はテストセット全体ですが、ノートPCで動かした比較対象は各500発話の抜き出しです。単語ごとに逐次表示するのではなく1発話ごとにまとめて出す方式で、大勢の話し声や響く部屋は苦手だとREADMEに書かれています。
+1つ目は、実機ではまだ測っていないことです。作者によると、結果はすべて、ファームウェアと計算がビット単位で一致するPC版と、Espressifのエミュレーター（QEMU）で出したものです。速度もエミュレーターの命令数から実時間係数0.7〜0.95と見積もった値で、実機の計測は数日中に追加するとしています。デモ動画も実機の映像ではなく、チップと同じ計算の出力を早送りしたものです。
+
+2つ目は、比較の条件がそろっていないことです。チップ上の結果はテストセット全体で測っていますが、ノートPCで動かした比較対象は各500発話の抜き出しです。
+
+3つ目は、使い勝手の制約です。文字は単語ごとではなく1発話ごとにまとめて出ます。話し終えて0.8秒の間を置いてから計算するため、2〜4秒の命令なら文字が出るまで約3秒かかります。大勢の話し声や響く部屋は苦手だと、READMEも認めています。
 
 ## 日本のビジネスへの影響
 

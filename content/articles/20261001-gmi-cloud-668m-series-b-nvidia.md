@@ -4,30 +4,66 @@
   "description": "GPUクラウドのGMI Cloudが、株式2億2300万ドルと融資枠4億4500万ドルの計6億6800万ドルを確保したと発表した。NVIDIAが出資に加わり、日本のトレンドマイクロも名を連ねる。契約済みの年間売上は2025年末の9倍を超えた。",
   "date": "2026-10-01T15:40:00+09:00",
   "category": "hardware",
-  "tags": ["GMI Cloud", "NVIDIA", "資金調達", "クラウド", "データセンター", "日本"],
+  "tags": [
+    "GMI Cloud",
+    "NVIDIA",
+    "資金調達",
+    "クラウド",
+    "データセンター",
+    "日本"
+  ],
   "summary": [
     "GMI Cloudは株式によるシリーズB2億2300万ドルと融資枠4億4500万ドルで、計6億6800万ドルを確保した",
     "シリーズBはARCHIVが主導し、NVIDIAのほかトレンドマイクロやKT、教保生命などアジアの投資家が参加した",
     "資金は米国・台湾・アジア太平洋のGPU増強に使い、鹿児島で計画するAIファクトリーにもつながる"
   ],
   "sources": [
-    {"title": "GMI Cloud Raises Over $660 Million to Accelerate Global AI Infrastructure Expansion", "publisher": "GMI Cloud（PR Newswire）", "url": "https://www.prnewswire.com/apac/news-releases/gmi-cloud-raises-over-660-million-to-accelerate-global-ai-infrastructure-expansion-302894628.html", "kind": "公式発表"},
-    {"title": "GMI Cloud の投稿", "publisher": "X @gmi_cloud", "url": "https://x.com/gmi_cloud/status/2105289205916066197"},
-    {"title": "Alex Yeh の投稿（Announcing our series B）", "publisher": "X @alex_yehya", "url": "https://x.com/alex_yehya/status/2105275337810866213"},
-    {"title": "GMI Cloud Commits $500 Million to Expand AI Infrastructure for Frontier AI Customers", "publisher": "GMI Cloud（PR Newswire）", "url": "https://www.prnewswire.com/news-releases/gmi-cloud-announces-strategic-compute-collaboration-with-nvidia-302832476.html", "kind": "公式発表"},
-    {"title": "GMI Cloud Announces 1GW Sovereign AI Infrastructure in Japan", "publisher": "GMI Cloud", "url": "https://www.gmicloud.ai/en/blog/gmi-cloud-announces-1gw-sovereign-ai-infrastructure-in-japan-accelerated-by-nvidia-vera-rubin-nvl72-tm", "kind": "公式発表"},
-    {"title": "Exclusive: GPU Cloud Provider GMI Raises $668 Million From Nvidia and Others", "publisher": "The Information", "url": "https://www.theinformation.com/briefings/exclusive-gpu-cloud-provider-gmi-raises-668-million-nvidia-others", "kind": "報道"}
+    {
+      "title": "GMI Cloud Raises Over $660 Million to Accelerate Global AI Infrastructure Expansion",
+      "publisher": "GMI Cloud（PR Newswire）",
+      "url": "https://www.prnewswire.com/apac/news-releases/gmi-cloud-raises-over-660-million-to-accelerate-global-ai-infrastructure-expansion-302894628.html",
+      "kind": "公式発表"
+    },
+    {
+      "title": "GMI Cloud の投稿",
+      "publisher": "X @gmi_cloud",
+      "url": "https://x.com/gmi_cloud/status/2105289205916066197"
+    },
+    {
+      "title": "Alex Yeh の投稿（Announcing our series B）",
+      "publisher": "X @alex_yehya",
+      "url": "https://x.com/alex_yehya/status/2105275337810866213"
+    },
+    {
+      "title": "GMI Cloud Commits $500 Million to Expand AI Infrastructure for Frontier AI Customers",
+      "publisher": "GMI Cloud（PR Newswire）",
+      "url": "https://www.prnewswire.com/news-releases/gmi-cloud-announces-strategic-compute-collaboration-with-nvidia-302832476.html",
+      "kind": "公式発表"
+    },
+    {
+      "title": "GMI Cloud Announces 1GW Sovereign AI Infrastructure in Japan",
+      "publisher": "GMI Cloud",
+      "url": "https://www.gmicloud.ai/en/blog/gmi-cloud-announces-1gw-sovereign-ai-infrastructure-in-japan-accelerated-by-nvidia-vera-rubin-nvl72-tm",
+      "kind": "公式発表"
+    },
+    {
+      "title": "Exclusive: GPU Cloud Provider GMI Raises $668 Million From Nvidia and Others",
+      "publisher": "The Information",
+      "url": "https://www.theinformation.com/briefings/exclusive-gpu-cloud-provider-gmi-raises-668-million-nvidia-others",
+      "kind": "報道"
+    }
   ],
   "thumb_text": "GMI Cloud",
   "share_text": "GPUクラウドのGMI Cloudが6億6800万ドルを確保。NVIDIAが出資し、米国・台湾・アジアでGPUを増強",
-  "editor_note": ""
+  "editor_note": "",
+  "updated": "2026-10-01T18:59:00+09:00"
 }
 ---
 GPUクラウドを提供する米GMI Cloudは現地時間9月30日、株式と融資枠を合わせて6億6800万ドルの資金を確保したと発表しました。株式によるシリーズBにはNVIDIAが加わり、資金は米国・台湾・アジア太平洋でのGPU増強に充てます。The Informationが同日、独自ニュースとして先に報じていました。
 
 ## 何が発表されたか
 
-GMI Cloudは2021年創業で、NVIDIAのGPUを使った計算基盤と、AIモデルを動かす推論サービスを企業や開発者に貸し出す会社です。
+GMI Cloudは、NVIDIAのGPUを使った計算基盤と、AIモデルを動かす推論サービスを企業や開発者に貸し出す会社です。
 
 :::quote https://www.prnewswire.com/apac/news-releases/gmi-cloud-raises-over-660-million-to-accelerate-global-ai-infrastructure-expansion-302894628.html | GMI Cloud公式発表（PR Newswire配信）「GMI Cloud Raises Over $660 Million to Accelerate Global AI Infrastructure Expansion」
 > GMI Cloud, an AI-native cloud delivering high-performance GPU infrastructure and inference services, today announced $668 million in new financing, comprising $223 million in equity for Series B and a $445 million credit facility led by CTBC.

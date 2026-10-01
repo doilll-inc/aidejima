@@ -3,6 +3,7 @@
   "title": "Hugging Faceが音声合成の公開ランキング「Open TTS Leaderboard」、日本語も比較",
   "description": "Hugging Faceはオープンソースの音声合成モデルを自動の指標で比べるOpen TTS Leaderboardを公式ブログで紹介した。聞き取りやすさ・速さ・声の再現度を9言語で測り、日本語では10月1日時点で16モデルを比べている。",
   "date": "2026-10-01T18:32:00+09:00",
+  "updated": "2026-10-01T18:55:00+09:00",
   "category": "research",
   "tags": ["Hugging Face", "Open TTS Leaderboard", "音声合成", "ベンチマーク", "オープンソース"],
   "summary": [
@@ -47,10 +48,7 @@ Open TTS Leaderboardとは、Hugging FaceのAudioチームが運営する、音�
 
 評価用の文は2つのデータセットから取ります。Seed TTS Evalは英語と中国語だけで、もう一方のCV3-Evalが英語・中国語・フランス語・スペイン語・ドイツ語・イタリア語・日本語・韓国語・ロシア語の9言語を持ちます。CV3-Evalは、音声合成モデルCosyVoice 3の開発チームが、Common Voiceなど実際の録音を手本に作った評価セットです。日本語はこちらで評価されます。
 
-:::quote https://huggingface.co/blog/open-tts-leaderboard | Hugging Face公式ブログ「Open TTS Leaderboard」
-> Note that Chinese, Japanese, and Korean are character-based languages and so character error rate (CER) is reported, and the “Average WER” across languages is a macro-average across languages.
-中国語・日本語・韓国語は文字単位の言語なので文字誤り率（CER）を示し、言語をまたいだ「平均WER」は言語ごとの値の単純平均です。
-:::
+日本語は中国語・韓国語とともに文字を単位に数える言語として扱われ、単語単位の誤り率（WER）ではなく、文字単位の誤り率（CER）が表に出ます。複数の言語を選んだときに出る「平均WER」は、言語ごとの値を同じ重みで平均したものです。
 
 AIデジマ編集部が10月1日に、言語を日本語だけにして確かめた上位5モデルです（文字誤り率は低いほどよい）。
 
