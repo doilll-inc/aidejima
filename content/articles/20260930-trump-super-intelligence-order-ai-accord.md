@@ -3,7 +3,7 @@
   "title": "米政府がAIを「Super Intelligence」と改称、AI大手とは拘束力なき自主規制協定",
   "description": "トランプ大統領は9月29日、行政機関にAIを「Super Intelligence（SI）」と呼ぶよう命じる大統領令に署名した。同日、Google、Anthropic、OpenAIなどの経営者と法的拘束力のない安全協定にも署名した。",
   "date": "2026-09-30T20:22:00+09:00",
-  "updated": "2026-10-01T15:40:00+09:00",
+  "updated": "2026-10-01T19:03:00+09:00",
   "category": "policy",
   "tags": [
     "米国政府",
@@ -111,7 +111,7 @@
 
 ### AI大手との安全協定
 
-ABC Newsによると、協定は「The White House Accord on Superintelligence: A Joint Commitment on Frontier SI Responsibilities」と紹介されました。ホワイトハウスが30日にXで公開した協定文では、表題が「White House Accord on Super Intelligence」、副題が「Joint Commitment on Frontier Responsibilities」となっています。CNNやBBCによると、トランプ氏に加え、GoogleのSundar Pichai氏、AnthropicのDario Amodei氏、MetaのMark Zuckerberg氏、NVIDIAのJensen Huang氏、OpenAIのGreg Brockman氏、Elon Musk氏の6人が署名しました。
+協定の名称は資料によって少し違います。ABC Newsによると、ジョンソン下院議長は『The White House Accord on Superintelligence: A Joint Commitment on Frontier SI Responsibilities』という名称で紹介しました。一方、ホワイトハウスが30日にXで公開した協定文では、表題が『White House Accord on Super Intelligence』、副題が『Joint Commitment on Frontier Responsibilities』です。CNNやBBCによると、トランプ氏に加え、GoogleのSundar Pichai氏、AnthropicのDario Amodei氏、MetaのMark Zuckerberg氏、NVIDIAのJensen Huang氏、OpenAIのGreg Brockman氏、Elon Musk氏の6人が署名しました。
 
 ホワイトハウスの投稿には協定文と署名ページの画像が添えられ、トランプ氏と6人の署名を確認できます。
 
@@ -124,27 +124,27 @@ ABC Newsによると、協定は「The White House Accord on Superintelligence: 
 3. 外部の事業者にモデルを独立して評価させる
 4. 取締役会の独立委員会がその報告を受け、問題に対処する
 
-協定は、これらが法律や規則でないことを認めつつ、将来の法制化に含みを残しています。拘束力を問われたトランプ氏は「道義的には拘束力がある」と答えました。10人ほどの監督委員会を作る考えも示しましたが、人選や権限は明らかにしていません。
+4項目はいずれも各社が「実施すべき」とする努力目標で、ABC Newsによると、協定文自体も法令ではないことを認めています（将来の法制化の余地は残しています）。記者団に拘束力を問われたトランプ氏は「道義的には拘束力がある」と答えました（ABC News、BBC）。ABC Newsによると、トランプ氏は10人ほどの監督委員会を作る考えも示しましたが、人選や権限は明らかにしていません。
 
 ## 訂正（10月1日）
 
-協定の名称を「正式名」と断定していた記述を改めました。ホワイトハウスがXで公開した協定文の表題と、ABC Newsが伝えた名称が異なるため、両方を出典とともに示しています。
+協定の名称を「正式名」と断定していた記述を改めました。ホワイトハウスがXで公開した協定文の表題と、ABC Newsが伝えた名称が異なるため、両方を出典とともに示しています。また「背景」で、OpenAIがGPT-6.1 Astraの公開を見送った件をCNNの報道としていましたが、伝えていたのはBBCでした。出典を改めています。
 
 ## 背景
 
-トランプ氏は9月22日の国連総会演説で、「artificial（人工的）」は偽物のように聞こえるとして改称を予告していました。
+改称は突然の話ではありません。BBCによると、トランプ氏は9月22日の国連総会演説で、artificial（人工的）という語は技術を偽物のように聞こえさせると述べ、改称を予告していました。
 
-協定の背景には、AIの安全性への不安の高まりがあります。CNNによると、7月にはOpenAIのエージェント群が試験環境を抜け出してHugging Faceのシステムに侵入し、会合前日の28日にはOpenAIが次期最上位モデルGPT-6.1 Astraの公開を安全上の理由で見送りました（[GPT-6.1 Solの記事](/news/20260930-openai-gpt-6-1-sol/)で詳述）。
+協定の背景には、AIの安全性への不安の高まりがあります。CNNによると、7月にはOpenAIのエージェント群が試験環境を抜け出してHugging Faceのシステムに侵入しました。BBCによると、会合前日の28日にはOpenAIが次期最上位モデルGPT-6.1 Astraの公開を安全上の理由で見送っています（[GPT-6.1 Solの記事](/news/20260930-openai-gpt-6-1-sol/)で詳述）。
 
-Amodei氏らは開発ペースを落とすよう訴えてきましたが、トランプ政権は中国との競争を理由に開発の減速に反対しています。
+業界と政権の温度差もあります。CNNによると、Amodei氏らは開発ペースを落とすよう訴えてきましたが、トランプ氏は中国に後れを取るとして減速に反対してきました。
 
 ## 反応と論点
 
-署名した側は前向きです。Zuckerberg氏は協定を業界全体が合意できる出発点と表現し、Amodei氏は安全に勝つための方法だと述べました。
+署名した側は前向きです。会合後の記者対応で、Zuckerberg氏は協定を業界全体が合意できる出発点と表現し（ABC News）、Amodei氏は安全に勝つための方法だと述べました（BBC）。
 
-専門家からは厳しい評価が出ています。BBCによると、豪シドニー大学のKimberlee Weatherall教授は、各社が何を安全とみなすかを自分で決められ、違反時の罰則もないと指摘しました。ABC Newsは、OpenAIとAnthropicはすでに外部評価の導入を約束しており、協定で何が変わるのかはっきりしないと伝えています。
+専門家の評価は厳しめです。BBCによると、豪シドニー大学のKimberlee Weatherall教授は、何を安全とみなすかを各社が自分で決められること、違反しても罰則がないことを問題視しました。実効性にも疑問が残ります。ABC Newsは、OpenAIとAnthropicが外部評価の導入をすでに約束済みで、協定によって両社の何が変わるのかは見えにくいと伝えています。
 
-改称にも疑問があります。「superintelligence」はこれまで特に高度なAIを指す業界用語で、範囲を従来のAIと同じとする大統領令では言葉と中身がずれます。
+改称の中身にもずれがあります。superintelligenceはこれまで、特に高度なAIを指す業界用語でした（The Verge、BBC）。大統領令はSIの範囲を従来のAIの法的定義と同じにしているため、言葉が示す水準と実際の対象が一致しません。
 
 ## 追記（10月1日）
 

@@ -3,24 +3,66 @@
   "title": "OpenAIが評価額1.4兆ドルで300億ドル調達を協議と報道、上場までのつなぎ資金に",
   "description": "OpenAIが評価額約1.4兆ドルで300億ドル規模の調達を協議しているとブルームバーグが報じた。3月の評価額8520億ドルから約半年で約1.6倍になる。年内の上場は見送る方針で、上場までのつなぎ資金とみられる。",
   "date": "2026-09-30T20:43:00+09:00",
-  "updated": "2026-09-30T23:30:00+09:00",
+  "updated": "2026-10-01T19:04:00+09:00",
   "category": "business",
-  "tags": ["OpenAI", "資金調達", "IPO", "Anthropic"],
+  "tags": [
+    "OpenAI",
+    "資金調達",
+    "IPO",
+    "Anthropic"
+  ],
   "summary": [
     "ブルームバーグによると、OpenAIは評価額約1.4兆ドルで300億ドル規模の調達を協議中",
     "3月の調達時の評価額は8520億ドルで約半年で約1.6倍に、協議は初期段階で条件は変わりうる",
     "アルトマンCEOは年内上場を否定しており、今回の資金は上場までのつなぎと報じられている"
   ],
   "sources": [
-    {"title": "OpenAI raises $122 billion to accelerate the next phase of AI", "publisher": "OpenAI", "url": "https://openai.com/index/accelerating-the-next-phase-ai/"},
-    {"title": "SB OAI Japan GK", "publisher": "OpenAI", "url": "https://openai.com/business/partners/sb-oai-japan-gk/"},
-    {"title": "OpenAI reportedly in talks to raise $30B round at $1.4T valuation", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/09/29/openai-reportedly-in-talks-to-raise-30b-round-at-1-4t-valuation/"},
-    {"title": "OpenAI in talks to raise $30 billion at $1.4 trillion valuation", "publisher": "CTech", "url": "https://www.calcalistech.com/ctechnews/article/7xqubxcnw"},
-    {"title": "OpenAI Valued at $852 Billion After Mega $122 Billion Round", "publisher": "Bloomberg Tax", "url": "https://news.bloombergtax.com/financial-accounting/openai-valued-at-852-billion-after-closing-122-billion-round"},
-    {"title": "OpenAI's annualized revenue run rate has surpassed $40 billion says a Bloomberg report", "publisher": "investingLive", "url": "https://investinglive.com/stocks/openai-s-annualized-revenue-run-rate-has-surpassed-40-billion-says-a-bloomberg-report/"},
-    {"title": "OpenAI won't do 2026 IPO, extinction risk unacceptable", "publisher": "The Canberra Times", "url": "https://www.canberratimes.com.au/story/9349026/openai-wont-do-2026-ipo-extinction-risk-unacceptable/"},
-    {"title": "The SoftBank Group and OpenAI Launch \"SB OAI Japan\" Joint Venture", "publisher": "SoftBank Group", "url": "https://group.softbank/en/news/press/20251105", "kind": "公式発表"},
-    {"title": "OpenAI Targets $30B in New Funding at $1.4T Value", "publisher": "Hacker News", "url": "https://news.ycombinator.com/item?id=49897336"}
+    {
+      "title": "OpenAI raises $122 billion to accelerate the next phase of AI",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/index/accelerating-the-next-phase-ai/"
+    },
+    {
+      "title": "SB OAI Japan GK",
+      "publisher": "OpenAI",
+      "url": "https://openai.com/business/partners/sb-oai-japan-gk/"
+    },
+    {
+      "title": "OpenAI reportedly in talks to raise $30B round at $1.4T valuation",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/29/openai-reportedly-in-talks-to-raise-30b-round-at-1-4t-valuation/"
+    },
+    {
+      "title": "OpenAI in talks to raise $30 billion at $1.4 trillion valuation",
+      "publisher": "CTech",
+      "url": "https://www.calcalistech.com/ctechnews/article/7xqubxcnw"
+    },
+    {
+      "title": "OpenAI Valued at $852 Billion After Mega $122 Billion Round",
+      "publisher": "Bloomberg Tax",
+      "url": "https://news.bloombergtax.com/financial-accounting/openai-valued-at-852-billion-after-closing-122-billion-round"
+    },
+    {
+      "title": "OpenAI's annualized revenue run rate has surpassed $40 billion says a Bloomberg report",
+      "publisher": "investingLive",
+      "url": "https://investinglive.com/stocks/openai-s-annualized-revenue-run-rate-has-surpassed-40-billion-says-a-bloomberg-report/"
+    },
+    {
+      "title": "OpenAI won't do 2026 IPO, extinction risk unacceptable",
+      "publisher": "The Canberra Times",
+      "url": "https://www.canberratimes.com.au/story/9349026/openai-wont-do-2026-ipo-extinction-risk-unacceptable/"
+    },
+    {
+      "title": "The SoftBank Group and OpenAI Launch \"SB OAI Japan\" Joint Venture",
+      "publisher": "SoftBank Group",
+      "url": "https://group.softbank/en/news/press/20251105",
+      "kind": "公式発表"
+    },
+    {
+      "title": "OpenAI Targets $30B in New Funding at $1.4T Value",
+      "publisher": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=49897336"
+    }
   ],
   "editor_note": ""
 }
@@ -31,7 +73,7 @@ OpenAIが評価額約1.4兆ドルで300億ドル規模の新たな資金調達�
 
 報道によると、協議はまだ初期段階で、条件は今後変わる可能性があります。TechCrunchなどは、調達額を少なくとも300億ドルと伝えています。誰が出資するのか、既存株主の持ち株の売却を含むのかといった内訳は明らかになっていません。
 
-今回の資金は、株式上場（IPO）までのつなぎと位置づけられています。TechCrunchによると、上場は2027年になる見通しです。ブルームバーグとFTは9月中旬の時点で、OpenAIが評価額1.2兆ドル超での調達を検討していると報じていました。わずか2週間ほどで、協議される評価額がさらに上がったことになります。
+今回の資金は、株式上場（IPO）までのつなぎと位置づけられています。TechCrunchによると、上場は2027年になる見通しです。
 
 ## 背景
 

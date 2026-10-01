@@ -3,6 +3,7 @@
   "title": "Amazon BedrockのClaude、ソウルとシンガポールで推論を国内完結に",
   "description": "AWSはAmazon BedrockでClaude Opus 5などをソウルとシンガポールのリージョン内だけで処理できるようにした。東京でこの方式に対応するClaudeは2モデルで、最新のOpus 5.5は日本国内の連携方式で使える。",
   "date": "2026-10-01T15:40:00+09:00",
+  "updated": "2026-10-01T18:51:00+09:00",
   "category": "dev",
   "tags": ["AWS", "Amazon Bedrock", "Anthropic", "クラウド", "個人情報", "API"],
   "summary": [
@@ -38,9 +39,9 @@ Amazon Bedrockは、推論リクエストとデータを呼び出したリージ
 | ソウル（ap-northeast-2） | Claude Opus 5、Claude Sonnet 5 |
 | シンガポール（ap-southeast-1） | Claude Sonnet 5 |
 
-他のリージョンへ処理を回す仕組みがないため、処理能力はそのリージョンの容量が上限になり、リージョンごとの利用上限（クォータ）がかかります。料金はそのリージョンの標準オンデマンド料金です。CloudWatchの指標やCloudTrailのログも同じリージョンに記録されます。
+使い方は、ふだんのオンデマンドの呼び出しとほとんど変わりません。`bedrock-runtime`のエンドポイントに`anthropic.claude-opus-5`のような接頭辞のないモデルIDを指定すればよく、AnthropicのMessages APIのほか、BedrockのInvokeModel・Converse APIにも対応します。入出力の安全フィルター「Guardrails」も併用できます。料金は呼び出したリージョンの標準オンデマンド料金で、CloudWatchの指標やCloudTrailのログもそのリージョンに記録されます。
 
-呼び出すときは、`bedrock-runtime`のエンドポイントに`anthropic.claude-opus-5`のような接頭辞のないモデルIDを指定します。AnthropicのMessages APIのほか、BedrockのInvokeModel・Converse APIにも対応し、入出力の安全フィルター「Guardrails」も使えます。
+その代わり、混雑したときに処理を別のリージョンへ逃がす仕組みはありません。処理能力はそのリージョンの容量が上限で、リージョンごとの利用上限（クォータ）もかかります。
 
 ## 3つの処理方式
 

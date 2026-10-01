@@ -3,6 +3,7 @@
   "title": "Muse Charmなど「AIたまごっち」型の端末が登場へ、子ども向け玩具には州の規制も",
   "description": "AIエージェントのキャラクターを画面付きの小型端末で持ち歩く製品が動き出した。MetaはMuse Charmを12月に発売する計画で、OpenAIも端末化に含みを残す。カリフォルニア州は対話AI入りの子ども向け玩具を2031年まで禁じた。",
   "date": "2026-10-01T18:00:00+09:00",
+  "updated": "2026-10-01T18:57:00+09:00",
   "category": "products",
   "tags": [
     "Meta",
@@ -62,6 +63,12 @@
       "kind": "報道"
     },
     {
+      "title": "Muse sure looks a lot like OpenClaw",
+      "publisher": "The Verge",
+      "url": "https://www.theverge.com/report/1000180/muse-openclaw-instinct-lookalike",
+      "kind": "報道"
+    },
+    {
       "title": "OpenAI reveals timeline for mystery AI hardware device with Jony Ive",
       "publisher": "Business Insider",
       "url": "https://www.businessinsider.com/openai-timeline-hardware-ai-device-launch-jony-ive-iyo-2026-2",
@@ -73,7 +80,7 @@
   "editor_note": ""
 }
 ---
-AIエージェントのキャラクターを、小さな画面付きの端末に入れて持ち歩く「AIたまごっち」型の製品が出始めます。Metaは手のひらサイズの「Muse Charm」を12月に発売する計画で、OpenAIも自社のエージェントDotsを端末に載せる可能性に含みを残しました。一方でカリフォルニア州は、対話AIを組み込んだ子ども向け玩具の販売を2031年1月1日まで禁じています。
+AIエージェントのキャラクターを、小さな画面付きの端末に入れて持ち歩く製品が出始めます。米The Vergeが「AIたまごっち」と呼んだ製品群です。Metaは手のひらサイズの「Muse Charm」を12月に発売する計画で、OpenAIも自社のエージェントDotsを端末に載せる可能性に含みを残しました。一方でカリフォルニア州は、対話AIを組み込んだ子ども向け玩具の販売を2031年1月1日まで禁じています。
 
 ## 何が起きているか
 
@@ -102,7 +109,7 @@ The Vergeによると、アルトマン氏は記者との質疑で、Dotsを将�
 
 ## 背景
 
-専用のAI端末は、これまで成功していません。The Vergeは、Humane AI PinやFriendが主に不満や反発を招いたと指摘し、Muse Charmに最も近い例として小型のAI端末Rabbit R1を挙げています。今回の2社は、先にアプリでエージェントに愛着を持ってもらう点が違います。The Vergeは、Museが米国で1日60万人に使われているとの調査会社Apptopiaの推計も紹介しています。
+AI専用の端末には、つまずきの歴史があります。The Vergeは、Humane AI PinやFriendが利用者の不満や反発を招いてきたと振り返っています。MetaとOpenAIが過去の端末と違うのは、端末より先にアプリでエージェントを広め、利用者に愛着を持ってもらう順番を取っている点です。Museについては、調査会社Apptopiaが米国の1日の利用者を60万人と推計しています（The Verge）。
 
 ただし、Museには住所を他人に伝えたなどの報告が相次いでいます（[関連記事](/news/20260930-meta-muse-permission-address-leak/)）。常に身につける端末になれば、カメラやマイクで集める情報はさらに増えます。
 

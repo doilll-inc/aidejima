@@ -3,6 +3,7 @@
   "title": "ASTRABOXはCodexでアーケードゲームを作るOSS、遊びながら声で作り直せる",
   "description": "オープンソースのASTRABOXが公開された。遊びたいゲームを文章か声で伝えるとCodexが作り、遊んでいる最中に声で直せる。手元のPCで動き、付属の4本のゲームはCodexにログインしなくても遊べる。",
   "date": "2026-10-01T17:49:00+09:00",
+  "updated": "2026-10-01T18:51:00+09:00",
   "category": "usecases",
   "tags": ["ASTRABOX", "Codex", "活用事例", "個人開発", "ゲーム", "オープンソース"],
   "summary": [
@@ -14,7 +15,9 @@
     {"title": "ASTRABOX（README）", "publisher": "GitHub Qualzz", "url": "https://github.com/Qualzz/astrabox", "kind": "公式ドキュメント"},
     {"title": "Architecture", "publisher": "GitHub Qualzz", "url": "https://github.com/Qualzz/astrabox/blob/main/docs/ARCHITECTURE.md", "kind": "公式ドキュメント"},
     {"title": "Release verification — 2026-09-30", "publisher": "GitHub Qualzz", "url": "https://github.com/Qualzz/astrabox/blob/main/docs/VERIFICATION.md", "kind": "公式ドキュメント"},
-    {"title": "Optional Raspberry Pi deployment", "publisher": "GitHub Qualzz", "url": "https://github.com/Qualzz/astrabox/blob/main/deploy/raspberry-pi/README.md", "kind": "公式ドキュメント"}
+    {"title": "Optional Raspberry Pi deployment", "publisher": "GitHub Qualzz", "url": "https://github.com/Qualzz/astrabox/blob/main/deploy/raspberry-pi/README.md", "kind": "公式ドキュメント"},
+    {"title": "Astrabox - Open source Arcade Game Generator", "publisher": "Reddit r/LocalLLaMA", "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wumex2/astrabox_open_source_arcade_game_generator/", "kind": "コミュニティ"},
+    {"title": "AstraBox（同名の別プロジェクト）", "publisher": "GitHub Colton-z", "url": "https://github.com/Colton-z/AstraBox", "kind": "公式サイト"}
   ],
   "thumb_text": "ASTRABOX",
   "share_text": "文章や声で頼むとCodexがアーケードゲームを作り、遊びながら声で直せるOSS「ASTRABOX」",

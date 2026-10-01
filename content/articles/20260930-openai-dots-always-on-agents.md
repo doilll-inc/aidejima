@@ -3,7 +3,7 @@
   "title": "OpenAIが常時稼働エージェント「Dots」を開始、日本のProユーザーも対象に",
   "description": "OpenAIはDevDayで、専用のクラウドPCを持ち24時間働くAIエージェントDotsを発表した。GPT-6 Astraで動き、4,000超のアプリと連携する。ChatGPT ProとBusiness Premium向けで、Proは欧州・英国などを除く市場が対象になる。",
   "date": "2026-09-30T20:52:00+09:00",
-  "updated": "2026-09-30T23:30:00+09:00",
+  "updated": "2026-10-01T18:55:00+09:00",
   "category": "products",
   "tags": ["OpenAI", "ChatGPT", "エージェント", "Meta", "xAI", "DevDay"],
   "summary": [
@@ -17,13 +17,15 @@
     {"title": "Dots are here!", "publisher": "X @sama", "url": "https://x.com/sama/status/2104995014208258235"},
     {"title": "Dots are included in all Pro, Business Premium and Enterprise plans. This includes the Pro 100 plan.", "publisher": "X @thsottiaux", "url": "https://x.com/thsottiaux/status/2104989161774322009"},
     {"title": "OpenAI launches Dots, its Muse competitor", "publisher": "The Verge", "url": "https://www.theverge.com/ai-artificial-intelligence/1002033/openai-dots-launch-muse-competitor"},
+    {"title": "Casey Newton likes his Dot", "publisher": "The Verge", "url": "https://www.theverge.com/ai-artificial-intelligence/1002526/casey-newton-likes-his-dot"},
     {"title": "OpenAI launches Dots, its bubbly agentic avatar", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/09/29/openai-launches-dots-its-bubbly-agentic-avatar/"},
     {"title": "The internet is convinced Elon Musk's xAI trolled OpenAI's 'Dots' launch", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/09/29/the-internet-is-convinced-elon-musks-xai-trolled-openais-dots-launch/"},
     {"title": "OpenAI DevDay recap: AI lab rolls out Dots agents, Altman and Friar comment on IPO", "publisher": "CNBC", "url": "https://www.cnbc.com/2026/09/29/openai-devday-2026-live-updates.html"},
     {"title": "OpenAI Delays Release of Latest Model Over Safety Concerns", "publisher": "WIRED", "url": "https://www.wired.com/story/openai-delays-release-of-latest-model-over-safety-concerns/"},
     {"title": "OpenAI says planned GPT-6.1 is too insecure to release", "publisher": "Ars Technica", "url": "https://arstechnica.com/ai/2026/09/openai-says-planned-gpt-6-1-is-too-insecure-to-release/"},
     {"title": "Meta launches personal AI agent, Muse, to help with everyday tasks", "publisher": "PBS News", "url": "https://www.pbs.org/newshour/nation/meta-launches-personal-ai-agent-muse-to-help-with-everyday-tasks"},
-    {"title": "Meta is expanding its AI agent Muse to small businesses", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/09/29/meta-is-expanding-its-ai-agent-muse-to-small-businesses/"}
+    {"title": "Meta is expanding its AI agent Muse to small businesses", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/09/29/meta-is-expanding-its-ai-agent-muse-to-small-businesses/"},
+    {"title": "Dots: Always-on agents", "publisher": "Hacker News", "url": "https://news.ycombinator.com/item?id=49896604"}
   ],
   "editor_note": ""
 }
@@ -48,11 +50,6 @@ GPT-6 Astraで動くDotsは、専用のクラウドコンピューターを持�
 やり取りはChatGPTのWeb版、デスクトップ版、モバイル版で行い、音声通話もできます。SlackとMicrosoft Teamsからも話しかけられ、どこでやり取りしても文脈が引き継がれます。SMSでのやり取りは、米国のProユーザー向けの限定ベータです。チームとDotが同じ文書を扱う新しい作業場「ChatGPT Space」については「[ChatGPTの新しい業務機能](/news/20260930-chatgpt-office-apps-codex/)」で解説しています。
 
 指示がなくても、接続済みのアプリを読み取り専用で調べて手伝えることを探す「プロアクティブ・リサーチ」を行います。OpenAIは、早期テスターのDotが請求書の送り忘れに気づき、請求書を用意して本人の承認後に送った事例を紹介しました。
-
-:::quote https://openai.com/index/introducing-dots/ | OpenAI公式ブログ「Introducing dots」
-> Outside OpenAI, an early tester’s dot noticed he’d forgotten to invoice a publication, prepared the invoice, and sent it after his approval.
-OpenAIの外では、ある早期テスターのDotが、本人がある媒体への請求を忘れていることに気づき、請求書を用意して、本人の承認を得てから送りました。
-:::
 
 The Vergeによると、インタビュー記録から切り抜く場面を探し、番組メモとSNS投稿を書くといった、発信者向けの使い方も示されています。
 

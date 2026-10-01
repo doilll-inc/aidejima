@@ -3,6 +3,7 @@
   "title": "ChatGPTやGrokなどAIチャット9種で会話のURLや題名が広告企業に、研究者が報告",
   "description": "スペインのIMDEA Networksなどの研究者が、ChatGPT、Claude、Grokなど9つのAIチャットの通信を調べた。Web版9つのうち6つで、会話のURLや自動で付く題名、入力文が広告・計測企業に送られていた。",
   "date": "2026-10-01T18:39:00+09:00",
+  "updated": "2026-10-01T18:57:00+09:00",
   "category": "policy",
   "tags": [
     "IMDEA Networks",
@@ -46,7 +47,7 @@
       "title": "A Privacy Analysis of Web and Mobile Conversational AI Agents [pdf]",
       "publisher": "Hacker News",
       "url": "https://news.ycombinator.com/item?id=49890226",
-      "kind": "報道"
+      "kind": "コミュニティ"
     }
   ],
   "thumb_text": "AIチャットの追跡",
@@ -88,7 +89,7 @@ Cookieを拒否しても、Perplexity、DeepSeek、Gemini、Copilot、ChatGPT、
 
 研究チームは4月に欧州と英国のデータ保護当局に結果を伝え、xAIにもGrokの問題を通知しましたが、9月10日時点で返答はないとしています。スペインのデータ保護庁（AEPD）は5月27日、この研究を欧州データ保護会議（EDPB）に共有し、6月の全体会合で取り上げるよう求めたと発表しました。OpenAIは8月15日にChatGPTのプライバシーポリシーを改め、第三者の追跡ツールについて明記しましたが、研究との関係は確認できないと論文は書いています。
 
-Hacker Newsでは「漏えいではなく意図して売っているのでは」という声の一方、URLに推測しにくい文字列を入れるだけで非公開扱いにする設計への批判も出ました。ChatGPTが広告を始めた流れ（[関連記事](/news/20261001-liveramp-chatgpt-ads-first-party-data/)）を考えると、会話と広告の距離は縮まりつつあります。
+Hacker Newsの書き込みでは、これは事故による漏えいではなく、データを意図して広告企業に渡すビジネスモデルの問題だと見る意見が目立ちました。URLに推測しにくい文字列を入れるだけで非公開扱いにする設計を、見えにくさに頼った安全対策だと批判する声もあります。ChatGPTが広告を始めた流れ（[関連記事](/news/20261001-liveramp-chatgpt-ads-first-party-data/)）を考えると、会話と広告の距離は縮まりつつあります。
 
 ## 日本のビジネスへの影響
 

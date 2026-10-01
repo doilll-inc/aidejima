@@ -3,7 +3,7 @@
   "title": "ChatGPTに共同編集の文書とSpace、アプリ型プラグインや月500ドルのProも登場",
   "description": "OpenAIはDevDayでChatGPTの業務機能を大きく広げた。チームとAIが共同編集する文書Pagesと作業場Space、近く出るスライド、アプリのように動くプラグイン、Codexの再利用できるクラウド環境、月500ドルのPro 500の中身を整理する。",
   "date": "2026-09-30T20:46:00+09:00",
-  "updated": "2026-09-30T23:30:00+09:00",
+  "updated": "2026-10-01T18:54:00+09:00",
   "category": "products",
   "tags": ["OpenAI", "ChatGPT", "Codex", "Microsoft", "DevDay"],
   "summary": [
@@ -21,7 +21,8 @@
     {"title": "OpenAI expands ChatGPT's plug-ins with app-like interfaces and automations", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/09/29/openai-expands-chatgpts-plugins-with-app-like-interfaces-and-automations/"},
     {"title": "OpenAI gives Codex reusable cloud environments that work across devices", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/09/29/openai-gives-codex-reusable-cloud-environments-that-work-across-devices/"},
     {"title": "OpenAI's latest features take direct aim at the app store model", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/09/29/openais-latest-features-take-direct-aim-at-the-app-store-model/"},
-    {"title": "OpenAI adds $500 Pro subscription, nerfs its existing $200 tier", "publisher": "Engadget", "url": "https://www.engadget.com/2272106/openai-adds-dollar500-pro-subscription-nerfs-its-existing-dollar200-tier/"}
+    {"title": "OpenAI adds $500 Pro subscription, nerfs its existing $200 tier", "publisher": "Engadget", "url": "https://www.engadget.com/2272106/openai-adds-dollar500-pro-subscription-nerfs-its-existing-dollar200-tier/"},
+    {"title": "OpenAI DevDay recap: AI lab rolls out Dots agents, Altman and Friar comment on IPO", "publisher": "CNBC", "url": "https://www.cnbc.com/2026/09/29/openai-devday-2026-live-updates.html"}
   ],
   "editor_note": ""
 }
@@ -63,14 +64,14 @@ ChatGPTの機能づくりに使っている基盤を開放し、開発者がChat
 
 ### Codexのクラウド環境
 
-コーディングエージェントCodexは、手元のPC、スマートフォンからの遠隔操作、クラウドのどこでも動くようになりました。リポジトリや依存関係を設定した開発環境を保存して使い回せ、チームで承認済みの設定と権限を共有できます。各タスクは独立した作業領域で動き、PCがスリープ中でも作業を続けます。対象はPlus、Pro、Business、Enterprise、Edu、Healthcareです。
+コーディングエージェントCodexでは、リポジトリや依存関係を設定した開発環境を保存し、使い回せるようになりました。チームで承認済みの設定と権限を共有でき、各タスクは独立した作業領域で動くため、PCがスリープ中でも作業が止まりません。OpenAIは、手元のPCに縛られずにCodexを使えるようになったと説明しています。
 
 :::quote https://openai.com/index/devday-2026-recap/ | OpenAI公式ブログ「DevDay 2026 Recap」
 > Now developers can run Codex wherever they need it: on a computer, remotely from a phone, or in the cloud from any device.
 開発者は、手元のコンピューター、スマートフォンからの遠隔操作、どの端末からでも使えるクラウドと、必要な場所でCodexを動かせるようになりました。
 :::
 
-あわせて、音声で指示できるCLI、ChatGPTデスクトップ版でのコードレビュー、GitHubのリポジトリを定期スキャンして修正案まで用意する「Codex Security Cloud」も発表しました。
+対象はPlus、Pro、Business、Enterprise、Edu、Healthcareです。あわせて、音声で指示できるCLI、ChatGPTデスクトップ版でのコードレビュー、GitHubのリポジトリを定期スキャンして修正案まで用意する「Codex Security Cloud」も発表しました。
 
 ### Pro 500と料金プランの変更
 
@@ -94,7 +95,7 @@ TechCrunchは、PagesがGoogleドキュメントやWord、スライドがPowerPo
 
 ## 反応と論点
 
-アルトマンCEOは基調講演で、プラグイン拡張は「ChatGPTの中でネイティブに感じられる、実質的にアプリそのもの」だと説明しました（CNBC）。
+CNBCによると、アルトマンCEOは基調講演で、プラグイン拡張で作れるものを「ChatGPTの中でネイティブに感じられる、実質的にアプリそのもの」と説明しました。
 
 Hacker Newsでは、Pro 500の発表スレッドで批判が目立ちました。月500ドルでも利用枠の上限があいまいなことや、Pro 200の枠の縮小に不満が集まっています。一方、月200ドルの契約を複数抱えるヘビーユーザーには1契約にまとめられて便利だという声もありました。DevDay全体のスレッドでは、文書やサイトまで1社に任せたくないとして、AI企業がアプリ層まで取り込むことを警戒する意見も出ています。
 

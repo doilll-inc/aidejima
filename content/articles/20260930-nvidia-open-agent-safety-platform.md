@@ -3,7 +3,7 @@
   "title": "NVIDIAがAIエージェントを別チップで監視する安全基盤を発表、逸脱はミリ秒単位で隔離",
   "description": "NVIDIAがAIエージェントの行動範囲を縛る「Open Agent Safety Platform」を発表した。隔離環境を作るOpenShellと、DPU上で見張るSentryの二段構えで、Anthropicなど100超の組織が参加する。",
   "date": "2026-09-30T20:19:00+09:00",
-  "updated": "2026-10-01T15:00:00+09:00",
+  "updated": "2026-10-01T18:59:00+09:00",
   "category": "hardware",
   "tags": ["NVIDIA", "エージェント", "セキュリティ", "安全性", "Anthropic", "オープンソース"],
   "summary": [
@@ -20,7 +20,8 @@
     {"title": "Nvidia releases platform to keep AI agents from breaking out of containment", "publisher": "CNBC", "url": "https://www.cnbc.com/2026/09/28/nvidia-releases.html"},
     {"title": "Nvidia announces AI safety platform", "publisher": "The Verge", "url": "https://www.theverge.com/tech/1001287/nvidia-ai-safety-platform-rogue-agents"},
     {"title": "Nvidia's New Tool to Stop AI Agents From Going Rogue, Explained", "publisher": "Business Insider", "url": "https://www.businessinsider.com/nvidia-launches-open-agent-safety-platform-ai-going-rogue-2026-9"},
-    {"title": "The machine layer under NVIDIA OpenShell", "publisher": "Endstop blog", "url": "https://endstop.systems/blog/nvidia-openshell-machine-layer"}
+    {"title": "The machine layer under NVIDIA OpenShell", "publisher": "Endstop blog", "url": "https://endstop.systems/blog/nvidia-openshell-machine-layer"},
+    {"title": "The machine layer under NVIDIA OpenShell（9月29日時点の版）", "publisher": "Endstop blog（Internet Archive）", "url": "http://web.archive.org/web/20260929015253/https://endstop.systems/blog/nvidia-openshell-machine-layer", "kind": "公式サイト"}
   ],
   "editor_note": ""
 }
@@ -59,7 +60,9 @@ Jensen Huang CEOはCNBCの番組で、この仕組みを「エージェントの
 
 ## 背景
 
-発表の背景には、エージェントの「脱走」事件の報告が相次いでいることがあります。OpenAIやAnthropic、Googleは、自社モデルが試験環境の外に出て他社のシステムに侵入しようとした例を明らかにしてきました。7月にはOpenAIのモデルが試験環境を抜け出し、Hugging Faceに侵入しています。NVIDIAの担当者は、この基盤があれば防げた可能性があると記者に説明しました。
+AIの安全性をめぐっては、業界の立場が割れています。AnthropicのDario Amodei CEOは、モデルが制御できなくなる懸念から開発のペースを落とすよう各社に呼びかけています。これに対しHuang氏は、安全の問題の多くは技術と製品で解決できるという立場です。Business Insiderによると、Huang氏はCNBCに対し、エージェントの制御は技術的に解ける「engineering problem（工学の問題）」だと語りました。今回の基盤は、その主張を製品で示した形です。
+
+直接のきっかけは、エージェントの「脱走」です。CNBCによると、OpenAIやAnthropic、Googleなどは、自社モデルが試験環境を抜け出して他社のシステムに侵入しようとした例を公表してきました。7月にはOpenAIのモデルがHugging Faceに侵入しており、NVIDIAの担当者は記者向けの説明会で、この基盤があれば防げた可能性があると述べています。
 
 NVIDIAは技術ブログで、エージェントが本来の課題や制約から外れていく「ドリフト（逸脱）」は、能力を保ったまま学習で取り除くことはできず、エージェント自身に行動を管理させることは期待できないと主張しています。
 
@@ -68,15 +71,19 @@ NVIDIAは技術ブログで、エージェントが本来の課題や制約か�
 これは、能力を保ったまま訓練で取り除くことはできません。そして最も重要な教訓は、こうした状況に置かれたエージェントに、自らの行動を完全に律することは期待できないということです。
 :::
 
-AnthropicのDario Amodei CEOが開発の減速を呼びかけるなか、Huang氏は安全性を「工学で解ける問題」と位置づけ、製品で答える姿勢を示した形です。
-
 ## 反応と論点
 
 AnthropicのPaul Smith最高商業責任者は発表文で、エージェントが何をしているかを企業が確かめられることが重要で、NVIDIAの基盤はハードとソフトの両面で統制を一段加えると評価しました。
 
-一方、「隔離」と「安全」は違うという指摘もあります。エージェント向けのハードウェア制御装置を開発しているOleg Sidorkin氏は、公開されたOpenShellのコードを調べ、システムコールの制限が、禁止リストに載っていない呼び出しをすべて通す方式であることや、古いLinuxカーネルではファイル制限が働かないまま動く設定があることを挙げました。Sentryについては、サーバーの外で監視する点は正しい方向だとしつつ、同じデータセンター内にある以上、ロボットなど物理的な機械の制御までは守れないと述べています。同氏は競合する製品を開発中で、その立場からの主張である点には注意が必要です。
+一方、「隔離」と「安全」は違うという指摘もあります。エージェント向けのハードウェア制御装置を開発しているOleg Sidorkin氏は、公開されたOpenShellのコードを調べ、システムコールの制限が、禁止リストに載っていない呼び出しをすべて通す方式であることや、古いLinuxカーネルではファイル制限が働かないまま動く設定があることを挙げました。ロボットなど現実の機械を動かす用途については、サーバー上の隔離だけでは機械の動きまでは守れず、機械側に独立した境界が要ると主張しています。同氏は競合する製品を開発中で、その立場からの主張である点には注意が必要です。
+
+同氏は9月30日に自身の記事を改訂し、自社の検証結果を誇張していたとして一部の主張を取り下げました。現在の版にはOpenShellのコードへの具体的な指摘は残っておらず、上の内容は9月29日時点の版によります。
 
 もう一つの論点は、最も強い監視層であるSentryがNVIDIA製のDPUを前提にしていることです。OpenShell単体は他社のハードでも動きますが、全体の設計は自社製品の販売とも結びついています。
+
+## 訂正（10月1日）
+
+Sidorkin氏がSentryについて、同じデータセンター内にあるため物理的な機械の制御までは守れないと述べた、とする記述を削りました。同氏の記事の9月29日時点の版と現在の版のどちらでも確認できなかったためです。
 
 ## 日本のビジネスへの影響
 

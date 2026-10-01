@@ -3,7 +3,7 @@
   "title": "OpenAI DevDay 2026の発表まとめ、常時稼働エージェントや新モデルなど20件超",
   "description": "OpenAIは現地時間9月29日の開発者会議DevDay 2026で、常時稼働エージェントDots、新モデルGPT-6.1 Sol、ChatGPTの共同作業機能、月500ドルの新プランなど20件超を発表した。安全性をめぐる逆風の中での発表を分野別に整理する。",
   "date": "2026-09-30T20:58:00+09:00",
-  "updated": "2026-09-30T23:30:00+09:00",
+  "updated": "2026-10-01T18:55:00+09:00",
   "category": "products",
   "tags": ["OpenAI", "ChatGPT", "DevDay", "エージェント", "開発者", "IPO"],
   "summary": [
@@ -18,11 +18,13 @@
     {"title": "You can now use your ChatGPT subscription directly in over 16 partners products.", "publisher": "X @thsottiaux", "url": "https://x.com/thsottiaux/status/2105006253986738615"},
     {"title": "Live demos suffered from rolling out all the updates at the same time", "publisher": "X @thsottiaux", "url": "https://x.com/thsottiaux/status/2104994835212226681"},
     {"title": "OpenAI DevDay 2026: The biggest news and announcements", "publisher": "The Verge", "url": "https://www.theverge.com/ai-artificial-intelligence/1001681/openai-devday-2026-biggest-news-announcements"},
-    {"title": "Sam Altman says OpenAI won't go public until its models are safe", "publisher": "The Verge", "url": "https://www.theverge.com/ai-artificial-intelligence/1002505/sam-altman-openai-ipo-devday-a"},
+    {"title": "Sam Altman says OpenAI won't go public until its models are safe", "publisher": "The Verge", "url": "https://www.theverge.com/ai-artificial-intelligence/1002505/sam-altman-openai-ipo-devday-ai-safety"},
     {"title": "OpenAI DevDay recap: AI lab rolls out Dots agents, Altman and Friar comment on IPO", "publisher": "CNBC", "url": "https://www.cnbc.com/2026/09/29/openai-devday-2026-live-updates.html"},
     {"title": "OpenAI's latest features take direct aim at the app store model", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/09/29/openais-latest-features-take-direct-aim-at-the-app-store-model/"},
     {"title": "OpenAI Dev Day, Dot and OpenAI's Product Transition, Sign In With ChatGPT", "publisher": "Stratechery", "url": "https://stratechery.com/2026/openai-dev-day-dot-and-openais-product-transition-sign-in-with-chatgpt/"},
-    {"title": "OpenAI Delays Release of Latest Model Over Safety Concerns", "publisher": "WIRED", "url": "https://www.wired.com/story/openai-delays-release-of-latest-model-over-safety-concerns/"}
+    {"title": "OpenAI Delays Release of Latest Model Over Safety Concerns", "publisher": "WIRED", "url": "https://www.wired.com/story/openai-delays-release-of-latest-model-over-safety-concerns/"},
+    {"title": "OpenAI DevDay 2026 live blog", "publisher": "Simon Willison's Weblog", "url": "https://simonwillison.net/2026/Sep/29/openai-devday-2026-live-blog/"},
+    {"title": "GPT 6.1 Sol: Near-Astra intelligence for a fifth of the price", "publisher": "Hacker News", "url": "https://news.ycombinator.com/item?id=49896586"}
   ],
   "editor_note": ""
 }
