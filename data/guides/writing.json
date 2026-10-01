@@ -1,32 +1,1137 @@
 {
   "slug": "writing",
-  "status": "draft",
+  "status": "published",
   "priority": 2,
   "created": "2026-09-30",
-  "updated": "2026-09-30",
-  "last_reviewed": "2026-09-30",
+  "updated": "2026-10-01",
+  "last_reviewed": "2026-10-01",
   "title": "文章作成AIのおすすめと料金比較（ビジネス文書・記事・メール）",
   "short_name": "文章作成",
   "seo": {
-    "description": "",
+    "description": "ChatGPT・Claude・Gemini など文章作成AIと、Typoless・Shodo などの日本語校正ツールを、公式ページで確かめた料金、無料版の範囲、入力の学習利用で比較。LMArena の順位にもとづく目的別のおすすめも紹介。",
     "keywords": [
       "文章作成AI",
       "文章生成",
       "おすすめ",
       "料金",
-      "校正"
+      "校正",
+      "Claude",
+      "Gemini"
     ]
   },
-  "intro": "",
+  "intro": "日本語の文章の質で選ぶなら **Claude**、Gmail や Google ドキュメントの中で手軽に使うなら **Gemini**、日本語の校正なら朝日新聞社の **Typoless** が出発点です。LMArena の創作部門では Claude Opus 5.5 が2位、日本語部門では Claude Fable 系が1・2位です（2026年9月30日更新）。会社の Word・Outlook で使うなら、入力を学習に使わない **Microsoft 365 Copilot** も候補になります。",
   "scope": "メール・提案書・記事・要約など日本語の文章を作る・直すためのAIを比べる。翻訳は「AI翻訳」ガイド、調べものは「調べもの」ガイドで扱う。",
   "audience": [
     "ビジネスパーソン全般",
     "マーケター",
     "広報・編集"
   ],
-  "segments": [],
-  "verdicts": [],
-  "products": [],
+  "segments": [
+    {
+      "id": "assistant",
+      "name": "対話AIで書く",
+      "desc": "チャットで依頼してメール・記事・要約を作る"
+    },
+    {
+      "id": "workspace",
+      "name": "文書ツールの中で書く",
+      "desc": "Word・Notion などの中で下書き・推敲する"
+    },
+    {
+      "id": "proofread",
+      "name": "日本語の校正",
+      "desc": "誤字脱字・表記ゆれ・敬語をチェックする"
+    }
+  ],
+  "verdicts": [
+    {
+      "id": "best-quality",
+      "question": "最高品質で選ぶなら",
+      "pick": "claude",
+      "runner_up": [
+        "gemini"
+      ],
+      "answer": "LMArena の創作部門で Claude Opus 5.5 が1515で2位（1位は一部の利用者のみに提供中の Gemini 4 Argon・暫定）。日本語部門でも1・2位を Claude Fable 系が占めます（2026年9月30日更新）。",
+      "evidence": [
+        {
+          "kind": "third_party",
+          "name": "LMArena Text Arena（Creative Writing）",
+          "url": "https://arena.ai/leaderboard/text/creative-writing",
+          "date": "2026-10-01",
+          "note": "1位 gemini-4-argon-high 1522（暫定）、2位 claude-opus-5.5-high 1515、3位 claude-fable-5-high 1503。gpt-6-astra-max は1448で39位（2026-09-30更新）"
+        },
+        {
+          "kind": "third_party",
+          "name": "LMArena Text Arena（日本語）",
+          "url": "https://arena.ai/leaderboard/text/japanese",
+          "date": "2026-10-01",
+          "note": "1位 claude-fable-5.1-max 1547、2位 claude-fable-5-high 1523、3位 gemini-3-pro 1509、4位 claude-opus-5-high 1507（2026-09-30更新）"
+        }
+      ]
+    },
+    {
+      "id": "best-value",
+      "question": "コスパで選ぶなら",
+      "pick": "gemini",
+      "runner_up": [
+        "claude",
+        "chatgpt"
+      ],
+      "answer": "Google AI Pro（月2,900円）なら Gmail と Google ドキュメントの中でも Gemini を使え、5TB のストレージも付きます。LMArena の創作部門では10位以内に Gemini のモデルが4つ入っています。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Google AI プラン",
+          "url": "https://gemini.google/jp/subscriptions/?hl=ja",
+          "date": "2026-10-01",
+          "note": "Google AI Pro ￥2,900 JPY / 月、Gemini in Gmail・Gemini in Google ドキュメント、5TB"
+        },
+        {
+          "kind": "third_party",
+          "name": "LMArena Text Arena（Creative Writing）",
+          "url": "https://arena.ai/leaderboard/text/creative-writing",
+          "date": "2026-10-01",
+          "note": "gemini-4-argon-high 1位（暫定）、gemini-3.7-flash-high 5位、gemini-3-pro 7位、gemini-3.8-flash-high 8位（2026-09-30更新）"
+        }
+      ]
+    },
+    {
+      "id": "free",
+      "question": "無料で使うなら",
+      "pick": "gemini",
+      "runner_up": [
+        "chatgpt",
+        "shodo"
+      ],
+      "answer": "Gemini の無料版は 3.1 Pro（回数制限あり）と、文書を編集できる Canvas が使えます。ChatGPT の無料版は GPT-5.6 Luna でのテキストチャットが無制限。校正だけなら Shodo の無料プランで1回1万文字まで直せます。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Google AI プラン",
+          "url": "https://gemini.google/jp/subscriptions/?hl=ja",
+          "date": "2026-10-01",
+          "note": "無料：3.6 Flash、3.1 Pro（制限あり）、Canvas"
+        },
+        {
+          "kind": "official",
+          "name": "ChatGPT 料金ページ",
+          "url": "https://chatgpt.com/ja-JP/pricing/",
+          "date": "2026-10-01",
+          "note": "無料版：GPT-5.6 Luna でのテキストチャットは無制限"
+        },
+        {
+          "kind": "official",
+          "name": "Shodo 料金",
+          "url": "https://shodo.ink/pricing/",
+          "date": "2026-10-01",
+          "note": "ベーシック（永年無料）：文章校正 1万文字まで/回、生成AI校正（週間制限あり）"
+        }
+      ]
+    },
+    {
+      "id": "japanese",
+      "question": "日本語重視なら",
+      "pick": "typoless",
+      "runner_up": [
+        "shodo",
+        "claude"
+      ],
+      "answer": "日本語の校正なら Typoless。朝日新聞社の記事校正の履歴で学習した AI と21万件超の校正ルール辞書で、誤りやすい日本語や同音異義語の修正候補を示し、入力した文章は AI の学習に使いません。一から書く文章の評価では、LMArena の日本語部門で Claude Fable 系が1・2位です。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Typoless",
+          "url": "https://typoless.asahi.com/",
+          "date": "2026-10-01",
+          "note": "朝日新聞社の記事校正履歴データを学習、約21万個の校正ルールの辞書、入力された文章はAI学習に利用しない"
+        },
+        {
+          "kind": "official",
+          "name": "Typoless 料金プラン",
+          "url": "https://typoless.asahi.com/price/",
+          "date": "2026-10-01",
+          "note": "スタンダード ¥2,200/月（税込）、ルール辞書はプレミアム ¥5,500/月（税込）から"
+        },
+        {
+          "kind": "third_party",
+          "name": "LMArena Text Arena（日本語）",
+          "url": "https://arena.ai/leaderboard/text/japanese",
+          "date": "2026-10-01",
+          "note": "1位 claude-fable-5.1-max 1547、2位 claude-fable-5-high 1523（2026-09-30更新）"
+        }
+      ]
+    },
+    {
+      "id": "business",
+      "question": "会社で安全に使うなら（入力が学習に使われない・管理機能）",
+      "pick": "microsoft-365-copilot",
+      "runner_up": [
+        "gemini",
+        "claude"
+      ],
+      "answer": "Microsoft 365 Copilot は Word・Outlook・PowerPoint の中で使え、プロンプトと応答は基盤モデルの学習に使われません（Business Standard とのセットで1人月3,523円・年払い・税抜）。Google Workspace なら Business Standard（月1,600円・年間プラン）で Gmail・ドキュメントの Gemini が使え、こちらも許可なく学習に使われません。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Microsoft 365 Copilot のプランと価格",
+          "url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing",
+          "date": "2026-10-01",
+          "note": "Microsoft 365 Business Standard と Microsoft 365 Copilot Business ¥3,523 ユーザー/月相当、年払い（税抜）"
+        },
+        {
+          "kind": "official",
+          "name": "Microsoft Copilot のデータ、プライバシー、セキュリティ",
+          "url": "https://learn.microsoft.com/ja-jp/copilot/microsoft-365/microsoft-365-copilot-privacy",
+          "date": "2026-10-01",
+          "note": "Microsoft Graph 経由でアクセスされるプロンプト、応答、データは基礎 LLM のトレーニングには使用されない"
+        },
+        {
+          "kind": "official",
+          "name": "Google Workspace 料金",
+          "url": "https://workspace.google.com/pricing?hl=ja",
+          "date": "2026-10-01",
+          "note": "Standard ¥1,600（ユーザーあたりの月額・年間プラン）、Gmail・Google ドキュメントなどの Gemini"
+        },
+        {
+          "kind": "official",
+          "name": "Google Workspace の生成 AI に関するプライバシー ハブ",
+          "url": "https://knowledge.workspace.google.com/admin/generative-ai/generative-ai-in-google-workspace-privacy-hub?hl=ja",
+          "date": "2026-10-01",
+          "note": "事前の許可や指示がない限り、モデルのトレーニングに顧客データを使用しない"
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "vendor": "OpenAI",
+      "url": "https://chatgpt.com/",
+      "status": "featured",
+      "rank": 1,
+      "segment": "assistant",
+      "tags": [
+        "ChatGPT",
+        "GPT-6.1"
+      ],
+      "model_slugs": [
+        "gpt-6-1-sol",
+        "gpt-6-astra",
+        "gpt-6-luna"
+      ],
+      "latest": {
+        "name": "GPT-6.1 Sol",
+        "released": "2026-09-29",
+        "source_url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web",
+        "app",
+        "desktop",
+        "extension"
+      ],
+      "strengths": [
+        "Word・Excel 向けの拡張機能（Plus 以上）",
+        "無料版でもテキストチャットは無制限",
+        "円建て。Go（月1,400円）から選べる"
+      ],
+      "weaknesses": [
+        "無料版と Go では GPT-6 系モデルを使えない",
+        "LMArena 日本語で GPT-6 Astra は66位"
+      ],
+      "editorial_take": "無料で始めやすく、Plus なら Word 向けの拡張機能も使える。日本語の文章の評価（LMArena）では Claude・Gemini が上位。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "GPT-5.6 Luna でのテキストチャットは無制限。アップロード・Word などへの拡張機能は上限あり",
+          "source_url": "https://chatgpt.com/ja-JP/pricing/",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Go",
+            "amount": 1400,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "￥1,400 / 月",
+            "detail": "メッセージ・アップロードの上限を拡大。広告が表示される場合あり",
+            "source_url": "https://chatgpt.com/ja-JP/pricing/",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Plus",
+            "amount": 3000,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "￥3,000 / 月",
+            "detail": "GPT-6 Astra・GPT-6.1 Sol（上限あり）、Excel・Word・PowerPoint 向けの拡張機能、プロジェクト",
+            "source_url": "https://chatgpt.com/ja-JP/pricing/",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Pro",
+            "amount": 16800,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "月額 ￥16,800 から",
+            "detail": "3段階の利用枠から選ぶ。GPT-6 Astra による Pro 推論",
+            "source_url": "https://chatgpt.com/ja-JP/pricing/",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Business（標準シート）",
+            "amount": 3050,
+            "currency": "JPY",
+            "per": "seat_month",
+            "as_shown": "￥3,050 / 月（年額課金。月額課金は ￥3,850 / 月）",
+            "detail": "プレミアムシート（標準の5倍の利用枠）は ￥15,250 / 月（年額課金）",
+            "source_url": "https://chatgpt.com/ja-JP/pricing/",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": true,
+        "note": "日本からの表示は円建て（チャットAIガイドと同じ料金ページ）。"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "yes",
+        "note": "ヘルプの対応言語一覧に日本語。料金ページも日本語・円で表示",
+        "source_url": "https://help.openai.com/en/articles/8357869-how-to-change-your-language-setting-in-chatgpt",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "利用規約で出力の権利は利用者に帰属（OpenAI が権利を譲渡）。出力を人が作ったと偽ることは禁止",
+        "source_url": "https://openai.com/policies/terms-of-use/",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "opt_out_available",
+        "note": "個人プランは設定「すべての人のためにモデルを改善する」をオフにすると、新しい会話は学習に使われない。Business・Enterprise は既定で学習に使わない",
+        "source_url": "https://help.openai.com/en/articles/7730893-data-controls-faq",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "公式の提供国一覧に日本",
+        "source_url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "vendor": "Anthropic",
+      "url": "https://claude.ai/",
+      "status": "featured",
+      "rank": 2,
+      "segment": "assistant",
+      "tags": [
+        "Claude",
+        "Claude Opus 5.5"
+      ],
+      "model_slugs": [
+        "claude-opus-5-5",
+        "claude-fable-5-1"
+      ],
+      "latest": {
+        "name": "Claude Opus 5.5",
+        "released": "2026-09-22",
+        "source_url": "https://www.anthropic.com/claude-opus-5-5",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web",
+        "app",
+        "desktop"
+      ],
+      "strengths": [
+        "LMArena 創作部門で Opus 5.5 が2位",
+        "日本語部門の1・2位は Claude Fable 系",
+        "指定した文章ルールに従う（公式発表）"
+      ],
+      "weaknesses": [
+        "無料版では Opus を使えない（Sonnet・Haiku）",
+        "Fable は Pro では追加クレジットで利用"
+      ],
+      "editorial_take": "文章の質で選ぶなら最有力。Pro で Opus 5.5 と Word・Outlook 連携（Claude for Microsoft 365）が使える。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "Web・デスクトップ・モバイルでチャット、ファイル作成、メモリ。モデルは Sonnet と Haiku",
+          "source_url": "https://claude.com/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Pro",
+            "amount": 17,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$17 Per month with annual subscription discount ($200 billed up front). $20 if billed monthly.",
+            "detail": "Opus 5.5、Claude Design・Slides・Docs、Claude for Microsoft 365・Outlook、Projects",
+            "source_url": "https://claude.com/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Max",
+            "amount": 100,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "From $100 Per month",
+            "detail": "Pro の5倍か20倍の利用量",
+            "source_url": "https://claude.com/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Team（標準シート）",
+            "amount": 20,
+            "currency": "USD",
+            "per": "seat_month",
+            "as_shown": "$20 Per seat / month if billed annually. $25 if billed monthly.",
+            "detail": "2〜150人。既定でコンテンツを学習に使わない。SSO",
+            "source_url": "https://claude.com/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": "米国からの表示は税別。日本から開くと消費税10%込みの米ドル表示（Pro は年払い $18・月払い $22、Team 標準シートは年払い $22・月払い $27.50）。"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "yes",
+        "note": "ヘルプの対応言語に日本語。表示言語を変えても、会話は使った言語で返す",
+        "source_url": "https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "消費者向け規約で出力の権利を利用者に譲渡（4条）",
+        "source_url": "https://www.anthropic.com/legal/consumer-terms",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "opt_out_available",
+        "note": "Free・Pro・Max は設定で学習利用をオフにできる（Opt-out）。Team・Enterprise は既定で学習に使わない",
+        "source_url": "https://claude.com/pricing",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "公式の提供国・地域一覧に日本",
+        "source_url": "https://www.anthropic.com/supported-countries",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "vendor": "Google",
+      "url": "https://gemini.google/",
+      "status": "featured",
+      "rank": 3,
+      "segment": "assistant",
+      "tags": [
+        "Gemini"
+      ],
+      "model_slugs": [
+        "gemini-3-8-flash",
+        "gemini-3-1-pro-preview"
+      ],
+      "latest": {
+        "name": "Gemini 3.8 Flash",
+        "released": "2026-09-02",
+        "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web",
+        "app",
+        "desktop"
+      ],
+      "strengths": [
+        "AI Pro で Gmail・ドキュメント内でも使える",
+        "LMArena 創作部門の10位内に Gemini が4つ",
+        "無料版でも 3.1 Pro（制限あり）と Canvas"
+      ],
+      "weaknesses": [
+        "創作部門1位の 4 Argon は一部の利用者のみ",
+        "会話の一部を人が確認する（既定の設定）"
+      ],
+      "editorial_take": "Gmail や Google ドキュメントで書く人なら、AI Pro（月2,900円）か Workspace の Business Standard で文書の中から使えるのが便利。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "3.6 Flash、3.1 Pro（制限あり）、Canvas、Gem、Deep Research",
+          "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Google AI Plus",
+            "amount": 725,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "￥725 JPY / 月",
+            "detail": "無料版の2倍の使用量上限、Gemini in Gmail、400GB",
+            "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Google AI Pro",
+            "amount": 2900,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "￥2,900 JPY / 月",
+            "detail": "無料版の4倍の使用量上限、Gemini in Gmail・Google ドキュメント、5TB",
+            "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Google Workspace Business Standard",
+            "amount": 1600,
+            "currency": "JPY",
+            "per": "seat_month",
+            "as_shown": "¥1,600（ユーザーあたりの月額・年間プラン）",
+            "detail": "Gmail・Google ドキュメント・Meet などの Gemini。Business Starter（¥800）は Gmail の Gemini のみ",
+            "source_url": "https://workspace.google.com/pricing?hl=ja",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": true,
+        "note": "Google Workspace は年間プラン表示。新規向けに最初の3か月の割引あり（料金ページ）。"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "yes",
+        "note": "Gemini ウェブアプリの対応言語一覧に日本語",
+        "source_url": "https://support.google.com/gemini/answer/13575153?hl=en",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "Google 利用規約で、生成されたオリジナルのコンテンツの所有権を Google は主張しない。生成AI禁止使用ポリシーの遵守が条件",
+        "source_url": "https://policies.google.com/terms?hl=en",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "opt_out_available",
+        "note": "個人の Google アカウントでは、既定で会話がサービス改善に使われ一部は人が確認する。「アクティビティを保持」をオフにすると今後の会話は使われない。Google Workspace のプランは別の扱い（許可なく学習に使わない）",
+        "source_url": "https://support.google.com/gemini/answer/13594961?hl=en",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "Gemini ウェブアプリの対応国一覧に日本",
+        "source_url": "https://support.google.com/gemini/answer/13575153?hl=en",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "microsoft-365-copilot",
+      "name": "Microsoft 365 Copilot",
+      "vendor": "Microsoft",
+      "url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot",
+      "status": "featured",
+      "rank": 4,
+      "segment": "workspace",
+      "tags": [
+        "Copilot",
+        "Microsoft"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web",
+        "app",
+        "desktop"
+      ],
+      "strengths": [
+        "Word・Outlook・PowerPoint の中で使える",
+        "法人版は入力を基盤モデルの学習に使わない",
+        "円建て。個人向けは月2,130円から"
+      ],
+      "weaknesses": [
+        "個人向け規約は「個人的な利用」に限る",
+        "法人は Copilot Business の追加が必要"
+      ],
+      "editorial_take": "社内の文書が Word・Outlook にある会社なら第一候補。法人版はプロンプトも応答も基盤モデルの学習に使われない。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "機能と使用量が限定された Copilot を無料で提供",
+          "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing/individuals",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Microsoft 365 Personal",
+            "amount": 2130,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "¥2,130 /月",
+            "detail": "1人用。Copilot 搭載の Word・Excel・PowerPoint・Outlook。年払いは ¥21,300/年",
+            "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing/individuals",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Microsoft 365 Premium",
+            "amount": 3200,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "¥3,200 /月",
+            "detail": "より高い AI 使用上限、リサーチや分析を代行するエージェント機能",
+            "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing/individuals",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Microsoft 365 Business Standard と Microsoft 365 Copilot Business",
+            "amount": 3523,
+            "currency": "JPY",
+            "per": "seat_month",
+            "as_shown": "¥3,523 ユーザー/月相当、年払い（価格には消費税は含まれていません）",
+            "detail": "Word・Excel・PowerPoint・Outlook・Teams のアプリ内の Copilot。月払いは ¥4,228",
+            "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Microsoft 365 Copilot Business（アドオン）",
+            "amount": 3148,
+            "currency": "JPY",
+            "per": "seat_month",
+            "as_shown": "¥3,148 ユーザー/月相当、年払い（2026年12月31日まで初年度 ¥2,698。税抜）",
+            "detail": "既存の Microsoft 365 法人プランに追加",
+            "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": true,
+        "note": "法人向けの表示価格は消費税別。Microsoft は Microsoft 365 Copilot の名称を Microsoft Copilot に変更中（Microsoft Learn の注記）。"
+      },
+      "japanese": {
+        "ui": "unknown",
+        "output": "yes",
+        "note": "プロンプトと応答の対応言語一覧に日本語。アプリ画面の言語の記載はこのページになし",
+        "source_url": "https://support.microsoft.com/en-au/microsoft-365-copilot/supported-languages-for-microsoft-365-copilot",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "conditional",
+        "note": "個人向け Copilot 利用規約は「自分の個人的な利用に限る」。業務では一般法人向けプラン（Microsoft は出力の所有権を主張しないと Microsoft Learn に記載）を使う",
+        "source_url": "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals/termsofuse",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "not_used",
+        "note": "法人向け：Microsoft Graph 経由でアクセスされるプロンプト・応答・データは基礎 LLM のトレーニングに使用しない（個人向けアプリはチャットAIガイド参照）",
+        "source_url": "https://learn.microsoft.com/ja-jp/copilot/microsoft-365/microsoft-365-copilot-privacy",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "日本向けに円建ての個人・法人プランを表示",
+        "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "notion-ai",
+      "name": "Notion AI",
+      "vendor": "Notion Labs, Inc.",
+      "url": "https://www.notion.com/ja/product/ai",
+      "status": "featured",
+      "rank": 5,
+      "segment": "workspace",
+      "tags": [
+        "Notion"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web",
+        "app",
+        "desktop"
+      ],
+      "strengths": [
+        "ビジネスで Notion エージェント（生成・翻訳）",
+        "顧客データを AI の学習に使わない（規約）",
+        "円建て。ビジネスは年払いで月3,150円"
+      ],
+      "weaknesses": [
+        "フリー・プラスは体験版（回数に制限）",
+        "LLM 提供元が最大30日保持（Enterprise 以外）"
+      ],
+      "editorial_take": "社内の資料や議事録を Notion にまとめているチーム向け。本格的に使うにはビジネスプラン以上が必要。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "Notion AI の体験版（限られた数の無料のAI回答）",
+          "source_url": "https://www.notion.com/ja/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "プラス",
+            "amount": 1650,
+            "currency": "JPY",
+            "per": "seat_month",
+            "as_shown": "￥1,650 メンバー/月（年払い。月払いは ￥2,000）",
+            "detail": "Notion AI は体験版のみ",
+            "source_url": "https://www.notion.com/ja/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "ビジネス",
+            "amount": 3150,
+            "currency": "JPY",
+            "per": "seat_month",
+            "as_shown": "￥3,150 メンバー/月（年払い。月払いは ￥3,800）",
+            "detail": "Notion エージェント（チャット、生成、自動入力、翻訳）、AI ミーティングノート、SAML SSO",
+            "source_url": "https://www.notion.com/ja/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "エンタープライズ",
+            "currency": "JPY",
+            "per": "seat_month",
+            "as_shown": "カスタム料金（要問い合わせ）",
+            "detail": "LLM プロバイダーによるゼロデータ保持、SCIM、監査ログ",
+            "source_url": "https://www.notion.com/ja/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": true,
+        "note": "料金ページに「日本の消費税（該当する場合）」と表記。"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "unknown",
+        "note": "料金ページとヘルプは日本語。Notion AI が対応する言語の一覧は見つからず",
+        "source_url": "https://www.notion.com/ja/help/notion-ai-faqs",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "Notion AI 補足規約で、入力と出力は利用者の顧客データ。競合する基盤モデルの開発や、出力を人が書いたと偽ることは禁止",
+        "source_url": "https://notion.notion.site/Notion-AI-Supplementary-Terms-fa9034c8b5a04818a6baf3eac2adddbb",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "not_used",
+        "note": "Notion と AI サブプロセッサーは既定でユーザーデータをモデルの学習に使わない。エンタープライズ以外は LLM プロバイダーが最大30日保持",
+        "source_url": "https://www.notion.com/ja/help/notion-ai-security-practices",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "日本向けに円建てで表示",
+        "source_url": "https://www.notion.com/ja/pricing",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "typoless",
+      "name": "Typoless",
+      "vendor": "朝日新聞社",
+      "url": "https://typoless.asahi.com/",
+      "status": "featured",
+      "rank": 6,
+      "segment": "proofread",
+      "tags": [
+        "Typoless"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web",
+        "extension"
+      ],
+      "strengths": [
+        "朝日新聞の記事校正履歴を学習した校正AI",
+        "21万件超の校正ルール辞書（プレミアム以上）",
+        "入力文はAI学習に使わず保存もしない"
+      ],
+      "weaknesses": [
+        "無料プランはなく、14日間の無料体験のみ",
+        "スタンダードは Word・Docs 連携なし"
+      ],
+      "editorial_take": "社外に出す日本語の誤字・表記ゆれ・炎上リスクを機械的に洗い出したい広報・編集向け。生成ではなく校正の専用ツール。",
+      "pricing": {
+        "free": {
+          "available": false,
+          "detail": "個人向けは14日間、法人向けは30日間の無料トライアル",
+          "source_url": "https://typoless.asahi.com/price/",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "スタンダード",
+            "amount": 2200,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "¥2,200 /月 税込",
+            "detail": "1回5万文字まで、校正回数無制限、炎上リスクチェック月10回、Outlook アドイン",
+            "source_url": "https://typoless.asahi.com/price/",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "プレミアム",
+            "amount": 5500,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "¥5,500 /月 税込",
+            "detail": "1回10万文字、カスタム辞書、ルール辞書、良文サポート、Word・Excel アドイン、Google Docs アドオン",
+            "source_url": "https://typoless.asahi.com/price/",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "エンタープライズ（法人）",
+            "amount": 4950,
+            "currency": "JPY",
+            "per": "seat_month",
+            "as_shown": "¥4,950 /月・1ID 税込（5IDから）",
+            "detail": "辞書のチーム共有、請求書払い。年払いで15%OFF",
+            "source_url": "https://typoless.asahi.com/price/",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": true,
+        "note": "PDF・PowerPoint も校正できる +Plus プランあり（個人 ¥7,700/月、法人 ¥7,150/月・1ID、いずれも税込）。"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "yes",
+        "note": "日本語の校正専用。新聞社の校正ルール辞書を搭載",
+        "source_url": "https://typoless.asahi.com/",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "not_used",
+        "note": "入力された文章はAI学習に利用せず、サーバーにも保存しない（カスタム辞書・参照ドキュメントは保存されるが学習には使わない）",
+        "source_url": "https://typoless.asahi.com/",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "国内向けに円建て・税込で提供",
+        "source_url": "https://typoless.asahi.com/price/",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "shodo",
+      "name": "Shodo",
+      "vendor": "株式会社ゼンプロダクツ",
+      "url": "https://shodo.ink/",
+      "status": "featured",
+      "rank": 7,
+      "segment": "proofread",
+      "tags": [
+        "Shodo"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web",
+        "extension"
+      ],
+      "strengths": [
+        "無料で1回1万文字まで校正（生成AI校正も）",
+        "二重敬語・表記ゆれを検知（プレミアム）",
+        "投稿した文章を AI の学習に使わない"
+      ],
+      "weaknesses": [
+        "無料版の生成AI校正は週あたりの制限あり",
+        "Word・Docs 連携は有料（月1,000円から）"
+      ],
+      "editorial_take": "無料で日本語の校正を試すならまずここ。月1,000円のプレミアムで Word・Google ドキュメント・Gmail の中でも使える。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "文章校正（1万文字まで/回）、生成AI校正（週間制限あり）、記事の執筆・共有",
+          "source_url": "https://shodo.ink/pricing/",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "プレミアム",
+            "amount": 1000,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "税込 1,000 円 / 月",
+            "detail": "1回4万文字、Word アドイン、Docs アドオン、ブラウザ拡張、表記ゆれ・二重敬語の検知",
+            "source_url": "https://shodo.ink/pricing/",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "マックス",
+            "amount": 5000,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "税込 5,000 円 / 月",
+            "detail": "1回10万文字、生成AI校正の制限を5倍に緩和、AI校閲、PDF校正",
+            "source_url": "https://shodo.ink/pricing/",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "ビジネス",
+            "amount": 2000,
+            "currency": "JPY",
+            "per": "seat_month",
+            "as_shown": "税込 2,000 円 / 名様 / 月",
+            "detail": "3名から。カスタム辞書、IPアドレス制限、ルールの共有",
+            "source_url": "https://shodo.ink/pricing/",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": true,
+        "note": "有料プランは14日間の無料トライアルあり（1回のみ）。"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "yes",
+        "note": "日本語の校正専用サービス",
+        "source_url": "https://shodo.ink/pricing/",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "not_used",
+        "note": "無料・有料プランに関係なく、投稿した文章を AI の学習に使わない（料金ページのよくある質問）",
+        "source_url": "https://shodo.ink/pricing/",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "国内向けに円建て・税込で提供",
+        "source_url": "https://shodo.ink/pricing/",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "deepl-write",
+      "name": "DeepL Write",
+      "vendor": "DeepL SE",
+      "url": "https://www.deepl.com/ja/write",
+      "status": "listed",
+      "rank": 20,
+      "segment": "proofread",
+      "tags": [
+        "DeepL"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web",
+        "app",
+        "desktop",
+        "extension"
+      ],
+      "editorial_take": "翻訳の DeepL による文章の校正・言い換え。日本語に対応し、Word・Google ドキュメント・Gmail でも使える。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "有料アカウントなしでも使える（文字数の上限あり）",
+          "source_url": "https://support.deepl.com/hc/articles/6318834492700",
+          "checked": "2026-10-01"
+        },
+        "plans": [],
+        "jpy_official": false,
+        "note": ""
+      },
+      "japanese": {
+        "ui": "unknown",
+        "output": "yes",
+        "note": "DeepL Write の対応言語に Japanese",
+        "source_url": "https://support.deepl.com/hc/articles/6318834492700",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "grammarly",
+      "name": "Grammarly",
+      "vendor": "Superhuman Platform",
+      "url": "https://www.grammarly.com/",
+      "status": "listed",
+      "rank": 21,
+      "segment": "proofread",
+      "tags": [
+        "Grammarly"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web",
+        "desktop",
+        "extension",
+        "app"
+      ],
+      "editorial_take": "英文の校正・言い換えの定番。日本語は提案の対象言語に入るが、段落単位の書き直しは対象外。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "スペル・文法の修正、トーンの確認、AIプロンプト月100回",
+          "source_url": "https://www.grammarly.com/plans",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Pro",
+            "amount": 12,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$12 USD",
+            "detail": "文の書き直し、トーン調整、盗用・AI生成文の検出、AIプロンプト月2,000回",
+            "source_url": "https://www.grammarly.com/plans",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": ""
+      },
+      "japanese": {
+        "ui": "unknown",
+        "output": "partial",
+        "note": "提案の対応言語に Japanese。段落単位の書き直しはスペイン語・フランス語など6言語のみ",
+        "source_url": "https://support.grammarly.com/hc/en-us/articles/115000090971-Does-Grammarly-support-languages-other-than-English",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "catchy",
+      "name": "Catchy",
+      "vendor": "DigitalRecipe Inc.",
+      "url": "https://lp.ai-copywriter.jp/",
+      "status": "listed",
+      "rank": 22,
+      "segment": "assistant",
+      "tags": [
+        "Catchy"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web"
+      ],
+      "editorial_take": "記事・メール・広告文などの用途別の生成ツールをそろえた国産サービス。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "毎月10クレジット",
+          "source_url": "https://lp.ai-copywriter.jp/",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Starter",
+            "amount": 3000,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "¥3,000〜/月",
+            "detail": "100クレジット。クレジットの追加購入可",
+            "source_url": "https://lp.ai-copywriter.jp/",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Pro",
+            "amount": 9800,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "¥9,800/月",
+            "detail": "無制限使い放題",
+            "source_url": "https://lp.ai-copywriter.jp/",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": true,
+        "note": ""
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "jasper",
+      "name": "Jasper",
+      "vendor": "Jasper",
+      "url": "https://www.jasper.ai/",
+      "status": "listed",
+      "rank": 23,
+      "segment": "workspace",
+      "tags": [
+        "Jasper"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web"
+      ],
+      "editorial_take": "マーケティング向けの生成プラットフォーム。ブランドに沿った文章や画像を作る。",
+      "pricing": {
+        "plans": [
+          {
+            "name": "Pro",
+            "amount": 59,
+            "currency": "USD",
+            "per": "seat_month",
+            "as_shown": "$59/month per seat（年払い。月払いは $69）",
+            "detail": "7日間の無料トライアル",
+            "source_url": "https://www.jasper.ai/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": ""
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "copy-ai",
+      "name": "Copy.ai",
+      "vendor": "Copy.ai",
+      "url": "https://www.copy.ai/",
+      "status": "listed",
+      "rank": 24,
+      "segment": "workspace",
+      "tags": [
+        "Copy.ai"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web"
+      ],
+      "editorial_take": "営業・マーケティングの業務を自動化する「GTM AI」として提供。チャットで OpenAI・Anthropic・Gemini のモデルを使える。",
+      "pricing": {
+        "plans": [
+          {
+            "name": "Chat",
+            "amount": 24,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$24/month（年払い。月払いは $29）",
+            "detail": "5シート、チャットの文字数無制限",
+            "source_url": "https://www.copy.ai/prices",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": ""
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    }
+  ],
   "criteria": [
     {
       "name": "日本語の自然さと敬語",
@@ -59,8 +1164,48 @@
       "how_to_check": "公式料金ページを確認する"
     }
   ],
-  "benchmarks": [],
-  "faq": [],
+  "benchmarks": [
+    {
+      "id": "lmarena-creative-writing",
+      "name": "LMArena Text Arena（Creative Writing）",
+      "operator": "LMArena",
+      "url": "https://arena.ai/leaderboard/text/creative-writing",
+      "what": "創作・文章作成の依頼に限った、利用者の一対比較によるスコア",
+      "snapshot": "1位 gemini-4-argon-high 1522（暫定）、2位 claude-opus-5.5-high 1515、3位 claude-fable-5-high 1503、4位 claude-opus-4-6-high 1501、5位 gemini-3.7-flash-high 1496（暫定）、7位 gemini-3-pro 1484、8位 gemini-3.8-flash-high 1484（暫定）。gpt-6-astra-max 1448で39位（2026-09-30更新・2026-10-01確認）",
+      "checked": "2026-10-01"
+    },
+    {
+      "id": "lmarena-text-japanese",
+      "name": "LMArena Text Arena（日本語）",
+      "operator": "LMArena",
+      "url": "https://arena.ai/leaderboard/text/japanese",
+      "what": "日本語の対話に限った一対比較のスコア",
+      "snapshot": "1位 claude-fable-5.1-max 1547（194票）、2位 claude-fable-5-high 1523、3位 gemini-3-pro 1509、4位 claude-opus-5-high 1507、5位 gpt-5.5-high 1504。gpt-6-astra-max は1421で66位。上位は票数が少なく順位の幅が大きい（2026-09-30更新・2026-10-01確認）",
+      "checked": "2026-10-01"
+    }
+  ],
+  "faq": [
+    {
+      "q": "日本語の文章が一番うまいAIはどれですか？",
+      "a": "LMArena の日本語部門では Claude Fable 5.1（max）が1位、Claude Fable 5（high）が2位、Gemini 3 Pro が3位です（2026年9月30日更新）。ただし上位のモデルは票数が数百程度と少なく、順位の幅は大きめです。Claude Opus 5.5 はまだ日本語部門に載っていません。社内の定型文（謝罪メール・提案の要約など）を同じ指示で書かせて比べるのが確実です。"
+    },
+    {
+      "q": "無料で使える文章作成AIは？",
+      "a": "Gemini の無料版は 3.1 Pro（回数制限あり）と Canvas、ChatGPT の無料版は GPT-5.6 Luna でのテキストチャットが無制限、Claude の無料版は Sonnet と Haiku が使えます。校正なら Shodo の無料プランで1回1万文字まで、DeepL Write も有料アカウントなしで使えます（文字数の上限あり）。"
+    },
+    {
+      "q": "社内の文書を入れても学習に使われませんか？",
+      "a": "Microsoft 365 Copilot の法人向けプラン、Google Workspace の Gemini、Notion AI、Typoless、Shodo は、入力を学習に使わないと公式に明記しています。ChatGPT・Claude・Gemini の個人向けプランは、既定では学習やサービス改善に使われることがあり、設定でオフにできます。"
+    },
+    {
+      "q": "Word や Google ドキュメントの中で使えるのは？",
+      "a": "Word なら Microsoft 365 Copilot（個人向けは Personal 月2,130円から）、ChatGPT の Word 向け拡張機能（Plus 以上）。Claude も Pro 以上で Claude for Microsoft 365 を使えます。Google ドキュメントなら Gemini（Google AI Pro か Workspace の Business Standard 以上）。校正ツールの Typoless はプレミアム以上、Shodo はプレミアム以上で Word と Google ドキュメントに対応します。"
+    },
+    {
+      "q": "校正専用ツールと ChatGPT などの対話AIはどう違いますか？",
+      "a": "Typoless は新聞社の校正ルール辞書（21万件超）とカスタム辞書で表記を統一し、Shodo は表記ゆれや二重敬語を検知して、文章を勝手に書き直さず変更を提案します。対話AIは書き直しや要約が得意な一方、社内の表記ルールを毎回守らせるには指示や辞書の用意が必要です。"
+    }
+  ],
   "related": {
     "tags": [
       "文章作成",
@@ -68,7 +1213,8 @@
       "Claude",
       "Gemini",
       "Copilot",
-      "Notion"
+      "Notion",
+      "Claude Opus 5.5"
     ],
     "guides": [
       "chat",
@@ -76,30 +1222,23 @@
       "research",
       "slides"
     ],
-    "articles": []
+    "articles": [
+      "/news/20260930-chatgpt-office-apps-codex/",
+      "/news/20260930-claude-opus-5-5-prompting-guide/"
+    ]
   },
-  "changelog": [],
+  "changelog": [
+    {
+      "date": "2026-10-01",
+      "text": "初回公開",
+      "by": "researcher"
+    }
+  ],
   "editor_note": "",
   "embed_models": false,
   "research_plan": {
-    "_comment": "調査担当向けのメモ（表示しない）。candidates は編集部の初期案＝製品名の候補であって事実ではない。公式サイトで現行の名称・存在を確認し、無いものは外し、新しいものを足す。published にする前に candidates と verdict_questions を空にし、notes を消す",
-    "candidates": [
-      "ChatGPT（OpenAI）",
-      "Claude（Anthropic）",
-      "Gemini（Google）／Google Workspace の Gemini",
-      "Microsoft 365 Copilot",
-      "Notion AI",
-      "Grammarly",
-      "Jasper",
-      "Copy.ai"
-    ],
-    "verdict_questions": [
-      "best-quality",
-      "best-value",
-      "free",
-      "japanese",
-      "business"
-    ],
-    "notes": "日本語の文章品質は公開評価が少ない。best-quality の根拠は日本語カテゴリのあるアリーナ（LMArena の言語別など）に限り、無ければ verdict を立てず editorial の見立てだけにする。"
+    "candidates": [],
+    "verdict_questions": [],
+    "notes": ""
   }
 }

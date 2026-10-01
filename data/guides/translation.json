@@ -1,33 +1,926 @@
 {
   "slug": "translation",
-  "status": "draft",
+  "status": "published",
   "priority": 2,
   "created": "2026-09-30",
-  "updated": "2026-09-30",
-  "last_reviewed": "2026-09-30",
+  "updated": "2026-10-01",
+  "last_reviewed": "2026-10-01",
   "title": "AI翻訳のおすすめと料金比較",
   "short_name": "AI翻訳",
   "seo": {
-    "description": "",
+    "description": "DeepL・Google 翻訳・みらい翻訳などの翻訳サービスと ChatGPT・Gemini・Claude を、公式ページで確かめた料金、無料版の範囲、翻訳文の学習利用で比較。WMT25 の人手評価にもとづく目的別のおすすめも紹介。",
     "keywords": [
       "AI翻訳",
       "翻訳ツール",
       "おすすめ",
       "料金",
       "DeepL",
-      "機械翻訳"
+      "機械翻訳",
+      "Google翻訳"
     ]
   },
-  "intro": "",
+  "intro": "訳の品質を公開評価で選ぶなら **Gemini**、社外秘の文書を訳すなら学習に使わない **DeepL Pro**、安く安全に済ませるなら **みらい翻訳 Plus**（月495円から）が出発点です。第三者の人手評価 WMT25 の英→日では Gemini 2.5 Pro が機械翻訳の中で最高点でした。無料なら約250言語の **Google 翻訳**、システムに組み込むなら毎月200万文字まで無料の **Microsoft Translator** の API が手頃です。",
   "scope": "文書・Webページ・会話の翻訳を、翻訳専用サービスと汎用の対話AIの両方で比べる。文章の作成・校正は「文章作成AI」ガイドで扱う。",
   "audience": [
     "ビジネスパーソン全般",
     "海外取引・輸出入担当",
     "開発者"
   ],
-  "segments": [],
-  "verdicts": [],
-  "products": [],
+  "segments": [
+    {
+      "id": "service",
+      "name": "翻訳専用サービス",
+      "desc": "テキスト・文書ファイル・音声を訳す専用のアプリとAPI"
+    },
+    {
+      "id": "assistant",
+      "name": "対話AIで訳す",
+      "desc": "文脈や用途を伝えて訳し、言い換えまで頼む"
+    }
+  ],
+  "verdicts": [
+    {
+      "id": "best-quality",
+      "question": "最高品質で選ぶなら",
+      "pick": "gemini",
+      "runner_up": [
+        "deepl",
+        "chatgpt"
+      ],
+      "answer": "第三者の人手評価 WMT25 の英→日で、Gemini 2.5 Pro が機械翻訳の中で最高の85.8（人の翻訳は89.2、GPT-4.1 は83.7）。DeepL は自社の2026年3月のブラインドテストで、GPT-5.2・Gemini 3.1 Pro などとの比較の94%に勝ったと公表しています。どちらも評価対象は現行より前のモデルです。",
+      "evidence": [
+        {
+          "kind": "third_party",
+          "name": "WMT25 General Machine Translation（人手評価）",
+          "url": "https://aclanthology.org/2025.wmt-1.22/",
+          "date": "2026-10-01",
+          "note": "英→日：人の翻訳 89.2、Gemini-2.5-Pro 85.8、Mistral-Medium 84.8、GPT-4.1 83.7、Claude-4 79.3、匿名の翻訳サービス ONLINE-B 78.0。全体の最良システムは Gemini 2.5 Pro（2025年11月公表）"
+        },
+        {
+          "kind": "official",
+          "name": "DeepL Translation Quality",
+          "url": "https://www.deepl.com/en/quality",
+          "date": "2026-10-01",
+          "note": "2026年3月のブラインドテスト（16言語ペア・48,000件の評価）で80組中75組に勝利。比較相手は GPT-5.2・Gemini 3.1 Pro・Claude Opus 4.6・Google 翻訳・Microsoft Translator。DeepL 自身による公表"
+        }
+      ]
+    },
+    {
+      "id": "best-value",
+      "question": "コスパで選ぶなら",
+      "pick": "mirai-translate",
+      "runner_up": [
+        "deepl"
+      ],
+      "answer": "みらい翻訳 Plus の Starter は1ユーザー月495円（年払い・税込）で、テキスト翻訳は20,000文字まで（1日の文字量の制限なし）、ファイル翻訳も月10件で、入力は二次利用されません。文字数の多い仕事なら DeepL の Individual（月1,150円・年払い・税込、月30万文字）。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "みらい翻訳 Plus 料金プラン",
+          "url": "https://plus.miraitranslate.com/",
+          "date": "2026-10-01",
+          "note": "Starter 495円 1ユーザー/月換算（税込）、テキスト翻訳20,000文字まで・文字量制限なし、月10ファイル、投入文章の二次利用なし"
+        },
+        {
+          "kind": "official",
+          "name": "DeepL Pro 料金",
+          "url": "https://www.deepl.com/ja/pro",
+          "date": "2026-10-01",
+          "note": "Individual ￥1,150（月額換算・年払い・税込）、1か月30万文字、ファイル翻訳月3件"
+        }
+      ]
+    },
+    {
+      "id": "free",
+      "question": "無料で使うなら",
+      "pick": "google-translate",
+      "runner_up": [
+        "deepl",
+        "mirai-translate"
+      ],
+      "answer": "Google 翻訳は約250言語に対応し、テキストは一度に5,000文字まで、Word・PDF などのファイルも10MBまで無料で訳せます。DeepL の無料版は月50,000文字までですが、入力は学習に使われます。社外秘を無料で訳すなら、入力を二次利用しない みらい翻訳 Plus の Free プランです。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Google 翻訳 20周年（Google 公式ブログ）",
+          "url": "https://blog.google/products-and-platforms/products/translate/fun-facts-google-translate-20-years/",
+          "date": "2026-10-01",
+          "note": "約250言語に対応（2026-04-28）"
+        },
+        {
+          "kind": "official",
+          "name": "Google 翻訳ヘルプ：ドキュメントやウェブサイトを翻訳する",
+          "url": "https://support.google.com/translate/answer/2534559?hl=ja",
+          "date": "2026-10-01",
+          "note": ".docx・.pdf・.pptx・.xlsx を最大10MBまで（PDF は300ページ以下）"
+        },
+        {
+          "kind": "official",
+          "name": "DeepL 個人情報保護方針",
+          "url": "https://www.deepl.com/en/privacy",
+          "date": "2026-10-01",
+          "note": "無料版の入力と訳文は一定期間、学習と改善に使う"
+        },
+        {
+          "kind": "official",
+          "name": "みらい翻訳 Plus",
+          "url": "https://plus.miraitranslate.com/",
+          "date": "2026-10-01",
+          "note": "Free：テキスト翻訳5,000文字まで、投入文章の二次利用なし"
+        }
+      ]
+    },
+    {
+      "id": "business",
+      "question": "会社で安全に使うなら（入力が学習に使われない・管理機能）",
+      "pick": "deepl",
+      "runner_up": [
+        "mirai-translate",
+        "microsoft-translator"
+      ],
+      "answer": "DeepL Pro は訳した文章を学習に使わず、翻訳後に削除します。Team（1人月3,750円・年払い・税込）でチーム管理（50名以上なら SSO も）、Business で用語集無制限と翻訳メモリが使えます。国内企業の みらい翻訳 も、無料プランを含めて入力を二次利用しません。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "DeepL Pro 料金",
+          "url": "https://www.deepl.com/ja/pro",
+          "date": "2026-10-01",
+          "note": "有料プランに「データの訓練に使用されない」。Team ￥3,750（年払い・税込）にチーム管理、SSO は50名以上"
+        },
+        {
+          "kind": "official",
+          "name": "DeepL 個人情報保護方針",
+          "url": "https://www.deepl.com/en/privacy",
+          "date": "2026-10-01",
+          "note": "Pro・API Pro・Write Pro の文章は翻訳後に削除し、品質改善に使わない"
+        },
+        {
+          "kind": "official",
+          "name": "みらい翻訳 Plus",
+          "url": "https://plus.miraitranslate.com/",
+          "date": "2026-10-01",
+          "note": "無料プランでも二次利用なし、翻訳完了時にサーバーから削除、ISO27001"
+        }
+      ]
+    },
+    {
+      "id": "developer",
+      "question": "APIで組み込むなら",
+      "pick": "microsoft-translator",
+      "runner_up": [
+        "google-translate",
+        "deepl"
+      ],
+      "answer": "Microsoft Translator の API は毎月200万文字まで無料で、超過分は100万文字あたり$10、送った文章は保存されません。Google の Cloud Translation は毎月50万文字まで無料で以降$20、DeepL API は月3,025円（年払い・税込）に年1,200万文字が含まれます。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Azure Translator 料金",
+          "url": "https://azure.microsoft.com/en-us/pricing/details/translator/",
+          "date": "2026-10-01",
+          "note": "F0：月200万文字まで無料、S1 テキスト翻訳 $10 per million characters"
+        },
+        {
+          "kind": "official",
+          "name": "Azure Translator のデータ・プライバシー",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/responsible-ai/translator/data-privacy-security",
+          "date": "2026-10-01",
+          "note": "テキスト翻訳は顧客データを保存しない"
+        },
+        {
+          "kind": "official",
+          "name": "Cloud Translation 料金",
+          "url": "https://cloud.google.com/translate/pricing",
+          "date": "2026-10-01",
+          "note": "毎月50万文字まで無料、超過は100万文字あたり $20.00（NMT）"
+        },
+        {
+          "kind": "official",
+          "name": "DeepL API 料金",
+          "url": "https://www.deepl.com/ja/pro",
+          "date": "2026-10-01",
+          "note": "Growth ￥3,025（月額・年払い）＋追加文字数 ￥2,750 / 1,000,000"
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "deepl",
+      "name": "DeepL",
+      "vendor": "DeepL SE",
+      "url": "https://www.deepl.com/ja/translator",
+      "status": "featured",
+      "rank": 1,
+      "segment": "service",
+      "tags": [
+        "DeepL"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web",
+        "app",
+        "desktop",
+        "extension",
+        "api"
+      ],
+      "strengths": [
+        "Pro は訳文を学習に使わず、翻訳後に削除",
+        "用語集・PDF などのファイル翻訳に対応",
+        "円建て。Individual は年払いで月1,150円"
+      ],
+      "weaknesses": [
+        "無料版の入力は学習に使われる（期間限定）",
+        "無料版のファイル翻訳は月1件・5MBまで"
+      ],
+      "editorial_take": "翻訳専用サービスの定番。社外秘の文書を訳すなら、学習に使わない Pro（Individual 以上）を選ぶ。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "1か月50,000文字、ファイル翻訳は月1件（5MBまで）、用語集1個",
+          "source_url": "https://www.deepl.com/ja/pro",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Individual",
+            "amount": 1150,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "￥1,150 月額換算料金、年払い（月払いは ￥1,380）",
+            "detail": "1か月30万文字、ファイル翻訳月3件（30MBまで）、データの訓練に使用されない",
+            "source_url": "https://www.deepl.com/ja/pro",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Team",
+            "amount": 3750,
+            "currency": "JPY",
+            "per": "seat_month",
+            "as_shown": "￥3,750 ユーザー1人あたりの月額換算料金（年払い。月払いは ￥4,500）",
+            "detail": "1か月100万文字、ファイル翻訳月20件、用語集5個、チーム管理、SSO（50名以上）",
+            "source_url": "https://www.deepl.com/ja/pro",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Business",
+            "amount": 7500,
+            "currency": "JPY",
+            "per": "seat_month",
+            "as_shown": "￥7,500 ユーザー1人あたりの月額換算料金（年払い。月払いは ￥9,000）",
+            "detail": "文字数制限なし、ファイル翻訳月100件、用語集無制限、翻訳メモリ、SCIM、Write Pro",
+            "source_url": "https://www.deepl.com/ja/pro",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "API Growth",
+            "amount": 3025,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "￥3,025 月額、年払い + ご利用分の料金",
+            "detail": "1年に1,200万文字を含む。API の無料プラン（Developer）は1回限り100万文字",
+            "source_url": "https://www.deepl.com/ja/pro",
+            "checked": "2026-10-01"
+          }
+        ],
+        "usage": {
+          "unit": "100万文字",
+          "amount": 2750,
+          "currency": "JPY",
+          "as_shown": "追加文字数：￥2,750 / 1,000,000",
+          "detail": "API Growth プランの超過分",
+          "source_url": "https://www.deepl.com/ja/pro",
+          "checked": "2026-10-01"
+        },
+        "jpy_official": true,
+        "note": "料金ページの価格は消費税込み（日本を選んだときの表示）。"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "yes",
+        "note": "API の対応言語に Japanese（JA）。料金ページ・サイトは日本語で表示",
+        "source_url": "https://developers.deepl.com/docs/getting-started/supported-languages",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "used",
+        "note": "無料版は入力と訳文を一定期間、ニューラルネットワークの学習と改善に使う。Pro・API Pro・Write Pro は翻訳後に削除し、品質改善に使わない",
+        "source_url": "https://www.deepl.com/en/privacy",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "日本を選ぶと円建て・税込で表示し申し込める",
+        "source_url": "https://www.deepl.com/ja/pro",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "google-translate",
+      "name": "Google 翻訳",
+      "vendor": "Google",
+      "url": "https://translate.google.com/",
+      "status": "featured",
+      "rank": 2,
+      "segment": "service",
+      "tags": [
+        "Google",
+        "Gemini"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Gemini 3.5 Live Translate（音声翻訳）",
+        "released": "2026-06-09",
+        "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-live-3-5-translate/",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web",
+        "app",
+        "extension",
+        "api"
+      ],
+      "strengths": [
+        "約250言語に対応（2026年4月の公式ブログ）",
+        "音声のライブ翻訳は70以上の言語",
+        "API は送信した文章を学習に使わない"
+      ],
+      "weaknesses": [
+        "貼り付けて訳せるのは一度に5,000文字まで",
+        "無料版の入力の扱いは公式の記載見つからず"
+      ],
+      "editorial_take": "無料で言語数が多く、文書ファイルやWebサイトもそのまま訳せる。組み込むなら Cloud Translation API。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "テキストは一度に5,000文字まで。.docx・.pdf・.pptx・.xlsx を10MBまで（PDF は300ページ以下）翻訳",
+          "source_url": "https://support.google.com/translate/answer/2534559?hl=ja",
+          "checked": "2026-10-01"
+        },
+        "plans": [],
+        "usage": {
+          "unit": "100万文字",
+          "amount": 20,
+          "currency": "USD",
+          "as_shown": "$20.00（Over 500,000 characters per month）",
+          "detail": "Cloud Translation API（NMT）。毎月50万文字までは無料（$10 のクレジット）。翻訳用 LLM は入力・出力とも100万文字あたり$10",
+          "source_url": "https://cloud.google.com/translate/pricing",
+          "checked": "2026-10-01"
+        },
+        "jpy_official": false,
+        "note": ""
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "yes",
+        "note": "ヘルプは日本語。Cloud Translation の対応言語一覧にも Japanese",
+        "source_url": "https://support.google.com/translate/answer/6142478?hl=ja",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "unknown",
+        "note": "Cloud Translation API は送信内容を翻訳の学習・改善に使わない。無料の Web・アプリ版の学習利用については公式の記載を見つけられず",
+        "source_url": "https://cloud.google.com/translate/data-usage",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "microsoft-translator",
+      "name": "Microsoft Translator",
+      "vendor": "Microsoft",
+      "url": "https://www.microsoft.com/ja-jp/translator/",
+      "status": "featured",
+      "rank": 3,
+      "segment": "service",
+      "tags": [
+        "Microsoft"
+      ],
+      "model_slugs": [],
+      "access": [
+        "app",
+        "desktop",
+        "api"
+      ],
+      "strengths": [
+        "API は月200万文字まで無料（F0）",
+        "API は送った文章を保存しない",
+        "超過分は100万文字あたり$10"
+      ],
+      "weaknesses": [
+        "文書ファイルの翻訳は100万文字あたり$15"
+      ],
+      "editorial_take": "API の単価が安く、無料枠も毎月使える。社内システムに翻訳を組み込む用途向け。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "API の F0：標準翻訳とカスタム翻訳の学習を合わせて月200万文字まで無料",
+          "source_url": "https://azure.microsoft.com/en-us/pricing/details/translator/",
+          "checked": "2026-10-01"
+        },
+        "plans": [],
+        "usage": {
+          "unit": "100万文字",
+          "amount": 10,
+          "currency": "USD",
+          "as_shown": "$10 per million characters",
+          "detail": "S1（従量課金）のテキスト翻訳。文書翻訳は $15 per million characters",
+          "source_url": "https://azure.microsoft.com/en-us/pricing/details/translator/",
+          "checked": "2026-10-01"
+        },
+        "jpy_official": false,
+        "note": ""
+      },
+      "japanese": {
+        "ui": "unknown",
+        "output": "yes",
+        "note": "Translator の対応言語一覧に Japanese",
+        "source_url": "https://learn.microsoft.com/en-us/azure/ai-services/translator/language-support",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "not_used",
+        "note": "テキスト翻訳は顧客データを保存しない。文書翻訳は処理中だけ一時保存し、処理後に完全に削除（No Trace）",
+        "source_url": "https://learn.microsoft.com/en-us/azure/ai-foundry/responsible-ai/translator/data-privacy-security",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "mirai-translate",
+      "name": "みらい翻訳",
+      "vendor": "株式会社みらい翻訳",
+      "url": "https://miraitranslate.com/",
+      "status": "featured",
+      "rank": 4,
+      "segment": "service",
+      "tags": [
+        "みらい翻訳"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web",
+        "extension",
+        "api"
+      ],
+      "strengths": [
+        "無料プランでも入力を二次利用しない",
+        "NTT・NICT の支援で日本語に特化して開発",
+        "Plus は月495円から（年払い・税込）"
+      ],
+      "weaknesses": [
+        "Plus の対応言語は14言語",
+        "組織向けの FLaT は月25万円から"
+      ],
+      "editorial_take": "社外秘を扱うが予算は抑えたい個人・小さなチームに。大きな組織は ID 数無制限の FLaT を問い合わせる。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "Free：テキスト翻訳は5,000文字まで（1日の量に制限あり）、ファイル翻訳は月1件（25MBまで）、用語集",
+          "source_url": "https://plus.miraitranslate.com/",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Plus Starter",
+            "amount": 495,
+            "currency": "JPY",
+            "per": "seat_month",
+            "as_shown": "495円 1ユーザー / 月換算（税込）",
+            "detail": "年払い。テキスト翻訳は20,000文字まで（量の制限なし）、ファイル翻訳月10件、Web サイト翻訳（Chrome 拡張）",
+            "source_url": "https://plus.miraitranslate.com/",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Plus Standard",
+            "amount": 2475,
+            "currency": "JPY",
+            "per": "seat_month",
+            "as_shown": "2,475円 1ユーザー / 月換算（税込）",
+            "detail": "年払い。テキスト翻訳の文字数無制限、ファイル翻訳月30件",
+            "source_url": "https://plus.miraitranslate.com/",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Plus Premium",
+            "amount": 4950,
+            "currency": "JPY",
+            "per": "seat_month",
+            "as_shown": "4,950円 1ユーザー / 月換算（税込）",
+            "detail": "年払い。ファイル翻訳月120件",
+            "source_url": "https://plus.miraitranslate.com/",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "FLaT（組織向け）",
+            "amount": 250000,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "翻訳量・ID数無制限 25万円〜/月",
+            "detail": "20言語。SSO・音声翻訳・API はオプション",
+            "source_url": "https://miraitranslate.com/text-translate/flat/",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": true,
+        "note": "Plus の価格は年払いの月換算（加入日から1年ごとに自動更新）。月払いも選べる。"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "yes",
+        "note": "日本語・英語・中国語（簡・繁）・韓国語など14言語（Plus）",
+        "source_url": "https://plus.miraitranslate.com/",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "not_used",
+        "note": "無料プランでも入力文を二次利用せず、翻訳完了時にサーバーから削除（技術的な問題があった場合のみ最大72時間保存）",
+        "source_url": "https://plus.miraitranslate.com/",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "国内向けに円建て・税込で提供",
+        "source_url": "https://plus.miraitranslate.com/",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "vendor": "Google",
+      "url": "https://gemini.google/",
+      "status": "featured",
+      "rank": 5,
+      "segment": "assistant",
+      "tags": [
+        "Gemini"
+      ],
+      "model_slugs": [
+        "gemini-3-8-flash",
+        "gemini-3-1-pro-preview"
+      ],
+      "latest": {
+        "name": "Gemini 3.8 Flash",
+        "released": "2026-09-02",
+        "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web",
+        "app",
+        "desktop"
+      ],
+      "strengths": [
+        "WMT25 英→日で 2.5 Pro が機械翻訳の最高点",
+        "無料版でも 3.1 Pro（制限あり）",
+        "円建て。AI Pro は月2,900円"
+      ],
+      "weaknesses": [
+        "評価された 2.5 Pro は現行より前のモデル",
+        "会話の一部を人が確認する（既定の設定）"
+      ],
+      "editorial_take": "訳の自然さを公開評価で選ぶなら最有力。前後の文脈や用途を伝えて訳させたいときに向く。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "3.6 Flash、3.1 Pro（制限あり）、Deep Research、Gemini Live",
+          "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Google AI Plus",
+            "amount": 725,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "￥725 JPY / 月",
+            "detail": "無料版の2倍の使用量上限、Gemini in Gmail",
+            "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Google AI Pro",
+            "amount": 2900,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "￥2,900 JPY / 月",
+            "detail": "無料版の4倍の使用量上限、Gemini in Gmail・Google ドキュメント、5TB",
+            "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": true,
+        "note": ""
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "yes",
+        "note": "Gemini ウェブアプリの対応言語一覧に日本語",
+        "source_url": "https://support.google.com/gemini/answer/13575153?hl=en",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "Google 利用規約で、生成されたオリジナルのコンテンツの所有権を Google は主張しない。生成AI禁止使用ポリシーの遵守が条件",
+        "source_url": "https://policies.google.com/terms?hl=en",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "opt_out_available",
+        "note": "既定では会話がサービス改善に使われ、一部は人が確認する。「アクティビティを保持」をオフにすると今後の会話は使われない",
+        "source_url": "https://support.google.com/gemini/answer/13594961?hl=en",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "Gemini ウェブアプリの対応国一覧に日本",
+        "source_url": "https://support.google.com/gemini/answer/13575153?hl=en",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "vendor": "OpenAI",
+      "url": "https://chatgpt.com/",
+      "status": "featured",
+      "rank": 6,
+      "segment": "assistant",
+      "tags": [
+        "ChatGPT",
+        "GPT-6.1"
+      ],
+      "model_slugs": [
+        "gpt-6-1-sol",
+        "gpt-6-astra",
+        "gpt-6-luna"
+      ],
+      "latest": {
+        "name": "GPT-6.1 Sol",
+        "released": "2026-09-29",
+        "source_url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web",
+        "app",
+        "desktop"
+      ],
+      "strengths": [
+        "翻訳専用画面（Translate with ChatGPT）",
+        "WMT25 英→日で GPT-4.1 が83.7（旧モデル）",
+        "無料版でもテキストチャットは無制限"
+      ],
+      "weaknesses": [
+        "翻訳画面の会話も学習に使われる場合あり",
+        "無料版と Go では GPT-6 系モデルを使えない"
+      ],
+      "editorial_take": "訳したあとに「もっと丁寧に」「やさしく」と言い換えまで頼める。社外秘を訳すなら学習利用をオフにするか Business を使う。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "GPT-5.6 Luna でのテキストチャットは無制限",
+          "source_url": "https://chatgpt.com/ja-JP/pricing/",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Go",
+            "amount": 1400,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "￥1,400 / 月",
+            "detail": "メッセージ・アップロードの上限を拡大。広告が表示される場合あり",
+            "source_url": "https://chatgpt.com/ja-JP/pricing/",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Plus",
+            "amount": 3000,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "￥3,000 / 月",
+            "detail": "GPT-6 Astra・GPT-6.1 Sol（上限あり）、Excel・Word・PowerPoint 向けの拡張機能",
+            "source_url": "https://chatgpt.com/ja-JP/pricing/",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Business（標準シート）",
+            "amount": 3050,
+            "currency": "JPY",
+            "per": "seat_month",
+            "as_shown": "￥3,050 / 月（年額課金。月額課金は ￥3,850 / 月）",
+            "detail": "プレミアムシート（標準の5倍の利用枠）は ￥15,250 / 月（年額課金）",
+            "source_url": "https://chatgpt.com/ja-JP/pricing/",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": true,
+        "note": "日本からの表示は円建て（チャットAIガイドと同じ料金ページ）。"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "yes",
+        "note": "ヘルプの対応言語一覧に日本語。料金ページも日本語・円で表示",
+        "source_url": "https://help.openai.com/en/articles/8357869-how-to-change-your-language-setting-in-chatgpt",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "利用規約で出力の権利は利用者に帰属（OpenAI が権利を譲渡）",
+        "source_url": "https://openai.com/policies/terms-of-use/",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "opt_out_available",
+        "note": "個人プランは設定「すべての人のためにモデルを改善する」をオフにすると、新しい会話は学習に使われない。Business・Enterprise は既定で学習に使わない",
+        "source_url": "https://help.openai.com/en/articles/7730893-data-controls-faq",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "公式の提供国一覧に日本",
+        "source_url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "vendor": "Anthropic",
+      "url": "https://claude.ai/",
+      "status": "featured",
+      "rank": 7,
+      "segment": "assistant",
+      "tags": [
+        "Claude",
+        "Claude Opus 5.5"
+      ],
+      "model_slugs": [
+        "claude-opus-5-5",
+        "claude-fable-5-1"
+      ],
+      "latest": {
+        "name": "Claude Opus 5.5",
+        "released": "2026-09-22",
+        "source_url": "https://www.anthropic.com/claude-opus-5-5",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web",
+        "app",
+        "desktop"
+      ],
+      "strengths": [
+        "LMArena 日本語部門の1・2位は Claude",
+        "Team は既定で入力を学習に使わない"
+      ],
+      "weaknesses": [
+        "WMT25 英→日で Claude 4 は79.3（旧版）",
+        "料金は米ドル表示"
+      ],
+      "editorial_take": "日本語として自然な文に整える力は公開評価で上位。翻訳そのものの公開評価（WMT25）では旧モデルが Gemini・GPT に届いていない。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "Web・デスクトップ・モバイルでチャット、ファイル作成。モデルは Sonnet と Haiku",
+          "source_url": "https://claude.com/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Pro",
+            "amount": 17,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$17 Per month with annual subscription discount ($200 billed up front). $20 if billed monthly.",
+            "detail": "Opus 5.5、Projects、Claude for Microsoft 365",
+            "source_url": "https://claude.com/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Team（標準シート）",
+            "amount": 20,
+            "currency": "USD",
+            "per": "seat_month",
+            "as_shown": "$20 Per seat / month if billed annually. $25 if billed monthly.",
+            "detail": "2〜150人。既定でコンテンツを学習に使わない。SSO",
+            "source_url": "https://claude.com/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": "米国からの表示は税別。日本から開くと消費税10%込みの米ドル表示（Pro は年払い $18・月払い $22、Team 標準シートは年払い $22・月払い $27.50）。"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "yes",
+        "note": "ヘルプの対応言語に日本語",
+        "source_url": "https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "消費者向け規約で出力の権利を利用者に譲渡（4条）",
+        "source_url": "https://www.anthropic.com/legal/consumer-terms",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "opt_out_available",
+        "note": "Free・Pro・Max は設定で学習利用をオフにできる（Opt-out）。Team・Enterprise は既定で学習に使わない",
+        "source_url": "https://claude.com/pricing",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "公式の提供国・地域一覧に日本",
+        "source_url": "https://www.anthropic.com/supported-countries",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "amazon-translate",
+      "name": "Amazon Translate",
+      "vendor": "Amazon Web Services",
+      "url": "https://aws.amazon.com/translate/",
+      "status": "listed",
+      "rank": 20,
+      "segment": "service",
+      "tags": [
+        "Amazon"
+      ],
+      "model_slugs": [],
+      "access": [
+        "api"
+      ],
+      "editorial_take": "AWS の翻訳API。AWS 上のシステムに組み込むなら候補。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "AWS 無料利用枠：最初の翻訳から12か月間、月200万文字まで",
+          "source_url": "https://aws.amazon.com/translate/pricing/",
+          "checked": "2026-10-01"
+        },
+        "plans": [],
+        "usage": {
+          "unit": "100万文字",
+          "amount": 15,
+          "currency": "USD",
+          "as_shown": "$15.00 per million characters",
+          "detail": "標準のテキスト翻訳",
+          "source_url": "https://aws.amazon.com/translate/pricing/",
+          "checked": "2026-10-01"
+        },
+        "jpy_official": false,
+        "note": ""
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "voicetra",
+      "name": "VoiceTra",
+      "vendor": "情報通信研究機構（NICT）",
+      "url": "https://voicetra.nict.go.jp/",
+      "status": "listed",
+      "rank": 21,
+      "segment": "service",
+      "tags": [
+        "VoiceTra"
+      ],
+      "model_slugs": [],
+      "access": [
+        "app"
+      ],
+      "editorial_take": "話しかけると訳して読み上げる音声翻訳アプリ。旅行者の試用を想定した研究用で、33言語に対応。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "ダウンロード・利用とも無料（通信料は利用者負担）。研究目的のサーバーを使用",
+          "source_url": "https://voicetra.nict.go.jp/",
+          "checked": "2026-10-01"
+        },
+        "plans": [],
+        "jpy_official": false,
+        "note": ""
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    }
+  ],
   "criteria": [
     {
       "name": "訳文の自然さと専門用語",
@@ -60,15 +953,56 @@
       "how_to_check": "公式の対応言語一覧を確認する"
     }
   ],
-  "benchmarks": [],
-  "faq": [],
+  "benchmarks": [
+    {
+      "id": "wmt25-general-mt",
+      "name": "WMT25 General Machine Translation（人手評価）",
+      "operator": "WMT（Conference on Machine Translation）",
+      "url": "https://aclanthology.org/2025.wmt-1.22/",
+      "what": "毎年開かれる機械翻訳の国際評価。プロの評価者が誤り箇所に印を付ける方式（ESA）で、英→日を含む言語ペアを人手で採点",
+      "snapshot": "英→日：人の翻訳 89.2、Gemini-2.5-Pro 85.8、Algharb 85.7、Mistral-Medium 84.8、GPT-4.1 83.7、Claude-4 79.3、ONLINE-B（匿名の翻訳サービス）78.0。全体の最良は Gemini 2.5 Pro（2025年11月公表）。WMT26 は2026年6〜7月に投稿を受け付け、結果は未公表（2026-10-01確認）",
+      "checked": "2026-10-01"
+    },
+    {
+      "id": "deepl-blind-test-2026",
+      "name": "DeepL ブラインドテスト（2026年3月）",
+      "operator": "DeepL（自社公表）",
+      "url": "https://www.deepl.com/en/quality",
+      "what": "プロの母語話者が訳文を見比べる比較。16言語ペア・48,000件の評価",
+      "snapshot": "DeepL が80組中75組（94%）で勝利。比較相手は GPT-5.2・Gemini 3.1 Pro・Claude Opus 4.6・Google 翻訳・Microsoft Translator。相手ごとに評価の回が異なり、相手どうしの比較はできないと注記（2026-10-01確認）",
+      "checked": "2026-10-01"
+    }
+  ],
+  "faq": [
+    {
+      "q": "いちばん正確な翻訳AIはどれですか？",
+      "a": "第三者の人手評価 WMT25（2025年11月公表）の英→日では、Gemini 2.5 Pro が機械翻訳の中で最高点（85.8、人の翻訳は89.2）でした。DeepL は自社の2026年3月のブラインドテストで、GPT-5.2・Gemini 3.1 Pro などとの比較の94%に勝ったとしています。どちらも現行より前のモデルの評価で、WMT26 の結果はまだ公表されていません（2026年10月1日確認）。"
+    },
+    {
+      "q": "無料で使える翻訳サービスは？",
+      "a": "Google 翻訳（テキストは一度に5,000文字、ファイルは10MBまで）、DeepL の無料版（月50,000文字、ファイルは月1件）、みらい翻訳 Plus の Free プラン（5,000文字まで）、ChatGPT・Gemini・Claude の無料版があります。音声の会話なら、NICT の VoiceTra（33言語）も無料です。"
+    },
+    {
+      "q": "翻訳した文章が学習に使われないのはどれですか？",
+      "a": "DeepL Pro（有料プラン）、みらい翻訳（無料プランを含む）、Microsoft Translator・Google Cloud Translation の API は、入力を学習に使わないと公式に明記しています。DeepL の無料版は入力を一定期間学習に使います。ChatGPT・Claude・Gemini の個人向けプランは、設定で学習利用をオフにできます。"
+    },
+    {
+      "q": "Word や PDF をレイアウトを保ったまま訳せますか？",
+      "a": "DeepL は Individual で月3件（30MBまで）、Business で月100件のファイルを訳せます。みらい翻訳 Plus は PDF・PowerPoint・Word・Excel に対応し、書式を保ったまま訳文を編集できます（Free は月1件）。Google 翻訳も .docx・.pdf・.pptx・.xlsx を10MBまで無料で訳せます。"
+    },
+    {
+      "q": "API の料金はどれくらいですか？",
+      "a": "100万文字あたり、Microsoft Translator は$10（毎月200万文字まで無料）、Google Cloud Translation は$20（毎月50万文字まで無料）、Amazon Translate は$15（12か月間は毎月200万文字まで無料）です。DeepL API は月3,025円（年払い・税込）に年1,200万文字が含まれ、超過は100万文字あたり2,750円です。"
+    }
+  ],
   "related": {
     "tags": [
       "翻訳",
       "DeepL",
       "ChatGPT",
       "Gemini",
-      "Claude"
+      "Claude",
+      "Google"
     ],
     "guides": [
       "writing",
@@ -77,29 +1011,18 @@
     ],
     "articles": []
   },
-  "changelog": [],
+  "changelog": [
+    {
+      "date": "2026-10-01",
+      "text": "初回公開",
+      "by": "researcher"
+    }
+  ],
   "editor_note": "",
   "embed_models": false,
   "research_plan": {
-    "_comment": "調査担当向けのメモ（表示しない）。candidates は編集部の初期案＝製品名の候補であって事実ではない。公式サイトで現行の名称・存在を確認し、無いものは外し、新しいものを足す。published にする前に candidates と verdict_questions を空にし、notes を消す",
-    "candidates": [
-      "DeepL",
-      "Google 翻訳",
-      "ChatGPT（OpenAI）",
-      "Claude（Anthropic）",
-      "Gemini（Google）",
-      "Microsoft Translator／Copilot",
-      "みらい翻訳",
-      "Amazon Translate",
-      "Papago（NAVER）"
-    ],
-    "verdict_questions": [
-      "best-quality",
-      "best-value",
-      "free",
-      "business",
-      "developer"
-    ],
-    "notes": "日本の翻訳サービス（みらい翻訳など）は円建て・法人契約が中心。個人向け価格が公式に無ければ as_shown を「要問い合わせ」にする。"
+    "candidates": [],
+    "verdict_questions": [],
+    "notes": ""
   }
 }
