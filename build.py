@@ -609,8 +609,10 @@ def guide_pages(arts: list[dict], models: list[dict], now: datetime) -> tuple[li
                 continue
             chk = guides_mod.parse_day(p.get("checked", ""))
             p["_stale"] = bool(chk and (now.date() - chk).days > guides_mod.STALE_FACT_DAYS)
-            plans = [pl for pl in (p.get("pricing") or {}).get("plans") or [] if pl.get("amount") is not None]
-            p["_min_plan"] = min(plans, key=lambda pl: pl["amount"]) if plans else None
+            plans = [pl for pl in (p.get("pricing") or {}).get("plans") or [] if pl.get("amount")]
+            # 通貨をまたいで数字だけで比べない（¥1,400 より $500 を安いと判定していた）。円があれば円、なければドル
+            pool = [pl for pl in plans if pl.get("currency") == "JPY"] or [pl for pl in plans if pl.get("currency", "USD") == "USD"] or plans
+            p["_min_plan"] = min(pool, key=lambda pl: pl["amount"]) if pool else None
             p["_models"] = [model_by_slug[s] for s in p.get("model_slugs") or [] if s in model_by_slug]
             p["_facts"] = []
             for fname, f in guides_mod.iter_facts(p):
@@ -893,6 +895,13 @@ def build(now: datetime | None = None) -> None:
     write("/sitemap.xml", sitemap(arts, by_cat, by_tag, by_month, models, now, guides))
     write("/news-sitemap.xml", news_sitemap(arts, now))
     write("/robots.txt", robots())
+    # ホーム画面に追加したときにアプリのように開く（PWA）
+    write("/manifest.webmanifest", json.dumps({
+        "name": SITE["site_name"], "short_name": SITE["site_name"], "description": SITE["tagline"],
+        "start_url": u("/"), "scope": u("/"), "display": "standalone", "background_color": "#ffffff", "theme_color": "#ffffff", "lang": "ja",
+        "icons": [{"src": u("/assets/apple-touch-icon.png"), "sizes": "180x180", "type": "image/png"},
+                  {"src": u("/assets/icon-512.png"), "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}],
+    }, ensure_ascii=False))
     write("/llms.txt", llms(arts, models, guides))
     if SITE.get("indexnow_key"):
         write(f"/{SITE['indexnow_key']}.txt", SITE["indexnow_key"])

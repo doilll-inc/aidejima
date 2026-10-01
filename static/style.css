@@ -2096,3 +2096,191 @@ a:hover {
   flex: none;
   white-space: nowrap;
 }
+
+/* ---------- スマホ（アプリのような操作感） ---------- */
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+a,
+button {
+  touch-action: manipulation;
+}
+.search-icon,
+.tabbar {
+  display: none;
+}
+.tabbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  justify-content: space-around;
+  padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+  background: rgba(255, 255, 255, 0.96);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  backdrop-filter: saturate(180%) blur(14px);
+  border-top: 1px solid var(--line);
+}
+.tabbar a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 64px;
+  padding: 4px 6px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--muted);
+}
+.tabbar a[aria-current="page"] {
+  color: var(--accent-text);
+}
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 104px;
+  }
+  body {
+    padding-bottom: calc(66px + env(safe-area-inset-bottom));
+  }
+  .topbar {
+    display: none;
+  }
+  .masthead {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(255, 255, 255, 0.94);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    backdrop-filter: saturate(180%) blur(14px);
+  }
+  .masthead-inner {
+    padding-top: 8px;
+    padding-bottom: 6px;
+  }
+  .logo .fan {
+    width: 26px;
+    height: 26px;
+  }
+  .logo-text {
+    font-size: 21px;
+  }
+  .search-mini {
+    display: none;
+  }
+  .search-icon {
+    display: grid;
+    place-items: center;
+    margin-left: auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--ink);
+  }
+  .catnav a {
+    padding: 9px 11px;
+    font-size: 13px;
+  }
+  .tabbar {
+    display: flex;
+  }
+  .crumbs {
+    display: none;
+  }
+  .day-label {
+    position: static;
+  }
+  .post-head {
+    padding-top: 14px;
+  }
+  .post-eyecatch img {
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
+  }
+  .sidebar-article {
+    display: none;
+  }
+  .hero-img img {
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
+  }
+  /* 用途別ガイドの比較表は、スマホでは1製品1枚のカードにする（横スクロールさせない） */
+  .guide-table-wrap {
+    overflow: visible;
+    border: 0;
+  }
+  .guide-table thead {
+    display: none;
+  }
+  .guide-table,
+  .guide-table tbody,
+  .guide-table tr,
+  .guide-table th,
+  .guide-table td {
+    display: block;
+    width: 100%;
+  }
+  .guide-table tr {
+    margin: 0 0 12px;
+    padding: 12px 4px 8px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+  .guide-table th,
+  .guide-table td {
+    padding: 4px 12px;
+    border: 0;
+  }
+  .guide-table tbody th {
+    min-width: 0;
+    padding-bottom: 8px;
+  }
+  .guide-table td[data-label] {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    border-top: 1px dashed var(--line);
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+  .guide-table td[data-label]::before {
+    content: attr(data-label);
+    flex: none;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .guide-table td[data-label] > * {
+    text-align: right;
+  }
+  .gt-price,
+  .gt-free {
+    display: inline;
+  }
+  .gt-free {
+    margin-right: 6px;
+  }
+}
+.gt-models a {
+  margin-right: 10px;
+}
+@media (max-width: 640px) {
+  .gt-models {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 6px;
+  }
+  .gt-models a {
+    margin: 0;
+    padding: 2px 8px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 11px;
+    line-height: 1.6;
+  }
+  .guide-table td[data-label="料金"] .gt-free {
+    margin-left: auto;
+  }
+}

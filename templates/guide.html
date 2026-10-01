@@ -55,14 +55,14 @@
                   {% if p.latest and p.latest.name %}<span class="gt-latest">{{ p.latest.name }}{% if p.latest.released %}（{{ p.latest.released }}）{% endif %}</span>{% endif %}
                   {% if p._models %}<span class="gt-models">{% for m in p._models %}<a href="{{ u(m.path) }}">{{ m.name }}の仕様</a>{% endfor %}</span>{% endif %}
                 </th>
-                <td>
+                <td data-label="料金">
                   {% if pr.free %}<span class="gt-free">{% if pr.free.available %}無料あり{% else %}無料なし{% endif %}</span>{% endif %}
                   {% if p._min_plan %}<span class="gt-price" title="{{ p._min_plan.as_shown }}">{{ fmt_price(p._min_plan) }}〜</span>{% elif pr.usage %}<span class="gt-price" title="{{ pr.usage.as_shown }}">{{ fmt_price(pr.usage) }}</span>{% elif pr.plans %}<span class="gt-price">{{ pr.plans[0].as_shown }}</span>{% else %}<span class="gt-price">—</span>{% endif %}
                 </td>
-                <td>{{ fact_cell(p._labels.japanese, p.japanese) }}</td>
-                <td>{{ fact_cell(p._labels.commercial_use, p.commercial_use) }}</td>
-                <td>{{ fact_cell(p._labels.data_policy, p.data_policy) }}</td>
-                <td class="gt-checked">{{ p.checked or '—' }}{% if p._stale %}<span class="gt-recheck">要再確認</span>{% endif %}</td>
+                <td data-label="日本語">{{ fact_cell(p._labels.japanese, p.japanese) }}</td>
+                <td data-label="商用利用">{{ fact_cell(p._labels.commercial_use, p.commercial_use) }}</td>
+                <td data-label="入力の学習利用">{{ fact_cell(p._labels.data_policy, p.data_policy) }}</td>
+                <td class="gt-checked" data-label="確認日">{{ p.checked or '—' }}{% if p._stale %}<span class="gt-recheck">要再確認</span>{% endif %}</td>
               </tr>
               {% endfor %}
             </tbody>
