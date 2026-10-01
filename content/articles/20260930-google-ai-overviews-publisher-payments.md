@@ -3,6 +3,7 @@
   "title": "GoogleのAI回答への対価は約100社のみと報道、SEOは「引用される情報」が軸に",
   "description": "GoogleがAI OverviewsやAI Mode、Geminiで使ったコンテンツの対価を払う相手は約100のパブリッシャーにとどまり、中小サイトでは広告収入の0.1%未満だとThe Informationが報じた。計算方法は非公開だ。",
   "date": "2026-09-30T20:40:00+09:00",
+  "updated": "2026-10-01T16:00:00+09:00",
   "category": "marketing",
   "tags": [
     "Google",
@@ -27,6 +28,21 @@
       "title": "AI in Search is driving more queries and higher quality clicks",
       "publisher": "Google",
       "url": "https://blog.google/products/search/ai-search-driving-more-queries-higher-quality-clicks/"
+    },
+    {
+      "title": "Generative AI performance report (Search)",
+      "publisher": "Google Search Console ヘルプ",
+      "url": "https://support.google.com/webmasters/answer/16984139?hl=en"
+    },
+    {
+      "title": "Commission opens investigation into possible anticompetitive conduct by Google",
+      "publisher": "European Commission",
+      "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_25_2964"
+    },
+    {
+      "title": "EU Competition の投稿（Googleへの独禁法調査の開始）",
+      "publisher": "X @EU_Competition",
+      "url": "https://x.com/EU_Competition/status/1998307177593979264"
     },
     {
       "title": "Google users are less likely to click on links when an AI summary appears in the results",
@@ -98,9 +114,25 @@ The Informationが関係者の話として伝えた内容は次のとおりで�
 
 パブリッシャーが対価を求める背景には、AI回答による流入減があります。米Pew Research Centerが2025年3月の米国成人900人の閲覧データを分析したところ、AI要約が出た検索で通常の検索結果がクリックされたのは8%でした。AI要約が出ない検索の15%のほぼ半分です。要約の中のリンクが押されたのは1%にとどまりました。
 
-Googleは2025年8月の公式ブログで、検索からサイトへの自然クリックの総数は前年比で「比較的安定している」と反論しています。ただ、英国の新聞大手Reachは9月16日、AI要約で流入が落ちたとして編集職220人の削減を発表しました。
+Googleは2025年8月の公式ブログで、検索からサイトへの自然クリックの総数は前年比で比較的安定していると反論しています。
 
-法的な圧力も続いています。2025年9月には米Penske MediaがGoogleを提訴しました。欧州委員会は同年12月に独占禁止法の調査を始め、十分な対価や実質的な拒否手段がないままコンテンツを使っている疑いを調べています。GoogleのAI学習を拒否する設定（Google-Extended）は検索への掲載には影響せず、AI要約から外れるには検索結果の抜粋表示そのものを制限する必要があります。
+:::quote https://blog.google/products/search/ai-search-driving-more-queries-higher-quality-clicks/ | Google公式ブログ「AI in Search is driving more queries and higher quality clicks」
+> Overall, total organic click volume from Google Search to websites has been relatively stable year-over-year.
+全体として、Google検索からウェブサイトへの自然検索のクリック総数は、前年比で比較的安定している。
+:::
+
+ただ、英国の新聞大手Reachは9月16日、AI要約で流入が落ちたとして編集職220人の削減を発表しました。
+
+法的な圧力も続いています。2025年9月には米Penske MediaがGoogleを提訴しました。欧州委員会は同年12月に独占禁止法の調査を始め、十分な対価や実質的な拒否手段がないままコンテンツを使っている疑いを調べています。欧州委員会の競争政策の公式アカウントも、出版社やクリエイターのコンテンツが不公正な条件で使われていないかを調べると投稿しました。
+
+{{x:https://x.com/EU_Competition/status/1998307177593979264}}
+
+GoogleのAI学習を拒否する設定（Google-Extended）は検索への掲載には影響せず、AI要約から外れるには検索結果の抜粋表示そのものを制限する必要があります。Googleのサイト運営者向けドキュメントは、AIは検索と一体だとして、その手段を次のように案内しています。
+
+:::quote https://developers.google.com/search/docs/appearance/ai-features | Google Search Central「AI features and your website」
+> AI is built into Search and integral to how Search functions, which is why robots.txt directives for Googlebot is the control for site owners to manage access to how their sites are crawled for Search. To limit the information shown from your pages in Search, use nosnippet, data-nosnippet, max-snippet, or noindex controls.
+AIは検索に組み込まれ、検索の働きと切り離せない。そのため、サイトが検索のためにどうクロールされるかを管理する手段は、Googlebot向けのrobots.txtの指定になる。検索でページから表示される情報を制限するには、nosnippet、data-nosnippet、max-snippet、noindexを使う。
+:::
 
 ## 反応と論点
 
@@ -116,8 +148,10 @@ The Decoderは、Googleが個別の条件で交渉させることで、パブリ
 
 メディア運営者やSEO担当者が今やれることは3つあります。
 
-- **影響を数字でつかむ**：AI OverviewsやAI Modeからの流入は、Search Consoleの検索パフォーマンス（ウェブ）に通常の検索と合算されて出ます。表示回数は保ったままクリック率だけ落ちたクエリを洗い出すと、AI要約に吸われている範囲が見えてきます。用語解説や手順説明のような情報収集型の検索は、AI要約だけで用が済みやすいと考えられます
+- **影響を数字でつかむ**：AI OverviewsやAI Modeからの流入は、Search Consoleの検索パフォーマンス（ウェブ）に通常の検索と合算されて出ます。生成AI機能で自サイトへのリンクが表示された回数をページ別・国別に見られる「生成AIパフォーマンスレポート」も、8月31日に全世界のサイトへ提供が広がりました。表示回数は保ったままクリック率だけ落ちたクエリを洗い出すと、AI要約に吸われている範囲が見えてきます。用語解説や手順説明のような情報収集型の検索は、AI要約だけで用が済みやすいと考えられます
 - **回答の材料になる情報を持つ**：Googleが対価の基準に挙げたのは鮮度と事実の正確さです。独自の調査データ、価格や仕様の一次情報、更新日の明記、結論を先に置く構成は、AI回答に引用されやすいだけでなく、対価の仕組みが広がった場合の貢献度にもつながります。他サイトの情報をまとめ直しただけの記事は、AI要約に置き換えられやすいと考えられます
 - **Google以外の接点を育てる**：メルマガ、LINE公式アカウント、会員登録など、検索に頼らず読者に直接届く経路を増やします
+
+{{card:https://support.google.com/webmasters/answer/16984139?hl=en|Generative AI performance report (Search)|Google Search Console ヘルプ}}
 
 広告主やアフィリエイト運営者にとっては、比較・まとめ記事への流入が細る可能性があります。記事経由の送客だけに頼らず、指名検索（ブランド名での検索）を増やす施策や、自社サイトで一次情報を出すことが、AI回答の中で名前を挙げてもらう近道になります。AI要約からの離脱を狙ってスニペットを止める設定は、通常の検索での見え方も損なうため、慎重に判断する必要があります。

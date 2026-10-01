@@ -3,6 +3,7 @@
   "title": "Claude Opus 5.5のプロンプトの書き方、Anthropic公式ガイドの要点と変更点",
   "description": "AnthropicはClaude Opus 5.5向けのプロンプト公式ガイドを公開している。思考量はeffortで決め、長時間エージェントの途中停止や貼り付け文の扱いには専用の書き方を勧める。Opus 5から変わった点を実務目線で整理した。",
   "date": "2026-09-30T20:28:00+09:00",
+  "updated": "2026-10-01T16:00:00+09:00",
   "category": "dev",
   "tags": ["Anthropic", "Claude Opus 5.5", "プロンプト", "API", "エージェント", "開発者"],
   "summary": [
@@ -15,6 +16,8 @@
     {"title": "What's new in Claude Opus 5.5", "publisher": "Anthropic", "url": "https://platform.claude.com/docs/en/models/opus-5-5/whats-new-opus-5-5"},
     {"title": "Effort", "publisher": "Anthropic", "url": "https://platform.claude.com/docs/en/build-with-claude/effort"},
     {"title": "Claude Opus 5.5", "publisher": "Anthropic", "url": "https://www.anthropic.com/claude-opus-5-5"},
+    {"title": "Claude Developers の投稿（Opus 5.5で最初に試すこと）", "publisher": "X @ClaudeDevs", "url": "https://x.com/ClaudeDevs/status/2102491840612380934"},
+    {"title": "Simon Willison の投稿", "publisher": "X @simonw", "url": "https://x.com/simonw/status/2102546103984079131"},
     {"title": "Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war", "publisher": "Simon Willison's Weblog", "url": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/"},
     {"title": "Prompting Claude Opus 5.5", "publisher": "Hacker News", "url": "https://news.ycombinator.com/item?id=49874728"}
   ],
@@ -38,7 +41,14 @@ Anthropicは、9月22日に公開した「Claude Opus 5.5」向けのプロン�
 
 ### 1. 思考量はeffortで決める
 
-effort（どれだけ考えてトークンを使うかの設定）が、品質・速度・費用を調整する主な手段になりました。Anthropicの社内評価では、コーディングや知的作業の課題で、Opus 5.5のmediumがOpus 5のhighと同等以上だったといいます。一方で、同じ段階でもOpus 5.5の方が多く考える傾向があり、特にxhighとmaxで顕著です。
+effort（どれだけ考えてトークンを使うかの設定）が、品質・速度・費用を調整する主な手段になりました。
+
+:::quote https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5 | Anthropic公式ドキュメント「Prompting Claude Opus 5.5」
+> Effort is the main control for how much Claude Opus 5.5 thinks, and because thinking is always on, it's the first setting to adjust when trading off intelligence, latency, and cost.
+effortは、Claude Opus 5.5がどれだけ考えるかを決める主な調整手段だ。思考は常にオンなので、知能・遅延・費用のバランスを取るときに最初に調整すべき設定になる。
+:::
+
+Anthropicの社内評価では、コーディングや知的作業の課題で、Opus 5.5のmediumがOpus 5のhighと同等以上だったといいます。一方で、同じ段階でもOpus 5.5の方が多く考える傾向があり、特にxhighとmaxで顕著です。
 
 ガイドは、前モデルの設定を持ち越さず自社の評価で複数段階を試すこと、思考分を見込んで`max_tokens`を大きく取ることを勧めています。思考を減らしたいときは、プロンプトで指示するよりeffortを下げる方が確実だとしています。
 
@@ -46,9 +56,20 @@ effort（どれだけ考えてトークンを使うかの設定）が、品質�
 
 チャット用のシステムプロンプトに「答える前によく考えて」と書いている場合、外すことを検討するよう勧めています。社内テストでは、外しても品質を落とさずに返答が早くなりました。推論を回答本文に書き出させる指示も削除の対象です。この指示は新しい拒否区分の対象になり得るため、推論は要約された思考ブロックから読むよう案内しています。
 
+Anthropicの開発者向けアカウントも公開日にXで、Opus 5.5で最初に試すことの一つとして「think carefully（よく考えて）」の指示を外すよう呼びかけました。常に先に考えるため不要だという理由です。
+
+{{x:https://x.com/ClaudeDevs/status/2102491840612380934}}
+
 ### 3. 無人エージェントの途中停止を防ぐ
 
-Opus 5.5は長い作業の途中で進捗を報告し、そこでターンを終えることがあります。自動で回すエージェントでは、これを「完了」と誤認して止まってしまいます。ガイドは、残タスクをチェックリストで管理し、未完了なら続行を促す短いメッセージを送ることを勧めます。自動の続行は2〜3回までに抑え、本当に行き詰まった場合は人が確認できるようにします。
+Opus 5.5は長い作業の途中で進捗を報告し、そこでターンを終えることがあります。自動で回すエージェントでは、これを「完了」と誤認して止まってしまいます。ガイドの基本の考え方は次の一文です。
+
+:::quote https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5 | Anthropic公式ドキュメント「Prompting Claude Opus 5.5」
+> Treat a text-only end of turn as a report rather than as proof the task is done.
+テキストだけで終わったターンは、作業完了の証拠ではなく、報告として扱うこと。
+:::
+
+ガイドは、残タスクをチェックリストで管理し、未完了なら続行を促す短いメッセージを送ることを勧めます。自動の続行は2〜3回までに抑え、本当に行き詰まった場合は人が確認できるようにします。
 
 ### 4. その他の要点
 
@@ -59,7 +80,9 @@ Opus 5.5は長い作業の途中で進捗を報告し、そこでターンを終
 
 ## 反応と論点
 
-開発者のSimon Willison氏は公開初日のブログで、最上位のmaxで試したところ、思考だけで出力上限の12万8,000トークンを使い切って回答が返らなかったと報告しました。2回試して2回とも失敗し、1回あたり2.56ドルと20分近くかかったといいます。xhighとmaxは効果を測ってから使う、というガイドの注意とも重なります。
+開発者のSimon Willison氏は公開初日のブログで、最上位のmaxで試したところ、思考だけで出力上限の12万8,000トークンを使い切って回答が返らなかったと報告しました。2回試して2回とも失敗し、1回あたり2.56ドルと20分近くかかったといいます。xhighとmaxは効果を測ってから使う、というガイドの注意とも重なります。Willison氏はこの記事をXでも紹介しています。
+
+{{x:https://x.com/simonw/status/2102546103984079131}}
 
 9月28日にHacker Newsに投稿されたガイドには200ポイント超、約220件のコメントが付きました。Willison氏は貼り付け文のタグについて、以前はこの種の防御に懐疑的だったが、Anthropicが学習させているなら機能するかもしれないとコメントしています。一方で、プロンプトの作法が数か月ごとに変わることへの不満や、Opus 5.5の文章が長すぎるという声、思考の中身を読めないことへの批判も出ました。新バージョンのソフトに移行ガイドが付くのと同じだ、と冷静に受け止める意見もあります。
 

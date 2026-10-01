@@ -3,6 +3,7 @@
   "title": "米政府がAIを「Super Intelligence」と改称、AI大手とは拘束力なき自主規制協定",
   "description": "トランプ大統領は9月29日、行政機関にAIを「Super Intelligence（SI）」と呼ぶよう命じる大統領令に署名した。同日、Google、Anthropic、OpenAIなどの経営者と法的拘束力のない安全協定にも署名した。",
   "date": "2026-09-30T20:22:00+09:00",
+  "updated": "2026-10-01T16:00:00+09:00",
   "category": "policy",
   "tags": [
     "米国政府",
@@ -27,6 +28,11 @@
       "title": "Fact Sheet: President Donald J. Trump Inaugurates the Era of Super Intelligence",
       "publisher": "The White House",
       "url": "https://www.whitehouse.gov/fact-sheets/2026/09/fact-sheet-president-donald-j-trump-inaugurates-the-era-of-super-intelligence/"
+    },
+    {
+      "title": "White House Accord on Super Intelligence（協定文と署名ページ）",
+      "publisher": "X @WhiteHouse",
+      "url": "https://x.com/WhiteHouse/status/2105292669303791687"
     },
     {
       "title": "Trump orders US government to call AI 'Super Intelligence'",
@@ -70,20 +76,38 @@
 
 ### 大統領令「Inaugurating The Era Of Super Intelligence」
 
-ホワイトハウスが公開した大統領令の要点は次のとおりです。
+ホワイトハウスが公開した大統領令は、政権の方針を次のように定めています。
 
-- **用語の置き換え**：行政機関は法律で許される最大限の範囲で、公式の書簡、発表、ウェブサイト、報告書、政策文書で「AI」の代わりに「SI」を使う。該当する場面では「AI」という呼び方自体を認めない方針も明記した
+:::quote https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/ | ホワイトハウス 大統領令「Inaugurating The Era Of Super Intelligence」
+> It is therefore the policy of my Administration that, to the maximum extent permitted by law, the executive branch shall use the terms “Super Intelligence” and “SI” in place of “Artificial Intelligence” and “AI” and will not acknowledge the usage of “Artificial Intelligence” and “AI” in any applicable setting.
+したがって、法律で認められる最大限の範囲で、行政府は「Artificial Intelligence」「AI」に代えて「Super Intelligence」「SI」という用語を使い、該当する場面では「Artificial Intelligence」「AI」の使用を認めないことを、わが政権の方針とする。
+:::
+
+要点は次のとおりです。
+
+- **用語の置き換え**：対象は行政機関の公式の書簡、発表、ウェブサイト、報告書、政策文書など
 - **過去の文書は対象外**：発令済みの規則や大統領令、契約、補助金などを書き換える必要はない
 - **定義は今と同じ**：SIの範囲は、米国法（合衆国法典15編9401条）にある既存の「人工知能」の定義と同じとする
 - **60日以内に法案**：大統領補佐官（科学技術担当）が、SIの連邦定義を定める法案の文言を大統領に提出する
 
-大統領令は、現在の最先端のシステムは人間の知能をまねる段階を超えているとし、「Super Intelligence」の方が実態に合うと説明しています。つまり、技術の範囲は変えずに呼び名だけを変える命令です。
+大統領令は、現在の最先端のシステムは人間の知能をまねる段階を超えているとし、「Super Intelligence」の方が実態に合うと説明しています。
+
+:::quote https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/ | ホワイトハウス 大統領令 第1条（目的）
+> The capabilities of today’s frontier systems do much more than imitate or automate discrete aspects of human intelligence.
+今日の最先端のシステムの能力は、人間の知能の個々の側面をまねたり自動化したりする域をはるかに超えている。
+:::
+
+ただし、SIの範囲は既存の「人工知能」の法的定義と同じです。つまり、技術の範囲は変えずに呼び名だけを変える命令です。
 
 ### AI大手との安全協定
 
-協定の正式名は「The White House Accord on Superintelligence: A Joint Commitment on Frontier SI Responsibilities」です。CNNやBBCによると、トランプ氏に加え、GoogleのSundar Pichai氏、AnthropicのDario Amodei氏、MetaのMark Zuckerberg氏、NVIDIAのJensen Huang氏、OpenAIのGreg Brockman氏、Elon Musk氏の6人が署名しました。
+ABC Newsによると、協定は「The White House Accord on Superintelligence: A Joint Commitment on Frontier SI Responsibilities」と紹介されました。ホワイトハウスが30日にXで公開した協定文では、表題が「White House Accord on Super Intelligence」、副題が「Joint Commitment on Frontier Responsibilities」となっています。CNNやBBCによると、トランプ氏に加え、GoogleのSundar Pichai氏、AnthropicのDario Amodei氏、MetaのMark Zuckerberg氏、NVIDIAのJensen Huang氏、OpenAIのGreg Brockman氏、Elon Musk氏の6人が署名しました。
 
-トランプ氏がSNSに投稿した協定の画像によると、署名者は各社が次の4つを実施すべきだとしています。
+ホワイトハウスの投稿には、協定文と署名ページの画像が添えられています。署名ページでも、トランプ氏と6人の署名を確認できます。
+
+{{x:https://x.com/WhiteHouse/status/2105292669303791687}}
+
+トランプ氏もSNSに投稿した協定文によると、署名者は各社が次の4つを実施すべきだとしています。
 
 1. サイバーセキュリティなどの基準を守るための内部統制を置く
 2. 統制や監視が機能しているか確かめる社内チームを置く
@@ -91,6 +115,10 @@
 4. 取締役会の独立委員会がその報告を受け、問題に対処する
 
 協定は、これらが法律や規則になっていないことを認めたうえで、将来の法制化に含みを残しています。拘束力を問われたトランプ氏は「道義的には拘束力がある」と答えました。10人ほどの監督委員会を作る考えも示しましたが、人選や権限は明らかにしていません。
+
+## 訂正（10月1日）
+
+協定の名称を「正式名」と断定していた記述を改めました。ホワイトハウスがXで公開した協定文の表題と、ABC Newsが伝えた名称が異なるため、両方を出典とともに示しています。
 
 ## 背景
 
