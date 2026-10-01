@@ -1,14 +1,14 @@
 {
   "slug": "research",
-  "status": "draft",
+  "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-09-30",
-  "last_reviewed": "2026-09-30",
+  "updated": "2026-10-01",
+  "last_reviewed": "2026-10-01",
   "title": "調べもの・リサーチに強いAIのおすすめ：検索AIと情報の正確さの比較",
   "short_name": "調べもの",
   "seo": {
-    "description": "",
+    "description": "Perplexity・ChatGPT・Gemini など調べものに強いAIを、検索を使った事実性の評価やハルシネーション率の公開データと、公式ページで確かめた料金・ディープリサーチの制限・学習利用の有無で比較。",
     "keywords": [
       "検索AI",
       "リサーチAI",
@@ -18,7 +18,7 @@
       "おすすめ"
     ]
   },
-  "intro": "",
+  "intro": "情報の正確さで選ぶなら **ChatGPT**（GPT-6 Astra）、無料で深く調べるなら **Gemini** の Deep Research、手持ちの資料だけで調べるなら **Gemini Notebook**（旧 NotebookLM）が出発点です。検索を使った事実性の評価 FACTS Search では GPT-6 Astra が89.9%で首位、Claude Opus 5.5 が86.5%で3位でした（2026年10月1日確認）。ただし首位のモデルでも難しい問いの約1割を誤るので、引用元は必ず開いて確かめてください。",
   "scope": "Web検索と組み合わせて答えるAI、時間をかけて調査レポートを作るディープリサーチ、手持ちの資料だけを根拠に答えるツールを比べる。評価の軸は「引用が本当に出典に書いてあるか」。汎用チャットの比較は「チャットAI」ガイドで扱う。",
   "audience": [
     "ビジネスパーソン全般",
@@ -42,18 +42,1057 @@
       "desc": "アップロードした資料だけを根拠に答える"
     }
   ],
-  "verdicts": [],
-  "products": [],
+  "verdicts": [
+    {
+      "id": "best-quality",
+      "question": "最高品質で選ぶなら",
+      "pick": "chatgpt",
+      "runner_up": [
+        "claude"
+      ],
+      "answer": "検索を使った事実性の評価 FACTS Search で GPT-6 Astra が89.9%で首位、Claude Opus 5.5 は86.5%で3位です。GPT-6 Astra は ChatGPT の Plus 以上で使えます。いずれもモデル単位の評価で、各製品の検索機能そのものを比べたものではありません（2026年10月1日確認）。",
+      "evidence": [
+        {
+          "kind": "third_party",
+          "name": "FACTS Search V2（Google DeepMind・Kaggle）",
+          "url": "https://www.kaggle.com/benchmarks/google/facts-search/leaderboard",
+          "date": "2026-10-01",
+          "note": "1位 GPT-6 Astra 89.9%、2位 GPT-5.6 Sol 88.5%、3位 Claude Opus 5.5 86.5%、6位 Gemini 3.1 Pro Preview 83.7%（2026-09-29更新）"
+        },
+        {
+          "kind": "third_party",
+          "name": "FACTS Benchmark Suite（Google DeepMind・Kaggle）",
+          "url": "https://www.kaggle.com/benchmarks/google/facts/leaderboard",
+          "date": "2026-10-01",
+          "note": "4つの事実性評価の平均で1位 GPT-6 Astra 75.7%、8位 Claude Opus 5.5 65.3%（2026-09-29更新）"
+        },
+        {
+          "kind": "third_party",
+          "name": "AA-Omniscience（Artificial Analysis）",
+          "url": "https://artificialanalysis.ai/evaluations/omniscience",
+          "date": "2026-10-01",
+          "note": "指数は Claude Opus 5.5（max）46.4が1位、GPT-6 Astra（high）43.7。幻覚率は GPT-6 Astra 44.8%、Claude Opus 5.5 58.6%（2026-10-01時点）"
+        },
+        {
+          "kind": "official",
+          "name": "ChatGPT 料金ページ",
+          "url": "https://chatgpt.com/ja-JP/pricing/",
+          "date": "2026-10-01",
+          "note": "GPT-6 Astra は Plus で「上限あり」、Pro で「拡張」。無料版・Go では使えない"
+        }
+      ]
+    },
+    {
+      "id": "best-value",
+      "question": "コスパで選ぶなら",
+      "pick": "claude",
+      "runner_up": [
+        "chatgpt",
+        "gemini"
+      ],
+      "answer": "Claude Pro は年払いなら月$17（月払いは$20）で、Research と FACTS Search 3位（86.5%）の Opus 5.5 を使えます。首位の GPT-6 Astra を使える ChatGPT Plus は月$20の月払いです。円で払うなら Google AI Pro（月2,900円）で Deep Research の上限が無料版より高くなります。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Claude 料金ページ",
+          "url": "https://claude.com/pricing",
+          "date": "2026-10-01",
+          "note": "Pro は年払いで $17/月（$200前払い）、月払い $20。Research は Pro 以上"
+        },
+        {
+          "kind": "official",
+          "name": "What is ChatGPT Plus?（OpenAI ヘルプ）",
+          "url": "https://help.openai.com/en/articles/6950777-what-is-chatgpt-plus",
+          "date": "2026-10-01",
+          "note": "Price: $20/month (billed monthly)"
+        },
+        {
+          "kind": "official",
+          "name": "Google AI プラン",
+          "url": "https://gemini.google/jp/subscriptions/?hl=ja",
+          "date": "2026-10-01",
+          "note": "Google AI Pro ￥2,900 JPY / 月"
+        },
+        {
+          "kind": "official",
+          "name": "Gemini アプリの Deep Research（ヘルプ）",
+          "url": "https://support.google.com/gemini/answer/15719111?hl=en",
+          "date": "2026-10-01",
+          "note": "Google AI Pro と Ultra はレポートの作成上限が高く、Pro モデルでレポートを作れる"
+        },
+        {
+          "kind": "third_party",
+          "name": "FACTS Search V2（Google DeepMind・Kaggle）",
+          "url": "https://www.kaggle.com/benchmarks/google/facts-search/leaderboard",
+          "date": "2026-10-01",
+          "note": "GPT-6 Astra 89.9%（1位）、Claude Opus 5.5 86.5%（3位）（2026-09-29更新）"
+        }
+      ]
+    },
+    {
+      "id": "free",
+      "question": "無料で使うなら",
+      "pick": "gemini",
+      "runner_up": [
+        "perplexity",
+        "chatgpt"
+      ],
+      "answer": "Gemini の無料版は Deep Research（1日の上限あり）と 3.1 Pro（制限あり）を使え、資料を読み込ませる Gemini Notebook も無料です。Perplexity の無料版はすべての回答に引用が付き、ChatGPT の無料版も検索と Deep Research（上限あり）を使えます。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Google AI プラン",
+          "url": "https://gemini.google/jp/subscriptions/?hl=ja",
+          "date": "2026-10-01",
+          "note": "無料：3.6 Flash、3.1 Pro（制限あり）、Deep Research、Gemini Notebook"
+        },
+        {
+          "kind": "official",
+          "name": "Gemini アプリの Deep Research（ヘルプ）",
+          "url": "https://support.google.com/gemini/answer/15719111?hl=en",
+          "date": "2026-10-01",
+          "note": "1日のリサーチ件数と同時実行数に上限がある"
+        },
+        {
+          "kind": "official",
+          "name": "Perplexity 料金ページ",
+          "url": "https://www.perplexity.ai/hub/pricing",
+          "date": "2026-10-01",
+          "note": "Free $0/month：Citations in every answer"
+        },
+        {
+          "kind": "official",
+          "name": "ChatGPT 料金ページ",
+          "url": "https://chatgpt.com/ja-JP/pricing/",
+          "date": "2026-10-01",
+          "note": "無料版：検索「はい」、Deep Research「上限あり」"
+        }
+      ]
+    },
+    {
+      "id": "japanese",
+      "question": "日本語重視なら",
+      "pick": "gemini",
+      "runner_up": [
+        "google-ai-mode"
+      ],
+      "answer": "Gemini は料金が円建てで対応言語に日本語があり、Deep Research は既定で Google 検索を調べ先に使います。無料の Google AI モードも日本語と日本に対応しています（Gemini 3 Pro を使う AI モードは英語のみ）。日本語での調べものの正確さを比べた公開評価は見つかっていません。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Google AI プラン",
+          "url": "https://gemini.google/jp/subscriptions/?hl=ja",
+          "date": "2026-10-01",
+          "note": "円建て表示（Google AI Pro ￥2,900 JPY / 月）"
+        },
+        {
+          "kind": "official",
+          "name": "Gemini の対応言語と国（ヘルプ）",
+          "url": "https://support.google.com/gemini/answer/13575153?hl=en",
+          "date": "2026-10-01",
+          "note": "対応言語に Japanese、対応国に Japan"
+        },
+        {
+          "kind": "official",
+          "name": "Gemini アプリの Deep Research（ヘルプ）",
+          "url": "https://support.google.com/gemini/answer/15719111?hl=en",
+          "date": "2026-10-01",
+          "note": "既定で Google Search を情報源に含む"
+        },
+        {
+          "kind": "official",
+          "name": "AI モード（Google 検索ヘルプ）",
+          "url": "https://support.google.com/websearch/answer/16011537?hl=en",
+          "date": "2026-10-01",
+          "note": "提供国に Japan、対応言語に Japanese。Gemini 3 Pro in AI Mode は英語のみ"
+        }
+      ]
+    },
+    {
+      "id": "business",
+      "question": "会社で安全に使うなら（入力が学習に使われない・管理機能）",
+      "pick": "perplexity",
+      "runner_up": [
+        "chatgpt",
+        "claude"
+      ],
+      "answer": "Perplexity の Enterprise Pro（年払いで1席月$34）は学習に使わないことを保証し、SOC 2 Type II と SSO に対応、アップロードしたファイルの保持は7日間です。日本ではソフトバンクが導入の窓口です。費用を抑えるなら ChatGPT Business（年払いで1席月$20、既定で学習に使わない）。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Perplexity Enterprise 料金ページ",
+          "url": "https://www.perplexity.ai/enterprise/pricing",
+          "date": "2026-10-01",
+          "note": "Enterprise Pro $34/ month per seat when billed annually。Guaranteed no training on your data、SOC 2 Type II"
+        },
+        {
+          "kind": "official",
+          "name": "Data Collection at Perplexity（ヘルプ）",
+          "url": "https://www.perplexity.ai/help-center/en/articles/11564572-data-collection-at-perplexity",
+          "date": "2026-10-01",
+          "note": "Enterprise のデータは学習に使わない。アップロードファイルの保持は7日間"
+        },
+        {
+          "kind": "official",
+          "name": "What is Enterprise Pro?（Perplexity ヘルプ）",
+          "url": "https://www.perplexity.ai/help-center/en/articles/10352973-what-is-enterprise-pro",
+          "date": "2026-10-01",
+          "note": "日本で Enterprise Pro を検討する場合はパートナーのソフトバンクへ"
+        },
+        {
+          "kind": "official",
+          "name": "ChatGPT Business Pricing",
+          "url": "https://openai.com/business/chatgpt-pricing/",
+          "date": "2026-10-01",
+          "note": "標準シート $20/month（年払い）・$25（月払い）。No training on your business data by default"
+        }
+      ]
+    },
+    {
+      "id": "own-documents",
+      "question": "手持ちの資料だけを根拠に調べるなら",
+      "pick": "gemini-notebook",
+      "runner_up": [],
+      "answer": "Gemini Notebook（2026年7月に NotebookLM から改称）は、アップロードした資料を根拠に引用付きで答える設計です。無料でもノートブックあたり50件のソースを使え、個人利用でもフィードバックを送らない限り学習に使われません。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Gemini Notebook プラン",
+          "url": "https://notebook.google/plans",
+          "date": "2026-10-01",
+          "note": "無料はノートブックあたり最大50ソース。NotebookLM は2026年7月より Gemini Notebook に"
+        },
+        {
+          "kind": "official",
+          "name": "Learn about Gemini Notebook（ヘルプ）",
+          "url": "https://support.google.com/gemininotebook/answer/16164461?hl=en&co=GENIE.Platform%3DDesktop",
+          "date": "2026-10-01",
+          "note": "ソースに基づく回答と明確なインライン引用。フィードバックを送らない限り学習に使わない"
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "vendor": "OpenAI",
+      "url": "https://chatgpt.com/",
+      "status": "featured",
+      "rank": 1,
+      "segment": "deep",
+      "tags": [
+        "ChatGPT",
+        "Deep Research",
+        "GPT-6.1"
+      ],
+      "model_slugs": [
+        "gpt-6-astra",
+        "gpt-6-1-sol"
+      ],
+      "latest": {
+        "name": "GPT-6.1 Sol",
+        "released": "2026-09-29",
+        "source_url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web",
+        "app",
+        "desktop"
+      ],
+      "strengths": [
+        "GPT-6 Astra が FACTS Search で首位",
+        "Deep Research で調べるサイトを限定できる",
+        "無料版でも検索と Deep Research（上限あり）"
+      ],
+      "weaknesses": [
+        "無料版・Go では GPT-6 系を使えない",
+        "Plus は月払いのみ（年払いなし）"
+      ],
+      "editorial_take": "正確さを最優先するなら第一候補。事実性の公開評価で首位の GPT-6 Astra を Plus から使え、Deep Research は調べるサイトを指定できる。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "検索は利用可。Deep Research は上限あり。モデルは GPT-5.6 Luna",
+          "source_url": "https://chatgpt.com/ja-JP/pricing/",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Plus",
+            "amount": 20,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$20/month (billed monthly)",
+            "detail": "Deep Research、GPT-6 Astra・GPT-6.1 Sol（上限あり）",
+            "source_url": "https://help.openai.com/en/articles/6950777-what-is-chatgpt-plus",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Pro",
+            "amount": 100,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "Pro 100 $100 / Pro 200 $200 / Pro 500 $500（Monthly price, USD）",
+            "detail": "3段階の利用枠。GPT-6 Astra を拡張枠で利用",
+            "source_url": "https://help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Business（標準シート）",
+            "amount": 20,
+            "currency": "USD",
+            "per": "seat_month",
+            "as_shown": "$20/month if billed annually. $25/month if billed monthly.",
+            "detail": "Deep Research と Deep Research 用アプリを利用可。既定で学習に使わない",
+            "source_url": "https://openai.com/business/chatgpt-pricing/",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": "料金ページの円表示は今回の確認で取得できなかったため、OpenAI ヘルプと法人向け料金ページの米ドル表記を載せた。"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "yes",
+        "note": "ヘルプの対応言語一覧に日本語",
+        "source_url": "https://help.openai.com/en/articles/8357869-how-to-change-your-language-setting-in-chatgpt",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "利用規約で出力の権利は利用者に帰属（OpenAI が権利を譲渡）。出力を人が作ったと偽ること、競合モデルの開発に使うことは禁止",
+        "source_url": "https://openai.com/policies/terms-of-use/",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "opt_out_available",
+        "note": "個人プランは「すべての人のためにモデルを改善する」をオフにすると、新しい会話は学習に使われない。Deep Research も通常の会話と同じ設定に従う",
+        "source_url": "https://help.openai.com/en/articles/7730893-data-controls-faq",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "公式の提供国一覧に日本。Deep Research はプランと国によって提供が異なる（ヘルプ）",
+        "source_url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "vendor": "Perplexity AI",
+      "url": "https://www.perplexity.ai/",
+      "status": "featured",
+      "rank": 2,
+      "segment": "search",
+      "tags": [
+        "Perplexity"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Deep Research in Computer",
+        "source_url": "https://www.perplexity.ai/hub/blog/deep-research-now-in-computer",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web",
+        "app",
+        "api"
+      ],
+      "strengths": [
+        "無料版でもすべての回答に引用が付く",
+        "Statista・PitchBook 等の有料ソースを参照",
+        "BrowseComp 83.8%（公式の自社測定）"
+      ],
+      "weaknesses": [
+        "個人向け規約は個人的・非商用の利用に限る",
+        "料金は米ドル表示"
+      ],
+      "editorial_take": "出典付きの検索が本業のサービス。業務で使うなら、学習に使わないことを保証する Enterprise Pro が前提になる。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "検索のみ。すべての回答に引用。基本的なAIモデル。1日の利用が少ない人向け",
+          "source_url": "https://www.perplexity.ai/hub/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Pro",
+            "amount": 20,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$20/month",
+            "detail": "Deep research、トップAIモデルの選択、Computer 用4,000ボーナスクレジット",
+            "source_url": "https://www.perplexity.ai/hub/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Max",
+            "amount": 200,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$200/month",
+            "detail": "専門家レベルのリサーチ、最先端モデル、月10,000クレジット",
+            "source_url": "https://www.perplexity.ai/hub/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Enterprise Pro",
+            "amount": 34,
+            "currency": "USD",
+            "per": "seat_month",
+            "as_shown": "$34/ month per seat when billed annually",
+            "detail": "学習に使わないことを保証、SSO、SOC 2 Type II、有料ソースの引用",
+            "source_url": "https://www.perplexity.ai/enterprise/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Enterprise Max",
+            "amount": 271,
+            "currency": "USD",
+            "per": "seat_month",
+            "as_shown": "$271/ month per seat when billed annually",
+            "detail": "Enterprise Pro より Deep Research・ファイルアップロードの上限が高い。SCIM・監査ログ",
+            "source_url": "https://www.perplexity.ai/enterprise/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": "日本語版の料金ページ（/ja/hub/pricing）も米ドル表示。"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "unknown",
+        "note": "アカウント設定で表示言語と回答言語を選べる。料金ページに日本語版あり。対応言語の一覧は見つからず",
+        "source_url": "https://www.perplexity.ai/help-center/en/articles/10352990-account-settings",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "conditional",
+        "note": "個人向け利用規約は「個人的・非商用の利用に限る」（5.1）。出力を公開するときは Perplexity を明示する必要がある（1.1.2）。法人向けは Enterprise",
+        "source_url": "https://www.perplexity.ai/hub/legal/terms-of-service",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "opt_out_available",
+        "note": "Free・Pro・Max は「AI Data Retention」が既定でオン。設定でオフにできる（それ以降のデータが対象）。Enterprise のデータは学習に使わない",
+        "source_url": "https://www.perplexity.ai/help-center/en/articles/11564572-data-collection-at-perplexity",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "日本で Enterprise Pro を導入する場合はパートナーのソフトバンクが窓口（ヘルプ）",
+        "source_url": "https://www.perplexity.ai/help-center/en/articles/10352973-what-is-enterprise-pro",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "vendor": "Google",
+      "url": "https://gemini.google/",
+      "status": "featured",
+      "rank": 3,
+      "segment": "deep",
+      "tags": [
+        "Gemini",
+        "Deep Research"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Gemini 3.8 Flash",
+        "released": "2026-09-02",
+        "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web",
+        "app"
+      ],
+      "strengths": [
+        "無料版でも Deep Research を使える",
+        "調べ先に Gmail・ドライブ・ノートブックを追加",
+        "円建て。AI Pro は月2,900円"
+      ],
+      "weaknesses": [
+        "FACTS Search の上位は GPT-6・Claude 系",
+        "会話の一部を人が確認する（既定の設定）"
+      ],
+      "editorial_take": "無料で深く調べたいときの出発点。Deep Research は5〜10分ほどで数百のソースを読み、Google 検索を外して手持ちの資料だけで調べることもできる。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "3.6 Flash、3.1 Pro（制限あり）、Deep Research（1日の上限あり）、Gemini Notebook",
+          "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Google AI Plus",
+            "amount": 725,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "￥725 JPY / 月",
+            "detail": "無料版の2倍の使用量上限",
+            "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Google AI Pro",
+            "amount": 2900,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "￥2,900 JPY / 月",
+            "detail": "無料版の4倍の使用量上限、Gemini Notebook の利用上限5倍、5TB のストレージ",
+            "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Google AI Ultra",
+            "amount": 14500,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "￥14,500 JPY/月（AI Pro の 5 倍）／￥32,000 JPY /月（AI Pro の 20 倍）",
+            "detail": "Deep Think などへの先行アクセス",
+            "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": true,
+        "note": "Deep Research のレポート作成上限は AI Pro・Ultra で高くなり、Pro モデルで作れる（ヘルプ）。"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "yes",
+        "note": "Gemini ウェブアプリの対応言語一覧に日本語",
+        "source_url": "https://support.google.com/gemini/answer/13575153?hl=en",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "Google 利用規約で、生成されたオリジナルのコンテンツの所有権を Google は主張しない。出力を機械学習モデルの開発に使うことは禁止",
+        "source_url": "https://policies.google.com/terms?hl=en",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "opt_out_available",
+        "note": "既定では会話がサービス改善（生成AIモデルを含む）に使われ、一部は人が確認する。「アクティビティを保持」をオフにすると今後の会話は改善に使われない",
+        "source_url": "https://support.google.com/gemini/answer/13594961?hl=en",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "Gemini ウェブアプリの対応国一覧に日本",
+        "source_url": "https://support.google.com/gemini/answer/13575153?hl=en",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "vendor": "Anthropic",
+      "url": "https://claude.ai/",
+      "status": "featured",
+      "rank": 4,
+      "segment": "deep",
+      "tags": [
+        "Claude",
+        "Claude Opus 5.5"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Claude Opus 5.5",
+        "released": "2026-09-22",
+        "source_url": "https://www.anthropic.com/claude-opus-5-5",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web",
+        "app",
+        "desktop"
+      ],
+      "strengths": [
+        "Opus 5.5 が FACTS Search で3位",
+        "AA-Omniscience 指数で Opus 5.5 が首位",
+        "Research で Gmail・ドキュメントも横断"
+      ],
+      "weaknesses": [
+        "Research は有料プランのみ（無料は検索まで）",
+        "AA の幻覚率は58.6%（GPT-6 Astra 44.8%）"
+      ],
+      "editorial_take": "知識の正答率は最上位だが、わからない問いにも答えてしまう率は GPT-6 Astra より高い。Research の結果は引用を開いて確かめる前提で使う。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "Web 検索は利用可。Research は使えない。モデルは Sonnet と Haiku",
+          "source_url": "https://claude.com/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Pro",
+            "amount": 17,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$17 Per month with annual subscription discount ($200 billed up front). $20 if billed monthly.",
+            "detail": "Research、Opus 5.5",
+            "source_url": "https://claude.com/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Max",
+            "amount": 100,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "From $100 Per month",
+            "detail": "Pro の5倍か20倍の利用量。月払いのみ",
+            "source_url": "https://claude.com/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Team（標準シート）",
+            "amount": 20,
+            "currency": "USD",
+            "per": "seat_month",
+            "as_shown": "$20 Per seat / month if billed annually. $25 if billed monthly.",
+            "detail": "2〜150人。既定で学習に使わない。社内データの横断検索（Enterprise search）",
+            "source_url": "https://claude.com/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": "表示価格に税は含まない（料金ページの注記）。Research は通常の会話と同じ利用上限を使い、消費が速い（ヘルプ）。"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "yes",
+        "note": "ヘルプの対応言語に日本語",
+        "source_url": "https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "消費者向け規約で出力の権利を利用者に譲渡（4条）。出力は不正確な場合があり、独自に確認するよう求めている",
+        "source_url": "https://www.anthropic.com/legal/consumer-terms",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "opt_out_available",
+        "note": "Free・Pro・Max は学習利用を設定でオフにできる（Opt-out）。Team・Enterprise は既定で学習に使わない",
+        "source_url": "https://claude.com/pricing",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "公式の提供国・地域一覧に日本",
+        "source_url": "https://www.anthropic.com/supported-countries",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "gemini-notebook",
+      "name": "Gemini Notebook",
+      "vendor": "Google",
+      "url": "https://notebook.google/",
+      "status": "featured",
+      "rank": 5,
+      "segment": "grounded",
+      "tags": [
+        "Gemini Notebook",
+        "NotebookLM"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web",
+        "app"
+      ],
+      "strengths": [
+        "資料を根拠に、インライン引用付きで答える",
+        "無料でノートブックあたり50ソース",
+        "個人利用でも学習に使わない（公式）"
+      ],
+      "weaknesses": [
+        "資料にない情報には答えない設計",
+        "上位の利用枠は Google AI プランが必要"
+      ],
+      "editorial_take": "旧 NotebookLM。社内資料や論文など、読ませた資料の範囲だけで答えさせたいときに向く。Web から資料を探す Deep Research も使える。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "ノートブックあたり最大50ソース。音声・動画の解説などは標準の生成回数",
+          "source_url": "https://notebook.google/plans",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Gemini Notebook in Plus",
+            "per": "month",
+            "as_shown": "Google AI Plus に含まれる",
+            "detail": "標準の2倍の生成回数、ノートブックあたり最大100ソース",
+            "source_url": "https://notebook.google/plans",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Gemini Notebook in Pro",
+            "per": "month",
+            "as_shown": "Google AI Pro に含まれる",
+            "detail": "標準の5倍の生成回数、ノートブックあたり最大300ソース",
+            "source_url": "https://notebook.google/plans",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Gemini Notebook in Ultra",
+            "per": "month",
+            "as_shown": "Google AI Ultra に含まれる",
+            "detail": "標準の最大50倍の生成回数、ノートブックあたり最大600ソース",
+            "source_url": "https://notebook.google/plans",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": "Google AI Plus・Pro・Ultra の円建て料金は Gemini の行を参照。組織向けは Google Workspace・Google Cloud 経由。"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "yes",
+        "note": "対応言語（80以上）に日本語。出力言語は設定で選べる",
+        "source_url": "https://support.google.com/gemininotebook/answer/16261963?hl=en",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "Google 利用規約で、生成されたオリジナルのコンテンツの所有権を Google は主張しない",
+        "source_url": "https://policies.google.com/terms?hl=en",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "not_used",
+        "note": "個人ユーザーのデータも、フィードバックを送らない限り学習に使わない。Workspace ユーザーは人による確認もない",
+        "source_url": "https://support.google.com/gemininotebook/answer/16164461?hl=en&co=GENIE.Platform%3DDesktop",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "ブラウザ版の対応国・地域に日本",
+        "source_url": "https://support.google.com/gemininotebook/answer/16164461?hl=en&co=GENIE.Platform%3DDesktop",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "google-ai-mode",
+      "name": "Google AI モード",
+      "vendor": "Google",
+      "url": "https://search.google/ways-to-search/ai-mode/",
+      "status": "featured",
+      "rank": 6,
+      "segment": "search",
+      "tags": [
+        "AI Mode",
+        "Google"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web",
+        "app"
+      ],
+      "strengths": [
+        "Google 検索から無料で使える",
+        "質問を小分けにして同時に検索（公式）",
+        "日本語・日本で提供（ヘルプ）"
+      ],
+      "weaknesses": [
+        "Gemini 3 Pro を使う AI モードは英語のみ",
+        "入力の学習利用を拒否する設定の記載なし"
+      ],
+      "editorial_take": "いつもの検索の延長で、リンク付きの要約を素早く得たいときに。深い調査はディープリサーチ系のほうが向く。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "Google 検索から無料で使える。Gemini 3 Pro（英語のみ）は1日の上限があり、Google AI プランで上限が上がる",
+          "source_url": "https://support.google.com/websearch/answer/16011537?hl=en",
+          "checked": "2026-10-01"
+        },
+        "plans": [],
+        "jpy_official": false,
+        "note": ""
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "yes",
+        "note": "AI モードの対応言語に日本語。Gemini 3 Pro を使う AI モードは英語のみ",
+        "source_url": "https://support.google.com/websearch/answer/16011537?hl=en",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "unknown",
+        "note": "検索と AI 機能でのやりとりを生成AIの改善に使うとヘルプに記載。学習利用を拒否する設定の記載は見つからず",
+        "source_url": "https://support.google.com/websearch/answer/16011537?hl=en",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "AI モードの提供国に日本",
+        "source_url": "https://support.google.com/websearch/answer/16011537?hl=en",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "grok",
+      "name": "Grok",
+      "vendor": "SpaceXAI",
+      "url": "https://grok.com/",
+      "status": "listed",
+      "rank": 10,
+      "segment": "search",
+      "tags": [
+        "Grok"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web",
+        "app"
+      ],
+      "editorial_take": "Web と X の投稿をリアルタイムに検索して答える。FACTS Search では Grok 4.5 が79.4%で12位。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "Web とアプリで無料で試せる",
+          "source_url": "https://x.ai/grok",
+          "checked": "2026-10-01"
+        },
+        "plans": [],
+        "jpy_official": false,
+        "note": ""
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "copilot",
+      "name": "Microsoft Copilot",
+      "vendor": "Microsoft",
+      "url": "https://copilot.microsoft.com/",
+      "status": "listed",
+      "rank": 11,
+      "segment": "deep",
+      "tags": [
+        "Copilot"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web",
+        "app",
+        "desktop"
+      ],
+      "editorial_take": "Microsoft 365 Premium 以上に、リサーチや分析を代行するエージェント型の AI 機能が付く。",
+      "pricing": {
+        "plans": [
+          {
+            "name": "Microsoft 365 Premium",
+            "amount": 3200,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "¥3,200 /月",
+            "detail": "高度なリサーチや分析などをユーザーに代わって行うエージェント型 AI 機能",
+            "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing/individuals",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": true,
+        "note": ""
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "consensus",
+      "name": "Consensus",
+      "vendor": "Consensus",
+      "url": "https://consensus.app/",
+      "status": "listed",
+      "rank": 12,
+      "segment": "search",
+      "tags": [
+        "Consensus"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web"
+      ],
+      "editorial_take": "査読付き論文に絞って検索し、引用付きで分析する学術向けの検索AI。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "論文検索。Pro メッセージ月10回、Deep review 月3回まで",
+          "source_url": "https://consensus.app/pricing/",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Pro",
+            "amount": 12,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$12/mo（$144 annually）",
+            "detail": "Pro メッセージ無制限、Deep review 月15回",
+            "source_url": "https://consensus.app/pricing/",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": ""
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "elicit",
+      "name": "Elicit",
+      "vendor": "Elicit",
+      "url": "https://elicit.com/",
+      "status": "listed",
+      "rank": 13,
+      "segment": "deep",
+      "tags": [
+        "Elicit"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web",
+        "api"
+      ],
+      "editorial_take": "1億3,800万本超の論文を検索・要約し、系統的レビューの作業を支援する研究者向けツール。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "論文検索と要約は無制限。Research Agent・Research Reports は上限あり",
+          "source_url": "https://elicit.com/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Pro",
+            "amount": 49,
+            "currency": "USD",
+            "per": "seat_month",
+            "as_shown": "$49 Per user/month, billed as $588 annually",
+            "detail": "系統的レビューで5,000本をスクリーニング、API",
+            "source_url": "https://elicit.com/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": ""
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "kagi",
+      "name": "Kagi",
+      "vendor": "Kagi",
+      "url": "https://kagi.com/",
+      "status": "listed",
+      "rank": 14,
+      "segment": "search",
+      "tags": [
+        "Kagi"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web"
+      ],
+      "editorial_take": "広告なしの有料検索エンジン。Ultimate プランで AI アシスタントの Research モードを使える。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "お試しは100検索・アシスタント100回まで",
+          "source_url": "https://kagi.com/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Ultimate",
+            "amount": 25,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$25 /mo (+ Sales Tax)",
+            "detail": "無制限の検索、Kagi Assistant の Research モード",
+            "source_url": "https://kagi.com/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": ""
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "you-com",
+      "name": "You.com",
+      "vendor": "You.com",
+      "url": "https://you.com/",
+      "status": "listed",
+      "rank": 15,
+      "segment": "search",
+      "tags": [
+        "You.com"
+      ],
+      "model_slugs": [],
+      "access": [
+        "api"
+      ],
+      "editorial_take": "現在は AI エージェントに組み込む Web 検索 API が中心。引用付きの回答を返す API もある。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "Web Search API は1日100クエリまで無料",
+          "source_url": "https://you.com/pricing",
+          "checked": "2026-10-01"
+        },
+        "usage": {
+          "unit": "1,000回",
+          "amount": 5,
+          "currency": "USD",
+          "as_shown": "$5.00 /1k calls",
+          "detail": "Web Search API",
+          "source_url": "https://you.com/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [],
+        "jpy_official": false,
+        "note": ""
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    }
+  ],
   "criteria": [
     {
       "name": "引用の正確さ",
       "why": "リンク先に本当にその記述があるかが、調べものAIの価値そのもの",
-      "how_to_check": "回答の引用を3つ開いて、書いてある内容と一致するか確かめる。公式や第三者の評価（引用の正確さ・ハルシネーション率）があれば記録する"
+      "how_to_check": "回答の引用を3つ開いて、書いてある内容と一致するか確かめる。資料に根拠付ける評価（FACTS Grounding など）の数値と日付も記録する"
     },
     {
-      "name": "ハルシネーションの評価",
-      "why": "もっともらしい誤答の頻度は用途によって許容できない",
-      "how_to_check": "公式のモデルカードや第三者の事実性評価の数値と日付を記録する"
+      "name": "ハルシネーションと「わからない」と言えるか",
+      "why": "もっともらしい誤答の頻度と、知らないときに答えを控えるかで、そのまま使える範囲が変わる",
+      "how_to_check": "AA-Omniscience の幻覚率（答えを控えるべき問いで誤答した割合）や FACTS Search の回答保留率など、公開評価の数値と日付を記録する"
     },
     {
       "name": "日本語ソースの網羅",
@@ -63,62 +1102,160 @@
     {
       "name": "深さと所要時間",
       "why": "ディープリサーチは深いが待ち時間と回数制限がある",
-      "how_to_check": "公式ページで回数制限・所要時間の記載を確認する"
+      "how_to_check": "公式ヘルプで所要時間の目安と1日・1か月の回数制限を確認する"
     },
     {
-      "name": "出典の種類の制御",
-      "why": "学術・ニュース・特定ドメインに絞れるかで調査の質が変わる",
-      "how_to_check": "公式の機能説明でソースの絞り込みを確認する"
+      "name": "調べる範囲の指定",
+      "why": "特定のサイト・論文・社内資料に絞れるかで調査の質が変わる",
+      "how_to_check": "公式の機能説明で、サイトの指定、Web 検索を外す設定、社内データとの接続を確認する"
     },
     {
-      "name": "料金と回数制限",
-      "why": "ディープリサーチは月の回数制限がプランで違う",
-      "how_to_check": "公式料金ページのプラン別の回数を確認する"
+      "name": "料金と入力の扱い",
+      "why": "ディープリサーチの回数はプランで違い、個人プランでは入力が学習に使われる設定が既定のことが多い",
+      "how_to_check": "公式料金ページのプラン別の回数と、データ利用ポリシーの学習利用の既定値を確認する"
     }
   ],
-  "benchmarks": [],
-  "faq": [],
+  "benchmarks": [
+    {
+      "id": "facts-search",
+      "name": "FACTS Search V2",
+      "operator": "Google DeepMind・Google Research（Kaggle で公開）",
+      "url": "https://www.kaggle.com/benchmarks/google/facts-search/leaderboard",
+      "what": "全モデルに同じ検索ツール（Brave Search API）を与え、多段の検索が必要な1,842問に正しく答えられるかを自動採点（F1）。製品ではなくモデル単位",
+      "snapshot": "1位 GPT-6 Astra 89.9%、2位 GPT-5.6 Sol 88.5%、3位 Claude Opus 5.5 86.5%、4位 GPT-6 Sol 86.1%、6位 Gemini 3.1 Pro Preview 83.7%、12位 Grok 4.5 79.4%、14位 Gemini 3.8 Flash 76.3%（回答保留率21.2%）（2026-09-29更新・2026-10-01確認）",
+      "checked": "2026-10-01"
+    },
+    {
+      "id": "facts-suite",
+      "name": "FACTS Benchmark Suite",
+      "operator": "Google DeepMind・Google Research（Kaggle で公開）",
+      "url": "https://www.kaggle.com/benchmarks/google/facts/leaderboard",
+      "what": "検索・資料への根拠付け・知識・画像の4つの事実性評価の平均",
+      "snapshot": "1位 GPT-6 Astra 75.7%、2位 GPT-6 Sol 72.5%、3位 Gemini 3.7 Flash 71.2%、4位 Gemini 3.8 Flash 69.4%、5位 Gemini 3.1 Pro Preview 67.4%、8位 Claude Opus 5.5 65.3%、19位 Grok 4.5 50.2%（2026-09-29更新・2026-10-01確認）",
+      "checked": "2026-10-01"
+    },
+    {
+      "id": "facts-grounding",
+      "name": "FACTS Grounding V2",
+      "operator": "Google DeepMind・Google Research（Kaggle で公開）",
+      "url": "https://www.kaggle.com/benchmarks/google/facts-grounding/leaderboard",
+      "what": "最大3.2万トークンの資料を渡して長文で答えさせ、回答がすべて資料に裏付けられているかを3つのAI審査員で判定",
+      "snapshot": "1位 GPT-6 Astra 82.0%、6位 Gemini 3.7 Flash 75.5%、7位 Grok 4.5 74.5%、10位 Gemini 3.8 Flash 73.1%、17位 Claude Opus 4.8 69.7%。上位19件に Claude Opus 5.5 は無し（2026-09-25評価・2026-10-01確認）",
+      "checked": "2026-10-01"
+    },
+    {
+      "id": "aa-omniscience",
+      "name": "AA-Omniscience",
+      "operator": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/evaluations/omniscience",
+      "what": "6分野6,000問の知識問題。正答を加点し、誤答を減点する指数（-100〜100）。幻覚率は正答以外の回答のうち誤答した割合（低いほど、知らないときに答えを控える）",
+      "snapshot": "指数1位 Claude Opus 5.5（max）46.4（正答率66.2%・幻覚率58.6%）、GPT-6 Astra（high）43.7（幻覚率44.8%）、Gemini 4 Argon（high）42.4（幻覚率15.1%）、GPT-6.1 Sol（max）41.5、Grok 4.7（xhigh）32.0、Gemini 3.8 Flash（high）29.6（2026-10-01時点）",
+      "checked": "2026-10-01"
+    },
+    {
+      "id": "vectara-hhem",
+      "name": "Vectara Hallucination Leaderboard",
+      "operator": "Vectara",
+      "url": "https://github.com/vectara/hallucination-leaderboard",
+      "what": "文書を要約させたとき、元の文書にない内容を加える割合（HHEM モデルで判定）",
+      "snapshot": "GPT-6 Sol 6.5%、GPT-6 Astra 8.7%、Gemini 3.1 Pro Preview 10.4%、Claude Opus 4.7 12.0%。Claude Opus 5.5・Gemini 3.8 Flash は未掲載（2026-09-22更新・2026-10-01確認）",
+      "checked": "2026-10-01"
+    },
+    {
+      "id": "lmarena-search",
+      "name": "LMArena Search Arena",
+      "operator": "LMArena",
+      "url": "https://arena.ai/leaderboard/search",
+      "what": "検索付きの回答を利用者が見比べて投票する一対比較。正確さではなく好みの評価",
+      "snapshot": "1位 gpt-5.6-sol-xhigh 1257、2位 claude-opus-4-6-search 1253、9位 gemini-3.1-pro-grounding 1210、29位 ppl-sonar-reasoning-pro-high 1139。GPT-6 系・Claude Opus 5.5 は未掲載（2026-08-24更新・2026-10-01確認）",
+      "checked": "2026-10-01"
+    },
+    {
+      "id": "openai-gpt-6-1-sol-factuality",
+      "name": "OpenAI「Introducing GPT-6.1 Sol」の事実性評価",
+      "operator": "OpenAI（自社評価）",
+      "url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+      "what": "利用者が以前のモデルの誤りを指摘した会話で、事実の誤りを1つ以上含む回答の割合",
+      "snapshot": "GPT-6.1 Sol は低い推論設定で誤りを含む回答を11.4%から7.7%に減らし、各設定で GPT-6 Astra との差は1.9ポイント以内（2026-09-29発表）",
+      "checked": "2026-10-01"
+    },
+    {
+      "id": "anthropic-opus-5-5-research",
+      "name": "Anthropic「Introducing Claude Opus 5.5」の調査レポート検証",
+      "operator": "Anthropic（自社評価）",
+      "url": "https://www.anthropic.com/claude-opus-5-5",
+      "what": "見つけにくい決算資料を探して報告書を書かせ、すべての数値と引用を出典と自動照合（捏造が1つでもあれば不合格）",
+      "snapshot": "Opus 5.5 は18回中16回で合格基準を満たし、Fable 5.1 と Opus 5 は合格0回（2026-09-22発表）",
+      "checked": "2026-10-01"
+    },
+    {
+      "id": "perplexity-deep-research",
+      "name": "Perplexity「Deep Research, now in Computer」の評価",
+      "operator": "Perplexity（自社評価）",
+      "url": "https://www.perplexity.ai/hub/products/deep-research",
+      "what": "BrowseComp（OpenAI）・DeepSearchQA（Google DeepMind）・Humanity's Last Exam での自社測定",
+      "snapshot": "Computer の Deep Research は BrowseComp 83.8%（旧版40.7%）、DeepSearchQA 85.0%（同81.9%）、HLE 50.5%（同36.4%）（掲載日の記載なし・2026-10-01確認）",
+      "checked": "2026-10-01"
+    }
+  ],
+  "faq": [
+    {
+      "q": "調べものAIの答えはどこまで信用できますか？",
+      "a": "検索を使った事実性の評価 FACTS Search では、首位の GPT-6 Astra でも正答の指標は89.9%で、難しい問いの約1割は誤ります（2026年10月1日確認）。知識問題の評価 AA-Omniscience では、知らない問いで誤答する割合（幻覚率）が GPT-6 Astra で44.8%、Claude Opus 5.5 で58.6%でした。回答の引用元を開いて、書いてある内容と一致するか確かめてください。"
+    },
+    {
+      "q": "無料で使える調べものAIは？",
+      "a": "Gemini の無料版は Deep Research（1日の上限あり）を使え、Gemini Notebook も無料でノートブックあたり50件のソースを読み込めます。Perplexity の無料版はすべての回答に引用が付き、ChatGPT の無料版も検索と Deep Research（上限あり）を使えます。Google 検索の AI モードも無料です。"
+    },
+    {
+      "q": "ディープリサーチと普通の検索はどう違いますか？",
+      "a": "検索は最新の情報を短くまとめてリンクを返し、ディープリサーチは調査計画を立てて多数のソースを読み、引用付きのレポートにまとめます。Gemini の Deep Research は通常5〜10分かかり、1日のリサーチ件数に上限があります（各社ヘルプ）。"
+    },
+    {
+      "q": "調べる範囲を特定のサイトや社内資料に絞れますか？",
+      "a": "ChatGPT の Deep Research は、指定したサイトだけに限定するか、優先しつつ Web 全体も検索するかを選べます。Gemini の Deep Research は Google 検索を外して Gmail・ドライブ・アップロードしたファイル・ノートブックだけで調べられます。Gemini Notebook は読み込ませた資料を根拠に答えます。"
+    },
+    {
+      "q": "会社で使うとき、入力した内容は学習に使われますか？",
+      "a": "Perplexity の Enterprise、ChatGPT Business、Claude の Team は既定で学習に使いません。個人向けの Perplexity・ChatGPT・Claude・Gemini は既定で学習やサービス改善に使われることがあり、設定でオフにできます。Gemini Notebook は個人利用でも、フィードバックを送らない限り学習に使わないとしています。"
+    },
+    {
+      "q": "調べた結果を仕事の資料に使ってもいいですか？",
+      "a": "ChatGPT・Claude の規約は出力の権利を利用者側に置き、Google も生成されたコンテンツの所有権を主張しないとしています。Perplexity の個人向け規約は「個人的・非商用の利用」に限り、出力を公開するときは Perplexity を明示するよう求めています。業務で使うなら法人向けプランを確認してください。"
+    }
+  ],
   "related": {
     "tags": [
       "検索",
-      "Perplexity",
       "ハルシネーション",
+      "Perplexity",
       "Deep Research",
       "AI Overviews",
-      "AI Mode"
+      "AI Mode",
+      "NotebookLM",
+      "Gemini Notebook"
     ],
     "guides": [
       "chat",
-      "writing"
+      "writing",
+      "api"
     ],
-    "articles": []
+    "articles": [
+      "/news/20260930-google-ai-overviews-publisher-payments/"
+    ]
   },
-  "changelog": [],
+  "changelog": [
+    {
+      "date": "2026-10-01",
+      "text": "初回公開",
+      "by": "researcher"
+    }
+  ],
   "editor_note": "",
   "embed_models": false,
   "research_plan": {
-    "_comment": "調査担当向けのメモ（表示しない）。candidates は編集部の初期案＝製品名の候補であって事実ではない。公式サイトで現行の名称・存在を確認し、無いものは外し、新しいものを足す。published にする前に candidates と verdict_questions を空にし、notes を消す",
-    "candidates": [
-      "Perplexity",
-      "ChatGPT（検索・Deep Research）",
-      "Gemini（Deep Research）",
-      "Claude（Web検索・Research）",
-      "Grok（DeepSearch）",
-      "Microsoft Copilot",
-      "Google AI Mode",
-      "NotebookLM（Google）",
-      "You.com",
-      "Consensus",
-      "Elicit",
-      "Kagi"
-    ],
-    "verdict_questions": [
-      "best-quality",
-      "free",
-      "japanese",
-      "business",
-      "best-value"
-    ],
-    "notes": "「最高品質」の根拠は事実性・引用の正確さの公開評価に限る（一般的な会話品質のアリーナ順位を流用しない）。"
+    "candidates": [],
+    "verdict_questions": [],
+    "notes": ""
   }
 }
