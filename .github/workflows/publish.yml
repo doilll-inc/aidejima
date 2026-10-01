@@ -38,7 +38,7 @@ permissions:
 env:
   ARTICLES_PER_RUN: ${{ inputs.count || '3' }}
   COLLECT_HOURS: ${{ inputs.hours || '24' }}
-  MAX_PER_DAY: 20 # 1日の記事数の上限（4回×3本=12本が通常。手で足した日の使いすぎを防ぐ）
+  MAX_PER_DAY: 30 # 1日の記事数の安全上限（4回×3本=12本が通常。手で書いた記事も数えるので余裕を持たせる）
   WRITER_MODEL: claude-opus-5-5 # 記事の執筆モデル（固定）
   WANT_WRITE: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.write) }}
   HAS_CLAUDE: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' }}
