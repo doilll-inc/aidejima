@@ -3,6 +3,7 @@
   "title": "ChatGPTに共同編集の文書とSpace、アプリ型プラグインや月500ドルのProも登場",
   "description": "OpenAIはDevDayでChatGPTの業務機能を大きく広げた。チームとAIが共同編集する文書Pagesと作業場Space、近く出るスライド、アプリのように動くプラグイン、Codexの再利用できるクラウド環境、月500ドルのPro 500の中身を整理する。",
   "date": "2026-09-30T20:46:00+09:00",
+  "updated": "2026-09-30T23:30:00+09:00",
   "category": "products",
   "tags": ["OpenAI", "ChatGPT", "Codex", "Microsoft", "DevDay"],
   "summary": [
@@ -14,6 +15,8 @@
     {"title": "DevDay 2026 Recap", "publisher": "OpenAI", "url": "https://openai.com/index/devday-2026-recap/"},
     {"title": "About ChatGPT Pro tiers", "publisher": "OpenAI Help Center", "url": "https://help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers"},
     {"title": "ChatGPT Space", "publisher": "OpenAI", "url": "https://chatgpt.com/features/space/"},
+    {"title": "we’re introducing Pro 500—a new plan with our highest usage limits (25x Plus) and access to Ultrafast", "publisher": "X @OpenAI", "url": "https://x.com/OpenAI/status/2104993967985381673"},
+    {"title": "I’ll explain the new Pro 200 plan differently", "publisher": "X @thsottiaux", "url": "https://x.com/thsottiaux/status/2104951965184925941"},
     {"title": "OpenAI takes on Microsoft with the launch of what feels a whole lot like ChatGPT's own office suite", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/09/29/openai-takes-on-microsoft-with-the-launch-of-what-feels-a-whole-lot-like-chatgpts-own-office-suite/"},
     {"title": "OpenAI expands ChatGPT's plug-ins with app-like interfaces and automations", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/09/29/openai-expands-chatgpts-plugins-with-app-like-interfaces-and-automations/"},
     {"title": "OpenAI gives Codex reusable cloud environments that work across devices", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/09/29/openai-gives-codex-reusable-cloud-environments-that-work-across-devices/"},
@@ -28,6 +31,13 @@ OpenAIは現地時間9月29日の開発者会議DevDay 2026で、ChatGPTを仕�
 ## 何が発表されたか
 
 ### 文書・スライドとチーム機能
+
+中心になるのは、チームとChatGPT、Dotが同じ知識を土台に作業する「ChatGPT Space」です。
+
+:::quote https://openai.com/index/devday-2026-recap/ | OpenAI公式ブログ「DevDay 2026 Recap」
+> A new home for your team to collaborate with AI to get work done. Create a dedicated space where teammates, ChatGPT, and your dot can build on shared knowledge.
+チームがAIと協力して仕事を進めるための新しい拠点です。チームのメンバー、ChatGPT、そしてあなたのDotが共有の知識を積み上げていける専用の場所を作れます。
+:::
 
 | 機能 | できること | 対象プラン | 状況 |
 |---|---|---|---|
@@ -44,11 +54,21 @@ Pro、Business、Enterpriseでは、従来の「ライブラリ」がSpaceに置
 
 全プランで「プラグイン拡張」が使えるようになりました。外部のサービスがChatGPTのサイドバーに常駐し、会話の横で操作するパネルや独自形式のファイルを表示するビューアーを作れます。基調講演ではFigmaやAdobeの連携が紹介されました。
 
+:::quote https://openai.com/index/devday-2026-recap/ | OpenAI公式ブログ「DevDay 2026 Recap」
+> We’re opening the platform we use to build ChatGPT features so developers can create their own experiences within ChatGPT. Plugin extensions let you give your plugin a home in the sidebar and build interactive panels where people can work alongside the conversation.
+ChatGPTの機能づくりに使っている基盤を開放し、開発者がChatGPTの中で独自の体験を作れるようにします。プラグイン拡張では、プラグインの置き場所をサイドバーに設け、会話と並べて作業できる操作パネルを作れます。
+:::
+
 会話の流れに合わせてプラグインを薦める機能や、開発者が審査状況を追える新しい申請手順も加わります。接続先のアプリで起きた出来事を合図に自動処理を始める「MCP Events」にも対応しました。ChatGPTで作る簡易サイト「Sites」にもプラグインを載せられ、同僚が自分のデータと権限で使えます（Business、Enterprise、Edu、Healthcare）。
 
 ### Codexのクラウド環境
 
 コーディングエージェントCodexは、手元のPC、スマートフォンからの遠隔操作、クラウドのどこでも動くようになりました。リポジトリや依存関係を設定した開発環境を保存して使い回せ、チームで承認済みの設定と権限を共有できます。各タスクは独立した作業領域で動き、PCがスリープ中でも作業を続けます。対象はPlus、Pro、Business、Enterprise、Edu、Healthcareです。
+
+:::quote https://openai.com/index/devday-2026-recap/ | OpenAI公式ブログ「DevDay 2026 Recap」
+> Now developers can run Codex wherever they need it: on a computer, remotely from a phone, or in the cloud from any device.
+開発者は、手元のコンピューター、スマートフォンからの遠隔操作、どの端末からでも使えるクラウドと、必要な場所でCodexを動かせるようになりました。
+:::
 
 あわせて、音声で指示できるCLI、ChatGPTデスクトップ版でのコードレビュー、GitHubのリポジトリを定期スキャンして修正案まで用意する「Codex Security Cloud」も発表しました。
 
@@ -60,7 +80,13 @@ Pro、Business、Enterpriseでは、従来の「ライブラリ」がSpaceに置
 | Pro 200 | 200ドル | 10倍（既存契約者は10月29日まで20倍） | なし |
 | Pro 500 | 500ドル | 25倍 | あり |
 
-Ultrafastは、GPT-6 AstraをCodexで最大8倍（毎秒300トークン）の速さで動かす高速モードです。プランの利用枠を先に使い、使い切るとクレジット残高から引かれます。Pro 200は停止していた新規受付を再開しましたが、新規契約の利用枠は従来の半分になりました。Pro 100とPro 200の倍率は、OpenAIでCodexやChatGPTの製品責任者を務めるティボー・ソティオー氏がXで説明したもので、Pro 200の変更はEngadgetも報じています。
+OpenAIは公式Xで、Pro 500を最も利用枠が大きく（Plusの25倍）、Ultrafastも使える新プランとして紹介しました。
+
+{{x:https://x.com/OpenAI/status/2104993967985381673}}
+
+Ultrafastは、GPT-6 AstraをCodexで最大8倍（毎秒300トークン）の速さで動かす高速モードです。プランの利用枠を先に使い、使い切るとクレジット残高から引かれます。Pro 200は停止していた新規受付を再開しましたが、新規契約の利用枠は従来の半分になりました。Pro 100とPro 200の倍率は、OpenAIでCodexやChatGPTの製品責任者を務めるティボー・ソティオー氏がXで説明したもので、Pro 200の変更はEngadgetも報じています。同氏は、既存の契約者はしばらく20倍の枠を維持し、追加のクレジットも受け取れるとしています。
+
+{{x:https://x.com/thsottiaux/status/2104951965184925941}}
 
 ## 背景
 

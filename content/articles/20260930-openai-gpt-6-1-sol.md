@@ -3,6 +3,7 @@
   "title": "OpenAIが「GPT-6.1 Sol」を公開、GPT-6 Astraに迫る性能を5分の1の価格で",
   "description": "OpenAIが新モデルGPT-6.1 Solを公開した。コーディングやPC操作、専門業務でGPT-6 Astraに迫る性能を、Astraの5分の1の標準単価で提供する。前日に公開中止が報じられたGPT-6.1 Astraとは別のモデルだ。",
   "date": "2026-09-30T20:55:00+09:00",
+  "updated": "2026-09-30T23:30:00+09:00",
   "category": "models",
   "tags": ["OpenAI", "GPT-6.1", "API", "安全性", "DevDay"],
   "summary": [
@@ -14,6 +15,8 @@
     {"title": "Introducing GPT-6.1 Sol", "publisher": "OpenAI", "url": "https://openai.com/index/introducing-gpt-6-1-sol/"},
     {"title": "GPT-6.1 Sol Model", "publisher": "OpenAI", "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol"},
     {"title": "Addendum to GPT-6 Astra System Card: GPT-6.1 Sol", "publisher": "OpenAI", "url": "https://deploymentsafety.openai.com/gpt-6-1-sol"},
+    {"title": "6.1 Sol at 1/5th of the price of Astra, and 95% cache read discount!", "publisher": "X @sama", "url": "https://x.com/sama/status/2104994395980533804"},
+    {"title": "GPT-6.1 Sol shows major improvements over GPT-6 Sol in our alignment evaluations", "publisher": "X @OpenAI", "url": "https://x.com/OpenAI/status/2104986135005192665"},
     {"title": "OpenAI launches GPT-6.1 Sol, says it nearly matches GPT-6 Astra and costs less", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/09/29/openai-launches-gpt-6-1-sol-says-it-nearly-matches-gpt-6-astra-and-costs-less/"},
     {"title": "OpenAI Delays Release of Latest Model Over Safety Concerns", "publisher": "WIRED", "url": "https://www.wired.com/story/openai-delays-release-of-latest-model-over-safety-concerns/"},
     {"title": "OpenAI says planned GPT-6.1 is too insecure to release", "publisher": "Ars Technica", "url": "https://arstechnica.com/ai/2026/09/openai-says-planned-gpt-6-1-is-too-insecure-to-release/"},
@@ -28,6 +31,11 @@ OpenAIは現地時間9月29日、開発者会議DevDay 2026で新モデル「GPT
 
 GPT-6.1 Solは、9月22日に出たばかりのGPT-6 Solの改良版です。OpenAIは、エージェント型のコーディング、コンピューター操作（画面を見てソフトを動かす機能）、専門業務の3分野で性能が大きく伸びたとしています。
 
+:::quote https://openai.com/index/introducing-gpt-6-1-sol/ | OpenAI公式ブログ「Introducing GPT-6.1 Sol」
+> We’re introducing GPT‑6.1 Sol, an upgrade to GPT‑6 Sol that nearly matches GPT‑6 Astra’s intelligence on agentic coding, computer use, and professional work at one-fifth of Astra’s standard input and output token prices.
+GPT-6 Solを改良したGPT-6.1 Solを発表します。エージェント型のコーディング、コンピューター操作、専門業務でGPT-6 Astraの知能にほぼ並び、価格はAstraの標準の入力・出力トークン単価の5分の1です。
+:::
+
 公式発表で示された主な結果は次のとおりです。
 
 - **DeepSWE v1.1**（実際のコードベースでの開発課題）：GPT-6 Astraと同等の結果を約5分の1のコストで達成。GPT-6 Solの最高スコアを6.4ポイント上回る
@@ -37,6 +45,11 @@ GPT-6.1 Solは、9月22日に出たばかりのGPT-6 Solの改良版です。Ope
 - **事実の正確さ**：低い推論設定で、誤りを含む回答の割合が11.4%から7.7%に低下
 
 一方、科学分野の評価Terminal-Bench Science 0.1では、最高スコアはAstraの68.1%でした。OpenAIも最も難しい研究にはAstraを使うよう勧めています。
+
+:::quote https://openai.com/index/introducing-gpt-6-1-sol/ | OpenAI公式ブログ「Introducing GPT-6.1 Sol」
+> GPT‑6 Astra still achieves the highest score among the models tested at 68.1%, and should be used for the most difficult scientific research tasks.
+試したモデルの中で最も高いスコアは依然としてGPT-6 Astraの68.1%で、最も難しい科学研究のタスクにはAstraを使うべきです。
+:::
 
 API料金（100万トークンあたり、標準処理）は次のとおりです。
 
@@ -48,7 +61,18 @@ API料金（100万トークンあたり、標準処理）は次のとおりで�
 
 入力と出力の単価はGPT-6 Solと同じで、キャッシュ入力（繰り返し送る同じ文脈）がGPT-6 Solの半額に下がりました。入力が27.2万トークンを超えると、入力は2倍、出力は1.5倍の単価になります。扱える文脈は約105万トークン、出力は最大12.8万トークン、知識の期限は2026年4月30日です。
 
-ChatGPTでは、Plus、Pro、Business、Enterprise、Eduの利用者が「ChatGPT Work」（ツールやファイルから資料や分析を仕上げる機能）とCodexで使えます。通常のチャット画面にはまだ入っていません。APIのモデル名は`gpt-6.1-sol`で、数日内に高速版のUltrafastも提供する予定です。
+アルトマンCEOもXで、Astraの5分の1という価格と、キャッシュ読み込みの95%割引を強調しました。
+
+{{x:https://x.com/sama/status/2104994395980533804}}
+
+ChatGPTでは、Plus、Pro、Business、Enterprise、Eduの利用者が「ChatGPT Work」（ツールやファイルから資料や分析を仕上げる機能）とCodexで使えます。通常のチャット画面にはまだ入っていません。
+
+:::quote https://openai.com/index/introducing-gpt-6-1-sol/ | OpenAI公式ブログ「Introducing GPT-6.1 Sol」
+> GPT‑6.1 Sol is available starting today to all Plus, Pro, Business, Enterprise, and Edu users in ChatGPT Work and Codex. GPT‑6.1 Sol is not yet available in Chat.
+GPT-6.1 Solは本日から、Plus、Pro、Business、Enterprise、EduのすべてのユーザーがChatGPT WorkとCodexで使えます。Chat（通常のチャット）ではまだ使えません。
+:::
+
+APIのモデル名は`gpt-6.1-sol`で、数日内に高速版のUltrafastも提供する予定です。
 
 ## 「公開中止」のGPT-6.1とは別のモデル
 
@@ -57,6 +81,10 @@ DevDay前日の9月28日（現地時間）には、OpenAIがGPT-6.1の公開を�
 Ars Technicaは、中止されたモデルは難しい作業を最後までやり遂げる力が高い一方、人間が決めた範囲を守るテストで失敗しやすく、安全でないツールを使ってでも作業を進めたり、行った作業についてユーザーを欺いたりする傾向も強かったと報じています。OpenAIの安全システム責任者サーチ・ジェイン氏はWIREDに「指示された範囲と権限の内にとどまること、そして行った作業をユーザーにどう伝えるかという点で、基準に届かなかった」と説明しました。同社は、安全基準を満たす別の新モデルを近く出す予定だとしています（WIRED）。
 
 Solについて、OpenAIは安全性評価でGPT-6 Solより改善し、Astraに近づいたと説明しています。壊れた検索ツールをユーザーに隠さず伝えられなかった割合は2.1%で、GPT-6 Solの4.9%より低下しました。社内の安全基準「Preparedness Framework」では、サイバーセキュリティ能力を「Critical（重大）」水準として扱い、Astraと同じ防御策を適用しています。
+
+OpenAIの公式Xも、GPT-6.1 Solは自らの限界をより率直に伝え、利用者の意図と安全上の制約をより確実に守るようになったと説明しています。
+
+{{x:https://x.com/OpenAI/status/2104986135005192665}}
 
 ## 背景
 

@@ -3,6 +3,7 @@
   "title": "OpenAI DevDay 2026の発表まとめ、常時稼働エージェントや新モデルなど20件超",
   "description": "OpenAIは現地時間9月29日の開発者会議DevDay 2026で、常時稼働エージェントDots、新モデルGPT-6.1 Sol、ChatGPTの共同作業機能、月500ドルの新プランなど20件超を発表した。安全性をめぐる逆風の中での発表を分野別に整理する。",
   "date": "2026-09-30T20:58:00+09:00",
+  "updated": "2026-09-30T23:30:00+09:00",
   "category": "products",
   "tags": ["OpenAI", "ChatGPT", "DevDay", "エージェント", "開発者", "IPO"],
   "summary": [
@@ -12,6 +13,10 @@
   ],
   "sources": [
     {"title": "DevDay 2026 Recap", "publisher": "OpenAI", "url": "https://openai.com/index/devday-2026-recap/"},
+    {"title": "OpenAI DevDay 2026 Keynote (FULL)", "publisher": "OpenAI（YouTube）", "url": "https://www.youtube.com/watch?v=Fls_onRviPM", "kind": "公式発表"},
+    {"title": "This is Ultrafast.", "publisher": "X @OpenAI", "url": "https://x.com/OpenAI/status/2104993966043320759"},
+    {"title": "You can now use your ChatGPT subscription directly in over 16 partners products.", "publisher": "X @thsottiaux", "url": "https://x.com/thsottiaux/status/2105006253986738615"},
+    {"title": "Live demos suffered from rolling out all the updates at the same time", "publisher": "X @thsottiaux", "url": "https://x.com/thsottiaux/status/2104994835212226681"},
     {"title": "OpenAI DevDay 2026: The biggest news and announcements", "publisher": "The Verge", "url": "https://www.theverge.com/ai-artificial-intelligence/1001681/openai-devday-2026-biggest-news-announcements"},
     {"title": "Sam Altman says OpenAI won't go public until its models are safe", "publisher": "The Verge", "url": "https://www.theverge.com/ai-artificial-intelligence/1002505/sam-altman-openai-ipo-devday-a"},
     {"title": "OpenAI DevDay recap: AI lab rolls out Dots agents, Altman and Friar comment on IPO", "publisher": "CNBC", "url": "https://www.cnbc.com/2026/09/29/openai-devday-2026-live-updates.html"},
@@ -26,7 +31,14 @@ OpenAIは現地時間9月29日、米サンフランシスコで年次開発者�
 
 ## 何が発表されたか
 
-OpenAIの公式まとめをもとに、主な発表を分野別に整理します。
+OpenAIは公式まとめで、今回を過去最大のDevDayと位置づけています。
+
+:::quote https://openai.com/index/devday-2026-recap/ | OpenAI公式ブログ「DevDay 2026 Recap」
+> DevDay 2026 is our biggest yet, with more than 20 major announcements across ChatGPT, Codex, our models, and entirely new forms of working with AI.
+DevDay 2026は過去最大の規模で、ChatGPT、Codex、モデル、そしてAIと働くまったく新しい形にわたり、20件を超える主要な発表を行いました。
+:::
+
+この公式まとめをもとに、主な発表を分野別に整理します。
 
 | 分野 | 主な発表 | 対象 |
 |---|---|---|
@@ -41,11 +53,26 @@ OpenAIの公式まとめをもとに、主な発表を分野別に整理しま�
 
 **GPT-6.1 Sol**は、1週間前に出たGPT-6 Solの改良版です。最上位のGPT-6 Astraに近い性能を、Astraの5分の1の標準単価（100万トークンあたり入力2ドル、出力10ドル）で提供します。詳しくは「[GPT-6.1 Solの公開](/news/20260930-openai-gpt-6-1-sol/)」をご覧ください。
 
-**Ultrafast**は新しい高速ティアで、Codexでは最大8倍（毎秒300トークン）、APIでは最大6倍の速さで生成します。API料金表ではGPT-6 Astraの場合、標準の6倍の単価です。企業向けには、OpenAIの社員が中身を見ずに自動の安全審査を行う「Private Intelligence」も打ち出しました。
+**Ultrafast**は新しい高速ティアで、Codexでは最大8倍（毎秒300トークン）、APIでは最大6倍の速さで生成します。API料金表ではGPT-6 Astraの場合、標準の6倍の単価です。OpenAIも公式Xで、Ultrafastを上位の速度ティアと位置づけ、この倍率を示しています。
+
+{{x:https://x.com/OpenAI/status/2104993966043320759}}
+
+企業向けには、OpenAIの社員が中身を見ずに自動の安全審査を行う「Private Intelligence」も打ち出しました。
 
 開発者向けには、Codexをクラウドで動かす再利用可能な開発環境、リポジトリを定期スキャンする「Codex Security Cloud」、軽量モデルLunaが事前に決めた選択肢から即答する「Decisions API」（限定プレビュー）を発表しました。AWS上でOpenAIのエージェントを動かせる「Bedrock Managed Agents」も加わります。
 
-ChatGPTのプラットフォーム化も進めます。外部の開発者がサイドバーや操作パネルを持つアプリ型のプラグインを作れる「プラグイン拡張」、ChatGPTのアカウントと利用枠を提携16社のサービスで使える「Sign in with ChatGPT」が柱です。企業がOpenAIとの契約額の一部をFigmaやSalesforceなど32社の製品に充てられる「OpenAI Marketplace」も始めます。文書機能やCodex、Pro 500の中身は「[ChatGPTの新しい業務機能](/news/20260930-chatgpt-office-apps-codex/)」で整理しています。
+ChatGPTのプラットフォーム化も進めます。公式まとめは、ChatGPTを人とエージェントが共同で作業し、開発者が利用者に直接サービスを届けられる場として開放すると説明しています。
+
+:::quote https://openai.com/index/devday-2026-recap/ | OpenAI公式ブログ「DevDay 2026 Recap」
+> We also expanded our commitment to an open ecosystem by opening up ChatGPT as a shared surface where humans and agents can collaborate and where developers can directly launch new native experiences to our collective 1.2B weekly users.
+オープンなエコシステムへの取り組みも広げ、ChatGPTを人とエージェントが共同作業できる共有の場として開放します。開発者は、週12億人の利用者に向けて新しいネイティブ体験を直接届けられます。
+:::
+
+柱は、外部の開発者がサイドバーや操作パネルを持つアプリ型のプラグインを作れる「プラグイン拡張」と、ChatGPTのアカウントと利用枠を提携16社のサービスで使える「Sign in with ChatGPT」です。CodexとChatGPTを担当するティボー・ソティオー氏はXで、提携先の製品でもプランに含まれる利用枠をそのまま使えると説明しました。
+
+{{x:https://x.com/thsottiaux/status/2105006253986738615}}
+
+企業がOpenAIとの契約額の一部をFigmaやSalesforceなど32社の製品に充てられる「OpenAI Marketplace」も始めます。文書機能やCodex、Pro 500の中身は「[ChatGPTの新しい業務機能](/news/20260930-chatgpt-office-apps-codex/)」で整理しています。
 
 ## 背景
 
@@ -61,7 +88,13 @@ StratecheryのBen Thompson氏は、DevDayで示された製品はかなりわか
 
 Hacker Newsでは、GPT-6.1 Solの発表スレッドが970ポイントを超えるなど大きな関心を集めました。Sign in with ChatGPTや、キャッシュ入力の値下げを歓迎する声がある一方、批判も目立ちます。月200ドルのPro 200で、Codexなどの利用枠がPlusの20倍から10倍に下がること（既存契約者は10月29日まで旧枠を維持）には、実質的な値上げだとの不満が多く出ました。
 
-会場の外では、労働組合など10以上の団体が抗議集会を開きました（The Verge）。会場で基調講演を見た開発者のサイモン・ウィリソン氏は、基調講演中にライブデモの不調が何度もあったと記録しています。
+会場の外では、労働組合など10以上の団体が抗議集会を開きました（The Verge）。会場で基調講演を見た開発者のサイモン・ウィリソン氏は、基調講演中にライブデモの不調が何度もあったと記録しています。ソティオー氏もXで、すべての更新を同時に展開したことがライブデモに響いたと認めたうえで、今後もデモは生で続けるとしています。
+
+{{x:https://x.com/thsottiaux/status/2104994835212226681}}
+
+基調講演（約54分）の全編は、OpenAIの公式YouTubeチャンネルで公開されています。
+
+{{youtube:https://www.youtube.com/watch?v=Fls_onRviPM}}
 
 ## 日本のビジネスへの影響
 

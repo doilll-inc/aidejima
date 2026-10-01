@@ -3,6 +3,7 @@
   "title": "OpenAIが評価額1.4兆ドルで300億ドル調達を協議と報道、上場までのつなぎ資金に",
   "description": "OpenAIが評価額約1.4兆ドルで300億ドル規模の調達を協議しているとブルームバーグが報じた。3月の評価額8520億ドルから約半年で約1.6倍になる。年内の上場は見送る方針で、上場までのつなぎ資金とみられる。",
   "date": "2026-09-30T20:43:00+09:00",
+  "updated": "2026-09-30T23:30:00+09:00",
   "category": "business",
   "tags": ["OpenAI", "資金調達", "IPO", "Anthropic"],
   "summary": [
@@ -11,12 +12,14 @@
     "アルトマンCEOは年内上場を否定しており、今回の資金は上場までのつなぎと報じられている"
   ],
   "sources": [
+    {"title": "OpenAI raises $122 billion to accelerate the next phase of AI", "publisher": "OpenAI", "url": "https://openai.com/index/accelerating-the-next-phase-ai/"},
+    {"title": "SB OAI Japan GK", "publisher": "OpenAI", "url": "https://openai.com/business/partners/sb-oai-japan-gk/"},
     {"title": "OpenAI reportedly in talks to raise $30B round at $1.4T valuation", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/09/29/openai-reportedly-in-talks-to-raise-30b-round-at-1-4t-valuation/"},
     {"title": "OpenAI in talks to raise $30 billion at $1.4 trillion valuation", "publisher": "CTech", "url": "https://www.calcalistech.com/ctechnews/article/7xqubxcnw"},
     {"title": "OpenAI Valued at $852 Billion After Mega $122 Billion Round", "publisher": "Bloomberg Tax", "url": "https://news.bloombergtax.com/financial-accounting/openai-valued-at-852-billion-after-closing-122-billion-round"},
     {"title": "OpenAI's annualized revenue run rate has surpassed $40 billion says a Bloomberg report", "publisher": "investingLive", "url": "https://investinglive.com/stocks/openai-s-annualized-revenue-run-rate-has-surpassed-40-billion-says-a-bloomberg-report/"},
     {"title": "OpenAI won't do 2026 IPO, extinction risk unacceptable", "publisher": "The Canberra Times", "url": "https://www.canberratimes.com.au/story/9349026/openai-wont-do-2026-ipo-extinction-risk-unacceptable/"},
-    {"title": "The SoftBank Group and OpenAI Launch \"SB OAI Japan\" Joint Venture", "publisher": "SoftBank Group", "url": "https://group.softbank/en/news/press/20251105"},
+    {"title": "The SoftBank Group and OpenAI Launch \"SB OAI Japan\" Joint Venture", "publisher": "SoftBank Group", "url": "https://group.softbank/en/news/press/20251105", "kind": "公式発表"},
     {"title": "OpenAI Targets $30B in New Funding at $1.4T Value", "publisher": "Hacker News", "url": "https://news.ycombinator.com/item?id=49897336"}
   ],
   "editor_note": ""
@@ -40,7 +43,14 @@ OpenAIの評価額は、この1年半ほどで急激に上がってきました�
 | 2026年3月（確定） | 1220億ドル | 8520億ドル（投資後） |
 | 今回（協議中） | 300億ドル規模 | 約1.4兆ドル |
 
-3月のラウンドは、2月に1100億ドルで発表した後に参加者が増えて1220億ドルで確定しました。Amazonが500億ドル、NVIDIAとソフトバンクグループがそれぞれ300億ドルを出しています。
+3月のラウンドは、2月に1100億ドルで発表した後に参加者が増えて1220億ドルで確定しました。OpenAIは当時、公式ブログで確定を発表しています。
+
+:::quote https://openai.com/index/accelerating-the-next-phase-ai/ | OpenAI公式ブログ「OpenAI raises $122 billion to accelerate the next phase of AI」
+> Today, we closed our latest funding round with $122 billion in committed capital at a post money valuation of $852 billion.
+本日、確約額1220億ドル、投資後評価額8520億ドルで最新の資金調達ラウンドを完了しました。
+:::
+
+Amazonが500億ドル、NVIDIAとソフトバンクグループがそれぞれ300億ドルを出しています。
 
 売上も伸びています。ブルームバーグは8月、OpenAIの年換算売上高（直近の売上ペースを1年分に換算した額）が400億ドルを超えたと報じました。2025年末時点では約200億ドルだったとサラ・フライヤーCFOが述べており、1年足らずで倍になった計算です。
 
@@ -58,7 +68,13 @@ Hacker Newsのスレッドは40ポイント程度と、Anthropicの目論見書�
 
 ## 日本のビジネスへの影響
 
-日本との関係で最も大きいのは、ソフトバンクグループの存在です。同社は3月のラウンドで300億ドルを出資しており、OpenAIの評価額は保有資産の価値にも直結します。2025年11月には、ソフトバンク側とOpenAIが50%ずつ出資する合弁会社「SB OAI Japan」を設立し、企業向けAI「クリスタル・インテリジェンス（Crystal intelligence）」を2026年から日本企業に提供する計画を示していました。今回の協議にソフトバンクグループが加わるかどうかは報じられていません。
+日本との関係で最も大きいのは、ソフトバンクグループの存在です。同社は3月のラウンドで300億ドルを出資しており、OpenAIの評価額は保有資産の価値にも直結します。2025年11月には、ソフトバンク側とOpenAIが50%ずつ出資する合弁会社「SB OAI Japan」を設立し、企業向けAI「クリスタル・インテリジェンス（Crystal intelligence）」を2026年から日本企業に提供する計画を示していました。OpenAIも自社サイトの提携先紹介で、この合弁会社の役割を次のように説明しています。
+
+:::quote https://openai.com/business/partners/sb-oai-japan-gk/ | OpenAI公式サイト「SB OAI Japan GK」
+> SB OAI Japan is a joint venture established by SoftBank Group and OpenAI to accelerate the use of advanced AI among Japanese enterprises.
+SB OAI Japanは、日本企業の間で先進的なAIの活用を加速するため、ソフトバンクグループとOpenAIが設立した合弁会社です。
+:::
+今回の協議にソフトバンクグループが加わるかどうかは報じられていません。
 
 ChatGPTやOpenAIのAPIを業務で使う企業にとっては、潤沢な資金が計算資源の確保を支え、当面の提供が不安定になる可能性は低いと考えられます。ただし非公開企業のため、財務やリスクの開示は限られます。上場後に定期開示が始まるAnthropicとは、取引先としての情報量に差が出ます。
 
