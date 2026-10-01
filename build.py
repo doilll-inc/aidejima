@@ -104,11 +104,23 @@ def source_kind(s: dict) -> str:
         return "X投稿"
     if any(h == d or h.endswith("." + d) for d in PAPER_DOMAINS) or "/papers/" in url or "arxiv" in h:
         return "論文"
-    if any(h == d or h.endswith("." + d) for d in OFFICIAL_DOMAINS):
+    def match(domains):
+        return any(h == d or h.endswith("." + d) for d in domains)
+
+    if match(OFFICIAL_DOMAINS) or match(SOURCE_KINDS.get("official_wire_domains", [])):
         if re.search(r"/docs?/|/documentation/|/changelog|/release-notes|developers\.|platform\.|/api/", url):
             return "公式ドキュメント"
         return "公式発表"
+    if match(SOURCE_KINDS.get("community_domains", [])):
+        return "コミュニティ"
+    # 登録外は「報道」扱い（報道機関は数が多く一覧にしきれないため）。会社・作者自身のサイトは、
+    # 記者が sources に "kind": "公式サイト" と明記するか、活用事例の記事なら自動で「公式サイト」にする（parse_article）
     return "報道"
+
+
+def is_media(url: str) -> bool:
+    h = host_of(url)
+    return any(h == d or h.endswith("." + d) for d in SOURCE_KINDS.get("media_domains", []))
 
 
 # ---------- 記事の読み込み ----------
@@ -154,7 +166,7 @@ def initial_badge(label: str) -> str:
     return html.escape(ch.upper())
 
 
-def render_quote(url: str, label: str, inner: str) -> tuple[str, list[str]]:
+def render_quote(url: str, label: str, inner: str, kinds: dict | None = None) -> tuple[str, list[str]]:
     """:::quote の中身 → 公式発表の引用カード（原文＋日本語訳＋出典）"""
     warns = []
     orig = " ".join(ln.lstrip(">").strip() for ln in inner.splitlines() if ln.strip().startswith(">"))
@@ -165,8 +177,8 @@ def render_quote(url: str, label: str, inner: str) -> tuple[str, list[str]]:
         warns.append(f"引用カードに日本語訳がない: {url}")
     if len(re.findall(r"[.!?](?:\s|$)", orig)) > 2:
         warns.append(f"引用カードの原文が2文を超えている（引用は必要な範囲だけ）: {url}")
-    kind = source_kind({"url": url})
     host = host_of(url)
+    kind = (kinds or {}).get(host) or source_kind({"url": url})
     e = html.escape
     return (
         f'\n\n<figure class="pq">'
@@ -178,7 +190,7 @@ def render_quote(url: str, label: str, inner: str) -> tuple[str, list[str]]:
     ), warns
 
 
-def expand_embeds(md_text: str) -> tuple[str, bool, list[str]]:
+def expand_embeds(md_text: str, kinds: dict | None = None) -> tuple[str, bool, list[str]]:
     """本文の埋め込み記法をHTMLに置き換える。
       {{x:https://x.com/<user>/status/<id>}}   X投稿（ビルド時にoEmbedで実在を確認して本文ごと埋め込む）
       :::quote <URL> | <発信元・ページ名> … :::  公式発表の引用カード（> 行=原文、それ以外=日本語訳）
@@ -204,13 +216,13 @@ def expand_embeds(md_text: str) -> tuple[str, bool, list[str]]:
         return f'\n\n<figure class="x-embed">{embed.strip()}</figure>\n\n'
 
     def rep_quote(m: re.Match) -> str:
-        out, w = render_quote(m.group(1), m.group(2), m.group(3))
+        out, w = render_quote(m.group(1), m.group(2), m.group(3), kinds)
         warns.extend(w)
         return out
 
     def rep_card(m: re.Match) -> str:
         url, title, pub = m.group(1), m.group(2), m.group(3) or ""
-        kind = source_kind({"url": url})
+        kind = (kinds or {}).get(host_of(url)) or source_kind({"url": url})
         return (
             f'\n\n<a class="lcard" href="{e(url)}" target="_blank" rel="noopener"><span class="lcard-kind" data-kind="{e(kind)}">{e(kind)}</span>'
             f'<span class="lcard-title">{e(title)}</span><span class="lcard-meta">{e(pub)}{" · " if pub else ""}{e(host_of(url))}</span></a>\n\n'
@@ -300,10 +312,17 @@ def parse_article(path: Path) -> tuple[dict | None, list[str]]:
         return None, errs
 
     slug = path.stem
-    body_md, has_x, embed_warns = expand_embeds(m.group(2).strip())
+    usecase = meta.get("category") == "usecases"
+    sources = []
+    for s0 in meta["sources"]:
+        k = source_kind(s0)
+        if usecase and not s0.get("kind") and k == "報道" and not is_media(s0.get("url", "")):
+            k = "公式サイト"  # 活用事例では、報道機関の一覧にないサイト＝作った本人・会社のサイト
+        sources.append({**s0, "kind": k, "host": host_of(s0.get("url", ""))})
+    kind_by_host = {s1["host"]: s1["kind"] for s1 in sources if s1["host"]}
+    body_md, has_x, embed_warns = expand_embeds(m.group(2).strip(), kind_by_host)
     body_html, toc = render_body(body_md)
     updated = datetime.fromisoformat(meta["updated"]) if meta.get("updated") else None
-    sources = [{**s, "kind": source_kind(s), "host": host_of(s.get("url", ""))} for s in meta["sources"]]
     kinds = [s["kind"] for s in sources]
     chars = len(re.sub(r"\s", "", re.sub(r"<[^>]+>", "", body_html)))
     big, kicker = pick_thumb_text(meta)
@@ -323,7 +342,7 @@ def parse_article(path: Path) -> tuple[dict | None, list[str]]:
         "thumb_kicker": kicker,
         "sources": sources,
         "publishers": list(dict.fromkeys(s.get("publisher", "") for s in sources if s.get("publisher"))),
-        "primary_count": sum(1 for k in kinds if k in ("公式発表", "公式ドキュメント", "X投稿", "論文")),
+        "primary_count": sum(1 for k in kinds if k in ("公式発表", "公式ドキュメント", "公式サイト", "X投稿", "論文")),
         "has_x_embed": has_x,
         "embed_warns": embed_warns,
         "quote_count": body_html.count('class="pq"'),

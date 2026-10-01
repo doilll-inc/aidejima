@@ -1285,7 +1285,8 @@ a:hover {
   margin-top: 2px;
 }
 .sources .kind[data-kind="公式発表"],
-.sources .kind[data-kind="公式ドキュメント"] {
+.sources .kind[data-kind="公式ドキュメント"],
+.sources .kind[data-kind="公式サイト"] {
   background: var(--accent);
   color: #fff;
 }
@@ -2283,4 +2284,11 @@ button {
   .guide-table td[data-label="料金"] .gt-free {
     margin-left: auto;
   }
+}
+
+.pq-kind[data-kind="コミュニティ"],
+.lcard-kind[data-kind="コミュニティ"],
+.sources .kind[data-kind="コミュニティ"] {
+  background: #e0e7ff;
+  color: #3730a3;
 }
