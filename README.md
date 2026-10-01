@@ -19,11 +19,13 @@ GitHub Pages に公開 → scripts/notify.py で IndexNow と WebSub に通知
 
 自動実行は `.github/workflows/publish.yml`。毎時5分に収集し、gate を通った回だけ執筆（1日の上限 `MAX_PER_DAY`）。手動実行は Actions タブの「publish」→ Run workflow（本数・時間幅を指定可。手動は gate を通さず必ず書く）。
 
+用途別AIガイド（`/best/`）の点検は `.github/workflows/guides.yml`。毎日06:30 JSTに、点検日が古い順に2本ずつ公式ページを開き直して料金・条件・評価の根拠を更新する（約1週間で全ガイドを一巡）。記事を書いたときに料金や新モデルが分かれば、記者もその場でガイドを直す。
+
 ## ファイル
 
 | パス | 役割 |
 |---|---|
-| `content/articles/*.md` | 記事（先頭にJSONのメタ情報、下にMarkdown本文）。URLは `/news/<ファイル名>/`。本文に `{{x:https://x.com/…/status/…}}` と書くとXの公式埋め込みになる |
+| `content/articles/*.md` | 記事（先頭にJSONのメタ情報、下にMarkdown本文）。URLは `/news/<ファイル名>/`。一次情報の埋め込み記法（`{{x:}}`・`:::quote`・`{{card:}}`・`{{youtube:}}`）は EDITORIAL.md §2 |
 | `content/pages/*.md` | 固定ページ（編集方針・編集長プロフィール・プライバシー） |
 | `data/site.json` | サイト設定（URL・編集長プロフィール・GA4・Search Console・IndexNow・タグページのnoindex閾値） |
 | `data/taxonomy.json` | カテゴリ定義、日本語タグのURL用slug、情報源の種別判定（公式ドメイン一覧） |
@@ -32,6 +34,10 @@ GitHub Pages に公開 → scripts/notify.py で IndexNow と WebSub に通知
 | `data/models.json` | AIモデル図鑑（/models/）の元データ。記者が公式の料金・仕様を確認したときに更新 |
 | `templates/` `static/style.css` | デザイン |
 | `og.py` | OG画像・サムネイル・ロゴの自動生成（元記事の画像は使わない。16:9・4:3・1:1を出す） |
+| `data/guides/*.json` | 用途別AIガイド（/best/）の元データ。事実は公式ページだけ・出典と確認日つき。定義と調査手順は `data/guides/SCHEMA.md`、設計は `docs/guides-design.md` |
+| `guides.py` | ガイドデータの検証（`python3 guides.py check <slug>`）。build.py もこれでエラー判定する |
+| `scripts/guide_refresh_prompt.md` | ガイド点検担当（guides.yml）への指示 |
+| `scripts/x_check.py` | X投稿のURLが実在するかを無料で確かめる（埋め込む前に必ず使う） |
 | `scripts/notify.py` | 公開後に IndexNow と WebSub へ通知 |
 
 ## 手元での作業
