@@ -235,7 +235,8 @@
       "name": "r/LocalLLaMA",
       "url": "https://www.reddit.com/r/LocalLLaMA/top/.rss?t=day",
       "weight": 1.0,
-      "type": "community"
+      "type": "community",
+      "_note": "RedditはRSSを2026-11-13に終了予定（/news/20261001-reddit-ends-rss-public-api/）。止まったらこの行を消す（開発者コミュニティの話題は Hacker News で拾える）"
     }
   ],
   "hn": {
