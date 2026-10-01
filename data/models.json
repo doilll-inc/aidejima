@@ -151,6 +151,22 @@
       "checked": "2026-10-01"
     },
     {
+      "slug": "gemini-4-argon",
+      "name": "Gemini 4 Argon",
+      "vendor": "Google",
+      "tier": "最上位",
+      "released": "2026-09-30",
+      "input_per_m": 2.0,
+      "cached_input_per_m": 0.1,
+      "output_per_m": 10.0,
+      "max_output": 1000000,
+      "status": "preview",
+      "note": "導入価格。期間終了後は入力$4・出力$20になる。提供はFairwind Programのサイバー防御パートナーが先行し、一般提供は有料API顧客とGoogle AI Ultraから",
+      "official_url": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/",
+      "article": "/news/20261001-google-gemini-4-argon/",
+      "checked": "2026-10-01"
+    },
+    {
       "slug": "gemini-3-1-pro-preview",
       "name": "Gemini 3.1 Pro Preview",
       "vendor": "Google",
