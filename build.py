@@ -279,6 +279,36 @@ def pick_thumb_text(meta: dict) -> tuple[str, str]:
     return big, kicker
 
 
+QUOTE_SHARE_MAX = 0.20  # 引用（原文＋訳）は本文の2割まで（著作権法32条の「主従関係」を数字で守る）
+INLINE_QUOTE_MAX = 70  # 本文中の「」引用は全角70字まで
+
+
+def copy_checks(body_md: str, meta: dict) -> list[str]:
+    """パクリ記事を出さないための機械的な検査（EDITORIAL.md「著作権・引用のガバナンス」）"""
+    warns = []
+    src_urls = {str(s.get("url", "")).split("#")[0].rstrip("/") for s in meta.get("sources") or []}
+    quotes = QUOTE_RE.findall(body_md)
+    qchars = sum(len(re.sub(r"\s", "", q[2])) for q in quotes)
+    plain = QUOTE_RE.sub("", body_md)
+    plain = re.sub(r"\{\{[^}]+\}\}", "", plain)
+    bchars = len(re.sub(r"\s", "", plain))
+    share = qchars / max(1, bchars + qchars)
+    if share > QUOTE_SHARE_MAX:
+        warns.append(f"引用（原文＋訳）が本文の{share:.0%}（上限{QUOTE_SHARE_MAX:.0%}）。引用カードを減らすか短くし、自分の文章を主にする")
+    for q in quotes:
+        if q[0].split("#")[0].rstrip("/") not in src_urls:
+            warns.append(f"引用カードのURLが sources にない（出所の明示）: {q[0]}")
+    no_links = re.sub(r"\]\([^)]*\)", "]", plain)
+    if re.search(r"(?:[A-Za-z][A-Za-z'’,\-]*\s+){20,}[A-Za-z'’,\-]+", no_links):
+        warns.append("英語の原文が引用カードの外に長く貼られている。引用カードに入れるか、自分の言葉で書く")
+    for x in re.findall(r"「([^」]+)」", plain):
+        if re.fullmatch(r"\[[^\]]+\]\([^)]+\)", x.strip()):
+            continue  # 当サイトの別記事へのリンク（記事名）。引用ではない
+        if len(x) > INLINE_QUOTE_MAX:
+            warns.append(f"本文中の「」引用が{len(x)}字（{INLINE_QUOTE_MAX}字まで）：「{x[:20]}…」。短くするか引用カードにする（発言者・媒体・URLを明記）")
+    return warns
+
+
 def parse_article(path: Path) -> tuple[dict | None, list[str]]:
     errs: list[str] = []
     text = path.read_text(encoding="utf-8")
@@ -312,6 +342,7 @@ def parse_article(path: Path) -> tuple[dict | None, list[str]]:
         return None, errs
 
     slug = path.stem
+    copy_warns = copy_checks(m.group(2), meta)
     usecase = meta.get("category") == "usecases"
     sources = []
     for s0 in meta["sources"]:
@@ -344,6 +375,7 @@ def parse_article(path: Path) -> tuple[dict | None, list[str]]:
         "publishers": list(dict.fromkeys(s.get("publisher", "") for s in sources if s.get("publisher"))),
         "primary_count": sum(1 for k in kinds if k in ("公式発表", "公式ドキュメント", "公式サイト", "X投稿", "論文")),
         "has_x_embed": has_x,
+        "copy_warns": copy_warns,
         "embed_warns": embed_warns,
         "quote_count": body_html.count('class="pq"'),
         "x_count": body_html.count('class="x-embed"'),
@@ -939,7 +971,7 @@ def warn_quality(arts: list[dict]) -> None:
     for a in arts:
         heads_by_day[a["date"].strftime("%Y-%m-%d")][a["title"][:6]] += 1
     for a in arts:
-        w = list(a["embed_warns"])
+        w = list(a["embed_warns"]) + list(a.get("copy_warns", []))
         if a["quote_count"] + a["x_count"] == 0:
             w.append("一次情報の引用カード（:::quote）もX投稿の埋め込みもない。公式発表の原文かX投稿を1つ以上入れる")
         if not 20 <= len(a["title"]) <= 60:
