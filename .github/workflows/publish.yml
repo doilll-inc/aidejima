@@ -116,7 +116,7 @@ jobs:
           claude_args: |
             --model ${{ env.WRITER_MODEL }}
             --allowedTools "Read,Write,Edit,Glob,Grep,Bash,WebSearch,WebFetch"
-            --max-turns 120
+            --max-turns 80
           prompt: ${{ steps.prompt.outputs.text }}
 
       # 上の回が失敗したとき（混雑・一時的なエラー）だけ、同じモデルでもう一度。
@@ -132,7 +132,7 @@ jobs:
           claude_args: |
             --model ${{ env.WRITER_MODEL }}
             --allowedTools "Read,Write,Edit,Glob,Grep,Bash,WebSearch,WebFetch"
-            --max-turns 120
+            --max-turns 80
           prompt: ${{ steps.prompt.outputs.text }}
 
       # 書いた記事を、別の回の Opus が引用・転載の観点だけで校閲する（2026-10-01 の点検で55本中43本が
@@ -167,7 +167,7 @@ jobs:
           claude_args: |
             --model ${{ env.WRITER_MODEL }}
             --allowedTools "Read,Write,Edit,Glob,Grep,Bash,WebFetch"
-            --max-turns 80
+            --max-turns 40
           prompt: ${{ steps.review_prompt.outputs.text }}
 
       - name: push
