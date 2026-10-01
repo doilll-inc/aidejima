@@ -1,14 +1,14 @@
 {
   "slug": "local-llm",
-  "status": "draft",
+  "status": "published",
   "priority": 3,
   "created": "2026-09-30",
-  "updated": "2026-09-30",
-  "last_reviewed": "2026-09-30",
+  "updated": "2026-10-01",
+  "last_reviewed": "2026-10-01",
   "title": "ローカルLLM・オープンウェイトモデルのおすすめ",
   "short_name": "ローカルLLM",
   "seo": {
-    "description": "",
+    "description": "手元のPCやサーバーで動かせるオープンウェイトモデルと実行環境を公式情報で比較。Qwen3.8・Gemma 4・Kimi K3・GLM-5.3 のライセンスと必要サイズ、Ollama と LM Studio の違い、公開評価にもとづく目的別のおすすめをまとめています。",
     "keywords": [
       "ローカルLLM",
       "オープンウェイト",
@@ -17,7 +17,7 @@
       "おすすめ"
     ]
   },
-  "intro": "",
+  "intro": "性能で選ぶなら **MiMo-V2.6-Pro**・**GLM-5.3**・**Kimi K3** が公開評価の上位ですが、いずれもGPUサーバーが前提です。ノートPCや1台のGPUで動かすなら、Apache 2.0 の **Qwen3.8-27B** か **Gemma 4** を **LM Studio**（日本語表示に対応）か **Ollama** で動かすのが出発点です。商用利用はモデルごとにライセンスが違うので、表の「商用」欄と各モデルのライセンス文書を確認してください。",
   "scope": "手元のPCやサーバーで動かせる公開モデル（オープンウェイト）と、その実行環境を比べる。クラウドのAPIは「AI API」ガイドで扱う。",
   "audience": [
     "開発者",
@@ -36,8 +36,877 @@
       "desc": "モデルを動かすアプリ・サーバー"
     }
   ],
-  "verdicts": [],
-  "products": [],
+  "verdicts": [
+    {
+      "id": "best-quality",
+      "question": "最高品質で選ぶなら",
+      "pick": "mimo-v2.6-pro",
+      "runner_up": [
+        "kimi-k3",
+        "glm-5.3"
+      ],
+      "answer": "Artificial Analysis のオープンウェイト比較で MiMo-V2.6-Pro が46で首位、GLM-5.3（45）と Kimi K3（44）が僅差で続きます。LMArena では Kimi K3 がオープンライセンスの最上位（1488）で、3つの差は10点以内です。いずれもサーバー級のGPUが前提です。",
+      "evidence": [
+        {
+          "kind": "third_party",
+          "name": "Artificial Analysis Intelligence Index（オープンウェイト）",
+          "url": "https://artificialanalysis.ai/models/open-source",
+          "date": "2026-10-01",
+          "note": "MiMo-V2.6-Pro 46、GLM-5.3 (max) 45、Kimi K3 (max) 44（2026-10-01時点）"
+        },
+        {
+          "kind": "third_party",
+          "name": "LMArena Text Arena（総合）",
+          "url": "https://arena.ai/leaderboard/text",
+          "date": "2026-10-01",
+          "note": "kimi-k3-max 1488（17位）、mimo-v2.6-pro 1480（25位）、glm-5.3-max 1479（26位）（2026-09-30更新）"
+        }
+      ]
+    },
+    {
+      "id": "japanese",
+      "question": "日本語重視なら",
+      "pick": "kimi-k3",
+      "runner_up": [
+        "glm-5.3",
+        "qwen3.8"
+      ],
+      "answer": "LMArena の日本語部門で、オープンライセンスのモデルの最上位は Kimi K3（全体7位・1501）で、GLM-5.3 は34位（1454）です。手元のPCで動くサイズでは Qwen3.8-27B が81位（1401）。日本語部門は票数が少ないため、順位には幅があります。",
+      "evidence": [
+        {
+          "kind": "third_party",
+          "name": "LMArena Text Arena（日本語）",
+          "url": "https://arena.ai/leaderboard/text/japanese",
+          "date": "2026-10-01",
+          "note": "kimi-k3-max 7位 1501（501票）、glm-5.3-max 34位 1454（323票）、qwen3.8-27b 81位 1401（2026-09-30更新）"
+        }
+      ]
+    },
+    {
+      "id": "commercial",
+      "question": "商用利用（広告・納品物）なら",
+      "pick": "qwen3.8",
+      "runner_up": [
+        "gemma-4",
+        "deepseek-v4.1-flash"
+      ],
+      "answer": "Qwen3.8-27B と Gemma 4 は Apache 2.0、DeepSeek-V4.1-Flash と MiMo-V2.6-Pro は MIT で、商用利用に追加の条件がありません。Kimi K3・GLM-5.3・Qwen3.8 の2.4T版は独自ライセンスで、大規模なAPI提供や大型サービスでの表示義務などの条件があります。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Qwen3.8-27B モデルカード",
+          "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+          "date": "2026-10-01",
+          "note": "license: apache-2.0"
+        },
+        {
+          "kind": "official",
+          "name": "Gemma 4 31B モデルカード",
+          "url": "https://huggingface.co/google/gemma-4-31B-it",
+          "date": "2026-10-01",
+          "note": "License: Apache 2.0"
+        },
+        {
+          "kind": "official",
+          "name": "DeepSeek-V4.1-Flash モデルカード",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+          "date": "2026-10-01",
+          "note": "License: MIT"
+        },
+        {
+          "kind": "official",
+          "name": "Kimi K3 License",
+          "url": "https://huggingface.co/moonshotai/Kimi-K3/blob/main/LICENSE",
+          "date": "2026-10-01",
+          "note": "年間売上2,000万ドル超のMaaS事業は別契約、大規模サービスでは表示義務"
+        }
+      ]
+    },
+    {
+      "id": "business",
+      "question": "会社で安全に使うなら（入力が学習に使われない・管理機能）",
+      "pick": "ollama",
+      "runner_up": [
+        "lm-studio"
+      ],
+      "answer": "Ollama は MIT ライセンスで、ローカル実行なら入力はPCの外に出ず、OpenAI 互換の API で社内ツールから呼べます。クラウド機能は無効にでき、クラウドを使う場合も学習には使わないと明記しています。LM Studio は利用規約で社内業務での利用を認めています。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Ollama Cloud（公式ドキュメント）",
+          "url": "https://docs.ollama.com/cloud",
+          "date": "2026-10-01",
+          "note": "We do not use them to train models。クラウド機能の無効化を案内"
+        },
+        {
+          "kind": "official",
+          "name": "Ollama（GitHub）",
+          "url": "https://github.com/ollama/ollama",
+          "date": "2026-10-01",
+          "note": "License: MIT"
+        },
+        {
+          "kind": "official",
+          "name": "LM Studio Terms",
+          "url": "https://lmstudio.ai/terms",
+          "date": "2026-10-01",
+          "note": "personal and / or internal business purposes"
+        }
+      ]
+    },
+    {
+      "id": "beginner",
+      "question": "初めて使うなら",
+      "pick": "lm-studio",
+      "runner_up": [
+        "ollama"
+      ],
+      "answer": "LM Studio はアプリ内でモデルを探して取得でき、画面を日本語に切り替えられます。ローカル実行は無料で、Mac（M1以降）・Windows・Linux に対応します。コマンド操作に慣れているなら Ollama も手軽です。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "LM Studio in your language",
+          "url": "https://lmstudio.ai/docs/app/user-interface/languages",
+          "date": "2026-10-01",
+          "note": "Japanese に対応"
+        },
+        {
+          "kind": "official",
+          "name": "LM Studio System Requirements",
+          "url": "https://lmstudio.ai/docs/app/system-requirements",
+          "date": "2026-10-01",
+          "note": "Mac（M1/M2/M3/M4）、Windows（x64/ARM）、Linux（x64/ARM64）。16GB以上のRAMを推奨"
+        },
+        {
+          "kind": "official",
+          "name": "Bionic Pricing | LM Studio",
+          "url": "https://lmstudio.ai/pricing",
+          "date": "2026-10-01",
+          "note": "Free：Run local LLMs on your machine"
+        }
+      ]
+    },
+    {
+      "id": "laptop",
+      "question": "ノートPCや1台のGPUで動かすなら",
+      "pick": "gemma-4",
+      "runner_up": [
+        "qwen3.8"
+      ],
+      "answer": "Gemma 4 は Ollama 版で E4B が6.6GB〜、26B A4B が16GB〜とサイズを選べ、Apache 2.0 です。性能を優先するなら Qwen3.8-27B（Ollama 版18GB）で、AAの総合指数は34と Gemma 4 31B の15を上回ります。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Ollama gemma4",
+          "url": "https://ollama.com/library/gemma4",
+          "date": "2026-10-01",
+          "note": "e2b 4.6GB〜、e4b 6.6GB〜、26b 16GB〜、31b 19GB〜"
+        },
+        {
+          "kind": "official",
+          "name": "Ollama qwen3.8",
+          "url": "https://ollama.com/library/qwen3.8",
+          "date": "2026-10-01",
+          "note": "qwen3.8:latest 18GB"
+        },
+        {
+          "kind": "third_party",
+          "name": "Artificial Analysis（モデル一覧）",
+          "url": "https://artificialanalysis.ai/leaderboards/models",
+          "date": "2026-10-01",
+          "note": "Qwen3.8 27B (xhigh) 34、Gemma 4 31B 15（2026-10-01時点）"
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "mimo-v2.6-pro",
+      "name": "MiMo-V2.6-Pro",
+      "vendor": "Xiaomi",
+      "url": "https://mimo.xiaomi.com/",
+      "status": "featured",
+      "rank": 1,
+      "segment": "models",
+      "tags": [
+        "Xiaomi",
+        "MiMo",
+        "オープンウェイト"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "MiMo-V2.6-Pro（RL・MOPD 版）",
+        "source_url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "api"
+      ],
+      "strengths": [
+        "AAのオープンウェイト部門で1位（46）",
+        "MITライセンスで商用利用の条件なし",
+        "テキスト・画像・動画・音声を扱う"
+      ],
+      "weaknesses": [
+        "総パラメータ1.02兆でPCでは動かせない"
+      ],
+      "editorial_take": "オープンウェイトの総合指数で首位だが、総1.02兆・アクティブ420億パラメータのMoEで、動かすにはサーバー級のGPUが要る。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "無料（自前の計算資源が必要）。Hugging Face で重みを公開",
+          "source_url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+          "checked": "2026-10-01"
+        },
+        "plans": [],
+        "jpy_official": false,
+        "note": ""
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "MITライセンス（モデルカード）",
+        "source_url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "kimi-k3",
+      "name": "Kimi K3",
+      "vendor": "Moonshot AI",
+      "url": "https://www.kimi.com/blog/kimi-k3",
+      "status": "featured",
+      "rank": 2,
+      "segment": "models",
+      "tags": [
+        "Kimi",
+        "Moonshot AI",
+        "オープンウェイト"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Kimi K3",
+        "source_url": "https://www.kimi.com/blog/kimi-k3",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "api"
+      ],
+      "strengths": [
+        "LMArenaでオープンウェイト最上位（総合・日本語）",
+        "100万トークンの文脈、画像・動画も扱う",
+        "社内利用はライセンスの追加条件の対象外"
+      ],
+      "weaknesses": [
+        "総2.8兆パラメータでPCでは動かせない",
+        "独自ライセンス（大規模なAPI提供は別契約）"
+      ],
+      "editorial_take": "公開評価の上位にいる最大級のオープンウェイトモデル。総2.8兆・アクティブ1,040億パラメータで、自社運用はGPUサーバーが前提。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "無料（自前の計算資源が必要）。Hugging Face で重みを公開",
+          "source_url": "https://huggingface.co/moonshotai/Kimi-K3",
+          "checked": "2026-10-01"
+        },
+        "plans": [],
+        "jpy_official": false,
+        "note": ""
+      },
+      "commercial_use": {
+        "value": "conditional",
+        "note": "Kimi K3 License：MITに近い条件で商用利用可。ただし年間売上2,000万ドル超の事業者がモデルをAPI等で第三者に提供する場合は別契約、月間1億MAUか月商2,000万ドル超の製品では「Kimi K3」の表示が必要。社内利用はこれらの対象外",
+        "source_url": "https://huggingface.co/moonshotai/Kimi-K3/blob/main/LICENSE",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "glm-5.3",
+      "name": "GLM-5.3",
+      "vendor": "Z.ai",
+      "url": "https://z.ai/blog/glm-5.3",
+      "status": "featured",
+      "rank": 3,
+      "segment": "models",
+      "tags": [
+        "GLM",
+        "Zhipu",
+        "オープンウェイト"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "GLM-5.3 / GLM-5.3-Flash",
+        "released": "2026-08-14",
+        "source_url": "https://z.ai/blog/glm-5.3",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "api"
+      ],
+      "strengths": [
+        "AAのオープンウェイト部門で2位（45）",
+        "軽量版 Flash（総320B・アクティブ18B）はMIT",
+        "コーディング性能を公式が強調"
+      ],
+      "weaknesses": [
+        "GLM-5.3本体は独自ライセンス",
+        "本体は総7,530億パラメータでサーバー向け"
+      ],
+      "editorial_take": "本体（GLM-5.3）は独自ライセンス、軽量版の GLM-5.3-Flash は MIT。Flash もアクティブ180億パラメータのMoEで、ノートPC向けではない。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "無料（自前の計算資源が必要）。重みは発表の約2週間後に Hugging Face で公開",
+          "source_url": "https://huggingface.co/zai-org/GLM-5.3",
+          "checked": "2026-10-01"
+        },
+        "plans": [],
+        "jpy_official": false,
+        "note": ""
+      },
+      "commercial_use": {
+        "value": "conditional",
+        "note": "GLM-5.3 License：MITに近い条件で商用利用可。年間売上100億ドル超の事業者がモデルをAPI等で第三者に提供する場合は、商用利用の前に Z.ai のセキュリティ審査が必要。GLM-5.3-Flash は MIT",
+        "source_url": "https://huggingface.co/zai-org/GLM-5.3/blob/main/LICENSE",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "deepseek-v4.1-flash",
+      "name": "DeepSeek-V4.1-Flash",
+      "vendor": "DeepSeek",
+      "url": "https://www.deepseek.com/",
+      "status": "featured",
+      "rank": 4,
+      "segment": "models",
+      "tags": [
+        "DeepSeek",
+        "オープンウェイト"
+      ],
+      "model_slugs": [
+        "deepseek-v4-1-flash"
+      ],
+      "latest": {
+        "name": "DeepSeek-V4.1-Flash",
+        "released": "2026-09-10",
+        "source_url": "https://www.deepseek.com/en/news/deepseek-v4-1-flash/",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "api"
+      ],
+      "strengths": [
+        "MITライセンス",
+        "100万トークンの文脈、画像も入力できる",
+        "AAのオープンウェイト部門で39"
+      ],
+      "weaknesses": [
+        "バックボーン5,520億パラメータでサーバー向け",
+        "Jinja形式のチャットテンプレートは同梱なし"
+      ],
+      "editorial_take": "MITライセンスで条件なく商用利用できる。手元で動かすにはGPUサーバーが必要。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "無料（自前の計算資源が必要）。Hugging Face で重みを公開",
+          "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+          "checked": "2026-10-01"
+        },
+        "plans": [],
+        "jpy_official": false,
+        "note": ""
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "MITライセンス（モデルカード）",
+        "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "qwen3.8",
+      "name": "Qwen3.8（27B ほか）",
+      "vendor": "Alibaba（Qwen）",
+      "url": "https://qwen.ai/",
+      "status": "featured",
+      "rank": 5,
+      "segment": "models",
+      "tags": [
+        "Qwen",
+        "Alibaba",
+        "オープンウェイト"
+      ],
+      "model_slugs": [
+        "qwen3-8-max"
+      ],
+      "latest": {
+        "name": "Qwen3.8-27B",
+        "source_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "api"
+      ],
+      "strengths": [
+        "27BはApache 2.0で商用の条件なし",
+        "27BはOllama版18GBで手元でも動かせる",
+        "27Bの文脈長は26万トークン（最大100万）"
+      ],
+      "weaknesses": [
+        "最上位の2.4T版は独自ライセンス"
+      ],
+      "editorial_take": "手元で動かせるサイズで性能が高いのが27B。AAの総合指数34は、同じ規模帯のオープンウェイトで目立つ値。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "無料（自前の計算資源が必要）。Ollama の qwen3.8 は18GB",
+          "source_url": "https://ollama.com/library/qwen3.8",
+          "checked": "2026-10-01"
+        },
+        "plans": [],
+        "jpy_official": false,
+        "note": ""
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "Qwen3.8-27B は Apache 2.0。2.4T-A95B（Max級）は独自ライセンスで、月間1億MAUか月商2,000万ドル超の製品ではモデル名の表示、年間売上5,000万ドル超のAPI提供・AI業務アシスタント事業は別ライセンスが必要",
+        "source_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "gemma-4",
+      "name": "Gemma 4",
+      "vendor": "Google",
+      "url": "https://deepmind.google/models/gemma/",
+      "status": "featured",
+      "rank": 6,
+      "segment": "models",
+      "tags": [
+        "Gemma",
+        "Google",
+        "オープンウェイト"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Gemma 4（E2B・E4B・12B・26B A4B・31B）",
+        "released": "2026-04-02",
+        "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "api"
+      ],
+      "strengths": [
+        "Apache 2.0で商用の条件なし",
+        "E4BはOllama版6.6GBからでノートPC向き",
+        "35以上の言語に対応（140以上で事前学習）"
+      ],
+      "weaknesses": [
+        "AAの総合指数は31Bで15と上位モデルより低い"
+      ],
+      "editorial_take": "ノートPCから1台のGPUまで、サイズを選んで手元で動かせる。日本語の業務文書を社外に出さずに要約・下書きしたい用途の入口。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "無料（自前の計算資源が必要）。Ollama の gemma4 は e2b 4.6GB〜、e4b 6.6GB〜、26b 16GB〜、31b 19GB〜",
+          "source_url": "https://ollama.com/library/gemma4",
+          "checked": "2026-10-01"
+        },
+        "plans": [],
+        "jpy_official": false,
+        "note": ""
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "Gemma 4 は Apache 2.0（モデルカード）。Gemma 3 までの独自ライセンス（Gemma license）から変わった",
+        "source_url": "https://huggingface.co/google/gemma-4-31B-it",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "ollama",
+      "name": "Ollama",
+      "vendor": "Ollama",
+      "url": "https://ollama.com/",
+      "status": "featured",
+      "rank": 7,
+      "segment": "runtimes",
+      "tags": [
+        "Ollama"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Ollama v0.35.0",
+        "released": "2026-09-28",
+        "source_url": "https://github.com/ollama/ollama/releases/tag/v0.35.0",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "desktop",
+        "cli",
+        "api"
+      ],
+      "strengths": [
+        "本体はMITライセンス",
+        "macOS・Windows・Linuxに対応",
+        "OpenAI・Anthropic互換のAPIで呼べる"
+      ],
+      "weaknesses": [
+        "日本語の画面表示の記載なし"
+      ],
+      "editorial_take": "コマンド1つでモデルを取得して動かし、社内ツールからAPIで呼べる。クラウド機能はオフにしてローカル専用にできる（公式FAQ）。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "ローカルでの実行は無料。クラウドモデルは従量課金のクレジットで使える",
+          "source_url": "https://ollama.com/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Pro",
+            "amount": 20,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$20 / mo. or $200/yr",
+            "detail": "クラウド用クレジット月$60分、大きいモデルへのアクセス",
+            "source_url": "https://ollama.com/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Max",
+            "amount": 100,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$100 / mo.",
+            "detail": "クラウド用クレジット月$300分",
+            "source_url": "https://ollama.com/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Team",
+            "amount": 500,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$500 / mo.",
+            "detail": "チームで共有するクレジット月$1,000分",
+            "source_url": "https://ollama.com/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": "有料プランはクラウド実行用。ローカル実行には不要"
+      },
+      "japanese": {
+        "ui": "unknown",
+        "output": "unknown",
+        "note": "画面の対応言語の記載は見つからず。出力言語は使うモデルによる",
+        "source_url": "https://docs.ollama.com/",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "Ollama 本体は MIT ライセンス。動かすモデルの商用可否はモデルのライセンスに従う",
+        "source_url": "https://github.com/ollama/ollama",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "not_used",
+        "note": "ローカル実行はPC内で完結。クラウドのプロンプトと応答もモデルの学習に使わないと明記",
+        "source_url": "https://docs.ollama.com/cloud",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "lm-studio",
+      "name": "LM Studio",
+      "vendor": "Element Labs, Inc.",
+      "url": "https://lmstudio.ai/",
+      "status": "featured",
+      "rank": 8,
+      "segment": "runtimes",
+      "tags": [
+        "LM Studio"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "LM Studio Bionic 1.1.7",
+        "released": "2026-10-01",
+        "source_url": "https://lmstudio.ai/changelog",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "desktop",
+        "cli",
+        "api"
+      ],
+      "strengths": [
+        "画面を日本語に切り替えられる",
+        "アプリ内でモデルを探して取得できる",
+        "Mac（M1以降）・Windows・Linuxに対応"
+      ],
+      "weaknesses": [
+        "本体はクローズドソース（利用規約で許諾）",
+        "クラウド推論は米国ホスト"
+      ],
+      "editorial_take": "GUIでモデルを選んで試せるので、ローカルLLMを初めて触るならここから。llama.cpp と MLX を内部で使い、エージェント機能 Bionic も無料で使える。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "ローカルLLMの実行、Bionic エージェント、オフライン音声書き起こし、LM Link（5台まで）",
+          "source_url": "https://lmstudio.ai/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Bionic+",
+            "amount": 20,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$20 USD / month",
+            "detail": "米国ホストのオープンモデル（Kimi K3・GLM 5.3 など）をクラウドで利用",
+            "source_url": "https://lmstudio.ai/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Pro",
+            "amount": 100,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$100 USD / month",
+            "detail": "Bionic+ の5倍の利用枠",
+            "source_url": "https://lmstudio.ai/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": "有料プランはクラウド推論用。ローカル実行は無料"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "unknown",
+        "note": "アプリの表示言語に日本語（コミュニティ翻訳）。設定の Preferences > Language で切り替え",
+        "source_url": "https://lmstudio.ai/docs/app/user-interface/languages",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "conditional",
+        "note": "利用規約で「個人および社内業務の目的」での利用を許諾。動かすモデルの商用可否はモデルのライセンスに従う",
+        "source_url": "https://lmstudio.ai/terms",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "not_used",
+        "note": "ローカル実行はPC内で完結。クラウド推論はゼロデータ保持（プロンプトと応答を保存しない）",
+        "source_url": "https://lmstudio.ai/pricing",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "gpt-oss",
+      "name": "gpt-oss",
+      "vendor": "OpenAI",
+      "url": "https://openai.com/index/introducing-gpt-oss/",
+      "status": "listed",
+      "rank": 21,
+      "segment": "models",
+      "tags": [
+        "OpenAI",
+        "gpt-oss"
+      ],
+      "model_slugs": [],
+      "access": [
+        "api"
+      ],
+      "editorial_take": "OpenAI のオープンウェイトモデル（20b・120b）。Apache 2.0。Ollama 版は20bが14GB、120bが65GB。2025年8月公開でAAの指数は12と、最新の上位モデルとは差がある。",
+      "commercial_use": {
+        "value": "yes",
+        "note": "Apache 2.0（Hugging Face）",
+        "source_url": "https://huggingface.co/openai/gpt-oss-20b",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral（Small 4・Medium 3.5）",
+      "vendor": "Mistral AI",
+      "url": "https://mistral.ai/",
+      "status": "listed",
+      "rank": 22,
+      "segment": "models",
+      "tags": [
+        "Mistral"
+      ],
+      "model_slugs": [
+        "mistral-small-4",
+        "mistral-medium-3-5"
+      ],
+      "access": [
+        "api"
+      ],
+      "editorial_take": "フランス Mistral AI のオープンウェイト。Mistral Small 4（119B）は Apache 2.0、Medium 3.5（128B）は独自ライセンス。",
+      "commercial_use": {
+        "value": "conditional",
+        "note": "Mistral-Small-4-119B は Apache 2.0、Mistral-Medium-3.5-128B は独自ライセンス（Hugging Face のライセンス表示）",
+        "source_url": "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "minimax-m3",
+      "name": "MiniMax-M3",
+      "vendor": "MiniMax",
+      "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+      "status": "listed",
+      "rank": 23,
+      "segment": "models",
+      "tags": [
+        "MiniMax"
+      ],
+      "model_slugs": [],
+      "access": [
+        "api"
+      ],
+      "editorial_take": "中国 MiniMax のオープンウェイト。独自ライセンス（Hugging Face の表示は other）。",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "llama-cpp",
+      "name": "llama.cpp",
+      "vendor": "ggml-org",
+      "url": "https://github.com/ggml-org/llama.cpp",
+      "status": "listed",
+      "rank": 31,
+      "segment": "runtimes",
+      "tags": [
+        "llama.cpp"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "v0.5.0",
+        "released": "2026-09-23",
+        "source_url": "https://github.com/ggml-org/llama.cpp/releases",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "cli",
+        "api"
+      ],
+      "editorial_take": "C/C++ で書かれたLLMの推論エンジン（MIT）。LM Studio も内部で使っている。",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "vllm",
+      "name": "vLLM",
+      "vendor": "vLLM project",
+      "url": "https://github.com/vllm-project/vllm",
+      "status": "listed",
+      "rank": 32,
+      "segment": "runtimes",
+      "tags": [
+        "vLLM"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "v0.30.0",
+        "released": "2026-09-22",
+        "source_url": "https://github.com/vllm-project/vllm/releases",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "cli",
+        "api"
+      ],
+      "editorial_take": "GPUサーバーで高スループットにモデルを配信するための推論エンジン（Apache 2.0）。社内向けAPIを立てる用途。",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "jan",
+      "name": "Jan",
+      "vendor": "Jan",
+      "url": "https://jan.ai/",
+      "status": "listed",
+      "rank": 33,
+      "segment": "runtimes",
+      "tags": [
+        "Jan"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "v0.8.4",
+        "released": "2026-07-23",
+        "source_url": "https://github.com/janhq/jan/releases",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "desktop"
+      ],
+      "editorial_take": "PC上で完全オフラインで動く、オープンソースのチャットアプリ（GitHub の説明）。",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "mlx-lm",
+      "name": "MLX（mlx-lm）",
+      "vendor": "Apple（ml-explore）",
+      "url": "https://github.com/ml-explore/mlx-lm",
+      "status": "listed",
+      "rank": 34,
+      "segment": "runtimes",
+      "tags": [
+        "MLX",
+        "Apple"
+      ],
+      "model_slugs": [],
+      "access": [
+        "cli"
+      ],
+      "editorial_take": "Apple の機械学習フレームワーク MLX で LLM を動かすツール（MIT）。Apple シリコンの Mac 向けで、LM Studio も内部で使う。",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "meta-llama",
+      "name": "Llama・Muse（Meta）",
+      "vendor": "Meta",
+      "url": "",
+      "status": "watch",
+      "rank": 99,
+      "segment": "models",
+      "tags": [
+        "Meta",
+        "Llama"
+      ],
+      "model_slugs": [],
+      "editorial_take": "",
+      "note": "Meta 系ドメインは社内ルールで開かないため未調査（名前のみ）",
+      "checked": "",
+      "retired_note": ""
+    }
+  ],
   "criteria": [
     {
       "name": "ライセンス（商用可否）",
@@ -70,8 +939,66 @@
       "how_to_check": "公式の最終リリース日を確認する"
     }
   ],
-  "benchmarks": [],
-  "faq": [],
+  "benchmarks": [
+    {
+      "id": "aa-open-weights",
+      "name": "Artificial Analysis Intelligence Index（オープンウェイト）",
+      "operator": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/models/open-source",
+      "what": "推論・知識・コーディング・エージェント作業など10の評価をまとめた総合指数（v4.3.2）。オープンウェイトのモデルの比較ページ",
+      "snapshot": "MiMo-V2.6-Pro 46、GLM-5.3 (max) 45、Kimi K3 (max) 44、GLM-5.3-Flash 42、DeepSeek V4.1 Flash (max) 39、Qwen3.8 27B (xhigh) 34、MiniMax-M3 29、Nemotron 3 Ultra 23、Mistral Medium 3.5 14。モデル一覧では Gemma 4 26B A4B 17、Gemma 4 31B 15、gpt-oss-120b (high) 12（2026-10-01時点）",
+      "checked": "2026-10-01"
+    },
+    {
+      "id": "lmarena-text-open",
+      "name": "LMArena Text Arena（総合・オープンライセンスのモデル）",
+      "operator": "LMArena",
+      "url": "https://arena.ai/leaderboard/text",
+      "what": "利用者が2つの回答を見比べて投票する一対比較のスコア。ライセンスの種類で絞り込める",
+      "snapshot": "オープンライセンスの最上位は kimi-k3-max（全体17位・1488）。mimo-v2.6-pro 25位・1480（MIT）、glm-5.3-max 26位・1479（MIT）、deepseek-v4.1-flash-max 40位・1473（MIT）、gemma-4-31b 74位・1453（Apache 2.0）、qwen3.8-27b 94位・1439（Apache 2.0）（2026-09-30更新・10-01確認）",
+      "checked": "2026-10-01"
+    },
+    {
+      "id": "lmarena-text-japanese",
+      "name": "LMArena Text Arena（日本語）",
+      "operator": "LMArena",
+      "url": "https://arena.ai/leaderboard/text/japanese",
+      "what": "日本語の対話に限った一対比較のスコア",
+      "snapshot": "オープンライセンスの最上位は kimi-k3-max（全体7位・1501・501票）。glm-5.2-max 31位・1457、deepseek-v4-pro 32位・1457、glm-5.3-max 34位・1454（323票）、qwen3.8-27b 81位・1401、gpt-oss-120b 143位・1327。票数が少なく順位の幅が大きい（2026-09-30更新・10-01確認）",
+      "checked": "2026-10-01"
+    },
+    {
+      "id": "aa-leaderboard",
+      "name": "Artificial Analysis Leaderboard（モデル一覧）",
+      "operator": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/leaderboards/models",
+      "what": "全モデルの総合指数の一覧",
+      "snapshot": "Qwen3.8 27B (xhigh) 34、Gemma 4 26B A4B 17、Gemma 4 31B 15、gpt-oss-120b (high) 12、gpt-oss-20b (high) 9（2026-10-01時点）",
+      "checked": "2026-10-01"
+    }
+  ],
+  "faq": [
+    {
+      "q": "どのくらいのPCで動きますか？",
+      "a": "Ollama の配布サイズは Gemma 4 E4B が6.6GB〜、gpt-oss-20b が14GB、Qwen3.8-27B が18GBで、これを上回るメモリ（RAMかGPUのVRAM）が目安です。LM Studio は16GB以上のRAMを推奨しています。MiMo-V2.6-Pro（総1.02兆パラメータ）や Kimi K3（総2.8兆）など最上位のモデルはGPUサーバーが必要です。"
+    },
+    {
+      "q": "商用利用してもいいモデルはどれですか？",
+      "a": "Apache 2.0 の Qwen3.8-27B・Gemma 4・gpt-oss、MIT の DeepSeek-V4.1-Flash・MiMo-V2.6-Pro・GLM-5.3-Flash は、ライセンス上の追加条件なく商用利用できます。Kimi K3・GLM-5.3 本体・Qwen3.8 の2.4T版は独自ライセンスで、一定規模以上のAPI提供や大型サービスに条件があります。使う前に Hugging Face のライセンス文書を確認してください。"
+    },
+    {
+      "q": "ローカルLLMなら入力が外部に送られませんか？",
+      "a": "Ollama や LM Studio でモデルを手元のPCで動かす場合、処理はPC内で完結します。どちらもクラウドで動かす有料プランを持っていますが、Ollama はクラウド機能を無効にでき、LM Studio のクラウド推論はプロンプトと応答を保存しない（ゼロデータ保持）としています。"
+    },
+    {
+      "q": "日本語が得意なオープンウェイトモデルは？",
+      "a": "LMArena の日本語部門では、オープンライセンスのモデルで Kimi K3 が最上位（全体7位）、GLM-5.3 が34位、手元で動くサイズの Qwen3.8-27B が81位です（2026年9月30日更新）。票数が少なく順位の幅が大きいので、実際の業務文書で試して比べてください。"
+    },
+    {
+      "q": "Ollama と LM Studio はどちらを選べばいいですか？",
+      "a": "画面で操作したいなら日本語表示に対応した LM Studio、コマンドや社内ツールからAPIで呼びたいなら Ollama が向きます。Ollama 本体は MIT のオープンソース、LM Studio は利用規約で個人と社内業務での利用を認めるクローズドソースのアプリです。"
+    }
+  ],
   "related": {
     "tags": [
       "ローカルLLM",
@@ -80,7 +1007,9 @@
       "Qwen",
       "DeepSeek",
       "Gemma",
-      "Ollama"
+      "Ollama",
+      "GLM",
+      "Kimi"
     ],
     "guides": [
       "api",
@@ -88,35 +1017,18 @@
     ],
     "articles": []
   },
-  "changelog": [],
+  "changelog": [
+    {
+      "date": "2026-10-01",
+      "text": "初回公開",
+      "by": "researcher"
+    }
+  ],
   "editor_note": "",
   "embed_models": false,
   "research_plan": {
-    "_comment": "調査担当向けのメモ（表示しない）。candidates は編集部の初期案＝製品名の候補であって事実ではない。公式サイトで現行の名称・存在を確認し、無いものは外し、新しいものを足す。published にする前に candidates と verdict_questions を空にし、notes を消す",
-    "candidates": [
-      "Qwen（Alibaba）",
-      "DeepSeek",
-      "Mistral",
-      "Gemma（Google）",
-      "gpt-oss（OpenAI）",
-      "Phi（Microsoft）",
-      "Kimi（Moonshot AI）",
-      "GLM（Zhipu AI）",
-      "Llama（Meta。Meta系ドメインは開けないので watch のみ）",
-      "Ollama",
-      "LM Studio",
-      "llama.cpp",
-      "vLLM",
-      "Jan",
-      "MLX（Apple）"
-    ],
-    "verdict_questions": [
-      "best-quality",
-      "japanese",
-      "commercial",
-      "beginner",
-      "business"
-    ],
-    "notes": "モデルの fact（ライセンス・サイズ）は Hugging Face のモデルカードか公式リポジトリを出典にする（huggingface.co は公式ドメイン扱い）。料金は無いので pricing は free.available=true と note「無料（自前の計算資源が必要）」。"
+    "candidates": [],
+    "verdict_questions": [],
+    "notes": ""
   }
 }

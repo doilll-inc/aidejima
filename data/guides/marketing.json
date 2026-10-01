@@ -1,14 +1,14 @@
 {
   "slug": "marketing",
-  "status": "draft",
+  "status": "published",
   "priority": 2,
   "created": "2026-09-30",
-  "updated": "2026-09-30",
-  "last_reviewed": "2026-09-30",
+  "updated": "2026-10-01",
+  "last_reviewed": "2026-10-01",
   "title": "広告・マーケティング向けAIのおすすめ：広告クリエイティブ・SNS・LP制作",
   "short_name": "広告・マーケ",
   "seo": {
-    "description": "",
+    "description": "広告バナー・動画CR・SNS投稿・LP制作に使えるAIを公式情報だけで比較。Google 広告のアセットスタジオ、TikTok Symphony、Canva、Adobe Express の料金・商用利用・日本語対応と、実務での使いどころを目的別に整理しています。",
     "keywords": [
       "広告AI",
       "広告クリエイティブ",
@@ -18,7 +18,7 @@
       "おすすめ"
     ]
   },
-  "intro": "",
+  "intro": "広告クリエイティブをAIで作るなら、まず配信先の媒体に組み込まれた機能（Google 広告のアセットスタジオ、TikTok の **Symphony**）を使い、バナーやSNS用の素材は **Canva** でまとめて作るのが出発点です。Symphony Creative Studio は全広告主が無料で、Canva は日本語に対応したAIを年11,800円のプロで月200回（高品質モデル）まで使えます。生成物を広告に使うときの権利面を重視するなら、顧客のコンテンツで学習しないと明記する **Adobe Express** が候補です。",
   "scope": "広告バナー・動画CRの制作と量産、SNS投稿の作成・運用、LP・Webページの生成、広告媒体に組み込まれたAI機能を比べる。汎用の画像・動画生成は各ガイドで扱い、ここでは広告・マーケの業務に特化したツールと媒体機能を扱う。",
   "audience": [
     "広告運用者",
@@ -48,8 +48,1161 @@
       "desc": "広告プラットフォーム内の自動生成・自動最適化"
     }
   ],
-  "verdicts": [],
-  "products": [],
+  "verdicts": [
+    {
+      "id": "best-value",
+      "question": "コスパで選ぶなら",
+      "pick": "canva",
+      "runner_up": [
+        "adobe-express"
+      ],
+      "answer": "Canvaプロは年11,800円で、高品質モデルのAIを月200回まで使え、SNSの予約投稿とブランドキットも付きます。月払いで始めたいなら Adobe Express プレミアム（月1,180円・生成クレジット250）。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Canva 料金プラン",
+          "url": "https://www.canva.com/ja_jp/pricing/",
+          "date": "2026-10-01",
+          "note": "Canvaプロ ¥11,800 /年間、1人あたり。高品質モデル最大200回／月"
+        },
+        {
+          "kind": "official",
+          "name": "Adobe Express 価格",
+          "url": "https://www.adobe.com/jp/express/pricing",
+          "date": "2026-10-01",
+          "note": "プレミアムプラン 1,180 円/月（税込）、生成クレジット250／月"
+        }
+      ]
+    },
+    {
+      "id": "free",
+      "question": "無料で使うなら",
+      "pick": "tiktok-symphony",
+      "runner_up": [
+        "canva"
+      ],
+      "answer": "TikTok の Symphony Creative Studio は全広告主が無料で、画像生成・アバター動画・翻訳吹き替えはクレジットなしで使えます（動画生成は週ごとのクレジット枠）。Canva の無料版もAIを月20回まで使え、AIでの広告作成が含まれます。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "About Symphony credits（TikTok 広告ヘルプ）",
+          "url": "https://ads.tiktok.com/help/article/about-symphony-credits?lang=en",
+          "date": "2026-10-01",
+          "note": "Symphony Creative Studio is free to use for all advertisers。画像生成・アバター動画・翻訳吹き替え・編集はクレジット不要"
+        },
+        {
+          "kind": "official",
+          "name": "Canva 料金プラン",
+          "url": "https://www.canva.com/ja_jp/pricing/",
+          "date": "2026-10-01",
+          "note": "無料：標準モデルまたは高品質モデルを最大20回、広告分析およびAIを活用した広告作成"
+        }
+      ]
+    },
+    {
+      "id": "japanese",
+      "question": "日本語重視なら",
+      "pick": "canva",
+      "runner_up": [
+        "studio",
+        "tiktok-symphony"
+      ],
+      "answer": "Canva は Canva AI の対応言語に日本語を挙げ、料金も円建てです。LPなら日本語のヘルプと円建て料金の Studio、TikTok 向けの台本なら日本語の入出力に対応する Symphony Assistant が使えます。Google 広告の P-MAX のアセット自動生成は日本語LPに対応していません。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Canva 料金プラン（よくある質問）",
+          "url": "https://www.canva.com/ja_jp/pricing/",
+          "date": "2026-10-01",
+          "note": "Canva AI の対応言語に日本語"
+        },
+        {
+          "kind": "official",
+          "name": "Studio の AI 機能（ヘルプ）",
+          "url": "https://help.studio.design/ja/articles/12910840-editor-5-0-studio%E3%81%AEai%E6%A9%9F%E8%83%BD",
+          "date": "2026-10-01",
+          "note": "Text AI でキャッチコピーの改善や翻訳"
+        },
+        {
+          "kind": "official",
+          "name": "About TikTok Symphony Assistant",
+          "url": "https://ads.tiktok.com/help/article/about-tiktok-creative-assistant",
+          "date": "2026-10-01",
+          "note": "Japanese language input and output に対応"
+        },
+        {
+          "kind": "official",
+          "name": "How to build a Performance Max asset group using generative AI",
+          "url": "https://support.google.com/google-ads/answer/14150602?hl=en",
+          "date": "2026-10-01",
+          "note": "対象の管理画面・LPの言語は英・蘭・仏・独・伊・葡・西"
+        }
+      ]
+    },
+    {
+      "id": "commercial",
+      "question": "商用利用（広告・納品物）なら",
+      "pick": "adobe-express",
+      "runner_up": [
+        "canva",
+        "tiktok-symphony"
+      ],
+      "answer": "Adobe Express は Firefly の生成AIを「安全に商用利用できるよう設計」とし、顧客のコンテンツで学習していないと明記。エンタープライズ版の対象プランには知的財産補償があります。Canva も商用利用できますが、AI生成物の独占的な権利は得られない可能性があると注記しています。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Adobe Express 価格",
+          "url": "https://www.adobe.com/jp/express/pricing",
+          "date": "2026-10-01",
+          "note": "安全に商用利用できるように設計された生成AI、エンタープライズ版の対象プランで知的財産補償"
+        },
+        {
+          "kind": "official",
+          "name": "Approach to generative AI with Adobe Firefly",
+          "url": "https://www.adobe.com/ai/overview/firefly/gen-ai-approach.html",
+          "date": "2026-10-01",
+          "note": "We do not and have never trained Adobe Firefly on customer content"
+        },
+        {
+          "kind": "official",
+          "name": "Canva AI（よくある質問）",
+          "url": "https://www.canva.com/ja_jp/canva-ai/",
+          "date": "2026-10-01",
+          "note": "個人利用と商用利用のどちらにも使える。独占的な権利を所有できない可能性"
+        }
+      ]
+    },
+    {
+      "id": "business",
+      "question": "会社で安全に使うなら（入力が学習に使われない・管理機能）",
+      "pick": "canva",
+      "runner_up": [
+        "adobe-express"
+      ],
+      "answer": "Canva ビジネス（1人年18,800円）とエンタープライズのコンテンツはAI機能の改善に使われず、承認機能や管理者によるAI機能の管理があります。Adobe Express も顧客のコンテンツで学習しないと明記しています。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Canva Trust Center - Privacy",
+          "url": "https://www.canva.com/trust/privacy/",
+          "date": "2026-10-01",
+          "note": "we don't use your business, team or enterprise content to improve AI-powered features"
+        },
+        {
+          "kind": "official",
+          "name": "Canva 料金プラン",
+          "url": "https://www.canva.com/ja_jp/pricing/",
+          "date": "2026-10-01",
+          "note": "Canvaビジネス ¥18,800 /年間、1人あたり、ブランドキット100個と承認機能"
+        },
+        {
+          "kind": "official",
+          "name": "Approach to generative AI with Adobe Firefly",
+          "url": "https://www.adobe.com/ai/overview/firefly/gen-ai-approach.html",
+          "date": "2026-10-01",
+          "note": "顧客のコンテンツで Firefly を学習しない"
+        }
+      ]
+    },
+    {
+      "id": "ad-platform",
+      "question": "広告媒体の中で完結させるなら",
+      "pick": "google-ads",
+      "runner_up": [
+        "tiktok-symphony"
+      ],
+      "answer": "Google 広告はアセットスタジオで、商品画像1〜2枚から利用シーンの画像を作り、そのまま既存・新規キャンペーンに入れられます（Nano Banana Pro を搭載）。TikTok は Symphony で作った動画を広告マネージャーへ直接書き出せます。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "About Asset studio（Google 広告ヘルプ）",
+          "url": "https://support.google.com/google-ads/answer/16456563?hl=en",
+          "date": "2026-10-01",
+          "note": "Nano Banana Pro の画像生成、商品画像の生成、AI画像エディタ、動画ビルダー"
+        },
+        {
+          "kind": "official",
+          "name": "Announcing Symphony Creative Studio",
+          "url": "https://ads.tiktok.com/business/en-US/blog/symphony-creative-studio",
+          "date": "2026-10-01",
+          "note": "downloading them or exporting them directly to TikTok Ads Manager"
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "question": "SNS投稿の運用なら",
+      "pick": "hootsuite",
+      "runner_up": [
+        "buffer",
+        "canva"
+      ],
+      "answer": "Hootsuite は管理画面が日本語に対応し、全プランにAIアシスタントがあります（Standard は1人月15,800円・年払い）。費用を抑えるなら無料プランでもAIアシスタントが使える Buffer（画面は英語）、デザインと予約投稿をまとめるなら Canva プロ。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Hootsuite Plans",
+          "url": "https://www.hootsuite.com/plans",
+          "date": "2026-10-01",
+          "note": "Standard ¥15,800 per user/month（年払い・税抜）、Every plan runs on Wisdom"
+        },
+        {
+          "kind": "official",
+          "name": "Change your display language（Hootsuite ヘルプ）",
+          "url": "https://help.hootsuite.com/s/article/change-language?language=en_US",
+          "date": "2026-10-01",
+          "note": "英・仏・独・伊・葡・西・アラビア語・日本語で使える"
+        },
+        {
+          "kind": "official",
+          "name": "Buffer Pricing",
+          "url": "https://buffer.com/pricing",
+          "date": "2026-10-01",
+          "note": "Free：3チャンネル、AI Assistant 3,000 requests/month"
+        }
+      ]
+    },
+    {
+      "id": "lp",
+      "question": "LPをAIで作るなら",
+      "pick": "studio",
+      "runner_up": [
+        "framer"
+      ],
+      "answer": "Studio は LP 向けの Mini が月590円（年払い）で、Text AI によるキャッチコピーの改善や、AIによるレスポンシブ対応・SEO用の説明文生成が使えます。英語のサービスでよければ、無料で500 AIクレジットが付く Framer も候補です。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Studio 料金プラン",
+          "url": "https://studio.design/ja/pricing",
+          "date": "2026-10-01",
+          "note": "Mini ¥590 /月（年払い）、LP・シングルページ向け"
+        },
+        {
+          "kind": "official",
+          "name": "Studio の AI 機能（ヘルプ）",
+          "url": "https://help.studio.design/ja/articles/12910840-editor-5-0-studio%E3%81%AEai%E6%A9%9F%E8%83%BD",
+          "date": "2026-10-01",
+          "note": "Image AI、Text AI、Auto Responsive、SEO Writing Assist"
+        },
+        {
+          "kind": "official",
+          "name": "Framer Pricing",
+          "url": "https://www.framer.com/pricing",
+          "date": "2026-10-01",
+          "note": "Free $0、500 AI credits"
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "google-ads",
+      "name": "Google 広告（アセットスタジオ・P-MAX の生成AI）",
+      "vendor": "Google",
+      "url": "https://ads.google.com/",
+      "status": "featured",
+      "rank": 1,
+      "segment": "platform",
+      "tags": [
+        "Google",
+        "Performance Max",
+        "広告"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web"
+      ],
+      "strengths": [
+        "商品画像1〜2枚から利用シーンの画像を生成",
+        "画像生成は日本語のプロンプトに対応",
+        "生成物の他媒体での利用を制限しない（ヘルプ）"
+      ],
+      "weaknesses": [
+        "P-MAXのアセット自動生成は日本語LPに非対応",
+        "健康など一部カテゴリのURLは自動生成の対象外"
+      ],
+      "editorial_take": "Google 広告を配信中なら追加ツールなしで画像・動画アセットを作れる。日本語LPでは P-MAX のアセット自動生成が使えないため、アセットスタジオで画像を作ってアセットグループに入れる運用になる。",
+      "pricing": {
+        "plans": [],
+        "jpy_official": false,
+        "note": "ツール単体の料金表はなく、費用は配信した広告費として支払う（ヘルプに生成AIツールの別料金の記載なし）。手動のプロンプトでの画像生成は、30日以上の配信実績とポリシー順守の履歴があるアカウントが対象"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "partial",
+        "note": "画像生成は日本語の管理画面・日本語のプロンプトに対応（生成画像のヘルプ）。P-MAX のアセット自動生成（見出し・説明文など）の対象は英・蘭・仏・独・伊・葡・西の管理画面とLPで、日本語は含まれない",
+        "source_url": "https://support.google.com/google-ads/answer/14150602?hl=en",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "Google のポリシーと規約の範囲で、Google の AI ツールで生成したコンテンツを Google のエコシステム外で使うことを制限しない。広告として配信するには広告ポリシーの審査が必要",
+        "source_url": "https://support.google.com/google-ads/answer/14150986?hl=en",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "unknown",
+        "note": "広告用の生成AIツールへの入力を学習に使うかの記載はヘルプに見つからず",
+        "source_url": "https://support.google.com/google-ads/answer/16456563?hl=en",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "partial",
+        "note": "画像生成は日本語の管理画面のアカウントも対象（段階的に提供）。P-MAX のアセット自動生成は日本語の管理画面が対象外",
+        "source_url": "https://support.google.com/google-ads/answer/14150986?hl=en",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "tiktok-symphony",
+      "name": "TikTok Symphony（Symphony Creative Studio）",
+      "vendor": "TikTok",
+      "url": "https://ads.tiktok.com/creative/creativestudio/home/ja",
+      "status": "featured",
+      "rank": 2,
+      "segment": "platform",
+      "tags": [
+        "TikTok",
+        "Seedance",
+        "広告"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Symphony × Dreamina Seedance 2.5",
+        "released": "2026-08-03",
+        "source_url": "https://ads.tiktok.com/business/en/blog/transforming-video-creation-tiktok-symphony-dreamina-seedance",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web"
+      ],
+      "strengths": [
+        "全広告主が無料で使える（動画生成は週次枠）",
+        "商品画像とトレンドから縦型動画を自動生成",
+        "入力・出力をAIの学習に使わない（ヘルプ）"
+      ],
+      "weaknesses": [
+        "Seedanceは直近30日の広告費5,000ドル以上が条件",
+        "動画生成の枠は広告アカウントの出稿額で決まる"
+      ],
+      "editorial_take": "TikTok に出稿している広告主がまず使う無料ツール。Symphony Agent では12秒の動画が平均約3分で生成され、一度に3案まで作れるので、A/Bテスト用の量産に向く（公式ブログ）。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "Symphony Creative Studio は全広告主が無料。動画生成と Symphony Agent は週ごとのクレジット制（1秒=1クレジット、毎週月曜に更新・繰り越しなし）。画像生成・アバター動画・翻訳吹き替え・動画編集はクレジット不要",
+          "source_url": "https://ads.tiktok.com/help/article/about-symphony-credits?lang=en",
+          "checked": "2026-10-01"
+        },
+        "plans": [],
+        "jpy_official": false,
+        "note": "クレジット枠は TikTok 広告マネージャーのアカウント連携と広告費で決まる。Dreamina Seedance モデルは連携した広告主IDの直近30日の広告費が5,000米ドル以上で自動的に使えるようになる（代理店は担当者経由）"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "yes",
+        "note": "Creative Studio に日本語版ページがあり、Symphony Assistant は日本語の入力と出力に対応（ヘルプの対応言語に日本語）",
+        "source_url": "https://ads.tiktok.com/help/article/about-tiktok-creative-assistant",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "生成AIツールの出力は別段の定めがない限り利用者に帰属（ヘルプ）。動画に使われる素材は Getty Images などの商用利用許諾済みライセンス素材（公式発表）",
+        "source_url": "https://ads.tiktok.com/help/article/about-symphony-creative-studio?lang=en",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "not_used",
+        "note": "現時点で入力・出力を TikTok に送り返したり、他のAIモデルの学習に使ったりしないと明記",
+        "source_url": "https://ads.tiktok.com/help/article/about-symphony-creative-studio?lang=en",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "Symphony Creative Studio は全広告主に提供（公式発表）。日本語版ページあり。Seedance 2.5 の統合は一部市場の有料広告主から順次提供",
+        "source_url": "https://ads.tiktok.com/business/en-US/blog/symphony-creative-studio",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "canva",
+      "name": "Canva",
+      "vendor": "Canva",
+      "url": "https://www.canva.com/ja_jp/",
+      "status": "featured",
+      "rank": 3,
+      "segment": "creative",
+      "tags": [
+        "Canva"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web",
+        "app",
+        "desktop"
+      ],
+      "strengths": [
+        "無料版でもAIの広告作成・広告分析が使える",
+        "Canva AI が日本語に対応、料金は円建て",
+        "プロ以上でSNSの予約投稿ができる"
+      ],
+      "weaknesses": [
+        "AIは月ごとの回数枠（プロは高品質200回）",
+        "Canva AI 2.0 は日本では「近日リリース」"
+      ],
+      "editorial_take": "バナーの量産とサイズ展開、SNS投稿まで1つで済む。チームで使うなら、コンテンツがAIの改善に使われないビジネス（1人年18,800円）が目安。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "AI機能は標準モデルか高品質モデルを最大20回／月。広告分析とAIを活用した広告作成、5GBのストレージを含む",
+          "source_url": "https://www.canva.com/ja_jp/pricing/",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Canvaプロ",
+            "amount": 11800,
+            "currency": "JPY",
+            "per": "year",
+            "as_shown": "¥11,800 /年間、1人あたり",
+            "detail": "1人用。高品質モデル最大200回または最高品質モデル最大20回／月、SNS予約投稿、ブランドキット5個、100GB",
+            "source_url": "https://www.canva.com/ja_jp/pricing/",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Canvaビジネス",
+            "amount": 18800,
+            "currency": "JPY",
+            "per": "year",
+            "as_shown": "¥18,800 /年間、1人あたり",
+            "detail": "高品質モデル最大400回または最高品質モデル最大40回／月、ブランドキット100個と承認機能、500GB",
+            "source_url": "https://www.canva.com/ja_jp/pricing/",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Canvaエンタープライズ",
+            "currency": "JPY",
+            "per": "year",
+            "as_shown": "ご相談ください（要問い合わせ）",
+            "detail": "SSO・SCIM、管理者コントロール",
+            "source_url": "https://www.canva.com/ja_jp/pricing/",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": true,
+        "note": "料金ページの年単位の表示（月単位も選べ、年単位は「16%お得」と表示）。AI枠を増やす追加プラン「AIパス」は別料金"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "yes",
+        "note": "料金ページFAQで Canva AI の対応言語に日本語。画面・料金ページも日本語",
+        "source_url": "https://www.canva.com/ja_jp/pricing/",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "Canva AI は個人利用・商用利用の両方に使え、作成したコンテンツの権利は利用者にある。ただしAI生成デザインの独占的な権利は得られない可能性があり、商標・写真などの権利確認は利用者の責任",
+        "source_url": "https://www.canva.com/ja_jp/canva-ai/",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "opt_out_available",
+        "note": "無料・プロはプライバシー設定でAI機能の改善への利用を管理できる。ビジネス・エンタープライズのコンテンツはAI機能の改善に使わない",
+        "source_url": "https://www.canva.com/trust/privacy/",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "日本向けの料金ページで円建て販売",
+        "source_url": "https://www.canva.com/ja_jp/pricing/",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "adobe-express",
+      "name": "Adobe Express",
+      "vendor": "Adobe",
+      "url": "https://www.adobe.com/jp/express/",
+      "status": "featured",
+      "rank": 4,
+      "segment": "creative",
+      "tags": [
+        "Adobe",
+        "Adobe Firefly"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web",
+        "app"
+      ],
+      "strengths": [
+        "顧客のコンテンツでFireflyを学習しない",
+        "月1,180円で生成クレジット250",
+        "SNSごとに3アカウントまで予約投稿"
+      ],
+      "weaknesses": [
+        "動画・音声の生成AIは Firefly Pro（月3,180円）から"
+      ],
+      "editorial_take": "生成物を広告に使うときの権利面を重視するなら第一候補。料金表には TikTok Symphony Assistant のアドオンもあり、TikTok 向けの台本づくりにも使える。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "0円。生成クレジットは月間上限あり、5秒動画の生成は2回、プレゼン生成は5回まで",
+          "source_url": "https://www.adobe.com/jp/express/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "プレミアム",
+            "amount": 1180,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "1,180 円/月（税込）",
+            "detail": "生成クレジット250／月、プレミアムテンプレート、ワンクリックでのサイズ変更、ブランドキット",
+            "source_url": "https://www.adobe.com/jp/express/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Adobe Firefly Pro",
+            "amount": 3180,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "3,180 円/月（税込）",
+            "detail": "プレミアムの機能に加え生成クレジット4,000／月（動画・音声生成）、Photoshop web版・モバイル版、パートナーモデル",
+            "source_url": "https://www.adobe.com/jp/express/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "エンタープライズ版",
+            "currency": "JPY",
+            "per": "seat_month",
+            "as_shown": "担当営業にお問い合わせ",
+            "detail": "対象プランでは Firefly で生成した画像に知的財産補償",
+            "source_url": "https://www.adobe.com/jp/express/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": true,
+        "note": "個人向けは年間契約不要の月々払い。価格は税込"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "unknown",
+        "note": "画面・料金ページは日本語。デザイン内の日本語フォントの対応を明記した公式ページは確認できず",
+        "source_url": "https://www.adobe.com/jp/express/pricing",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "Firefly の生成AIは安全に商用利用できるよう設計と明記。エンタープライズ版の対象プランは知的財産補償あり",
+        "source_url": "https://www.adobe.com/jp/express/pricing",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "not_used",
+        "note": "顧客のコンテンツで Firefly を学習させたことはないと明記",
+        "source_url": "https://www.adobe.com/ai/overview/firefly/gen-ai-approach.html",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "日本向けの料金ページで円建て販売",
+        "source_url": "https://www.adobe.com/jp/express/pricing",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "creatify",
+      "name": "Creatify",
+      "vendor": "Creatify Lab",
+      "url": "https://creatify.ai/",
+      "status": "featured",
+      "rank": 5,
+      "segment": "creative",
+      "tags": [
+        "Creatify",
+        "広告クリエイティブ"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web",
+        "api"
+      ],
+      "strengths": [
+        "商品URLから広告動画を生成",
+        "Meta・TikTok・AppLovinへの入稿機能",
+        "日本語を含む29言語に対応（ヘルプ）"
+      ],
+      "weaknesses": [
+        "無料枠は月10クレジットで書き出しに透かし",
+        "無料枠の生成物は権利が限定（規約）"
+      ],
+      "editorial_take": "AIアクター（UGC風アバター）が商品を紹介する縦型の広告動画を量産する用途向け。競合広告のトラッカーや、広告を複製して作り替える Ad Clone も同じ画面にある。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "月10クレジット（動画広告約2本か画像広告20枚）、AIアクター300人。書き出しに透かし",
+          "source_url": "https://creatify.ai/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Starter",
+            "amount": 39,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$39 / month",
+            "detail": "100クレジット／月、透かしなし、AIアクター300人、動画は最長2分",
+            "source_url": "https://creatify.ai/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Pro",
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "Monthly Credits 300 - 5,000",
+            "detail": "価格は料金ページの本文に表示なし。AIアクター1,500人、競合広告トラッカー（10ブランドまで）、Ad Clone、Ad Launcher、動画は最長10分",
+            "source_url": "https://creatify.ai/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Enterprise",
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "CONTACT SALES（要問い合わせ）",
+            "detail": "クリエイティブ制作・広告運用の代行サービス、専任担当",
+            "source_url": "https://creatify.ai/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": "料金ページに「年払いで最大50%割引」の表記。月払いのクレジットは2か月有効（ヘルプ）"
+      },
+      "japanese": {
+        "ui": "unknown",
+        "output": "yes",
+        "note": "対応29言語に日本語（ヘルプ）。アプリ画面の日本語対応は記載を見つけられず",
+        "source_url": "https://help.creatify.ai/en/articles/9348010-supported-languages",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "conditional",
+        "note": "有料プランは業務・個人で利用でき、生成物の著作権は利用者に譲渡される。無料枠の権利は限定的。生成物をAIの学習に使うことは禁止",
+        "source_url": "https://creatify.ai/terms",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "unknown",
+        "note": "規約で、入力した文章・画像と生成物をサービスの提供・改善に使う許諾を Creatify に与える。学習利用の拒否方法の記載なし",
+        "source_url": "https://creatify.ai/terms",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "hootsuite",
+      "name": "Hootsuite",
+      "vendor": "Hootsuite Inc.",
+      "url": "https://www.hootsuite.com/",
+      "status": "featured",
+      "rank": 6,
+      "segment": "social",
+      "tags": [
+        "Hootsuite",
+        "SNS"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web",
+        "app"
+      ],
+      "strengths": [
+        "管理画面が日本語に対応",
+        "全プランにAIアシスタント Wisdom",
+        "AIで投稿文と画像を生成（Standard から）"
+      ],
+      "weaknesses": [
+        "無料プランなし（14日間の無料体験）",
+        "入力と出力をAI機能の改善に使う規約"
+      ],
+      "editorial_take": "複数ブランド・複数SNSの投稿と問い合わせ対応をチームで回す会社向け。個人や小規模なら、無料プランでもAIアシスタントが使える Buffer（画面は英語）も候補。",
+      "pricing": {
+        "free": {
+          "available": false,
+          "detail": "無料プランなし。14日間の無料体験（クレジットカード不要）",
+          "source_url": "https://www.hootsuite.com/plans",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Standard",
+            "amount": 15800,
+            "currency": "JPY",
+            "per": "seat_month",
+            "as_shown": "¥15,800 per user/month*",
+            "detail": "SNSアカウント10個まで、投稿予約無制限、AIで投稿文と画像を生成",
+            "source_url": "https://www.hootsuite.com/plans",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Professional",
+            "amount": 31800,
+            "currency": "JPY",
+            "per": "seat_month",
+            "as_shown": "¥31,800 per user/month*",
+            "detail": "SNSアカウント無制限、受信箱の返信とワークフローの自動化、90日先までのトレンド予測",
+            "source_url": "https://www.hootsuite.com/plans",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Advanced",
+            "amount": 63800,
+            "currency": "JPY",
+            "per": "seat_month",
+            "as_shown": "¥63,800 per user/month*",
+            "detail": "チームでの承認フロー、メッセージの自動振り分け",
+            "source_url": "https://www.hootsuite.com/plans",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Enterprise",
+            "currency": "JPY",
+            "per": "seat_month",
+            "as_shown": "Custom（要問い合わせ）",
+            "detail": "高度な分析とソーシャルリスニング、SSO",
+            "source_url": "https://www.hootsuite.com/plans",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": true,
+        "note": "*料金ページの注記：円表示・年払い基準・税抜"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "unknown",
+        "note": "表示言語に日本語を選べる（ヘルプ）。AIアシスタントの日本語出力の記載は見つけられず",
+        "source_url": "https://help.hootsuite.com/s/article/change-language?language=en_US",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "AI規約で、生成物のうち利用者固有のものの権利は利用者に帰属",
+        "source_url": "https://www.hootsuite.com/legal/ai-terms",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "used",
+        "note": "AI規約で、入力と生成物をAI機能（機械学習を含む）の開発・改善に使うことを許諾。第三者のAI提供元の学習には使わず、他の顧客とも共有しない。拒否方法の記載なし",
+        "source_url": "https://www.hootsuite.com/legal/ai-terms",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "日本からは円建ての料金で申し込める",
+        "source_url": "https://www.hootsuite.com/plans",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "studio",
+      "name": "Studio",
+      "vendor": "Studio",
+      "url": "https://studio.design/ja",
+      "status": "featured",
+      "rank": 7,
+      "segment": "lp",
+      "tags": [
+        "Studio",
+        "LP"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web"
+      ],
+      "strengths": [
+        "画面・ヘルプが日本語、料金は円建て",
+        "LP向けの Mini は月590円（年払い）",
+        "画像編集・コピー生成・SEO説明文をAIで"
+      ],
+      "weaknesses": [
+        "AIで運用する Studio.Drop はβ事前登録段階"
+      ],
+      "editorial_take": "ノーコードでLPを作り、キャッチコピーの手直しやレスポンシブ対応をAIに任せられる。GA・GTM連携は Mini から使える。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "0円。50ページ、CMSモデル3件、フォーム回答100件まで",
+          "source_url": "https://studio.design/ja/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Mini",
+            "amount": 590,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "¥590 /月（年払い）、月払いの場合 ¥1,290 /月",
+            "detail": "LP・シングルページ向け（2ページ＋404）。独自ドメイン、GA・GTM連携",
+            "source_url": "https://studio.design/ja/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Personal",
+            "amount": 1190,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "¥1,190 /月（年払い）、月払いの場合 ¥1,720 /月",
+            "detail": "150ページ、CMSモデル5件",
+            "source_url": "https://studio.design/ja/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Business",
+            "amount": 3980,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "¥3,980 /月（年払い）、月払いの場合 ¥5,460 /月",
+            "detail": "300ページ、CMSモデル10件、リダイレクト機能",
+            "source_url": "https://studio.design/ja/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Business Plus",
+            "amount": 9980,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "¥9,980 /月（年払い）、月払いの場合 ¥12,900 /月",
+            "detail": "CMSモデル30件、同時接続1,000件保証、優先サポート",
+            "source_url": "https://studio.design/ja/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": true,
+        "note": "Enterprise は要問い合わせ。税の扱いは料金ページに記載なし"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "yes",
+        "note": "AI機能（Image AI・Text AI・SEO Writing Assist など）の日本語ヘルプあり。Text AI でキャッチコピーの改善や翻訳ができる",
+        "source_url": "https://help.studio.design/ja/articles/12910840-editor-5-0-studio%E3%81%AEai%E6%A9%9F%E8%83%BD",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "日本語の料金ページで円建て販売",
+        "source_url": "https://studio.design/ja/pricing",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "buffer",
+      "name": "Buffer",
+      "vendor": "Buffer",
+      "url": "https://buffer.com/",
+      "status": "listed",
+      "rank": 21,
+      "segment": "social",
+      "tags": [
+        "Buffer",
+        "SNS"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web",
+        "app"
+      ],
+      "editorial_take": "無料プランでもSNS3チャンネルの予約投稿と AI Assistant（月3,000リクエスト）が使える。Web版の画面は英語のみ。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "3チャンネルまで、チャンネルごとに予約10件、AI Assistant 月3,000リクエスト",
+          "source_url": "https://buffer.com/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Essentials",
+            "amount": 5,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$5 /month（1 channel · $60 billed yearly）",
+            "detail": "チャンネル単位の課金。予約投稿無制限、AI Assistant 月7,500リクエスト",
+            "source_url": "https://buffer.com/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Team",
+            "amount": 10,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$10 /month（1 channel · $120 billed yearly）",
+            "detail": "チームメンバー無制限、AI Assistant 月15,000リクエスト",
+            "source_url": "https://buffer.com/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": ""
+      },
+      "japanese": {
+        "ui": "partial",
+        "output": "unknown",
+        "note": "Web版と iOS アプリは英語のみ。Android アプリは日本語に対応",
+        "source_url": "https://support.buffer.com/en-us/articles/can-i-use-buffer-in-another-language-wetiyDOiI4",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "unknown",
+        "note": "AI Assistant に入力した文章は OpenAI に共有される（それ以外の情報は共有しない）。学習利用の記載なし",
+        "source_url": "https://buffer.com/ai-assistant",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "adcreative-ai",
+      "name": "AdCreative.ai",
+      "vendor": "AdCreative.ai",
+      "url": "https://www.adcreative.ai/",
+      "status": "listed",
+      "rank": 22,
+      "segment": "creative",
+      "tags": [
+        "広告クリエイティブ"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web"
+      ],
+      "editorial_take": "広告バナーと広告文をAIで生成し、広告媒体と連携できるサービス。ブランド数とクレジット数で料金が変わる。",
+      "pricing": {
+        "plans": [
+          {
+            "name": "Starter",
+            "amount": 39,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$39 /month（10 Credits・1 Brand）",
+            "detail": "料金ページの表示。四半期（25%オフ）・年払い（50%オフ）の切り替えあり",
+            "source_url": "https://www.adcreative.ai/#section-pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": ""
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "pippit",
+      "name": "Pippit",
+      "vendor": "CapCut",
+      "url": "https://commercepro.capcut.com/",
+      "status": "listed",
+      "rank": 23,
+      "segment": "creative",
+      "tags": [
+        "CapCut",
+        "Seedance"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web"
+      ],
+      "editorial_take": "CapCut のドメインで提供される、商品紹介動画・UGC風動画・アバター動画の生成と予約投稿のツール。Seedance 2.5 などのモデルを使える。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "USD0。毎日の無料クレジット、Video agent、Image agent",
+          "source_url": "https://commercepro.capcut.com/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [],
+        "jpy_official": false,
+        "note": ""
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "heygen",
+      "name": "HeyGen",
+      "vendor": "HeyGen",
+      "url": "https://www.heygen.com/",
+      "status": "listed",
+      "rank": 24,
+      "segment": "creative",
+      "tags": [
+        "HeyGen"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web",
+        "api"
+      ],
+      "editorial_take": "アバターが話す動画の生成。料金と規約は「動画生成AI」ガイドで比べている。",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "arcads",
+      "name": "Arcads",
+      "vendor": "Arcads",
+      "url": "https://www.arcads.ai/",
+      "status": "listed",
+      "rank": 25,
+      "segment": "creative",
+      "tags": [
+        "Seedance"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web"
+      ],
+      "editorial_take": "広告用の動画をAIで作るサービス。Seedance 2.5 を搭載し、無料体験がある（公式サイト）。",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "predis-ai",
+      "name": "Predis.ai",
+      "vendor": "Predis.ai",
+      "url": "https://predis.ai/",
+      "status": "listed",
+      "rank": 26,
+      "segment": "social",
+      "tags": [
+        "SNS"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web",
+        "app"
+      ],
+      "editorial_take": "広告・SNS用の画像、動画、UGC風動画をAIで作り、クリック実績の分析まで行うサービス。",
+      "pricing": {
+        "plans": [
+          {
+            "name": "Core",
+            "amount": 24,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$24 /month",
+            "detail": "年払いの表示",
+            "source_url": "https://predis.ai/pricing/",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": ""
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "framer",
+      "name": "Framer",
+      "vendor": "Framer",
+      "url": "https://www.framer.com/",
+      "status": "listed",
+      "rank": 27,
+      "segment": "lp",
+      "tags": [
+        "Framer"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web",
+        "desktop"
+      ],
+      "editorial_take": "AIでサイトを生成・編集できるWebサイトビルダー。無料プランに500 AIクレジットが付く。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "$0。500 AIクレジット、Framer のドメイン",
+          "source_url": "https://www.framer.com/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Basic",
+            "amount": 10,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$10 per month",
+            "detail": "独自ドメイン",
+            "source_url": "https://www.framer.com/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Pro",
+            "amount": 30,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$30 per month",
+            "detail": "独自ドメイン",
+            "source_url": "https://www.framer.com/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": ""
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "lovable",
+      "name": "Lovable",
+      "vendor": "Lovable",
+      "url": "https://lovable.dev/",
+      "status": "listed",
+      "rank": 28,
+      "segment": "lp",
+      "tags": [
+        "Lovable"
+      ],
+      "model_slugs": [],
+      "access": [
+        "web"
+      ],
+      "editorial_take": "チャットでWebアプリやLPを作るサービス。料金と規約は「コーディングAI」ガイドで比べている。",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "meta-advantage-plus",
+      "name": "Meta 広告（Advantage+）",
+      "vendor": "Meta",
+      "url": "",
+      "status": "watch",
+      "rank": 99,
+      "segment": "platform",
+      "tags": [
+        "Meta"
+      ],
+      "model_slugs": [],
+      "editorial_take": "",
+      "note": "Meta 系ドメインは社内ルールで開かないため未調査（名前のみ）",
+      "checked": "",
+      "retired_note": ""
+    }
+  ],
   "criteria": [
     {
       "name": "媒体審査・規定との相性",
@@ -80,10 +1233,36 @@
       "name": "料金",
       "why": "席数課金・生成数課金・広告費連動で実費が変わる",
       "how_to_check": "公式料金ページを確認する"
+    },
+    {
+      "name": "AI生成の表記と透かし",
+      "why": "国・地域によってはAIで作った広告に表記が必要で、媒体側も透かしやラベルを付ける",
+      "how_to_check": "媒体のヘルプでAIラベルの設定と、生成物に付く透かし（SynthID・C2PAなど）を確認する"
     }
   ],
   "benchmarks": [],
-  "faq": [],
+  "faq": [
+    {
+      "q": "広告媒体のAI機能に追加料金はかかりますか？",
+      "a": "TikTok の Symphony Creative Studio は全広告主が無料です。ただし動画生成は週ごとのクレジット制で、枠の大きさは連携した広告アカウントの出稿額で決まり、Dreamina Seedance モデルは直近30日の広告費が5,000米ドル以上で使えるようになります。Google 広告のヘルプには、生成AIツールの別料金の記載はありません（2026年10月1日確認）。"
+    },
+    {
+      "q": "日本語の広告やLPでも使えますか？",
+      "a": "Google 広告の画像生成は日本語のプロンプトに対応していますが、P-MAX のアセット自動生成（見出し・説明文など）は日本語の管理画面とLPに対応していません。TikTok の Symphony Assistant、Canva AI、Creatify の音声は日本語に対応しています。LPを日本語の管理画面で作るなら Studio が使えます。"
+    },
+    {
+      "q": "AIで作った広告素材を商用で使っても大丈夫ですか？",
+      "a": "Canva、TikTok Symphony、Creatify（有料プラン）、Hootsuite はいずれも生成物の権利を利用者側に置き、Google も自社のAIツールで作ったコンテンツを他所で使うことを制限しないとしています。ただし Canva は独占的な権利を得られない可能性を注記しており、どのサービスでも商標や人物の権利確認は利用者の責任です。権利面の保証まで求めるなら、Adobe Express のエンタープライズ版（対象プランで知的財産補償）を確認してください。"
+    },
+    {
+      "q": "AIで作った広告には「AI生成」の表記が必要ですか？",
+      "a": "Google 広告のヘルプは、EU・インド・ニューヨーク州の規制で、AIで生成・編集した一部の広告に表記やラベルが求められると説明し、管理画面のAIラベル設定を案内しています。Google 広告の生成画像には SynthID の透かし、TikTok Symphony の生成物にはAIラベル・見えない透かし・C2PA のコンテンツ認証情報が付きます。"
+    },
+    {
+      "q": "入力した商品情報や素材はAIの学習に使われますか？",
+      "a": "TikTok Symphony は入力・出力を他のAIモデルの学習に使わないと明記し、Adobe は顧客のコンテンツで Firefly を学習していないとしています。Canva は無料・プロならプライバシー設定で管理でき、ビジネス・エンタープライズのコンテンツはAIの改善に使いません。Hootsuite のAI規約は、入力と生成物を自社のAI機能の改善に使うと定めています。"
+    }
+  ],
   "related": {
     "tags": [
       "広告",
@@ -91,48 +1270,30 @@
       "SNS",
       "広告クリエイティブ",
       "Performance Max",
-      "EC"
+      "EC",
+      "Canva",
+      "TikTok"
     ],
     "guides": [
       "image-generation",
       "video-generation",
-      "writing"
+      "writing",
+      "slides"
     ],
     "articles": []
   },
-  "changelog": [],
+  "changelog": [
+    {
+      "date": "2026-10-01",
+      "text": "初回公開",
+      "by": "researcher"
+    }
+  ],
   "editor_note": "",
   "embed_models": false,
   "research_plan": {
-    "_comment": "調査担当向けのメモ（表示しない）。candidates は編集部の初期案＝製品名の候補であって事実ではない。公式サイトで現行の名称・存在を確認し、無いものは外し、新しいものを足す。published にする前に candidates と verdict_questions を空にし、notes を消す",
-    "candidates": [
-      "Google 広告（P-MAX のアセット生成・AI機能）",
-      "Meta 広告（Advantage+。Meta系ドメインは開けないので watch のみ）",
-      "TikTok（Symphony）",
-      "Canva（Magic Studio）",
-      "Adobe Express／Firefly／GenStudio",
-      "AdCreative.ai",
-      "Creatify",
-      "Pencil",
-      "Arcads",
-      "HeyGen",
-      "Captions",
-      "Predis.ai",
-      "Buffer／Hootsuite のAI機能",
-      "CapCut",
-      "Framer AI",
-      "Wix",
-      "STUDIO",
-      "Lovable"
-    ],
-    "verdict_questions": [
-      "best-quality",
-      "best-value",
-      "free",
-      "japanese",
-      "commercial",
-      "business"
-    ],
-    "notes": "媒体側の機能（P-MAX 等）は「料金」が広告費に含まれるので plans は空にし、note に「広告費に含まれる」と書く。Meta の機能は報道でしか確認できないため fact を入れない。"
+    "candidates": [],
+    "verdict_questions": [],
+    "notes": ""
   }
 }
