@@ -2092,3 +2092,7 @@ a:hover {
     grid-template-columns: 6em 1fr;
   }
 }
+.side-guides a span:first-child {
+  flex: none;
+  white-space: nowrap;
+}
