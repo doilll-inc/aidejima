@@ -111,6 +111,8 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          # Claude の GitHub アプリに頼らず、このワークフローの標準トークンで動かす（アプリがこのリポジトリに入っていなくても動くように）
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           show_full_output: true
           claude_args: |
             --model ${{ env.WRITER_MODEL }}
@@ -125,6 +127,8 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          # Claude の GitHub アプリに頼らず、このワークフローの標準トークンで動かす（アプリがこのリポジトリに入っていなくても動くように）
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           show_full_output: true
           claude_args: |
             --model ${{ env.WRITER_MODEL }}
