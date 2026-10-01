@@ -329,6 +329,8 @@
     "コンテキスト": "context-window",
     "ハルシネーション": "hallucination",
     "著名人": "people-posts",
-    "X投稿": "x-posts"
+    "X投稿": "x-posts",
+    "蒸留": "distillation",
+    "中小企業": "small-business"
   }
 }
