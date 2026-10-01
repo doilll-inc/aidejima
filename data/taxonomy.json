@@ -32,6 +32,12 @@
       "color": "#e11d74"
     },
     {
+      "slug": "usecases",
+      "name": "活用事例",
+      "desc": "世界の個人・開発者・企業が「AIでこんなものを作った」「こう使って成果を出した」という実例を、作った本人の発信や公式の導入事例から紹介",
+      "color": "#4f46e5"
+    },
+    {
       "slug": "dev",
       "name": "開発・オープンソース",
       "desc": "API・SDK・開発ツール・オープンソースモデル・ローカルLLMの最新情報",
@@ -331,6 +337,10 @@
     "著名人": "people-posts",
     "X投稿": "x-posts",
     "蒸留": "distillation",
-    "中小企業": "small-business"
+    "中小企業": "small-business",
+    "活用事例": "use-cases",
+    "個人開発": "indie-dev",
+    "導入事例": "case-studies",
+    "作ってみた": "built-with-ai"
   }
 }

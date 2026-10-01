@@ -237,6 +237,14 @@
       "weight": 1.0,
       "type": "community",
       "_note": "RedditはRSSを2026-11-13に終了予定（/news/20261001-reddit-ends-rss-public-api/）。止まったらこの行を消す（開発者コミュニティの話題は Hacker News で拾える）"
+    },
+    {
+      "name": "Product Hunt",
+      "url": "https://www.producthunt.com/feed",
+      "weight": 1.0,
+      "type": "builder",
+      "ai_only": true,
+      "_note": "新しいAIツールの紹介。活用事例の候補"
     }
   ],
   "hn": {
@@ -251,5 +259,10 @@
     "_comment": "X公式API v2（従量課金・読み取り1件0.005ドル）。環境変数 X_BEARER_TOKEN があるときだけ動く。watchlist は data/x_watchlist.json",
     "weight": 2.4,
     "min_likes": 200
+  },
+  "hn_show": {
+    "_comment": "Show HN / Launch HN。活用事例（世界でこんなの作ってる人がいる）の候補",
+    "min_points": 40,
+    "weight": 1.6
   }
 }

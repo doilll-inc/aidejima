@@ -297,6 +297,39 @@ def collect_hn(cfg: dict, since: datetime) -> tuple[str, list[dict], str | None]
     return "Hacker News", out, None
 
 
+def collect_hn_show(cfg: dict, since: datetime) -> tuple[str, list[dict], str | None]:
+    """Show HN / Launch HN（開発者が自作を公開する投稿）。活用事例（usecases）の候補。通常のHNより低いポイントでも拾う"""
+    ts = int(since.timestamp())
+    url = (
+        "https://hn.algolia.com/api/v1/search_by_date?tags=show_hn&hitsPerPage=200"
+        f"&numericFilters=created_at_i>{ts},points>{cfg.get('min_points', 40)}"
+    )
+    try:
+        hits = json.loads(fetch(url))["hits"]
+    except Exception as e:  # noqa: BLE001
+        return "Show HN", [], f"{type(e).__name__}: {e}"
+    out = []
+    for h in hits:
+        title = h.get("title") or ""
+        if not is_ai(title + " " + (h.get("story_text") or "")[:400]):
+            continue
+        hn_url = f"https://news.ycombinator.com/item?id={h['objectID']}"
+        out.append(
+            {
+                "title": title,
+                "url": h.get("url") or hn_url,
+                "source": "Show HN",
+                "source_type": "builder",
+                "weight": cfg.get("weight", 1.6),
+                "published": datetime.fromtimestamp(h["created_at_i"], timezone.utc),
+                "summary": clean_text(h.get("story_text") or ""),
+                "hn": {"points": h.get("points", 0), "comments": h.get("num_comments", 0), "url": hn_url},
+                "usecase": True,
+            }
+        )
+    return "Show HN", out, None
+
+
 def collect_hf_papers(cfg: dict, since: datetime) -> tuple[str, list[dict], str | None]:
     try:
         papers = json.loads(fetch("https://huggingface.co/api/daily_papers?limit=50"))
@@ -503,6 +536,8 @@ def main() -> int:
     feeds = [s for s in cfg["feeds"] if not is_blocked(s["url"], blocked)]
     jobs = [lambda s=s: collect_feed(s, since) for s in feeds]
     jobs.append(lambda: collect_hn(cfg.get("hn", {}), since))
+    if cfg.get("hn_show"):
+        jobs.append(lambda: collect_hn_show(cfg["hn_show"], since))
     jobs.append(lambda: collect_hf_papers(cfg.get("hf_papers", {}), since))
     jobs.append(lambda: collect_x(cfg.get("x", {}), since))
 
