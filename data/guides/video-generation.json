@@ -1,0 +1,1454 @@
+{
+  "slug": "video-generation",
+  "status": "published",
+  "priority": 1,
+  "created": "2026-09-30",
+  "updated": "2026-10-01",
+  "last_reviewed": "2026-10-01",
+  "title": "動画生成AIのおすすめと料金比較",
+  "short_name": "動画生成",
+  "seo": {
+    "description": "動画生成AIを公式情報だけで比較。GoogleのGemini Omni、Kling AI、Seedance 2.5、MiniMax H3、HeyGenなどの料金・商用利用・日本語のセリフ対応と、第三者評価にもとづく目的別のおすすめ。",
+    "keywords": [
+      "動画生成AI",
+      "おすすめ",
+      "料金",
+      "商用利用",
+      "リップシンク"
+    ]
+  },
+  "intro": "動画生成AIの第三者評価は割れていて、Arenaでは**Gemini Omni**（Google）が1位、Artificial Analysisでは**Wan 3.0**が1位。単価を抑えるなら**MiniMax H3**、日本語のセリフを喋らせるなら日本語を公式に対応言語とする**Kling AI**、広告素材の権利面を重視するなら**Adobe Firefly**が候補になる。OpenAIのSoraは2026年9月にAPIも終了した。料金・規約・日本語対応はすべて各社の公式ページで確認した値で、確認日を併記している。",
+  "scope": "テキストや画像から動画を作るサービス、人物のリップシンク・アバター動画、生成した動画の編集・拡張を比べる。静止画は「画像生成AI」ガイド、ナレーション音声は「音声合成」ガイドで扱う。",
+  "audience": [
+    "マーケター",
+    "動画制作者",
+    "広告運用者",
+    "SNS担当"
+  ],
+  "segments": [
+    {
+      "id": "t2v",
+      "name": "テキスト・画像から動画",
+      "desc": "プロンプトや1枚の画像から動画を生成する"
+    },
+    {
+      "id": "avatar",
+      "name": "アバター・リップシンク",
+      "desc": "人物を喋らせる、アバターに台本を読ませる"
+    }
+  ],
+  "verdicts": [
+    {
+      "id": "best-quality",
+      "question": "最高品質で選ぶなら",
+      "pick": "gemini-omni",
+      "runner_up": [
+        "wan",
+        "dreamina-seedance"
+      ],
+      "answer": "GoogleのGemini OmniがArenaの動画生成で1位（1516）・2位（1513）を占める。ただしArtificial Analysisでは6位で、1位はWan 3.0、3位はSeedance 2.5と評価が割れているため、両方の上位を試して選びたい。",
+      "evidence": [
+        {
+          "kind": "third_party",
+          "name": "Arena Text-to-Video Leaderboard",
+          "url": "https://arena.ai/leaderboard/text-to-video",
+          "date": "2026-10-01",
+          "note": "1位 gemini-omni-1.1-flash（1516）、6位 wan3.0、7位 dreamina-seedance-2.5（2026-09-21更新分）"
+        },
+        {
+          "kind": "third_party",
+          "name": "Artificial Analysis Text-to-Video Leaderboard",
+          "url": "https://artificialanalysis.ai/video/leaderboard/text-to-video",
+          "date": "2026-10-01",
+          "note": "1位 Wan 3.0（1159）、3位 Dreamina Seedance 2.5、6位 Gemini Omni Flash 1.1（2026-10-01時点）"
+        }
+      ]
+    },
+    {
+      "id": "best-value",
+      "question": "コスパで選ぶなら",
+      "pick": "minimax-hailuo",
+      "runner_up": [
+        "kling"
+      ],
+      "answer": "MiniMax H3はArtificial Analysisで4位の品質で、APIは768Pで1秒$0.08、AA換算の1分$4.80は上位7モデルで最も安い。月額ならHailuoのStandard（$14.99/月）から。次点のKling 3.0もAPIは720P・音声なしで1秒$0.084。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "MiniMax API Pay as You Go",
+          "url": "https://platform.minimax.io/docs/guides/pricing-paygo",
+          "date": "2026-10-01",
+          "note": "MiniMax-H3 768P $0.08 / second"
+        },
+        {
+          "kind": "official",
+          "name": "Hailuo AI Subscription Plans",
+          "url": "https://hailuoai.video/subscribe",
+          "date": "2026-10-01",
+          "note": "Standard $14.99/month"
+        },
+        {
+          "kind": "third_party",
+          "name": "Artificial Analysis Text-to-Video Leaderboard",
+          "url": "https://artificialanalysis.ai/video/leaderboard/text-to-video",
+          "date": "2026-10-01",
+          "note": "MiniMax H3（768p）4位・$4.80/分（2026-10-01時点）"
+        },
+        {
+          "kind": "official",
+          "name": "Kling API Pricing",
+          "url": "https://kling.ai/dev/pricing",
+          "date": "2026-10-01",
+          "note": "Kling 3.0 720P $0.084 /s（No Native Audio）"
+        }
+      ]
+    },
+    {
+      "id": "free",
+      "question": "無料で使うなら",
+      "pick": "kling",
+      "runner_up": [
+        "heygen",
+        "synthesia"
+      ],
+      "answer": "Kling AIは毎日の無料クレジットで生成でき、無料のままでも試せる（透かし入り・商用不可）。アバター動画ならHeyGen（月3本・1分まで）とSynthesia（月1,200クレジット、動画最大10分相当）に無料プランがある。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Kling Plans",
+          "url": "https://kling.ai/explore/kling_plans",
+          "date": "2026-10-01",
+          "note": "無料の毎日クレジットで生成可、無料の生成物は透かし入り"
+        },
+        {
+          "kind": "official",
+          "name": "HeyGen Pricing",
+          "url": "https://www.heygen.com/pricing",
+          "date": "2026-10-01",
+          "note": "Free: 3 videos per month, up to 1 min"
+        },
+        {
+          "kind": "official",
+          "name": "Synthesia Pricing",
+          "url": "https://www.synthesia.io/pricing",
+          "date": "2026-10-01",
+          "note": "Basic $0/mo, 1,200 credits/mo"
+        }
+      ]
+    },
+    {
+      "id": "japanese",
+      "question": "日本語重視なら",
+      "pick": "kling",
+      "runner_up": [
+        "heygen",
+        "synthesia"
+      ],
+      "answer": "Kling AIはVideo 3.0で日本語を含む5言語のセリフ生成を公式に対応言語としており、サイトも日本語で使える。アバターに日本語で話させるならHeyGen・Synthesiaも日本語音声に対応。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Kling VIDEO 3.0 Model User Guide",
+          "url": "https://kling.ai/quickstart/klingai-video-3-model-user-guide",
+          "date": "2026-10-01",
+          "note": "Chinese, English, Japanese, Korean, Spanish のセリフ生成"
+        },
+        {
+          "kind": "official",
+          "name": "HeyGen Voice: Languages We Support",
+          "url": "https://help.heygen.com/en/articles/11391932-voice-languages-we-support",
+          "date": "2026-10-01",
+          "note": "Japanese (Japan)"
+        },
+        {
+          "kind": "official",
+          "name": "Synthesia Languages",
+          "url": "https://www.synthesia.io/features/languages",
+          "date": "2026-10-01",
+          "note": "対応言語に日本語"
+        }
+      ]
+    },
+    {
+      "id": "commercial",
+      "question": "商用利用（広告・納品物）なら",
+      "pick": "adobe-firefly",
+      "runner_up": [],
+      "answer": "Adobe FireflyはFirefly Video Modelで作った動画を「商用利用に安全」と明記し、顧客のコンテンツで学習していない。パートナーモデル（Kling・Veoなど）で作った動画はこの説明の対象外で、利用者が適否を判断する。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Adobe Firefly AI Video Generator",
+          "url": "https://www.adobe.com/products/firefly/features/ai-video-generator.html",
+          "date": "2026-10-01",
+          "note": "Videos generated with the Adobe Firefly model are safe for commercial use"
+        },
+        {
+          "kind": "official",
+          "name": "Approach to generative AI with Adobe Firefly",
+          "url": "https://www.adobe.com/ai/overview/firefly/gen-ai-approach.html",
+          "date": "2026-10-01",
+          "note": "顧客のコンテンツで学習しない"
+        }
+      ]
+    },
+    {
+      "id": "developer",
+      "question": "APIで組み込むなら",
+      "pick": "gemini-omni",
+      "runner_up": [
+        "minimax-hailuo",
+        "kling"
+      ],
+      "answer": "Gemini Omni 1.1 Flashは一般提供（GA）のAPIで、1秒約$0.10、シーン延長で最長40秒、4Kアップスケールに対応。単価を抑えるならMiniMax H3（768P $0.08/秒）、Kling 3.0（720P・音声なし $0.084/秒）。",
+      "evidence": [
+        {
+          "kind": "official",
+          "name": "Gemini Developer API pricing",
+          "url": "https://ai.google.dev/gemini-api/docs/pricing",
+          "date": "2026-10-01",
+          "note": "gemini-omni-1.1-flash approximately $0.10 per second"
+        },
+        {
+          "kind": "official",
+          "name": "Gemini Omni 1.1 Flash lets you build with more control",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/",
+          "date": "2026-10-01",
+          "note": "シーン延長で最長40秒、4Kアップスケール"
+        },
+        {
+          "kind": "official",
+          "name": "MiniMax API Pay as You Go",
+          "url": "https://platform.minimax.io/docs/guides/pricing-paygo",
+          "date": "2026-10-01",
+          "note": "MiniMax-H3 768P $0.08 / second"
+        },
+        {
+          "kind": "official",
+          "name": "Kling API Pricing",
+          "url": "https://kling.ai/dev/pricing",
+          "date": "2026-10-01",
+          "note": "Kling 3.0 720P $0.084 /s（音声なし）"
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "gemini-omni",
+      "name": "Gemini Omni（Gemini・Google Flow）",
+      "vendor": "Google",
+      "url": "https://gemini.google/jp/overview/video-generation/?hl=ja-JP",
+      "status": "featured",
+      "rank": 1,
+      "segment": "t2v",
+      "tags": [
+        "Google",
+        "Gemini",
+        "Gemini Omni",
+        "Veo"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Gemini Omni 1.1 Flash",
+        "released": "2026-08-27",
+        "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web",
+        "app",
+        "api"
+      ],
+      "strengths": [
+        "Arenaの動画生成で1・2位（9月21日時点）",
+        "会話で動画の一部を直しながら編集できる",
+        "シーン延長で最長40秒・4Kアップスケール（API）"
+      ],
+      "weaknesses": [
+        "1回の生成は10秒（延長で最長40秒）",
+        "アプリでの動画生成は有料プランが対象"
+      ],
+      "editorial_take": "文章・画像・動画・音声を組み合わせた指示で生成し、会話で修正を重ねられる。Artificial Analysisでは6位で、Arenaとは評価が割れている。",
+      "pricing": {
+        "free": {
+          "available": false,
+          "detail": "GeminiアプリとGoogle Flowでの提供はGoogle AI Plus・Pro・Ultraの加入者が対象（YouTubeショートでは無料提供を開始と発表）",
+          "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Google AI Plus",
+            "amount": 725,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "￥725 JPY / 月",
+            "detail": "Google Flowクレジット200",
+            "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Google AI Pro",
+            "amount": 2900,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "￥2,900 JPY / 月",
+            "detail": "Google Flowクレジット1,000",
+            "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Google AI Ultra",
+            "amount": 14500,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "最小構成価格: ￥14,500 JPY/月",
+            "detail": "Google Flowクレジット10,000（￥32,000で25,000）",
+            "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
+            "checked": "2026-10-01"
+          }
+        ],
+        "usage": {
+          "unit": "1秒（720p）",
+          "amount": 0.1,
+          "currency": "USD",
+          "as_shown": "approximately $0.10 per second（video output $17.50 / 1M tokens）",
+          "detail": "Gemini API・gemini-omni-1.1-flash。Veo 3.1は$0.40/秒、Fastは$0.10、Liteは$0.05",
+          "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+          "checked": "2026-10-01"
+        },
+        "jpy_official": true,
+        "note": "アプリのプランは円建て、APIは米ドル（公式表記）"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "unknown",
+        "note": "Geminiの画面は日本語に対応。日本語のセリフ生成・口の動きへの対応の記載は公式に見つけられず",
+        "source_url": "https://support.google.com/gemini/answer/13575153?hl=en",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "Google利用規約で、生成されたオリジナルのコンテンツの所有権をGoogleは主張しないと明記。Omniで作った動画には見えない電子透かしSynthIDが入る",
+        "source_url": "https://policies.google.com/terms?hl=en",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "opt_out_available",
+        "note": "Geminiアプリは既定で会話がGoogleのAI改善に使われ、「Geminiアプリ アクティビティ」の設定で拒否できる。Gemini APIの有料枠は改善に使わない",
+        "source_url": "https://support.google.com/gemini/answer/13594961?hl=en",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "日本向けにGoogle AIプランを円建てで提供。Omni FlashはAI Plus・Pro・Ultraの加入者にグローバルで提供と発表",
+        "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "kling",
+      "name": "Kling AI",
+      "vendor": "Kling AI Pte. Ltd.",
+      "url": "https://kling.ai/",
+      "status": "featured",
+      "rank": 2,
+      "segment": "t2v",
+      "tags": [
+        "Kling"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Kling 4.0",
+        "released": "2026-09-28",
+        "source_url": "https://kling.ai/release-note",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web",
+        "desktop",
+        "api"
+      ],
+      "strengths": [
+        "セリフ生成が日本語を含む5言語に対応（3.0）",
+        "ネイティブ4Kの動画生成に対応",
+        "有料プランは生成物の商用利用可"
+      ],
+      "weaknesses": [
+        "無料（Basic）は透かし入り・商用不可",
+        "4.0はAPIの前払いパッケージ未対応（10月1日時点）"
+      ],
+      "editorial_take": "9月28日にKling 4.0を公開したばかりで、主要リーダーボードにはまだ載っていない（AAではKling 3.0 Omniが14位）。日本語のセリフを公式に対応言語として明記している。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "毎日の無料クレジットで生成できる。無料の生成物には透かしが入る",
+          "source_url": "https://kling.ai/explore/kling_plans",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Standard",
+            "amount": 8.8,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$6.99 / 1st mo（$10、Then $8.8/month）",
+            "detail": "660クレジット/月・透かし除去",
+            "source_url": "https://kling.ai/app/membership/membership-plan?r=26",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Pro",
+            "amount": 32.56,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$25.99 / 1st mo（$37、Then $32.56/month）",
+            "detail": "3,000クレジット/月",
+            "source_url": "https://kling.ai/app/membership/membership-plan?r=26",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Premier",
+            "amount": 80.96,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$64.99 / 1st mo（$92、Then $80.96/month）",
+            "detail": "8,000クレジット/月",
+            "source_url": "https://kling.ai/app/membership/membership-plan?r=26",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Ultra",
+            "amount": 159.99,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$127.99 / 1st mo（$180、Then $159.99/month）",
+            "detail": "26,000クレジット/月",
+            "source_url": "https://kling.ai/app/membership/membership-plan?r=26",
+            "checked": "2026-10-01"
+          }
+        ],
+        "usage": {
+          "unit": "1秒（720P）",
+          "amount": 0.084,
+          "currency": "USD",
+          "as_shown": "0.6 Units ($0.084) /s（Kling 3.0・No Native Audio・720P）",
+          "detail": "音声ありは$0.126/秒。1 Unit = $0.14（定価）。前払いパッケージは$700から",
+          "source_url": "https://kling.ai/dev/pricing",
+          "checked": "2026-10-01"
+        },
+        "jpy_official": false,
+        "note": "初月は割引価格（初回のみ）。年払いの割引あり"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "yes",
+        "note": "公式サイトは日本語表示に対応。Video 3.0は中国語・英語・日本語・韓国語・スペイン語の5言語でセリフを生成できると公式ガイドに記載",
+        "source_url": "https://kling.ai/quickstart/klingai-video-3-model-user-guide",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "conditional",
+        "note": "有料プランは「Generated content is for commercial use」と明記。無料のBasicは商用利用不可（公式ブログの料金表）",
+        "source_url": "https://kling.ai/app/membership/membership-plan?r=26",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "opt_out_available",
+        "note": "利用規約で入力・出力をAIモデルの学習・改善に使えると明記。support@kling.aiへのメールで利用の許諾を取り消せる",
+        "source_url": "https://kling.ai/docs/user-policy",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "unknown",
+        "note": "公式サイトは日本語表示に対応するが、提供国の一覧は見つけられず",
+        "source_url": "https://kling.ai/docs/user-policy",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "dreamina-seedance",
+      "name": "Dreamina（Seedance 2.5）",
+      "vendor": "ByteDance（CapCut）",
+      "url": "https://dreamina.capcut.com/",
+      "status": "featured",
+      "rank": 3,
+      "segment": "t2v",
+      "tags": [
+        "ByteDance",
+        "Seedance",
+        "Dreamina",
+        "CapCut"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Dreamina Seedance 2.5",
+        "released": "2026-07-31",
+        "source_url": "https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web",
+        "api"
+      ],
+      "strengths": [
+        "1回で最長30秒の音声付き動画を生成（2.5）",
+        "参照素材を画像30・動画10・音声10まで指定",
+        "AAで3位（音声あり部門、10月1日時点）"
+      ],
+      "weaknesses": [
+        "AAの上位7モデルで1分あたりの単価が最も高い",
+        "日本向けの利用規約・プライバシー方針を確認できず"
+      ],
+      "editorial_take": "ByteDanceの動画モデルSeedanceを使えるCapCut系のサービス。APIはBytePlusで提供されている。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "無料で始められる（公式トップ）。有料プランで透かし除去",
+          "source_url": "https://dreamina.capcut.com/",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Basic",
+            "amount": 15,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "USD 1.50 for the first month, then USD 15.00/month",
+            "detail": "1,575クレジット/月（10秒動画19本相当）",
+            "source_url": "https://dreamina.capcut.com/",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Standard",
+            "amount": 36,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "USD 22.00 for the first month, then USD 36.00/month",
+            "detail": "3,885クレジット/月（10秒動画48本相当）",
+            "source_url": "https://dreamina.capcut.com/",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Advanced",
+            "amount": 159,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "USD 95.00 for the first month, then USD 159.00/month",
+            "detail": "17,600クレジット/月（10秒動画220本相当）",
+            "source_url": "https://dreamina.capcut.com/",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Ultra",
+            "amount": 520,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "USD 312.00 for the first month, then USD 520.00/month",
+            "detail": "59,000クレジット/月",
+            "source_url": "https://dreamina.capcut.com/",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": "公式ページに「表示価格は参考。ログイン後に最終価格・税・適用オファーを表示」とある"
+      },
+      "japanese": {
+        "ui": "unknown",
+        "output": "partial",
+        "note": "Seedance 2.5は日本語を含む10以上の言語で画面内の文字の描画・翻訳を強化（公式発表）。日本語のセリフ生成・日本語の画面の記載は見つけられず",
+        "source_url": "https://www.capcut.com/newsroom/giving-creators-more-control-with-dreamina-seedance-2-5-and-dola-seedream-5-0-pro",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "unknown",
+        "note": "日本向けの利用規約を確認できなかった（閲覧時に表示された米国向け規約では、規約順守を条件に入力と出力は利用者のものとしている）",
+        "source_url": "https://dreamina.capcut.com/clause/dreamina-terms-of-service",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "unknown",
+        "note": "日本向けのプライバシーポリシーを確認できなかった",
+        "source_url": "https://www.capcut.com/clause/dreamina-privacy-policy?region=JP&lang=ja-JP",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "unknown",
+        "note": "Seedance 2.5は欧州・アジア・中東・南米の有料会員に順次提供と発表。国別の一覧は見つけられず",
+        "source_url": "https://www.capcut.com/newsroom/giving-creators-more-control-with-dreamina-seedance-2-5-and-dola-seedream-5-0-pro",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "minimax-hailuo",
+      "name": "Hailuo AI（MiniMax H3）",
+      "vendor": "MiniMax",
+      "url": "https://hailuoai.video/",
+      "status": "featured",
+      "rank": 4,
+      "segment": "t2v",
+      "tags": [
+        "MiniMax",
+        "Hailuo"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "MiniMax H3",
+        "released": "2026-07-31",
+        "source_url": "https://www.minimax.io/blog/minimax-h3",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web",
+        "api"
+      ],
+      "strengths": [
+        "AAで4位、1分$4.80は上位7モデルで最安",
+        "最長15秒・2K・ステレオ音声付きで生成",
+        "モデルの重みを公開（2026-08-03）"
+      ],
+      "weaknesses": [
+        "無料は一度きりのお試しクレジットのみ",
+        "商用利用の条件が規約から明確に読めない"
+      ],
+      "editorial_take": "上位モデルの中で単価が低く、APIは768Pで1秒$0.08。H3の重みも公開されており、自社環境での運用も選べる。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "一度きりの無料お試しクレジット（Hailuoモデルのみ）",
+          "source_url": "https://hailuoai.video/subscribe",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Standard",
+            "amount": 14.99,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$14.99 / month（年払いは$8.40/月・$100.80/年）",
+            "detail": "1,000クレジット/月。MiniMax H3（768P）は$0.059/秒相当",
+            "source_url": "https://hailuoai.video/subscribe",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Pro",
+            "amount": 54.99,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$54.99 / month（年払いは$30.40/月・$364.80/年）",
+            "detail": "4,500クレジット/月",
+            "source_url": "https://hailuoai.video/subscribe",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Master",
+            "amount": 119.99,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$119.99 / month（年払いは$71.20/月・$854.40/年）",
+            "detail": "10,500クレジット/月",
+            "source_url": "https://hailuoai.video/subscribe",
+            "checked": "2026-10-01"
+          }
+        ],
+        "usage": {
+          "unit": "1秒（768P）",
+          "amount": 0.08,
+          "currency": "USD",
+          "as_shown": "$0.08 / second（MiniMax-H3・768P）",
+          "detail": "2Kは$0.13/秒、MiniMax-H3-Max 480Pは$0.05/秒",
+          "source_url": "https://platform.minimax.io/docs/guides/pricing-paygo",
+          "checked": "2026-10-01"
+        },
+        "jpy_official": false,
+        "note": ""
+      },
+      "japanese": {
+        "ui": "unknown",
+        "output": "unknown",
+        "note": "日本語の画面・セリフ生成への対応の記載は公式に見つけられず",
+        "source_url": "https://www.minimax.io/blog/minimax-h3",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "unknown",
+        "note": "利用規約は生成物の所有権を主張しない一方、サービスは個人・非商用の利用に限ると記載。有料会員の商用権についてのFAQは回答を読み取れなかった",
+        "source_url": "https://hailuoai.video/doc/terms-of-service.html",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "unknown",
+        "note": "利用規約で入力・生成物に広い利用許諾を運営会社に与える。学習利用の明記と拒否設定の記載は見つけられず",
+        "source_url": "https://hailuoai.video/doc/terms-of-service.html",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "unknown",
+        "note": "提供国の一覧は公式に見つけられず",
+        "source_url": "https://hailuoai.video/doc/terms-of-service.html",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "adobe-firefly",
+      "name": "Adobe Firefly（動画）",
+      "vendor": "Adobe",
+      "url": "https://www.adobe.com/jp/products/firefly.html",
+      "status": "featured",
+      "rank": 5,
+      "segment": "t2v",
+      "tags": [
+        "Adobe",
+        "Firefly"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Firefly Video Model",
+        "source_url": "https://www.adobe.com/products/firefly/features/ai-video-generator.html",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web",
+        "app",
+        "desktop"
+      ],
+      "strengths": [
+        "Firefly Video Modelの動画は商用利用に安全と明記",
+        "Kling・Veo・Runwayなども同じ画面で選べる",
+        "Premiumは Firefly Video Model が無制限"
+      ],
+      "weaknesses": [
+        "自社動画モデルの版数を公式ページで確認できず",
+        "パートナーモデルの生成物の適否は利用者が判断"
+      ],
+      "editorial_take": "自社モデルの学習データを許諾済み素材に限ると説明しており、広告・納品物での権利面を重視する場合の候補。Premiere・Photoshopなどと生成クレジットを共有できる。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "1日あたりの生成回数に制限がある無料プラン",
+          "source_url": "https://www.adobe.com/jp/products/firefly/plans.html",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Firefly Standard",
+            "amount": 1580,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "1,580 円/月（税込）",
+            "detail": "生成クレジット2,000/月",
+            "source_url": "https://www.adobe.com/jp/products/firefly/plans.html",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Firefly Pro",
+            "amount": 3180,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "3,180 円/月（税込）",
+            "detail": "生成クレジット4,000/月",
+            "source_url": "https://www.adobe.com/jp/products/firefly/plans.html",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Firefly Pro Plus",
+            "amount": 6600,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "通常価格 : 6,600 円/月（税込）",
+            "detail": "生成クレジット10,000/月。10月12日まで初年度4,617円の特別価格",
+            "source_url": "https://www.adobe.com/jp/products/firefly/plans.html",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Firefly Premium",
+            "amount": 31680,
+            "currency": "JPY",
+            "per": "month",
+            "as_shown": "通常価格 : 31,680 円/月（税込）",
+            "detail": "生成クレジット50,000/月＋Firefly Video Model無制限",
+            "source_url": "https://www.adobe.com/jp/products/firefly/plans.html",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": true,
+        "note": "動画は生成クレジットを消費（公式の動画生成ページでは2,000クレジットで5秒動画最大40本と換算）。価格は税込"
+      },
+      "japanese": {
+        "ui": "yes",
+        "output": "unknown",
+        "note": "画面は日本語に対応（技術要件ページ）。日本語のセリフ生成への対応の記載は見つけられず",
+        "source_url": "https://helpx.adobe.com/firefly/web/get-started/learn-the-basics/technical-requirements.html",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "Adobe Firefly Video Modelで作った動画は商用利用に安全と明記。パートナーモデルの生成物は利用者が適否を判断",
+        "source_url": "https://www.adobe.com/products/firefly/features/ai-video-generator.html",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "not_used",
+        "note": "顧客のコンテンツでFireflyを学習させたことはないと明記",
+        "source_url": "https://www.adobe.com/ai/overview/firefly/gen-ai-approach.html",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "yes",
+        "note": "日本向けの料金ページで円建て販売",
+        "source_url": "https://www.adobe.com/jp/products/firefly/plans.html",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "heygen",
+      "name": "HeyGen",
+      "vendor": "HeyGen",
+      "url": "https://www.heygen.com/",
+      "status": "featured",
+      "rank": 6,
+      "segment": "avatar",
+      "tags": [
+        "HeyGen",
+        "リップシンク"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Avatar V",
+        "released": "2026-04-08",
+        "source_url": "https://www.heygen.com/research/avatar-v-model",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web",
+        "api"
+      ],
+      "strengths": [
+        "175以上の言語・方言の音声に対応（日本語含む）",
+        "自分の分身アバターを作って台本を読ませられる",
+        "無料でも月3本まで作れる"
+      ],
+      "weaknesses": [
+        "無料プランは透かし入り（除去は有料）",
+        "既定で入力がモデルの学習に使われる（申請で拒否）"
+      ],
+      "editorial_take": "アバターに台本を読ませる動画と、既存動画の多言語吹き替えが主な用途。Avatar Vは参照動画から本人らしさを保つ新モデル。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "月3本・1本1分まで",
+          "source_url": "https://www.heygen.com/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Creator",
+            "amount": 29,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$29 / mo（年払いは$24/mo）",
+            "detail": "600クレジット/月・透かし除去・175以上の言語",
+            "source_url": "https://www.heygen.com/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Pro",
+            "amount": 49,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$49 / mo",
+            "detail": "1,000クレジット/月・4K書き出し（上位の階層あり）",
+            "source_url": "https://www.heygen.com/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Business",
+            "amount": 149,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$149 / mo（追加1席$20/月）",
+            "detail": "1,500クレジット/月・チーム管理",
+            "source_url": "https://www.heygen.com/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": "Enterpriseは要問い合わせ"
+      },
+      "japanese": {
+        "ui": "unknown",
+        "output": "yes",
+        "note": "音声の対応言語に「Japanese (Japan)」（公式ヘルプ）。日本語の画面の記載は見つけられず",
+        "source_url": "https://help.heygen.com/en/articles/11391932-voice-languages-we-support",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "公式FAQで、HeyGenで作った動画は有料・オーガニックの広告に使えると明記。無料プランの動画は透かし入り",
+        "source_url": "https://www.heygen.com/tool/video-ad-creator",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "opt_out_available",
+        "note": "プライバシーポリシーで入力をモデルの学習・改善に使うと記載。privacy@heygen.comへの連絡で拒否できる",
+        "source_url": "https://www.heygen.com/privacy",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "unknown",
+        "note": "提供国の一覧は公式に見つけられず",
+        "source_url": "https://www.heygen.com/terms",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "synthesia",
+      "name": "Synthesia",
+      "vendor": "Synthesia",
+      "url": "https://www.synthesia.io/",
+      "status": "featured",
+      "rank": 7,
+      "segment": "avatar",
+      "tags": [
+        "Synthesia"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Express-3（アバターモデル）",
+        "source_url": "https://www.synthesia.io/assistant-express-3",
+        "checked": "2026-10-01"
+      },
+      "access": [
+        "web",
+        "api"
+      ],
+      "strengths": [
+        "160以上の言語でアバター動画を作れる",
+        "Express-3アバターは全プランで追加料金なし",
+        "AIダビングで既存動画を140以上の言語に"
+      ],
+      "weaknesses": [
+        "無料（Basic）の動画はロゴ透かし入り",
+        "学習利用を拒否する設定の記載が見つからない"
+      ],
+      "editorial_take": "研修・社内説明・営業資料などのアバター動画向けのサービス。作成した動画は商用利用できると公式に明記している。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "Basic：月1,200クレジット（動画最大10分相当）",
+          "source_url": "https://www.synthesia.io/pricing",
+          "checked": "2026-10-01"
+        },
+        "plans": [
+          {
+            "name": "Starter",
+            "amount": 29,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$29/mo（Billed monthly）",
+            "detail": "月1,200クレジット・透かしなし",
+            "source_url": "https://www.synthesia.io/pricing",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Creator",
+            "amount": 89,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$89/mo（Billed monthly）",
+            "detail": "月3,600クレジット・パーソナルアバター5体",
+            "source_url": "https://www.synthesia.io/pricing",
+            "checked": "2026-10-01"
+          }
+        ],
+        "jpy_official": false,
+        "note": "年払いは月$18から（公式料金ページ）。Enterpriseは要問い合わせ"
+      },
+      "japanese": {
+        "ui": "unknown",
+        "output": "yes",
+        "note": "対応言語の一覧に日本語（公式）。日本語の画面の記載は見つけられず",
+        "source_url": "https://www.synthesia.io/features/languages",
+        "checked": "2026-10-01"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "作成した動画はマーケティング・顧客向け研修などに商用利用できると公式FAQに明記。Basic（無料）はロゴ透かし入り",
+        "source_url": "https://www.synthesia.io/features/text-to-video",
+        "checked": "2026-10-01"
+      },
+      "data_policy": {
+        "training_default": "unknown",
+        "note": "規約で顧客データはサービスの提供・維持・改善に必要な範囲で利用し、サービスと切り離したAIモデルの開発には使わないと記載。学習利用を拒否する設定の記載は見つけられず",
+        "source_url": "https://www.synthesia.io/legal/customer-terms-of-service",
+        "checked": "2026-10-01"
+      },
+      "availability_japan": {
+        "value": "unknown",
+        "note": "提供国の一覧は公式に見つけられず",
+        "source_url": "https://www.synthesia.io/legal/customer-terms-of-service",
+        "checked": "2026-10-01"
+      },
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "wan",
+      "name": "Wan",
+      "vendor": "Alibaba Cloud",
+      "url": "https://wan.video/",
+      "status": "listed",
+      "rank": 21,
+      "segment": "t2v",
+      "tags": [
+        "Alibaba",
+        "Wan"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Wan3.0",
+        "released": "2026-08-23",
+        "source_url": "https://www.alibabacloud.com/en/news/product/video-generation-model-wan30-officially-launched-nsb",
+        "checked": "2026-10-01"
+      },
+      "access": [],
+      "strengths": [
+        "AAで1位。最長30秒・1080Pの音声付き動画"
+      ],
+      "weaknesses": [],
+      "editorial_take": "",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "flux-3-video",
+      "name": "FLUX 3 Video",
+      "vendor": "Black Forest Labs",
+      "url": "https://bfl.ai/models/flux-3",
+      "status": "listed",
+      "rank": 22,
+      "segment": "t2v",
+      "tags": [
+        "FLUX",
+        "Black Forest Labs"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "FLUX 3 Video",
+        "released": "2026-08-04",
+        "source_url": "https://bfl.ai/blog/flux-3-video",
+        "checked": "2026-10-01"
+      },
+      "access": [],
+      "strengths": [
+        "Arenaで3位。最長20秒の音声付き動画"
+      ],
+      "weaknesses": [],
+      "editorial_take": "",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "grok-imagine-video",
+      "name": "Grok Imagine（動画）",
+      "vendor": "SpaceXAI",
+      "url": "https://x.ai/grok",
+      "status": "listed",
+      "rank": 23,
+      "segment": "t2v",
+      "tags": [
+        "xAI",
+        "Grok"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Grok Imagine Video 1.5",
+        "released": "2026-06-16",
+        "source_url": "https://x.ai/news/grok-imagine-video-1-5",
+        "checked": "2026-10-01"
+      },
+      "access": [],
+      "strengths": [
+        "効果音・環境音・セリフを映像と同時に生成"
+      ],
+      "weaknesses": [],
+      "editorial_take": "",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "runway",
+      "name": "Runway",
+      "vendor": "Runway",
+      "url": "https://runwayml.com/",
+      "status": "listed",
+      "rank": 24,
+      "segment": "t2v",
+      "tags": [
+        "Runway"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Gen-4.5",
+        "source_url": "https://runwayml.com/pricing",
+        "checked": "2026-10-01"
+      },
+      "access": [],
+      "strengths": [
+        "Gen-4.5のほかKling 3.0・Seedance 2.5も使える"
+      ],
+      "weaknesses": [],
+      "editorial_take": "",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "luma-ray",
+      "name": "Luma（Ray）",
+      "vendor": "Luma",
+      "url": "https://lumalabs.ai/",
+      "status": "listed",
+      "rank": 25,
+      "segment": "t2v",
+      "tags": [
+        "Luma"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Ray3.2",
+        "released": "2026-06-09",
+        "source_url": "https://lumalabs.ai/news/introducing-ray-3-2",
+        "checked": "2026-10-01"
+      },
+      "access": [],
+      "strengths": [
+        "1クリップに最大16キーフレームを配置できる"
+      ],
+      "weaknesses": [],
+      "editorial_take": "",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "pika",
+      "name": "Pika",
+      "vendor": "Pika",
+      "url": "https://pika.art/",
+      "status": "listed",
+      "rank": 26,
+      "segment": "t2v",
+      "tags": [
+        "Pika"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Pika 2.5",
+        "source_url": "https://pika.art/apps/pika-2-5",
+        "checked": "2026-10-01"
+      },
+      "access": [],
+      "strengths": [
+        "2〜5枚のキーフレームをつないで動画化"
+      ],
+      "weaknesses": [],
+      "editorial_take": "",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "pixverse",
+      "name": "PixVerse",
+      "vendor": "PixVerse",
+      "url": "https://pixverse.ai/",
+      "status": "listed",
+      "rank": 27,
+      "segment": "t2v",
+      "tags": [
+        "PixVerse"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "PixVerse V6",
+        "released": "2026-03-30",
+        "source_url": "https://pixverse.ai/en/blog/pixverse-launches-v6-advancing-ai-video-generation",
+        "checked": "2026-10-01"
+      },
+      "access": [],
+      "strengths": [
+        "15秒・1080pの動画を音声付きで生成"
+      ],
+      "weaknesses": [],
+      "editorial_take": "",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "vidu",
+      "name": "Vidu",
+      "vendor": "Vidu",
+      "url": "https://www.vidu.com/",
+      "status": "listed",
+      "rank": 28,
+      "segment": "t2v",
+      "tags": [
+        "Vidu"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Vidu Q3",
+        "source_url": "https://www.vidu.com/vidu-q3",
+        "checked": "2026-10-01"
+      },
+      "access": [],
+      "strengths": [
+        "音声付き動画を日本語でも生成できる（Q3）"
+      ],
+      "weaknesses": [],
+      "editorial_take": "",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "ltx",
+      "name": "LTX",
+      "vendor": "LTX（Lightricks）",
+      "url": "https://ltx.io/",
+      "status": "listed",
+      "rank": 29,
+      "segment": "t2v",
+      "tags": [
+        "LTX",
+        "Lightricks"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "LTX-2.5",
+        "released": "2026-08-11",
+        "source_url": "https://ltx.io/llm-info",
+        "checked": "2026-10-01"
+      },
+      "access": [],
+      "strengths": [
+        "重みを公開しているオープンソースの動画モデル"
+      ],
+      "weaknesses": [],
+      "editorial_take": "",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "happyhorse",
+      "name": "HappyHorse",
+      "vendor": "Alibaba",
+      "url": "https://happyhorse.com/",
+      "status": "listed",
+      "rank": 30,
+      "segment": "t2v",
+      "tags": [
+        "Alibaba",
+        "HappyHorse"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "HappyHorse 1.1",
+        "released": "2026-06-23",
+        "source_url": "https://www.alibabacloud.com/blog/happyhorse-gets-stronger-motion-expressiveness-higher-generation-consistency-and-enhanced-visual-quality_603293",
+        "checked": "2026-10-01"
+      },
+      "access": [],
+      "strengths": [
+        "1〜9枚の参照画像から動画を生成できる"
+      ],
+      "weaknesses": [],
+      "editorial_take": "",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "higgsfield",
+      "name": "Higgsfield",
+      "vendor": "Higgsfield, Inc.",
+      "url": "https://higgsfield.ai/",
+      "status": "listed",
+      "rank": 31,
+      "segment": "t2v",
+      "tags": [
+        "Higgsfield"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Higgsfield Genjutsu",
+        "source_url": "https://higgsfield.ai/",
+        "checked": "2026-10-01"
+      },
+      "access": [],
+      "strengths": [
+        "Seedance 2.5など他社モデルも使える制作スイート"
+      ],
+      "weaknesses": [],
+      "editorial_take": "",
+      "checked": "2026-10-01",
+      "retired_note": ""
+    },
+    {
+      "id": "sora",
+      "name": "Sora",
+      "vendor": "OpenAI",
+      "url": "https://openai.com/index/sora-2/",
+      "status": "retired",
+      "rank": 40,
+      "segment": "t2v",
+      "tags": [
+        "OpenAI",
+        "Sora"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Sora 2",
+        "source_url": "https://openai.com/index/sora-2/",
+        "checked": "2026-10-01"
+      },
+      "access": [],
+      "strengths": [],
+      "weaknesses": [],
+      "editorial_take": "",
+      "checked": "2026-10-01",
+      "retired_note": "Webとアプリは2026年4月26日、APIは2026年9月24日に提供終了（OpenAI公式ヘルプ）"
+    },
+    {
+      "id": "meta-muse-video",
+      "name": "Muse Video",
+      "vendor": "Meta",
+      "status": "watch",
+      "rank": 99,
+      "tags": [
+        "Meta"
+      ],
+      "note": "Meta系の公式ドメインは社内ルールで開かないため未調査（Arenaの動画生成リーダーボードに掲載あり）"
+    }
+  ],
+  "criteria": [
+    {
+      "name": "動きの自然さと物理の破綻",
+      "why": "手・歩行・液体・布などで破綻が出ると広告には使えない",
+      "how_to_check": "公開の動画アリーナの順位と、同じ指示での出力を見る。2つのリーダーボードで順位が割れることもあるので両方を見る"
+    },
+    {
+      "name": "尺・解像度・生成時間",
+      "why": "何秒まで・どの解像度で・何分待つかで制作計画が変わる",
+      "how_to_check": "公式の仕様ページで最大秒数・解像度・延長の可否を確認する"
+    },
+    {
+      "name": "音声の同時生成とリップシンク",
+      "why": "セリフ・効果音を同時に出せるか、日本語の口の動きが合うかで用途が変わる",
+      "how_to_check": "公式の機能一覧でセリフ生成の対応言語に日本語があるか確認する"
+    },
+    {
+      "name": "人物・商品の一貫性",
+      "why": "同じ人物や商品を複数カットで揃えられないと動画CRが組めない",
+      "how_to_check": "参照画像・参照動画の上限数やキャラクター固定の機能を公式で確認する"
+    },
+    {
+      "name": "料金の単位",
+      "why": "秒数・クレジット・解像度・音声の有無で単価が変わる",
+      "how_to_check": "公式料金ページで標準設定の1秒あたり・1本あたりの換算を出す"
+    },
+    {
+      "name": "商用利用と透かし",
+      "why": "無料プランは透かし付き・商用不可のことが多い",
+      "how_to_check": "公式の利用規約と料金ページのプラン別の記載を確認する。日本向けの規約が別にあるかも見る"
+    }
+  ],
+  "benchmarks": [
+    {
+      "id": "aa-t2v",
+      "name": "Artificial Analysis Text-to-Video Leaderboard（AA-Video-T2V v2.0・音声あり）",
+      "operator": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/video/leaderboard/text-to-video",
+      "what": "採用した評価者パネルの盲検一対比較によるElo",
+      "snapshot": "1位 Wan 3.0（1159）、2位 Utopai X（MiniMax H3）（1151）、3位 Dreamina Seedance 2.5（1142）、4位 MiniMax H3（768p）（1140）、5位 FLUX 3（1131）、6位 Gemini Omni Flash 1.1（1121）。Kling 3.0 Omni 14位、Veo 3.1 17位（2026-10-01時点）",
+      "checked": "2026-10-01"
+    },
+    {
+      "id": "arena-t2v",
+      "name": "Arena（旧LMArena）Text-to-Video Leaderboard",
+      "operator": "Arena",
+      "url": "https://arena.ai/leaderboard/text-to-video",
+      "what": "利用者の匿名一対比較による投票スコア（約72万票・48モデル）",
+      "snapshot": "1位 gemini-omni-1.1-flash（1516）、2位 gemini-omni-flash（1513）、3位 flux-3-video（1493）、4位 grok-imagine-video-1.5-agent（1492）、5位 dreamina-seedance-2.0-720p（1479）、6位 wan3.0（1476）、7位 dreamina-seedance-2.5-720p（1474）、8位 minimax-h3（1460）。Kling 2.6 Pro 29位（2026-09-21更新分、10-01確認）",
+      "checked": "2026-10-01"
+    }
+  ],
+  "faq": [
+    {
+      "q": "無料で使える動画生成AIはある？",
+      "a": "Kling AIは毎日の無料クレジットで生成できる（透かし入り・商用不可）。Dreaminaも無料で始められ、Hailuo AIは一度きりのお試しクレジットがある。アバター動画ならHeyGen（月3本・1分まで）とSynthesia（月1,200クレジット）に無料プランがある。GoogleのGemini OmniはGeminiアプリ・Google Flowでは有料プランが対象（2026年10月1日、各社の公式ページで確認）。"
+    },
+    {
+      "q": "日本語のセリフを喋らせられる？",
+      "a": "Kling AIはVideo 3.0で日本語を含む5言語のセリフ生成を公式に明記している。アバター型ではHeyGen・Synthesiaが日本語音声に対応。Gemini Omni・Seedance・MiniMax H3は日本語のセリフ対応の記載を公式に見つけられなかった。発音やイントネーションは生成後に必ず確認したい。"
+    },
+    {
+      "q": "生成した動画を広告に使ってよい？",
+      "a": "多くの製品は有料プランでの商用利用を認めているが、無料プランは透かし入りや商用不可のことが多い（Kling AIの無料プランは商用不可、HeyGen・Synthesiaの無料プランは透かし入り）。Adobe FireflyはFirefly Video Modelの生成物を商用利用に安全と明記している。Dreamina・Hailuoは日本向けの条件を公式に確認できなかった。"
+    },
+    {
+      "q": "いちばん品質が高い動画生成AIは？",
+      "a": "2026年10月1日時点で、ArenaではGoogleのGemini Omniが1・2位、Artificial AnalysisではWan 3.0が1位と、評価が分かれている。Seedance 2.5（AA 3位・Arena 7位）とMiniMax H3（AA 4位・Arena 8位）は両方で上位。9月28日公開のKling 4.0はまだ掲載されていない。"
+    },
+    {
+      "q": "Soraは使える？",
+      "a": "OpenAIのSoraは、Webとアプリが2026年4月26日、APIが2026年9月24日に提供を終了した（OpenAI公式ヘルプ）。このページでは終了扱いにしている。"
+    }
+  ],
+  "related": {
+    "tags": [
+      "動画生成",
+      "リップシンク",
+      "Gemini Omni",
+      "Veo",
+      "Kling",
+      "Seedance",
+      "MiniMax",
+      "Firefly",
+      "HeyGen",
+      "Synthesia",
+      "Wan",
+      "Sora",
+      "Runway"
+    ],
+    "guides": [
+      "image-generation",
+      "marketing",
+      "text-to-speech"
+    ],
+    "articles": []
+  },
+  "changelog": [
+    {
+      "date": "2026-10-01",
+      "text": "初回公開",
+      "by": "researcher"
+    }
+  ],
+  "editor_note": "",
+  "embed_models": false,
+  "research_plan": {
+    "candidates": [],
+    "verdict_questions": [],
+    "notes": ""
+  }
+}
