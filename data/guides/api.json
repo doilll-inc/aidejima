@@ -41,7 +41,7 @@
           "name": "Artificial Analysis Intelligence Index",
           "url": "https://artificialanalysis.ai/leaderboards/models",
           "date": "2026-10-01",
-          "note": "Claude Opus 5.5（max）57.6、Claude Sonnet 5.5（max）56.0、GPT-6 Astra（max）52.7、Gemini 4 Argon（high）52.6、GPT-6.1 Sol（max）51.8（2026-10-01時点）"
+          "note": "Claude Opus 5.5（max）57.6、Claude Sonnet 5.5（max）56.0、GPT-6 Astra（max）52.7、Gemini 4 Argon（high）52.6（API は一般向けに未提供）、GPT-6.1 Sol（max）51.8（2026-10-01時点）"
         },
         {
           "kind": "official",
@@ -49,6 +49,13 @@
           "url": "https://platform.claude.com/docs/en/about-claude/pricing",
           "date": "2026-10-01",
           "note": "Claude Opus 5.5 は入力 $4・出力 $20、Claude Sonnet 5.5 は入力 $2・出力 $10（100万トークンあたり）"
+        },
+        {
+          "kind": "official",
+          "name": "Gemini 4 Argon: our next era of frontier intelligence（Google 公式ブログ）",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+          "date": "2026-10-01",
+          "note": "Gemini 4 Argon は Fairwind Program のサイバー防御者にだけ提供中。開発者向けは有料 API 顧客から始めるとし、時期は示していない。Gemini API の料金ページ（2026-10-01確認）にも未掲載"
         }
       ]
     },
@@ -419,7 +426,10 @@
         "Google",
         "API"
       ],
-      "model_slugs": [],
+      "model_slugs": [
+        "gemini-3-8-flash",
+        "gemini-4-argon"
+      ],
       "latest": {
         "name": "Gemini 3.8 Flash",
         "released": "2026-09-02",
@@ -473,6 +483,13 @@
             "as_shown": "Japan (asia-northeast1)：Gemini 3.5 Flash、2.5 Flash、2.5 Pro など",
             "detail": "Agent Platform（旧 Vertex AI）。Gemini 3.8 Flash は米国・EU のマルチリージョンのみ",
             "source_url": "https://cloud.google.com/gemini-enterprise-agent-platform/resources/data-residency",
+            "checked": "2026-10-01"
+          },
+          {
+            "name": "Gemini 4 Argon（一般提供前）",
+            "as_shown": "introductory price of $2 per million input tokens and $10 per million output tokens, with cached input tokens priced at 95% off",
+            "detail": "導入期間後は入力 $4・出力 $20。現在は Fairwind Program のサイバー防御組織にだけ提供し、Gemini API の料金ページには未掲載。一般向けは有料 API 顧客から始める予定で、時期は未定",
+            "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
             "checked": "2026-10-01"
           }
         ],
@@ -1184,6 +1201,12 @@
       "date": "2026-10-01",
       "text": "初回公開",
       "by": "researcher"
+    },
+    {
+      "date": "2026-10-01",
+      "text": "Gemini 4 Argon の導入価格（入力 $2・出力 $10、導入期間後は $4・$20）と提供状況（一般向けは未提供・有料 API 顧客から順次）を Gemini API の行に追加",
+      "article": "/news/20261001-google-gemini-4-argon/",
+      "by": "reviewer"
     }
   ],
   "editor_note": "",

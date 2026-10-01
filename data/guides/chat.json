@@ -19,7 +19,7 @@
       "Gemini"
     ]
   },
-  "intro": "回答の質で選ぶなら **Claude**（Opus 5.5）、まず無料で試すなら **Gemini** か **ChatGPT** が出発点です。Artificial Analysis の総合指数では Claude Opus 5.5 が首位で、GPT-6 Astra が続きます（2026年10月1日確認）。料金は ChatGPT・Gemini・Microsoft Copilot が円建て、Claude・Grok は米ドル建てで表示されます。",
+  "intro": "回答の質で選ぶなら **Claude**（Opus 5.5）、まず無料で試すなら **Gemini** か **ChatGPT** が出発点です。Artificial Analysis の総合指数では Claude Opus 5.5 が58で首位、他社では GPT-6 Astra と、Google が9月30日に発表した Gemini 4 Argon が53で続きます（Argon はまだ一般の利用者には未提供。2026年10月1日確認）。料金は ChatGPT・Gemini・Microsoft Copilot が円建て、Claude・Grok は米ドル建てで表示されます。",
   "scope": "汎用の対話AI（Web・アプリで使う個人〜法人プラン）を比べる。音声で会話する機能もここで扱う。APIの料金は「AI API」ガイド、コーディング専用ツールは「コーディングAI」ガイド、引用付きの検索・調査は「リサーチAI」ガイドで扱う。",
   "audience": [
     "ビジネスパーソン全般",
@@ -35,7 +35,7 @@
       "runner_up": [
         "chatgpt"
       ],
-      "answer": "Artificial Analysis の総合指数で Claude Opus 5.5 が58で首位（GPT-6 Astra は53）。LMArena のテキスト部門でも2〜7位を Claude のモデルが占めます（2026年10月1日確認）。",
+      "answer": "Artificial Analysis の総合指数で Claude Opus 5.5 が58で首位（GPT-6 Astra と Gemini 4 Argon は53）。LMArena のテキスト部門で1位の Gemini 4 Argon は、審査制の Fairwind Program に参加するサイバー防御組織にしか提供されておらず、一般向け（Google AI Ultra 加入者と有料 API 顧客から）はまだ始まっていないため答えにせず、2〜7位を占める Claude を選んでいます（2026年10月1日確認）。",
       "evidence": [
         {
           "kind": "third_party",
@@ -49,7 +49,14 @@
           "name": "LMArena Text Arena（総合）",
           "url": "https://arena.ai/leaderboard/text",
           "date": "2026-10-01",
-          "note": "1位は一部の利用者のみに提供中の gemini-4-argon-high（1525・暫定）。2〜7位はすべて Claude のモデルで、claude-opus-5.5-high は1504で4位（2026-09-30更新）"
+          "note": "1位 gemini-4-argon-high 1525（Preliminary＝暫定・4,942票。一般向けには未提供）。2〜7位はすべて Claude のモデルで、claude-opus-5.5-high は1504で4位（2026-09-30更新）"
+        },
+        {
+          "kind": "official",
+          "name": "Gemini 4 Argon: our next era of frontier intelligence（Google 公式ブログ）",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+          "date": "2026-10-01",
+          "note": "Fairwind Program を通じて信頼できるサイバー防御者に提供開始。開発者・企業・一般向けの提供は有料 API 顧客と Google AI Ultra 加入者から始めるとし、時期は示していない"
         }
       ]
     },
@@ -529,7 +536,7 @@
         "Gmail などの中でも使える（Plus 以上）"
       ],
       "weaknesses": [
-        "最上位 Gemini 4 Argon は一部の利用者のみ",
+        "最上位の Gemini 4 Argon は一般向けに未提供",
         "会話の一部を人が確認する（既定の設定）"
       ],
       "editorial_take": "無料で試すなら最有力。Google のアプリやストレージと合わせて使うなら AI Pro が割安。",
@@ -573,7 +580,7 @@
           }
         ],
         "jpy_official": true,
-        "note": "Gemini 3.8 Flash は AI Pro・Ultra 向け（Google 公式ブログ）。"
+        "note": "Gemini 3.8 Flash は AI Pro・Ultra 向け（Google 公式ブログ）。最上位の Gemini 4 Argon（2026年9月30日発表）は審査制の Fairwind Program のサイバー防御組織にだけ提供中で、Gemini アプリの一般の利用者はまだ使えない。一般向けは Google AI Ultra 加入者と有料 API 顧客から始める予定で、時期は未定（Google 公式ブログ）。"
       },
       "japanese": {
         "ui": "yes",
@@ -1050,7 +1057,7 @@
       "operator": "LMArena",
       "url": "https://arena.ai/leaderboard/text",
       "what": "利用者が2つの回答を見比べて投票する一対比較のスコア",
-      "snapshot": "1位 gemini-4-argon-high 1525（暫定）。2〜7位はすべて Claude（claude-opus-5.5-high は1504で4位）。gemini-3.1-pro-preview 1487で18位、gpt-6-astra-max 1476で30位（2026-09-30更新・2026-10-01確認）",
+      "snapshot": "1位 gemini-4-argon-high 1525（Preliminary＝暫定。一般向けには未提供）。2〜7位はすべて Claude（claude-opus-5.5-high は1504で4位）。gemini-3.1-pro-preview 1487で18位、gpt-6-astra-max 1476で30位（2026-09-30更新・2026-10-01確認）",
       "checked": "2026-10-01"
     },
     {
@@ -1082,7 +1089,7 @@
     },
     {
       "q": "いま一番性能が高いチャットAIは？",
-      "a": "Artificial Analysis の総合指数では Claude Opus 5.5 が58で首位、GPT-6 Astra と Gemini 4 Argon が53で続きます（2026年10月1日時点）。ただし Gemini 4 Argon は一部の利用者にしか提供されていません。順位は短期間で入れ替わるので、表の確認日も見てください。"
+      "a": "Artificial Analysis の総合指数では Claude Opus 5.5 が58で首位、GPT-6 Astra と Gemini 4 Argon が53で続きます（2026年10月1日時点）。LMArena のテキスト部門では Gemini 4 Argon が1位ですが、Argon は審査制の Fairwind Program に参加するサイバー防御組織にしか提供されておらず、一般の利用者はまだ使えません（Google AI Ultra 加入者と有料 API 顧客から順に広げる予定）。順位は短期間で入れ替わるので、表の確認日も見てください。"
     }
   ],
   "related": {
@@ -1112,6 +1119,12 @@
       "date": "2026-10-01",
       "text": "初回公開",
       "by": "researcher"
+    },
+    {
+      "date": "2026-10-01",
+      "text": "Gemini 4 Argon の提供範囲（審査制の Fairwind Program のみ・一般向けは未提供）を Google の公式ブログで確認し、Gemini の注記と「最高品質」の判断理由に反映",
+      "article": "/news/20261001-google-gemini-4-argon/",
+      "by": "reviewer"
     }
   ],
   "editor_note": "",

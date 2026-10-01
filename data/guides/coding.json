@@ -52,7 +52,7 @@
       "runner_up": [
         "codex"
       ],
-      "answer": "Code Arena の WebDev 部門で Claude Opus 5.5 が1818で1位（GPT-6 Astra は1789で2位）。第三者の Terminal-Bench 4.0 では GPT-6 Astra＋Codex 58.2%、Fable 5.1＋Claude Code 57.9%で、差は誤差の範囲です（2026年10月1日確認）。",
+      "answer": "Code Arena の WebDev 部門で Claude Opus 5.5 が1818で1位（GPT-6 Astra は1789で2位）、第三者の Terminal-Bench 4.0 では GPT-6 Astra＋Codex 58.2%と Fable 5.1＋Claude Code 57.9%が誤差の範囲で並びます（2026年10月1日確認）。Gemini 4 Argon は Google の公式評価で DeepSWE v1.1 首位（77.9%）ですが、Code Arena では8位（暫定）で、一般向けにはまだ提供されておらず Google Antigravity でも選べないため答えにしていません。",
       "evidence": [
         {
           "kind": "third_party",
@@ -74,6 +74,27 @@
           "url": "https://www.anthropic.com/claude-opus-5-5",
           "date": "2026-10-01",
           "note": "Anthropic 公表値で Terminal-Bench 4.0 は Opus 5.5 66.4%、GPT-6 Astra 57.9%"
+        },
+        {
+          "kind": "official",
+          "name": "Gemini 4 Argon Model evaluation（Google 公式の評価結果）",
+          "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_argon_model_evaluation.pdf",
+          "date": "2026-10-01",
+          "note": "DeepSWE v1.1 で Argon 77.9%（Opus 5.5 74.2%、GPT-6 Astra 74.1%）、Terminal-bench 4.0 は Argon 57.4%（Opus 5.5 66.4%）。Argon の値は Google の自社計測"
+        },
+        {
+          "kind": "official",
+          "name": "Gemini 4 Argon: our next era of frontier intelligence（Google 公式ブログ）",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+          "date": "2026-10-01",
+          "note": "Fairwind Program を通じて信頼できるサイバー防御者に提供開始。開発者・企業・一般向けの提供は有料 API 顧客と Google AI Ultra 加入者から始めるとし、時期は示していない"
+        },
+        {
+          "kind": "official",
+          "name": "Google Antigravity Models",
+          "url": "https://antigravity.google/docs/models",
+          "date": "2026-10-01",
+          "note": "選べるモデルは Gemini 3.8 Flash・3.7 Flash・3.6 Flash・3.1 Pro、Claude Sonnet・Opus 4.6、GPT-OSS-120b。Gemini 4 Argon は未掲載"
         }
       ]
     },
@@ -722,7 +743,7 @@
           }
         ],
         "jpy_official": false,
-        "note": "Google AI Pro は月2,900円、Ultra は月14,500円から（Google AI プランのページ。チャットAIガイド参照）。"
+        "note": "Google AI Pro は月2,900円、Ultra は月14,500円から（Google AI プランのページ。チャットAIガイド参照）。Gemini 4 Argon は料金ページ・モデル一覧のどちらにも未掲載（2026年10月1日確認）。"
       },
       "japanese": {
         "ui": "unknown",
@@ -1121,7 +1142,7 @@
       "operator": "LMArena",
       "url": "https://arena.ai/leaderboard/code",
       "what": "Webアプリ作成など、フロントエンド開発の出来を利用者が一対比較で投票したスコア",
-      "snapshot": "1位 claude-opus-5.5-max 1818、2位 gpt-6-astra-max 1789、3位 gpt-6.1-sol-max 1759、4位 claude-fable-5.1-max 1751、8位 gemini-4-argon-high 1679（暫定）、15位 grok-4.7-xhigh 1636、28位 gemini-3.8-flash-high 1583（2026-09-30更新・2026-10-01確認）",
+      "snapshot": "1位 claude-opus-5.5-max 1818、2位 gpt-6-astra-max 1789、3位 gpt-6.1-sol-max 1759、4位 claude-fable-5.1-max 1751、8位 gemini-4-argon-high 1679（Preliminary＝暫定・2,184票。一般向けには未提供）、15位 grok-4.7-xhigh 1636、28位 gemini-3.8-flash-high 1583（2026-09-30更新・2026-10-01確認）",
       "checked": "2026-10-01"
     },
     {
@@ -1131,6 +1152,15 @@
       "url": "https://www.anthropic.com/claude-opus-5-5",
       "what": "開発元が公表した評価結果",
       "snapshot": "Terminal-Bench 4.0 で Opus 5.5 66.4%、GPT-6 Astra 57.9%、Fable 5.1 55.8%（Anthropic の公表値。第三者の再計測ではない）",
+      "checked": "2026-10-01"
+    },
+    {
+      "id": "google-gemini-4-argon-eval",
+      "name": "Gemini 4 Argon Model evaluation（Google 公式の評価結果）",
+      "operator": "Google",
+      "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_argon_model_evaluation.pdf",
+      "what": "開発元が公表した評価結果",
+      "snapshot": "Agentic coding の4項目のうち、DeepSWE v1.1 は Argon 77.9%（Opus 5.5 74.2%、GPT-6 Astra 74.1%）、Vibe Code Bench は Argon 91.9%（Opus 5.5 90.3%）で首位。FrontierSWE v2 は GPT-6 Astra 65.5%（Argon 55.0%）、Terminal-bench 4.0 は Opus 5.5 66.4%（Argon 57.4%）が首位。Argon の DeepSWE・Terminal-bench は Google の自社計測で、他社の値は各社の公表値など（Google の公表値。第三者の再計測ではない）",
       "checked": "2026-10-01"
     }
   ],
@@ -1181,6 +1211,12 @@
       "date": "2026-10-01",
       "text": "初回公開",
       "by": "researcher"
+    },
+    {
+      "date": "2026-10-01",
+      "text": "Google の Gemini 4 Argon 公式評価（DeepSWE v1.1 で77.9%・首位など）を評価の根拠に追加。一般向けに未提供で Google Antigravity でも選べないため、「最高品質」の答えは変えず理由を明記",
+      "article": "/news/20261001-google-gemini-4-argon/",
+      "by": "reviewer"
     }
   ],
   "editor_note": "",
