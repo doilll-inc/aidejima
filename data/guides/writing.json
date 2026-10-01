@@ -1,0 +1,105 @@
+{
+  "slug": "writing",
+  "status": "draft",
+  "priority": 2,
+  "created": "2026-09-30",
+  "updated": "2026-09-30",
+  "last_reviewed": "2026-09-30",
+  "title": "文章作成AIのおすすめと料金比較（ビジネス文書・記事・メール）",
+  "short_name": "文章作成",
+  "seo": {
+    "description": "",
+    "keywords": [
+      "文章作成AI",
+      "文章生成",
+      "おすすめ",
+      "料金",
+      "校正"
+    ]
+  },
+  "intro": "",
+  "scope": "メール・提案書・記事・要約など日本語の文章を作る・直すためのAIを比べる。翻訳は「AI翻訳」ガイド、調べものは「調べもの」ガイドで扱う。",
+  "audience": [
+    "ビジネスパーソン全般",
+    "マーケター",
+    "広報・編集"
+  ],
+  "segments": [],
+  "verdicts": [],
+  "products": [],
+  "criteria": [
+    {
+      "name": "日本語の自然さと敬語",
+      "why": "そのまま社外に出せる文になるかで、手直しの時間が決まる",
+      "how_to_check": "同じ依頼（謝罪メール・提案の要約）を各サービスで作って比べる"
+    },
+    {
+      "name": "長文の一貫性",
+      "why": "数千字の文書で前後の矛盾や繰り返しが出ないか",
+      "how_to_check": "既存の長い資料を渡して構成を保ったまま書き直させる"
+    },
+    {
+      "name": "校正・表記ゆれの検出",
+      "why": "生成より校正のほうが業務では頻度が高い",
+      "how_to_check": "公式の機能一覧で校正・スタイルガイド対応を確認する"
+    },
+    {
+      "name": "使っているツールへの組み込み",
+      "why": "Word・Googleドキュメント・Notion・メールの中で使えるかで定着が変わる",
+      "how_to_check": "公式の連携一覧を確認する"
+    },
+    {
+      "name": "機密情報の扱い",
+      "why": "社内文書を入れるなら学習利用と保持の条件が要件になる",
+      "how_to_check": "公式のデータ利用ポリシーと法人プランの説明を確認する"
+    },
+    {
+      "name": "料金と上限",
+      "why": "無料枠の回数・文字数の上限で実用性が決まる",
+      "how_to_check": "公式料金ページを確認する"
+    }
+  ],
+  "benchmarks": [],
+  "faq": [],
+  "related": {
+    "tags": [
+      "文章作成",
+      "ChatGPT",
+      "Claude",
+      "Gemini",
+      "Copilot",
+      "Notion"
+    ],
+    "guides": [
+      "chat",
+      "translation",
+      "research",
+      "slides"
+    ],
+    "articles": []
+  },
+  "changelog": [],
+  "editor_note": "",
+  "embed_models": false,
+  "research_plan": {
+    "_comment": "調査担当向けのメモ（表示しない）。candidates は編集部の初期案＝製品名の候補であって事実ではない。公式サイトで現行の名称・存在を確認し、無いものは外し、新しいものを足す。published にする前に candidates と verdict_questions を空にし、notes を消す",
+    "candidates": [
+      "ChatGPT（OpenAI）",
+      "Claude（Anthropic）",
+      "Gemini（Google）／Google Workspace の Gemini",
+      "Microsoft 365 Copilot",
+      "Notion AI",
+      "Grammarly",
+      "Jasper",
+      "Copy.ai"
+    ],
+    "verdict_questions": [
+      "best-quality",
+      "best-value",
+      "free",
+      "japanese",
+      "business"
+    ],
+    "notes": "日本語の文章品質は公開評価が少ない。best-quality の根拠は日本語カテゴリのあるアリーナ（LMArena の言語別など）に限り、無ければ verdict を立てず editorial の見立てだけにする。"
+  }
+}

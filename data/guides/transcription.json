@@ -1,0 +1,112 @@
+{
+  "slug": "transcription",
+  "status": "draft",
+  "priority": 2,
+  "created": "2026-09-30",
+  "updated": "2026-09-30",
+  "last_reviewed": "2026-09-30",
+  "title": "AI文字起こし・議事録ツールのおすすめと料金比較",
+  "short_name": "文字起こし",
+  "seo": {
+    "description": "",
+    "keywords": [
+      "AI文字起こし",
+      "議事録",
+      "自動議事録",
+      "おすすめ",
+      "料金",
+      "Whisper"
+    ]
+  },
+  "intro": "",
+  "scope": "会議に参加して記録・要約するツール、音声ファイルを文字にするサービス、開発者向けの音声認識APIを比べる。読み上げは「音声合成」ガイドで扱う。",
+  "audience": ["ビジネスパーソン全般", "営業・カスタマーサクセス", "開発者"],
+  "segments": [
+    {
+      "id": "meeting",
+      "name": "会議の記録・要約",
+      "desc": "Zoom・Google Meet・Teamsに参加して文字起こしと要約を作る"
+    },
+    {
+      "id": "file",
+      "name": "音声ファイルの文字起こし",
+      "desc": "録音・動画をアップロードして文字にする"
+    },
+    {
+      "id": "api",
+      "name": "音声認識API",
+      "desc": "自社ツールに組み込む"
+    }
+  ],
+  "verdicts": [],
+  "products": [],
+  "criteria": [
+    {
+      "name": "日本語の精度と専門用語",
+      "why": "固有名詞・業界用語の誤りが多いと修正に時間がかかる",
+      "how_to_check": "同じ録音（社名・製品名を含む）で各サービスの誤りを数える。公式や第三者の精度評価があれば記録する"
+    },
+    {
+      "name": "話者分離",
+      "why": "誰の発言かが分からない議事録は使えない",
+      "how_to_check": "公式の機能一覧で話者分離と話者名の登録を確認する"
+    },
+    {
+      "name": "会議ツール連携",
+      "why": "使っている会議ツールに自動参加できるか",
+      "how_to_check": "公式の連携一覧（Zoom・Meet・Teams）を確認する"
+    },
+    {
+      "name": "要約・アクション項目の抽出",
+      "why": "文字起こしだけでなく決定事項・TODOを出せるか",
+      "how_to_check": "公式の機能説明を確認する"
+    },
+    {
+      "name": "データの扱い",
+      "why": "会議内容は機密。学習利用・保持期間・保存場所（国内か）が要件",
+      "how_to_check": "公式のデータ利用ポリシーとセキュリティページを確認する"
+    },
+    {
+      "name": "料金の単位",
+      "why": "月の時間上限・分単価で実費が変わる",
+      "how_to_check": "公式料金ページでプラン別の上限を確認する"
+    }
+  ],
+  "benchmarks": [],
+  "faq": [],
+  "related": {
+    "tags": ["文字起こし", "議事録", "Whisper", "音声"],
+    "guides": ["text-to-speech", "writing"],
+    "articles": []
+  },
+  "changelog": [],
+  "editor_note": "",
+  "embed_models": false,
+  "research_plan": {
+    "_comment": "調査担当向けのメモ（表示しない）。candidates は編集部の初期案＝製品名の候補であって事実ではない。公式サイトで現行の名称・存在を確認し、無いものは外し、新しいものを足す。published にする前に candidates と verdict_questions を空にし、notes を消す",
+    "candidates": [
+      "Notta",
+      "Otter.ai",
+      "Zoom AI Companion",
+      "Google Meet（Gemini による要約）",
+      "Microsoft Teams（Copilot）",
+      "tl;dv",
+      "Fireflies.ai",
+      "Rimo Voice",
+      "AI GIJIROKU",
+      "Whisper API（OpenAI）",
+      "Gemini（音声ファイル）",
+      "Deepgram",
+      "AssemblyAI",
+      "ElevenLabs Scribe"
+    ],
+    "verdict_questions": [
+      "best-quality",
+      "best-value",
+      "free",
+      "business",
+      "developer"
+    ],
+    "notes": "日本発のサービス（Notta・Rimo・AI GIJIROKU など）は円建て。日本語精度の根拠は公式の公表値か第三者の評価に限る（自分で試した印象を数値化しない）。"
+  }
+}

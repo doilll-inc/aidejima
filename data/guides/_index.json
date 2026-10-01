@@ -1,0 +1,54 @@
+{
+  "_comment": "用途別AIガイド（/best/）の一覧と並び順。groups=ハブ /best/ の表示グループ、nav=ナビに出す主要ガイド（多すぎるとナビが崩れるので6本まで）。ガイドを増やすときは <slug>.json を作ってここに足す。定義は SCHEMA.md、設計は docs/guides-design.md",
+  "groups": [
+    {
+      "id": "create",
+      "name": "作る",
+      "desc": "画像・動画・音声・資料を作る",
+      "guides": [
+        "image-generation",
+        "video-generation",
+        "text-to-speech",
+        "slides"
+      ]
+    },
+    {
+      "id": "write",
+      "name": "書く・調べる・訳す",
+      "desc": "チャット・文章・リサーチ・翻訳・文字起こし",
+      "guides": [
+        "chat",
+        "writing",
+        "research",
+        "translation",
+        "transcription"
+      ]
+    },
+    {
+      "id": "dev",
+      "name": "開発・API",
+      "desc": "コーディング・API料金・ローカルLLM",
+      "guides": [
+        "coding",
+        "api",
+        "local-llm"
+      ]
+    },
+    {
+      "id": "business",
+      "name": "ビジネス・マーケ",
+      "desc": "広告・SNS・LP",
+      "guides": [
+        "marketing"
+      ]
+    }
+  ],
+  "nav": [
+    "chat",
+    "image-generation",
+    "video-generation",
+    "coding",
+    "research",
+    "api"
+  ]
+}

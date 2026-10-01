@@ -1,0 +1,120 @@
+name: guides
+
+# 用途別AIガイド（/best/、data/guides/*.json）の総点検。
+# 毎日 06:30 JST に、last_reviewed が古い順に MAX_GUIDES 本を点検担当（Opus）が公式ページを開いて確かめ、差分を直してコミットする。
+# 13本を2本ずつ回すので、各ガイドは約1週間に1回点検される（＝週1の総点検を毎日の小さな実行に分けたもの。1回で全部開くと Claude の1実行に収まらないため）。
+# ここではデプロイしない。GITHUB_TOKEN での push は他のワークフローを起動しないので、毎時の publish.yml（schedule）が
+# 次の回に main を取り込んでビルド・公開する（最大1時間ほどで反映）。
+# 手動: Actions → guides → Run workflow で slug をカンマ区切り（または all）で指定できる。
+on:
+  schedule:
+    - cron: "30 21 * * *" # 06:30 JST 毎日
+  workflow_dispatch:
+    inputs:
+      guides:
+        description: "点検するガイドの slug（カンマ区切り。all で公開中の全部。空なら last_reviewed が古い順）"
+        default: ""
+      max_guides:
+        description: "1回で点検する本数（slug 未指定のとき）"
+        default: "2"
+
+concurrency:
+  group: publish # publish.yml と同じグループにして、同時に main へ push しないようにする
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  id-token: write
+
+env:
+  MAX_GUIDES: ${{ inputs.max_guides || '2' }}
+  REVIEWER_MODEL: claude-opus-5-5 # 点検モデル（記事の執筆モデルと同じ）
+  HAS_CLAUDE: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' }}
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: git identity
+        run: |
+          git config user.name "aidejima-bot"
+          git config user.email "aidejima-bot@users.noreply.github.com"
+
+      # 点検対象は Claude に選ばせず、ここで決める（published のうち last_reviewed が古い順）
+      - name: 点検対象を決める
+        id: pick
+        env:
+          INPUT_GUIDES: ${{ inputs.guides }}
+        run: |
+          picked=$(python3 - <<'PY'
+          import json, os, sys
+          from pathlib import Path
+          want = [s.strip() for s in os.environ.get("INPUT_GUIDES", "").split(",") if s.strip()]
+          guides = []
+          for p in sorted(Path("data/guides").glob("*.json")):
+              if p.name.startswith("_"):
+                  continue
+              g = json.loads(p.read_text(encoding="utf-8"))
+              if g.get("status") != "published":
+                  continue
+              guides.append((g.get("last_reviewed", ""), g["slug"]))
+          if want and want != ["all"]:
+              slugs = [s for _, s in guides if s in want]
+          elif want == ["all"]:
+              slugs = [s for _, s in guides]
+          else:
+              slugs = [s for _, s in sorted(guides)[: int(os.environ.get("MAX_GUIDES", "2"))]]
+          print(",".join(slugs))
+          PY
+          )
+          echo "対象: ${picked:-（公開中のガイドなし）}"
+          echo "guides=$picked" >> "$GITHUB_OUTPUT"
+
+      - name: 点検の指示を用意
+        if: steps.pick.outputs.guides != '' && env.HAS_CLAUDE == 'true'
+        id: prompt
+        run: |
+          {
+            echo "text<<PROMPT_EOF"
+            sed "s|{{GUIDES}}|${{ steps.pick.outputs.guides }}|" scripts/guide_refresh_prompt.md
+            echo "PROMPT_EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: "点検担当（Opus）: ガイドを点検する"
+        id: refresh
+        if: steps.pick.outputs.guides != '' && env.HAS_CLAUDE == 'true'
+        continue-on-error: true
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          show_full_output: true
+          claude_args: |
+            --model ${{ env.REVIEWER_MODEL }}
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash,WebSearch,WebFetch"
+            --max-turns 200
+          prompt: ${{ steps.prompt.outputs.text }}
+
+      # 壊れたJSONを公開しないため、push の前にビルドが通ることを確かめる
+      - name: ビルド確認
+        if: steps.pick.outputs.guides != ''
+        run: python3 build.py
+
+      - name: push
+        if: steps.pick.outputs.guides != ''
+        run: |
+          if [ -n "$(git log origin/main..HEAD --oneline)" ]; then
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo "新しいコミットなし（変更がなかったか、点検が途中で止まった）"
+          fi

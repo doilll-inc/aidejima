@@ -1,0 +1,112 @@
+{
+  "slug": "api",
+  "status": "draft",
+  "priority": 1,
+  "created": "2026-09-30",
+  "updated": "2026-09-30",
+  "last_reviewed": "2026-09-30",
+  "title": "AI API（LLM）の料金比較と選び方",
+  "short_name": "AI API",
+  "seo": {
+    "description": "",
+    "keywords": [
+      "LLM API",
+      "料金比較",
+      "OpenAI API",
+      "Anthropic API",
+      "Gemini API",
+      "選び方"
+    ]
+  },
+  "intro": "",
+  "scope": "自社サービスや業務ツールに組み込むためのAI APIを、プロバイダ単位（無料枠・バッチ/キャッシュ割引・レート制限・日本リージョン・データの扱い・支払い）で比べる。モデルごとの100万トークン単価は「AIモデル図鑑」（/models/）が正本で、このページに表を埋め込む。",
+  "audience": [
+    "開発者",
+    "プロダクトマネージャー",
+    "情シス"
+  ],
+  "segments": [],
+  "verdicts": [],
+  "products": [],
+  "criteria": [
+    {
+      "name": "単価だけでなく割引の仕組み",
+      "why": "キャッシュ（同じ文脈の再利用）とバッチ（非同期処理）の割引で、実費が半分以下になることがある",
+      "how_to_check": "公式料金ページでキャッシュ入力の単価とバッチ割引率を確認する"
+    },
+    {
+      "name": "レート制限の段階",
+      "why": "使い始めの制限が厳しいと本番に載せられない",
+      "how_to_check": "公式のレート制限ページで段階（Tier）ごとの上限と昇格条件を確認する"
+    },
+    {
+      "name": "日本リージョン・データレジデンシー",
+      "why": "個人情報を扱う業務では処理・保存の場所が要件になる",
+      "how_to_check": "公式のデータレジデンシー・リージョン一覧で日本の有無を確認する"
+    },
+    {
+      "name": "入力データの学習利用と保持期間",
+      "why": "APIは学習に使わないのが一般的だが、保持期間とゼロ保持の条件は異なる",
+      "how_to_check": "公式のデータ利用ポリシー（API向け）を確認する"
+    },
+    {
+      "name": "支払い方法と円建て・請求書",
+      "why": "法人カード以外の支払い、円建て請求、リセラー経由の可否",
+      "how_to_check": "公式の請求ページ・クラウド経由（Bedrock・Vertex・Azure）の記載を確認する"
+    },
+    {
+      "name": "SDK・互換性",
+      "why": "OpenAI互換APIなら差し替えが容易",
+      "how_to_check": "公式ドキュメントで互換性とSDKの言語を確認する"
+    }
+  ],
+  "benchmarks": [],
+  "faq": [],
+  "related": {
+    "tags": [
+      "API",
+      "料金",
+      "値下げ",
+      "OpenAI",
+      "Anthropic",
+      "Gemini",
+      "開発者"
+    ],
+    "guides": [
+      "coding",
+      "chat",
+      "local-llm"
+    ],
+    "articles": []
+  },
+  "changelog": [],
+  "editor_note": "",
+  "embed_models": true,
+  "research_plan": {
+    "_comment": "調査担当向けのメモ（表示しない）。candidates は編集部の初期案＝製品名の候補であって事実ではない。公式サイトで現行の名称・存在を確認し、無いものは外し、新しいものを足す。published にする前に candidates と verdict_questions を空にし、notes を消す",
+    "candidates": [
+      "OpenAI API",
+      "Anthropic API（Claude）",
+      "Gemini API／Vertex AI（Google）",
+      "Amazon Bedrock",
+      "Microsoft Foundry／Azure OpenAI",
+      "Mistral AI",
+      "DeepSeek API",
+      "xAI API",
+      "Alibaba Cloud Model Studio（Qwen）",
+      "Cohere",
+      "OpenRouter",
+      "Together AI",
+      "Groq",
+      "Fireworks AI"
+    ],
+    "verdict_questions": [
+      "best-quality",
+      "best-value",
+      "free",
+      "business",
+      "japanese"
+    ],
+    "notes": "モデル単価はこのファイルに書かない（data/models.json に書く）。このガイドの点検回は models.json の status=current の単価も公式料金ページで再確認し、各モデルに checked を足す。"
+  }
+}

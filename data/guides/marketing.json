@@ -1,0 +1,138 @@
+{
+  "slug": "marketing",
+  "status": "draft",
+  "priority": 2,
+  "created": "2026-09-30",
+  "updated": "2026-09-30",
+  "last_reviewed": "2026-09-30",
+  "title": "広告・マーケティング向けAIのおすすめ：広告クリエイティブ・SNS・LP制作",
+  "short_name": "広告・マーケ",
+  "seo": {
+    "description": "",
+    "keywords": [
+      "広告AI",
+      "広告クリエイティブ",
+      "AIバナー",
+      "SNS運用AI",
+      "LP作成AI",
+      "おすすめ"
+    ]
+  },
+  "intro": "",
+  "scope": "広告バナー・動画CRの制作と量産、SNS投稿の作成・運用、LP・Webページの生成、広告媒体に組み込まれたAI機能を比べる。汎用の画像・動画生成は各ガイドで扱い、ここでは広告・マーケの業務に特化したツールと媒体機能を扱う。",
+  "audience": [
+    "広告運用者",
+    "マーケター",
+    "SNS担当",
+    "EC・D2C事業者"
+  ],
+  "segments": [
+    {
+      "id": "creative",
+      "name": "バナー・広告動画の制作",
+      "desc": "広告用の静止画・動画CRを作る、量産する"
+    },
+    {
+      "id": "social",
+      "name": "SNS投稿・運用",
+      "desc": "投稿文・画像の作成、予約投稿、分析"
+    },
+    {
+      "id": "lp",
+      "name": "LP・Webページ",
+      "desc": "ランディングページやサイトを生成する"
+    },
+    {
+      "id": "platform",
+      "name": "広告媒体のAI機能",
+      "desc": "広告プラットフォーム内の自動生成・自動最適化"
+    }
+  ],
+  "verdicts": [],
+  "products": [],
+  "criteria": [
+    {
+      "name": "媒体審査・規定との相性",
+      "why": "AI生成の表記義務、透かし、著名人の肖像など媒体規定に触れると配信できない",
+      "how_to_check": "各媒体の広告ポリシーと、ツール側のAI表記・透かしの仕様を公式で確認する"
+    },
+    {
+      "name": "商用利用と素材の権利",
+      "why": "広告に使う以上、生成物の商用可否と第三者の権利侵害への対応が前提",
+      "how_to_check": "公式の利用規約・補償の記載を確認する"
+    },
+    {
+      "name": "日本語の文字入れ",
+      "why": "バナーは日本語の文字が正しく載るかで実用性が決まる",
+      "how_to_check": "公式が日本語フォント・文字入れに対応しているか確認する"
+    },
+    {
+      "name": "量産とバリエーション",
+      "why": "訴求×サイズ×媒体の組み合わせを一度に作れるか",
+      "how_to_check": "公式の機能（サイズ展開・テンプレート・一括生成）を確認する"
+    },
+    {
+      "name": "媒体連携（入稿・計測）",
+      "why": "作った素材を媒体にそのまま入稿・分析できるか",
+      "how_to_check": "公式の連携一覧を確認する"
+    },
+    {
+      "name": "料金",
+      "why": "席数課金・生成数課金・広告費連動で実費が変わる",
+      "how_to_check": "公式料金ページを確認する"
+    }
+  ],
+  "benchmarks": [],
+  "faq": [],
+  "related": {
+    "tags": [
+      "広告",
+      "マーケティング",
+      "SNS",
+      "広告クリエイティブ",
+      "Performance Max",
+      "EC"
+    ],
+    "guides": [
+      "image-generation",
+      "video-generation",
+      "writing"
+    ],
+    "articles": []
+  },
+  "changelog": [],
+  "editor_note": "",
+  "embed_models": false,
+  "research_plan": {
+    "_comment": "調査担当向けのメモ（表示しない）。candidates は編集部の初期案＝製品名の候補であって事実ではない。公式サイトで現行の名称・存在を確認し、無いものは外し、新しいものを足す。published にする前に candidates と verdict_questions を空にし、notes を消す",
+    "candidates": [
+      "Google 広告（P-MAX のアセット生成・AI機能）",
+      "Meta 広告（Advantage+。Meta系ドメインは開けないので watch のみ）",
+      "TikTok（Symphony）",
+      "Canva（Magic Studio）",
+      "Adobe Express／Firefly／GenStudio",
+      "AdCreative.ai",
+      "Creatify",
+      "Pencil",
+      "Arcads",
+      "HeyGen",
+      "Captions",
+      "Predis.ai",
+      "Buffer／Hootsuite のAI機能",
+      "CapCut",
+      "Framer AI",
+      "Wix",
+      "STUDIO",
+      "Lovable"
+    ],
+    "verdict_questions": [
+      "best-quality",
+      "best-value",
+      "free",
+      "japanese",
+      "commercial",
+      "business"
+    ],
+    "notes": "媒体側の機能（P-MAX 等）は「料金」が広告費に含まれるので plans は空にし、note に「広告費に含まれる」と書く。Meta の機能は報道でしか確認できないため fact を入れない。"
+  }
+}

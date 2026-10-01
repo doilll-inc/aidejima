@@ -1,0 +1,105 @@
+{
+  "slug": "slides",
+  "status": "draft",
+  "priority": 3,
+  "created": "2026-09-30",
+  "updated": "2026-09-30",
+  "last_reviewed": "2026-09-30",
+  "title": "AI資料作成・スライド生成のおすすめと料金比較",
+  "short_name": "資料作成",
+  "seo": {
+    "description": "",
+    "keywords": [
+      "AI資料作成",
+      "スライド生成AI",
+      "プレゼン資料",
+      "おすすめ",
+      "料金"
+    ]
+  },
+  "intro": "",
+  "scope": "文章や資料からスライド・提案書を作るAIを比べる。文章そのものの作成は「文章作成AI」ガイド、図の生成は「画像生成AI」ガイドで扱う。",
+  "audience": [
+    "ビジネスパーソン全般",
+    "営業",
+    "コンサルタント"
+  ],
+  "segments": [],
+  "verdicts": [],
+  "products": [],
+  "criteria": [
+    {
+      "name": "日本語フォントとレイアウト",
+      "why": "日本語で文字が切れる・詰まる資料は使えない",
+      "how_to_check": "同じ内容で生成して日本語の改行・フォントを確認する"
+    },
+    {
+      "name": "PowerPoint・Googleスライドへの書き出し",
+      "why": "最終的に編集する形式に出せるか、編集可能なテキストとして出るか",
+      "how_to_check": "公式の書き出し形式の一覧を確認する"
+    },
+    {
+      "name": "既存資料・データからの生成",
+      "why": "手持ちのWord・PDF・スプレッドシートを元にできるか",
+      "how_to_check": "公式の入力形式の一覧を確認する"
+    },
+    {
+      "name": "図解・グラフ",
+      "why": "文章を図解にする機能があるかで説明資料の質が変わる",
+      "how_to_check": "公式の機能一覧を確認する"
+    },
+    {
+      "name": "デザインの調整自由度",
+      "why": "テンプレート固定か、細かく直せるか",
+      "how_to_check": "公式のエディタ機能を確認する"
+    },
+    {
+      "name": "料金と上限",
+      "why": "生成回数・クレジットの上限で実用性が決まる",
+      "how_to_check": "公式料金ページを確認する"
+    }
+  ],
+  "benchmarks": [],
+  "faq": [],
+  "related": {
+    "tags": [
+      "資料作成",
+      "Gamma",
+      "Canva",
+      "Copilot",
+      "Gemini"
+    ],
+    "guides": [
+      "writing",
+      "chat",
+      "image-generation"
+    ],
+    "articles": []
+  },
+  "changelog": [],
+  "editor_note": "",
+  "embed_models": false,
+  "research_plan": {
+    "_comment": "調査担当向けのメモ（表示しない）。candidates は編集部の初期案＝製品名の候補であって事実ではない。公式サイトで現行の名称・存在を確認し、無いものは外し、新しいものを足す。published にする前に candidates と verdict_questions を空にし、notes を消す",
+    "candidates": [
+      "Gamma",
+      "Canva",
+      "Microsoft 365 Copilot（PowerPoint）",
+      "Gemini（Googleスライド）",
+      "Beautiful.ai",
+      "Pitch",
+      "Napkin AI",
+      "イルシル",
+      "Plus AI",
+      "ChatGPT／Claude（スライド出力）"
+    ],
+    "verdict_questions": [
+      "best-quality",
+      "best-value",
+      "free",
+      "japanese",
+      "business"
+    ],
+    "notes": "スライド品質の公開評価は無いのが普通。best-quality は立てず、日本語対応・書き出し形式・料金の事実で答えを組み立てる。"
+  }
+}

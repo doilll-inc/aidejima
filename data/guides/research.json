@@ -1,0 +1,124 @@
+{
+  "slug": "research",
+  "status": "draft",
+  "priority": 1,
+  "created": "2026-09-30",
+  "updated": "2026-09-30",
+  "last_reviewed": "2026-09-30",
+  "title": "調べもの・リサーチに強いAIのおすすめ：検索AIと情報の正確さの比較",
+  "short_name": "調べもの",
+  "seo": {
+    "description": "",
+    "keywords": [
+      "検索AI",
+      "リサーチAI",
+      "ディープリサーチ",
+      "ハルシネーション",
+      "正確",
+      "おすすめ"
+    ]
+  },
+  "intro": "",
+  "scope": "Web検索と組み合わせて答えるAI、時間をかけて調査レポートを作るディープリサーチ、手持ちの資料だけを根拠に答えるツールを比べる。評価の軸は「引用が本当に出典に書いてあるか」。汎用チャットの比較は「チャットAI」ガイドで扱う。",
+  "audience": [
+    "ビジネスパーソン全般",
+    "マーケター",
+    "企画・調査担当"
+  ],
+  "segments": [
+    {
+      "id": "search",
+      "name": "検索AI",
+      "desc": "質問に対してWebを検索し、出典付きで答える"
+    },
+    {
+      "id": "deep",
+      "name": "ディープリサーチ",
+      "desc": "数分〜数十分かけて多数のページを読み、レポートにまとめる"
+    },
+    {
+      "id": "grounded",
+      "name": "手持ち資料に根拠付け",
+      "desc": "アップロードした資料だけを根拠に答える"
+    }
+  ],
+  "verdicts": [],
+  "products": [],
+  "criteria": [
+    {
+      "name": "引用の正確さ",
+      "why": "リンク先に本当にその記述があるかが、調べものAIの価値そのもの",
+      "how_to_check": "回答の引用を3つ開いて、書いてある内容と一致するか確かめる。公式や第三者の評価（引用の正確さ・ハルシネーション率）があれば記録する"
+    },
+    {
+      "name": "ハルシネーションの評価",
+      "why": "もっともらしい誤答の頻度は用途によって許容できない",
+      "how_to_check": "公式のモデルカードや第三者の事実性評価の数値と日付を記録する"
+    },
+    {
+      "name": "日本語ソースの網羅",
+      "why": "英語のソースに偏ると日本の制度・価格・企業情報で誤る",
+      "how_to_check": "日本の制度や国内企業についての質問で、出典に日本語ページが出るか確かめる"
+    },
+    {
+      "name": "深さと所要時間",
+      "why": "ディープリサーチは深いが待ち時間と回数制限がある",
+      "how_to_check": "公式ページで回数制限・所要時間の記載を確認する"
+    },
+    {
+      "name": "出典の種類の制御",
+      "why": "学術・ニュース・特定ドメインに絞れるかで調査の質が変わる",
+      "how_to_check": "公式の機能説明でソースの絞り込みを確認する"
+    },
+    {
+      "name": "料金と回数制限",
+      "why": "ディープリサーチは月の回数制限がプランで違う",
+      "how_to_check": "公式料金ページのプラン別の回数を確認する"
+    }
+  ],
+  "benchmarks": [],
+  "faq": [],
+  "related": {
+    "tags": [
+      "検索",
+      "Perplexity",
+      "ハルシネーション",
+      "Deep Research",
+      "AI Overviews",
+      "AI Mode"
+    ],
+    "guides": [
+      "chat",
+      "writing"
+    ],
+    "articles": []
+  },
+  "changelog": [],
+  "editor_note": "",
+  "embed_models": false,
+  "research_plan": {
+    "_comment": "調査担当向けのメモ（表示しない）。candidates は編集部の初期案＝製品名の候補であって事実ではない。公式サイトで現行の名称・存在を確認し、無いものは外し、新しいものを足す。published にする前に candidates と verdict_questions を空にし、notes を消す",
+    "candidates": [
+      "Perplexity",
+      "ChatGPT（検索・Deep Research）",
+      "Gemini（Deep Research）",
+      "Claude（Web検索・Research）",
+      "Grok（DeepSearch）",
+      "Microsoft Copilot",
+      "Google AI Mode",
+      "NotebookLM（Google）",
+      "You.com",
+      "Consensus",
+      "Elicit",
+      "Kagi"
+    ],
+    "verdict_questions": [
+      "best-quality",
+      "free",
+      "japanese",
+      "business",
+      "best-value"
+    ],
+    "notes": "「最高品質」の根拠は事実性・引用の正確さの公開評価に限る（一般的な会話品質のアリーナ順位を流用しない）。"
+  }
+}

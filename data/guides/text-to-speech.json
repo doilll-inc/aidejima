@@ -1,0 +1,126 @@
+{
+  "slug": "text-to-speech",
+  "status": "draft",
+  "priority": 2,
+  "created": "2026-09-30",
+  "updated": "2026-09-30",
+  "last_reviewed": "2026-09-30",
+  "title": "音声合成・AI読み上げのおすすめと料金比較",
+  "short_name": "音声合成",
+  "seo": {
+    "description": "",
+    "keywords": [
+      "音声合成",
+      "AI読み上げ",
+      "テキスト読み上げ",
+      "ナレーション",
+      "音声クローン",
+      "おすすめ",
+      "料金"
+    ]
+  },
+  "intro": "",
+  "scope": "文章を音声にする読み上げ・ナレーション、自分や許諾を得た人の声の複製（音声クローン）、リアルタイムに会話する音声APIを比べる。文字起こしは「AI文字起こし」ガイド、動画の口の動き合わせは「動画生成AI」ガイドで扱う。",
+  "audience": [
+    "動画制作者",
+    "マーケター",
+    "開発者",
+    "教育・研修担当"
+  ],
+  "segments": [
+    {
+      "id": "tts",
+      "name": "読み上げ・ナレーション",
+      "desc": "文章から自然な音声を作る"
+    },
+    {
+      "id": "clone",
+      "name": "音声クローン",
+      "desc": "サンプル音声から同じ声を作る"
+    },
+    {
+      "id": "realtime",
+      "name": "リアルタイム音声会話API",
+      "desc": "低遅延で聞いて話す、音声エージェント向け"
+    }
+  ],
+  "verdicts": [],
+  "products": [],
+  "criteria": [
+    {
+      "name": "日本語の自然さとイントネーション",
+      "why": "固有名詞や数字の読み、助詞の高さの誤りは日本語で特に目立つ",
+      "how_to_check": "同じ原稿（社名・商品名・数字を含む）を各サービスで読ませて比べる"
+    },
+    {
+      "name": "声の種類とクローンの可否",
+      "why": "用途に合う声があるか、自社の声を再現できるか",
+      "how_to_check": "公式の音声ライブラリと、クローン機能の条件（本人同意など）を確認する"
+    },
+    {
+      "name": "感情・話速・間の制御",
+      "why": "広告ナレーションでは抑揚と間の指定が必要",
+      "how_to_check": "公式の機能（スタイル指定・SSML・感情タグ）を確認する"
+    },
+    {
+      "name": "商用利用と声の権利",
+      "why": "生成音声を広告・納品物に使えるか、声のライセンスがどうなるか",
+      "how_to_check": "公式の利用規約・商用ライセンスの記載を確認する"
+    },
+    {
+      "name": "料金の単位",
+      "why": "文字数・分数・クレジットで単価が変わる",
+      "how_to_check": "公式料金ページで1,000文字あたり・1分あたりに換算する"
+    },
+    {
+      "name": "遅延（会話用途）",
+      "why": "音声エージェントでは応答の遅れが体験を決める",
+      "how_to_check": "公式の仕様ページでレイテンシの記載を確認する"
+    }
+  ],
+  "benchmarks": [],
+  "faq": [],
+  "related": {
+    "tags": [
+      "音声",
+      "音声合成",
+      "ElevenLabs",
+      "TTS",
+      "音声会話"
+    ],
+    "guides": [
+      "video-generation",
+      "transcription",
+      "chat"
+    ],
+    "articles": []
+  },
+  "changelog": [],
+  "editor_note": "",
+  "embed_models": false,
+  "research_plan": {
+    "_comment": "調査担当向けのメモ（表示しない）。candidates は編集部の初期案＝製品名の候補であって事実ではない。公式サイトで現行の名称・存在を確認し、無いものは外し、新しいものを足す。published にする前に candidates と verdict_questions を空にし、notes を消す",
+    "candidates": [
+      "ElevenLabs",
+      "OpenAI（TTS・Realtime API）",
+      "Google（Gemini TTS・Cloud Text-to-Speech）",
+      "Microsoft Azure Speech",
+      "Amazon Polly",
+      "CoeFont",
+      "VOICEVOX",
+      "にじボイス",
+      "Fish Audio",
+      "Cartesia",
+      "MiniMax Speech",
+      "Hume AI"
+    ],
+    "verdict_questions": [
+      "best-quality",
+      "best-value",
+      "free",
+      "commercial",
+      "developer"
+    ],
+    "notes": "日本語の音声品質の公開評価は少ない。best-quality の根拠が無ければ verdict を立てず、日本語対応の有無（公式の対応言語）だけを表に載せる。VOICEVOX のようなOSSは利用規約（キャラクターごとの規約）を出典にする。"
+  }
+}

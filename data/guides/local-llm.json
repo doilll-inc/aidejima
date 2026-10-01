@@ -1,0 +1,122 @@
+{
+  "slug": "local-llm",
+  "status": "draft",
+  "priority": 3,
+  "created": "2026-09-30",
+  "updated": "2026-09-30",
+  "last_reviewed": "2026-09-30",
+  "title": "ローカルLLM・オープンウェイトモデルのおすすめ",
+  "short_name": "ローカルLLM",
+  "seo": {
+    "description": "",
+    "keywords": [
+      "ローカルLLM",
+      "オープンウェイト",
+      "オープンソースLLM",
+      "Ollama",
+      "おすすめ"
+    ]
+  },
+  "intro": "",
+  "scope": "手元のPCやサーバーで動かせる公開モデル（オープンウェイト）と、その実行環境を比べる。クラウドのAPIは「AI API」ガイドで扱う。",
+  "audience": [
+    "開発者",
+    "情シス",
+    "研究者"
+  ],
+  "segments": [
+    {
+      "id": "models",
+      "name": "モデル",
+      "desc": "ダウンロードして動かせるモデル"
+    },
+    {
+      "id": "runtimes",
+      "name": "実行環境",
+      "desc": "モデルを動かすアプリ・サーバー"
+    }
+  ],
+  "verdicts": [],
+  "products": [],
+  "criteria": [
+    {
+      "name": "ライセンス（商用可否）",
+      "why": "Apache 2.0・MIT と独自ライセンスでは商用利用の条件が違う",
+      "how_to_check": "モデルの公式ライセンス文書（Hugging Face のモデルカード・公式リポジトリ）を確認する"
+    },
+    {
+      "name": "必要メモリと量子化",
+      "why": "手元のGPU・メモリで動くサイズかが前提",
+      "how_to_check": "公式のモデルカードでパラメータ数と推奨環境を確認する"
+    },
+    {
+      "name": "日本語性能",
+      "why": "日本語の学習量で実用性が大きく変わる",
+      "how_to_check": "公開リーダーボードの日本語評価（あれば）を記録する"
+    },
+    {
+      "name": "公開評価",
+      "why": "公式のモデルカードの評価値と、公開リーダーボードの位置",
+      "how_to_check": "公式の数値と第三者の数値を分けて記録する"
+    },
+    {
+      "name": "実行環境の使いやすさ",
+      "why": "インストールの手間・GUI・APIサーバー機能",
+      "how_to_check": "公式の対応OSと機能一覧を確認する"
+    },
+    {
+      "name": "更新頻度",
+      "why": "モデルの更新が止まっていないか",
+      "how_to_check": "公式の最終リリース日を確認する"
+    }
+  ],
+  "benchmarks": [],
+  "faq": [],
+  "related": {
+    "tags": [
+      "ローカルLLM",
+      "オープンウェイト",
+      "オープンソース",
+      "Qwen",
+      "DeepSeek",
+      "Gemma",
+      "Ollama"
+    ],
+    "guides": [
+      "api",
+      "coding"
+    ],
+    "articles": []
+  },
+  "changelog": [],
+  "editor_note": "",
+  "embed_models": false,
+  "research_plan": {
+    "_comment": "調査担当向けのメモ（表示しない）。candidates は編集部の初期案＝製品名の候補であって事実ではない。公式サイトで現行の名称・存在を確認し、無いものは外し、新しいものを足す。published にする前に candidates と verdict_questions を空にし、notes を消す",
+    "candidates": [
+      "Qwen（Alibaba）",
+      "DeepSeek",
+      "Mistral",
+      "Gemma（Google）",
+      "gpt-oss（OpenAI）",
+      "Phi（Microsoft）",
+      "Kimi（Moonshot AI）",
+      "GLM（Zhipu AI）",
+      "Llama（Meta。Meta系ドメインは開けないので watch のみ）",
+      "Ollama",
+      "LM Studio",
+      "llama.cpp",
+      "vLLM",
+      "Jan",
+      "MLX（Apple）"
+    ],
+    "verdict_questions": [
+      "best-quality",
+      "japanese",
+      "commercial",
+      "beginner",
+      "business"
+    ],
+    "notes": "モデルの fact（ライセンス・サイズ）は Hugging Face のモデルカードか公式リポジトリを出典にする（huggingface.co は公式ドメイン扱い）。料金は無いので pricing は free.available=true と note「無料（自前の計算資源が必要）」。"
+  }
+}

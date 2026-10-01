@@ -1,0 +1,105 @@
+{
+  "slug": "translation",
+  "status": "draft",
+  "priority": 2,
+  "created": "2026-09-30",
+  "updated": "2026-09-30",
+  "last_reviewed": "2026-09-30",
+  "title": "AI翻訳のおすすめと料金比較",
+  "short_name": "AI翻訳",
+  "seo": {
+    "description": "",
+    "keywords": [
+      "AI翻訳",
+      "翻訳ツール",
+      "おすすめ",
+      "料金",
+      "DeepL",
+      "機械翻訳"
+    ]
+  },
+  "intro": "",
+  "scope": "文書・Webページ・会話の翻訳を、翻訳専用サービスと汎用の対話AIの両方で比べる。文章の作成・校正は「文章作成AI」ガイドで扱う。",
+  "audience": [
+    "ビジネスパーソン全般",
+    "海外取引・輸出入担当",
+    "開発者"
+  ],
+  "segments": [],
+  "verdicts": [],
+  "products": [],
+  "criteria": [
+    {
+      "name": "訳文の自然さと専門用語",
+      "why": "契約・技術文書では用語の一貫性が品質を決める",
+      "how_to_check": "同じ原文（契約条項・製品仕様）を各サービスで訳して比べる。公開の翻訳評価があれば記録する"
+    },
+    {
+      "name": "文書ファイルの翻訳",
+      "why": "PDF・Word・PowerPointのレイアウトを保ったまま訳せるか",
+      "how_to_check": "公式の対応形式とファイルサイズ上限を確認する"
+    },
+    {
+      "name": "用語集・スタイル指定",
+      "why": "社内用語や敬体/常体の指定ができるか",
+      "how_to_check": "公式の機能一覧で用語集・カスタム指示を確認する"
+    },
+    {
+      "name": "機密性",
+      "why": "翻訳文が学習や保存に使われるかは法人利用の要件",
+      "how_to_check": "公式のデータ利用ポリシー（無料版と有料版の違い）を確認する"
+    },
+    {
+      "name": "APIの料金単位",
+      "why": "文字数課金かトークン課金かで、長文の実費が変わる",
+      "how_to_check": "公式のAPI料金ページで単位と単価を確認する"
+    },
+    {
+      "name": "対応言語数",
+      "why": "英語以外（中国語・韓国語・ベトナム語など）の対応が業務で必要なことがある",
+      "how_to_check": "公式の対応言語一覧を確認する"
+    }
+  ],
+  "benchmarks": [],
+  "faq": [],
+  "related": {
+    "tags": [
+      "翻訳",
+      "DeepL",
+      "ChatGPT",
+      "Gemini",
+      "Claude"
+    ],
+    "guides": [
+      "writing",
+      "chat",
+      "api"
+    ],
+    "articles": []
+  },
+  "changelog": [],
+  "editor_note": "",
+  "embed_models": false,
+  "research_plan": {
+    "_comment": "調査担当向けのメモ（表示しない）。candidates は編集部の初期案＝製品名の候補であって事実ではない。公式サイトで現行の名称・存在を確認し、無いものは外し、新しいものを足す。published にする前に candidates と verdict_questions を空にし、notes を消す",
+    "candidates": [
+      "DeepL",
+      "Google 翻訳",
+      "ChatGPT（OpenAI）",
+      "Claude（Anthropic）",
+      "Gemini（Google）",
+      "Microsoft Translator／Copilot",
+      "みらい翻訳",
+      "Amazon Translate",
+      "Papago（NAVER）"
+    ],
+    "verdict_questions": [
+      "best-quality",
+      "best-value",
+      "free",
+      "business",
+      "developer"
+    ],
+    "notes": "日本の翻訳サービス（みらい翻訳など）は円建て・法人契約が中心。個人向け価格が公式に無ければ as_shown を「要問い合わせ」にする。"
+  }
+}
