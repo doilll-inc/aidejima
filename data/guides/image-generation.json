@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-01",
+  "updated": "2026-10-02",
   "last_reviewed": "2026-10-01",
   "title": "画像生成AIのおすすめと料金比較",
   "short_name": "画像生成",
@@ -903,10 +903,10 @@
       ],
       "model_slugs": [],
       "latest": {
-        "name": "FLUX.2 [max]",
-        "released": "2025-12-16",
+        "name": "FLUX 3 Image",
+        "released": "2026-10-01",
         "source_url": "https://docs.bfl.ai/release-notes",
-        "checked": "2026-10-01"
+        "checked": "2026-10-02"
       },
       "access": [
         "api",
@@ -928,9 +928,9 @@
           "amount": 0.03,
           "currency": "USD",
           "as_shown": "FLUX.2 [pro] from $0.03（Text-to-Image）",
-          "detail": "[max] from $0.07、[flex] from $0.05、[klein] 4B from $0.014。解像度で変動。1クレジット=$0.01",
+          "detail": "FLUX 3 Imageは1枚$0.048（1K）、768×768 $0.041、2K $0.100、4K $0.607。FLUX.2は[max] from $0.07、[flex] from $0.05、[klein] 4B from $0.014。1クレジット=$0.01",
           "source_url": "https://docs.bfl.ai/quick_start/pricing",
-          "checked": "2026-10-01"
+          "checked": "2026-10-02"
         },
         "jpy_official": false,
         "note": "サブスクリプションや席料はない従量課金（公式料金ページ）"
@@ -1364,6 +1364,12 @@
       "date": "2026-10-01",
       "text": "初回公開",
       "by": "researcher"
+    },
+    {
+      "date": "2026-10-02",
+      "text": "FLUXの最新モデルをFLUX 3 Imageに更新（1K画像1枚$0.048、4Kは$0.607）",
+      "article": "/news/20261002-black-forest-labs-flux-3-image/",
+      "by": "writer"
     }
   ],
   "editor_note": "",
