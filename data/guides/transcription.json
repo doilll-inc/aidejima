@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 2,
   "created": "2026-09-30",
-  "updated": "2026-10-01",
+  "updated": "2026-10-02",
   "last_reviewed": "2026-10-01",
   "title": "AI文字起こし・議事録ツールのおすすめと料金比較",
   "short_name": "文字起こし",
@@ -671,9 +671,10 @@
       ],
       "model_slugs": [],
       "latest": {
-        "name": "MAI-Transcribe-2",
-        "source_url": "https://learn.microsoft.com/ja-jp/azure/ai-services/speech-service/language-support?tabs=stt",
-        "checked": "2026-10-01"
+        "name": "MAI-Transcribe-2-Streaming（公開プレビュー）",
+        "released": "2026-10-01",
+        "source_url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/mai-transcribe-2-streaming-realtime",
+        "checked": "2026-10-02"
       },
       "access": [
         "api"
@@ -1012,6 +1013,12 @@
       "date": "2026-10-01",
       "text": "初回公開",
       "by": "researcher"
+    },
+    {
+      "date": "2026-10-02",
+      "text": "Azure Speechに逐次文字起こしのMAI-Transcribe-2-Streaming（公開プレビュー、日本語対応）が追加",
+      "article": "/news/20261002-microsoft-mai-transcribe-2-streaming-voice-2-1/",
+      "by": "writer"
     }
   ],
   "editor_note": "",
