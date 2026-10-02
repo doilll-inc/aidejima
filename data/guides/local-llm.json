@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 3,
   "created": "2026-09-30",
-  "updated": "2026-10-01",
+  "updated": "2026-10-02",
   "last_reviewed": "2026-10-01",
   "title": "ローカルLLM・オープンウェイトモデルのおすすめ",
   "short_name": "ローカルLLM",
@@ -889,6 +889,24 @@
       "retired_note": ""
     },
     {
+      "id": "slipstream",
+      "name": "Slipstream",
+      "vendor": "npanj（個人開発）",
+      "url": "https://github.com/npanj/slipstream",
+      "status": "watch",
+      "latest": {
+        "name": "Slipstream（Qwen3.8-Flash-Next対応）",
+        "source_url": "https://github.com/npanj/slipstream",
+        "checked": "2026-10-02"
+      },
+      "tags": [
+        "Slipstream",
+        "Qwen3.8-Flash-Next",
+        "Apple Silicon",
+        "オープンソース"
+      ]
+    },
+    {
       "id": "meta-llama",
       "name": "Llama・Muse（Meta）",
       "vendor": "Meta",
@@ -1022,6 +1040,12 @@
       "date": "2026-10-01",
       "text": "初回公開",
       "by": "researcher"
+    },
+    {
+      "date": "2026-10-02",
+      "text": "64GBのMacで大型MoEモデルを動かす推論エンジンSlipstreamを様子見の候補に追加",
+      "article": "/news/20261002-slipstream-qwen38-flash-next-64gb-mac/",
+      "by": "writer"
     }
   ],
   "editor_note": "",
