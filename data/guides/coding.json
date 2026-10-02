@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-01",
+  "updated": "2026-10-03",
   "last_reviewed": "2026-10-01",
   "title": "コーディングAIのおすすめと料金比較（エージェント・IDE・CLI）",
   "short_name": "コーディング",
@@ -1092,6 +1092,23 @@
       "editorial_take": "Vercel のアプリ生成。作ったアプリをすぐ公開でき、GitHub に直接プッシュできる。",
       "checked": "2026-10-01",
       "retired_note": ""
+    },
+    {
+      "id": "deepseek-harness",
+      "name": "DeepSeek Harness",
+      "vendor": "DeepSeek",
+      "url": "https://www.deepseek.com/en/harness/",
+      "status": "watch",
+      "latest": {
+        "name": "DeepSeek Harness v0.2.0-rc.2（デスクトップ版・公開プレビュー）",
+        "released": "2026-09-29",
+        "source_url": "https://github.com/deepseek-ai/deepseek-harness/releases",
+        "checked": "2026-10-03"
+      },
+      "tags": [
+        "DeepSeek",
+        "DeepSeek Harness"
+      ]
     }
   ],
   "criteria": [
@@ -1217,6 +1234,12 @@
       "text": "Google の Gemini 4 Argon 公式評価（DeepSWE v1.1 で77.9%・首位など）を評価の根拠に追加。一般向けに未提供で Google Antigravity でも選べないため、「最高品質」の答えは変えず理由を明記",
       "article": "/news/20261001-google-gemini-4-argon/",
       "by": "reviewer"
+    },
+    {
+      "date": "2026-10-03",
+      "text": "DeepSeekのオープンソースのエージェント基盤DeepSeek Harness（Mac・Windows版が公開）を調査候補に追加",
+      "article": "/news/20261003-deepseek-harness-desktop/",
+      "by": "writer"
     }
   ],
   "editor_note": "",
