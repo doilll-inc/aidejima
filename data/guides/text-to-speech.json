@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 2,
   "created": "2026-09-30",
-  "updated": "2026-10-02",
+  "updated": "2026-10-03",
   "last_reviewed": "2026-10-01",
   "title": "音声合成・AI読み上げのおすすめと料金比較",
   "short_name": "音声合成",
@@ -1044,6 +1044,22 @@
       "editorial_take": "AWS の読み上げ。Generative 音声は100万文字$30、Standard 音声は無料枠が月500万文字。",
       "checked": "2026-10-01",
       "retired_note": ""
+    },
+    {
+      "id": "suno-speech",
+      "name": "Suno Speech",
+      "vendor": "Suno",
+      "url": "https://suno.com/",
+      "status": "watch",
+      "latest": {
+        "name": "Speech (beta)",
+        "source_url": "https://suno.com/blog/introducing-speech-beta",
+        "checked": "2026-10-03"
+      },
+      "tags": [
+        "Suno",
+        "Suno Speech"
+      ]
     }
   ],
   "criteria": [
@@ -1154,6 +1170,12 @@
       "date": "2026-10-02",
       "text": "Azure Speechに音声合成のMAI-Voice-2.1とFlash（公開プレビュー）が追加。対応23言語に日本語の声はまだない",
       "article": "/news/20261002-microsoft-mai-transcribe-2-streaming-voice-2-1/",
+      "by": "writer"
+    },
+    {
+      "date": "2026-10-03",
+      "text": "SunoがBGM付きの読み上げを1本で作る「Speech」をベータ公開。評価前の候補として追加",
+      "article": "/news/20261003-suno-speech-beta-voice-music/",
       "by": "writer"
     }
   ],
