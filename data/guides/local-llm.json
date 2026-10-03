@@ -926,6 +926,24 @@
       ]
     },
     {
+      "id": "kolibri-1",
+      "name": "Kolibri-1",
+      "vendor": "Aleph Alpha",
+      "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+      "status": "watch",
+      "latest": {
+        "name": "Kolibri-1（総78B・稼働3.46BのMoE、独英2言語）",
+        "source_url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+        "checked": "2026-10-03"
+      },
+      "tags": [
+        "Aleph Alpha",
+        "Kolibri-1",
+        "オープンウェイト",
+        "MoE"
+      ]
+    },
+    {
       "id": "meta-llama",
       "name": "Llama・Muse（Meta）",
       "vendor": "Meta",
@@ -1070,6 +1088,12 @@
       "date": "2026-10-03",
       "text": "Redis作者antirezの推論エンジンds4（DeepSeek V4 Flash等を128GBのMacで動かす）を様子見の候補に追加",
       "article": "/news/20261003-antirez-ds4-dwarfstar-local-llm/",
+      "by": "writer"
+    },
+    {
+      "date": "2026-10-03",
+      "text": "独Aleph Alphaのオープンウェイトモデル「Kolibri-1」（独英2言語、日本語は対象外）を様子見の候補に追加",
+      "article": "/news/20261003-aleph-alpha-kolibri-1-open-weight/",
       "by": "writer"
     }
   ],
