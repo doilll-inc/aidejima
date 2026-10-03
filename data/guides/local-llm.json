@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 3,
   "created": "2026-09-30",
-  "updated": "2026-10-02",
+  "updated": "2026-10-03",
   "last_reviewed": "2026-10-01",
   "title": "ローカルLLM・オープンウェイトモデルのおすすめ",
   "short_name": "ローカルLLM",
@@ -907,6 +907,25 @@
       ]
     },
     {
+      "id": "ds4",
+      "name": "DwarfStar 4（ds4）",
+      "vendor": "antirez（個人開発・オープンソース）",
+      "url": "https://github.com/antirez/ds4",
+      "status": "watch",
+      "latest": {
+        "name": "ds4（DeepSeek V4.1 Flash・Qwen3.8 Flash Next対応）",
+        "source_url": "https://github.com/antirez/ds4",
+        "checked": "2026-10-03"
+      },
+      "tags": [
+        "DwarfStar 4",
+        "DeepSeek V4 Flash",
+        "Qwen3.8 Flash Next",
+        "Apple Silicon",
+        "オープンソース"
+      ]
+    },
+    {
       "id": "meta-llama",
       "name": "Llama・Muse（Meta）",
       "vendor": "Meta",
@@ -1045,6 +1064,12 @@
       "date": "2026-10-02",
       "text": "64GBのMacで大型MoEモデルを動かす推論エンジンSlipstreamを様子見の候補に追加",
       "article": "/news/20261002-slipstream-qwen38-flash-next-64gb-mac/",
+      "by": "writer"
+    },
+    {
+      "date": "2026-10-03",
+      "text": "Redis作者antirezの推論エンジンds4（DeepSeek V4 Flash等を128GBのMacで動かす）を様子見の候補に追加",
+      "article": "/news/20261003-antirez-ds4-dwarfstar-local-llm/",
       "by": "writer"
     }
   ],
