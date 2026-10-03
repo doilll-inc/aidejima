@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 2,
   "created": "2026-09-30",
-  "updated": "2026-10-02",
+  "updated": "2026-10-03",
   "last_reviewed": "2026-10-01",
   "title": "AI文字起こし・議事録ツールのおすすめと料金比較",
   "short_name": "文字起こし",
@@ -919,6 +919,24 @@
       "editorial_take": "音声認識API。AAの誤り率は Universal-3 Pro が3.1%、Open ASR の多言語部門では Universal-3.5 Pro が4位。",
       "checked": "2026-10-01",
       "retired_note": ""
+    },
+    {
+      "id": "mlsubgen",
+      "name": "mlsubgen",
+      "vendor": "dodgypast（個人開発）",
+      "url": "https://github.com/dodgypast/mlsubgen",
+      "status": "watch",
+      "latest": {
+        "name": "mlsubgen（ローカルで37言語の字幕を生成、Qwen3-ASRとWhisperを併用）",
+        "source_url": "https://github.com/dodgypast/mlsubgen",
+        "checked": "2026-10-03"
+      },
+      "tags": [
+        "mlsubgen",
+        "字幕",
+        "ローカルLLM",
+        "オープンソース"
+      ]
     }
   ],
   "criteria": [
@@ -1018,6 +1036,12 @@
       "date": "2026-10-02",
       "text": "Azure Speechに逐次文字起こしのMAI-Transcribe-2-Streaming（公開プレビュー、日本語対応）が追加",
       "article": "/news/20261002-microsoft-mai-transcribe-2-streaming-voice-2-1/",
+      "by": "writer"
+    },
+    {
+      "date": "2026-10-03",
+      "text": "動画の字幕を手元のGPUだけで37言語に作るOSS「mlsubgen」を様子見の候補に追加",
+      "article": "/news/20261003-mlsubgen-local-subtitles-37-languages/",
       "by": "writer"
     }
   ],
