@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-03",
+  "updated": "2026-10-04",
   "last_reviewed": "2026-10-03",
   "title": "チャットAIのおすすめと料金比較（ChatGPT・Claude・Gemini など）",
   "short_name": "チャットAI",
@@ -543,9 +543,9 @@
       "pricing": {
         "free": {
           "available": true,
-          "detail": "3.6 Flash、3.1 Pro（制限あり）、画像の生成と編集、Deep Research、Gemini Live、Canvas、Gem",
-          "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-          "checked": "2026-10-03"
+          "detail": "10月9日からモデルは Flash-Lite のみ（それまでは 3.6 Flash、3.1 Pro（制限あり））。利用上限は5時間ごとに回復する計算量ベース",
+          "source_url": "https://support.google.com/gemini/answer/17004136?hl=en",
+          "checked": "2026-10-04"
         },
         "plans": [
           {
@@ -580,7 +580,7 @@
           }
         ],
         "jpy_official": true,
-        "note": "Gemini 3.8 Flash は AI Pro・Ultra 向け（Google 公式ブログ）。最上位の Gemini 4 Argon（2026年9月30日発表）は審査制の Fairwind Program のサイバー防御組織にだけ提供中で、Gemini アプリの一般の利用者はまだ使えない。一般向けは Google AI Ultra 加入者と有料 API 顧客から始める予定で、時期は未定（Google 公式ブログ）。"
+        "note": "Gemini 3.8 Flash は AI Pro・Ultra 向け（Google 公式ブログ）。最上位の Gemini 4 Argon（2026年9月30日発表）は審査制の Fairwind Program のサイバー防御組織にだけ提供中で、Gemini アプリの一般の利用者はまだ使えない。一般向けは Google AI Ultra 加入者と有料 API 顧客から始める予定で、時期は未定（Google 公式ブログ）。2026年10月からのモデルの割り当ては、無料版が Flash-Lite、AI Plus が Flash-Lite と Flash、AI Pro と Ultra が Pro と Deep Think まで（AI Plus の切り替え時期はメールで通知。Gemini Apps Help「Changes to Gemini model access and limits」）。"
       },
       "japanese": {
         "ui": "yes",
@@ -1135,6 +1135,12 @@
       "date": "2026-10-03",
       "text": "LMArena 日本語部門の最新順位にあわせて「日本語重視なら」の根拠を更新（答えは Gemini のまま）",
       "by": "reviewer"
+    },
+    {
+      "date": "2026-10-04",
+      "text": "Gemini の無料版は10月9日から Flash-Lite だけに、AI Plus も Pro モデルが外れる（AI Pro 以上で Pro と Deep Think）",
+      "article": "/news/20261004-gemini-free-flash-lite-only/",
+      "by": "writer"
     }
   ],
   "editor_note": "",
