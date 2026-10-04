@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 2,
   "created": "2026-09-30",
-  "updated": "2026-10-01",
+  "updated": "2026-10-04",
   "last_reviewed": "2026-10-01",
   "title": "AI翻訳のおすすめと料金比較",
   "short_name": "AI翻訳",
@@ -919,6 +919,23 @@
       },
       "checked": "2026-10-01",
       "retired_note": ""
+    },
+    {
+      "id": "index-translate",
+      "name": "Index-Translate",
+      "vendor": "bilibili",
+      "url": "https://github.com/bilibili/Index-Translate",
+      "status": "watch",
+      "latest": {
+        "name": "Index-Translate-35B-A3B（プレビュー）",
+        "released": "2026-09-30",
+        "source_url": "https://github.com/bilibili/Index-Translate",
+        "checked": "2026-10-04"
+      },
+      "tags": [
+        "Index-Translate",
+        "bilibili"
+      ]
     }
   ],
   "criteria": [
@@ -1016,6 +1033,12 @@
       "date": "2026-10-01",
       "text": "初回公開",
       "by": "researcher"
+    },
+    {
+      "date": "2026-10-04",
+      "text": "bilibili の翻訳特化オープンモデル Index-Translate を調査対象に追加",
+      "article": "/news/20261004-bilibili-index-translate-150-languages/",
+      "by": "writer"
     }
   ],
   "editor_note": "",
