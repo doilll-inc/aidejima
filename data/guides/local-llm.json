@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 3,
   "created": "2026-09-30",
-  "updated": "2026-10-03",
+  "updated": "2026-10-04",
   "last_reviewed": "2026-10-01",
   "title": "ローカルLLM・オープンウェイトモデルのおすすめ",
   "short_name": "ローカルLLM",
@@ -926,6 +926,24 @@
       ]
     },
     {
+      "id": "strata",
+      "name": "Strata",
+      "vendor": "Niko1221（個人開発・オープンソース）",
+      "url": "https://github.com/Niko1221/Strata",
+      "status": "watch",
+      "latest": {
+        "name": "Strata（Qwen3.8-Flash-Next、Windows・Linux／VRAM 12GB以上）",
+        "source_url": "https://github.com/Niko1221/Strata",
+        "checked": "2026-10-04"
+      },
+      "tags": [
+        "Strata",
+        "Qwen3.8-Flash-Next",
+        "Windows",
+        "オープンソース"
+      ]
+    },
+    {
       "id": "kolibri-1",
       "name": "Kolibri-1",
       "vendor": "Aleph Alpha",
@@ -1094,6 +1112,12 @@
       "date": "2026-10-03",
       "text": "独Aleph Alphaのオープンウェイトモデル「Kolibri-1」（独英2言語、日本語は対象外）を様子見の候補に追加",
       "article": "/news/20261003-aleph-alpha-kolibri-1-open-weight/",
+      "by": "writer"
+    },
+    {
+      "date": "2026-10-04",
+      "text": "VRAM 12GBのゲーミングPCで125BのQwen3.8-Flash-Nextを動かすOSS「Strata」（Windows・Linux）を様子見の候補に追加",
+      "article": "/news/20261004-strata-qwen38-flash-next-gaming-pc/",
       "by": "writer"
     }
   ],
