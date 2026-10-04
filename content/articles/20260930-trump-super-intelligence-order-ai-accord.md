@@ -3,7 +3,7 @@
   "title": "米政府がAIを「Super Intelligence」と改称、AI大手とは拘束力なき自主規制協定",
   "description": "トランプ大統領は9月29日、行政機関にAIを「Super Intelligence（SI）」と呼ぶよう命じる大統領令に署名した。同日、Google、Anthropic、OpenAIなどの経営者と法的拘束力のない安全協定にも署名した。",
   "date": "2026-09-30T20:22:00+09:00",
-  "updated": "2026-10-01T19:03:00+09:00",
+  "updated": "2026-10-05T02:10:00+09:00",
   "category": "policy",
   "tags": [
     "米国政府",
@@ -51,6 +51,36 @@
       "publisher": "X @DarioAmodei",
       "url": "https://x.com/DarioAmodei/status/2064781778599268818",
       "kind": "X投稿"
+    },
+    {
+      "title": "The White House の投稿（Super Intelligence Forceの設置）",
+      "publisher": "X @WhiteHouse",
+      "url": "https://x.com/WhiteHouse/status/2106731532694028310",
+      "kind": "X投稿"
+    },
+    {
+      "title": "Trump unveils his new Super Intelligence Force",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/04/trump-unveils-his-new-super-intelligence-force/",
+      "kind": "報道"
+    },
+    {
+      "title": "Trump announces an AI czar for his newly created 'Super Intelligence Force'",
+      "publisher": "Engadget",
+      "url": "https://www.engadget.com/2276762/trump-announces-an-ai-czar-for-his-newly-created-super-intelligence-force/",
+      "kind": "報道"
+    },
+    {
+      "title": "Trump announces formation of AI \"Super Intelligence Force\"",
+      "publisher": "CBS News",
+      "url": "https://www.cbsnews.com/news/ai-super-intelligence-force-trump-jay-clayton/",
+      "kind": "報道"
+    },
+    {
+      "title": "National Intelligence Director Jay Clayton Will Lead AI Task Force",
+      "publisher": "The Information",
+      "url": "https://www.theinformation.com/briefings/national-intelligence-director-jay-clayton-will-lead-ai-task-force",
+      "kind": "報道"
     },
     {
       "title": "Trump orders US government to call AI 'Super Intelligence'",
@@ -155,6 +185,19 @@ GoogleのPichai氏は現地時間9月29日、協定に署名したとXに投稿�
 Zuckerberg氏もXで、米国の主要な研究所の経営者全員が内部統制と多層の監査を約束したのは大きな前進で、技術が意図どおりに動くという信頼につながると投稿しました。
 
 一方、Amodei氏、Brockman氏、Huang氏は、AIデジマ編集部が10月1日に確かめた範囲では、会合での発言のほかに、本人や各社の公式Xと公式ブログで協定に触れた発信はありません。Amodei氏は6月、最先端のモデルには公開を止める権限を伴う第三者の試験を義務づけるべきだとXで主張しており、自主的な約束にとどまる協定とは隔たりがあります。
+
+## 追記（10月5日）
+
+トランプ大統領は現地時間10月4日、協定を受けた政府側の組織として「Super Intelligence Force（SIF）」の設置をTruth Socialで発表しました。ホワイトハウスも公式Xで発表文を引用し、SIFの役割を「米国がSuper Intelligenceで世界を主導し続けるよう連邦政府の取り組みを調整する」ことだと伝えています。
+
+TechCrunch、Engadget、CBS Newsによると、体制は次のとおりです。
+
+- **トップ**：国家情報長官のJay Clayton氏（報道では「AI czar」と呼ばれています）
+- **メンバー**：連邦取引委員会（FTC）のAndrew Ferguson委員長、国防総省で研究・技術を担うEmil Michael次官、人事管理局（OPM）のScott Kupor局長
+- **報告先**：トランプ氏とSusie Wiles大統領首席補佐官
+- **対話の相手**：消費者、公益団体、宗教団体、重要インフラの事業者、AI企業
+
+TechCrunchとThe Informationは、Clayton氏がWall Street Journalの取材に、AIのリスクと機会をまとめた報告書を120日以内に出すと語ったと報じています。TechCrunchによると、Clayton氏は最大のリスクを「先頭に立てないこと」だと述べ、過剰な規制で技術革新を妨げない方針も示しました。協定で各社に求めた監査や外部評価を、SIFがどう確かめるのかはまだ示されていません。
 
 ## 日本のビジネスへの影響
 
