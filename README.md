@@ -2,7 +2,7 @@
 
 海外のAIニュースを、日本語で最速に。— 海外に散らばるAIの一次情報（公式発表・公式ドキュメント・著名人のX投稿・論文）を毎日集め、日本のビジネスでの使いどころまで解説するニュースメディア。運営: 株式会社ドイル / 編集長: 田中智大。
 
-- 公開URL: https://doilll-inc.github.io/aidejima/
+- 公開URL: https://aidejima.doilll.com/（旧 https://doilll-inc.github.io/aidejima/ は自動で転送される）
 - 編集方針・執筆ルール: [EDITORIAL.md](EDITORIAL.md)（人もAIも、記事を書く前に必ず読む）
 
 ## 仕組み
@@ -45,7 +45,7 @@ GitHub Pages に公開 → scripts/notify.py で IndexNow と WebSub に通知
 pip3 install -r requirements.txt
 python3 scripts/collect.py --hours 24 --print 30   # 今の話題を見る（X は X_BEARER_TOKEN があるときだけ）
 python3 scripts/collect.py --hours 24 --gate        # 速報に値する候補があるか（終了コード0=ある）
-python3 build.py --serve                            # http://localhost:8000/aidejima/ で確認
+python3 build.py --serve                            # http://localhost:8000/ で確認
 python3 scripts/list_articles.py                    # 既存記事の一覧
 ```
 
@@ -60,6 +60,6 @@ python3 scripts/list_articles.py                    # 既存記事の一覧
 
 ## 独自ドメインに移すとき
 
-1. ドメインを取得し、DNSで `CNAME` を `doilll-inc.github.io` に向ける
+1. ドメインを取得し、DNSで `CNAME` を `doilll-inc.github.io` に向ける（サブドメインの場合。apex なら A レコード 185.199.108〜111.153 の4本。doilll.com のDNSは Cloudflare で、`~/sakukei/scripts/cf_dns.py add-cname` で入れられる）
 2. `data/site.json` の `base_url` を `https://<ドメイン>`、`base_path` を `""` にする
 3. リポジトリの Settings → Pages → Custom domain にドメインを入れる（github.io のURLは自動で新ドメインへ転送される）

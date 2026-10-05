@@ -3,8 +3,8 @@
   "site_name_en": "AI DEJIMA",
   "tagline": "海外のAIニュースを、日本語で最速に。",
   "description": "AIデジマは、海外に散らばるAIの一次情報（OpenAI・Google・Anthropicなどの公式発表、著名人のX投稿、論文、開発者コミュニティ）を毎日集め、日本語で最速に届けるニュースメディアです。ビジネス・マーケティングでの使いどころまで解説します。",
-  "base_url": "https://doilll-inc.github.io/aidejima",
-  "base_path": "/aidejima",
+  "base_url": "https://aidejima.doilll.com",
+  "base_path": "",
   "lang": "ja",
   "editor": {
     "name": "田中智大",

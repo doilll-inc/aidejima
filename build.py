@@ -2,7 +2,7 @@
 """AIデジマ の静的サイトジェネレータ。content/articles/*.md → dist/ に全ページを書き出す。
 
   python3 build.py           # ビルド（記事の形式チェックで不備があれば失敗する）
-  python3 build.py --serve   # ビルドして http://localhost:8000/aidejima/ で確認
+  python3 build.py --serve   # ビルドして http://localhost:8000/ で確認
 """
 from __future__ import annotations
 
