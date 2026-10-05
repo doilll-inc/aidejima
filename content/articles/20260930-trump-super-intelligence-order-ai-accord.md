@@ -3,7 +3,7 @@
   "title": "米政府がAIを「Super Intelligence」と改称、AI大手とは拘束力なき自主規制協定",
   "description": "トランプ大統領は9月29日、行政機関にAIを「Super Intelligence（SI）」と呼ぶよう命じる大統領令に署名した。同日、Google、Anthropic、OpenAIなどの経営者と法的拘束力のない安全協定にも署名した。",
   "date": "2026-09-30T20:22:00+09:00",
-  "updated": "2026-10-05T02:10:00+09:00",
+  "updated": "2026-10-05T10:40:00+09:00",
   "category": "policy",
   "tags": [
     "米国政府",
@@ -56,6 +56,18 @@
       "title": "The White House の投稿（Super Intelligence Forceの設置）",
       "publisher": "X @WhiteHouse",
       "url": "https://x.com/WhiteHouse/status/2106731532694028310",
+      "kind": "X投稿"
+    },
+    {
+      "title": "Elon Musk の投稿（「No more AI」）",
+      "publisher": "X @elonmusk",
+      "url": "https://x.com/elonmusk/status/2106665679361618173",
+      "kind": "X投稿"
+    },
+    {
+      "title": "Elon Musk の投稿（SpaceXSIへの改称）",
+      "publisher": "X @elonmusk",
+      "url": "https://x.com/elonmusk/status/2106672603536712025",
       "kind": "X投稿"
     },
     {
@@ -112,6 +124,12 @@
       "title": "Trump and tech CEOs sign an AI code of conduct that's only morally binding",
       "publisher": "The Decoder",
       "url": "https://the-decoder.com/trump-and-tech-ceos-sign-an-ai-code-of-conduct-thats-only-morally-binding/"
+    },
+    {
+      "title": "Elon Musk follows Trump’s lead, says a SpaceX name change is coming",
+      "publisher": "Teslarati",
+      "url": "https://teslarati.com/elon-musk-follows-trumps-lead-says-a-spacex-name-change-is-coming",
+      "kind": "報道"
     }
   ],
   "editor_note": "",
@@ -198,6 +216,8 @@ TechCrunch、Engadget、CBS Newsによると、体制は次のとおりです。
 - **対話の相手**：消費者、公益団体、宗教団体、重要インフラの事業者、AI企業
 
 TechCrunchとThe Informationは、Clayton氏がWall Street Journalの取材に、AIのリスクと機会をまとめた報告書を120日以内に出すと語ったと報じています。TechCrunchによると、Clayton氏は最大のリスクを「先頭に立てないこと」だと述べ、過剰な規制で技術革新を妨げない方針も示しました。協定で各社に求めた監査や外部評価を、SIFがどう確かめるのかはまだ示されていません。
+
+協定に署名した経営者の側でも、呼び名を合わせる動きが出ました。Elon Musk氏は現地時間10月4日、Xに「No more AI（AIはもうやめ）」「SI」「It’s better（その方がいい）」と投稿しました。SpaceXのAI部門「SpaceXAI」を「SpaceXSI」に改めてはどうかという他の利用者の提案には、「Yes, we will make that change（そうする）」と返信しています。改称の時期や手続きは示していません。Teslaratiによると、SpaceXは2月にxAIを買収し、AI部門は7月にSpaceXAIの名前と新しいロゴを採用したばかりです。
 
 ## 日本のビジネスへの影響
 
