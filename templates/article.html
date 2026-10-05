@@ -27,7 +27,7 @@
           <span class="by">文：AIデジマ編集部 ／ 編集：<a href="{{ u('/about/editor/') }}">{{ site.editor.name }}</a></span>
         </div>
       </header>
-      <figure class="post-eyecatch"><img src="{{ u('/og/' ~ a.slug ~ '.eye.webp') }}" width="1200" height="675" alt="" fetchpriority="high"></figure>
+      <figure class="post-eyecatch"><img src="{{ u('/og/' ~ a.slug ~ '.eye.webp') }}" width="1200" height="675" alt="" fetchpriority="high">{% if a.has_photo %}<figcaption>画像はAIで生成したイメージです</figcaption>{% endif %}</figure>
 
       <section class="tldr" aria-label="3行でわかる">
         <p class="tldr-h">3行でわかる</p>
@@ -103,7 +103,7 @@
         <h2>関連する記事</h2>
         <div class="related-grid">
           {% for r in related %}
-          <a class="rel" href="{{ u(r.path) }}">
+          <a class="rel" href="{{ u(r.path) }}" data-slug="{{ r.slug }}">
             <img src="{{ u('/og/' ~ r.slug ~ '.webp') }}" width="640" height="360" alt="" loading="lazy" decoding="async">
             <span class="rel-cat" style="--c:{{ r.cat.color }}">{{ r.cat.name }}</span>
             <span class="rel-title">{{ r.title }}</span>

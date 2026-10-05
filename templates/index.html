@@ -7,7 +7,7 @@
   {% if hero %}
   <section class="hero" aria-label="最新のニュース">
     {% set h = hero[0] %}
-    <article class="hero-main">
+    <article class="hero-main" data-slug="{{ h.slug }}">
       <a class="hero-img" href="{{ u(h.path) }}" tabindex="-1" aria-hidden="true"><img src="{{ u('/og/' ~ h.slug ~ '.eye.webp') }}" width="1200" height="675" alt="" fetchpriority="high"></a>
       <div class="meta">{{ cat_label(h) }}{{ when(h, 'rel') }}{% if h.is_new %}<span class="new">NEW</span>{% endif %}</div>
       <h2 class="hero-title"><a href="{{ u(h.path) }}">{{ h.title }}</a></h2>
@@ -15,7 +15,7 @@
     </article>
     <div class="hero-sub">
       {% for a in hero[1:] %}
-      <article class="mini">
+      <article class="mini{% if not a.has_photo %} no-photo{% endif %}" data-slug="{{ a.slug }}">
         <a class="mini-img" href="{{ u(a.path) }}" tabindex="-1" aria-hidden="true"><img src="{{ u('/og/' ~ a.slug ~ '.webp') }}" width="640" height="360" alt="" decoding="async"></a>
         <div>
           <div class="meta">{{ cat_label(a) }}{{ when(a, 'rel') }}{% if a.is_new %}<span class="new">NEW</span>{% endif %}</div>
@@ -26,6 +26,8 @@
     </div>
   </section>
   {% endif %}
+  {# 今日の新着を何本読んだか・連続日数（static/reward.js がブラウザに残した記録から描く。JSが無ければ出ない） #}
+  <section class="daily" data-daily hidden aria-live="polite"></section>
   <div class="layout">
     <div class="content">
       {% if days %}

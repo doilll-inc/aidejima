@@ -7,7 +7,7 @@
 {%- endmacro %}
 
 {% macro item(a, heading='h3') -%}
-<article class="item{% if a.is_new %} is-new{% endif %}">
+<article class="item{% if a.is_new %} is-new{% endif %}{% if not a.has_photo %} no-photo{% endif %}" data-slug="{{ a.slug }}">
   <a class="thumb" href="{{ u(a.path) }}" tabindex="-1" aria-hidden="true"><img src="{{ u('/og/' ~ a.slug ~ '.webp') }}" width="640" height="360" alt="" loading="lazy" decoding="async"></a>
   <div class="item-body">
     <div class="meta">{{ cat_label(a) }}{{ when(a) }}{% if a.is_new %}<span class="new">NEW</span>{% endif %}{% if a.primary_count %}<span class="primary-mark" title="公式発表・X投稿・論文などの一次情報を確認した記事">一次情報</span>{% endif %}</div>

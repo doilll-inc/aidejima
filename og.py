@@ -1,12 +1,16 @@
-"""記事ごとの画像を作る。元記事の画像は著作権上使えないので、社名・製品名を大きく置いた文字カードを自動生成する。
+"""記事ごとの画像を作る。元記事の画像は著作権上使えないので、自前で作る。
+
+- content/thumbs/<slug>.webp（scripts/thumbs.py が Gemini で生成した写真・イラスト）があれば、それを切り抜いて使う
+- 無ければ、社名・製品名を大きく置いた文字カードを作る（生成に失敗した記事・キーが無い環境の予備）
 
 出力（dist/og/<slug>.*）
-  .png       1200x630  SNSシェア用（タイトル入り）
+  .jpg       1200x630  SNSシェア用（左上にロゴとカテゴリ）
   .eye.webp  1200x675  記事ページのアイキャッチ（16:9）
-  .webp       640x360  一覧のサムネイル（16:9）
-  .4x3.webp  1200x900  構造化データ用（Googleは16:9・4:3・1:1の3種を推奨）
-  .1x1.webp 1200x1200  同上
+  .webp       640x360  一覧のサムネイル（16:9。スマホの一覧では 4:3 に切り抜いて見せる）
+  .4x3.webp            構造化データ用（Googleは16:9・4:3・1:1の3種を推奨）
+  .1x1.webp            同上
 同じ内容の画像は .cache/og/ から再利用する（CIでは actions/cache で持ち越す）。
+GitHub Pages は公開サイト全体で1GBまでなので、写真は1記事あたり約0.4MBに抑える。
 """
 from __future__ import annotations
 
@@ -20,7 +24,8 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parent
 FONTS = ROOT / "fonts"
-DESIGN_VERSION = "6"  # カードのデザインを変えたら上げる（キャッシュを捨てるため）
+THUMBS = ROOT / "content" / "thumbs"
+DESIGN_VERSION = "7"  # カードのデザインを変えたら上げる（キャッシュを捨てるため）
 
 INK = (17, 20, 24)
 PAPER = (255, 255, 255)
@@ -40,6 +45,8 @@ def palette(cat: dict) -> dict:
     c = hex_rgb(cat["color"])
     return {"bg": mix(c, PAPER, 0.9), "mark": mix(c, PAPER, 0.8), "accent": c, "label": mix(c, INK, 0.3)}
 VARIANTS = {"eye.webp": (1200, 675), "webp": (640, 360), "4x3.webp": (1200, 900), "1x1.webp": (1200, 1200)}
+# 写真のときは元画像（1376x768）より大きく引き伸ばさない。Googleの構造化データは5万画素以上あればよい
+PHOTO_VARIANTS = {"eye.webp": (1200, 675), "webp": (640, 360), "4x3.webp": (960, 720), "1x1.webp": (720, 720)}
 
 
 def font(weight: str, size: int) -> ImageFont.FreeTypeFont:
@@ -130,6 +137,36 @@ def watermark(d: ImageDraw.ImageDraw, W: int, H: int, color=(24, 28, 34)) -> Non
         d.polygon(poly, fill=color)
 
 
+def cover(im: Image.Image, W: int, H: int) -> Image.Image:
+    """中央を基準に、W x H を埋めるように拡大・切り抜く"""
+    s = max(W / im.width, H / im.height)
+    im = im.resize((max(W, round(im.width * s)), max(H, round(im.height * s))), Image.LANCZOS)
+    x, y = (im.width - W) // 2, (im.height - H) // 2
+    return im.crop((x, y, x + W, y + H))
+
+
+def render_og_photo(src: Image.Image, cat: dict, out: Path) -> None:
+    """SNSシェア用（写真＋左上にロゴとカテゴリ）。タイトルはSNS側が画像の外に出すので入れない（GIGAZINEなどと同じ）"""
+    W, H = 1200, 630
+    im = cover(src, W, H).convert("RGBA")
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+    x, y, h = 28, 28, 60
+    lf = font("Heavy", 30)
+    w = int(66 + lf.getlength("AIデジマ") + 22)
+    d.rounded_rectangle((x, y, x + w, y + h), radius=h // 2, fill=(255, 255, 255, 238))
+    draw_fan(d, x + 18, y + 9, 38)
+    d.text((x + 64, y + h / 2), "AIデジマ", font=lf, fill=INK, anchor="lm")
+    cf = font("Bold", 24)
+    cx = x + w + 10
+    cw = int(cf.getlength(cat["name"]) + 36)
+    d.rounded_rectangle((cx, y + 7, cx + cw, y + h - 7), radius=(h - 14) // 2, fill=hex_rgb(cat["color"]) + (245,))
+    d.text((cx + 18, y + h / 2), cat["name"], font=cf, fill=PAPER, anchor="lm")
+    im = Image.alpha_composite(im, layer).convert("RGB")
+    ImageDraw.Draw(im).rectangle((0, H - 8, W, H), fill=ORANGE)
+    im.save(out, "JPEG", quality=84, optimize=True, progressive=True)
+
+
 def render_og(a: dict, cat: dict, out: Path) -> None:
     """SNSシェア用（タイトル入り）"""
     W, H = 1200, 630
@@ -150,7 +187,7 @@ def render_og(a: dict, cat: dict, out: Path) -> None:
         d.text((64, 400 + i * 58), line, font=tf, fill=TITLE)
     d.text((W - 64, H - 44), a["date"].strftime("%Y.%m.%d"), font=font("Medium", 26), fill=SUB, anchor="rm")
     d.rectangle((0, H - 10, W, H), fill=ORANGE)
-    im.save(out, "PNG", optimize=True)
+    im.save(out, "JPEG", quality=90, optimize=True)
 
 
 def render_card(a: dict, cat: dict, W: int = 1200, H: int = 675) -> Image.Image:
@@ -181,17 +218,25 @@ def render_all(arts: list[dict], cats: dict, out_dir: Path, cache_dir: Path) -> 
     stats = {"new": 0, "cached": 0}
     for a in arts:
         cat = cats[a["category"]]
+        photo = THUMBS / f"{a['slug']}.webp"
+        photo_hash = hashlib.sha1(photo.read_bytes()).hexdigest()[:16] if photo.exists() else ""
         key = hashlib.sha1(
             json.dumps(
-                [DESIGN_VERSION, a["thumb_text"], a.get("thumb_kicker", ""), a["title"], cat["slug"], cat["color"], a["date"].strftime("%Y%m%d")],
+                [DESIGN_VERSION, photo_hash, a["thumb_text"], a.get("thumb_kicker", ""), a["title"], cat["slug"], cat["color"], a["date"].strftime("%Y%m%d")],
                 ensure_ascii=False,
             ).encode()
         ).hexdigest()[:16]
-        files = {"png": cache_dir / f"{key}.png", **{ext: cache_dir / f"{key}.{ext}" for ext in VARIANTS}}
+        files = {"jpg": cache_dir / f"{key}.jpg", **{ext: cache_dir / f"{key}.{ext}" for ext in VARIANTS}}
         if all(f.exists() for f in files.values()):
             stats["cached"] += 1
+        elif photo_hash:
+            src = Image.open(photo).convert("RGB")
+            render_og_photo(src, cat, files["jpg"])
+            for ext, (w, h) in PHOTO_VARIANTS.items():
+                cover(src, w, h).save(files[ext], "WEBP", quality=80, method=6)
+            stats["new"] += 1
         else:
-            render_og(a, cat, files["png"])
+            render_og(a, cat, files["jpg"])
             for ext, (w, h) in VARIANTS.items():
                 if ext == "webp":
                     render_card(a, cat, 1200, 675).resize((w, h), Image.LANCZOS).save(files[ext], "WEBP", quality=84, method=6)

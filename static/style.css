@@ -2292,3 +2292,327 @@ button {
   background: #e0e7ff;
   color: #3730a3;
 }
+
+/* ---------- サムネイル写真（scripts/thumbs.py が Gemini で生成） ---------- */
+.post-eyecatch figcaption {
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--muted);
+  text-align: right;
+}
+.thumb,
+.mini-img,
+.hero-img {
+  position: relative;
+  display: block;
+}
+.thumb img,
+.mini-img img,
+.hero-img img,
+.rel img {
+  background: var(--bg-soft);
+}
+
+/* ---------- 読了の記録（static/reward.js） ---------- */
+/* 読んだ記事は写真を少し沈めて「読んだ」の印。まだ読んでいない記事が目立つように */
+.is-read .thumb img,
+.is-read .mini-img img,
+.is-read .hero-img img,
+.rel.is-read img {
+  opacity: 0.55;
+  filter: saturate(0.6);
+}
+.is-read .item-title a,
+.is-read .mini-title a,
+.is-read .hero-title a,
+.rel.is-read .rel-title {
+  color: var(--muted);
+}
+.is-read .thumb::after,
+.is-read .mini-img::after,
+.is-read .hero-img::after {
+  content: "✓ 読んだ";
+  position: absolute;
+  left: 6px;
+  bottom: 6px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: rgba(17, 20, 24, 0.72);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.7;
+}
+
+/* トップの「今日の新着 n/m本」 */
+.daily {
+  border-bottom: 1px solid var(--line);
+}
+.daily-inner {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.daily-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.daily-label {
+  font-size: 13px;
+  font-weight: 800;
+}
+.daily-count {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 700;
+}
+.daily-count b {
+  font-size: 20px;
+  color: var(--accent-text);
+  font-variant-numeric: tabular-nums;
+}
+.daily-streak {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: auto;
+  padding: 2px 9px 2px 6px;
+  border-radius: 999px;
+  background: #fff1e8;
+  color: var(--accent-text);
+  font-size: 12px;
+  font-weight: 800;
+}
+.daily-streak svg,
+.reward-streak svg {
+  color: var(--accent);
+}
+.daily-bar {
+  height: 8px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: var(--bg-soft);
+  overflow: hidden;
+}
+.daily-bar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ff9a3c, var(--accent));
+  transition: width 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.daily-inner.is-done .daily-bar i {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+.daily-sub {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: var(--ink-2);
+}
+.daily-next {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  background: var(--bg-soft);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.daily-next span {
+  flex: none;
+  padding: 1px 7px;
+  border-radius: 4px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+/* 読了の通知 */
+.reward {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: calc(100vw - 32px);
+  padding: 10px 16px 10px 10px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(17, 20, 24, 0.28);
+  font-size: 13px;
+  opacity: 0;
+  transform: translate(-50%, 16px) scale(0.96);
+  pointer-events: none;
+  transition:
+    opacity 0.25s,
+    transform 0.35s cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+.reward.is-on {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}
+.reward.is-big {
+  border-radius: 18px;
+}
+.reward-check {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #22c55e;
+  color: #fff;
+}
+.reward.is-on .reward-check {
+  animation: reward-pop 0.5s cubic-bezier(0.2, 1.6, 0.4, 1);
+}
+.reward-body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 2px;
+}
+.reward-body b {
+  font-size: 14px;
+}
+.reward-streak {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-weight: 800;
+  color: #ffd166;
+}
+.reward-note {
+  flex-basis: 100%;
+  font-style: normal;
+  font-size: 12px;
+  color: #ffd9c2;
+}
+@keyframes reward-pop {
+  0% {
+    transform: scale(0.4);
+  }
+  60% {
+    transform: scale(1.18);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 記事の読み進み具合 */
+.read-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: 3px;
+  pointer-events: none;
+}
+.read-progress i {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+}
+.read-progress.is-read i {
+  background: #22c55e;
+}
+
+/* 新着タブの未読数 */
+.tabbar a {
+  position: relative;
+}
+.tab-badge {
+  position: absolute;
+  top: 0;
+  left: calc(50% + 6px);
+  min-width: 17px;
+  height: 17px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 17px;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reward,
+  .daily-bar i {
+    transition: none;
+  }
+  .reward.is-on .reward-check {
+    animation: none;
+  }
+}
+
+/* ---------- スマホ（写真が主役。小さい一覧でも何の絵かわかるよう 4:3 で大きめに） ---------- */
+@media (max-width: 640px) {
+  .item {
+    grid-template-columns: 124px minmax(0, 1fr);
+  }
+  .mini {
+    grid-template-columns: 124px 1fr;
+  }
+  .thumb img,
+  .mini-img img {
+    aspect-ratio: 4 / 3;
+  }
+  /* 写真の高さで止める（行の高さまで伸びると「読んだ」の印が写真の下にずれる） */
+  .item .thumb,
+  .mini .mini-img {
+    align-self: start;
+  }
+  /* カテゴリ・時刻・NEW・一次情報が狭い幅で途中改行しないように、語ごとに折り返す */
+  .item .meta,
+  .mini .meta {
+    flex-wrap: wrap;
+    column-gap: 8px;
+    row-gap: 2px;
+  }
+  .item .meta > *,
+  .mini .meta > * {
+    flex: none;
+    white-space: nowrap;
+  }
+  /* 写真を作れなかった記事の文字カードは、切り抜くと文字が欠けるので 16:9 のまま */
+  .no-photo .thumb img,
+  .no-photo .mini-img img {
+    aspect-ratio: 16 / 9;
+  }
+  .hero-img img,
+  .post-eyecatch img {
+    aspect-ratio: 16 / 9;
+  }
+  .post-eyecatch {
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+  .post-eyecatch img {
+    border-radius: 0;
+  }
+  .post-eyecatch figcaption {
+    padding: 0 16px;
+  }
+  .reward {
+    bottom: calc(76px + env(safe-area-inset-bottom));
+  }
+  .daily-inner {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}

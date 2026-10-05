@@ -371,6 +371,7 @@ def parse_article(path: Path) -> tuple[dict | None, list[str]]:
         "read_min": max(1, round(chars / 600)),
         "thumb_text": big,
         "thumb_kicker": kicker,
+        "has_photo": (ROOT / "content" / "thumbs" / f"{slug}.webp").exists(),  # Geminiで作ったサムネイル（scripts/thumbs.py）
         "sources": sources,
         "publishers": list(dict.fromkeys(s.get("publisher", "") for s in sources if s.get("publisher"))),
         "primary_count": sum(1 for k in kinds if k in ("公式発表", "公式ドキュメント", "公式サイト", "X投稿", "論文")),
@@ -495,7 +496,7 @@ def editor_ld() -> dict:
 
 
 def article_images(a: dict) -> list[str]:
-    return [abs_url(f"/og/{a['slug']}.png"), abs_url(f"/og/{a['slug']}.eye.webp"), abs_url(f"/og/{a['slug']}.4x3.webp"), abs_url(f"/og/{a['slug']}.1x1.webp")]
+    return [abs_url(f"/og/{a['slug']}.jpg"), abs_url(f"/og/{a['slug']}.eye.webp"), abs_url(f"/og/{a['slug']}.4x3.webp"), abs_url(f"/og/{a['slug']}.1x1.webp")]
 
 
 def article_ld(a: dict) -> list[dict]:
@@ -841,7 +842,7 @@ def build(now: datetime | None = None) -> None:
                 older=arts[i + 1] if i + 1 < len(arts) else None,
                 ld=article_ld(a),
                 canonical=a["path"],
-                og_image=f"/og/{a['slug']}.png",
+                og_image=f"/og/{a['slug']}.jpg",
             ),
         )
 
@@ -917,7 +918,7 @@ def build(now: datetime | None = None) -> None:
         ))
         for g in guides:
             write(g["path"], render(
-                "guide.html", g=g, canonical=g["path"], og_image=f"/og/best-{g['slug']}.png", noindex=g["noindex"], ld=guide_ld(g),
+                "guide.html", g=g, canonical=g["path"], og_image=f"/og/best-{g['slug']}.jpg", noindex=g["noindex"], ld=guide_ld(g),
                 related_guides=[guides_by_slug[s] for s in (g.get("related") or {}).get("guides", []) if s in guides_by_slug],
                 embed=[m for m in models if m.get("status", "current") == "current"] if g.get("embed_models") else [],
             ))
@@ -943,6 +944,9 @@ def build(now: datetime | None = None) -> None:
         ensure_ascii=False, separators=(",", ":"),
     ))
     write("/feed.xml", rss(arts[:40], now))
+    # 読了の記録（static/reward.js）が「今日の新着を何本読んだか」「未読いくつ」を数えるための一覧。直近48時間の記事だけ
+    recent = [{"s": a["slug"], "d": a["date"].isoformat(), "t": a["title"]} for a in arts if now - a["date"] <= timedelta(hours=48)]
+    write("/recent.json", json.dumps(recent, ensure_ascii=False, separators=(",", ":")))
     write("/sitemap.xml", sitemap(arts, by_cat, by_tag, by_month, models, now, guides))
     write("/news-sitemap.xml", news_sitemap(arts, now))
     write("/robots.txt", robots())
@@ -1004,7 +1008,7 @@ def warn_quality(arts: list[dict]) -> None:
 def rss(arts: list[dict], now: datetime) -> str:
     items = []
     for a in arts:
-        og_url = abs_url("/og/" + a["slug"] + ".png")
+        og_url = abs_url("/og/" + a["slug"] + ".jpg")
         body = a["body"].replace(f'href="{BASE_PATH}/', f'href="{BASE_URL}/')
         summary = "".join(f"<li>{html.escape(s)}</li>" for s in a["summary"])
         full = f"<ul>{summary}</ul>{body}<p><a href=\"{abs_url(a['path'])}\">記事の全文と情報源はAIデジマで</a></p>"
@@ -1012,7 +1016,7 @@ def rss(arts: list[dict], now: datetime) -> str:
             f"""<item><title>{xml_escape(a['title'])}</title><link>{abs_url(a['path'])}</link><guid isPermaLink="true">{abs_url(a['path'])}</guid>
 <pubDate>{a['date'].strftime('%a, %d %b %Y %H:%M:%S %z')}</pubDate><dc:creator>{xml_escape(SITE['site_name'])}編集部</dc:creator><category>{xml_escape(a['cat']['name'])}</category>
 <description>{xml_escape(a['description'])}</description><content:encoded><![CDATA[{full}]]></content:encoded>
-<media:thumbnail url="{og_url}" width="1200" height="630"/><enclosure url="{og_url}" type="image/png" length="0"/></item>"""
+<media:thumbnail url="{og_url}" width="1200" height="630"/><enclosure url="{og_url}" type="image/jpeg" length="0"/></item>"""
         )
     return f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/"><channel>

@@ -170,8 +170,22 @@ jobs:
             --max-turns 40
           prompt: ${{ steps.review_prompt.outputs.text }}
 
+      # 記事・ガイドのサムネイル写真を Gemini で作る（tomo指示 2026-10-05「記事のサムネはGeminiで毎回生成したい」）。
+      # 1記事1回だけ作ってコミットし、以後は使い回す（1枚 約$0.067）。手で足した記事も push のときにここで作られる。
+      # 失敗・キー未設定でも止めない（その記事は文字カードのまま。次の回で作り直しを試みる）
+      - name: "サムネイル（Gemini）"
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python3 scripts/thumbs.py
+          if [ -n "$(git status --porcelain content/thumbs)" ]; then
+            git add content/thumbs
+            git commit -m "chore(thumbs): 記事のサムネイルを生成"
+          fi
+
+      # 新しいコミット（記事・校閲・サムネイル）があるときだけ push する。push の起動でも、サムネイルを作ったらここで push
       - name: push
-        if: env.WANT_WRITE == 'true'
         run: |
           if [ -n "$(git log origin/main..HEAD --oneline)" ]; then
             git pull --rebase origin main

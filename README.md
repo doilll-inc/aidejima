@@ -32,7 +32,9 @@ GitHub Pages に公開 → scripts/notify.py で IndexNow と WebSub に通知
 | `data/x_watchlist.json` | X公式APIで監視する公式アカウント・著名人 |
 | `data/models.json` | AIモデル図鑑（/models/）の元データ。記者が公式の料金・仕様を確認したときに更新 |
 | `templates/` `static/style.css` | デザイン |
-| `og.py` | OG画像・サムネイル・ロゴの自動生成（元記事の画像は使わない。16:9・4:3・1:1を出す） |
+| `og.py` | OG画像・サムネイル・ロゴの自動生成（元記事の画像は使わない。content/thumbs の生成画像があれば切り抜き、無ければ文字カード。16:9・4:3・1:1を出す） |
+| `scripts/thumbs.py` | 記事・ガイドのサムネイル写真を Gemini（Nano Banana 2）で1回だけ生成して content/thumbs/ に保存。絵の指定は記事の thumb_prompt / thumb_style、ガイドは data/thumb_prompts.json。publish.yml が毎回実行（Secrets の GEMINI_API_KEY） |
+| `static/reward.js` | 読了の記録（既読の印・今日の新着の読了数・連続日数・読了の通知・読み進みバー・新着タブの未読数）。記録はブラウザ内だけ。dist/recent.json を読む |
 | `data/guides/*.json` | 用途別AIガイド（/best/）の元データ。事実は公式ページだけ・出典と確認日つき。定義と調査手順は `data/guides/SCHEMA.md`、設計は `docs/guides-design.md` |
 | `guides.py` | ガイドデータの検証（`python3 guides.py check <slug>`）。build.py もこれでエラー判定する |
 | `scripts/guide_refresh_prompt.md` | ガイド点検担当（guides.yml）への指示 |
