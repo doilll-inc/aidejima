@@ -64,6 +64,8 @@
   ],
   "thumb_text": "HN.watch",
   "share_text": "Hacker Newsの全記事を数秒で解説動画にするHN.watch。動画はHTMLのスライドとAI音声で組み立てる",
+  "thumb_style": "3d",
+  "thumb_prompt": "A news page made of paper folding itself into a small video player screen with a play button, popping up from a desk like a pop-up book.",
   "editor_note": ""
 }
 ---

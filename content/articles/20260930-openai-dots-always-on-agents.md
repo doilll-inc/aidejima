@@ -27,6 +27,8 @@
     {"title": "Meta is expanding its AI agent Muse to small businesses", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/09/29/meta-is-expanding-its-ai-agent-muse-to-small-businesses/"},
     {"title": "Dots: Always-on agents", "publisher": "Hacker News", "url": "https://news.ycombinator.com/item?id=49896604"}
   ],
+  "thumb_style": "photo",
+  "thumb_prompt": "A dark home office at 3 a.m. where a cloud-shaped computer keeps working by itself, its screen glowing, while a coffee mug and an empty chair wait.",
   "editor_note": ""
 }
 ---

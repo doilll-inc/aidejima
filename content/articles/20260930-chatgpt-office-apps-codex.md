@@ -24,6 +24,8 @@
     {"title": "OpenAI adds $500 Pro subscription, nerfs its existing $200 tier", "publisher": "Engadget", "url": "https://www.engadget.com/2272106/openai-adds-dollar500-pro-subscription-nerfs-its-existing-dollar200-tier/"},
     {"title": "OpenAI DevDay recap: AI lab rolls out Dots agents, Altman and Friar comment on IPO", "publisher": "CNBC", "url": "https://www.cnbc.com/2026/09/29/openai-devday-2026-live-updates.html"}
   ],
+  "thumb_style": "3d",
+  "thumb_prompt": "A floating office workspace of a document, a slide and a spreadsheet arranged around a friendly chat bubble at the center, with two cursors collaborating.",
   "editor_note": ""
 }
 ---

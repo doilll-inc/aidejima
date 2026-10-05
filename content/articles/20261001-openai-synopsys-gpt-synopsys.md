@@ -22,6 +22,8 @@
   ],
   "thumb_text": "GPT-Synopsys",
   "share_text": "SynopsysとOpenAIが半導体設計の専用モデルGPT-Synopsysを共同開発。設計ツールをAIが直接操作",
+  "thumb_style": "photo",
+  "thumb_prompt": "An extreme close-up of a computer chip being designed, glowing circuit patterns drawn by a robotic pen arm on a silicon wafer, blue and gold light.",
   "editor_note": ""
 }
 ---

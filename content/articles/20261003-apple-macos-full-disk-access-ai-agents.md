@@ -19,6 +19,8 @@
   ],
   "thumb_text": "フルディスクアクセス",
   "share_text": "AppleがmacOSのフルディスクアクセスを厳格化へ。AIエージェントで危険が大幅に増すと開発者に告知",
+  "thumb_style": "3d",
+  "thumb_prompt": "A laptop with a huge heavy bank vault door built into its screen, with a small robot standing in front of it waiting for a human hand to turn the key.",
   "editor_note": ""
 }
 ---

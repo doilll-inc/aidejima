@@ -23,6 +23,8 @@
     {"title": "Anthropic officially opens Tokyo office, signs Memorandum of Cooperation with the Japan AI Safety Institute", "publisher": "Anthropic", "url": "https://www.anthropic.com/news/opening-our-tokyo-office"},
     {"title": "Anthropic's IPO prospectus shows AI vision, surging costs", "publisher": "Hacker News", "url": "https://news.ycombinator.com/item?id=49886005"}
   ],
+  "thumb_style": "photo",
+  "thumb_prompt": "A thick bound financial document on a boardroom table with a stock ticker board glowing in the background and a rising arrow of light.",
   "editor_note": ""
 }
 ---

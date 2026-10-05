@@ -18,6 +18,8 @@
   ],
   "thumb_text": "Open TTS",
   "share_text": "Hugging Faceが音声合成の公開ランキングOpen TTS Leaderboardを紹介。日本語を含む9言語で、声のクローンも比べられる",
+  "thumb_style": "illustration",
+  "thumb_prompt": "A podium with first, second and third places where three different colorful speakers stand like athletes, each with sound waves coming out of them.",
   "editor_note": ""
 }
 ---

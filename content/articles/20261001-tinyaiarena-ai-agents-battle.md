@@ -20,6 +20,8 @@
   ],
   "thumb_text": "TinyAIArena",
   "share_text": "AIモデル4体が8×8マスで戦う様子を観戦できるTinyAIArena。43試合の成績ではClaude Sonnet 5が首位",
+  "thumb_style": "diorama",
+  "thumb_prompt": "A tiny chessboard-like arena of eight by eight squares with four small toy robots of different colors facing off in the middle, one robot raising its arm in victory.",
   "editor_note": ""
 }
 ---

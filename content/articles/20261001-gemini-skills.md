@@ -20,6 +20,8 @@
   ],
   "thumb_text": "Gemini スキル",
   "share_text": "Geminiに「スキル」が登場。よく使う指示を保存して「/」で呼び出せ、Gemsは11月から順次移行",
+  "thumb_style": "3d",
+  "thumb_prompt": "A tidy wall of colorful drawers like a spice rack, one drawer sliding open on its own to reveal a glowing recipe card, a slash-shaped key on a keyboard in the foreground.",
   "editor_note": ""
 }
 ---

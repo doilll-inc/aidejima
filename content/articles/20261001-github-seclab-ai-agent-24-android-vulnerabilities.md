@@ -20,6 +20,8 @@
   ],
   "thumb_text": "Taskflow Agent",
   "share_text": "GitHub Security LabがオープンソースのAIエージェントでAndroidアプリの脆弱性を24件発見。手順は公開済み",
+  "thumb_style": "3d",
+  "thumb_prompt": "A smartphone laid flat with a small robot detective holding a flashlight walking across its screen, finding glowing cracks in the glass.",
   "editor_note": ""
 }
 ---

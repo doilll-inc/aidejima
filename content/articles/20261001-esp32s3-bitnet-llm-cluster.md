@@ -17,6 +17,8 @@
   ],
   "thumb_text": "ESP32-S3",
   "share_text": "ESP32-S3を7台つないで1.58ビット化した0.5BのLLMを分散実行。大学1年生の個人開発",
+  "thumb_style": "photo",
+  "thumb_prompt": "Seven tiny circuit boards lined up in a row on a student's desk, connected by colorful wires like a little chain, each glowing with a small blue light.",
   "editor_note": ""
 }
 ---

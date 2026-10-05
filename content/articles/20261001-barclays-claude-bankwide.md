@@ -18,6 +18,8 @@
   ],
   "thumb_text": "Barclays×Claude",
   "share_text": "英BarclaysがClaudeを全行に拡大。行員1.6万人が社内検索に使い、市場部門のメールは1日12万通をAIが仕分け",
+  "thumb_style": "photo",
+  "thumb_prompt": "A grand bank lobby with marble floors where a waterfall of envelopes is sorting itself into neat stacks in mid-air, anonymous bank staff walking by.",
   "editor_note": ""
 }
 ---

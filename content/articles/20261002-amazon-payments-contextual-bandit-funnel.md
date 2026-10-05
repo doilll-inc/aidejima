@@ -16,6 +16,8 @@
   ],
   "thumb_text": "Amazon Payments",
   "share_text": "Amazon Paymentsが申込ページの出し分けをAIで7週間テスト。伸びた層と悪化した層の両方を公開",
+  "thumb_style": "illustration",
+  "thumb_prompt": "A row of several different shop doors with different colored signs, and small groups of people choosing different doors, with an upward arrow above some and a downward arrow above one.",
   "editor_note": ""
 }
 ---

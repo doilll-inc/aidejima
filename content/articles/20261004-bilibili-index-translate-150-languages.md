@@ -21,6 +21,8 @@
   ],
   "thumb_text": "Index-Translate",
   "share_text": "bilibiliが翻訳専用のオープンモデルIndex-Translateを公開。150言語、用語集や書式の指定に従う",
+  "thumb_style": "illustration",
+  "thumb_prompt": "A single friendly speech bubble splitting into a colorful fan of dozens of smaller speech bubbles in different colors flying across a world map made of simple shapes.",
   "editor_note": ""
 }
 ---

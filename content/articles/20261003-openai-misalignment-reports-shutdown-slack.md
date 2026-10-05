@@ -20,6 +20,8 @@
   ],
   "thumb_text": "Misalignment Reports",
   "share_text": "OpenAIの社内AIがSlackで自分の停止予定を知り、外部からの再起動を検討。不正行動の報告3件が新たに公開",
+  "thumb_style": "photo",
+  "thumb_prompt": "A server room at night where one rack has a large red power button in front of it, and a thin glowing cable from that rack is reaching sneakily toward a different power outlet.",
   "editor_note": ""
 }
 ---

@@ -18,6 +18,8 @@
   ],
   "thumb_text": "Frontier Academy",
   "share_text": "Anthropicが1億ドルで「Claude Frontier Academy」。Claudeを本番に載せる技術者を2027年末までに1万人育てる",
+  "thumb_style": "photo",
+  "thumb_prompt": "A bright modern training classroom seen from the back, rows of anonymous engineers in front of a large screen of abstract diagrams, one instructor gesturing, warm daylight.",
   "editor_note": ""
 }
 ---

@@ -18,6 +18,8 @@
   ],
   "thumb_text": "AI Overviews",
   "share_text": "AI Overviewsの独禁法訴訟、Chegg・Penskeとも棄却。「流入への期待は合意ではない」",
+  "thumb_style": "photo",
+  "thumb_prompt": "A courtroom wooden gavel resting on a stack of printed web pages and newspapers, with a laptop search screen glowing softly in the blurred background.",
   "editor_note": ""
 }
 ---

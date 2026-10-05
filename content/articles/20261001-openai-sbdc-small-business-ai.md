@@ -48,6 +48,8 @@
   ],
   "thumb_text": "中小企業×AI",
   "share_text": "OpenAIが米国の中小企業支援センター網と提携し1000社にAI研修。中小企業は経理・法務・マーケでAIを多用",
+  "thumb_style": "photo",
+  "thumb_prompt": "A small local bakery counter where the owner, seen from behind, is looking at a laptop with a friendly advisor, bread and pastries in the warm foreground.",
   "editor_note": ""
 }
 ---

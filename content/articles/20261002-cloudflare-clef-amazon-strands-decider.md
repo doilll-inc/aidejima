@@ -21,6 +21,8 @@
   ],
   "thumb_text": "Clef",
   "share_text": "Cloudflareが判断モデルClefを公開。Jev互換で画像も判定、軽量版は中央値38.8ミリ秒。Amazonも2B版を公開",
+  "thumb_style": "illustration",
+  "thumb_prompt": "A small robot standing at a fork in a road with three signposts, each path labeled only by colored percentage bars of different lengths.",
   "editor_note": ""
 }
 ---

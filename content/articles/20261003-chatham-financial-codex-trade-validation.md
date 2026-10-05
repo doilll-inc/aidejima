@@ -16,6 +16,8 @@
   ],
   "thumb_text": "Codex",
   "share_text": "取引照合を30分から4分未満に。米Chatham FinancialがCodexで作った社内アプリと、モデルの使い分け",
+  "thumb_style": "photo",
+  "thumb_prompt": "A finance office desk with an hourglass whose sand has almost instantly run out, beside two tall stacks of trade documents with a green check stamp on top.",
   "editor_note": ""
 }
 ---

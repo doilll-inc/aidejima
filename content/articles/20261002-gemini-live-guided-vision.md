@@ -18,6 +18,8 @@
   ],
   "thumb_text": "Guided Vision",
   "share_text": "Gemini Liveに視覚障害者向けGuided Vision。映った物を説明し、撮り方も声で指示",
+  "thumb_style": "photo",
+  "thumb_prompt": "A person seen from behind holding a smartphone up in a sunny street, the phone camera view shown with glowing guiding arrows pointing to the right, a white cane resting in their other hand.",
   "editor_note": ""
 }
 ---

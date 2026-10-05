@@ -18,6 +18,8 @@
   ],
   "thumb_text": "OSS VRP",
   "share_text": "Googleがオープンソースのバグ報奨金で製品の脆弱性の受け付けを停止。AIによる無効な報告の急増が理由",
+  "thumb_style": "3d",
+  "thumb_prompt": "A reward counter with its metal shutter pulled closed, buried under an avalanche of thousands of identical paper reports spilling out of a row of busy robot arms, with one single shiny beetle sitting on top of the pile.",
   "editor_note": ""
 }
 ---

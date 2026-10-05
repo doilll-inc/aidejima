@@ -1,0 +1,15 @@
+{
+  "best-api": {"style": "3d", "prompt": "A row of glowing power sockets on a wall, each plugged with a different colored cable leading to a small robot, with price tags hanging from the cables."},
+  "best-chat": {"style": "photo", "prompt": "A smartphone on a café table with several colorful chat bubbles rising out of its screen, each bubble a slightly different shape, a coffee cup beside it."},
+  "best-coding": {"style": "photo", "prompt": "A programmer's desk at night, seen from behind, with a keyboard and a small friendly robot sitting on the monitor helping, code shown only as abstract colored lines."},
+  "best-image-generation": {"style": "3d", "prompt": "A paintbrush and a camera lens side by side producing a stream of colorful picture frames that fly out into the air."},
+  "best-local-llm": {"style": "photo", "prompt": "A home desktop computer tower on a wooden desk with a small glowing brain inside its glass side panel, a plant and a lamp beside it, cozy home office."},
+  "best-marketing": {"style": "illustration", "prompt": "A megaphone, a shopping cart and a rising chart arranged around a small robot assistant sitting at a marketing team's table."},
+  "best-research": {"style": "photo", "prompt": "A stack of open books and printed reports on a library table with a large magnifying glass and a glowing laptop in the soft background."},
+  "best-slides": {"style": "3d", "prompt": "A stack of presentation slides fanning out of a laptop like a deck of playing cards, each card showing simple colorful charts without any text."},
+  "best-text-to-speech": {"style": "3d", "prompt": "An open book with a sound wave rising from its pages and turning into a friendly speaker, soft gradient background."},
+  "best-transcription": {"style": "photo", "prompt": "A meeting table with a small microphone in the center and a long ribbon of paper printing out of a laptop, covered in abstract lines, anonymous people blurred around."},
+  "best-translation": {"style": "illustration", "prompt": "Two speech bubbles of different colors connected by a small bridge, with tiny people crossing the bridge from one bubble to the other."},
+  "best-video-generation": {"style": "photo", "prompt": "A film clapperboard on a desk with a small movie screen floating above it showing a cinematic sunset scene being generated, film reels nearby."},
+  "best-writing": {"style": "illustration", "prompt": "A fountain pen writing on paper while a small robot holds the next sheet ready and another robot checks the finished pages."}
+}

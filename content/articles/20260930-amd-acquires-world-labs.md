@@ -82,6 +82,8 @@
   ],
   "editor_note": "",
   "thumb_text": "World Labs",
+  "thumb_style": "3d",
+  "thumb_prompt": "A computer chip sitting on a table with an entire miniature 3D world, mountains, rivers and houses, growing out of its surface.",
   "thumb_kicker": "AMD"
 }
 ---

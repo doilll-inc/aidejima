@@ -16,6 +16,8 @@
   ],
   "thumb_text": "中国製LLMの偏り",
   "share_text": "中国製LLM6種に政治的に微妙な967問。中立な回答は17〜41%。中国製モデルで作った学習データ経由でNVIDIAのモデルにも影響",
+  "thumb_style": "illustration",
+  "thumb_prompt": "A giant set of brass balance scales weighing glowing chat speech bubbles, tipped heavily to one side, while a small inspector with a magnifying glass and a clipboard measures the tilt.",
   "editor_note": ""
 }
 ---

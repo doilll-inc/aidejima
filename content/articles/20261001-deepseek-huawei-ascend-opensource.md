@@ -20,6 +20,8 @@
   ],
   "thumb_text": "TileLang",
   "share_text": "DeepSeekがHuawei Ascend向けの基盤ソフト6点をオープンソース公開。NVIDIA向けと一対一対応",
+  "thumb_style": "illustration",
+  "thumb_prompt": "A large puzzle piece being swapped out of a computer chip mosaic and replaced by a new piece of a different color that fits exactly.",
   "editor_note": ""
 }
 ---

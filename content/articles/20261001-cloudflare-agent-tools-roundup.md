@@ -20,6 +20,8 @@
   ],
   "thumb_text": "cf CLI",
   "share_text": "Cloudflareがエージェント向け新機能を相次ぎ発表。全APIを扱う新CLI「cf」、6倍速いContainers、モデル自動選択のAuto Routerなど",
+  "thumb_style": "3d",
+  "thumb_prompt": "A shiny orange toolbox opened wide with many glowing new tools inside, and a small robot hand reaching in to pick one.",
   "editor_note": ""
 }
 ---

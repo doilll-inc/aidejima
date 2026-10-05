@@ -18,6 +18,8 @@
   ],
   "thumb_text": "Slipstream",
   "share_text": "64GBのMacで95.5GiBのQwen3.8-Flash-Nextを毎秒41〜52トークンで。SSDから重みを流す推論エンジンSlipstream",
+  "thumb_style": "photo",
+  "thumb_prompt": "A small silver laptop on a desk with a huge glowing stream of light pouring into it from an external SSD drive, like a river being fed through a narrow channel.",
   "editor_note": ""
 }
 ---

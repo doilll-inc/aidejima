@@ -18,6 +18,8 @@
   ],
   "thumb_text": "DGX Spark 64GB",
   "share_text": "NVIDIAがDGX Sparkの64GB版を10月23日に$4,999で発売。2台つなぐと200Bモデルまで",
+  "thumb_style": "photo",
+  "thumb_prompt": "Two small golden metallic mini computers stacked side by side on a clean office desk and connected by a single glowing cable, product photography with soft studio light.",
   "editor_note": ""
 }
 ---

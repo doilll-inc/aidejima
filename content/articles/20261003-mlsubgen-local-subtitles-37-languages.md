@@ -16,6 +16,8 @@
   ],
   "thumb_text": "mlsubgen",
   "share_text": "動画の字幕を37言語で、自宅のGPUだけで。タイ在住の個人が作ったOSS「mlsubgen」",
+  "thumb_style": "photo",
+  "thumb_prompt": "A home movie projector casting a film scene onto a living room wall, with multiple glowing subtitle bars stacked under the image in different colors made only of abstract blurred shapes.",
   "editor_note": ""
 }
 ---

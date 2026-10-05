@@ -22,6 +22,8 @@
   ],
   "thumb_text": "Claude Code Mods",
   "share_text": "Claude Codeに「Mods」。TypeScriptの関数でツール呼び出しを止めたり、独自の画面を足したりできる",
+  "thumb_style": "illustration",
+  "thumb_prompt": "A computer window being taken apart and rebuilt like modular furniture, with hands snapping new colorful panels and buttons into place with a screwdriver and a wrench.",
   "editor_note": ""
 }
 ---

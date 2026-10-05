@@ -20,6 +20,8 @@
   ],
   "thumb_text": "MicroLLM Lab",
   "share_text": "小型LLM7種をブラウザだけで動かして比べるMicroLLM Lab。重みは4ビットで端末に保存し、入力は外に出ない",
+  "thumb_style": "3d",
+  "thumb_prompt": "Seven tiny glowing robot figures of different sizes lined up inside a web browser window shaped like a glass display case.",
   "editor_note": ""
 }
 ---

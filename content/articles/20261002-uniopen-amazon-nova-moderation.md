@@ -16,6 +16,8 @@
   ],
   "thumb_text": "Amazon Nova 2 Lite",
   "share_text": "台湾uniopenがAmazon Nova 2 Liteを自社の審査規定で微調整。3,391件の学習で分類精度F1が0.58→0.86に",
+  "thumb_style": "3d",
+  "thumb_prompt": "A conveyor belt of colorful chat speech bubbles passing through a scanner gate, where a few bubbles are gently lifted out by a robot hand into a red tray.",
   "editor_note": ""
 }
 ---

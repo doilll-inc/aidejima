@@ -21,6 +21,8 @@
   ],
   "thumb_text": "PaperMono",
   "share_text": "冷蔵庫に貼る電子ペーパーの買い物リスト。コードは全部Claude Codeに書かせ、売り場分けもClaudeが担当",
+  "thumb_style": "photo",
+  "thumb_prompt": "A small black-and-white e-paper display stuck on a kitchen refrigerator door with a magnet, showing a checklist of simple food icons like milk, eggs and apples, morning light.",
   "editor_note": ""
 }
 ---

@@ -22,6 +22,8 @@
   ],
   "thumb_text": "FLUX 3 Image",
   "share_text": "FLUX 3 Imageは枠ごとに描く物を指定できる画像モデル。1K画像1枚$0.048、編集では他の部分を変えない",
+  "thumb_style": "3d",
+  "thumb_prompt": "A blank canvas on an easel divided by glowing rectangles, with a painted apple appearing exactly inside one rectangle and a painted cat inside another.",
   "editor_note": ""
 }
 ---

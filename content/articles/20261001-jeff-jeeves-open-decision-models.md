@@ -20,6 +20,8 @@
   ],
   "thumb_text": "Jeff・Jeeves",
   "share_text": "自宅のGPU1枚で学習した0.8Bの判断モデルJeffが1回28ミリ秒。PostHogは考えてから選ぶ9BのJeevesを公開",
+  "thumb_style": "3d",
+  "thumb_prompt": "A small robot butler holding a silver tray with three cards on it, each card topped by a glowing bar of a different height, choosing the tallest one.",
   "editor_note": ""
 }
 ---

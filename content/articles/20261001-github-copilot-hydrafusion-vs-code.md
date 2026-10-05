@@ -19,6 +19,8 @@
   ],
   "thumb_text": "HydraFusion",
   "share_text": "GitHub CopilotのHydraFusionがVS Codeとアプリに。複数モデルで下書きと点検を分担し、追加料金はなし",
+  "thumb_style": "illustration",
+  "thumb_prompt": "Three small robots of different colors working together at one desk, one writing a draft, one checking it with a magnifying glass, one stamping approval.",
   "editor_note": ""
 }
 ---

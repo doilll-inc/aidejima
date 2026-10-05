@@ -64,6 +64,8 @@
       "url": "https://news.ycombinator.com/item?id=49897336"
     }
   ],
+  "thumb_style": "3d",
+  "thumb_prompt": "A tall tower of shiny gold coins rising like a skyscraper above the clouds, with a small elevator climbing up its side.",
   "editor_note": ""
 }
 ---

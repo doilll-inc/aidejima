@@ -18,6 +18,8 @@
   ],
   "thumb_text": "RRSI",
   "share_text": "AIエージェントの自己改良は「試験の丸暗記」になりがち。Google ResearchのRRSIは未知の課題で最大4.7ポイント改善",
+  "thumb_style": "illustration",
+  "thumb_prompt": "A robot student at an exam desk who has memorized the answer sheet perfectly, now staring puzzled at a brand-new test paper with completely different shapes on it.",
   "editor_note": ""
 }
 ---

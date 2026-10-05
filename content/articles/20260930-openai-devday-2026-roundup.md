@@ -26,6 +26,8 @@
     {"title": "OpenAI DevDay 2026 live blog", "publisher": "Simon Willison's Weblog", "url": "https://simonwillison.net/2026/Sep/29/openai-devday-2026-live-blog/"},
     {"title": "GPT 6.1 Sol: Near-Astra intelligence for a fifth of the price", "publisher": "Hacker News", "url": "https://news.ycombinator.com/item?id=49896586"}
   ],
+  "thumb_style": "photo",
+  "thumb_prompt": "A large conference stage with dramatic lights and a giant screen of abstract shapes, seen from behind the audience silhouettes, confetti-like light particles.",
   "editor_note": ""
 }
 ---

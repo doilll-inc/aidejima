@@ -45,6 +45,8 @@
   ],
   "thumb_text": "Kumo Tabular",
   "share_text": "NVIDIAが表データ予測モデルKumo Tabularを公開。学習なしで解約や需要を予測、商用利用もできる",
+  "thumb_style": "illustration",
+  "thumb_prompt": "A spreadsheet grid of colored cells where the empty last row is being filled in by itself with a glowing crystal ball resting on the table.",
   "editor_note": ""
 }
 ---

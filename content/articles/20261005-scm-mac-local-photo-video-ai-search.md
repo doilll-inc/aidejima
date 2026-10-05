@@ -17,6 +17,8 @@
   ],
   "thumb_text": "SCM",
   "share_text": "Macの写真と動画の全場面を言葉で検索。クラウドに上げずに手元で動く無料OSS「SCM」",
+  "thumb_style": "photo",
+  "thumb_prompt": "A laptop on a wooden desk at night, its screen filled with a dense mosaic of colorful family photos and video frames; one single frame glows brighter and floats slightly out of the screen toward the viewer as if it has just been found, while a shoebox of old printed photographs sits beside the laptop.",
   "editor_note": ""
 }
 ---

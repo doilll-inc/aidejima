@@ -24,6 +24,8 @@
   ],
   "thumb_text": "Ideogram 4.5",
   "share_text": "Ideogram 4.5は編集を重ねても色ずれや劣化がたまりにくい画像編集モデル。広告の差し替え向き",
+  "thumb_style": "photo",
+  "thumb_prompt": "A designer's hand using a fine brush to repaint only one small square of a large glossy advertising poster of a sneaker, with the rest of the poster perfectly untouched.",
   "editor_note": ""
 }
 ---

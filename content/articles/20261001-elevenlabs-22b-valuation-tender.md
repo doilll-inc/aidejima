@@ -61,6 +61,8 @@
   "thumb_text": "評価額220億ドル",
   "share_text": "ElevenLabsの評価額が220億ドルに倍増。売上の55%が企業向けで、音声エージェントの会話は週1500万件超",
   "editor_note": "",
+  "thumb_style": "3d",
+  "thumb_prompt": "A glossy golden sound wave sculpture rising like a staircase of bars, with a rocket-like arrow shooting upward behind it against a deep blue backdrop.",
   "updated": "2026-10-01T18:59:00+09:00"
 }
 ---

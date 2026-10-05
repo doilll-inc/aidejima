@@ -67,6 +67,8 @@
   ],
   "editor_note": "",
   "thumb_text": "GLM-5.3",
+  "thumb_style": "illustration",
+  "thumb_prompt": "A padlock on a digital door being opened easily by a small key-shaped robot, while a safety sign on the door falls off.",
   "thumb_kicker": "Zhipu"
 }
 ---

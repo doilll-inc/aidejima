@@ -24,6 +24,8 @@
   ],
   "thumb_text": "FTCのAI調査",
   "share_text": "米FTCがAnthropicやOpenAIなどAI大手を調査。今夏から始まり、幹部の証言を強制する手続きも準備と報道",
+  "thumb_style": "photo",
+  "thumb_prompt": "A large magnifying glass held over a row of server racks in a data center, with an official-looking folder and a government seal shape blurred on the table in front.",
   "editor_note": ""
 }
 ---

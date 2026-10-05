@@ -20,6 +20,8 @@
   ],
   "thumb_text": "Kolibri-1",
   "share_text": "独Aleph AlphaがKolibri-1を公開。78Bのうち稼働3.46B、独英特化でApache 2.0",
+  "thumb_style": "illustration",
+  "thumb_prompt": "A hummingbird made of glowing circuit lines hovering in front of a large server cabinet, with only a few of the many lights on the cabinet lit up at once.",
   "editor_note": ""
 }
 ---

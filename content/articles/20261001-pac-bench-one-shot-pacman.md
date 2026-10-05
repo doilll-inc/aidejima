@@ -19,6 +19,8 @@
   ],
   "thumb_text": "Pac-Bench",
   "share_text": "AIに1回の指示だけでパックマンを作らせる比較。32作品中、Claude Opus 5.5が99点で首位",
+  "thumb_style": "3d",
+  "thumb_prompt": "A shiny yellow round arcade character chomping through a maze of glowing dots, while a row of small robots holding scorecards judges it from the side.",
   "editor_note": ""
 }
 ---

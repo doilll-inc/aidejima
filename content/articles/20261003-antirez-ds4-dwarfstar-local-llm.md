@@ -20,6 +20,8 @@
   ],
   "thumb_text": "ds4",
   "share_text": "Redis作者antirezのds4。128GBのMacで2ビット化したDeepSeek V4 Flashを毎秒39トークンで動かすC製の推論エンジン",
+  "thumb_style": "photo",
+  "thumb_prompt": "A compact silver desktop computer on a minimal wooden desk with a tiny bright star glowing inside a glass dome placed on top of it, quiet night studio light.",
   "editor_note": ""
 }
 ---

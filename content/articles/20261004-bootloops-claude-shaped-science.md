@@ -18,6 +18,8 @@
   ],
   "thumb_text": "BootLoops",
   "share_text": "ハーバード大の物理学者がClaude Codeを並行で動かし、3カ月で18分野・36本の論文原稿。道具一式はBootLoopsとしてOSSで公開",
+  "thumb_style": "photo",
+  "thumb_prompt": "A physics professor's chalkboard covered in abstract equations drawn as symbols and diagrams, with a laptop on the desk in front of it surrounded by a tall stack of freshly printed research papers, warm late-night light.",
   "editor_note": ""
 }
 ---

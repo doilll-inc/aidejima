@@ -20,6 +20,8 @@
   ],
   "thumb_text": "Oído",
   "share_text": "5ドルのマイコンESP32-S3で動く音声認識Oído。誤り率3.7%でWhisper tinyを下回るとうたうOSS",
+  "thumb_style": "photo",
+  "thumb_prompt": "A tiny microcontroller board smaller than a coin sitting in the palm of a hand, with a glowing ear-shaped sound wave hovering above it.",
   "editor_note": ""
 }
 ---

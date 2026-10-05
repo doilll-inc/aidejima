@@ -18,6 +18,8 @@
   ],
   "thumb_text": "ThinkingBox",
   "share_text": "AIエージェントに同じ業務を20回。Microsoftの新試験で、首位のClaude Opus 5.5でも全回成功は47%",
+  "thumb_style": "illustration",
+  "thumb_prompt": "A small robot office worker stacking the same box onto a shelf twenty times in a row, with a long row of green checkmarks and a few red crosses floating above it as a scorecard of shapes.",
   "editor_note": ""
 }
 ---

@@ -18,6 +18,8 @@
   ],
   "thumb_text": "Shopify Canvas",
   "share_text": "ShopifyがCanvasを公開。全ページを1枚に並べ、AIのSidekickと会話しながら実際のテーマのコードを書き換える",
+  "thumb_style": "illustration",
+  "thumb_prompt": "An online shop's pages laid out like paper cards on one large canvas table, with a friendly little robot assistant holding a paintbrush and rearranging them.",
   "editor_note": ""
 }
 ---

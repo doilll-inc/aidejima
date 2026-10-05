@@ -134,6 +134,8 @@
   ],
   "editor_note": "",
   "thumb_text": "Super Intelligence",
+  "thumb_style": "photo",
+  "thumb_prompt": "A large ornate government desk with a freshly signed document, a fountain pen and a glowing brain-shaped paperweight, flags blurred in the background, no faces.",
   "thumb_kicker": "米国政府"
 }
 ---

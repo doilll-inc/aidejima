@@ -25,6 +25,8 @@
   "thumb_text": "テキストで注文",
   "thumb_kicker": "DoorDash",
   "share_text": "DoorDashがテキストで注文できるAIエージェントを開始。店探しから決済まで、アプリを開かずに完結",
+  "thumb_style": "photo",
+  "thumb_prompt": "A smartphone on a couch showing a simple chat conversation made of colored bubbles, with a delivery bag of hot food arriving at the door in the blurred background.",
   "editor_note": ""
 }
 ---

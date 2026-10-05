@@ -23,6 +23,8 @@
     {"title": "The machine layer under NVIDIA OpenShell", "publisher": "Endstop blog", "url": "https://endstop.systems/blog/nvidia-openshell-machine-layer"},
     {"title": "The machine layer under NVIDIA OpenShell（9月29日時点の版）", "publisher": "Endstop blog（Internet Archive）", "url": "http://web.archive.org/web/20260929015253/https://endstop.systems/blog/nvidia-openshell-machine-layer", "kind": "公式サイト"}
   ],
+  "thumb_style": "3d",
+  "thumb_prompt": "A small robot working inside a transparent glass box while a separate guardian chip with a watchful eye sits on top of the box, ready to close it.",
   "editor_note": ""
 }
 ---

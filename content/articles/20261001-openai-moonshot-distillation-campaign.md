@@ -47,6 +47,8 @@
   ],
   "thumb_text": "モデル蒸留攻撃",
   "share_text": "OpenAIがモデル蒸留を狙う組織的攻撃を阻止。中核はKimi開発元Moonshot AIの関係者と判断",
+  "thumb_style": "illustration",
+  "thumb_prompt": "A glowing glass jar of liquid knowledge with thousands of tiny straws sneaking in from outside to sip it, while a large security guard hand pinches the straws off.",
   "editor_note": ""
 }
 ---

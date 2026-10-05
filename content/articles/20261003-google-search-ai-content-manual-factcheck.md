@@ -20,6 +20,8 @@
   ],
   "thumb_text": "AI生成コンテンツ指針",
   "share_text": "Google検索がAI生成コンテンツの指針を改訂。titleや構造化データも含め、公開前に人が事実確認を",
+  "thumb_style": "illustration",
+  "thumb_prompt": "A human hand holding a big magnifying glass over a stack of documents coming out of a robot's printer, checking each page before it goes into a search bar shaped tray.",
   "editor_note": ""
 }
 ---

@@ -22,6 +22,8 @@
   ],
   "thumb_text": "Muse Gadgets",
   "share_text": "MetaがAIエージェントMuseを自作端末につなぐSDKをOSSで公開。ESP32の15ボードとRaspberry Piに対応",
+  "thumb_style": "photo",
+  "thumb_prompt": "A maker's workbench with a bare green circuit board, a few jumper wires and a small round speaker that glows softly as if it is talking, close-up with a soldering iron blurred in the background.",
   "editor_note": ""
 }
 ---

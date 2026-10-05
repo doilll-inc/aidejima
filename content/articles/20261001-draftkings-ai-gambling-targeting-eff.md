@@ -82,6 +82,8 @@
   ],
   "thumb_text": "DraftKings",
   "share_text": "DraftKingsのAI販促は負けやすい客を狙うとEFF。自社データだけでも害は防げないと行動ターゲティング広告の禁止を主張",
+  "thumb_style": "photo",
+  "thumb_prompt": "A casino slot machine glowing in the dark, with a spotlight from above targeting one lonely stool in front of it, a pile of chips and a smartphone on the counter.",
   "editor_note": ""
 }
 ---

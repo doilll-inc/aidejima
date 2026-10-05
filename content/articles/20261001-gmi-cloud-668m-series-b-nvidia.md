@@ -56,6 +56,8 @@
   "thumb_text": "GMI Cloud",
   "share_text": "GPUクラウドのGMI Cloudが6億6800万ドルを確保。NVIDIAが出資し、米国・台湾・アジアでGPUを増強",
   "editor_note": "",
+  "thumb_style": "photo",
+  "thumb_prompt": "A long corridor of illuminated GPU server racks stretching into the distance, with stacks of gold coins placed on the floor in front of the first rack.",
   "updated": "2026-10-01T18:59:00+09:00"
 }
 ---

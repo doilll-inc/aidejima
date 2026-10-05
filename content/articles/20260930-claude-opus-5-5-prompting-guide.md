@@ -21,6 +21,8 @@
     {"title": "Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war", "publisher": "Simon Willison's Weblog", "url": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/"},
     {"title": "Prompting Claude Opus 5.5", "publisher": "Hacker News", "url": "https://news.ycombinator.com/item?id=49874728"}
   ],
+  "thumb_style": "illustration",
+  "thumb_prompt": "An open guidebook on a desk with a pencil, a dial knob for adjusting effort and a robot reading the book carefully.",
   "editor_note": ""
 }
 ---

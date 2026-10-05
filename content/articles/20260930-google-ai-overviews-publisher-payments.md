@@ -87,6 +87,8 @@
   ],
   "editor_note": "",
   "thumb_text": "AI Overviews",
+  "thumb_style": "photo",
+  "thumb_prompt": "A long line of newspaper stands on a city street, with only a few at the front receiving a coin, and the rest standing empty in the blurred distance.",
   "thumb_kicker": "Google"
 }
 ---

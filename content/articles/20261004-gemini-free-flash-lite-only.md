@@ -19,6 +19,8 @@
   ],
   "thumb_text": "Gemini",
   "share_text": "Geminiの無料版は10月9日からFlash-Liteだけに。AI PlusもProモデルを使えなくなる",
+  "thumb_style": "3d",
+  "thumb_prompt": "Three glossy toy rockets of different sizes on a launch pad, the biggest two behind a velvet rope with a golden ticket gate, while only the smallest one stays open for everyone.",
   "editor_note": ""
 }
 ---

@@ -77,6 +77,8 @@
   ],
   "thumb_text": "AIたまごっち",
   "share_text": "MetaのMuse Charmなど「AIたまごっち」型端末が年末に登場へ。カリフォルニア州は対話AI入り玩具を2031年まで禁止",
+  "thumb_style": "3d",
+  "thumb_prompt": "A small egg-shaped handheld gadget with a cute character on its screen, clipped to a backpack, glowing softly, colorful toy product shot.",
   "editor_note": ""
 }
 ---

@@ -20,6 +20,8 @@
   ],
   "thumb_text": "Lathoa",
   "share_text": "AIがわざと間違えた解き方から誤りを探す子ども向け算数アプリLathoa。出題前に検算と別モデルで確認",
+  "thumb_style": "photo",
+  "thumb_prompt": "A child's hand, holding a red pencil, circling a mistake on a tablet screen showing a math problem made of blocks and shapes, a cheerful kitchen table setting.",
   "editor_note": ""
 }
 ---

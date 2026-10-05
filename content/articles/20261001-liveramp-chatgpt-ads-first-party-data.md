@@ -24,6 +24,8 @@
   "thumb_text": "ChatGPT広告",
   "thumb_kicker": "LiveRamp",
   "share_text": "LiveRampがChatGPT広告に顧客データ連携を追加。CRMや会員データで配信先の指定・除外が可能に",
+  "thumb_style": "illustration",
+  "thumb_prompt": "A chat window speech bubble acting as a billboard, with a stream of customer silhouettes being sorted by a filter funnel so only some reach the billboard.",
   "editor_note": ""
 }
 ---

@@ -39,6 +39,8 @@
   ],
   "thumb_text": "Diffusion Controller",
   "share_text": "Google ResearchのDiffusion Controller。画像生成の調整手法を一つの理論にまとめ、小さな追加部品でLoRAを上回った",
+  "thumb_style": "illustration",
+  "thumb_prompt": "A large painting machine with a small new control knob attached to its side, a hand turning the knob as the painting on the canvas changes style.",
   "editor_note": ""
 }
 ---

@@ -18,6 +18,8 @@
   ],
   "thumb_text": "ldraw-nova",
   "share_text": "言葉で頼むとAIがLEGOの設計図を作るOSS「ldraw-nova」。部品を置かせず生成コードを書かせるのがコツ",
+  "thumb_style": "photo",
+  "thumb_prompt": "Colorful plastic toy bricks assembling themselves into a detailed castle on a desk, mid-air pieces floating into place, next to a glowing blueprint sheet of abstract lines.",
   "editor_note": ""
 }
 ---

@@ -21,6 +21,8 @@
   ],
   "thumb_text": "ASTRABOX",
   "share_text": "文章や声で頼むとCodexがアーケードゲームを作り、遊びながら声で直せるOSS「ASTRABOX」",
+  "thumb_style": "diorama",
+  "thumb_prompt": "A miniature retro arcade cabinet on a desk with a tiny figure speaking into a microphone while the game on the screen rebuilds itself with pixel blocks.",
   "editor_note": ""
 }
 ---

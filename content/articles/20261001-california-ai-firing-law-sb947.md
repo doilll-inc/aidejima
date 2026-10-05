@@ -63,6 +63,8 @@
   "thumb_text": "AI解雇の禁止",
   "thumb_kicker": "カリフォルニア州",
   "share_text": "カリフォルニア州が懲戒・解雇をAIだけに頼ることを禁止。人の裏付けと本人への書面通知を義務に、2027年7月施行",
+  "thumb_style": "photo",
+  "thumb_prompt": "A pink dismissal slip on an office desk being held down by a human hand to stop a robotic arm from stamping it, sunny California office window behind.",
   "editor_note": ""
 }
 ---

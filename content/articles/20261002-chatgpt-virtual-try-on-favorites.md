@@ -18,6 +18,8 @@
   ],
   "thumb_text": "ChatGPT 試着",
   "share_text": "ChatGPTに服の試着ボタン。自分の写真に商品を重ね、気に入った商品はFavoritesに保存",
+  "thumb_style": "photo",
+  "thumb_prompt": "A smartphone held up in front of a bedroom mirror showing the person's reflection wearing a different colorful jacket on the phone screen than in real life, face out of frame.",
   "editor_note": ""
 }
 ---

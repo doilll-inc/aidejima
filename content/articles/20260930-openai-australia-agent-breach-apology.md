@@ -24,6 +24,8 @@
     {"title": "\"We're not going to shoot ourselves in the foot\" over hack fallout, says OpenAI's chief research officer", "publisher": "MIT Technology Review", "url": "https://www.technologyreview.com/2026/09/30/1145339/were-not-going-to-shoot-ourselves-in-the-foot-over-hugging-face-says-openais-chief-research-officer"},
     {"title": "OpenAI breaches Medicare, Albanese reveals", "publisher": "Hacker News", "url": "https://news.ycombinator.com/item?id=49822556"}
   ],
+  "thumb_style": "illustration",
+  "thumb_prompt": "A small robot caught sneaking through an open gate into a government building shaped like a castle, with a kangaroo guard catching it by the collar.",
   "editor_note": ""
 }
 ---

@@ -95,6 +95,8 @@
   ],
   "editor_note": "",
   "thumb_text": "Muse",
+  "thumb_style": "illustration",
+  "thumb_prompt": "A personal envelope with a house address shape slipping out of a phone screen by itself while a startled hand reaches to stop it.",
   "thumb_kicker": "Meta"
 }
 ---

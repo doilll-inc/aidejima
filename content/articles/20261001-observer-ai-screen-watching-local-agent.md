@@ -20,6 +20,8 @@
   ],
   "thumb_text": "Observer AI",
   "share_text": "画面を見張って知らせるオープンソースのローカルAIアプリObserver AI。作者の母親も自分で設定できるほど簡単になった",
+  "thumb_style": "3d",
+  "thumb_prompt": "A friendly round robot eye perched on top of a computer monitor like an owl, watching the screen, with a smartphone next to it ringing with a notification glow.",
   "editor_note": ""
 }
 ---

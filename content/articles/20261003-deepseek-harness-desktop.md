@@ -20,6 +20,8 @@
   ],
   "thumb_text": "DeepSeek Harness",
   "share_text": "DeepSeekのOSSエージェント「DeepSeek Harness」にMac・Windowsのデスクトップ版。機能は全部プラグイン",
+  "thumb_style": "3d",
+  "thumb_prompt": "A sleek desktop computer monitor with a friendly robotic arm emerging from the screen, plugging colorful puzzle-piece shaped modules into a toolbox on the desk.",
   "editor_note": ""
 }
 ---

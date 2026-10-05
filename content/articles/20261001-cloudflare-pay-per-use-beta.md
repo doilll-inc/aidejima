@@ -50,6 +50,8 @@
   ],
   "thumb_text": "Pay Per Use",
   "share_text": "CloudflareがPay Per Useを開始。AIが記事を回答に使った分だけ、サイト運営者に毎月支払う",
+  "thumb_style": "illustration",
+  "thumb_prompt": "A small robot reading a newspaper at a café table and dropping a coin into a tip jar shaped like a website window each time it turns a page.",
   "editor_note": ""
 }
 ---

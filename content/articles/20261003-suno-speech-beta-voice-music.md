@@ -20,6 +20,8 @@
   ],
   "thumb_text": "Suno Speech",
   "share_text": "Sunoが朗読とBGMを1本で作る「Speech」をベータ公開。声と曲調を言葉で指定するだけ",
+  "thumb_style": "3d",
+  "thumb_prompt": "A vintage studio microphone with a glowing sound wave coming out of it that turns into flowing musical notes and piano keys as it travels across a soft gradient backdrop.",
   "editor_note": ""
 }
 ---

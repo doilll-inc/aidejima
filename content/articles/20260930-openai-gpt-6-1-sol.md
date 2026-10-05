@@ -24,6 +24,8 @@
     {"title": "OpenAI DevDay recap: AI lab rolls out Dots agents, Altman and Friar comment on IPO", "publisher": "CNBC", "url": "https://www.cnbc.com/2026/09/29/openai-devday-2026-live-updates.html", "kind": "報道"},
     {"title": "GPT 6.1 Sol: Near-Astra intelligence for a fifth of the price", "publisher": "Hacker News", "url": "https://news.ycombinator.com/item?id=49896586"}
   ],
+  "thumb_style": "3d",
+  "thumb_prompt": "A glowing sun-like sphere next to a much larger planet-like sphere, both floating above a price scale where the small sun weighs much less.",
   "editor_note": ""
 }
 ---

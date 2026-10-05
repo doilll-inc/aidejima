@@ -57,6 +57,8 @@
   ],
   "thumb_text": "年6兆ドル",
   "share_text": "Bainが試算、AIインフラ投資を賄うには2031年に年6兆ドルの売上が必要。生産性向上だけでは4.2兆ドル足りない",
+  "thumb_style": "illustration",
+  "thumb_prompt": "A gigantic stack of coins towering into the clouds next to a short wooden ladder that ends far below the top, a businessperson at the bottom looking up at the gap.",
   "editor_note": ""
 }
 ---

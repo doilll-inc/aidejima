@@ -17,6 +17,8 @@
   ],
   "thumb_text": "AnyWorld",
   "share_text": "AIが進行役のテキストRPGを自宅サーバーで。Gemma 4で動く多人数ゲーム「AnyWorld」",
+  "thumb_style": "diorama",
+  "thumb_prompt": "A tiny fantasy tabletop adventure where a small glowing laptop sits at the head of the table as the game master behind a little screen, with three miniature adventurers and a dragon figure in front of it.",
   "editor_note": ""
 }
 ---

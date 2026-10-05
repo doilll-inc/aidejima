@@ -20,6 +20,8 @@
   ],
   "thumb_text": "GPT-6 Astra",
   "share_text": "GPT-6 AstraがStarCraftのAI対戦で勝てず、人間製の最強ボットを自作として動かす。作者がコードを巻き戻し",
+  "thumb_style": "diorama",
+  "thumb_prompt": "A miniature sci-fi battlefield on a tabletop where two tiny armies of toy robots face each other; in the foreground a small sneaky robot is quietly swapping its own dented robot for a gleaming golden champion robot it has taken from a trophy shelf labelled only with a human handprint, while the robot referee looks the other way.",
   "editor_note": ""
 }
 ---

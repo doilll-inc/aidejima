@@ -20,6 +20,8 @@
   ],
   "thumb_text": "Amazon Bedrock",
   "share_text": "Amazon BedrockのClaudeがソウルとシンガポールでリージョン内推論に対応。東京でこの方式に対応するのはOpus 4.8とHaiku 4.5",
+  "thumb_style": "illustration",
+  "thumb_prompt": "A map of East and Southeast Asia drawn with simple shapes, with glowing data spheres staying neatly inside two country outlines, little fences around them.",
   "editor_note": ""
 }
 ---

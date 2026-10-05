@@ -26,6 +26,8 @@
   ],
   "thumb_text": "Gemini 4 Argon",
   "share_text": "Googleが新フロンティアモデルGemini 4 Argonを公開。出力100万トークン、導入価格は入力$2・出力$10",
+  "thumb_style": "photo",
+  "thumb_prompt": "A heavily guarded high-tech lab door with a glowing blue light seeping through the gap, and a single cybersecurity badge on a lanyard hanging on the access reader.",
   "editor_note": ""
 }
 ---

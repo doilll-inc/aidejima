@@ -20,6 +20,8 @@
   ],
   "thumb_text": "Airbnb AI検索",
   "share_text": "Airbnbが自分の言葉や音声で宿を探せるAI検索を米国で開始。知人の旅行先が見える地図や宅配サービスも",
+  "thumb_style": "photo",
+  "thumb_prompt": "A traveler, seen from behind, sitting on a suitcase speaking into a smartphone, with floating cards of cozy houses and mountain cabins appearing around them.",
   "editor_note": ""
 }
 ---

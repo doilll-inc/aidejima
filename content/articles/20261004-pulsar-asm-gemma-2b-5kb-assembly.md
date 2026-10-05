@@ -17,6 +17,8 @@
   ],
   "thumb_text": "PULSAR-ASM",
   "share_text": "5,268バイトの機械語だけでGemma-2Bを動かすPULSAR-ASM。開発者2人がAIと組んでアセンブリで書いた",
+  "thumb_style": "3d",
+  "thumb_prompt": "A tiny matchbox sitting on a table, opened to reveal a whole glowing miniature thinking robot folded neatly inside it, surprisingly small for what it contains.",
   "editor_note": ""
 }
 ---

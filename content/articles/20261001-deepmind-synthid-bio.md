@@ -20,6 +20,8 @@
   ],
   "thumb_text": "SynthID Bio",
   "share_text": "Google DeepMindがAI設計タンパク質への電子透かし「SynthID Bio」を発表。Natureに掲載、コードも公開",
+  "thumb_style": "3d",
+  "thumb_prompt": "A colorful folded protein molecule floating in space with a tiny glowing fingerprint pattern embedded in its ribbons, scientific but playful.",
   "editor_note": ""
 }
 ---

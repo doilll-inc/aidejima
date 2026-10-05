@@ -52,6 +52,8 @@
   ],
   "thumb_text": "AIチャットの追跡",
   "share_text": "AIチャット9種の通信を調べた研究。会話のURLや自動で付く題名が広告・計測企業に送られていた",
+  "thumb_style": "illustration",
+  "thumb_prompt": "A chat speech bubble with tiny spies wearing trench coats hiding behind it and copying its contents onto little notepads.",
   "editor_note": ""
 }
 ---

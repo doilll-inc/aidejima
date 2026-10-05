@@ -21,6 +21,8 @@
   ],
   "thumb_text": "Magnitude",
   "share_text": "YC出身のMagnitudeが、端末に合わせて自分を調整するエージェント向け推論エンジンを公開。Macでllama.cppより92%速いと主張",
+  "thumb_style": "photo",
+  "thumb_prompt": "A laptop with a race car speedometer glowing on its screen and a small wrench turning by itself next to the keyboard, motion blur streaks on the desk.",
   "editor_note": ""
 }
 ---

@@ -47,6 +47,8 @@
   "thumb_text": "Micron",
   "thumb_kicker": "AI向けメモリ",
   "share_text": "Micronの四半期売上が前年の4.8倍の542億ドルに。AI向けHBMの不足で値上げが続き、粗利率は86.8%",
+  "thumb_style": "photo",
+  "thumb_prompt": "Rows of shiny memory chips stacked like gold bars in a vault, one small stack with a rising price tag shape, dramatic warm lighting.",
   "editor_note": ""
 }
 ---

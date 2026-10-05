@@ -21,6 +21,8 @@
   ],
   "thumb_text": "MAI-Transcribe-2",
   "share_text": "MicrosoftがMAI-Transcribe-2-Streamingと音声合成MAI-Voice-2.1を公開。文字起こしは1時間$0.54",
+  "thumb_style": "3d",
+  "thumb_prompt": "A pair of headphones and a microphone facing each other, with a ribbon of sound waves flowing from the mic and instantly turning into a ribbon of abstract text-like dashes.",
   "editor_note": ""
 }
 ---

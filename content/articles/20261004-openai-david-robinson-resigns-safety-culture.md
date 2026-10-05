@@ -21,6 +21,8 @@
   ],
   "thumb_text": "OpenAI 安全性",
   "share_text": "OpenAIで12のモデルの安全性報告を担った研究者が退社。「試行錯誤の時代は終わった」とThe Atlanticに寄稿",
+  "thumb_style": "photo",
+  "thumb_prompt": "An empty office desk at dusk with a cardboard box of personal belongings and a hard hat and safety checklist clipboard placed on top, seen from behind the chair, the city lights outside the window.",
   "editor_note": ""
 }
 ---

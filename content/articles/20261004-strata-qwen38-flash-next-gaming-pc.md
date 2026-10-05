@@ -21,6 +21,8 @@
   ],
   "thumb_text": "Strata",
   "share_text": "125BのQwen3.8-Flash-NextがVRAM 12GBのゲーミングPCで毎秒94トークン。OSSの推論エンジンStrata",
+  "thumb_style": "photo",
+  "thumb_prompt": "A glowing gaming PC tower with a glass side panel on a teenager's desk, and inside it, instead of parts, a giant glowing brain-like cloud of light squeezed impossibly into the small case.",
   "editor_note": ""
 }
 ---

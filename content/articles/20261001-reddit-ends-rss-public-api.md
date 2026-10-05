@@ -22,6 +22,8 @@
   "thumb_text": "RSSと公開API",
   "thumb_kicker": "Reddit",
   "share_text": "RedditがRSSを11月13日で終了、公開APIも2027年3月に全面終了。口コミ収集やソーシャルリスニングは見直しが必要に",
+  "thumb_style": "photo",
+  "thumb_prompt": "An orange water pipe on a brick wall with its tap firmly closed and padlocked, a few last drops falling into an empty bucket below.",
   "editor_note": ""
 }
 ---
