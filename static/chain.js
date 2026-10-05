@@ -131,20 +131,26 @@
           n.remove();
         });
         art.classList.add("chained");
+        // フッターまで飛んで記事の終わりを通り越しているか（足したあと、足した記事の頭を見せる）
+        var passed = status.getBoundingClientRect().top < 0;
         var sep = document.createElement("div");
         sep.className = "chain-sep";
         sep.innerHTML = "<span>次の記事</span>";
         chain.appendChild(sep);
         chain.appendChild(art);
+        if (passed)
+          window.scrollTo({
+            top: sep.getBoundingClientRect().top + window.scrollY - 80,
+            behavior: "instant",
+          });
         seen[art.dataset.url] = true;
         loaded += 1;
         reading.observe(art);
         loadX(art);
         status.textContent = "";
         loading = false;
-        // 読み込んだ記事が短く、まだ画面の下が空いているときに続けて読めるよう監視をかけ直す
-        more.unobserve(status);
-        more.observe(status);
+        // 読み込んだ記事が短く、まだ画面の下が空いているときは続けて読む
+        check();
       })
       .catch(function () {
         loading = false;
@@ -152,12 +158,22 @@
       });
   }
 
-  // 記事の終わりが画面の下から1画面ぶん手前に来たら、次を読み込み始める
-  var more = new IntersectionObserver(
-    function (entries) {
-      if (entries[0].isIntersecting) loadNext();
+  // 記事の終わりが画面の下から1200pxの手前まで来たら、次を読み込み始める。
+  // 一気に下まで飛んで記事の終わりを通り越した（フッターまで来た）ときも読み込む。
+  // IntersectionObserver だと通り越したときに反応しないので、スクロールのたびに位置で判定する
+  var ticking = false;
+  function check() {
+    ticking = false;
+    if (status.getBoundingClientRect().top < window.innerHeight + 1200) loadNext();
+  }
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(check);
     },
-    { rootMargin: "0px 0px 1200px 0px" },
+    { passive: true },
   );
-  more.observe(status);
+  check();
 })();
