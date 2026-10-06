@@ -48,12 +48,14 @@ Nolla Dermは、スマートフォンで顔を撮影してニキビの状態を�
 
 州が認めた範囲は、軽度から中等度のニキビに使う塗り薬に限られます。重いニキビや妊娠中の人などは、AIの処方ではなく医師の診察に回されます。
 
+試験運用を監督する医師のザイド・ファドゥル氏は、同社の発表の中で次のように述べています。
+
 :::quote https://www.nollahealth.com/blog/ai-prescriptions-utah | Nolla Health公式ブログ「Nolla Health Launches the Nation's First AI-Powered Prescriptions, Starting in Utah」
-> The AI isn’t making freeform decisions. It’s selecting from pre-approved protocols reviewed by physicians, and clinicians are built into every stage.
-AIは自由に判断しているわけではありません。医師が確認した、あらかじめ承認済みの治療手順の中から選んでいて、すべての段階に臨床医が組み込まれています。
+> The AI isn't making freeform decisions.
+AIが自由に判断しているわけではありません。
 :::
 
-監督に当たる医師のザイド・ファドゥル氏はこう説明しています。同社によると、処方の流れには自由に文章を入力する欄がなく、決められた選択肢の外には出られない作りです。医師の関わり方は3段階で、少しずつAIに任せる範囲を広げます。
+同社によると、AIは医師が事前に承認した塗り薬の治療計画の中から選ぶだけで、処方の流れには自由に文章を入力する欄がなく、決められた選択肢の外には出られない作りです。医師の関わり方は3段階で、少しずつAIに任せる範囲を広げます。
 
 | 段階 | 対象 | 医師の確認 |
 |---|---|---|
