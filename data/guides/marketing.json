@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 2,
   "created": "2026-09-30",
-  "updated": "2026-10-02",
+  "updated": "2026-10-06",
   "last_reviewed": "2026-10-01",
   "title": "広告・マーケティング向けAIのおすすめ：広告クリエイティブ・SNS・LP制作",
   "short_name": "広告・マーケ",
@@ -1219,6 +1219,24 @@
         "source_url": "https://changelog.shopify.com/posts/design-a-fully-bespoke-store-with-canvas",
         "checked": "2026-10-02"
       }
+    },
+    {
+      "id": "tiktok-agentic-leads",
+      "name": "TikTok Agentic Leads（Lead Agent）",
+      "vendor": "TikTok",
+      "url": "https://newsroom.tiktok.com/tiktok-unveils-ai-powered-updates-for-advertisers-driving-discovery-action-and-measurable-business-outcomes?lang=en",
+      "status": "watch",
+      "tags": [
+        "TikTok",
+        "Agentic Leads",
+        "Lead Agent"
+      ],
+      "latest": {
+        "name": "Agentic Leads",
+        "released": "2026-10-05",
+        "source_url": "https://newsroom.tiktok.com/tiktok-unveils-ai-powered-updates-for-advertisers-driving-discovery-action-and-measurable-business-outcomes?lang=en",
+        "checked": "2026-10-06"
+      }
     }
   ],
   "criteria": [
@@ -1310,6 +1328,12 @@
       "date": "2026-10-02",
       "text": "ShopifyのAIストアデザイン画面「Canvas」を調査中の候補に追加",
       "article": "/news/20261002-shopify-canvas-sidekick-store-design/",
+      "by": "writer"
+    },
+    {
+      "date": "2026-10-06",
+      "text": "TikTokの見込み客対応AI「Agentic Leads」を調査中の候補に追加",
+      "article": "/news/20261006-tiktok-buy-direct-shopping-assistant/",
       "by": "writer"
     }
   ],
