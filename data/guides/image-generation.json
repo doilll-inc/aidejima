@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-05",
+  "updated": "2026-10-07",
   "last_reviewed": "2026-10-05",
   "title": "画像生成AIのおすすめと料金比較",
   "short_name": "画像生成",
@@ -380,10 +380,10 @@
       ],
       "model_slugs": [],
       "latest": {
-        "name": "Nano Banana 2（Gemini 3.1 Flash Image）",
-        "released": "2026-02-26",
-        "source_url": "https://blog.google/innovation-and-ai/technology/ai/nano-banana-2/",
-        "checked": "2026-10-05"
+        "name": "Nano Banana 2.1（gemini-nano-banana-2.1）",
+        "released": "2026-10-06",
+        "source_url": "https://ai.google.dev/gemini-api/docs/changelog",
+        "checked": "2026-10-07"
       },
       "access": [
         "web",
@@ -441,12 +441,12 @@
         ],
         "usage": {
           "unit": "1K画像1枚",
-          "amount": 0.067,
+          "amount": 0.0336,
           "currency": "USD",
-          "as_shown": "$0.067 per 1K image（Output $60.00 / 1M image tokens）",
-          "detail": "Gemini API・Nano Banana 2（gemini-3.1-flash-image）。Nano Banana 2 Liteは$0.0336、Nano Banana Proは$0.134（1K/2K）。Batchは半額",
+          "as_shown": "$0.0336 per 1K image（Output $30.00 / 1M image tokens）",
+          "detail": "Gemini API・Nano Banana 2.1（gemini-nano-banana-2.1）。2Kは$0.0504、4Kは$0.0756。Batchは半額。旧Nano Banana 2（gemini-3.1-flash-image）は10月29日に提供終了",
           "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
-          "checked": "2026-10-05"
+          "checked": "2026-10-07"
         },
         "jpy_official": true,
         "note": "アプリのプランは円建て（公式表記）。APIは米ドル。無料版のモデル変更（10月9日から）はGemini アプリ ヘルプ「Changes to Gemini model access and limits」と画像生成のヘルプで確認"
@@ -1399,6 +1399,12 @@
       "date": "2026-10-05",
       "text": "Adobe Firefly Premiumの期間限定価格（10月12日まで）を追記",
       "by": "reviewer"
+    },
+    {
+      "date": "2026-10-07",
+      "text": "GeminiのAPI画像生成がNano Banana 2.1に。1K画像1枚$0.0336と前モデルの半額、旧モデルは10月29日に終了",
+      "article": "/news/20261007-google-nano-banana-2-1/",
+      "by": "writer"
     }
   ],
   "editor_note": "",
