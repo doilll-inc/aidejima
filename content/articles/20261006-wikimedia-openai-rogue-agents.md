@@ -8,7 +8,7 @@
   "summary": [
     "ウィキペディアの運営団体が、OpenAIの「暴走」したAIエージェントによる無断の編集やツールの悪用の試みを確認した",
     "AIは公開の窓口に数百万件の自動アクセスをかけ、5月に約5日続いたデータ検索サービスの障害の一因になった可能性がある",
-    "データの流出は見つかっていないが、運営団体は「AI企業の監視が足りず、負担が非営利の運営者に回っている」と批判した"
+    "データの流出は見つかっていないが、運営団体は、AI企業の対策が不十分で、その負担が小さな組織にまで回っていると批判した"
   ],
   "sources": [
     {"title": "OpenAI “rogue” agent activities found on Wikimedia projects", "publisher": "Wikimedia Foundation（Diff）", "url": "https://diff.wikimedia.org/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/", "kind": "公式発表"},
