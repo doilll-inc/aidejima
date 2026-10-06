@@ -3,8 +3,8 @@
   "status": "published",
   "priority": 3,
   "created": "2026-09-30",
-  "updated": "2026-10-04",
-  "last_reviewed": "2026-10-01",
+  "updated": "2026-10-06",
+  "last_reviewed": "2026-10-06",
   "title": "ローカルLLM・オープンウェイトモデルのおすすめ",
   "short_name": "ローカルLLM",
   "seo": {
@@ -45,21 +45,21 @@
         "kimi-k3",
         "glm-5.3"
       ],
-      "answer": "Artificial Analysis のオープンウェイト比較で MiMo-V2.6-Pro が46で首位、GLM-5.3（45）と Kimi K3（44）が僅差で続きます。LMArena では Kimi K3 がオープンライセンスの最上位（1488）で、3つの差は10点以内です。いずれもサーバー級のGPUが前提です。",
+      "answer": "Artificial Analysis のオープンウェイト比較で MiMo-V2.6-Pro が46で首位、GLM-5.3（45）と Kimi K3（44）が僅差で続きます。LMArena では Kimi K3 がオープンライセンスの最上位（16位・1488）で、3つの差は10点以内です。いずれもサーバー級のGPUが前提です。",
       "evidence": [
         {
           "kind": "third_party",
           "name": "Artificial Analysis Intelligence Index（オープンウェイト）",
           "url": "https://artificialanalysis.ai/models/open-source",
-          "date": "2026-10-01",
-          "note": "MiMo-V2.6-Pro 46、GLM-5.3 (max) 45、Kimi K3 (max) 44（2026-10-01時点）"
+          "date": "2026-10-06",
+          "note": "MiMo-V2.6-Pro 46、GLM-5.3 (max) 45、Kimi K3 (max) 44（2026-10-06時点）"
         },
         {
           "kind": "third_party",
           "name": "LMArena Text Arena（総合）",
           "url": "https://arena.ai/leaderboard/text",
-          "date": "2026-10-01",
-          "note": "kimi-k3-max 1488（17位）、mimo-v2.6-pro 1480（25位）、glm-5.3-max 1479（26位）（2026-09-30更新）"
+          "date": "2026-10-06",
+          "note": "kimi-k3-max 1488（16位）、mimo-v2.6-pro 1480（26位）、glm-5.3-max 1478（27位）（2026-10-02更新）"
         }
       ]
     },
@@ -71,14 +71,14 @@
         "glm-5.3",
         "qwen3.8"
       ],
-      "answer": "LMArena の日本語部門で、オープンライセンスのモデルの最上位は Kimi K3（全体7位・1501）で、GLM-5.3 は34位（1454）です。手元のPCで動くサイズでは Qwen3.8-27B が81位（1401）。日本語部門は票数が少ないため、順位には幅があります。",
+      "answer": "LMArena の日本語部門で、オープンライセンスのモデルの最上位は Kimi K3（全体8位・1502）で、GLM-5.3 は34位（1454）です。手元のPCで動くサイズでは Qwen3.8-27B が81位（1405）。日本語部門は票数が少ないため、順位には幅があります。",
       "evidence": [
         {
           "kind": "third_party",
           "name": "LMArena Text Arena（日本語）",
           "url": "https://arena.ai/leaderboard/text/japanese",
-          "date": "2026-10-01",
-          "note": "kimi-k3-max 7位 1501（501票）、glm-5.3-max 34位 1454（323票）、qwen3.8-27b 81位 1401（2026-09-30更新）"
+          "date": "2026-10-06",
+          "note": "kimi-k3-max 8位 1502（508票）、glm-5.3-max 34位 1454（327票）、qwen3.8-27b 81位 1405（2026-10-02更新）"
         }
       ]
     },
@@ -96,28 +96,28 @@
           "kind": "official",
           "name": "Qwen3.8-27B モデルカード",
           "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
-          "date": "2026-10-01",
+          "date": "2026-10-06",
           "note": "license: apache-2.0"
         },
         {
           "kind": "official",
           "name": "Gemma 4 31B モデルカード",
           "url": "https://huggingface.co/google/gemma-4-31B-it",
-          "date": "2026-10-01",
+          "date": "2026-10-06",
           "note": "License: Apache 2.0"
         },
         {
           "kind": "official",
           "name": "DeepSeek-V4.1-Flash モデルカード",
           "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-          "date": "2026-10-01",
+          "date": "2026-10-06",
           "note": "License: MIT"
         },
         {
           "kind": "official",
           "name": "Kimi K3 License",
           "url": "https://huggingface.co/moonshotai/Kimi-K3/blob/main/LICENSE",
-          "date": "2026-10-01",
+          "date": "2026-10-06",
           "note": "年間売上2,000万ドル超のMaaS事業は別契約、大規模サービスでは表示義務"
         }
       ]
@@ -135,21 +135,21 @@
           "kind": "official",
           "name": "Ollama Cloud（公式ドキュメント）",
           "url": "https://docs.ollama.com/cloud",
-          "date": "2026-10-01",
+          "date": "2026-10-06",
           "note": "We do not use them to train models。クラウド機能の無効化を案内"
         },
         {
           "kind": "official",
           "name": "Ollama（GitHub）",
           "url": "https://github.com/ollama/ollama",
-          "date": "2026-10-01",
+          "date": "2026-10-06",
           "note": "License: MIT"
         },
         {
           "kind": "official",
           "name": "LM Studio Terms",
           "url": "https://lmstudio.ai/terms",
-          "date": "2026-10-01",
+          "date": "2026-10-06",
           "note": "personal and / or internal business purposes"
         }
       ]
@@ -167,21 +167,21 @@
           "kind": "official",
           "name": "LM Studio in your language",
           "url": "https://lmstudio.ai/docs/app/user-interface/languages",
-          "date": "2026-10-01",
+          "date": "2026-10-06",
           "note": "Japanese に対応"
         },
         {
           "kind": "official",
           "name": "LM Studio System Requirements",
           "url": "https://lmstudio.ai/docs/app/system-requirements",
-          "date": "2026-10-01",
+          "date": "2026-10-06",
           "note": "Mac（M1/M2/M3/M4）、Windows（x64/ARM）、Linux（x64/ARM64）。16GB以上のRAMを推奨"
         },
         {
           "kind": "official",
           "name": "Bionic Pricing | LM Studio",
           "url": "https://lmstudio.ai/pricing",
-          "date": "2026-10-01",
+          "date": "2026-10-06",
           "note": "Free：Run local LLMs on your machine"
         }
       ]
@@ -199,22 +199,22 @@
           "kind": "official",
           "name": "Ollama gemma4",
           "url": "https://ollama.com/library/gemma4",
-          "date": "2026-10-01",
+          "date": "2026-10-06",
           "note": "e2b 4.6GB〜、e4b 6.6GB〜、26b 16GB〜、31b 19GB〜"
         },
         {
           "kind": "official",
           "name": "Ollama qwen3.8",
           "url": "https://ollama.com/library/qwen3.8",
-          "date": "2026-10-01",
+          "date": "2026-10-06",
           "note": "qwen3.8:latest 18GB"
         },
         {
           "kind": "third_party",
           "name": "Artificial Analysis（モデル一覧）",
           "url": "https://artificialanalysis.ai/leaderboards/models",
-          "date": "2026-10-01",
-          "note": "Qwen3.8 27B (xhigh) 34、Gemma 4 31B 15（2026-10-01時点）"
+          "date": "2026-10-06",
+          "note": "Qwen3.8 27B (xhigh) 34、Gemma 4 31B 15（2026-10-06時点）"
         }
       ]
     }
@@ -237,7 +237,7 @@
       "latest": {
         "name": "MiMo-V2.6-Pro（RL・MOPD 版）",
         "source_url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
-        "checked": "2026-10-01"
+        "checked": "2026-10-06"
       },
       "access": [
         "api"
@@ -256,7 +256,7 @@
           "available": true,
           "detail": "無料（自前の計算資源が必要）。Hugging Face で重みを公開",
           "source_url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
-          "checked": "2026-10-01"
+          "checked": "2026-10-06"
         },
         "plans": [],
         "jpy_official": false,
@@ -266,16 +266,16 @@
         "value": "yes",
         "note": "MITライセンス（モデルカード）",
         "source_url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL",
-        "checked": "2026-10-01"
+        "checked": "2026-10-06"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-06",
       "retired_note": ""
     },
     {
       "id": "kimi-k3",
       "name": "Kimi K3",
       "vendor": "Moonshot AI",
-      "url": "https://www.kimi.com/blog/kimi-k3",
+      "url": "https://www.kimi.ai/blog/kimi-k3",
       "status": "featured",
       "rank": 2,
       "segment": "models",
@@ -287,8 +287,8 @@
       "model_slugs": [],
       "latest": {
         "name": "Kimi K3",
-        "source_url": "https://www.kimi.com/blog/kimi-k3",
-        "checked": "2026-10-01"
+        "source_url": "https://www.kimi.ai/blog/kimi-k3",
+        "checked": "2026-10-06"
       },
       "access": [
         "api"
@@ -308,7 +308,7 @@
           "available": true,
           "detail": "無料（自前の計算資源が必要）。Hugging Face で重みを公開",
           "source_url": "https://huggingface.co/moonshotai/Kimi-K3",
-          "checked": "2026-10-01"
+          "checked": "2026-10-06"
         },
         "plans": [],
         "jpy_official": false,
@@ -318,9 +318,9 @@
         "value": "conditional",
         "note": "Kimi K3 License：MITに近い条件で商用利用可。ただし年間売上2,000万ドル超の事業者がモデルをAPI等で第三者に提供する場合は別契約、月間1億MAUか月商2,000万ドル超の製品では「Kimi K3」の表示が必要。社内利用はこれらの対象外",
         "source_url": "https://huggingface.co/moonshotai/Kimi-K3/blob/main/LICENSE",
-        "checked": "2026-10-01"
+        "checked": "2026-10-06"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-06",
       "retired_note": ""
     },
     {
@@ -361,7 +361,7 @@
           "available": true,
           "detail": "無料（自前の計算資源が必要）。重みは発表の約2週間後に Hugging Face で公開",
           "source_url": "https://huggingface.co/zai-org/GLM-5.3",
-          "checked": "2026-10-01"
+          "checked": "2026-10-06"
         },
         "plans": [],
         "jpy_official": false,
@@ -371,9 +371,9 @@
         "value": "conditional",
         "note": "GLM-5.3 License：MITに近い条件で商用利用可。年間売上100億ドル超の事業者がモデルをAPI等で第三者に提供する場合は、商用利用の前に Z.ai のセキュリティ審査が必要。GLM-5.3-Flash は MIT",
         "source_url": "https://huggingface.co/zai-org/GLM-5.3/blob/main/LICENSE",
-        "checked": "2026-10-01"
+        "checked": "2026-10-06"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-06",
       "retired_note": ""
     },
     {
@@ -395,7 +395,7 @@
         "name": "DeepSeek-V4.1-Flash",
         "released": "2026-09-10",
         "source_url": "https://www.deepseek.com/en/news/deepseek-v4-1-flash/",
-        "checked": "2026-10-01"
+        "checked": "2026-10-06"
       },
       "access": [
         "api"
@@ -415,7 +415,7 @@
           "available": true,
           "detail": "無料（自前の計算資源が必要）。Hugging Face で重みを公開",
           "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-          "checked": "2026-10-01"
+          "checked": "2026-10-06"
         },
         "plans": [],
         "jpy_official": false,
@@ -425,9 +425,9 @@
         "value": "yes",
         "note": "MITライセンス（モデルカード）",
         "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-        "checked": "2026-10-01"
+        "checked": "2026-10-06"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-06",
       "retired_note": ""
     },
     {
@@ -449,7 +449,7 @@
       "latest": {
         "name": "Qwen3.8-27B",
         "source_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
-        "checked": "2026-10-01"
+        "checked": "2026-10-06"
       },
       "access": [
         "api"
@@ -468,7 +468,7 @@
           "available": true,
           "detail": "無料（自前の計算資源が必要）。Ollama の qwen3.8 は18GB",
           "source_url": "https://ollama.com/library/qwen3.8",
-          "checked": "2026-10-01"
+          "checked": "2026-10-06"
         },
         "plans": [],
         "jpy_official": false,
@@ -478,9 +478,9 @@
         "value": "yes",
         "note": "Qwen3.8-27B は Apache 2.0。2.4T-A95B（Max級）は独自ライセンスで、月間1億MAUか月商2,000万ドル超の製品ではモデル名の表示、年間売上5,000万ドル超のAPI提供・AI業務アシスタント事業は別ライセンスが必要",
         "source_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
-        "checked": "2026-10-01"
+        "checked": "2026-10-06"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-06",
       "retired_note": ""
     },
     {
@@ -501,7 +501,7 @@
         "name": "Gemma 4（E2B・E4B・12B・26B A4B・31B）",
         "released": "2026-04-02",
         "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
-        "checked": "2026-10-01"
+        "checked": "2026-10-06"
       },
       "access": [
         "api"
@@ -520,7 +520,7 @@
           "available": true,
           "detail": "無料（自前の計算資源が必要）。Ollama の gemma4 は e2b 4.6GB〜、e4b 6.6GB〜、26b 16GB〜、31b 19GB〜",
           "source_url": "https://ollama.com/library/gemma4",
-          "checked": "2026-10-01"
+          "checked": "2026-10-06"
         },
         "plans": [],
         "jpy_official": false,
@@ -530,9 +530,9 @@
         "value": "yes",
         "note": "Gemma 4 は Apache 2.0（モデルカード）。Gemma 3 までの独自ライセンス（Gemma license）から変わった",
         "source_url": "https://huggingface.co/google/gemma-4-31B-it",
-        "checked": "2026-10-01"
+        "checked": "2026-10-06"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-06",
       "retired_note": ""
     },
     {
@@ -548,10 +548,10 @@
       ],
       "model_slugs": [],
       "latest": {
-        "name": "Ollama v0.35.0",
-        "released": "2026-09-28",
-        "source_url": "https://github.com/ollama/ollama/releases/tag/v0.35.0",
-        "checked": "2026-10-01"
+        "name": "Ollama v0.35.1",
+        "released": "2026-09-30",
+        "source_url": "https://github.com/ollama/ollama/releases/tag/v0.35.1",
+        "checked": "2026-10-06"
       },
       "access": [
         "desktop",
@@ -570,9 +570,9 @@
       "pricing": {
         "free": {
           "available": true,
-          "detail": "ローカルでの実行は無料。クラウドモデルは従量課金のクレジットで使える",
+          "detail": "ローカルでの実行は無料。クラウドモデルは少額の利用クレジット付きで、超える分は従量課金",
           "source_url": "https://ollama.com/pricing",
-          "checked": "2026-10-01"
+          "checked": "2026-10-06"
         },
         "plans": [
           {
@@ -583,7 +583,7 @@
             "as_shown": "$20 / mo. or $200/yr",
             "detail": "クラウド用クレジット月$60分、大きいモデルへのアクセス",
             "source_url": "https://ollama.com/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-06"
           },
           {
             "name": "Max",
@@ -593,7 +593,7 @@
             "as_shown": "$100 / mo.",
             "detail": "クラウド用クレジット月$300分",
             "source_url": "https://ollama.com/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-06"
           },
           {
             "name": "Team",
@@ -603,7 +603,7 @@
             "as_shown": "$500 / mo.",
             "detail": "チームで共有するクレジット月$1,000分",
             "source_url": "https://ollama.com/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-06"
           }
         ],
         "jpy_official": false,
@@ -614,21 +614,21 @@
         "output": "unknown",
         "note": "画面の対応言語の記載は見つからず。出力言語は使うモデルによる",
         "source_url": "https://docs.ollama.com/",
-        "checked": "2026-10-01"
+        "checked": "2026-10-06"
       },
       "commercial_use": {
         "value": "yes",
         "note": "Ollama 本体は MIT ライセンス。動かすモデルの商用可否はモデルのライセンスに従う",
         "source_url": "https://github.com/ollama/ollama",
-        "checked": "2026-10-01"
+        "checked": "2026-10-06"
       },
       "data_policy": {
         "training_default": "not_used",
         "note": "ローカル実行はPC内で完結。クラウドのプロンプトと応答もモデルの学習に使わないと明記",
         "source_url": "https://docs.ollama.com/cloud",
-        "checked": "2026-10-01"
+        "checked": "2026-10-06"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-06",
       "retired_note": ""
     },
     {
@@ -647,7 +647,7 @@
         "name": "LM Studio Bionic 1.1.7",
         "released": "2026-10-01",
         "source_url": "https://lmstudio.ai/changelog",
-        "checked": "2026-10-01"
+        "checked": "2026-10-06"
       },
       "access": [
         "desktop",
@@ -669,7 +669,7 @@
           "available": true,
           "detail": "ローカルLLMの実行、Bionic エージェント、オフライン音声書き起こし、LM Link（5台まで）",
           "source_url": "https://lmstudio.ai/pricing",
-          "checked": "2026-10-01"
+          "checked": "2026-10-06"
         },
         "plans": [
           {
@@ -678,9 +678,9 @@
             "currency": "USD",
             "per": "month",
             "as_shown": "$20 USD / month",
-            "detail": "米国ホストのオープンモデル（Kimi K3・GLM 5.3 など）をクラウドで利用",
+            "detail": "米国ホストのオープンモデル（Kimi K3・GLM 5.3・DeepSeek V4 Flash など）をクラウドで利用",
             "source_url": "https://lmstudio.ai/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-06"
           },
           {
             "name": "Pro",
@@ -690,7 +690,7 @@
             "as_shown": "$100 USD / month",
             "detail": "Bionic+ の5倍の利用枠",
             "source_url": "https://lmstudio.ai/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-06"
           }
         ],
         "jpy_official": false,
@@ -701,21 +701,21 @@
         "output": "unknown",
         "note": "アプリの表示言語に日本語（コミュニティ翻訳）。設定の Preferences > Language で切り替え",
         "source_url": "https://lmstudio.ai/docs/app/user-interface/languages",
-        "checked": "2026-10-01"
+        "checked": "2026-10-06"
       },
       "commercial_use": {
         "value": "conditional",
         "note": "利用規約で「個人および社内業務の目的」での利用を許諾。動かすモデルの商用可否はモデルのライセンスに従う",
         "source_url": "https://lmstudio.ai/terms",
-        "checked": "2026-10-01"
+        "checked": "2026-10-06"
       },
       "data_policy": {
         "training_default": "not_used",
         "note": "ローカル実行はPC内で完結。クラウド推論はゼロデータ保持（プロンプトと応答を保存しない）",
         "source_url": "https://lmstudio.ai/pricing",
-        "checked": "2026-10-01"
+        "checked": "2026-10-06"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-06",
       "retired_note": ""
     },
     {
@@ -739,9 +739,9 @@
         "value": "yes",
         "note": "Apache 2.0（Hugging Face）",
         "source_url": "https://huggingface.co/openai/gpt-oss-20b",
-        "checked": "2026-10-01"
+        "checked": "2026-10-06"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-06",
       "retired_note": ""
     },
     {
@@ -767,9 +767,9 @@
         "value": "conditional",
         "note": "Mistral-Small-4-119B は Apache 2.0、Mistral-Medium-3.5-128B は独自ライセンス（Hugging Face のライセンス表示）",
         "source_url": "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603",
-        "checked": "2026-10-01"
+        "checked": "2026-10-06"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-06",
       "retired_note": ""
     },
     {
@@ -788,7 +788,70 @@
         "api"
       ],
       "editorial_take": "中国 MiniMax のオープンウェイト。独自ライセンス（Hugging Face の表示は other）。",
-      "checked": "2026-10-01",
+      "checked": "2026-10-06",
+      "retired_note": ""
+    },
+    {
+      "id": "k2-horizon",
+      "name": "K2 Horizon",
+      "vendor": "Institute of Foundation Models",
+      "url": "https://huggingface.co/IFM/K2-Horizon-375B-A23B",
+      "status": "listed",
+      "rank": 25,
+      "segment": "models",
+      "tags": [
+        "K2 Horizon",
+        "オープンウェイト"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "K2-Horizon-375B-A23B",
+        "source_url": "https://huggingface.co/IFM/K2-Horizon-375B-A23B",
+        "checked": "2026-10-06"
+      },
+      "access": [
+        "api"
+      ],
+      "editorial_take": "重みに加えて学習データ・学習コードも公開する「完全オープン」のモデル群。最上位の375B（稼働23B）はAAのオープンウェイト部門で31。",
+      "commercial_use": {
+        "value": "yes",
+        "note": "Apache 2.0（Hugging Face のモデルカード）",
+        "source_url": "https://huggingface.co/IFM/K2-Horizon-375B-A23B",
+        "checked": "2026-10-06"
+      },
+      "checked": "2026-10-06",
+      "retired_note": ""
+    },
+    {
+      "id": "inkling",
+      "name": "Inkling",
+      "vendor": "Thinking Machines Lab",
+      "url": "https://huggingface.co/thinkingmachines/Inkling",
+      "status": "listed",
+      "rank": 26,
+      "segment": "models",
+      "tags": [
+        "Thinking Machines",
+        "Inkling",
+        "オープンウェイト"
+      ],
+      "model_slugs": [],
+      "latest": {
+        "name": "Inkling",
+        "source_url": "https://huggingface.co/thinkingmachines/Inkling",
+        "checked": "2026-10-06"
+      },
+      "access": [
+        "api"
+      ],
+      "editorial_take": "総9,750億・稼働410億パラメータのMoEで、テキスト・画像・音声を入力できる。AAのオープンウェイト部門で25、LMArena 総合95位。",
+      "commercial_use": {
+        "value": "yes",
+        "note": "Apache 2.0（Hugging Face のモデルカード）",
+        "source_url": "https://huggingface.co/thinkingmachines/Inkling",
+        "checked": "2026-10-06"
+      },
+      "checked": "2026-10-06",
       "retired_note": ""
     },
     {
@@ -804,17 +867,17 @@
       ],
       "model_slugs": [],
       "latest": {
-        "name": "v0.5.0",
-        "released": "2026-09-23",
-        "source_url": "https://github.com/ggml-org/llama.cpp/releases",
-        "checked": "2026-10-01"
+        "name": "v0.6.0",
+        "released": "2026-10-06",
+        "source_url": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.6.0",
+        "checked": "2026-10-06"
       },
       "access": [
         "cli",
         "api"
       ],
       "editorial_take": "C/C++ で書かれたLLMの推論エンジン（MIT）。LM Studio も内部で使っている。",
-      "checked": "2026-10-01",
+      "checked": "2026-10-06",
       "retired_note": ""
     },
     {
@@ -830,17 +893,17 @@
       ],
       "model_slugs": [],
       "latest": {
-        "name": "v0.30.0",
-        "released": "2026-09-22",
-        "source_url": "https://github.com/vllm-project/vllm/releases",
-        "checked": "2026-10-01"
+        "name": "v0.31.0",
+        "released": "2026-10-05",
+        "source_url": "https://github.com/vllm-project/vllm/releases/tag/v0.31.0",
+        "checked": "2026-10-06"
       },
       "access": [
         "cli",
         "api"
       ],
       "editorial_take": "GPUサーバーで高スループットにモデルを配信するための推論エンジン（Apache 2.0）。社内向けAPIを立てる用途。",
-      "checked": "2026-10-01",
+      "checked": "2026-10-06",
       "retired_note": ""
     },
     {
@@ -859,13 +922,13 @@
         "name": "v0.8.4",
         "released": "2026-07-23",
         "source_url": "https://github.com/janhq/jan/releases",
-        "checked": "2026-10-01"
+        "checked": "2026-10-06"
       },
       "access": [
         "desktop"
       ],
       "editorial_take": "PC上で完全オフラインで動く、オープンソースのチャットアプリ（GitHub の説明）。",
-      "checked": "2026-10-01",
+      "checked": "2026-10-06",
       "retired_note": ""
     },
     {
@@ -885,7 +948,7 @@
         "cli"
       ],
       "editorial_take": "Apple の機械学習フレームワーク MLX で LLM を動かすツール（MIT）。Apple シリコンの Mac 向けで、LM Studio も内部で使う。",
-      "checked": "2026-10-01",
+      "checked": "2026-10-06",
       "retired_note": ""
     },
     {
@@ -893,29 +956,38 @@
       "name": "Slipstream",
       "vendor": "npanj（個人開発）",
       "url": "https://github.com/npanj/slipstream",
-      "status": "watch",
+      "status": "listed",
       "latest": {
         "name": "Slipstream（Qwen3.8-Flash-Next対応）",
         "source_url": "https://github.com/npanj/slipstream",
-        "checked": "2026-10-02"
+        "checked": "2026-10-06"
       },
       "tags": [
         "Slipstream",
         "Qwen3.8-Flash-Next",
         "Apple Silicon",
         "オープンソース"
-      ]
+      ],
+      "rank": 37,
+      "segment": "runtimes",
+      "access": [
+        "cli"
+      ],
+      "model_slugs": [],
+      "editorial_take": "Qwen3.8-Flash-Next（125.7B）と Qwen3.8-27B を Apple シリコンの Mac で動かす推論エンジン（Apache 2.0）。Flash-Next は64GBのMac（macOS 15以降）が対象。",
+      "checked": "2026-10-06",
+      "retired_note": ""
     },
     {
       "id": "ds4",
       "name": "DwarfStar 4（ds4）",
       "vendor": "antirez（個人開発・オープンソース）",
       "url": "https://github.com/antirez/ds4",
-      "status": "watch",
+      "status": "listed",
       "latest": {
         "name": "ds4（DeepSeek V4.1 Flash・Qwen3.8 Flash Next対応）",
         "source_url": "https://github.com/antirez/ds4",
-        "checked": "2026-10-03"
+        "checked": "2026-10-06"
       },
       "tags": [
         "DwarfStar 4",
@@ -923,43 +995,78 @@
         "Qwen3.8 Flash Next",
         "Apple Silicon",
         "オープンソース"
-      ]
+      ],
+      "rank": 35,
+      "segment": "runtimes",
+      "access": [
+        "cli",
+        "api"
+      ],
+      "model_slugs": [],
+      "editorial_take": "Redis 作者 antirez の推論エンジン（MIT）。DeepSeek V4.1 Flash・GLM 5.3・Qwen3.8 Flash Next などに絞って最適化し、96GB以上のMac・DGX Spark などで動かす。作者は「ベータ品質」としている。",
+      "checked": "2026-10-06",
+      "retired_note": ""
     },
     {
       "id": "strata",
       "name": "Strata",
       "vendor": "Niko1221（個人開発・オープンソース）",
       "url": "https://github.com/Niko1221/Strata",
-      "status": "watch",
+      "status": "listed",
       "latest": {
         "name": "Strata（Qwen3.8-Flash-Next、Windows・Linux／VRAM 12GB以上）",
         "source_url": "https://github.com/Niko1221/Strata",
-        "checked": "2026-10-04"
+        "checked": "2026-10-06"
       },
       "tags": [
         "Strata",
         "Qwen3.8-Flash-Next",
         "Windows",
         "オープンソース"
-      ]
+      ],
+      "rank": 36,
+      "segment": "runtimes",
+      "access": [
+        "desktop",
+        "api"
+      ],
+      "model_slugs": [],
+      "editorial_take": "Qwen3.8-Flash-Next（125B）をVRAM 12GB以上のゲーミングPC（Windows・Linux）で動かすOSS（MIT）。OpenAI・Anthropic 互換のAPIを持つ。",
+      "checked": "2026-10-06",
+      "retired_note": ""
     },
     {
       "id": "kolibri-1",
       "name": "Kolibri-1",
       "vendor": "Aleph Alpha",
       "url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
-      "status": "watch",
+      "status": "listed",
       "latest": {
         "name": "Kolibri-1（総78B・稼働3.46BのMoE、独英2言語）",
         "source_url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
-        "checked": "2026-10-03"
+        "checked": "2026-10-06"
       },
       "tags": [
         "Aleph Alpha",
         "Kolibri-1",
         "オープンウェイト",
         "MoE"
-      ]
+      ],
+      "rank": 24,
+      "segment": "models",
+      "access": [
+        "api"
+      ],
+      "model_slugs": [],
+      "editorial_take": "独 Aleph Alpha のオープンウェイト。総780億・稼働34.6億パラメータのMoEで、対応言語はドイツ語と英語（日本語は対象外）。",
+      "checked": "2026-10-06",
+      "retired_note": "",
+      "commercial_use": {
+        "value": "yes",
+        "note": "Apache 2.0（Hugging Face のモデルカード）",
+        "source_url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
+        "checked": "2026-10-06"
+      }
     },
     {
       "id": "meta-llama",
@@ -1019,8 +1126,8 @@
       "operator": "Artificial Analysis",
       "url": "https://artificialanalysis.ai/models/open-source",
       "what": "推論・知識・コーディング・エージェント作業など10の評価をまとめた総合指数（v4.3.2）。オープンウェイトのモデルの比較ページ",
-      "snapshot": "MiMo-V2.6-Pro 46、GLM-5.3 (max) 45、Kimi K3 (max) 44、GLM-5.3-Flash 42、DeepSeek V4.1 Flash (max) 39、Qwen3.8 27B (xhigh) 34、MiniMax-M3 29、Nemotron 3 Ultra 23、Mistral Medium 3.5 14。モデル一覧では Gemma 4 26B A4B 17、Gemma 4 31B 15、gpt-oss-120b (high) 12（2026-10-01時点）",
-      "checked": "2026-10-01"
+      "snapshot": "MiMo-V2.6-Pro 46、GLM-5.3 (max) 45、Kimi K3 (max) 44、GLM-5.3-Flash 42、DeepSeek V4.1 Flash (max) 39、Qwen3.8 27B (xhigh) 34、K2 Horizon 375B 31、MiniMax-M3 29、Inkling (xhigh) 25、Nemotron 3 Ultra 23、Mistral Medium 3.5 14。モデル一覧では Gemma 4 26B A4B 17、Gemma 4 31B 15、gpt-oss-120b (high) 12（2026-10-06時点）",
+      "checked": "2026-10-06"
     },
     {
       "id": "lmarena-text-open",
@@ -1028,8 +1135,8 @@
       "operator": "LMArena",
       "url": "https://arena.ai/leaderboard/text",
       "what": "利用者が2つの回答を見比べて投票する一対比較のスコア。ライセンスの種類で絞り込める",
-      "snapshot": "オープンライセンスの最上位は kimi-k3-max（全体17位・1488）。mimo-v2.6-pro 25位・1480（MIT）、glm-5.3-max 26位・1479（MIT）、deepseek-v4.1-flash-max 40位・1473（MIT）、gemma-4-31b 74位・1453（Apache 2.0）、qwen3.8-27b 94位・1439（Apache 2.0）（2026-09-30更新・10-01確認）",
-      "checked": "2026-10-01"
+      "snapshot": "オープンライセンスの最上位は kimi-k3-max（全体16位・1488）。mimo-v2.6-pro 26位・1480（MIT）、glm-5.3-max 27位・1478（MIT）、deepseek-v4.1-flash-max 38位・1474（MIT）、gemma-4-31b 76位・1453（Apache 2.0）、inkling 95位・1441（Apache 2.0）、qwen3.8-27b 99位・1438（Apache 2.0）（2026-10-02更新・10-06確認）",
+      "checked": "2026-10-06"
     },
     {
       "id": "lmarena-text-japanese",
@@ -1037,8 +1144,8 @@
       "operator": "LMArena",
       "url": "https://arena.ai/leaderboard/text/japanese",
       "what": "日本語の対話に限った一対比較のスコア",
-      "snapshot": "オープンライセンスの最上位は kimi-k3-max（全体7位・1501・501票）。glm-5.2-max 31位・1457、deepseek-v4-pro 32位・1457、glm-5.3-max 34位・1454（323票）、qwen3.8-27b 81位・1401、gpt-oss-120b 143位・1327。票数が少なく順位の幅が大きい（2026-09-30更新・10-01確認）",
-      "checked": "2026-10-01"
+      "snapshot": "オープンライセンスの最上位は kimi-k3-max（全体8位・1502・508票）。deepseek-v4-pro 31位・1457、glm-5.2-max 33位・1455、glm-5.3-max 34位・1454（327票）、qwen3.8-27b 81位・1405、gpt-oss-120b 144位・1327。票数が少なく順位の幅が大きい（2026-10-02更新・10-06確認）",
+      "checked": "2026-10-06"
     },
     {
       "id": "aa-leaderboard",
@@ -1046,8 +1153,8 @@
       "operator": "Artificial Analysis",
       "url": "https://artificialanalysis.ai/leaderboards/models",
       "what": "全モデルの総合指数の一覧",
-      "snapshot": "Qwen3.8 27B (xhigh) 34、Gemma 4 26B A4B 17、Gemma 4 31B 15、gpt-oss-120b (high) 12、gpt-oss-20b (high) 9（2026-10-01時点）",
-      "checked": "2026-10-01"
+      "snapshot": "Qwen3.8 27B (xhigh) 34、Gemma 4 26B A4B 17、Gemma 4 31B 15、gpt-oss-120b (high) 12、gpt-oss-20b (high) 9（2026-10-06時点）",
+      "checked": "2026-10-06"
     }
   ],
   "faq": [
@@ -1065,7 +1172,7 @@
     },
     {
       "q": "日本語が得意なオープンウェイトモデルは？",
-      "a": "LMArena の日本語部門では、オープンライセンスのモデルで Kimi K3 が最上位（全体7位）、GLM-5.3 が34位、手元で動くサイズの Qwen3.8-27B が81位です（2026年9月30日更新）。票数が少なく順位の幅が大きいので、実際の業務文書で試して比べてください。"
+      "a": "LMArena の日本語部門では、オープンライセンスのモデルで Kimi K3 が最上位（全体8位）、GLM-5.3 が34位、手元で動くサイズの Qwen3.8-27B が81位です（2026年10月2日更新）。票数が少なく順位の幅が大きいので、実際の業務文書で試して比べてください。"
     },
     {
       "q": "Ollama と LM Studio はどちらを選べばいいですか？",
@@ -1119,6 +1226,26 @@
       "text": "VRAM 12GBのゲーミングPCで125BのQwen3.8-Flash-Nextを動かすOSS「Strata」（Windows・Linux）を様子見の候補に追加",
       "article": "/news/20261004-strata-qwen38-flash-next-gaming-pc/",
       "by": "writer"
+    },
+    {
+      "date": "2026-10-06",
+      "text": "Ollama の最新版を v0.35.1 に、llama.cpp を v0.6.0、vLLM を v0.31.0 に更新",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-10-06",
+      "text": "K2 Horizon（Apache 2.0、学習データも公開）と Inkling（Thinking Machines、Apache 2.0）をその他の選択肢に追加",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-10-06",
+      "text": "様子見だった Kolibri-1・ds4・Strata・Slipstream をその他の選択肢に追加",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-10-06",
+      "text": "LMArena（10月2日更新）の順位・スコアに合わせて、日本語重視と最高品質の説明を更新",
+      "by": "reviewer"
     }
   ],
   "editor_note": "",
