@@ -299,6 +299,22 @@
       "checked": "2026-10-02"
     },
     {
+      "slug": "mistral-large-4",
+      "name": "Mistral Large 4",
+      "vendor": "Mistral AI",
+      "tier": "最上位",
+      "released": "2026-10-06",
+      "input_per_m": 1.36,
+      "cached_input_per_m": null,
+      "output_per_m": 4.18,
+      "context": 1000000,
+      "api_id": "mistral-large-4",
+      "status": "current",
+      "note": "総パラメータ1兆（アクティブ490億）のマルチモーダルMoE。パブリックプレビューで、プレビュー期間中は入力$0.68・出力$2.09。重みは10月末に公開予定",
+      "official_url": "https://docs.mistral.ai/models/mistral-large-4-0",
+      "checked": "2026-10-07"
+    },
+    {
       "slug": "mistral-medium-3-5",
       "name": "Mistral Medium 3.5",
       "vendor": "Mistral AI",
