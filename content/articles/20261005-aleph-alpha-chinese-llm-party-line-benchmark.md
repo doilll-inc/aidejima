@@ -1,6 +1,6 @@
 ---
 {
-  "title": "Aleph Alphaが中国製LLMの政治的偏りを測定、中立な回答は17〜41%どまり",
+  "title": "DeepSeekやQwenは政治的に中立な回答が17〜41%、独Aleph Alphaが中国製AIを測定",
   "description": "独Aleph Alphaは、政治的に微妙な967問で中国製のオープンウェイトモデル6種を評価し、中立な回答は17〜41%にとどまったと公表した。中国製モデルで作った学習データを使ったNVIDIAのNemotron Cascade 2にも影響が出ていたという。",
   "date": "2026-10-05T03:10:00+09:00",
   "category": "policy",

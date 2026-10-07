@@ -1,6 +1,6 @@
 ---
 {
-  "title": "MacのAI機能を消して12GB空ける無料ツール、Appleがオフのスイッチをなくし個人が公開",
+  "title": "Macの「Apple Intelligence」を消して12GB空ける無料ツール、オフのスイッチ廃止で個人が公開",
   "description": "最新のmacOS 27でApple Intelligenceを一括でオフにするスイッチがなくなったことを受け、個人開発者がAI機能を止めてモデルを消す無料ツール「RemoveMacAI」を公開した。報道各社の試算では約12GBの空き容量が戻るが、使えなくなる機能も多い。",
   "date": "2026-10-06T19:50:00+09:00",
   "category": "products",

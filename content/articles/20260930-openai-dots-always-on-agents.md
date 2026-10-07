@@ -1,6 +1,6 @@
 ---
 {
-  "title": "OpenAIが常時稼働エージェント「Dots」を開始、日本のProユーザーも対象に",
+  "title": "24時間働くAIエージェント「Dots」をChatGPTで提供開始、OpenAIは日本のProユーザーも対象に",
   "description": "OpenAIはDevDayで、専用のクラウドPCを持ち24時間働くAIエージェントDotsを発表した。GPT-6 Astraで動き、4,000超のアプリと連携する。ChatGPT ProとBusiness Premium向けで、Proは欧州・英国などを除く市場が対象になる。",
   "date": "2026-09-30T20:52:00+09:00",
   "updated": "2026-10-01T18:55:00+09:00",
