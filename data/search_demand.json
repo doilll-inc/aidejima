@@ -1,0 +1,312 @@
+{
+ "_comment": "日本で検索されているAI製品名と、その「使い方」「料金」などの月間検索数。用途=①記事タグから製品ごとのまとめページ（/tag/<slug>/）を作る ②記事の主役がここの製品ならタイトル前半にこの表記で入れる（build が注意を出す）③「使い方・料金」型の記事で何を書くかを決める（python3 demand.py --todo）。name=検索される表記。also=同じ製品として束ねる別名タグ。nameで始まる版名タグ（Nano Banana 2.1 等）も自動で束ねる。queries=「name＋語」の月間検索数。kind=company は社名（まとめページだけ作り、タイトルの注意は出さない）。数字は Google 広告 API の Keyword Planner（日本・日本語・直近12か月の月平均）。更新は doilll リポジトリの tools/gads-tool/scripts/kw_planner.py --exact で取り直して手で反映する（このリポジトリには鍵を置かない）。",
+ "fetched": "2026-10-07",
+ "topics": [
+  {
+   "name": "ChatGPT",
+   "volume": 9140000,
+   "queries": {
+    "無料": 49500,
+    "とは": 6600
+   }
+  },
+  {
+   "name": "Gemini",
+   "volume": 9140000,
+   "queries": {
+    "画像生成": 49500,
+    "とは": 27100,
+    "無料": 14800
+   }
+  },
+  {
+   "name": "Claude",
+   "volume": 1220000,
+   "queries": {
+    "とは": 9900,
+    "無料": 4400,
+    "日本語": 1900
+   }
+  },
+  {
+   "name": "NotebookLM",
+   "volume": 673000,
+   "queries": {
+    "とは": 27100,
+    "使い方": 27100
+   }
+  },
+  {
+   "name": "Copilot",
+   "volume": 673000,
+   "also": [
+    "Microsoft Copilot",
+    "GitHub Copilot",
+    "Microsoft 365 Copilot"
+   ],
+   "queries": {
+    "使い方": 8100,
+    "料金": 1900
+   }
+  },
+  {
+   "name": "Grok",
+   "volume": 673000,
+   "queries": {
+    "使い方": 8100,
+    "料金": 1600
+   }
+  },
+  {
+   "name": "AIモード",
+   "volume": 450000,
+   "slug": "ai-mode",
+   "also": [
+    "AI Mode",
+    "Google AI Mode",
+    "Google検索のAIモード"
+   ]
+  },
+  {
+   "name": "Google AI Studio",
+   "volume": 368000,
+   "also": [
+    "AI Studio"
+   ]
+  },
+  {
+   "name": "Claude Code",
+   "volume": 301000,
+   "queries": {
+    "料金": 27100,
+    "使い方": 18100
+   }
+  },
+  {
+   "name": "DeepSeek",
+   "volume": 246000
+  },
+  {
+   "name": "Codex",
+   "volume": 201000,
+   "also": [
+    "OpenAI Codex"
+   ],
+   "queries": {
+    "使い方": 8100,
+    "料金": 8100
+   }
+  },
+  {
+   "name": "Genspark",
+   "volume": 201000,
+   "queries": {
+    "とは": 12100,
+    "使い方": 1600
+   }
+  },
+  {
+   "name": "Sora",
+   "volume": 201000,
+   "queries": {
+    "料金": 590
+   }
+  },
+  {
+   "name": "Perplexity",
+   "volume": 165000,
+   "queries": {
+    "料金": 880
+   }
+  },
+  {
+   "name": "Suno",
+   "volume": 135000,
+   "queries": {
+    "料金": 880
+   }
+  },
+  {
+   "name": "Cursor",
+   "volume": 110000,
+   "queries": {
+    "使い方": 4400
+   }
+  },
+  {
+   "name": "Nano Banana",
+   "volume": 90500,
+   "queries": {
+    "使い方": 4400,
+    "料金": 880
+   }
+  },
+  {
+   "name": "Manus",
+   "volume": 90500,
+   "also": [
+    "Manus AI"
+   ],
+   "queries": {
+    "とは": 5400,
+    "使い方": 480
+   }
+  },
+  {
+   "name": "Antigravity",
+   "volume": 90500,
+   "also": [
+    "Google Antigravity"
+   ]
+  },
+  {
+   "name": "Midjourney",
+   "volume": 74000,
+   "queries": {
+    "料金": 1900
+   }
+  },
+  {
+   "name": "Gamma",
+   "volume": 74000,
+   "queries": {
+    "使い方": 590
+   }
+  },
+  {
+   "name": "Dify",
+   "volume": 60500,
+   "queries": {
+    "使い方": 1900
+   }
+  },
+  {
+   "name": "Runway",
+   "volume": 40500
+  },
+  {
+   "name": "ElevenLabs",
+   "volume": 40500
+  },
+  {
+   "name": "Google Flow",
+   "volume": 40500
+  },
+  {
+   "name": "Adobe Firefly",
+   "volume": 40500,
+   "also": [
+    "Firefly"
+   ]
+  },
+  {
+   "name": "Kimi",
+   "volume": 40500
+  },
+  {
+   "name": "n8n",
+   "volume": 33100,
+   "queries": {
+    "使い方": 590
+   }
+  },
+  {
+   "name": "Claude Cowork",
+   "volume": 33100
+  },
+  {
+   "name": "Whisk",
+   "volume": 27100
+  },
+  {
+   "name": "Qwen",
+   "volume": 27100
+  },
+  {
+   "name": "Gemini CLI",
+   "volume": 27100
+  },
+  {
+   "name": "Apple Intelligence",
+   "volume": 22200
+  },
+  {
+   "name": "Kling",
+   "volume": 18100
+  },
+  {
+   "name": "HeyGen",
+   "volume": 18100,
+   "queries": {
+    "使い方": 390
+   }
+  },
+  {
+   "name": "FLUX",
+   "volume": 18100
+  },
+  {
+   "name": "Seedance",
+   "volume": 18100
+  },
+  {
+   "name": "Felo",
+   "volume": 14800
+  },
+  {
+   "name": "Veo",
+   "volume": 14800
+  },
+  {
+   "name": "Canva AI",
+   "volume": 12100,
+   "queries": {
+    "使い方": 720
+   }
+  },
+  {
+   "name": "Notion AI",
+   "volume": 12100,
+   "queries": {
+    "料金": 1300
+   }
+  },
+  {
+   "name": "Deep Research",
+   "volume": 12100
+  },
+  {
+   "name": "ChatGPT Atlas",
+   "volume": 12100
+  },
+  {
+   "name": "Mistral",
+   "volume": 12100,
+   "also": [
+    "Mistral AI"
+   ]
+  },
+  {
+   "name": "Dreamina",
+   "volume": 8100
+  },
+  {
+   "name": "Gemini Live",
+   "volume": 8100
+  },
+  {
+   "name": "Napkin AI",
+   "volume": 6600
+  },
+  {
+   "name": "OpenAI",
+   "volume": 246000,
+   "kind": "company"
+  },
+  {
+   "name": "Anthropic",
+   "volume": 90500,
+   "kind": "company"
+  }
+ ]
+}

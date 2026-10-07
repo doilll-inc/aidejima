@@ -38,6 +38,7 @@ GitHub Pages に公開 → scripts/notify.py で IndexNow と WebSub に通知
 | `data/guides/*.json` | 用途別AIガイド（/best/）の元データ。事実は公式ページだけ・出典と確認日つき。定義と調査手順は `data/guides/SCHEMA.md`、設計は `docs/guides-design.md` |
 | `guides.py` | ガイドデータの検証（`python3 guides.py check <slug>`）。build.py もこれでエラー判定する |
 | `scripts/guide_refresh_prompt.md` | ガイド点検担当（guides.yml）への指示 |
+| `data/search_demand.json` `demand.py` | 日本で検索されているAI製品名と月間検索数（Keyword Planner の実数）。build が版名タグを製品のまとめページ（/tag/<slug>/）に束ね、主役の製品名がタイトルに無い記事に注意を出す。記者は `python3 demand.py --todo` で、まだ答えていない「使い方・料金」の検索語を見て1日1本書く |
 | `scripts/x_check.py` | X投稿のURLが実在するかを無料で確かめる（埋め込む前に必ず使う） |
 | `scripts/notify.py` | 公開後に IndexNow と WebSub へ通知 |
 

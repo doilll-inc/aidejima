@@ -25,6 +25,7 @@ from xml.sax.saxutils import escape as xml_escape
 import markdown
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
+import demand as demand_mod
 import guides as guides_mod
 import og
 
@@ -74,6 +75,22 @@ def tag_slug(tag: str) -> str:
         return s
     # 未登録の日本語タグ。data/taxonomy.json の tag_slugs に足すまでの仮slug
     return "t-" + hashlib.sha1(tag.encode()).hexdigest()[:8]
+
+
+# 日本で検索されている製品名（data/search_demand.json）。版名タグ（Nano Banana 2.1 等）を製品のまとめページに束ねる
+TOPICS = demand_mod.load(tag_slug)
+TOPIC_BY_SLUG = {t["slug"]: t for t in TOPICS}
+
+
+def tag_items_with_topics(tags: list[str]) -> list[dict]:
+    """記事のタグ＋当たった製品のタグ（まとめページへの入口。例: 「Nano Banana 2.1」の記事に「Nano Banana」を足す）"""
+    items = [{"name": t, "slug": tag_slug(t)} for t in tags]
+    have = {i["slug"] for i in items}
+    for tp, _ in demand_mod.topics_for(tags, TOPICS):
+        if tp["slug"] not in have:
+            items.append({"name": tp["name"], "slug": tp["slug"]})
+            have.add(tp["slug"])
+    return items
 
 
 def fmt_dt(d: datetime) -> str:
@@ -366,7 +383,8 @@ def parse_article(path: Path) -> tuple[dict | None, list[str]]:
         "body": body_html,
         "toc": toc,
         "cat": CATS[meta["category"]],
-        "tag_items": [{"name": t, "slug": tag_slug(t)} for t in meta["tags"]],
+        "tag_items": tag_items_with_topics(meta["tags"]),
+        "main_topic": demand_mod.main_topic(meta["tags"], TOPICS),
         "chars": chars,
         "read_min": max(1, round(chars / 600)),
         "thumb_text": big,
@@ -888,9 +906,16 @@ def build(now: datetime | None = None) -> None:
         )
     for slug, items in by_tag.items():
         name = tag_names[slug]
+        topic = TOPIC_BY_SLUG.get(slug)
+        # 検索される製品のまとめページ（版ごとの記事もここに集まる）は、何がわかるページかを先に言う
+        desc = (
+            f"{name}に関する記事{len(items)}本を新しい順にまとめています。開発元の公式発表・公式ドキュメント・開発者本人の発信をもとに、"
+            f"新しい版や機能、料金の変更、海外の活用事例を、日本で仕事に使う人の目線で解説します。"
+            if topic else
+            f"{name}に関する海外の最新ニュース{len(items)}本を日本語でまとめています。公式発表・論文・海外メディアの報道をもとに、ビジネスへの影響まで解説します。"
+        )
         list_pages(
-            f"/tag/{slug}/", items, f"{name}の最新ニュース・情報まとめ",
-            f"{name}に関する海外の最新ニュース{len(items)}本を日本語でまとめています。公式発表・論文・海外メディアの報道をもとに、ビジネスへの影響まで解説します。",
+            f"/tag/{slug}/", items, f"{name}の最新ニュース・情報まとめ", desc,
             [("ホーム", "/"), (f"#{name}", f"/tag/{slug}/")], f"#{name}",
             noindex_all=len(items) < TAG_INDEX_MIN,
         )
@@ -999,6 +1024,9 @@ def warn_quality(arts: list[dict]) -> None:
         hit = [p for p in BANNED_PHRASES if p in re.sub(r"<[^>]+>", "", a["body"])]
         if hit:
             w.append("使わない言い回し: " + "、".join(hit))
+        tp = a.get("main_topic")
+        if tp and not demand_mod.title_has(a["title"], tp["name"]):
+            w.append(f"記事の主役「{tp['name']}」は日本で月{tp['volume']:,}回検索される名前なのにタイトルにない。この表記のままタイトル前半に入れる（data/search_demand.json）")
         if heads_by_day[a["date"].strftime("%Y-%m-%d")][a["title"][:6]] > 1:
             w.append(f"同じ日の別記事とタイトル冒頭が同じ（{a['title'][:6]}…）。製品名から始めるなど変える")
         if w:
