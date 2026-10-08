@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-07",
+  "updated": "2026-10-08",
   "last_reviewed": "2026-10-02",
   "title": "AI API（LLM）の料金比較と選び方",
   "short_name": "AI API",
@@ -320,10 +320,10 @@
       ],
       "model_slugs": [],
       "latest": {
-        "name": "Claude Sonnet 5.5",
-        "released": "2026-09-28",
-        "source_url": "https://www.anthropic.com/claude-sonnet-5-5",
-        "checked": "2026-10-02"
+        "name": "Claude Haiku 5.5",
+        "released": "2026-10-07",
+        "source_url": "https://www.anthropic.com/claude-haiku-5-5",
+        "checked": "2026-10-08"
       },
       "access": [
         "api"
@@ -355,10 +355,10 @@
           },
           {
             "name": "プロンプトキャッシュ",
-            "as_shown": "キャッシュ読み込みは入力単価の0.1倍（Opus 5.5 は0.05倍）",
-            "detail": "5分キャッシュの書き込みは1.25倍、1時間は2倍",
-            "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
-            "checked": "2026-10-02"
+            "as_shown": "prompt cache reads cost 10% of the base input price (2.5% on Claude Fable 5.1 and Claude Mythos 5.1, 5% on Claude Opus 5.5 and Claude Sonnet 5.5)",
+            "detail": "キャッシュ読み込みは入力単価の0.1倍（Opus 5.5・Sonnet 5.5 は0.05倍）。5分キャッシュの書き込みは1.25倍、1時間は2倍",
+            "source_url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+            "checked": "2026-10-08"
           },
           {
             "name": "利用上限の段階",
@@ -1231,6 +1231,12 @@
       "date": "2026-10-07",
       "text": "Mistral の最新モデルを Mistral Large 4（プレビュー。入力 $1.36・出力 $4.18、プレビュー中は半額）に更新",
       "article": "/news/20261007-mistral-large-4-le-chonk/",
+      "by": "writer"
+    },
+    {
+      "date": "2026-10-08",
+      "text": "軽量の Claude Haiku 5.5（入力 $0.10・出力 $0.50 から）が登場。Sonnet 5.5 のキャッシュ読み込みも半額の $0.10 に",
+      "article": "/news/20261008-anthropic-claude-haiku-5-5/",
       "by": "writer"
     }
   ],
