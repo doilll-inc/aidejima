@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 3,
   "created": "2026-09-30",
-  "updated": "2026-10-01",
+  "updated": "2026-10-09",
   "last_reviewed": "2026-10-01",
   "title": "AI資料作成・スライド生成のおすすめと料金比較",
   "short_name": "資料作成",
@@ -1044,6 +1044,22 @@
       },
       "checked": "2026-10-01",
       "retired_note": ""
+    },
+    {
+      "id": "manus",
+      "name": "Manus",
+      "vendor": "Butterfly Effect",
+      "url": "https://manus.im/",
+      "status": "watch",
+      "latest": {
+        "name": "Manus 2.0",
+        "released": "2026-09-28",
+        "source_url": "https://manus.im/blog/introducing-manus-2-0",
+        "checked": "2026-10-09"
+      },
+      "tags": [
+        "Manus"
+      ]
     }
   ],
   "criteria": [
