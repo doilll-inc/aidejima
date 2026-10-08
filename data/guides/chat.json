@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-04",
+  "updated": "2026-10-08",
   "last_reviewed": "2026-10-03",
   "title": "チャットAIのおすすめと料金比較（ChatGPT・Claude・Gemini など）",
   "short_name": "チャットAI",
@@ -290,16 +290,16 @@
         "円建て料金。Go（月1,400円）から段階的に選べる"
       ],
       "weaknesses": [
-        "無料版と Go では GPT-6 系モデルを使えない",
+        "無料版と Go の GPT-6 は軽量版の Luna",
         "Plus・Pro は月払いのみ（年払いなし）"
       ],
       "editorial_take": "迷ったらまずこれ。無料で始められ、Plus（月3,000円）で最上位の GPT-6 Astra まで使える。",
       "pricing": {
         "free": {
           "available": true,
-          "detail": "GPT-5.6 Luna でのテキストチャットは無制限。アップロード・画像作成・音声・Deep Research・Codex は回数制限あり",
-          "source_url": "https://chatgpt.com/ja-JP/pricing/",
-          "checked": "2026-10-01"
+          "detail": "10月8日から順次 GPT-6 Luna に切り替え（Go も同じ）。答えに図表やボタンが付く Intelligent UI も使える。アップロード・画像作成・音声・Deep Research・Codex は回数制限あり",
+          "source_url": "https://openai.com/index/gpt-6-for-everyone/",
+          "checked": "2026-10-08"
         },
         "plans": [
           {
@@ -1140,6 +1140,12 @@
       "date": "2026-10-04",
       "text": "Gemini の無料版は10月9日から Flash-Lite だけに、AI Plus も Pro モデルが外れる（AI Pro 以上で Pro と Deep Think）",
       "article": "/news/20261004-gemini-free-flash-lite-only/",
+      "by": "writer"
+    },
+    {
+      "date": "2026-10-08",
+      "text": "ChatGPT の無料版と Go が10月8日から順次 GPT-6 Luna に切り替わり、図表やボタン付きの答え（Intelligent UI）も使えるように",
+      "article": "/news/20261008-chatgpt-gpt-6-intelligent-ui-free/",
       "by": "writer"
     }
   ],
