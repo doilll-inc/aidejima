@@ -3,6 +3,7 @@
   "title": "OpenAIが未公開AIの数学論文722本を一挙公開、約4,000問に挑み1件あたり平均3時間",
   "description": "OpenAIは10月6日、未公開の社内AIが数学の未解決問題に取り組んだ論文722本をGitHubで公開した。約4,000問を出し、成果1件あたり平均3時間の計算を使った。数学者からは成果の量産が学問を損なうとの懸念も出ている。",
   "date": "2026-10-07T19:40:00+09:00",
+  "updated": "2026-10-09T04:15:00+09:00",
   "category": "research",
   "tags": ["OpenAI", "openai/math", "数学", "論文", "安全性"],
   "summary": [
@@ -12,10 +13,14 @@
   ],
   "sources": [
     {"title": "openai/math README", "publisher": "OpenAI（GitHub）", "url": "https://github.com/openai/math", "kind": "公式ドキュメント"},
+    {"title": "openai/math history.md", "publisher": "OpenAI（GitHub）", "url": "https://github.com/openai/math/blob/main/history.md", "kind": "公式ドキュメント"},
+    {"title": "Dan Roberts の投稿", "publisher": "X @danintheory", "url": "https://x.com/danintheory/status/2108065033070789090", "kind": "X投稿"},
+    {"title": "Terence Tao の投稿", "publisher": "Mathstodon @tao", "url": "https://mathstodon.xyz/@tao/117395268130901862", "kind": "コミュニティ"},
     {"title": "Sharing AI progress in mathematics（議論）", "publisher": "Hacker News", "url": "https://news.ycombinator.com/item?id=49984923", "kind": "コミュニティ"},
     {"title": "OpenAI dumps 372 AI-generated math proofs on GitHub, telling the academic world to keep up", "publisher": "The Decoder", "url": "https://the-decoder.com/openai-dumps-372-ai-generated-math-proofs-on-github-telling-the-academic-world-to-keep-up/", "kind": "報道"},
     {"title": "25 Winners of Math's 'Nobel Prize' Decry the AI Invasion of Their Discipline", "publisher": "Scientific American", "url": "https://www.scientificamerican.com/article/25-winners-of-maths-nobel-prize-decry-the-ai-invasion-of-their-discipline/", "kind": "報道"},
-    {"title": "AI May Have Solved a Longstanding Math Problem With a Million-Dollar Prize", "publisher": "Smithsonian Magazine", "url": "https://www.smithsonianmag.com/smart-news/ai-may-have-solved-a-longstanding-math-problem-with-a-million-dollar-prize-it-ignited-a-controversy-over-who-gets-credit-180989472/", "kind": "報道"}
+    {"title": "AI May Have Solved a Longstanding Math Problem With a Million-Dollar Prize", "publisher": "Smithsonian Magazine", "url": "https://www.smithsonianmag.com/smart-news/ai-may-have-solved-a-longstanding-math-problem-with-a-million-dollar-prize-it-ignited-a-controversy-over-who-gets-credit-180989472/", "kind": "報道"},
+    {"title": "OpenAI's math solutions aren't meeting the field's standards yet", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/10/08/openais-math-solutions-arent-meeting-the-fields-standards-yet/", "kind": "報道"}
   ],
   "thumb_text": "数学論文722本",
   "thumb_style": "photo",
@@ -67,6 +72,18 @@ The Decoderは、OpenAIが著名な数学者らの助言グループと協議し
 開発者が集まる掲示板Hacker Newsでも投稿は900ポイントを超え、800件以上のコメントが付きました。人間なら数十年分の前進だと評価する声がある一方、博士課程の途中で同じテーマの論文を書いている学生はどうすればいいのかという戸惑いや、20年以上取り組んできた問題が一覧に「解決済み」として載っていたという投稿もありました。少なくとも人が目を通したことを示すため、確認者の名前を原稿に載せるべきだという提案も出ています。
 
 成果の数そのものより、「誰が確かめるのか」「誰の手柄か」という研究の仕組みの問いが前に出てきた、というのが今回の一番の論点です。
+
+## 追記（10月9日）
+
+OpenAIは現地時間10月7日、公開した原稿のうち3本を取り下げました。リポジトリの更新履歴によると、「分裂アーベル8次元多様体上のWeil類の代数性」を扱う原稿で符号の誤りが見つかり、証明の要の議論が成り立たなくなりました。同じ構成を使っていた2本の原稿も、あわせて取り下げています。
+
+ほかに14本で証明の修復や記述の訂正を行い、関連する13本の引用を更新しました。計算機で正しさを確かめられる形（Lean）の証明も6件増え、主な結果のうち形式化済みは719件中300件（約42%）になったとしています。取り下げた原稿は、理由の説明と保管版へのリンクを付けて残す方針です。
+
+{{x:https://x.com/danintheory/status/2108065033070789090}}
+
+OpenAIの研究者ダン・ロバーツ氏はXで、新しい形式化6件、修正19件、取り下げ3件を反映したと投稿し、今後も誤りが見つかれば更新を続けると書いています。
+
+数学者側からは批判が続いています。フィールズ賞受賞者のテレンス・タオ氏はMastodonへの投稿で、AIに問題を解かせた人が結果を十分に理解しておらず、質問に答えたり講演したりできないまま「解決済み」になる例が多いと指摘しました。TechCrunchは、OpenAIが助言を受けた数学者グループの「未公開モデルで難問を試さない」という要請に今回の公開が沿っていないと報じています。公開から2日で3本が取り下げられたことは、「誰が確かめるのか」という論点を具体的な形で示した格好です。
 
 ## 日本のビジネスへの影響
 
