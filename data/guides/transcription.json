@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 2,
   "created": "2026-09-30",
-  "updated": "2026-10-03",
+  "updated": "2026-10-09",
   "last_reviewed": "2026-10-01",
   "title": "AI文字起こし・議事録ツールのおすすめと料金比較",
   "short_name": "文字起こし",
@@ -937,6 +937,24 @@
         "ローカルLLM",
         "オープンソース"
       ]
+    },
+    {
+      "id": "google-ai-edge-foresight",
+      "name": "Google AI Edge Foresight",
+      "vendor": "Google",
+      "url": "https://developers.google.com/edge/foresight",
+      "status": "watch",
+      "latest": {
+        "name": "Google AI Edge Foresight（Mac用の試験版。文字起こし・メモ作成を端末内で処理）",
+        "source_url": "https://developers.google.com/edge/foresight",
+        "checked": "2026-10-09"
+      },
+      "tags": [
+        "Google AI Edge Foresight",
+        "Google",
+        "文字起こし",
+        "ローカルLLM"
+      ]
     }
   ],
   "criteria": [
@@ -1042,6 +1060,12 @@
       "date": "2026-10-03",
       "text": "動画の字幕を手元のGPUだけで37言語に作るOSS「mlsubgen」を様子見の候補に追加",
       "article": "/news/20261003-mlsubgen-local-subtitles-37-languages/",
+      "by": "writer"
+    },
+    {
+      "date": "2026-10-09",
+      "text": "会議の文字起こしとメモの清書をMacの中だけで処理するGoogleの試験版アプリ「Foresight」を様子見の候補に追加",
+      "article": "/news/20261009-google-ai-edge-foresight-offline-meeting-notes/",
       "by": "writer"
     }
   ],
