@@ -28,11 +28,7 @@ Microsoftは現地時間10月7日、WindowsのAIアシスタント「Copilot」�
 
 発表はWindowsとSurfaceの新製品イベントに合わせたもので、Windows担当のパヴァン・ダヴルリ上級副社長が公式ブログで全体像を説明しました。Microsoftはこの方向性を「ハイブリッド・インテリジェンス」と呼んでいます。パソコンの中で動くAIと、ネットの向こうのデータセンターで動くAIを、仕事に応じて使い分けるという考え方です。
 
-Copilotに加わる力は3つあります。
-
-- **パソコンの中身を理解する**: 許可すれば、パソコン内のファイルや最近の作業を読み、質問や依頼に生かします
-- **代わりに操作する**: ファイルの整理、パソコンの不調の診断、トラブルの解決、プログラムの作成、決まった手順の作業などを、Windows上で直接こなします
-- **パソコンの中のAIを使う**: 向いている仕事はパソコン内のAIで処理し、必要なときだけデータセンターのAIと組み合わせます
+いちばん大きな変化は、Copilotが「答える」だけでなく「手を動かす」ようになる点です。たとえば散らかったフォルダの整理や、パソコンが遅い・つながらないといった不調の原因調べを、利用者が設定画面をたどらなくても代わりに進めます。その前提として、利用者が許可すれば手元のファイルや直前までの作業内容を読み、依頼の中身をくみ取ります。
 
 :::quote https://blogs.windows.com/windowsexperience/2026/10/07/building-windows-for-hybrid-intelligence/ | Windows Experience Blog「Building Windows for hybrid intelligence」
 > Copilot can take action on your behalf across Windows, helping complete tasks like organizing files, assessing device diagnostics, troubleshooting issues, coding, and carrying out workflows directly on your device.
