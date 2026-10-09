@@ -36,20 +36,20 @@ Anthropicは現地時間10月8日、対話AI「Claude」で文書・スライド
 
 ### 集計画面を「頼むだけ」で作るDashboards
 
-Claude Dashboardsとは、BigQuery・Snowflake・Databricksといった企業のデータ基盤や、Salesforceのような営業管理ツールにClaudeをつなぎ、「今週の登録者数を先月と比べて」と普通の言葉で聞くと、グラフ入りの集計画面を作る機能です。画面はデータが変わるたびに最新の数字に更新され、各グラフにはいつ更新したかが表示されます。
+これまで社内の数字を見たいときは、データ担当に依頼するか、自分でデータベースへの問い合わせ文（SQL）を書く必要がありました。Claude Dashboardsでは、たとえば「今週の登録者数を先月と比べて」と頼むだけで、Claudeがグラフ入りの集計画面を組み立てます。つなげる先は、BigQuery・Snowflake・Databricksといった企業のデータ基盤や、Salesforceのような営業管理ツールです。
 
-数字の根拠を確かめられる点も特徴です。公式発表によると、画面上のどの数字をクリックしても、その数字を出すためにClaudeが書いたデータベースへの問い合わせ文（SQL）が見られ、Claudeに意味を説明させることもできます。もっと深い分析をしたいときは、AmplitudeやMixpanel、Hexなどの分析ツールへ画面ごと送れます。LookerやTableau、monday.comにも近く対応するとしています。
+一度作った画面は、元のデータが変わると数字も追いかけて更新されます。どのグラフも最終更新の時刻を表示し、数字をクリックするとClaudeが書いたSQLを確認したり、その意味を説明させたりできます。込み入った分析に進むときは、AmplitudeやMixpanel、Hexなどの分析ツールへ画面を送って続ける設計で、Looker・Tableau・monday.comへの対応も予定されています。
 
 ### 報告書を30秒のアニメにするMotion
 
-Claude Motionは、四半期の報告を全社集会向けの30秒の解説にする、役員会の資料のグラフに動きを付ける、といった用途を想定した機能です。できたアニメは短い動画のように再生され、編集画面で直すか、Claudeに直しを頼んだあと、MP4の動画ファイルとしてダウンロードできます。
+Claude Motionの出力は、MP4で書き出せる短いアニメです。想定する使い道として、全社集会で四半期の報告を30秒で説明する、役員会の資料のグラフに動きを付ける、といった例が挙がっています。仕上がりが気に入らなければ、編集画面で自分で直すことも、Claudeに直しを頼むこともできます。
 
 :::quote https://claude.com/resources/articles/dashboards-and-motion | Claude公式「Build live dashboards and animate explainers with Claude」
 > It doesn’t use a video generation model, so there’s no generated footage and no AI-generated people.
 動画生成モデルは使わないので、AIが生成した映像も、AIが生成した人物も出てこない。
 :::
 
-つまりMotionは、文字・数字・図形・画像をプログラムで動かす仕組みで、どの言葉、どの数字、どのタイミングも後から変えられます。仕上げをしたいときは、AdobeやDescript、HeyGen、Runwayなどの動画編集ツールで開けます（CanvaとCaptionsにも近く対応）。
+中身は、手持ちの文字・数字・図形・画像をClaudeが書いたプログラムで動かすものです。そのため、言葉や数字、動きのタイミングを後から1つずつ差し替えられます。本格的な仕上げには、AdobeやDescript、HeyGen、Runwayなどの動画編集ツールに持ち込めます（CanvaとCaptionsにも近く対応）。
 
 {{card:https://claude.com/resources/articles/dashboards-and-motion|Build live dashboards and animate explainers with Claude|Claude（Anthropic）}}
 
