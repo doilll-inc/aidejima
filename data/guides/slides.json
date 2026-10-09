@@ -697,16 +697,17 @@
         "Claude Slides はPowerPoint・PDFに書き出し"
       ],
       "weaknesses": [
-        "Slides と PowerPoint 連携は有料プランから",
+        "Dashboards・Motion は有料プランの試験提供",
         "料金は米ドル建て"
       ],
       "editorial_take": "会社のテンプレートを守ったまま PowerPoint 上で作り込むなら Claude for PowerPoint、ゼロから一気に作るなら Claude Slides（2026年9月開始のベータ）。",
       "pricing": {
         "free": {
           "available": true,
-          "detail": "無料版はチャット内での作成のみ。Slides などのテンプレートと Claude for PowerPoint は有料プラン",
-          "source_url": "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them",
-          "checked": "2026-10-01"
+          "detail": "2026年10月8日から Docs・Slides・Design は無料版を含む全プランで正式提供（PowerPoint・PDF に書き出し可）。Dashboards は有料プラン、Motion は Team・Enterprise の試験提供",
+          "as_shown": "Claude Docs, Slides, and Design are out of beta and available on every plan, including Free.",
+          "source_url": "https://claude.com/resources/articles/dashboards-and-motion",
+          "checked": "2026-10-09"
         },
         "plans": [
           {
@@ -1140,6 +1141,12 @@
       "date": "2026-10-01",
       "text": "初回公開",
       "by": "researcher"
+    },
+    {
+      "date": "2026-10-09",
+      "text": "ClaudeのDocs・Slides・Designが無料版を含む全プランで正式提供に。Claudeの無料枠を更新",
+      "article": "/news/20261009-claude-dashboards-motion-free-slides/",
+      "by": "writer"
     }
   ],
   "editor_note": "",
