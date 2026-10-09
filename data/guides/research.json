@@ -1095,6 +1095,17 @@
       },
       "checked": "2026-10-09",
       "retired_note": ""
+    },
+    {
+      "id": "claude-science",
+      "name": "Claude Science",
+      "vendor": "Anthropic",
+      "url": "https://claude.com/product/claude-science",
+      "status": "watch",
+      "latest": "Claude Science（ベータ）",
+      "tags": [
+        "Claude Science"
+      ]
     }
   ],
   "criteria": [
@@ -1273,6 +1284,12 @@
       "date": "2026-10-09",
       "text": "Gemini Notebook の各プランの上限をソース数・ノートブック数で更新（Ultra は500〜600ソース）",
       "by": "reviewer"
+    },
+    {
+      "date": "2026-10-09",
+      "text": "研究者向けアプリ「Claude Science」を調査中の候補に追加",
+      "article": "/news/20261009-claude-science-ultraviolet-sky-map/",
+      "by": "writer"
     }
   ],
   "editor_note": "",
