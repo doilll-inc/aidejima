@@ -3,8 +3,8 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-01",
-  "last_reviewed": "2026-10-01",
+  "updated": "2026-10-09",
+  "last_reviewed": "2026-10-09",
   "title": "調べもの・リサーチに強いAIのおすすめ：検索AIと情報の正確さの比較",
   "short_name": "調べもの",
   "seo": {
@@ -70,8 +70,8 @@
           "kind": "third_party",
           "name": "AA-Omniscience（Artificial Analysis）",
           "url": "https://artificialanalysis.ai/evaluations/omniscience",
-          "date": "2026-10-01",
-          "note": "指数は Claude Opus 5.5（max）46.4が1位、GPT-6 Astra（high）43.7。幻覚率は GPT-6 Astra 44.8%、Claude Opus 5.5 58.6%（2026-10-01時点）"
+          "date": "2026-10-09",
+          "note": "指数は Claude Opus 5.5（max）46.4が1位、GPT-6 Astra（high）43.7が2位。幻覚率は GPT-6 Astra 44.8%、Claude Opus 5.5 58.6%（2026-10-09時点）"
         },
         {
           "kind": "official",
@@ -137,14 +137,21 @@
         "perplexity",
         "chatgpt"
       ],
-      "answer": "Gemini の無料版は Deep Research（1日の上限あり）と 3.1 Pro（制限あり）を使え、資料を読み込ませる Gemini Notebook も無料です。Perplexity の無料版はすべての回答に引用が付き、ChatGPT の無料版も検索と Deep Research（上限あり）を使えます。",
+      "answer": "Gemini の無料版は Deep Research と、資料を読み込ませる Gemini Notebook を使えます。ただし10月9日から無料版のモデルは Flash-Lite だけになります。Perplexity の無料版はすべての回答に引用が付き、ChatGPT の無料版も検索と Deep Research（上限あり）を使えます。",
       "evidence": [
         {
           "kind": "official",
           "name": "Google AI プラン",
           "url": "https://gemini.google/jp/subscriptions/?hl=ja",
-          "date": "2026-10-01",
-          "note": "無料：3.6 Flash、3.1 Pro（制限あり）、Deep Research、Gemini Notebook"
+          "date": "2026-10-09",
+          "note": "無料：Deep Research、Gemini Notebook（2026-10-09確認時点の表示は 3.6 Flash・3.1 Pro（制限あり））"
+        },
+        {
+          "kind": "official",
+          "name": "Changes to Gemini model access and limits（Gemini ヘルプ）",
+          "url": "https://support.google.com/gemini/answer/17004136?hl=en",
+          "date": "2026-10-09",
+          "note": "プランのない利用者は Flash-Lite のみ。10月9日から順次適用"
         },
         {
           "kind": "official",
@@ -182,28 +189,28 @@
           "kind": "official",
           "name": "Google AI プラン",
           "url": "https://gemini.google/jp/subscriptions/?hl=ja",
-          "date": "2026-10-01",
+          "date": "2026-10-09",
           "note": "円建て表示（Google AI Pro ￥2,900 JPY / 月）"
         },
         {
           "kind": "official",
           "name": "Gemini の対応言語と国（ヘルプ）",
           "url": "https://support.google.com/gemini/answer/13575153?hl=en",
-          "date": "2026-10-01",
+          "date": "2026-10-09",
           "note": "対応言語に Japanese、対応国に Japan"
         },
         {
           "kind": "official",
           "name": "Gemini アプリの Deep Research（ヘルプ）",
           "url": "https://support.google.com/gemini/answer/15719111?hl=en",
-          "date": "2026-10-01",
+          "date": "2026-10-09",
           "note": "既定で Google Search を情報源に含む"
         },
         {
           "kind": "official",
           "name": "AI モード（Google 検索ヘルプ）",
           "url": "https://support.google.com/websearch/answer/16011537?hl=en",
-          "date": "2026-10-01",
+          "date": "2026-10-09",
           "note": "提供国に Japan、対応言語に Japanese。Gemini 3 Pro in AI Mode は英語のみ"
         }
       ]
@@ -257,17 +264,24 @@
       "evidence": [
         {
           "kind": "official",
-          "name": "Gemini Notebook プラン",
-          "url": "https://notebook.google/plans",
-          "date": "2026-10-01",
-          "note": "無料はノートブックあたり最大50ソース。NotebookLM は2026年7月より Gemini Notebook に"
+          "name": "Learn about Gemini Notebook's plans（ヘルプ）",
+          "url": "https://support.google.com/gemininotebook/answer/16213268?hl=en",
+          "date": "2026-10-09",
+          "note": "Standard（無料）はノートブックあたり50ソース、Pro は300ソース"
         },
         {
           "kind": "official",
           "name": "Learn about Gemini Notebook（ヘルプ）",
           "url": "https://support.google.com/gemininotebook/answer/16164461?hl=en&co=GENIE.Platform%3DDesktop",
-          "date": "2026-10-01",
+          "date": "2026-10-09",
           "note": "ソースに基づく回答と明確なインライン引用。フィードバックを送らない限り学習に使わない"
+        },
+        {
+          "kind": "official",
+          "name": "NotebookLM is now Gemini Notebook（Google 公式ブログ）",
+          "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/",
+          "date": "2026-10-09",
+          "note": "2026年7月16日に NotebookLM を Gemini Notebook に改称"
         }
       ]
     }
@@ -314,7 +328,7 @@
       "pricing": {
         "free": {
           "available": true,
-          "detail": "検索は利用可。Deep Research は上限あり。モデルは GPT-5.6 Luna",
+          "detail": "検索は利用可。Deep Research は上限あり",
           "source_url": "https://chatgpt.com/ja-JP/pricing/",
           "checked": "2026-10-01"
         },
@@ -351,7 +365,7 @@
           }
         ],
         "jpy_official": false,
-        "note": "料金ページの円表示は今回の確認で取得できなかったため、OpenAI ヘルプと法人向け料金ページの米ドル表記を載せた。"
+        "note": "料金ページの円表示は今回の確認で取得できなかったため、OpenAI ヘルプと法人向け料金ページの米ドル表記を載せた。2026年10月7日から、無料版を含む全プランで GPT-6 に切り替え（OpenAI の GPT-6 System Card）。"
       },
       "japanese": {
         "ui": "yes",
@@ -510,7 +524,7 @@
         "name": "Gemini 3.8 Flash",
         "released": "2026-09-02",
         "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
-        "checked": "2026-10-01"
+        "checked": "2026-10-09"
       },
       "access": [
         "web",
@@ -529,9 +543,9 @@
       "pricing": {
         "free": {
           "available": true,
-          "detail": "3.6 Flash、3.1 Pro（制限あり）、Deep Research（1日の上限あり）、Gemini Notebook",
-          "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-          "checked": "2026-10-01"
+          "detail": "2026年10月9日から順次、使えるモデルは Flash-Lite のみ（AI Plus は Flash まで、Pro モデルは AI Pro 以上）。日本の料金ページでは Deep Research と Gemini Notebook も無料版の機能に記載",
+          "source_url": "https://support.google.com/gemini/answer/17004136?hl=en",
+          "checked": "2026-10-09"
         },
         "plans": [
           {
@@ -540,9 +554,9 @@
             "currency": "JPY",
             "per": "month",
             "as_shown": "￥725 JPY / 月",
-            "detail": "無料版の2倍の使用量上限",
+            "detail": "無料版の2倍の使用量上限。Flash まで使え、Pro モデルは使えない（変更時期はメールで通知）",
             "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-            "checked": "2026-10-01"
+            "checked": "2026-10-09"
           },
           {
             "name": "Google AI Pro",
@@ -552,7 +566,7 @@
             "as_shown": "￥2,900 JPY / 月",
             "detail": "無料版の4倍の使用量上限、Gemini Notebook の利用上限5倍、5TB のストレージ",
             "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-            "checked": "2026-10-01"
+            "checked": "2026-10-09"
           },
           {
             "name": "Google AI Ultra",
@@ -562,38 +576,38 @@
             "as_shown": "￥14,500 JPY/月（AI Pro の 5 倍）／￥32,000 JPY /月（AI Pro の 20 倍）",
             "detail": "Deep Think などへの先行アクセス",
             "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-            "checked": "2026-10-01"
+            "checked": "2026-10-09"
           }
         ],
         "jpy_official": true,
-        "note": "Deep Research のレポート作成上限は AI Pro・Ultra で高くなり、Pro モデルで作れる（ヘルプ）。"
+        "note": "日本の料金ページ（10月9日確認）は無料版で「3.6 Flash」「3.1 Pro（制限あり）」と表示しているが、ヘルプは10月9日から無料版を Flash-Lite のみにすると告知。Deep Research のレポート作成上限は AI Pro・Ultra で高くなり、Pro モデルで作れる（ヘルプ）。"
       },
       "japanese": {
         "ui": "yes",
         "output": "yes",
         "note": "Gemini ウェブアプリの対応言語一覧に日本語",
         "source_url": "https://support.google.com/gemini/answer/13575153?hl=en",
-        "checked": "2026-10-01"
+        "checked": "2026-10-09"
       },
       "commercial_use": {
         "value": "yes",
         "note": "Google 利用規約で、生成されたオリジナルのコンテンツの所有権を Google は主張しない。出力を機械学習モデルの開発に使うことは禁止",
         "source_url": "https://policies.google.com/terms?hl=en",
-        "checked": "2026-10-01"
+        "checked": "2026-10-09"
       },
       "data_policy": {
         "training_default": "opt_out_available",
         "note": "既定では会話がサービス改善（生成AIモデルを含む）に使われ、一部は人が確認する。「アクティビティを保持」をオフにすると今後の会話は改善に使われない",
         "source_url": "https://support.google.com/gemini/answer/13594961?hl=en",
-        "checked": "2026-10-01"
+        "checked": "2026-10-09"
       },
       "availability_japan": {
         "value": "yes",
         "note": "Gemini ウェブアプリの対応国一覧に日本",
         "source_url": "https://support.google.com/gemini/answer/13575153?hl=en",
-        "checked": "2026-10-01"
+        "checked": "2026-10-09"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-09",
       "retired_note": ""
     },
     {
@@ -613,7 +627,7 @@
         "name": "Claude Opus 5.5",
         "released": "2026-09-22",
         "source_url": "https://www.anthropic.com/claude-opus-5-5",
-        "checked": "2026-10-01"
+        "checked": "2026-10-09"
       },
       "access": [
         "web",
@@ -635,7 +649,7 @@
           "available": true,
           "detail": "Web 検索は利用可。Research は使えない。モデルは Sonnet と Haiku",
           "source_url": "https://claude.com/pricing",
-          "checked": "2026-10-01"
+          "checked": "2026-10-09"
         },
         "plans": [
           {
@@ -646,7 +660,7 @@
             "as_shown": "$17 Per month with annual subscription discount ($200 billed up front). $20 if billed monthly.",
             "detail": "Research、Opus 5.5",
             "source_url": "https://claude.com/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-09"
           },
           {
             "name": "Max",
@@ -656,7 +670,7 @@
             "as_shown": "From $100 Per month",
             "detail": "Pro の5倍か20倍の利用量。月払いのみ",
             "source_url": "https://claude.com/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-09"
           },
           {
             "name": "Team（標準シート）",
@@ -666,7 +680,7 @@
             "as_shown": "$20 Per seat / month if billed annually. $25 if billed monthly.",
             "detail": "2〜150人。既定で学習に使わない。社内データの横断検索（Enterprise search）",
             "source_url": "https://claude.com/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-09"
           }
         ],
         "jpy_official": false,
@@ -677,27 +691,27 @@
         "output": "yes",
         "note": "ヘルプの対応言語に日本語",
         "source_url": "https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language",
-        "checked": "2026-10-01"
+        "checked": "2026-10-09"
       },
       "commercial_use": {
         "value": "yes",
         "note": "消費者向け規約で出力の権利を利用者に譲渡（4条）。出力は不正確な場合があり、独自に確認するよう求めている",
         "source_url": "https://www.anthropic.com/legal/consumer-terms",
-        "checked": "2026-10-01"
+        "checked": "2026-10-09"
       },
       "data_policy": {
         "training_default": "opt_out_available",
         "note": "Free・Pro・Max は学習利用を設定でオフにできる（Opt-out）。Team・Enterprise は既定で学習に使わない",
         "source_url": "https://claude.com/pricing",
-        "checked": "2026-10-01"
+        "checked": "2026-10-09"
       },
       "availability_japan": {
         "value": "yes",
         "note": "公式の提供国・地域一覧に日本",
         "source_url": "https://www.anthropic.com/supported-countries",
-        "checked": "2026-10-01"
+        "checked": "2026-10-09"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-09",
       "retired_note": ""
     },
     {
@@ -730,65 +744,65 @@
       "pricing": {
         "free": {
           "available": true,
-          "detail": "ノートブックあたり最大50ソース。音声・動画の解説などは標準の生成回数",
-          "source_url": "https://notebook.google/plans",
-          "checked": "2026-10-01"
+          "detail": "ノートブックあたり最大50ソース、ノートブックは100冊まで（Gemini Notebook Standard）",
+          "source_url": "https://support.google.com/gemininotebook/answer/16213268?hl=en",
+          "checked": "2026-10-09"
         },
         "plans": [
           {
             "name": "Gemini Notebook in Plus",
             "per": "month",
             "as_shown": "Google AI Plus に含まれる",
-            "detail": "標準の2倍の生成回数、ノートブックあたり最大100ソース",
-            "source_url": "https://notebook.google/plans",
-            "checked": "2026-10-01"
+            "detail": "ノートブックあたり最大100ソース、ノートブックは200冊まで",
+            "source_url": "https://support.google.com/gemininotebook/answer/16213268?hl=en",
+            "checked": "2026-10-09"
           },
           {
             "name": "Gemini Notebook in Pro",
             "per": "month",
             "as_shown": "Google AI Pro に含まれる",
-            "detail": "標準の5倍の生成回数、ノートブックあたり最大300ソース",
-            "source_url": "https://notebook.google/plans",
-            "checked": "2026-10-01"
+            "detail": "ノートブックあたり最大300ソース、ノートブックは500冊まで",
+            "source_url": "https://support.google.com/gemininotebook/answer/16213268?hl=en",
+            "checked": "2026-10-09"
           },
           {
             "name": "Gemini Notebook in Ultra",
             "per": "month",
             "as_shown": "Google AI Ultra に含まれる",
-            "detail": "標準の最大50倍の生成回数、ノートブックあたり最大600ソース",
-            "source_url": "https://notebook.google/plans",
-            "checked": "2026-10-01"
+            "detail": "ノートブックあたり最大500ソース（20TBプラン）・600ソース（30TBプラン）、ノートブックは500冊まで",
+            "source_url": "https://support.google.com/gemininotebook/answer/16213268?hl=en",
+            "checked": "2026-10-09"
           }
         ],
         "jpy_official": false,
-        "note": "Google AI Plus・Pro・Ultra の円建て料金は Gemini の行を参照。組織向けは Google Workspace・Google Cloud 経由。"
+        "note": "上限はヘルプの表で「変更の可能性あり」とされている。Google AI Plus・Pro・Ultra の円建て料金は Gemini の行を参照。組織向けは Google Workspace・Google Cloud 経由。"
       },
       "japanese": {
         "ui": "yes",
         "output": "yes",
         "note": "対応言語（80以上）に日本語。出力言語は設定で選べる",
         "source_url": "https://support.google.com/gemininotebook/answer/16261963?hl=en",
-        "checked": "2026-10-01"
+        "checked": "2026-10-09"
       },
       "commercial_use": {
         "value": "yes",
         "note": "Google 利用規約で、生成されたオリジナルのコンテンツの所有権を Google は主張しない",
         "source_url": "https://policies.google.com/terms?hl=en",
-        "checked": "2026-10-01"
+        "checked": "2026-10-09"
       },
       "data_policy": {
         "training_default": "not_used",
         "note": "個人ユーザーのデータも、フィードバックを送らない限り学習に使わない。Workspace ユーザーは人による確認もない",
         "source_url": "https://support.google.com/gemininotebook/answer/16164461?hl=en&co=GENIE.Platform%3DDesktop",
-        "checked": "2026-10-01"
+        "checked": "2026-10-09"
       },
       "availability_japan": {
         "value": "yes",
         "note": "ブラウザ版の対応国・地域に日本",
         "source_url": "https://support.google.com/gemininotebook/answer/16164461?hl=en&co=GENIE.Platform%3DDesktop",
-        "checked": "2026-10-01"
+        "checked": "2026-10-09"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-09",
       "retired_note": ""
     },
     {
@@ -823,7 +837,7 @@
           "available": true,
           "detail": "Google 検索から無料で使える。Gemini 3 Pro（英語のみ）は1日の上限があり、Google AI プランで上限が上がる",
           "source_url": "https://support.google.com/websearch/answer/16011537?hl=en",
-          "checked": "2026-10-01"
+          "checked": "2026-10-09"
         },
         "plans": [],
         "jpy_official": false,
@@ -834,21 +848,21 @@
         "output": "yes",
         "note": "AI モードの対応言語に日本語。Gemini 3 Pro を使う AI モードは英語のみ",
         "source_url": "https://support.google.com/websearch/answer/16011537?hl=en",
-        "checked": "2026-10-01"
+        "checked": "2026-10-09"
       },
       "data_policy": {
         "training_default": "unknown",
         "note": "検索と AI 機能でのやりとりを生成AIの改善に使うとヘルプに記載。学習利用を拒否する設定の記載は見つからず",
         "source_url": "https://support.google.com/websearch/answer/16011537?hl=en",
-        "checked": "2026-10-01"
+        "checked": "2026-10-09"
       },
       "availability_japan": {
         "value": "yes",
         "note": "AI モードの提供国に日本",
         "source_url": "https://support.google.com/websearch/answer/16011537?hl=en",
-        "checked": "2026-10-01"
+        "checked": "2026-10-09"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-09",
       "retired_note": ""
     },
     {
@@ -907,16 +921,16 @@
             "amount": 3200,
             "currency": "JPY",
             "per": "month",
-            "as_shown": "¥3,200 /月",
+            "as_shown": "¥3,200 /月（¥32,000 /年）",
             "detail": "高度なリサーチや分析などをユーザーに代わって行うエージェント型 AI 機能",
             "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing/individuals",
-            "checked": "2026-10-01"
+            "checked": "2026-10-09"
           }
         ],
         "jpy_official": true,
         "note": ""
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-09",
       "retired_note": ""
     },
     {
@@ -982,7 +996,7 @@
           "available": true,
           "detail": "論文検索と要約は無制限。Research Agent・Research Reports は上限あり",
           "source_url": "https://elicit.com/pricing",
-          "checked": "2026-10-01"
+          "checked": "2026-10-09"
         },
         "plans": [
           {
@@ -993,13 +1007,13 @@
             "as_shown": "$49 Per user/month, billed as $588 annually",
             "detail": "系統的レビューで5,000本をスクリーニング、API",
             "source_url": "https://elicit.com/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-09"
           }
         ],
         "jpy_official": false,
         "note": ""
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-09",
       "retired_note": ""
     },
     {
@@ -1023,7 +1037,7 @@
           "available": true,
           "detail": "お試しは100検索・アシスタント100回まで",
           "source_url": "https://kagi.com/pricing",
-          "checked": "2026-10-01"
+          "checked": "2026-10-09"
         },
         "plans": [
           {
@@ -1034,13 +1048,13 @@
             "as_shown": "$25 /mo (+ Sales Tax)",
             "detail": "無制限の検索、Kagi Assistant の Research モード",
             "source_url": "https://kagi.com/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-09"
           }
         ],
         "jpy_official": false,
         "note": ""
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-09",
       "retired_note": ""
     },
     {
@@ -1064,7 +1078,7 @@
           "available": true,
           "detail": "Web Search API は1日100クエリまで無料",
           "source_url": "https://you.com/pricing",
-          "checked": "2026-10-01"
+          "checked": "2026-10-09"
         },
         "usage": {
           "unit": "1,000回",
@@ -1073,13 +1087,13 @@
           "as_shown": "$5.00 /1k calls",
           "detail": "Web Search API",
           "source_url": "https://you.com/pricing",
-          "checked": "2026-10-01"
+          "checked": "2026-10-09"
         },
         "plans": [],
         "jpy_official": false,
         "note": ""
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-09",
       "retired_note": ""
     }
   ],
@@ -1149,8 +1163,8 @@
       "operator": "Artificial Analysis",
       "url": "https://artificialanalysis.ai/evaluations/omniscience",
       "what": "6分野6,000問の知識問題。正答を加点し、誤答を減点する指数（-100〜100）。幻覚率は正答以外の回答のうち誤答した割合（低いほど、知らないときに答えを控える）",
-      "snapshot": "指数1位 Claude Opus 5.5（max）46.4（正答率66.2%・幻覚率58.6%）、GPT-6 Astra（high）43.7（幻覚率44.8%）、Gemini 4 Argon（high）42.4（幻覚率15.1%）、GPT-6.1 Sol（max）41.5、Grok 4.7（xhigh）32.0、Gemini 3.8 Flash（high）29.6（2026-10-01時点）",
-      "checked": "2026-10-01"
+      "snapshot": "指数1位 Claude Opus 5.5（max）46.4（正答率66.2%・幻覚率58.6%）、2位 GPT-6 Astra（high）43.7（幻覚率44.8%）、3位 Claude Fable 5.1（max）43.5（幻覚率72.6%）、Gemini 4 Argon（high）42.4（幻覚率15.1%）、GPT-6.1 Sol（max）41.5、Grok 4.7（xhigh）32.0、Gemini 3.8 Flash（high）29.6（2026-10-09時点）",
+      "checked": "2026-10-09"
     },
     {
       "id": "vectara-hhem",
@@ -1158,8 +1172,8 @@
       "operator": "Vectara",
       "url": "https://github.com/vectara/hallucination-leaderboard",
       "what": "文書を要約させたとき、元の文書にない内容を加える割合（HHEM モデルで判定）",
-      "snapshot": "GPT-6 Sol 6.5%、GPT-6 Astra 8.7%、Gemini 3.1 Pro Preview 10.4%、Claude Opus 4.7 12.0%。Claude Opus 5.5・Gemini 3.8 Flash は未掲載（2026-09-22更新・2026-10-01確認）",
-      "checked": "2026-10-01"
+      "snapshot": "GPT-6 Sol 6.5%、GPT-6 Astra 8.7%、Gemini 3.1 Pro Preview 10.4%、Claude Opus 4.7 12.0%。Claude Opus 5.5・GPT-6.1 Sol・Gemini 3.8 Flash は未掲載（2026-09-22更新・2026-10-09確認）",
+      "checked": "2026-10-09"
     },
     {
       "id": "lmarena-search",
@@ -1167,8 +1181,8 @@
       "operator": "LMArena",
       "url": "https://arena.ai/leaderboard/search",
       "what": "検索付きの回答を利用者が見比べて投票する一対比較。正確さではなく好みの評価",
-      "snapshot": "1位 gpt-5.6-sol-xhigh 1257、2位 claude-opus-4-6-search 1253、9位 gemini-3.1-pro-grounding 1210、29位 ppl-sonar-reasoning-pro-high 1139。GPT-6 系・Claude Opus 5.5 は未掲載（2026-08-24更新・2026-10-01確認）",
-      "checked": "2026-10-01"
+      "snapshot": "1位 gpt-5.6-sol-xhigh 1257、2位 claude-opus-4-6-search 1253、9位 gemini-3.1-pro-grounding 1210、29位 ppl-sonar-reasoning-pro-high 1139。GPT-6 系・Claude Opus 5.5 は未掲載（2026-08-24更新・2026-10-09確認）",
+      "checked": "2026-10-09"
     },
     {
       "id": "openai-gpt-6-1-sol-factuality",
@@ -1186,7 +1200,7 @@
       "url": "https://www.anthropic.com/claude-opus-5-5",
       "what": "見つけにくい決算資料を探して報告書を書かせ、すべての数値と引用を出典と自動照合（捏造が1つでもあれば不合格）",
       "snapshot": "Opus 5.5 は18回中16回で合格基準を満たし、Fable 5.1 と Opus 5 は合格0回（2026-09-22発表）",
-      "checked": "2026-10-01"
+      "checked": "2026-10-09"
     },
     {
       "id": "perplexity-deep-research",
@@ -1249,6 +1263,16 @@
       "date": "2026-10-01",
       "text": "初回公開",
       "by": "researcher"
+    },
+    {
+      "date": "2026-10-09",
+      "text": "Gemini の無料版が10月9日から Flash-Lite のみになることを反映し、「無料で使うなら」の説明を更新",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-10-09",
+      "text": "Gemini Notebook の各プランの上限をソース数・ノートブック数で更新（Ultra は500〜600ソース）",
+      "by": "reviewer"
     }
   ],
   "editor_note": "",
