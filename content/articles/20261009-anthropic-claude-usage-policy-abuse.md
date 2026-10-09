@@ -3,6 +3,7 @@
   "title": "Claudeへの度を越した暴言を規約で禁止、Anthropicが利用ルールを改定 偽アカウントや監視も明記",
   "description": "Anthropicは10月8日、Claudeの利用ルール（Usage Policy）を改定し、11月12日に施行すると発表した。目的のない執拗な暴言を禁じる項目を新設し、政治・商用を問わない偽アカウント運用や、本人の同意のない追跡の禁止も明文化した。",
   "date": "2026-10-09T03:55:00+09:00",
+  "updated": "2026-10-10T04:25:00+09:00",
   "category": "policy",
   "tags": ["Anthropic", "Claude", "利用規約", "安全性", "規制"],
   "summary": [
@@ -12,8 +13,10 @@
   ],
   "sources": [
     {"title": "2026 Usage Policy update", "publisher": "Anthropic", "url": "https://www.anthropic.com/news/2026-usage-policy-update", "kind": "公式発表"},
+    {"title": "Usage Policy", "publisher": "Anthropic", "url": "https://www.anthropic.com/legal/aup", "kind": "公式ドキュメント"},
     {"title": "Anthropic changes usage policy to ban model abuse and election interference", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/10/08/anthropic-changes-usage-policy-to-ban-model-abuse-and-election-interference/", "kind": "報道"},
-    {"title": "Anthropic bans 'abusive or cruel behavior' toward Claude", "publisher": "The Verge", "url": "https://www.theverge.com/ai-artificial-intelligence/1008100/anthropic-new-usage-policy-abuse-claude", "kind": "報道"}
+    {"title": "Anthropic bans 'abusive or cruel behavior' toward Claude", "publisher": "The Verge", "url": "https://www.theverge.com/ai-artificial-intelligence/1008100/anthropic-new-usage-policy-abuse-claude", "kind": "報道"},
+    {"title": "Claude's New Rules Target Fake Sources Built To Sway AI Answers", "publisher": "Search Engine Journal", "url": "https://www.searchenginejournal.com/claude-rules-fake-sources-ai-answers/592456/", "kind": "報道"}
   ],
   "thumb_text": "Claude 利用ルール",
   "thumb_style": "3d",
@@ -74,10 +77,20 @@ TechCrunchは、AIへの暴言の禁止を今回の改定でもっとも注目�
 
 AnthropicはClaudeに関する取り組みを続けて発表しており、10月8日には問い合わせ対応向けの小型モデルも公開しています（[AnthropicがClaude Haiku 5.5を公開](/news/20261008-anthropic-claude-haiku-5-5/)）。
 
+## 追記（10月10日）: AIの回答を操作する「サクラのサイト網」も禁止に
+
+改定版の全文を公式のUsage Policyのページで確認すると、マーケティングに直接関わる項目がもう1つありました。検索エンジンやAIが答えを引き出す情報源に、出どころ・書き手・独立性を偽った内容を仕込んで操作することを禁じる一文です。例として、互いに無関係を装って同じ主張を裏づけ合うサイトのネットワークが挙げられています。
+
+{{card:https://www.anthropic.com/legal/aup|Usage Policy|Anthropic}}
+
+たとえば、自社と関係のない第三者を装った比較サイトや口コミサイトをClaudeで量産し、ChatGPTやGoogleのAIの回答で自社製品が勧められるよう仕向ける手法がこれに当たります。AIの回答に自社を載せる工夫（LLMO・GEOと呼ばれる施策）は広告業界で広がっていますが、Claudeで作るなら「発信元を隠さない」ことが条件になりました。
+
+米Search Engine Journalは、旧版で「高リスクな用途」に挙げられていた、AIで文章を自動生成して外部に公開する使い方が、改定版の一覧から外れたとも報じています。改定版の高リスク用途は法律・医療・金融・信用・保険・住宅・雇用・教育・医療へのアクセス・公的給付・法的地位の11分野で、記事の自動公開そのものは含まれていません。ただし、上の偽装の禁止や偽情報の規則は、自動公開する場合にも引き続き適用されます。
+
 ## 日本のビジネスへの影響
 
 - **使えるか**: 改定版は11月12日に施行され、日本の利用者にもそのまま適用されます。提供地域の明確化では、対象外の地域の資本が過半を握る企業は、日本に拠点があっても使えない点が改めて書かれました。海外資本の入ったグループ会社で導入している場合は確認が必要です
-- **誰にどう効くか**: 広告・SNS運用の担当者には、商用の偽アカウントや発信者を隠した拡散が「Claudeで作ってはいけないもの」とはっきりしたことが大きいです。口コミの水増しや、企業名を伏せた投稿の量産にClaudeを使うと規約違反になります。医療・金融・人事でClaudeを使う企業の担当者は、人が最終確認する体制と、AIを使ったと本人に伝える義務が変わらず求められる点を押さえてください
+- **誰にどう効くか**: 広告・SNS運用の担当者には、商用の偽アカウントや発信者を隠した拡散が「Claudeで作ってはいけないもの」とはっきりしたことが大きいです。口コミの水増しや、企業名を伏せた投稿の量産、AIの回答を誘導するための「第三者を装ったサイト」づくりにClaudeを使うと規約違反になります。医療・金融・人事でClaudeを使う企業の担当者は、人が最終確認する体制と、AIを使ったと本人に伝える義務が変わらず求められる点を押さえてください
 - **今すぐやれること**: 社内でClaudeを使っている業務を一覧にし、SNSの投稿代行や口コミ対応、採用や融資の判断補助に当たるものがないか、11月12日までに改定版と照らし合わせておくと安心です
 - **注意点**: 今回の発表は変更点の要約です。Claudeを組み込んだ自社サービスを提供している場合は、全文が載った公式のUsage Policyのページで、自社の用途がどの章に当たるかを原文で確かめてください。暴言の禁止は極端な例に限られるので、社員の普段の使い方を過度に縛る必要はありません
 
