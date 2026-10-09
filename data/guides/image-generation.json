@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-07",
+  "updated": "2026-10-10",
   "last_reviewed": "2026-10-05",
   "title": "画像生成AIのおすすめと料金比較",
   "short_name": "画像生成",
@@ -403,9 +403,9 @@
       "pricing": {
         "free": {
           "available": true,
-          "detail": "無料版のGeminiアプリで画像の生成と編集が可能（10月9日から無料版のモデルはFlash-Liteのみになり、Flash-Lite設定時の画像生成はNano Banana 2 Lite）",
-          "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-          "checked": "2026-10-05"
+          "detail": "無料版のGeminiアプリで画像の生成と編集が可能（保存は1K）。最新のNano Banana 2.1と「Proで作り直し」、2K保存はGoogle AI Plus以上。10月9日から無料版のモデルはFlash-Liteのみで、Flash-Lite設定時の画像生成はNano Banana 2 Lite",
+          "source_url": "https://gemini.google/jp/overview/image-generation/?hl=ja-JP",
+          "checked": "2026-10-10"
         },
         "plans": [
           {
@@ -1404,6 +1404,12 @@
       "date": "2026-10-07",
       "text": "GeminiのAPI画像生成がNano Banana 2.1に。1K画像1枚$0.0336と前モデルの半額、旧モデルは10月29日に終了",
       "article": "/news/20261007-google-nano-banana-2-1/",
+      "by": "writer"
+    },
+    {
+      "date": "2026-10-10",
+      "text": "GeminiアプリのNano Banana 2.1はGoogle AI Plus（月725円）以上で利用可能、無料版は1K保存と公式ページで確認",
+      "article": "/news/20261010-gemini-image-generation-how-to-use/",
       "by": "writer"
     }
   ],
