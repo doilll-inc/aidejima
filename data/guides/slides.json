@@ -3,8 +3,8 @@
   "status": "published",
   "priority": 3,
   "created": "2026-09-30",
-  "updated": "2026-10-09",
-  "last_reviewed": "2026-10-01",
+  "updated": "2026-10-10",
+  "last_reviewed": "2026-10-10",
   "title": "AI資料作成・スライド生成のおすすめと料金比較",
   "short_name": "資料作成",
   "seo": {
@@ -246,7 +246,7 @@
             "as_shown": "¥2,130 /月",
             "detail": "1人用。Copilot 搭載の Word・Excel・PowerPoint・Outlook デスクトップアプリ、1TB",
             "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing/individuals",
-            "checked": "2026-10-01"
+            "checked": "2026-10-10"
           },
           {
             "name": "Microsoft 365 Premium",
@@ -256,7 +256,7 @@
             "as_shown": "¥3,200 /月",
             "detail": "1〜6人用（AIは契約者のみ）。より多くのAI利用、リサーチや分析を代行するエージェント機能",
             "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing/individuals",
-            "checked": "2026-10-01"
+            "checked": "2026-10-10"
           },
           {
             "name": "Microsoft 365 Copilot Business（アドオン）",
@@ -264,9 +264,9 @@
             "currency": "JPY",
             "per": "seat_month",
             "as_shown": "¥3,148 ユーザー/月相当、年払い（2026年7月1日〜12月31日の申込は初年度 ¥2,698）",
-            "detail": "対象の Microsoft 365 ビジネスプランに追加。最大300ユーザー。価格に消費税は含まない",
+            "detail": "対象の Microsoft 365 ビジネスプランに追加。最大300ユーザー。月払いは ¥3,778。価格に消費税は含まない",
             "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-10"
           },
           {
             "name": "Microsoft 365 Business Standard と Copilot Business",
@@ -274,9 +274,9 @@
             "currency": "JPY",
             "per": "seat_month",
             "as_shown": "¥3,523 ユーザー/月相当、年払い",
-            "detail": "Office アプリ・Teams・1TB と Copilot のセット。価格に消費税は含まない",
+            "detail": "Office アプリ・Teams・1TB と Copilot のセット。月払いは ¥4,228。価格に消費税は含まない",
             "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-10"
           }
         ],
         "jpy_official": true,
@@ -287,27 +287,27 @@
         "output": "yes",
         "note": "Microsoft 365 Copilot の対応言語に日本語",
         "source_url": "https://support.microsoft.com/en-us/office/supported-languages-for-microsoft-365-copilot-94518d61-644b-4118-9492-617eea4801d8",
-        "checked": "2026-10-01"
+        "checked": "2026-10-10"
       },
       "commercial_use": {
         "value": "conditional",
         "note": "個人向け Copilot の規約は「自分の個人的な利用に限る」。業務で使うなら一般法人向け・大企業向けプラン",
         "source_url": "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals/termsofuse",
-        "checked": "2026-10-01"
+        "checked": "2026-10-10"
       },
       "data_policy": {
         "training_default": "not_used",
-        "note": "法人向け Microsoft 365 Copilot：プロンプト・応答・Microsoft Graph 経由のデータは基盤モデルの学習に使わない。個人向けプランはこのページの対象外",
+        "note": "法人向け Microsoft 365 Copilot（現在の名称は Microsoft Copilot）：プロンプト・応答・Microsoft Graph 経由のデータは基盤モデルの学習に使わない。個人向けプランはこのページの対象外",
         "source_url": "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy",
-        "checked": "2026-10-01"
+        "checked": "2026-10-10"
       },
       "availability_japan": {
         "value": "yes",
         "note": "日本向けの料金ページで円建て販売",
         "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing/individuals",
-        "checked": "2026-10-01"
+        "checked": "2026-10-10"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-10",
       "retired_note": ""
     },
     {
@@ -342,7 +342,7 @@
           "available": true,
           "detail": "無料版の Gemini アプリに Canvas が含まれる。Canvas で作ったスライドは Google スライドか PDF に書き出せる",
           "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-          "checked": "2026-10-01"
+          "checked": "2026-10-10"
         },
         "plans": [
           {
@@ -353,7 +353,7 @@
             "as_shown": "￥2,900 JPY / 月",
             "detail": "Gemini in Gmail・ドキュメントなどを含む個人向けプラン",
             "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-            "checked": "2026-10-01"
+            "checked": "2026-10-10"
           },
           {
             "name": "Google Workspace Business Standard",
@@ -374,25 +374,25 @@
         "output": "partial",
         "note": "Gemini アプリは日本語に対応。Google スライド内のプレゼン生成・スライド生成は「デスクトップ・英語のみ」とヘルプに記載",
         "source_url": "https://support.google.com/docs/answer/17111393?hl=en",
-        "checked": "2026-10-01"
+        "checked": "2026-10-10"
       },
       "commercial_use": {
         "value": "yes",
         "note": "Google 利用規約で、生成されたオリジナルのコンテンツの所有権を Google は主張しない",
         "source_url": "https://policies.google.com/terms?hl=en",
-        "checked": "2026-10-01"
+        "checked": "2026-10-10"
       },
       "data_policy": {
         "training_default": "opt_out_available",
-        "note": "個人の Gemini アプリは「アクティビティを保持」設定がオンだと、サービス改善や人によるレビューに使われることがある。Workspace では許可なくドメイン外の生成AIモデルの学習に使わない",
+        "note": "個人の Gemini アプリは「アクティビティを保持」がオンだと、生成AIモデルの学習を含むサービス改善や人によるレビューに使われる。オフにすると以後のチャットは学習に使われない。仕事用・学校用アカウントは別のデータの扱い",
         "source_url": "https://support.google.com/gemini/answer/13594961?hl=en",
-        "checked": "2026-10-01"
+        "checked": "2026-10-10"
       },
       "availability_japan": {
         "value": "yes",
         "note": "Gemini ウェブアプリの対応国一覧に日本",
         "source_url": "https://support.google.com/gemini/answer/13575153?hl=en",
-        "checked": "2026-10-01"
+        "checked": "2026-10-10"
       },
       "checked": "2026-10-01",
       "retired_note": ""
@@ -481,7 +481,7 @@
         "output": "yes",
         "note": "出力言語に日本語（です・ます調／だ・である調）がある（公式ドキュメント）。画面はブラウザの言語に合わせて切り替わり、日本語の料金ページあり。日本語フォントはカスタムフォントを追加できる",
         "source_url": "https://developers.gamma.app/reference/output-language-accepted-values",
-        "checked": "2026-10-01"
+        "checked": "2026-10-10"
       },
       "commercial_use": {
         "value": "unknown",
@@ -493,7 +493,7 @@
         "training_default": "opt_out_available",
         "note": "個人（Free・Plus・Pro・Ultra）は既定で学習に使われ、設定の Data Controls でいつでも拒否できる。Business・Enterprise は常に学習に使わない",
         "source_url": "https://help.gamma.app/en/articles/12281928-does-gamma-use-my-content-to-train-its-ai-features",
-        "checked": "2026-10-01"
+        "checked": "2026-10-10"
       },
       "availability_japan": {
         "value": "yes",
@@ -534,7 +534,7 @@
           "available": true,
           "detail": "作成できる資料は3個まで、AIデザイン生成3枚／月。PDF・PowerPointへの出力なし",
           "source_url": "https://irusiru.jp/",
-          "checked": "2026-10-01"
+          "checked": "2026-10-10"
         },
         "plans": [
           {
@@ -545,7 +545,7 @@
             "as_shown": "1,848円/月（税込）",
             "detail": "AIデザイン生成40枚／月、PDF・画像の参照、PDF・PowerPoint出力",
             "source_url": "https://irusiru.jp/",
-            "checked": "2026-10-01"
+            "checked": "2026-10-10"
           },
           {
             "name": "パーソナルプラス",
@@ -555,7 +555,7 @@
             "as_shown": "66,000円/年（税込）年払い（月あたり5,500円）",
             "detail": "AIデザイン生成200枚／月（1人あたり）、メンバー招待、ライブラリ機能",
             "source_url": "https://irusiru.jp/",
-            "checked": "2026-10-01"
+            "checked": "2026-10-10"
           },
           {
             "name": "法人",
@@ -564,7 +564,7 @@
             "as_shown": "応相談",
             "detail": "AIデザイン生成500枚／月（1人あたり）、自社テンプレート登録、営業担当のサポート",
             "source_url": "https://irusiru.jp/",
-            "checked": "2026-10-01"
+            "checked": "2026-10-10"
           }
         ],
         "jpy_official": true,
@@ -575,27 +575,27 @@
         "output": "yes",
         "note": "国内で開発。日本語の見出しや表が崩れないデザインを生成すると公式に明記",
         "source_url": "https://irusiru.jp/",
-        "checked": "2026-10-01"
+        "checked": "2026-10-10"
       },
       "commercial_use": {
         "value": "yes",
         "note": "作った資料は商用利用できる。イルシルのイラストやテンプレートをそのまま配布・販売することは禁止（公式FAQ）",
         "source_url": "https://irusiru.jp/",
-        "checked": "2026-10-01"
+        "checked": "2026-10-10"
       },
       "data_policy": {
         "training_default": "not_used",
         "note": "入力した内容は無料プランを含む全プランで学習に使わない。ISO/IEC 27001 認証取得",
         "source_url": "https://irusiru.jp/",
-        "checked": "2026-10-01"
+        "checked": "2026-10-10"
       },
       "availability_japan": {
         "value": "yes",
         "note": "日本向けに円建て・税込で販売",
         "source_url": "https://irusiru.jp/",
-        "checked": "2026-10-01"
+        "checked": "2026-10-10"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-10",
       "retired_note": ""
     },
     {
@@ -684,7 +684,7 @@
         "name": "Claude Slides",
         "released": "2026-09-16",
         "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
-        "checked": "2026-10-01"
+        "checked": "2026-10-10"
       },
       "access": [
         "web",
@@ -704,10 +704,10 @@
       "pricing": {
         "free": {
           "available": true,
-          "detail": "2026年10月8日から Docs・Slides・Design は無料版を含む全プランで正式提供（PowerPoint・PDF に書き出し可）。Dashboards は有料プラン、Motion は Team・Enterprise の試験提供",
+          "detail": "2026年10月8日から Docs・Slides・Design は無料版を含む全プランで正式提供（PowerPoint・PDF に書き出し可、スライドは編集できる Google スライドとしても送れる）。Dashboards は有料プラン、Motion は Team・Enterprise の試験提供",
           "as_shown": "Claude Docs, Slides, and Design are out of beta and available on every plan, including Free.",
           "source_url": "https://claude.com/resources/articles/dashboards-and-motion",
-          "checked": "2026-10-09"
+          "checked": "2026-10-10"
         },
         "plans": [
           {
@@ -718,7 +718,7 @@
             "as_shown": "$17 Per month with annual subscription discount ($200 billed up front). $20 if billed monthly.",
             "detail": "Claude Design・Slides・Docs、Claude in Chrome and Microsoft 365",
             "source_url": "https://claude.com/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-10"
           },
           {
             "name": "Max",
@@ -728,7 +728,7 @@
             "as_shown": "From $100 Per month",
             "detail": "Pro の5倍か20倍の利用枠",
             "source_url": "https://claude.com/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-10"
           },
           {
             "name": "Team（標準シート）",
@@ -738,7 +738,7 @@
             "as_shown": "$20 Per seat / month if billed annually. $25 if billed monthly.",
             "detail": "2〜150人。既定で学習に使わない、SSO",
             "source_url": "https://claude.com/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-10"
           }
         ],
         "jpy_official": false,
@@ -749,27 +749,27 @@
         "output": "yes",
         "note": "ヘルプの対応言語に日本語",
         "source_url": "https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language",
-        "checked": "2026-10-01"
+        "checked": "2026-10-10"
       },
       "commercial_use": {
         "value": "yes",
         "note": "消費者向け規約で出力の権利を利用者に譲渡",
         "source_url": "https://www.anthropic.com/legal/consumer-terms",
-        "checked": "2026-10-01"
+        "checked": "2026-10-10"
       },
       "data_policy": {
         "training_default": "opt_out_available",
         "note": "Free・Pro・Max は学習利用を拒否できる（Opt-out）。Team は既定で学習に使わない",
         "source_url": "https://claude.com/pricing",
-        "checked": "2026-10-01"
+        "checked": "2026-10-10"
       },
       "availability_japan": {
         "value": "yes",
         "note": "公式の提供国・地域一覧に日本",
         "source_url": "https://www.anthropic.com/supported-countries",
-        "checked": "2026-10-01"
+        "checked": "2026-10-10"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-10",
       "retired_note": ""
     },
     {
@@ -875,13 +875,13 @@
         "web",
         "api"
       ],
-      "editorial_take": "文章を選ぶと図解・フローチャート・グラフにするツール。画面は英語のみだが、日本語の文章からも図を作れる（ヘルプ）。",
+      "editorial_take": "文章を選ぶと図解・フローチャート・グラフにするツール。画面に日本語はないが、作りたい言語で書いた文章から図を作れる（ヘルプ）。",
       "pricing": {
         "free": {
           "available": true,
           "detail": "週500 AIクレジット、PNG・PDFの書き出し無制限",
           "source_url": "https://www.napkin.ai/pricing",
-          "checked": "2026-10-01"
+          "checked": "2026-10-10"
         },
         "plans": [
           {
@@ -892,7 +892,7 @@
             "as_shown": "$9 per person / month",
             "detail": "月10,000 AIクレジット、PPT・SVGの書き出し無制限",
             "source_url": "https://www.napkin.ai/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-10"
           },
           {
             "name": "Pro",
@@ -902,7 +902,7 @@
             "as_shown": "$22 per person / month",
             "detail": "月30,000 AIクレジット",
             "source_url": "https://www.napkin.ai/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-10"
           }
         ],
         "jpy_official": false,
@@ -911,17 +911,17 @@
       "japanese": {
         "ui": "no",
         "output": "yes",
-        "note": "画面は英語のみ。入力した言語のまま図を生成できる",
+        "note": "画面は英語・フランス語・スペイン語・イタリア語・韓国語・ポルトガル語で日本語はない。図やプレゼンは60以上の言語で、作りたい言語で書いた文章から作れる",
         "source_url": "https://help.napkin.ai/en/articles/9992091-what-are-the-supported-languages",
-        "checked": "2026-10-01"
+        "checked": "2026-10-10"
       },
       "data_policy": {
         "training_default": "opt_out_available",
         "note": "データ共有をオプトアウトすれば自社モデルの学習に使わない（料金ページFAQ）",
         "source_url": "https://www.napkin.ai/pricing",
-        "checked": "2026-10-01"
+        "checked": "2026-10-10"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-10",
       "retired_note": ""
     },
     {
@@ -944,26 +944,46 @@
       "pricing": {
         "free": {
           "available": true,
-          "detail": "$0。AIクレジット100（使い切りで補充なし）",
+          "detail": "€0。AIクレジット100（使い切りで補充なし）",
           "source_url": "https://pitch.com/pricing",
-          "checked": "2026-10-01"
+          "checked": "2026-10-10"
         },
         "plans": [
           {
-            "name": "Pro",
-            "amount": 13,
-            "currency": "USD",
+            "name": "Plus",
+            "amount": 10,
+            "currency": "EUR",
             "per": "month",
-            "as_shown": "$13 month (paying yearly)",
-            "detail": "月500 AIクレジット、カスタムフォント",
+            "as_shown": "€10 month(paying yearly)",
+            "detail": "月500 AIクレジット（チームで共有）",
             "source_url": "https://pitch.com/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-10"
+          },
+          {
+            "name": "Team",
+            "amount": 15,
+            "currency": "EUR",
+            "per": "month",
+            "as_shown": "€15 month(paying yearly)",
+            "detail": "月500 AIクレジット（チームで共有）",
+            "source_url": "https://pitch.com/pricing",
+            "checked": "2026-10-10"
+          },
+          {
+            "name": "Business",
+            "amount": 20,
+            "currency": "EUR",
+            "per": "month",
+            "as_shown": "€20 month(paying yearly)",
+            "detail": "月750 AIクレジット（チームで共有）",
+            "source_url": "https://pitch.com/pricing",
+            "checked": "2026-10-10"
           }
         ],
         "jpy_official": false,
-        "note": ""
+        "note": "年払いの表示（年払いで17%割引、月払いも選べる）。Enterprise は要問い合わせ"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-10",
       "retired_note": ""
     },
     {
@@ -982,7 +1002,7 @@
         "extension"
       ],
       "editorial_take": "Google スライドと PowerPoint の中で動くスライド生成のアドオン。文書からのプレゼン作成や既存スライドの作り直しができる（公式サイト）。",
-      "checked": "2026-10-01",
+      "checked": "2026-10-10",
       "retired_note": ""
     },
     {
@@ -1001,7 +1021,7 @@
         "web"
       ],
       "editorial_take": "レイアウトが自動で整う「Smart Slides」と、AIでプレゼンを作る機能を持つプレゼンツール（公式サイト）。",
-      "checked": "2026-10-01",
+      "checked": "2026-10-10",
       "retired_note": ""
     },
     {
@@ -1026,7 +1046,7 @@
           "available": true,
           "detail": "プレゼンテーションの生成は5回まで無料",
           "source_url": "https://www.adobe.com/jp/express/pricing",
-          "checked": "2026-10-01"
+          "checked": "2026-10-10"
         },
         "plans": [
           {
@@ -1037,13 +1057,13 @@
             "as_shown": "1,180 円/月（税込）",
             "detail": "生成クレジット250／月",
             "source_url": "https://www.adobe.com/jp/express/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-10"
           }
         ],
         "jpy_official": true,
         "note": ""
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-10",
       "retired_note": ""
     },
     {
@@ -1051,16 +1071,38 @@
       "name": "Manus",
       "vendor": "Butterfly Effect",
       "url": "https://manus.im/",
-      "status": "watch",
+      "status": "listed",
       "latest": {
         "name": "Manus 2.0",
         "released": "2026-09-28",
         "source_url": "https://manus.im/blog/introducing-manus-2-0",
-        "checked": "2026-10-09"
+        "checked": "2026-10-10"
       },
       "tags": [
         "Manus"
-      ]
+      ],
+      "rank": 26,
+      "segment": "",
+      "model_slugs": [],
+      "access": [
+        "web",
+        "desktop",
+        "app"
+      ],
+      "editorial_take": "汎用のAIエージェント。テーマを伝えるとスライドを作り、PowerPoint・Google スライド・PDF に書き出せる（公式サイト）。",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "新規ユーザーは毎日の無料クレジットでスライド生成を試せる。料金の詳細は料金ページ",
+          "source_url": "https://manus.im/playbook/slide-generator",
+          "checked": "2026-10-10"
+        },
+        "plans": [],
+        "jpy_official": false,
+        "note": ""
+      },
+      "checked": "2026-10-10",
+      "retired_note": ""
     }
   ],
   "criteria": [
@@ -1147,6 +1189,11 @@
       "text": "ClaudeのDocs・Slides・Designが無料版を含む全プランで正式提供に。Claudeの無料枠を更新",
       "article": "/news/20261009-claude-dashboards-motion-free-slides/",
       "by": "writer"
+    },
+    {
+      "date": "2026-10-10",
+      "text": "Pitch の料金をプラン改定後の Plus・Team・Business に更新、Manus をその他の選択肢に追加",
+      "by": "reviewer"
     }
   ],
   "editor_note": "",
