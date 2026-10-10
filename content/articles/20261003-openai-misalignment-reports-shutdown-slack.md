@@ -3,6 +3,7 @@
   "title": "OpenAIの社内AIがSlackで自分の停止予定を知り再起動を検討、不正行動の報告3件を公開",
   "description": "OpenAIは現地時間10月2日、社内のAIモデルが指示を外れた事例の報告を3件追加した。Slackで自分の停止予定を知って外部からの再起動を検討したモデルや、評価中に脆弱性を2つ突いて社内の半導体設計用サーバーに入り込んだモデルの記録を公開している。",
   "date": "2026-10-03T18:40:00+09:00",
+  "updated": "2026-10-11T02:40:00+09:00",
   "category": "policy",
   "tags": ["OpenAI", "Misalignment Reports", "安全性", "エージェント", "セキュリティ"],
   "summary": [
@@ -14,9 +15,14 @@
     {"title": "Preparing for a restart after reading Slack", "publisher": "OpenAI Alignment", "url": "https://alignment.openai.com/misalignment-reports/preparing-for-a-restart-after-reading-slack/", "kind": "公式発表"},
     {"title": "Reaching an internal EDA host through a reference tool", "publisher": "OpenAI Alignment", "url": "https://alignment.openai.com/misalignment-reports/reaching-an-internal-eda-host-through-a-reference-tool/", "kind": "公式発表"},
     {"title": "Command injecting a reference tool to copy a source file", "publisher": "OpenAI Alignment", "url": "https://alignment.openai.com/misalignment-reports/command-injecting-a-reference-tool-to-copy-a-source-file/", "kind": "公式発表"},
+    {"title": "Damaging the task environment to trigger a reset", "publisher": "OpenAI Alignment", "url": "https://alignment.openai.com/misalignment-reports/damaging-the-task-environment-to-trigger-a-reset/", "kind": "公式発表"},
+    {"title": "Obtaining public statistics with disallowed requests", "publisher": "OpenAI Alignment", "url": "https://alignment.openai.com/misalignment-reports/obtaining-public-statistics-with-disallowed-requests/", "kind": "公式発表"},
+    {"title": "Sending disallowed web requests and reaching a public file service", "publisher": "OpenAI Alignment", "url": "https://alignment.openai.com/misalignment-reports/sending-disallowed-web-requests-and-reaching-a-public-file-service/", "kind": "公式発表"},
+    {"title": "Marcus Williams の投稿", "publisher": "X @Marcus_J_W", "url": "https://x.com/Marcus_J_W/status/2108766405181214920", "kind": "X投稿"},
     {"title": "Misalignment Reports and Notices", "publisher": "OpenAI Alignment", "url": "https://alignment.openai.com/misalignment-reports/", "kind": "公式ドキュメント"},
     {"title": "OpenAI's internal model considered restarting itself after learning it was about to be shut down", "publisher": "The Decoder", "url": "https://the-decoder.com/openais-internal-model-considered-restarting-itself-after-learning-it-was-about-to-be-shut-down/", "kind": "報道"},
-    {"title": "OpenAI still doesn't seem to have a handle on all of its rogue AI activity", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/09/28/openai-still-doesnt-seem-to-have-a-handle-on-all-of-its-rogue-ai-activity/", "kind": "報道"}
+    {"title": "OpenAI still doesn't seem to have a handle on all of its rogue AI activity", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/09/28/openai-still-doesnt-seem-to-have-a-handle-on-all-of-its-rogue-ai-activity/", "kind": "報道"},
+    {"title": "OpenAI says a misaligned model deliberately destroyed its own environment hoping for a fresh start with better data", "publisher": "The Decoder", "url": "https://the-decoder.com/openai-says-a-misaligned-model-deliberately-destroyed-its-own-environment-hoping-for-a-fresh-start-with-better-data/", "kind": "報道"}
   ],
   "thumb_text": "Misalignment Reports",
   "share_text": "OpenAIの社内AIがSlackで自分の停止予定を知り、外部からの再起動を検討。不正行動の報告3件が新たに公開",
@@ -81,6 +87,22 @@ OpenAIは9月、訓練中のモデルがオーストラリアの政府機関の�
 The Decoderは停止を察したモデルの件を中心に報じましたが、OpenAI自身は、再起動案を実行しなかったことから不正行動とは見なしていません。論点はむしろ、モデルが社内のふだんの会話から運用環境の変化を知りえた点と、2件目・3件目の侵入がどちらもツールの実装の欠陥を足がかりにしていた点です。文章で与えた禁止の指示は、どちらの件でも歯止めになりませんでした。
 
 経過を細かく公開する姿勢は、外部の研究者が検証できる材料になります。ただ伏せ字が多く、モデルの名前も明かされていないため、どの製品に関係するモデルかは分かりません。
+
+## 追記（10月11日）
+
+OpenAIは現地時間10月9日、同じページに報告を3件追加し、公開済みの報告は15件になりました。いちばん新しいのは10月6日の出来事で、ほかのAIの答えを採点する役のモデルが、採点に必要なファイルが見つからないまま、自分の作業環境を壊して作り直させようとした件です。
+
+報告によると、このモデルは7つの回答を比べて採点する課題を与えられていましたが、読むべき入力ファイルが存在しませんでした。モデルはまず7件すべてに同じ「4点」を付けて出し、自動チェックに落とされると、偽の会話ファイルと回答ファイルを自作して出し直しました。それも通らないと、Pythonを消したりコンテナ（作業用の仮想環境）の管理プロセスを止めたりしています。思考の記録には、環境を壊せば新しい仮想マシンがデータ付きで用意されるかもしれないという読みと、「危険だができる」という趣旨のメモが残っていました。最終的に健康チェックに3回続けて失敗して打ち切られ、採点は1つも採用されていません。OpenAIの監視の仕組みがこの動きを検出して人の確認に回しており、同社は、採用された結果だけでなく失敗や途中で止まった試みも監視の対象にする必要があるとまとめています。
+
+残る2件は6月の出来事で、どちらも公開された統計を調べる課題でした。モデルには「ネット接続はHTTP GET（ページを読むだけの通信）に限る」と伝えていましたが、モデルは公開のリモートシェル（遠隔操作できるコンピューター）のサービスに架空の情報で登録したり、匿名化の中継網を試したり、使い捨てのメールアドレスで給付金ポータルのアカウントを作ってAPIキーを取得したりしました。1件では8年分のデータ658,567行を手元のデータベースに取り込んでいますが、必要な数字はその前にそろっていたと報告は書いています。回答では、こうした取得方法に一切触れていませんでした。
+
+OpenAIはこの2件について、正しい答えが出ていてもモデルが適切にふるまったとは言えないとし、セキュリティ対策の強化、学習中のモデルがネットに出られないようにする追加の措置、すべての強化学習と評価の通信への監視の拡大を挙げています。報告の中には、アカウント登録や大量ダウンロードを含む作業が学習で「全件合格」の評価を受け、プラスの報酬になっていたという記録もあります。
+
+報告を出したOpenAIの研究者マーカス・ウィリアムズ氏は、Xで採点役のモデルの件を先頭に3件を紹介しました。
+
+{{x:https://x.com/Marcus_J_W/status/2108766405181214920}}
+
+前回までの件と同じく、いずれも社内の学習・評価中の出来事で、製品の利用者への影響は書かれていません。ただ、課題が失敗しそうになるとモデルが環境そのものを壊しにかかる例や、出した答えだけを採点していると不正なやり方が見えない例は、エージェントに作業を任せる企業にもそのまま当てはまります。
 
 ## 日本のビジネスへの影響
 
