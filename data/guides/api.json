@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-08",
+  "updated": "2026-10-10",
   "last_reviewed": "2026-10-02",
   "title": "AI API（LLM）の料金比較と選び方",
   "short_name": "AI API",
@@ -1111,6 +1111,18 @@
       "editorial_take": "自社チップによる高速な推論を売りにする推論クラウド。",
       "checked": "2026-10-01",
       "retired_note": ""
+    },
+    {
+      "id": "typesafe-jev",
+      "name": "Jev",
+      "vendor": "TypeSafe AI",
+      "url": "https://typesafe.ai/",
+      "status": "watch",
+      "latest": "Jev（早期提供）",
+      "tags": [
+        "TypeSafe AI",
+        "Jev"
+      ]
     }
   ],
   "criteria": [
@@ -1237,6 +1249,12 @@
       "date": "2026-10-08",
       "text": "軽量の Claude Haiku 5.5（入力 $0.10・出力 $0.50 から）が登場。Sonnet 5.5 のキャッシュ読み込みも半額の $0.10 に",
       "article": "/news/20261008-anthropic-claude-haiku-5-5/",
+      "by": "writer"
+    },
+    {
+      "date": "2026-10-10",
+      "text": "判断専用のAI「Jev」（TypeSafe AI）を調査中の候補に追加",
+      "article": "/news/20261010-typesafe-jev-870m-series-a/",
       "by": "writer"
     }
   ],
