@@ -3,8 +3,8 @@
   "status": "published",
   "priority": 2,
   "created": "2026-09-30",
-  "updated": "2026-10-03",
-  "last_reviewed": "2026-10-01",
+  "updated": "2026-10-11",
+  "last_reviewed": "2026-10-11",
   "title": "音声合成・AI読み上げのおすすめと料金比較",
   "short_name": "音声合成",
   "seo": {
@@ -19,7 +19,7 @@
       "料金"
     ]
   },
-  "intro": "音質で選ぶなら **ElevenLabs**（Eleven v4）、APIの単価を抑えるなら Google の **Gemini 3.8 Flash TTS**、無料で日本語を読ませるなら **VOICEVOX** が出発点です。Artificial Analysis の音声合成ランキングでは Eleven v4 が1位、Cartesia の Sonic 3.6 と Gemini 3.8 Flash TTS が続きます（2026年10月1日確認）。ただしこの評価は英語の音声によるもので、日本語の読み上げ品質を比べた継続運営の公開評価は見つけられませんでした。日本語は原稿を各サービスで読ませて確かめてください。",
+  "intro": "音質で選ぶなら **ElevenLabs**（Eleven v4）、APIの単価を抑えるなら Google の **Gemini 3.8 Flash TTS**、無料で日本語を読ませるなら **VOICEVOX** が出発点です。Artificial Analysis の音声合成ランキングでは Eleven v4 Turbo と Eleven v4 が1・2位で、Cartesia の Sonic 3.6 と Gemini 3.8 Flash TTS も上位に入っています（2026年10月11日確認）。ただしこの評価は英語の音声によるもので、日本語の読み上げ品質を比べた継続運営の公開評価は見つけられませんでした。日本語は原稿を各サービスで読ませて確かめてください。",
   "scope": "文章を音声にする読み上げ・ナレーション、自分や許諾を得た人の声の複製（音声クローン）、リアルタイムに会話する音声APIを比べる。文字起こしは「AI文字起こし」ガイド、動画の口の動き合わせは「動画生成AI」ガイドで扱う。",
   "audience": [
     "動画制作者",
@@ -53,20 +53,20 @@
         "cartesia",
         "gemini-tts"
       ],
-      "answer": "Artificial Analysis の音声合成ランキングで ElevenLabs の Eleven v4 が1320で1位、Cartesia の Sonic 3.6（1275）と Google の Gemini 3.8 Flash TTS（1270）が続きます。評価は英語の音声によるもので、日本語の品質は別に確かめる必要があります。",
+      "answer": "Artificial Analysis の音声合成ランキングで ElevenLabs の Eleven v4 Turbo が1327、Eleven v4 が1323で1・2位を占め、Cartesia の Sonic 3.6（1284・4位）と Google の Gemini 3.8 Flash TTS（1272・5位）が続きます。評価は英語の音声によるもので、日本語の品質は別に確かめる必要があります。",
       "evidence": [
         {
           "kind": "third_party",
           "name": "Artificial Analysis Text to Speech Leaderboard",
           "url": "https://artificialanalysis.ai/text-to-speech/leaderboard",
-          "date": "2026-10-01",
-          "note": "1位 Eleven v4 1320、2位 Sonic 3.6 1275、3位 Gemini 3.8 Flash TTS 1270。英語の8声で評価（2026-10-01時点）"
+          "date": "2026-10-11",
+          "note": "1位 Eleven v4 Turbo 1327、2位 Eleven v4 1323、3位 Qwen-Audio-3.1-TTS-Plus 1298、4位 Sonic 3.6 1284、5位 Gemini 3.8 Flash TTS 1272（2026-10-11時点）"
         },
         {
           "kind": "official",
           "name": "ElevenLabs Models",
           "url": "https://elevenlabs.io/docs/overview/models",
-          "date": "2026-10-01",
+          "date": "2026-10-11",
           "note": "Eleven v4 の対応言語に日本語（jpn）を含む90以上の言語"
         }
       ]
@@ -78,20 +78,20 @@
       "runner_up": [
         "azure-speech"
       ],
-      "answer": "Gemini 3.8 Flash TTS は Artificial Analysis で3位ながら、同サイトの比較価格は100万文字$16.5で Eleven v4（$80）の約5分の1です。ただし2026年12月31日までの価格で、2027年1月から2倍になります。",
+      "answer": "Gemini 3.8 Flash TTS は Artificial Analysis で5位（1272）ながら、同サイトの比較価格は100万文字$16.5で Eleven v4（$80）の約5分の1です。ただし2026年12月31日までの価格で、2027年1月から2倍になります。",
       "evidence": [
         {
           "kind": "third_party",
           "name": "Artificial Analysis Text to Speech Leaderboard",
           "url": "https://artificialanalysis.ai/text-to-speech/leaderboard",
-          "date": "2026-10-01",
-          "note": "Gemini 3.8 Flash TTS 1270・$16.5/1M chars、Eleven v4 1320・$80.0/1M chars、Azure HD 2.5 1129・$22.0/1M chars（2026-10-01時点）"
+          "date": "2026-10-11",
+          "note": "Gemini 3.8 Flash TTS 1272・$16.5/1M chars、Eleven v4 1323・$80.0/1M chars、Eleven v4 Turbo 1327・$40.0/1M chars、Azure HD 2.5 1129・$22.0/1M chars（2026-10-11時点）"
         },
         {
           "kind": "official",
           "name": "Gemini Developer API pricing",
           "url": "https://ai.google.dev/gemini-api/docs/pricing?hl=en",
-          "date": "2026-10-01",
+          "date": "2026-10-11",
           "note": "Gemini 3.8 Flash TTS 音声出力 $9.00/100万トークン（2026年12月31日まで）、2027年1月1日から$18.00"
         }
       ]
@@ -109,14 +109,14 @@
           "kind": "official",
           "name": "VOICEVOX ソフトウェア利用規約",
           "url": "https://voicevox.hiroshiba.jp/term/",
-          "date": "2026-10-01",
+          "date": "2026-10-11",
           "note": "商用・非商用問わず利用可。各音声ライブラリの規約に従い、クレジット表記が必要"
         },
         {
           "kind": "official",
           "name": "Gemini API 追加利用規約",
           "url": "https://ai.google.dev/gemini-api/terms?hl=en",
-          "date": "2026-10-01",
+          "date": "2026-10-11",
           "note": "無料のサービス（AI Studio・無料枠）の入力と出力は製品改善に使われる"
         }
       ]
@@ -135,21 +135,21 @@
           "kind": "official",
           "name": "CoeFont 料金プラン",
           "url": "https://coefont.cloud/selectPlan",
-          "date": "2026-10-01",
+          "date": "2026-10-11",
           "note": "Standard ￥3,300/月（税込・6か月間、以降￥4,400）、声優を含む10,000種類以上のAI音声"
         },
         {
           "kind": "official",
           "name": "CoeFont よくある質問",
           "url": "https://coefont.cloud/faq",
-          "date": "2026-10-01",
+          "date": "2026-10-11",
           "note": "商用利用は Standard・Plus・Enterprise で可能。収益化動画・広告・クライアント納品を例示"
         },
         {
           "kind": "editorial",
           "name": "編集部の判断",
           "url": "",
-          "date": "2026-10-01",
+          "date": "2026-10-11",
           "note": "日本語の音声品質の第三者評価がないため、日本語での使いやすさと料金の分かりやすさを重視"
         }
       ]
@@ -167,21 +167,21 @@
           "kind": "official",
           "name": "ElevenLabs: Can I publish the content I generate on the platform?",
           "url": "https://elevenlabs.io/docs/help-center/legal/can-i-publish-the-content-i-generate-on-the-platform",
-          "date": "2026-10-01",
+          "date": "2026-10-11",
           "note": "All paid plans include a commercial license（ベータ機能を除く）。無料プランは商用不可"
         },
         {
           "kind": "official",
           "name": "ElevenLabs 料金ページ",
           "url": "https://elevenlabs.io/pricing",
-          "date": "2026-10-01",
+          "date": "2026-10-11",
           "note": "Starter $6/月に Commercial License"
         },
         {
           "kind": "official",
           "name": "CoeFont よくある質問",
           "url": "https://coefont.cloud/faq",
-          "date": "2026-10-01",
+          "date": "2026-10-11",
           "note": "Standard 以上で商用可。広告・CM、クライアントへの納品を商用利用の例に挙げる"
         }
       ]
@@ -200,54 +200,54 @@
           "kind": "official",
           "name": "Gemini API Speech generation",
           "url": "https://ai.google.dev/gemini-api/docs/speech-generation?hl=en",
-          "date": "2026-10-01",
+          "date": "2026-10-11",
           "note": "Gemini 3.8 Flash TTS は130以上の言語、Voice design・Voice replication に対応"
         },
         {
           "kind": "official",
           "name": "Gemini Developer API pricing",
           "url": "https://ai.google.dev/gemini-api/docs/pricing?hl=en",
-          "date": "2026-10-01",
+          "date": "2026-10-11",
           "note": "Equivalent to $0.00225 per 10s audio（2026年12月31日まで）。有料枠は Used to improve our products: No"
         },
         {
           "kind": "third_party",
           "name": "Artificial Analysis Text to Speech Leaderboard",
           "url": "https://artificialanalysis.ai/text-to-speech/leaderboard",
-          "date": "2026-10-01",
-          "note": "Gemini 3.8 Flash TTS 1270で3位（2026-10-01時点）"
+          "date": "2026-10-11",
+          "note": "Gemini 3.8 Flash TTS 1272で5位（2026-10-11時点）"
         }
       ]
     },
     {
       "id": "realtime",
       "question": "リアルタイムに音声で会話するAPIなら",
-      "pick": "gemini-live",
+      "pick": "openai-voice",
       "runner_up": [
-        "openai-voice"
+        "gemini-live"
       ],
-      "answer": "Artificial Analysis の音声対話指数で Gemini 3.8 Live Extended Thinking が82.6で1位、OpenAI の GPT-Live-1（Astra, medium）が81.5で2位です。料金は Gemini 3.8 Live が音声入力1分約$0.005・出力約$0.018、GPT-Live-1 は1分$0.05（裏側のモデル代は別）。",
+      "answer": "Artificial Analysis の音声対話指数で OpenAI の GPT-Live-1（Astra, medium）が83.2で1位、Google の Gemini 3.8 Live Extended Thinking（High）が82.6で2位です。料金は GPT-Live-1 が1分$0.05（裏側のモデル代は別、無料の利用枠では使えない）、Gemini 3.8 Live は音声入力1分約$0.005・出力約$0.018。",
       "evidence": [
         {
           "kind": "third_party",
           "name": "Artificial Analysis Speech to Speech Index",
           "url": "https://artificialanalysis.ai/speech-to-speech",
-          "date": "2026-10-01",
-          "note": "Gemini 3.8 Live Extended Thinking（High）82.6、GPT-Live-1（Astra, medium）81.5、Grok Voice Think Fast 2.0 High 81.3（2026-10-01時点）"
-        },
-        {
-          "kind": "official",
-          "name": "Gemini Developer API pricing",
-          "url": "https://ai.google.dev/gemini-api/docs/pricing?hl=en",
-          "date": "2026-10-01",
-          "note": "Gemini 3.8 Live：入力 $0.005/min（音声）、出力 $0.018/min（音声）"
+          "date": "2026-10-11",
+          "note": "GPT-Live-1（Astra, medium）83.2、Gemini 3.8 Live Extended Thinking（High）82.6、Grok Voice Think Fast 2.0 High 81.3（2026-10-11時点）"
         },
         {
           "kind": "official",
           "name": "OpenAI API Pricing",
           "url": "https://developers.openai.com/api/docs/pricing",
-          "date": "2026-10-01",
+          "date": "2026-10-11",
           "note": "gpt-live-1 $0.05/分（秒単位課金、裏側のモデル・ツールは別料金）"
+        },
+        {
+          "kind": "official",
+          "name": "Gemini Developer API pricing",
+          "url": "https://ai.google.dev/gemini-api/docs/pricing?hl=en",
+          "date": "2026-10-11",
+          "note": "Gemini 3.8 Live：入力 $0.005/min（音声）、出力 $0.018/min（音声）"
         }
       ]
     },
@@ -264,21 +264,21 @@
           "kind": "official",
           "name": "ElevenLabs 料金ページ",
           "url": "https://elevenlabs.io/pricing",
-          "date": "2026-10-01",
+          "date": "2026-10-11",
           "note": "Starter に Instant Voice Cloning、Creator に Professional Voice Cloning"
         },
         {
           "kind": "official",
           "name": "Introducing Eleven v4",
           "url": "https://elevenlabs.io/blog/eleven-v4",
-          "date": "2026-10-01",
+          "date": "2026-10-11",
           "note": "Instant Voice Clones can now capture voices with high fidelity using just 10 seconds of audio"
         },
         {
           "kind": "official",
           "name": "CoeFont 料金プラン",
           "url": "https://coefont.cloud/selectPlan",
-          "date": "2026-10-01",
+          "date": "2026-10-11",
           "note": "全プランで Web録音からカスタムAI音声を作成"
         }
       ]
@@ -301,7 +301,7 @@
         "name": "Eleven v4",
         "released": "2026-09-28",
         "source_url": "https://elevenlabs.io/blog/eleven-v4",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "access": [
         "web",
@@ -309,7 +309,7 @@
         "api"
       ],
       "strengths": [
-        "Artificial Analysisの音声合成で1位（Eleven v4）",
+        "AAの音声合成で1・2位（v4 Turbo・v4）",
         "v4は90以上の言語に対応し日本語を含む",
         "有料は月$6のStarterから商用ライセンス付き"
       ],
@@ -323,7 +323,7 @@
           "available": true,
           "detail": "月10,000クレジット（v4などの読み上げは1文字=1クレジット）。商用ライセンスなし",
           "source_url": "https://elevenlabs.io/pricing",
-          "checked": "2026-10-01"
+          "checked": "2026-10-11"
         },
         "plans": [
           {
@@ -331,10 +331,10 @@
             "amount": 6,
             "currency": "USD",
             "per": "month",
-            "as_shown": "$6 per month",
+            "as_shown": "$6 per month（First month 83% off: $1、Until Oct 18）",
             "detail": "月30,000クレジット。商用ライセンス、インスタント音声クローン",
             "source_url": "https://elevenlabs.io/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-11"
           },
           {
             "name": "Creator",
@@ -344,7 +344,7 @@
             "as_shown": "$22 per month（First month 50% off: $11）",
             "detail": "月121,000クレジット。プロフェッショナル音声クローン",
             "source_url": "https://elevenlabs.io/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-11"
           },
           {
             "name": "Pro",
@@ -354,7 +354,7 @@
             "as_shown": "$99 per month",
             "detail": "月600,000クレジット。APIで44.1kHz PCM出力",
             "source_url": "https://elevenlabs.io/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-11"
           },
           {
             "name": "Scale",
@@ -364,7 +364,7 @@
             "as_shown": "$299 per month",
             "detail": "月1.8Mクレジット・3席",
             "source_url": "https://elevenlabs.io/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-11"
           },
           {
             "name": "Business",
@@ -374,7 +374,7 @@
             "as_shown": "$990 per month",
             "detail": "月6Mクレジット・10席",
             "source_url": "https://elevenlabs.io/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-11"
           },
           {
             "name": "Enterprise",
@@ -383,7 +383,7 @@
             "as_shown": "Custom pricing（要問い合わせ）",
             "detail": "DPA・SLA、SSOなど",
             "source_url": "https://elevenlabs.io/pricing",
-            "checked": "2026-10-01"
+            "checked": "2026-10-11"
           }
         ],
         "usage": {
@@ -393,7 +393,7 @@
           "as_shown": "v4: $0.08 Price per 1K characters（72% off until Oct 12: $0.022）",
           "detail": "API・Eleven v4。低遅延の v4 Turbo は$0.04",
           "source_url": "https://elevenlabs.io/pricing/api",
-          "checked": "2026-10-01"
+          "checked": "2026-10-11"
         },
         "jpy_official": false,
         "note": "年払いは月額×10（2か月分無料）。料金は税抜（Prices exclude all taxes）。"
@@ -403,27 +403,27 @@
         "output": "yes",
         "note": "Eleven v4 の対応言語一覧に日本語（jpn）。公式サイトは日本語表示あり（elevenlabs.io/ja）、アプリ画面の日本語対応の記載は見つけられず",
         "source_url": "https://elevenlabs.io/docs/overview/models",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "commercial_use": {
         "value": "conditional",
         "note": "有料プランはすべて商用ライセンス付き（ベータ機能を除く）。無料プランは商用利用不可で、公開するならタイトルに elevenlabs.io などの表記が必要",
         "source_url": "https://elevenlabs.io/docs/help-center/legal/can-i-publish-the-content-i-generate-on-the-platform",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "data_policy": {
         "training_default": "opt_out_available",
         "note": "既定では提供データを音声モデルの改善に使う。設定の「Improve the models for everyone」をオフにすれば以後のデータは使われない。Enterprise は既定で学習に使わない",
         "source_url": "https://elevenlabs.io/docs/help-center/legal/is-my-data-used-to-improve-eleven-labs-ai-models",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "availability_japan": {
         "value": "yes",
         "note": "アクセス制限の対象国（ロシア・イランなど）に日本は含まれない",
-        "source_url": "https://help.elevenlabs.io/hc/en-us/articles/22497891312401-Do-you-restrict-access-to-the-service-and-platform-for-any-specific-countries",
-        "checked": "2026-10-01"
+        "source_url": "https://elevenlabs.io/docs/help-center/legal/do-you-restrict-access-to-the-service-and-platform-for-any-specific-countries",
+        "checked": "2026-10-11"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-11",
       "retired_note": ""
     },
     {
@@ -443,14 +443,14 @@
         "name": "Gemini 3.8 Flash TTS",
         "released": "2026-09-22",
         "source_url": "https://ai.google.dev/gemini-api/docs/changelog?hl=en",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "access": [
         "web",
         "api"
       ],
       "strengths": [
-        "AAの音声合成で3位、価格はEleven v4の約5分の1",
+        "AAの音声合成で5位、価格はEleven v4の約5分の1",
         "130以上の言語に対応し日本語を含む",
         "声の設計（Voice design）と声の複製に対応"
       ],
@@ -464,7 +464,7 @@
           "available": true,
           "detail": "Standard の無料枠（Free Tier）は入力・出力とも無料。Google AI Studio で試せる",
           "source_url": "https://ai.google.dev/gemini-api/docs/pricing?hl=en",
-          "checked": "2026-10-01"
+          "checked": "2026-10-11"
         },
         "plans": [],
         "usage": {
@@ -474,7 +474,7 @@
           "as_shown": "Output price $9.00 (audio) through December 31, 2026. $18.00 (audio) starting January 1, 2027. Equivalent to $0.00225 per 10s audio",
           "detail": "Gemini 3.8 Flash TTS・有料枠。テキスト入力は$0.50/100万トークン。Flash-Lite TTS は出力$6.00",
           "source_url": "https://ai.google.dev/gemini-api/docs/pricing?hl=en",
-          "checked": "2026-10-01"
+          "checked": "2026-10-11"
         },
         "jpy_official": false,
         "note": "Batch は半額（出力$4.50）。2027年1月1日から各単価が2倍。"
@@ -484,27 +484,27 @@
         "output": "yes",
         "note": "Gemini 3.8 Flash TTS の対応言語表に日本語。入力言語は自動判別。開発者向けドキュメントに日本語版あり（機械翻訳）",
         "source_url": "https://ai.google.dev/gemini-api/docs/speech-generation?hl=ja",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "commercial_use": {
         "value": "yes",
         "note": "Gemini API 追加利用規約で、生成されたコンテンツの所有権を Google は主張しないと記載。同じ・似た出力が他の人に生成されることはある",
         "source_url": "https://ai.google.dev/gemini-api/terms?hl=en",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "data_policy": {
         "training_default": "opt_out_available",
         "note": "無料枠・Google AI Studio の入力と出力は製品改善と機械学習技術の開発に使われ、人が確認することもある。有料枠（Cloud Billing を有効にしたプロジェクト）では改善に使わない",
         "source_url": "https://ai.google.dev/gemini-api/terms?hl=en",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "availability_japan": {
         "value": "yes",
         "note": "Gemini API の提供地域一覧に日本",
         "source_url": "https://ai.google.dev/gemini-api/docs/available-regions?hl=en",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-11",
       "retired_note": ""
     },
     {
@@ -524,7 +524,7 @@
         "name": "MAI-Voice-2.1・MAI-Voice-2.1-Flash（公開プレビュー）",
         "released": "2026-10-01",
         "source_url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/mai-voices",
-        "checked": "2026-10-02"
+        "checked": "2026-10-11"
       },
       "access": [
         "api"
@@ -544,7 +544,7 @@
           "available": true,
           "detail": "Free (F0)：Neural の読み上げは毎月50万文字まで無料",
           "source_url": "https://azure.microsoft.com/en-us/pricing/details/speech/",
-          "checked": "2026-10-01"
+          "checked": "2026-10-11"
         },
         "plans": [],
         "usage": {
@@ -562,29 +562,29 @@
       "japanese": {
         "ui": "partial",
         "output": "yes",
-        "note": "対応言語の一覧に ja-JP。日本語の Neural HD 音声（ja-JP-Nanami・ja-JP-Masaru）と標準音声を提供。ドキュメントは日本語版あり",
+        "note": "対応言語の一覧に ja-JP。日本語の Neural HD 音声（ja-JP-Nanami・ja-JP-Masaru）、MAI-Voice-2-Flash の日本語音声（ja-JP-Haruto・ja-JP-Sakura）と標準音声を提供。MAI-Voice-2.1 の23言語に日本語の声はまだない。ドキュメントは日本語版あり",
         "source_url": "https://learn.microsoft.com/ja-jp/azure/ai-services/speech-service/language-support?tabs=tts",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "commercial_use": {
         "value": "conditional",
         "note": "製品規約で、有料プランの利用者に限り既成のニューラル音声の出力を商用目的を含めて使えると規定。合成音声であることの開示などの行動規範に従う",
         "source_url": "https://www.microsoft.com/licensing/terms/productoffering/MicrosoftAzure/MCA",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "data_policy": {
         "training_default": "not_used",
         "note": "リアルタイム合成の入力テキストと出力音声は保存しない。カスタム音声の学習データはその顧客のモデル作成にのみ使い、Microsoft の音声モデルの学習・改善には使わない",
         "source_url": "https://learn.microsoft.com/en-us/azure/foundry/responsible-ai/speech-service/text-to-speech/data-privacy-security",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "availability_japan": {
         "value": "yes",
         "note": "料金ページのリージョンに Japan East・Japan West",
         "source_url": "https://azure.microsoft.com/en-us/pricing/details/speech/",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-11",
       "retired_note": ""
     },
     {
@@ -618,7 +618,7 @@
           "available": true,
           "detail": "非商用利用向け。音声生成は月800文字・1プロジェクト",
           "source_url": "https://coefont.cloud/selectPlan",
-          "checked": "2026-10-01"
+          "checked": "2026-10-11"
         },
         "plans": [
           {
@@ -629,7 +629,7 @@
             "as_shown": "￥3,300/月（税込）",
             "detail": "月80,000文字。登録後6か月間の特別価格で、その後は月4,400円（税込）",
             "source_url": "https://coefont.cloud/selectPlan",
-            "checked": "2026-10-01"
+            "checked": "2026-10-11"
           },
           {
             "name": "Plus",
@@ -639,7 +639,7 @@
             "as_shown": "￥55,000/月（税込）",
             "detail": "月1,000,000文字、API、5人まで。データは既定でAI学習から除外",
             "source_url": "https://coefont.cloud/selectPlan",
-            "checked": "2026-10-01"
+            "checked": "2026-10-11"
           },
           {
             "name": "Enterprise",
@@ -648,7 +648,7 @@
             "as_shown": "お問い合わせ",
             "detail": "利用人数無制限、SSO",
             "source_url": "https://coefont.cloud/selectPlan",
-            "checked": "2026-10-01"
+            "checked": "2026-10-11"
           }
         ],
         "jpy_official": true,
@@ -659,27 +659,27 @@
         "output": "yes",
         "note": "料金ページ・FAQ が日本語。声優を含む1万種以上のAI音声",
         "source_url": "https://coefont.cloud/selectPlan",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "commercial_use": {
         "value": "conditional",
         "note": "Standard・Plus・Enterprise で商用可（収益化動画・広告・クライアント納品など）。Free は非商用のみ",
         "source_url": "https://coefont.cloud/faq",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "data_policy": {
         "training_default": "unknown",
         "note": "料金ページで Plus・Enterprise はデータを既定でAI学習から除外と記載。Free・Standard の扱いは記載を見つけられず",
         "source_url": "https://coefont.cloud/selectPlan",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "availability_japan": {
         "value": "yes",
         "note": "円建ての料金と特定商取引法に基づく表示あり",
         "source_url": "https://coefont.cloud/selectPlan",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-11",
       "retired_note": ""
     },
     {
@@ -697,7 +697,7 @@
       "latest": {
         "name": "VOICEVOX 0.25.2",
         "source_url": "https://voicevox.hiroshiba.jp/update_history/",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "access": [
         "desktop"
@@ -717,7 +717,7 @@
           "available": true,
           "detail": "無料のソフトウェア（Windows／Mac／Linux）",
           "source_url": "https://voicevox.hiroshiba.jp/",
-          "checked": "2026-10-01"
+          "checked": "2026-10-11"
         },
         "plans": [],
         "jpy_official": false,
@@ -728,27 +728,27 @@
         "output": "yes",
         "note": "日本語のテキスト読み上げ・歌声合成ソフト。読み方とアクセントの辞書登録ができる",
         "source_url": "https://voicevox.hiroshiba.jp/qa/",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "commercial_use": {
         "value": "conditional",
         "note": "ソフトウェア利用規約で商用・非商用問わず利用可。作成した音声は各音声ライブラリの規約に従い、VOICEVOX を使ったと分かるクレジット表記が必要",
         "source_url": "https://voicevox.hiroshiba.jp/term/",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "data_policy": {
         "training_default": "not_used",
         "note": "PCで動くソフトで、オフラインのパソコンでも使えるとQ&Aに記載",
         "source_url": "https://voicevox.hiroshiba.jp/qa/",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "availability_japan": {
         "value": "yes",
         "note": "公式サイトから無料でダウンロードできる",
         "source_url": "https://voicevox.hiroshiba.jp/",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-11",
       "retired_note": ""
     },
     {
@@ -769,13 +769,13 @@
         "name": "Gemini 3.8 Live",
         "released": "2026-09-15",
         "source_url": "https://ai.google.dev/gemini-api/docs/changelog?hl=en",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "access": [
         "api"
       ],
       "strengths": [
-        "AAの音声対話指数で1位（Extended Thinking）",
+        "AAの音声対話指数で2位（Extended Thinking）",
         "音声入力1分約$0.005・出力1分約$0.018",
         "99言語に対応し日本語を含む"
       ],
@@ -788,7 +788,7 @@
           "available": true,
           "detail": "Standard の無料枠（Free Tier）は入力・出力とも無料",
           "source_url": "https://ai.google.dev/gemini-api/docs/pricing?hl=en",
-          "checked": "2026-10-01"
+          "checked": "2026-10-11"
         },
         "plans": [],
         "usage": {
@@ -798,7 +798,7 @@
           "as_shown": "Input price $3.00 or $0.005/min (audio)／Output price $12.00 or $0.018/min (audio)",
           "detail": "Gemini 3.8 Live・Extended Thinking 共通（100万トークンあたり入力$3.00・出力$12.00）",
           "source_url": "https://ai.google.dev/gemini-api/docs/pricing?hl=en",
-          "checked": "2026-10-01"
+          "checked": "2026-10-11"
         },
         "jpy_official": false,
         "note": "Google 検索によるグラウンディングは月5,000回まで無料、以降1,000回$14。"
@@ -808,27 +808,27 @@
         "output": "yes",
         "note": "Live API の対応言語（99言語）に日本語（ja）。開発者向けドキュメントに日本語版あり（機械翻訳）",
         "source_url": "https://ai.google.dev/gemini-api/docs/live-api/capabilities?hl=ja",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "commercial_use": {
         "value": "yes",
         "note": "Gemini API 追加利用規約で、生成されたコンテンツの所有権を Google は主張しないと記載",
         "source_url": "https://ai.google.dev/gemini-api/terms?hl=en",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "data_policy": {
         "training_default": "opt_out_available",
         "note": "無料枠の入力と出力は製品改善に使われ、人が確認することもある。有料枠では改善に使わない",
         "source_url": "https://ai.google.dev/gemini-api/terms?hl=en",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "availability_japan": {
         "value": "yes",
         "note": "Gemini API の提供地域一覧に日本",
         "source_url": "https://ai.google.dev/gemini-api/docs/available-regions?hl=en",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-11",
       "retired_note": ""
     },
     {
@@ -848,14 +848,14 @@
         "name": "GPT-Live-1",
         "released": "2026-09-10",
         "source_url": "https://developers.openai.com/api/docs/changelog",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "access": [
         "api"
       ],
       "strengths": [
         "GPT-Live-1は1分$0.05で聞きながら話せる",
-        "AAの音声対話指数で2位（GPT-Live-1）",
+        "AAの音声対話指数で1位（GPT-Live-1）",
         "APIの入力は既定で学習に使わない"
       ],
       "weaknesses": [
@@ -872,7 +872,7 @@
           "as_shown": "gpt-live-1 $0.05（Price per minute）",
           "detail": "秒単位課金。裏側のモデル・ツールの利用は別料金。GPT-Realtime-2.1 は音声入力$32・出力$64/100万トークン、GPT-4o mini TTS は音声出力$12/100万トークン",
           "source_url": "https://developers.openai.com/api/docs/pricing",
-          "checked": "2026-10-01"
+          "checked": "2026-10-11"
         },
         "jpy_official": false,
         "note": "GPT-Live-1・GPT-Realtime-2.1 は無料の利用枠（Free tier）では使えない。"
@@ -882,27 +882,27 @@
         "output": "partial",
         "note": "読み上げ（GPT-4o mini TTS）の対応言語に日本語があるが、声は英語向けに最適化と記載。GPT-Live-1・Realtime の対応言語一覧は見つけられず",
         "source_url": "https://developers.openai.com/api/docs/guides/text-to-speech",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "commercial_use": {
         "value": "yes",
-        "note": "サービス契約で出力は顧客が所有（OpenAI が権利を譲渡）。競合するモデルの開発に出力を使うことは禁止",
-        "source_url": "https://openai.com/policies/services-agreement/",
-        "checked": "2026-10-01"
+        "note": "サービス契約（ONLINE v.010126）で出力は顧客が所有（OpenAI が権利を譲渡）。競合するモデルの開発に出力を使うことは禁止",
+        "source_url": "https://cdn.openai.com/osa/openai-services-agreement.pdf",
+        "checked": "2026-10-11"
       },
       "data_policy": {
         "training_default": "not_used",
         "note": "APIに送ったデータは、明示的にオプトインしない限り学習・改善に使わない",
         "source_url": "https://developers.openai.com/api/docs/guides/your-data",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       },
       "availability_japan": {
         "value": "yes",
         "note": "API の提供国一覧に日本",
-        "source_url": "https://help.openai.com/en/articles/5347006-openai-api-supported-countries-and-territories",
-        "checked": "2026-10-01"
+        "source_url": "https://developers.openai.com/api/docs/supported-countries",
+        "checked": "2026-10-11"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-10-11",
       "retired_note": ""
     },
     {
@@ -920,13 +920,13 @@
       "access": [
         "api"
       ],
-      "editorial_take": "AAの音声合成で2位のSonic 3.6。44言語（日本語を含む）。商用ライセンスは月$5のProから。",
-      "checked": "2026-10-01",
+      "editorial_take": "AAの音声合成で4位のSonic 3.6。44言語（日本語を含む）。商用ライセンスは月$5のProから。",
+      "checked": "2026-10-11",
       "retired_note": "",
       "latest": {
         "name": "Sonic 3.6",
         "source_url": "https://docs.cartesia.ai/build-with-cartesia/tts-models/latest",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       }
     },
     {
@@ -945,12 +945,12 @@
         "api"
       ],
       "editorial_take": "S2.1 Pro は83言語、APIは100万UTF-8バイト$15。無料プランは商用不可、商用は月$15のPlusから。",
-      "checked": "2026-10-01",
+      "checked": "2026-10-11",
       "retired_note": "",
       "latest": {
         "name": "Fish Audio S2.1 Pro",
         "source_url": "https://docs.fish.audio/developer-guide/models-pricing/models-overview",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       }
     },
     {
@@ -968,13 +968,13 @@
       "access": [
         "api"
       ],
-      "editorial_take": "Speech 2.8 は40言語・7種の感情に対応。AAの音声合成で16位（2.8 HD）。",
-      "checked": "2026-10-01",
+      "editorial_take": "Speech 2.8 は40言語・7種の感情に対応。AAの音声合成で19位（2.8 HD）、TTS Arena V2 で8位。",
+      "checked": "2026-10-11",
       "retired_note": "",
       "latest": {
         "name": "Speech 2.8 HD",
         "source_url": "https://platform.minimax.io/docs/guides/models-intro",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       }
     },
     {
@@ -992,13 +992,13 @@
       "access": [
         "api"
       ],
-      "editorial_take": "低遅延の読み上げ。AAの音声合成で5位（Realtime TTS-2）、TTS Arena V2 で3位（Inworld TTS MAX）。",
-      "checked": "2026-10-01",
+      "editorial_take": "低遅延の読み上げ。AAの音声合成で7位（Realtime TTS-2）、TTS Arena V2 で2位（Inworld TTS MAX）。",
+      "checked": "2026-10-11",
       "retired_note": "",
       "latest": {
         "name": "Realtime TTS-2",
         "source_url": "https://inworld.ai/tts",
-        "checked": "2026-10-01"
+        "checked": "2026-10-11"
       }
     },
     {
@@ -1016,13 +1016,13 @@
       "access": [
         "api"
       ],
-      "editorial_take": "読み上げの Octave 2 と音声対話の EVI を提供。有料は月$3の Starter から、追加は1,000文字$0.05〜$0.15。",
-      "checked": "2026-10-01",
+      "editorial_take": "読み上げの Octave 2（プレビュー）は日本語を含む11言語。公式ドキュメントで TTS と音声対話（EVI）の API を2026年11月13日に終了すると告知している。",
+      "checked": "2026-10-11",
       "retired_note": "",
       "latest": {
-        "name": "Octave 2",
-        "source_url": "https://www.hume.ai/pricing",
-        "checked": "2026-10-01"
+        "name": "Octave 2（preview）",
+        "source_url": "https://dev.hume.ai/docs/text-to-speech-tts/overview",
+        "checked": "2026-10-11"
       }
     },
     {
@@ -1050,16 +1050,25 @@
       "name": "Suno Speech",
       "vendor": "Suno",
       "url": "https://suno.com/",
-      "status": "watch",
+      "status": "listed",
       "latest": {
         "name": "Speech (beta)",
         "source_url": "https://suno.com/blog/introducing-speech-beta",
-        "checked": "2026-10-03"
+        "checked": "2026-10-11"
       },
       "tags": [
         "Suno",
         "Suno Speech"
-      ]
+      ],
+      "rank": 26,
+      "segment": "tts",
+      "access": [
+        "web"
+      ],
+      "model_slugs": [],
+      "editorial_take": "朗読と伴奏の音楽を1本の音声として作るベータ機能。料金・商用利用・対応言語は公式発表に記載がない。",
+      "retired_note": "",
+      "checked": "2026-10-11"
     }
   ],
   "criteria": [
@@ -1101,8 +1110,8 @@
       "operator": "Artificial Analysis",
       "url": "https://artificialanalysis.ai/text-to-speech/leaderboard",
       "what": "同じ文章の読み上げ2つを聞き比べる盲検投票によるElo。英語（米・英アクセントの8声）で評価",
-      "snapshot": "1位 Eleven v4（ElevenLabs）1320、2位 Sonic 3.6（Cartesia）1275、3位 Gemini 3.8 Flash TTS（Google）1270、4位 Qwen-Audio-3.0-TTS-Plus 1257、5位 Inworld Realtime TTS-2 1248。Azure HD 2.5 は26位、OpenAI の TTS-1 HD は34位、Amazon Polly Generative は51位（2026-10-01時点）",
-      "checked": "2026-10-01"
+      "snapshot": "1位 Eleven v4 Turbo（ElevenLabs）1327、2位 Eleven v4（ElevenLabs）1323、3位 Qwen-Audio-3.1-TTS-Plus（Alibaba）1298、4位 Sonic 3.6（Cartesia）1284、5位 Gemini 3.8 Flash TTS（Google）1272。Azure HD 2.5 は29位、OpenAI の TTS-1 HD は36位、Amazon Polly Generative は53位（2026-10-11時点）",
+      "checked": "2026-10-11"
     },
     {
       "id": "tts-arena",
@@ -1110,8 +1119,8 @@
       "operator": "TTS-AGI（Hugging Face Spaces）",
       "url": "https://huggingface.co/spaces/TTS-AGI/TTS-Arena-V2",
       "what": "利用者が2つの匿名モデルの読み上げを聞き比べて投票する一対比較。プロンプトは英語のみ",
-      "snapshot": "1位 匿名モデル「Aurora」1582、2位 CastleFlow v1.0 1565（現在は非アクティブ）、3位 Inworld TTS MAX 1564、Hume Octave 1531（7位）、MiniMax Speech 2.8 HD 1536（10位）、Eleven v3 1510（25位）。Eleven v4・Gemini TTS は未掲載（2026-10-01確認）",
-      "checked": "2026-10-01"
+      "snapshot": "1位 CastleFlow v1.0 1561（非アクティブ）、2位 Inworld TTS MAX 1558、3位 匿名モデル「Aurora」1566、Hume Octave 1526（7位）、MiniMax Speech 2.8 HD 1540（8位）、Eleven v3 1501（27位）。Eleven v4・Gemini TTS は未掲載（2026-10-11確認）",
+      "checked": "2026-10-11"
     },
     {
       "id": "aa-s2s",
@@ -1119,8 +1128,8 @@
       "operator": "Artificial Analysis",
       "url": "https://artificialanalysis.ai/speech-to-speech",
       "what": "音声で聞いて音声で答えるモデルの総合指数（音声での推論・顧客対応タスクの成功率・利用者の好み・タスク成功率の平均）",
-      "snapshot": "1位 Gemini 3.8 Live Extended Thinking（High）82.6、2位 GPT-Live-1（Astra, medium）81.5、3位 Grok Voice Think Fast 2.0 High 81.3、4位 GPT-Live-1（Sol, low）80.1、5位 Gemini 3.8 Live 76.0（2026-10-01時点）",
-      "checked": "2026-10-01"
+      "snapshot": "1位 GPT-Live-1（Astra, medium）83.2、2位 Gemini 3.8 Live Extended Thinking（High）82.6、3位 Grok Voice Think Fast 2.0 High 81.3、4位 GPT-Live-1（Sol, low）80.1、5位 Gemini 3.8 Live 76.0（2026-10-11時点）",
+      "checked": "2026-10-11"
     }
   ],
   "faq": [
@@ -1177,6 +1186,26 @@
       "text": "SunoがBGM付きの読み上げを1本で作る「Speech」をベータ公開。評価前の候補として追加",
       "article": "/news/20261003-suno-speech-beta-voice-music/",
       "by": "writer"
+    },
+    {
+      "date": "2026-10-11",
+      "text": "音声で会話するAPIのおすすめを OpenAI の GPT-Live-1 に変更（Artificial Analysis の音声対話指数で Gemini 3.8 Live を上回り1位に）",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-10-11",
+      "text": "Artificial Analysis の音声合成ランキングの順位を更新（ElevenLabs の Eleven v4 Turbo が1位）",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-10-11",
+      "text": "Hume AI が TTS・音声対話の API を2026年11月13日に終了予定と告知したことを追記",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-10-11",
+      "text": "Suno Speech（ベータ）を「その他の選択肢」に追加",
+      "by": "reviewer"
     }
   ],
   "editor_note": "",
