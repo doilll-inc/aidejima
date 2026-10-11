@@ -385,6 +385,7 @@
     "音声": "voice",
     "音声合成": "text-to-speech",
     "音声会話": "voice-chat",
+    "ポッドキャスト": "podcast",
     "文字起こし": "transcription",
     "議事録": "meeting-notes",
     "音楽生成": "music-generation",
