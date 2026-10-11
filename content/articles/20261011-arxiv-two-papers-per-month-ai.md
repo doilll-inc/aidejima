@@ -47,9 +47,20 @@ arXivは、投稿者1人あたりの投稿を暦の月ごとに最大2本、処�
 
 arXivはこの制限を、AIを使う研究者の新しい作法を決め、審査の道具と手順を改善するまでの「つなぎ（stopgap）」と位置づけています。影響を見ながら必要に応じて見直すとしています。
 
+## 何が問題になっているのか
+
+制限の対象はAIそのものではありません。arXivは、AIを使ったと明記し、研究として新しい価値があれば、AIを道具にした論文も受け付けています。困っているのは、1つの研究を細かく切り分けて本数を稼ぐ「サラミ論文」や、範囲がごく狭い「薄い論文」、AIが書いた文字ばかり多い論文が一気に増えたことです。
+
+こうした論文をはじくのは、無償で協力するボランティアの審査担当です。編集諮問委員会のトーマス・ディータリック委員長は、負担を生んでいるのは一部の著者だと説明しています。
+
+:::quote https://blog.arxiv.org/2026/10/01/updated-rate-limit-policy/ | arXiv公式ブログ（編集諮問委員会のトーマス・ディータリック委員長の言葉）
+> However, a relatively small proportion of authors are submitting a large number of low-quality papers and consuming a disproportionate fraction of the moderators’ time. This is unfair to authors who continue to submit quality papers — their papers can be delayed for days or weeks as a result.
+しかし、比較的少数の著者が質の低い論文を大量に投稿し、審査担当の時間を不釣り合いに多く使っています。これは質の高い論文を投稿し続けている著者にとって不公平で、その論文の公開が数日から数週間遅れることもあります。
+:::
+
 ## 数字で見る「論文の洪水」
 
-公式ブログが示した9月ひと月の投稿数は、10年で4倍に増えています。
+9月ひと月の投稿数を公式ブログの数字で並べると、10年で4倍に増えています。
 
 | 時期 | 9月の投稿数 |
 |---|---|
@@ -57,14 +68,7 @@ arXivはこの制限を、AIを使う研究者の新しい作法を決め、審�
 | 2024年 | 2万569本 |
 | 2026年 | 4万363本（過去最多） |
 
-今年9月の投稿は、スタッフと審査担当への問い合わせを約9,000件生みました。AI分野（cs.AI）の投稿は2年で6倍を超え、ほかの分野も同じ期間に2倍になったといいます。
-
-arXiv自身は、AIを研究の道具として使うこと自体は禁じていません。使ったことを明記し、研究として新しい価値があれば認めるという方針です。問題にしているのは、範囲がごく狭い「薄い論文」、1つの研究を細かく切り分けて本数を稼ぐ「サラミ論文」、そしてAIが書いた文字ばかり多い論文の増加です。
-
-:::quote https://blog.arxiv.org/2026/10/01/updated-rate-limit-policy/ | arXiv公式ブログ（編集諮問委員会のトーマス・ディータリック委員長の言葉）
-> However, a relatively small proportion of authors are submitting a large number of low-quality papers and consuming a disproportionate fraction of the moderators’ time. This is unfair to authors who continue to submit quality papers — their papers can be delayed for days or weeks as a result.
-しかし、比較的少数の著者が質の低い論文を大量に投稿し、審査担当の時間を不釣り合いに多く使っています。これは質の高い論文を投稿し続けている著者にとって不公平で、その論文の公開が数日から数週間遅れることもあります。
-:::
+伸びがいちばん大きいのはAI分野（cs.AI）で、2年で6倍を超えました。ほかの分野も同じ2年で2倍です。今年9月の投稿だけで、スタッフと審査担当への問い合わせが約9,000件寄せられました。
 
 ## これまでの締め付け
 
@@ -74,7 +78,7 @@ The Decoderは、arXivが今年7月にコーネル大学から独立した非営
 
 ## 反応と論点
 
-ディータリック氏は発表当日、Xで「投稿が指数関数的に増えているため、1人が毎月投稿できる論文を2本に制限する」と研究者に告知しました。
+ディータリック氏は発表当日、Xで研究者に向けて新しい上限を告知し、投稿数が指数関数的に増えていることを理由に挙げました。
 
 賛成の声として、米ラトガース大学の数学者アレックス・コントロビッチ氏は「今月あなたが出す42本は読まない。いちばん良い2本を選んで」とXに投稿しています。
 
