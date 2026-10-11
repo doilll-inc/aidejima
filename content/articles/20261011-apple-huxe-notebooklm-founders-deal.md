@@ -44,11 +44,11 @@ NotebookLMは、資料を読み込ませると2人のAIが掛け合いで内容�
 特徴は、聞いている途中で話しかけられることです。公式サイトは次のように説明しています。
 
 :::quote https://www.huxe.com/ | Huxe公式サイト
-> Interrupt and say "wait, explain that differently" or "give me more technical detail" or "actually, what about this other thing?" Turn any curiosity into a personal podcast.
-割り込んで「待って、別の言い方で説明して」「もっと技術的に詳しく」「それより、こっちの話は？」と言えます。どんな好奇心も、自分だけのポッドキャストになります。
+> Interrupt and say "wait, explain that differently" or "give me more technical detail" or "actually, what about this other thing?"
+割り込んで「待って、別の言い方で説明して」「もっと技術的に詳しく」「それより、こっちの話は？」と言えます。
 :::
 
-再生中に話題が出ると、画面にもその情報が表示される仕組みでした。
+再生中に話題が出ると、画面にもその情報が表示される仕組みでした。気になったテーマを伝えれば、それを解説する自分だけのポッドキャストも作れました。
 
 ## 5月に終了していたサービス
 
