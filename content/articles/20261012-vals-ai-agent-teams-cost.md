@@ -45,8 +45,8 @@ AIが考える量の設定（推論の強さ）を「中」と「最大」の2�
 チームが統計的にはっきり上回ったのは、GPT-6 Solを「中」で使った場合の7.3ポイントだけです。残る3つの差は、偶然の範囲を出ませんでした。
 
 :::quote https://www.vals.ai/blogs/multi-agent-vibe-code-bench | Vals AI「Do Agent Teams Pay Off? A Case Study on Vibe Code Bench」
-> Teams cost 1.8 to 5.1 times as much, and only for Sol at medium effort was the difference in score statistically significant.
-チームの費用は1.8〜5.1倍で、成績の差が統計的に意味のある大きさだったのは、Solを中くらいの推論の強さで使った場合だけだった。
+> Teams cost 1.8 to 5.1 times as much as single agents, and only one difference in score was statistically significant.
+チームの費用は1体の場合の1.8〜5.1倍で、成績の差が統計的に意味のある大きさだったのは1つだけだった。
 :::
 
 目を引くのはClaudeの数字です。1体・設定「中」の91.5%（1本4.08ドル）に対し、チーム・設定「最大」は93.2%で最高点でしたが、費用は122ドルと約30倍です。その1.6ポイントの差も、統計的には意味のある差ではないとされました。GPTでは、チームにするより、1体のまま考える量を「最大」に上げたほうが点数の伸びは大きくなりました。
