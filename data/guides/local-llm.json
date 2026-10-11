@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 3,
   "created": "2026-09-30",
-  "updated": "2026-10-06",
+  "updated": "2026-10-11",
   "last_reviewed": "2026-10-06",
   "title": "ローカルLLM・オープンウェイトモデルのおすすめ",
   "short_name": "ローカルLLM",
@@ -1067,6 +1067,23 @@
         "source_url": "https://huggingface.co/Aleph-Alpha/Kolibri-1",
         "checked": "2026-10-06"
       }
+    },
+    {
+      "id": "reflection-beam",
+      "name": "Beam（Reflection AI）",
+      "vendor": "Reflection AI",
+      "url": "https://reflection.ai/blog/introducing-beam",
+      "status": "watch",
+      "latest": {
+        "name": "Beam",
+        "released": "2026-10-05",
+        "source_url": "https://reflection.ai/blog/introducing-beam",
+        "checked": "2026-10-11"
+      },
+      "tags": [
+        "Reflection AI",
+        "Beam"
+      ]
     },
     {
       "id": "meta-llama",
