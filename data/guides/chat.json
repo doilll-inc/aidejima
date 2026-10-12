@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-12",
+  "updated": "2026-10-13",
   "last_reviewed": "2026-10-03",
   "title": "チャットAIのおすすめと料金比較（ChatGPT・Claude・Gemini など）",
   "short_name": "チャットAI",
@@ -430,9 +430,9 @@
       "pricing": {
         "free": {
           "available": true,
-          "detail": "Web・デスクトップ・モバイルでチャット、Web検索、ファイル作成、メモリ。モデルは Sonnet と Haiku",
+          "detail": "Web・デスクトップ・モバイルでチャット、Web検索、ファイル作成とコード実行、メモリ、アプリ連携、Claude Design・Slides・Docs。モデルは Sonnet と Haiku",
           "source_url": "https://claude.com/pricing",
-          "checked": "2026-10-03"
+          "checked": "2026-10-13"
         },
         "plans": [
           {
@@ -441,9 +441,9 @@
             "currency": "USD",
             "per": "month",
             "as_shown": "$17 Per month with annual subscription discount ($200 billed up front). $20 if billed monthly.",
-            "detail": "Opus 5.5、Claude Code、Claude Design・Slides・Docs、Projects、Claude for Microsoft 365",
+            "detail": "Opus 5.5、Research、タスクの予約・代行、Claude Code、Claude Science、Claude Dashboards（ベータ）、Projects、Claude in Chrome・Microsoft 365",
             "source_url": "https://claude.com/pricing",
-            "checked": "2026-10-03"
+            "checked": "2026-10-13"
           },
           {
             "name": "Max",
@@ -451,9 +451,9 @@
             "currency": "USD",
             "per": "month",
             "as_shown": "From $100 Per month",
-            "detail": "Pro の5倍か20倍の利用量を選ぶ。月払いのみ",
+            "detail": "Pro の5倍か20倍の利用量を選ぶ。混雑時の優先、毎月100〜200ドル分の API クレジット付き。月払いのみ",
             "source_url": "https://claude.com/pricing",
-            "checked": "2026-10-03"
+            "checked": "2026-10-13"
           },
           {
             "name": "Team（標準シート）",
@@ -461,9 +461,9 @@
             "currency": "USD",
             "per": "seat_month",
             "as_shown": "$20 Per seat / month if billed annually. $25 if billed monthly.",
-            "detail": "2〜150人。プレミアムシート（標準の5倍）は年払い $100・月払い $125",
+            "detail": "2〜150人。プレミアムシート（標準の5倍）は年払い $100・月払い $125。最大月500ドル分の API クレジットを共有",
             "source_url": "https://claude.com/pricing",
-            "checked": "2026-10-03"
+            "checked": "2026-10-13"
           },
           {
             "name": "Enterprise",
@@ -473,7 +473,7 @@
             "as_shown": "US$20/seat/month, billed annually. Usage cost scales with model and task.",
             "detail": "シート料金に加えて API 料金での従量課金",
             "source_url": "https://claude.com/pricing",
-            "checked": "2026-10-03"
+            "checked": "2026-10-13"
           }
         ],
         "jpy_official": false,
@@ -1152,6 +1152,12 @@
       "date": "2026-10-12",
       "text": "Gemini の無料版は10月9日からモデルの自動選択が既定に。多くの質問は Flash-Lite が答え、難しい質問は Flash や Pro に回る",
       "article": "/news/20261012-gemini-what-is-plans/",
+      "by": "writer"
+    },
+    {
+      "date": "2026-10-13",
+      "text": "Claude の Max に毎月100〜200ドル分の API クレジットが付くように。無料版でも資料・スライド作り（Claude Docs・Slides・Design）が使える",
+      "article": "/news/20261013-claude-what-is-plans/",
       "by": "writer"
     }
   ],
