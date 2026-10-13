@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-10",
+  "updated": "2026-10-14",
   "last_reviewed": "2026-10-02",
   "title": "AI API（LLM）の料金比較と選び方",
   "short_name": "AI API",
@@ -431,10 +431,10 @@
         "gemini-4-argon"
       ],
       "latest": {
-        "name": "Gemini 3.8 Flash",
-        "released": "2026-09-02",
-        "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
-        "checked": "2026-10-02"
+        "name": "Gemini 4 Argon",
+        "released": "2026-10-13",
+        "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+        "checked": "2026-10-14"
       },
       "access": [
         "api"
@@ -1255,6 +1255,12 @@
       "date": "2026-10-10",
       "text": "判断専用のAI「Jev」（TypeSafe AI）を調査中の候補に追加",
       "article": "/news/20261010-typesafe-jev-870m-series-a/",
+      "by": "writer"
+    },
+    {
+      "date": "2026-10-14",
+      "text": "Gemini 4 Argon が API の有料枠で一般提供に。11月30日まで入力$2・出力$10、12月1日から2倍",
+      "article": "/news/20261014-gemini-4-argon-gemini-app-ai-mode/",
       "by": "writer"
     }
   ],

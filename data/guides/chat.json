@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-13",
+  "updated": "2026-10-14",
   "last_reviewed": "2026-10-03",
   "title": "チャットAIのおすすめと料金比較（ChatGPT・Claude・Gemini など）",
   "short_name": "チャットAI",
@@ -520,10 +520,10 @@
       ],
       "model_slugs": [],
       "latest": {
-        "name": "Gemini 3.8 Flash",
-        "released": "2026-09-02",
-        "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
-        "checked": "2026-10-03"
+        "name": "Gemini 4 Argon",
+        "released": "2026-10-13",
+        "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+        "checked": "2026-10-14"
       },
       "access": [
         "web",
@@ -536,7 +536,7 @@
         "Gmail などの中でも使える（Plus 以上）"
       ],
       "weaknesses": [
-        "最上位の Gemini 4 Argon は一般向けに未提供",
+        "最上位の Argon は AI Pro 以上のみ",
         "会話の一部を人が確認する（既定の設定）"
       ],
       "editorial_take": "無料で試すなら最有力。Google のアプリやストレージと合わせて使うなら AI Pro が割安。",
@@ -1164,6 +1164,12 @@
       "date": "2026-10-13",
       "text": "Grok の有料プランが Cursor・X Premium と一本化した「The X Subscription」に。月8・30・100・200ドルの4段階",
       "article": "/news/20261013-x-subscription-grok-cursor/",
+      "by": "writer"
+    },
+    {
+      "date": "2026-10-14",
+      "text": "最上位の Gemini 4 Argon が Gemini アプリと AI モードで使えるように（AI Pro・Ultra の加入者）",
+      "article": "/news/20261014-gemini-4-argon-gemini-app-ai-mode/",
       "by": "writer"
     }
   ],
