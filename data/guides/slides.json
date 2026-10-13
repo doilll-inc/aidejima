@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 3,
   "created": "2026-09-30",
-  "updated": "2026-10-10",
+  "updated": "2026-10-14",
   "last_reviewed": "2026-10-10",
   "title": "AI資料作成・スライド生成のおすすめと料金比較",
   "short_name": "資料作成",
@@ -1103,6 +1103,21 @@
       },
       "checked": "2026-10-10",
       "retired_note": ""
+    },
+    {
+      "id": "genspark",
+      "name": "Genspark（AI Slides）",
+      "vendor": "Genspark",
+      "url": "https://www.genspark.ai/",
+      "status": "watch",
+      "latest": {
+        "name": "Super Agent・AI Slides",
+        "source_url": "https://www.genspark.ai/helpcenter/ai-slides",
+        "checked": "2026-10-14"
+      },
+      "tags": [
+        "Genspark"
+      ]
     }
   ],
   "criteria": [
@@ -1194,6 +1209,12 @@
       "date": "2026-10-10",
       "text": "Pitch の料金をプラン改定後の Plus・Team・Business に更新、Manus をその他の選択肢に追加",
       "by": "reviewer"
+    },
+    {
+      "date": "2026-10-14",
+      "text": "Genspark（AI Slides）を調査中の候補に追加",
+      "article": "/news/20261014-genspark-what-is-pricing/",
+      "by": "writer"
     }
   ],
   "editor_note": "",
