@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-04",
+  "updated": "2026-10-13",
   "last_reviewed": "2026-10-04",
   "title": "コーディングAIのおすすめと料金比較（エージェント・IDE・CLI）",
   "short_name": "コーディング",
@@ -586,63 +586,73 @@
       "pricing": {
         "free": {
           "available": true,
-          "detail": "Hobby：クレジットカード不要、Agent リクエストは制限付き、Composer を利用可",
+          "detail": "Free（$0）：エージェントとチャットは回数制限付き",
           "source_url": "https://cursor.com/pricing",
-          "checked": "2026-10-04"
+          "checked": "2026-10-13"
         },
         "plans": [
           {
-            "name": "Pro",
-            "amount": 20,
+            "name": "Plus",
+            "amount": 8,
             "currency": "USD",
             "per": "month",
-            "as_shown": "$20 / mo.",
-            "detail": "Agent の上限拡大、最先端モデル、クラウドエージェント",
+            "as_shown": "$8/mo",
+            "detail": "Grok と共通の利用枠。使えるのは Grok のモデルのみ。X Premium の機能付き",
             "source_url": "https://cursor.com/pricing",
-            "checked": "2026-10-04"
+            "checked": "2026-10-13"
           },
           {
-            "name": "Pro+",
-            "amount": 60,
+            "name": "Premium",
+            "amount": 30,
             "currency": "USD",
             "per": "month",
-            "as_shown": "$60 / mo.",
-            "detail": "毎日エージェントを使う人向け（公式の推奨）",
+            "as_shown": "$30/mo",
+            "detail": "Plus の4倍の利用枠、クラウドエージェント・自動化、AIコードレビュー。他社モデルは API 定価で別料金",
             "source_url": "https://cursor.com/pricing",
-            "checked": "2026-10-04"
+            "checked": "2026-10-13"
+          },
+          {
+            "name": "Super",
+            "amount": 100,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$100/mo",
+            "detail": "Plus の15倍の利用枠、混雑時の優先利用",
+            "source_url": "https://cursor.com/pricing",
+            "checked": "2026-10-13"
           },
           {
             "name": "Ultra",
             "amount": 200,
             "currency": "USD",
             "per": "month",
-            "as_shown": "$200 / mo.",
-            "detail": "エージェントを大量に使う人向け",
+            "as_shown": "$200/mo",
+            "detail": "Plus の50倍の利用枠、新製品・新モデルを最初に利用",
             "source_url": "https://cursor.com/pricing",
-            "checked": "2026-10-04"
+            "checked": "2026-10-13"
           },
           {
-            "name": "Teams（Standard）",
-            "amount": 40,
+            "name": "Teams",
+            "amount": 30,
             "currency": "USD",
             "per": "seat_month",
-            "as_shown": "$40 / user / mo.",
-            "detail": "一括請求・管理、Bugbot のコードレビュー、SAML/OIDC SSO、チーム全体のプライバシーモード。Premium シートもある",
+            "as_shown": "$30+/user/mo",
+            "detail": "Premium・Super・Ultra を1人あたり同額で。一括請求・管理、SAML/OIDC SSO",
             "source_url": "https://cursor.com/pricing",
-            "checked": "2026-10-04"
+            "checked": "2026-10-13"
           },
           {
             "name": "Enterprise",
             "currency": "USD",
             "per": "seat_month",
             "as_shown": "Custom",
-            "detail": "利用量の共有、請求書払い、SCIM",
+            "detail": "Grok と Cursor を1つの管理画面・共通の利用枠で",
             "source_url": "https://cursor.com/pricing",
-            "checked": "2026-10-04"
+            "checked": "2026-10-13"
           }
         ],
         "jpy_official": false,
-        "note": "表示は月払い。料金ページで年払いに切り替えられる。"
+        "note": "10月12日から Grok・X Premium と一本化した「The X Subscription」で販売（表示は税抜き）。旧 Pro・Pro+・Ultra は新規申し込み不可、既存契約者は継続可。他社モデルの利用は別料金（上限設定可）"
       },
       "japanese": {
         "ui": "partial",
@@ -1284,6 +1294,12 @@
       "date": "2026-10-04",
       "text": "DeepSeek Harness（MIT ライセンスのオープンソース・公開プレビュー）を「その他の選択肢」に追加",
       "by": "reviewer"
+    },
+    {
+      "date": "2026-10-13",
+      "text": "Cursor の料金が Grok・X Premium と一本化した「The X Subscription」に。月8ドルからで、Claude など他社モデルは Premium（月30ドル）以上・別料金",
+      "article": "/news/20261013-x-subscription-grok-cursor/",
+      "by": "writer"
     }
   ],
   "editor_note": "",

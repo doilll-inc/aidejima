@@ -644,54 +644,54 @@
       "pricing": {
         "free": {
           "available": true,
-          "detail": "Web とアプリで無料で試せる",
-          "source_url": "https://grok.com/plans",
-          "checked": "2026-10-03"
+          "detail": "Free（$0）：Grok の Chat・Imagine・Voice・Build を毎日少し使える",
+          "source_url": "https://x.ai/news/x-subscription",
+          "checked": "2026-10-13"
         },
         "plans": [
           {
-            "name": "SuperGrok Lite",
-            "amount": 10,
+            "name": "Plus",
+            "amount": 8,
             "currency": "USD",
             "per": "month",
-            "as_shown": "$10 USD/月",
-            "detail": "会話の長さ2倍、Expert モード、画像・動画作成のお試し",
-            "source_url": "https://grok.com/plans",
-            "checked": "2026-10-01"
+            "as_shown": "$8/month",
+            "detail": "Grok と Cursor の利用枠、X の認証マーク・広告減。Grok のモデルのみ",
+            "source_url": "https://x.ai/news/x-subscription",
+            "checked": "2026-10-13"
           },
           {
-            "name": "SuperGrok",
+            "name": "Premium",
             "amount": 30,
             "currency": "USD",
             "per": "month",
-            "as_shown": "$30 USD/月",
-            "detail": "会話の長さ5倍、Grok Bot、720p・30秒の動画生成",
-            "source_url": "https://grok.com/plans",
-            "checked": "2026-10-01"
+            "as_shown": "$30/month",
+            "detail": "Plus の4倍の利用枠。SuperGrok・Cursor Pro・X Premium+ 相当、Grok Bot、画像・動画生成",
+            "source_url": "https://x.ai/news/x-subscription",
+            "checked": "2026-10-13"
           },
           {
-            "name": "SuperGrok Plus",
+            "name": "Super",
             "amount": 100,
             "currency": "USD",
             "per": "month",
-            "as_shown": "$100 USD/月",
-            "detail": "利用枠を大幅に拡大、1080p 動画、ピーク時の優先アクセス",
-            "source_url": "https://grok.com/plans",
-            "checked": "2026-10-01"
+            "as_shown": "$100/month",
+            "detail": "Plus の15倍の利用枠、混雑時の優先利用",
+            "source_url": "https://x.ai/news/x-subscription",
+            "checked": "2026-10-13"
           },
           {
-            "name": "SuperGrok Heavy",
-            "amount": 300,
+            "name": "Ultra",
+            "amount": 200,
             "currency": "USD",
             "per": "month",
-            "as_shown": "$300 USD/月",
-            "detail": "利用枠が最大。複数エージェントで回答、X Premium+ 付き",
-            "source_url": "https://grok.com/plans",
-            "checked": "2026-10-01"
+            "as_shown": "$200/month",
+            "detail": "Plus の50倍の利用枠、新製品・新モデルを最初に利用",
+            "source_url": "https://x.ai/news/x-subscription",
+            "checked": "2026-10-13"
           }
         ],
         "jpy_official": false,
-        "note": "料金ページのチャットのモデル表記は Grok 4.7（エキスパート・ヘビー、2026-10-03確認）。年払いの割引あり。"
+        "note": "10月12日から Grok・Cursor・X Premium を一本化した「The X Subscription」に。利用枠は Grok・X・Cursor で共通、毎週リセット。旧 SuperGrok 各プランは新規申し込み不可（既存契約者は継続可）"
       },
       "japanese": {
         "ui": "yes",
@@ -1158,6 +1158,12 @@
       "date": "2026-10-13",
       "text": "Claude の Max に毎月100〜200ドル分の API クレジットが付くように。無料版でも資料・スライド作り（Claude Docs・Slides・Design）が使える",
       "article": "/news/20261013-claude-what-is-plans/",
+      "by": "writer"
+    },
+    {
+      "date": "2026-10-13",
+      "text": "Grok の有料プランが Cursor・X Premium と一本化した「The X Subscription」に。月8・30・100・200ドルの4段階",
+      "article": "/news/20261013-x-subscription-grok-cursor/",
       "by": "writer"
     }
   ],

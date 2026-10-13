@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-10",
+  "updated": "2026-10-13",
   "last_reviewed": "2026-10-05",
   "title": "画像生成AIのおすすめと料金比較",
   "short_name": "画像生成",
@@ -742,24 +742,24 @@
       "pricing": {
         "plans": [
           {
-            "name": "SuperGrok",
+            "name": "Premium",
             "amount": 30,
             "currency": "USD",
             "per": "month",
             "as_shown": "$30/month",
-            "detail": "画像・動画生成を含む",
-            "source_url": "https://x.ai/pricing",
-            "checked": "2026-10-01"
+            "detail": "画像・動画の生成を含む（The X Subscription。Plus の4倍の利用枠）",
+            "source_url": "https://cursor.com/pricing",
+            "checked": "2026-10-13"
           },
           {
-            "name": "SuperGrok Plus",
+            "name": "Super",
             "amount": 100,
             "currency": "USD",
             "per": "month",
             "as_shown": "$100/month",
-            "detail": "Imagineなどの利用量を大幅に拡大",
-            "source_url": "https://x.ai/pricing",
-            "checked": "2026-10-01"
+            "detail": "Plus の15倍の利用枠、混雑時の優先利用",
+            "source_url": "https://cursor.com/pricing",
+            "checked": "2026-10-13"
           }
         ],
         "usage": {
@@ -1410,6 +1410,12 @@
       "date": "2026-10-10",
       "text": "GeminiアプリのNano Banana 2.1はGoogle AI Plus（月725円）以上で利用可能、無料版は1K保存と公式ページで確認",
       "article": "/news/20261010-gemini-image-generation-how-to-use/",
+      "by": "writer"
+    },
+    {
+      "date": "2026-10-13",
+      "text": "Grok の有料プランが「The X Subscription」に一本化。画像・動画生成は Premium（月30ドル）以上",
+      "article": "/news/20261013-x-subscription-grok-cursor/",
       "by": "writer"
     }
   ],
