@@ -464,6 +464,9 @@
     "カリフォルニア州": "california",
     "アクセシビリティ": "accessibility",
     "メディア": "media",
-    "天文学": "astronomy"
+    "天文学": "astronomy",
+    "決済": "payments",
+    "破産": "bankruptcy",
+    "AIコンパニオン": "ai-companion"
   }
 }
