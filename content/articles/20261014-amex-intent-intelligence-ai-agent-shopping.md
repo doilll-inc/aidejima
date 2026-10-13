@@ -28,11 +28,11 @@
 
 Intent Intelligenceとは、利用者がAIに伝えた「買いたいもの」の条件を、支払いの前にカード会社へ届けて守らせる仕組みです。インテントは「意図」の意味で、ここでは本人が許可した買い物の範囲を指します。
 
-Amexの技術ブログは、なぜ新しい仕組みが要るのかをこう説明しています。
+AIに買い物を任せると、本人が最初に一度だけ希望を伝え、そのあとの判断と支払いはAIが進めることになります。Amexの技術ブログは、だからこそ新しい仕組みが要ると説明しています。
 
 :::quote https://americanexpress.io/intent-intelligence-building-trust-in-agentic-commerce/ | American Express Technology「Intent Intelligence: Building Trust in Agentic Commerce」
-> A user may define what they want once, while an agent interprets those instructions, evaluates changing conditions, and ultimately executes a purchase on the user’s behalf. This requires a new model of establishing trust in the user, representing intent as clear boundaries, and enforcing those boundaries at execution.
-利用者は欲しいものを一度伝えるだけで、あとはAIが指示を解釈し、状況の変化を見ながら、本人に代わって購入まで実行するかもしれません。そのためには、本人を確かめ、意図をはっきりした境界として表し、実行の時点でその境界を守らせる新しい仕組みが必要です。
+> This requires a new model of establishing trust in the user, representing intent as clear boundaries, and enforcing those boundaries at execution.
+そのためには、本人を確かめ、意図をはっきりした境界として表し、実行の時点でその境界を守らせる新しい仕組みが必要です。
 :::
 
 ブログによると、流れは大きく4段階です。
