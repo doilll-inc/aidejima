@@ -35,7 +35,7 @@ Google DeepMindとシンガポール政府のIT機関GovTech Singaporeは現地�
 
 ふだんは軽い判定だけを動かすことで、スマホの電池の消耗を抑える設計です。
 
-:::quote https://deepmind.google/blog/on-device-ai-scam-detection-mddi/ | Google DeepMind「Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection」
+:::quote https://deepmind.google/blog/on-device-ai-scam-detection-mddi/ | GovTech Singapore Mark Chen氏（Google DeepMindの発表より）
 > Fighting scams shouldn't mean sacrificing personal privacy.
 詐欺と戦うために、個人のプライバシーを犠牲にするべきではありません。
 :::
