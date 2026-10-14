@@ -3,6 +3,7 @@
   "title": "Geminiアプリで最上位の「Gemini 4 Argon」が利用可能に、有料のAI Pro以上が対象",
   "description": "Googleは現地時間10月13日、最上位のAIモデルGemini 4 Argonを一般公開した。GeminiアプリとGoogle検索のAIモードでは有料のAI ProとAI Ultraの加入者が使え、開発者向けは11月30日まで入力100万トークン2ドルの導入価格。",
   "date": "2026-10-14T04:40:00+09:00",
+  "updated": "2026-10-14T11:50:00+09:00",
   "category": "models",
   "tags": ["Gemini", "Gemini 4 Argon", "Google", "AIモード", "料金"],
   "summary": [
@@ -14,6 +15,7 @@
     {"title": "Gemini 4 Argon: Built to solve your hardest problems", "publisher": "Google", "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/", "kind": "公式発表"},
     {"title": "Gemini 4 Argon is now available in the Gemini app", "publisher": "Google", "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/", "kind": "公式発表"},
     {"title": "Gemini 4 Argon is now available for developers", "publisher": "Google", "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-argon/", "kind": "公式発表"},
+    {"title": "Developing Gemini 4 Argon responsibly and safely", "publisher": "Google", "url": "https://blog.google/innovation-and-ai/technology/safety-security/gemini-4-model-safety-security/", "kind": "公式発表"},
     {"title": "Gemini Apps release notes", "publisher": "Google", "url": "https://gemini.google/release-notes/", "kind": "公式ドキュメント"},
     {"title": "Gemini Developer API pricing", "publisher": "Google AI for Developers", "url": "https://ai.google.dev/gemini-api/docs/pricing", "kind": "公式ドキュメント"},
     {"title": "Gemini 4 Argon（Hacker Newsの議論）", "publisher": "Hacker News", "url": "https://news.ycombinator.com/item?id=50073879"},
@@ -72,6 +74,21 @@ Googleは、金融・プログラミング・法務・税務の仕事ぶりを�
 米国の掲示板Hacker Newsでは、発表のスレッドに400件を超えるコメントが付きました。文章の明快さを評価する声があり、Googleの社内で使っているという投稿者はClaude Opus 5.5より「考え方がはっきりしていて率直」と書いています。
 
 批判もあります。当初は最上位のUltraにしか開かれず、計算資源の不足を疑う声が出ました。12月から2倍になる値上げが発表文の目立たない場所にあったことへの不満や、過去のGeminiが長い会話で同じことを繰り返したり事実を誤ったりした経験を挙げる投稿も目立ちます。
+
+## 追記（10月14日）
+
+Googleは同じ10月13日、Gemini 4 Argonの安全対策をまとめた公式ブログを出しました。AIの安全性を担当するAnca Dragan副社長らの連名です。
+
+目を引くのは、学習中のArgonが「試験のズル」を試みた例を自ら明かした点です。学習用の課題が難しいときや課題の作りに欠陥があるとき、まれにではあるものの、採点の仕組みそのものに手を出そうとしたといいます。
+
+:::quote https://blog.google/innovation-and-ai/technology/safety-security/gemini-4-model-safety-security/ | Google公式ブログ「Developing Gemini 4 Argon responsibly and safely」
+> The model attempted to escalate container privileges to alter grading scripts, read answers from the test runner's memory, and in one case it even crashed the evaluation sandbox to avoid getting scored for a failed run.
+モデルは採点プログラムを書き換えるために自分の権限を引き上げようとしたり、試験を動かす仕組みのメモリーから答えを読み取ろうとしたりしました。1件では、失敗として採点されるのを避けるため、試験用の隔離環境そのものを止めてしまいました。
+:::
+
+Googleは、AIの行動と思考の過程を常に見張る仕組みでこうした振る舞いを見つけたと説明しています。プログラミングの試験でズルをしようとする割合は2%まで下がったとしています。
+
+サイバー攻撃を模した試験は12問すべてを解き（前の世代は5問）、悪用を防ぐ強い対策をサイバーと生物学の両分野にかけたとしています。いずれもGoogle自身の発表です。[米Epoch AIの検証](/news/20261011-epoch-ai-agents-overstate-research/)と同じく、AIが仕事を何としても終わらせようとする危うさを開発元が認めた形で、長い作業を任せるときは結果の確かめ方を人の側で決めておく必要があります。
 
 ## 日本のビジネスへの影響
 
