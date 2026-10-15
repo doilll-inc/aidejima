@@ -30,12 +30,9 @@ Universal Cartとは、Googleのサービスの中で見つけた商品を、ど
 
 {{card:https://blog.google/products-and-platforms/products/shopping/universal-cart-launch/|An intelligent new shopping cart|Google}}
 
-Googleの公式ブログ（消費者向けショッピングの製品責任者 Suresh Ganapathy氏）が挙げた機能は4つです。
+使い方の流れで見ると、まず「入れる」場所が広がります。検索のAIモード（Google検索の対話型の回答画面）で見つけたハンドバッグと、あとでGeminiアプリで見つけたセーターやリップが、同じカートに並びます。買うときは、対応する店ならカートの中でGoogle Payで支払いを済ませられ、店のサイトに中身を移してそこで買うこともできます。
 
-- **店をまたいで保存**: 検索のAIモード（Google検索の対話型の回答画面）でハンドバッグを、あとでGeminiアプリでセーターとリップを入れても、同じカートに残る
-- **値下がり・在庫の通知**: Googleの商品データベース「Shopping Graph」の情報を使い、カート内の商品が値下がりしたときや再入荷したときに知らせる
-- **お得な払い方の提案**: Google Wallet（Googleの支払い・カード管理の仕組み）に登録したカードの特典をふまえて、どのカードで払うのがよいかを提案し、使えるクーポンコードも表示する
-- **そのまま購入**: 対応する店ならカートの中でGoogle Payで支払える。店のサイトにカートの中身を移して、そこで買うこともできる
+入れたあとの「損をしない」ための機能もあります。カートの商品が値下がりしたり在庫が戻ったりすると、Googleの商品データベース「Shopping Graph」の情報をもとに通知が届きます。支払いの段階では使えるクーポンコードを表示し、Google Wallet（Googleの支払い・カード管理の仕組み）に登録したカードのうち特典の大きいものを勧めます。発表したのは、Googleで消費者向けショッピングの製品責任者を務めるSuresh Ganapathy氏です。
 
 :::quote https://blog.google/products-and-platforms/products/shopping/universal-cart-launch/ | Google公式ブログ「An intelligent new shopping cart」
 > The cart is built on the 60+ billion continually refreshed product listings in Google's Shopping Graph.
@@ -46,9 +43,9 @@ Googleの公式ブログ（消費者向けショッピングの製品責任者 S
 
 ## 5月の発表から何が変わったか
 
-Universal Cartは、Googleが5月の開発者会議I/Oの時期に発表していました。9to5GoogleやRetail Diveによると、当時は「米国のGoogle検索とGeminiアプリで夏に開始し、YouTubeとGmailが続く」と説明していました。今回の公式ブログが提供先として挙げたのは検索とGeminiアプリの2つで、YouTubeとGmailには触れていません。
+Universal Cartは、Googleが5月の開発者会議I/Oの時期に発表していました。9to5GoogleやRetail Diveによると、当時Googleは、米国のGoogle検索とGeminiアプリで夏に始め、その後YouTubeとGmailにも広げると説明していました。今回の公式ブログが提供先として挙げたのは検索とGeminiアプリの2つで、YouTubeとGmailには触れていません。
 
-当時の報道では、パソコンの部品のように組み合わせが大事な商品で、相性の悪いものをGeminiが指摘する例も紹介されていました。今回のブログは、まずは「見失わない・損しない・安心して買える」という実用面の機能に絞って説明しています。
+当時の報道では、パソコンの部品のように組み合わせが大事な商品で、相性の悪いものをGeminiが指摘する例も紹介されていました。今回のブログは、まずは商品を見失わず、損をせずに買うための実用面の機能に絞って説明しています。
 
 Googleは今回のブログで、買い物の取り組みを2つに分けています。1つはAIが本人の代わりに買い物をこなす「エージェント」の機能、もう1つは人が自分で買い物を管理しやすくする道具で、Universal Cartは後者だと位置づけています。支払いの裏側には、店とAIをつなぐ共通ルールとしてGoogleが今年進めている「Universal Commerce Protocol（UCP）」が使われています。
 
