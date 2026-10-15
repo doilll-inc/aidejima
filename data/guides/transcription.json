@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 2,
   "created": "2026-09-30",
-  "updated": "2026-10-12",
+  "updated": "2026-10-15",
   "last_reviewed": "2026-10-12",
   "title": "AI文字起こし・議事録ツールのおすすめと料金比較",
   "short_name": "文字起こし",
@@ -984,6 +984,24 @@
       "editorial_take": "Google の試験版の Mac アプリ。システム音声とマイクから会議を端末内で文字起こし・索引化し、走り書きのメモを補う。クラウドのサブスク費用は不要とされるが、日本語対応の記載は見つけられなかった。",
       "checked": "2026-10-12",
       "retired_note": ""
+    },
+    {
+      "id": "bee",
+      "name": "Bee（Bee Frontier・Bee Eclipse）",
+      "vendor": "Amazon",
+      "url": "https://bee.computer/",
+      "status": "watch",
+      "latest": {
+        "name": "Bee Frontier（74.99ドル）・Bee Eclipse（99.99ドル）。会話を聞き取って要約する身に着ける機器",
+        "released": "2026-10-15",
+        "source_url": "https://bee.computer/products/frontier",
+        "checked": "2026-10-15"
+      },
+      "tags": [
+        "Bee",
+        "Amazon",
+        "文字起こし"
+      ]
     }
   ],
   "criteria": [
@@ -1111,6 +1129,12 @@
       "date": "2026-10-12",
       "text": "「mlsubgen」と「Google AI Edge Foresight」をその他の選択肢に追加",
       "by": "reviewer"
+    },
+    {
+      "date": "2026-10-15",
+      "text": "会話を聞き取って要約するAmazon傘下の機器「Bee」の新型を調査中の候補に追加",
+      "article": "/news/20261015-amazon-bee-frontier-eclipse/",
+      "by": "writer"
     }
   ],
   "editor_note": "",
