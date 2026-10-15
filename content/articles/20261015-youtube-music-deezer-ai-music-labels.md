@@ -29,7 +29,7 @@ YouTube Musicは現地時間10月14日、主に生成AIで作られた曲の再�
 
 ## 何が始まったか
 
-YouTube公式ブログによると、表示が付くのは、作曲と歌声の両方を生成AIに作らせた曲のように、AIが大きな役割を果たした曲です。再生画面に表示が出て、タップするとAIがどう使われたかの説明が開きます。表示は今後、音楽アプリだけでなくYouTube本体にも広げるとしています。
+YouTube Musicの表示は、曲を聴いている画面にそのまま出ます。表示をタップすると、AIの使われ方についての説明が開く仕組みです。対象は、作曲も歌声も生成AIに任せた曲など、AIが制作の大部分を担った曲に限られます。YouTubeは音楽アプリで始めたこの表示を、YouTube本体にも広げる予定です。
 
 :::quote https://blog.youtube/news-and-events/youtube-music-ai-labels/ | YouTube公式ブログ「YouTube Music adds new labels for AI music」
 > We’re teaming up with music partners and using our own detection tools to identify AI-generated tracks, applying the same labeling principles already used across YouTube.
