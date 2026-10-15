@@ -3,7 +3,7 @@
   "title": "上場目論見書を各社が報道、Claudeの開発元Anthropicは売上12倍も計算資源に5180億ドルの約束",
   "description": "非公開で提出されたAnthropicの上場目論見書の内容をロイターやFTが報じた。2025年の売上高は約46億ドルと前年の約12倍、最終赤字は約420億ドル。今後約10年で5180億ドル超の計算資源を約束し、AIの存亡リスクも明記した。",
   "date": "2026-09-30T20:49:00+09:00",
-  "updated": "2026-10-01T19:03:00+09:00",
+  "updated": "2026-10-15T18:10:00+09:00",
   "category": "business",
   "tags": ["Anthropic", "Claude", "IPO", "安全性"],
   "summary": [
@@ -21,7 +21,12 @@
     {"title": "Leaked Anthropic IPO filing reveals $8B operating loss, rapid revenue growth", "publisher": "SiliconANGLE", "url": "https://siliconangle.com/2026/09/29/leaked-anthropic-ipo-filing-reveals-8b-operating-loss-rapid-revenue-growth/"},
     {"title": "Anthropic's IPO prospectus sells investors on AI while warning it could threaten humanity", "publisher": "CTech", "url": "https://www.calcalistech.com/ctechnews/article/k04of9s71"},
     {"title": "Anthropic officially opens Tokyo office, signs Memorandum of Cooperation with the Japan AI Safety Institute", "publisher": "Anthropic", "url": "https://www.anthropic.com/news/opening-our-tokyo-office"},
-    {"title": "Anthropic's IPO prospectus shows AI vision, surging costs", "publisher": "Hacker News", "url": "https://news.ycombinator.com/item?id=49886005"}
+    {"title": "Anthropic's IPO prospectus shows AI vision, surging costs", "publisher": "Hacker News", "url": "https://news.ycombinator.com/item?id=49886005"},
+    {"title": "Anthropic revenue jumps to $16.8 billion in third quarter, FT reports", "publisher": "Reuters（102.7 WBOW掲載）", "url": "https://1027wbow.com/2026/10/14/anthropic-revenue-jumps-to-16-8-billion-in-third-quarter-ft-reports/", "kind": "報道"},
+    {"title": "Anthropic Hits $16.8B Revenue Ahead Of Planned Holiday Listing: Report", "publisher": "Stocktwits", "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-hits-16-8-b-revenue-ahead-of-planned-holiday-listing-report/cZxQ5ywRBqA", "kind": "報道"},
+    {"title": "Anthropic Third-Quarter Revenue Rises to $16.8 Billion as It Achieves Adjusted Profitability", "publisher": "TradingKey", "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262217602-anthropic-q3-revenue-rises-16-8-billion-achieving-adjusted-profit-tradingkey", "kind": "報道"},
+    {"title": "Anthropic Reports $16.8 billion in Third-Quarter Revenue", "publisher": "The Information", "url": "https://www.theinformation.com/briefings/anthropic-reports-16-8-billion-third-quarter-revenue", "kind": "報道"},
+    {"title": "Anthropic's Rapid But Slowing Growth Could Weigh on IPO Valuation", "publisher": "The Information", "url": "https://www.theinformation.com/articles/anthropics-rapid-slowing-growth-weigh-ipo-valuation", "kind": "報道"}
   ],
   "thumb_style": "photo",
   "thumb_prompt": "A thick bound financial document on a boardroom table with a stock ticker board glowing in the background and a rising arrow of light.",
@@ -88,6 +93,22 @@ Anthropicは6月1日、目論見書の草案をSECに非公開で提出したと
 Hacker Newsのスレッドは130ポイント超、コメントは約140件に達しました。420億ドルの赤字や5180億ドルの契約額の大きさに驚く声が多く、売上の4分の1を占める2社がどこなのかを推測する書き込みも目立ちます。開発者のSimon Willison氏は、報道が2025年の数字に偏っており、急成長した2026年の姿が読み取れないと指摘しました。
 
 社会を大きく変える技術でも投資に見合う利益を出せるとは限らず、航空業界に似ているという冷ややかな見方もあります。一方で、最終赤字の大半は会計上の費用であり、見るべきは急成長した2026年の数字だという反論も出ています。モデル単体では利益が出ていても、次のモデルへの投資で会社全体は赤字になる構造だと、過去のダリオ・アモデイCEOの説明を引いて擁護する書き込みもありました。AIを売り込みながら人類への脅威を警告する目論見書の構図そのものも、CTechなどが論点として取り上げています。
+
+## 追記（10月15日）
+
+Anthropicが上場に向けた投資家向けの説明会で、2026年7〜9月期（第3四半期）の売上高を168億ドルと伝えたと、米Bloombergや英FT、米The Informationが現地時間10月14日に報じました。サンフランシスコで開かれた非公開の会合での説明で、Anthropic自身は数字の公表をしておらず、Bloombergによると財務の詳細や上場の時期へのコメントを控えています。
+
+報道で伝えられた主な数字は次のとおりです。
+
+| 項目 | 内容（報道ベース） |
+|---|---|
+| 7〜9月期の売上高 | 168億ドル。4〜6月期（約115億ドル）から約45%増 |
+| 利益 | 調整後（一部の費用を除いた社内基準）で黒字 |
+| 計算資源の効率 | 計算資源に1ドル使うごとに約1.70ドルの売上 |
+| 上場の日程 | 早ければ11月9日の週に投資家への売り込みを始め、11月下旬の感謝祭の前に上場を目指す |
+| 評価額 | 投資家からは1.8兆〜2兆ドルが妥当との声 |
+
+この四半期だけで、上の表にある2025年の通年売上高（約46億ドル）の3倍を超えたことになります。一方でThe Informationは、伸び率が前の四半期より鈍ったため、説明会に出た一部の投資家は評価額の目標を抑える必要があるとみていると報じています。調整後の黒字は、正式な損益計算書が公開されていない段階での会社側の説明で、目論見書が公開されるまで第三者が確かめることはできません。
 
 ## 日本のビジネスへの影響
 
