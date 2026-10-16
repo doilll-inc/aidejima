@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 3,
   "created": "2026-09-30",
-  "updated": "2026-10-11",
+  "updated": "2026-10-16",
   "last_reviewed": "2026-10-06",
   "title": "ローカルLLM・オープンウェイトモデルのおすすめ",
   "short_name": "ローカルLLM",
@@ -1086,6 +1086,23 @@
       ]
     },
     {
+      "id": "muse-spark-open",
+      "name": "Muse Spark Open",
+      "vendor": "Meta",
+      "url": "https://huggingface.co/collections/meta-models/muse-spark-open",
+      "status": "watch",
+      "latest": {
+        "name": "Muse Spark Open",
+        "released": "2026-10-15",
+        "source_url": "https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B",
+        "checked": "2026-10-16"
+      },
+      "tags": [
+        "Meta",
+        "Muse Spark Open"
+      ]
+    },
+    {
       "id": "meta-llama",
       "name": "Llama・Muse（Meta）",
       "vendor": "Meta",
@@ -1263,6 +1280,12 @@
       "date": "2026-10-06",
       "text": "LMArena（10月2日更新）の順位・スコアに合わせて、日本語重視と最高品質の説明を更新",
       "by": "reviewer"
+    },
+    {
+      "date": "2026-10-16",
+      "text": "Metaの公開モデル「Muse Spark Open」（Mac Studio 2台で動く）を様子見に追加",
+      "article": "/news/20261016-meta-muse-spark-open-mac-studio/",
+      "by": "writer"
     }
   ],
   "editor_note": "",
