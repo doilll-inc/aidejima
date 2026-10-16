@@ -42,7 +42,7 @@ Googleは現地時間10月15日、検索の「AIモード」（AIと対話しな
 リンクを増やす点について、ブダラジュ氏は公式ブログで次のように書いています。
 
 :::quote https://blog.google/products-and-platforms/products/search/updates-ai-mode-overviews-explore-web/ | Google公式ブログ「AI Mode and AI Overviews updates to explore the web」
-> We've made continued and substantial increases to the presence of inline links in our AI experiences.
+> We’ve made continued and substantial increases to the presence of inline links in our AI experiences.
 AIを使った検索体験で、回答文の途中に入るリンクを継続的に、大幅に増やしてきました。
 :::
 
