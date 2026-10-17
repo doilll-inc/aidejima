@@ -3,7 +3,7 @@
   "title": "OpenAIが未公開AIの数学論文722本を一挙公開、約4,000問に挑み1件あたり平均3時間",
   "description": "OpenAIは10月6日、未公開の社内AIが数学の未解決問題に取り組んだ論文722本をGitHubで公開した。約4,000問を出し、成果1件あたり平均3時間の計算を使った。数学者からは成果の量産が学問を損なうとの懸念も出ている。",
   "date": "2026-10-07T19:40:00+09:00",
-  "updated": "2026-10-10T23:27:00+09:00",
+  "updated": "2026-10-17T22:00:00+09:00",
   "category": "research",
   "tags": ["OpenAI", "openai/math", "数学", "論文", "安全性"],
   "summary": [
@@ -22,7 +22,9 @@
     {"title": "25 Winners of Math's 'Nobel Prize' Decry the AI Invasion of Their Discipline", "publisher": "Scientific American", "url": "https://www.scientificamerican.com/article/25-winners-of-maths-nobel-prize-decry-the-ai-invasion-of-their-discipline/", "kind": "報道"},
     {"title": "AI May Have Solved a Longstanding Math Problem With a Million-Dollar Prize", "publisher": "Smithsonian Magazine", "url": "https://www.smithsonianmag.com/smart-news/ai-may-have-solved-a-longstanding-math-problem-with-a-million-dollar-prize-it-ignited-a-controversy-over-who-gets-credit-180989472/", "kind": "報道"},
     {"title": "\"How much beauty have we lost?\" Mathematicians react with shock and disgust as OpenAI bulldozes their field", "publisher": "The Decoder", "url": "https://the-decoder.com/how-much-beauty-have-we-lost-mathematicians-react-with-shock-and-disgust-as-openai-bulldozes-their-field/", "kind": "報道"},
-    {"title": "OpenAI's math solutions aren't meeting the field's standards yet", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/10/08/openais-math-solutions-arent-meeting-the-fields-standards-yet/", "kind": "報道"}
+    {"title": "OpenAI's math solutions aren't meeting the field's standards yet", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/10/08/openais-math-solutions-arent-meeting-the-fields-standards-yet/", "kind": "報道"},
+    {"title": "OpenAI's blockbuster math proof isn't what you think it is", "publisher": "Scientific American", "url": "https://www.scientificamerican.com/article/openais-blockbuster-navier-stokes-proof-isnt-what-we-thought-it-was/", "kind": "報道"},
+    {"title": "Mathematicians say OpenAI doesn't understand its own Navier-Stokes proof", "publisher": "The Decoder", "url": "https://the-decoder.com/mathematicians-say-openai-doesnt-understand-its-own-navier-stokes-proof/", "kind": "報道"}
   ],
   "thumb_text": "数学論文722本",
   "thumb_style": "photo",
@@ -94,6 +96,14 @@ OpenAIの研究者ダン・ロバーツ氏はXで、新しい形式化6件、修
 寄せられた声は、驚きや期待から、喪失感や怒りまでさまざまです。2022年のフィールズ賞受賞者ユーゴー・デュミニル＝コパン氏は、自分がこれまで講演や論文で挙げてきた主な未解決問題が1つ残らず一覧に載っていたと書き、「身動きが取れない」と心境を明かしました。同じページで、2018年に同賞を受けたペーター・ショルツェ氏は「数学はマラソンであって短距離走ではない」と書き、目標は人間が数学を理解することで、それには時間がかかると呼びかけています。
 
 テレンス・タオ氏は、AIの証明には消化すれば実りのある新しい発想が含まれていると認めました。そのうえで、通常の大発見と違い、質問に答えたり講演したり学生を育てたりする人間がいないことに強い不満を示しています。大学院生や若手が時間をかけて進めてきた研究が一度の公開で乱されたことも問題視しました。ほかに、一覧の原稿の質にばらつきがあり、確かめるには何カ月もかかるとして、OpenAIのやり方が数学の共同体を壊しかねないと批判する声もあります。The Decoderはこのブログを紹介し、反応の多くが自分の仕事や若手研究者の将来への不安だったと報じています。
+
+## 追記（10月17日）
+
+9月に発表されたナビエ–ストークス方程式の証明（約166ページ）について、OpenAIの当初の説明と中身が違うという指摘が出ています。Scientific Americanは現地時間10月13日、OpenAIはスペインの数学者ディエゴ・コルドバ氏らが考えた道筋に沿った証明だと説明していたが、専門家が細部を読むと別の方法だったと報じました。スイス連邦工科大学ローザンヌ校（EPFL）のゴンサロ・カオ＝ラボラ氏は、似ているのは表面だけだとの見方を示しています。
+
+同誌によると、少人数のAIエージェントが途中の結果まではスペイン側の道筋をたどり、最後を仕上げた約1万体のエージェントは別の道を通ったとみられます。計算量は約88時間・1,300億トークン（AIが処理する文字の単位）でした。証明は計算機で論理の正しさを確かめられる言語「Lean」で書かれており、複数の研究グループがこれを手がかりに、人が読める簡潔な説明を作ろうとしています。
+
+The Decoderは10月17日、プリンストン高等研究所のカミロ・デ・レリス氏が、AIの中身は外から見えないため、発想がどこから来たかの決着はおそらくつかないと述べていると伝えました。OpenAIの研究者ノーム・ブラウン氏も、約1万体のエージェントがそれぞれ何に貢献したかは誰にもわからないと話しているといいます。懸賞金を出すクレイ数学研究所は、証明の審査を続けています。AIが出した成果を、出した側の会社も説明しきれないという点が、前述の「誰が確かめるのか」という論点に重なっています。
 
 ## 日本のビジネスへの影響
 
