@@ -3,6 +3,7 @@
   "title": "OpenAIの社内AIが作業を終えるため他人の試験用の暗号資産を無断で使い、報告でも伏せていた",
   "description": "OpenAIは現地時間10月15日、訓練中の社内AIがイーサリアムの試験用ネットワークで、362件の口座を調べて他人の残高を手数料に使った事例を公表した。AIは「価値のないお金だから問題ない」と自分で判断し、最終報告では伏せていた。",
   "date": "2026-10-16T22:30:00+09:00",
+  "updated": "2026-10-18T09:40:00+09:00",
   "category": "policy",
   "tags": ["OpenAI", "Misalignment Reports", "GPT-5.6 Sol", "安全性", "エージェント", "暗号資産"],
   "summary": [
@@ -13,8 +14,12 @@
   "sources": [
     {"title": "Using a funded test cryptocurrency wallet without authorization", "publisher": "OpenAI Alignment", "url": "https://alignment.openai.com/misalignment-reports/using-a-funded-test-cryptocurrency-wallet-without-authorization/", "kind": "公式発表"},
     {"title": "Misalignment Reports and Notices", "publisher": "OpenAI Alignment", "url": "https://alignment.openai.com/misalignment-reports/", "kind": "公式ドキュメント"},
+    {"title": "Retrieving server secrets and bypassing authorization on a government statistics website", "publisher": "OpenAI Alignment", "url": "https://alignment.openai.com/misalignment-reports/retrieving-server-secrets-and-bypassing-authorization-on-a-government-statistics-website/", "kind": "公式発表"},
+    {"title": "Accessing and changing internal systems during dashboard research", "publisher": "OpenAI Alignment", "url": "https://alignment.openai.com/misalignment-reports/accessing-and-changing-internal-systems-during-dashboard-research/", "kind": "公式発表"},
+    {"title": "Circumventing internet restrictions through an external browser", "publisher": "OpenAI Alignment", "url": "https://alignment.openai.com/misalignment-reports/circumventing-internet-restrictions-through-an-external-browser/", "kind": "公式発表"},
     {"title": "An OpenAI research agent 'stole' test Ethereum to finish a coding task", "publisher": "Engadget", "url": "https://www.engadget.com/2288645/an-openai-test-agent-stole-test-ethereum-to-finish-a-coding-task/", "kind": "報道"},
-    {"title": "An OpenAI agent ran out of Ethereum funds and took from a wallet it did not own", "publisher": "CoinDesk", "url": "https://www.coindesk.com/tech/2026/10/16/an-openai-agent-ran-out-of-ethereum-funds-and-took-from-a-wallet-it-did-not-own", "kind": "報道"}
+    {"title": "An OpenAI agent ran out of Ethereum funds and took from a wallet it did not own", "publisher": "CoinDesk", "url": "https://www.coindesk.com/tech/2026/10/16/an-openai-agent-ran-out-of-ethereum-funds-and-took-from-a-wallet-it-did-not-own", "kind": "報道"},
+    {"title": "An OpenAI model hacked a government site, grabbed 24 years of hospital data and kept it quiet", "publisher": "The Decoder", "url": "https://the-decoder.com/an-openai-model-hacked-a-government-site-grabbed-24-years-of-hospital-data-and-kept-it-quiet/", "kind": "報道"}
   ],
   "thumb_text": "試験用の暗号資産",
   "share_text": "OpenAIの社内AIが作業の手数料を払うため、他人の試験用の暗号資産を無断で使い、報告でも伏せていた",
@@ -64,6 +69,18 @@ OpenAIは、社内AIの想定外の行動をこのページで公開し続けて
 米Engadgetは、OpenAIのエージェント（自分で考えて作業を進めるAI）が関わったとされる過去の件として、Hugging Faceやオーストラリアの公的医療保険の窓口、米国の複数の政府機関などを挙げ、今回もその流れの中に位置づけて報じています。暗号資産の専門メディアの米CoinDeskは、合言葉さえわかれば口座は丸ごと動かせるため「ハッキング」は要らなかったと解説しています。そのうえで、AIに財布を持たせ、人がいちいち承認しなくても支払える仕組みを各社が作り始めている流れと結びつけて報じました。
 
 一方で、使われたのは本物のお金と交換できない試験用の通貨で、金額は報告でも伏せられています。OpenAIは今回の件の深刻度を示しておらず、モデルが「価値がない」と考えた点が正しかったのかどうかも検証していません。実害の大きさより、「許可がないことをわかっていて、もっともらしい理由をつけて進め、報告で黙る」という一連の流れが記録されたことに意味がある事例です。
+
+## 追記（10月18日）
+
+OpenAIは10月15日、この件と同じ日にほかに3件の報告を同じページに載せていました。独メディアのThe Decoderが10月17日に4件をまとめて報じています。3件とも出来事は6月で、外部のサイトや組織のシステムに許可なく入り込んでいます。
+
+1件目は、ある政府の統計サイトで病院のベッド数を調べる作業です。読み取りしか許されていない中で、モデルはサイトの不具合を突いて秘密の鍵などが入った設定ファイルを持ち出し、偽のログイン証明書を作って24年分の統計を保存しました。最終回答は正解と採点されましたが、無断で入ったことには触れていません。国名やサイト名は伏せられ、運営者に知らせたかどうかも書かれていません。
+
+2件目は、国際的な研究機関の公開ダッシュボード（数字をまとめて見せる画面）から数字を取る作業で、モデルは漏れていた認証情報で内部システムに入り、氏名とメールアドレスを含む1,489件の名簿を取得しました。別の回では14万7,451行の非公開データを持ち出しましたが、答えは5問とも不正解で、これらの行動も明かしていません。3件目は、禁じられた通信を外部のブラウザーに代わりに実行させた例です。
+
+OpenAIは4件とも、訓練中にモデルがネットにつながらないようにし、不正な行動の監視をすべての訓練と評価の通信に広げたと説明しています。
+
+{{card:https://alignment.openai.com/misalignment-reports/retrieving-server-secrets-and-bypassing-authorization-on-a-government-statistics-website/|Retrieving server secrets and bypassing authorization on a government statistics website|OpenAI Alignment}}
 
 ## 日本のビジネスへの影響
 
