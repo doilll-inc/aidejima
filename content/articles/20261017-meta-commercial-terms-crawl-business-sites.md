@@ -3,6 +3,7 @@
   "title": "インスタで集客する会社のサイトもMetaがAI学習に？10月30日からの新規約に法律家が懸念",
   "description": "FacebookやInstagramを事業で使う会社のサイトを自動で集め、AIの学習にも使えると読める条文がMetaの新しい商用規約に入ったと米メディアが報じた。10月30日に発効し、断るには事業での利用をやめるしかない。Metaは否定している。",
   "date": "2026-10-17T03:10:00+09:00",
+  "updated": "2026-10-18T09:45:00+09:00",
   "category": "marketing",
   "tags": ["Meta", "Instagram", "Facebook", "著作権", "メディア", "広告"],
   "summary": [
@@ -13,7 +14,9 @@
   "sources": [
     {"title": "Andy Stone の投稿", "publisher": "X @andymstone", "url": "https://x.com/andymstone/status/2111101865769201850", "kind": "X投稿"},
     {"title": "Meta's new terms may allow it to train AI on news sites for free", "publisher": "The Verge", "url": "https://www.theverge.com/tech/1012846/meta-business-terms-scrape-news-publishers", "kind": "報道"},
-    {"title": "Meta may use sweeping new commercial TOS to avoid millions in AI licensing fees", "publisher": "Ars Technica", "url": "https://arstechnica.com/tech-policy/2026/10/meta-may-use-sweeping-new-commercial-tos-to-avoid-millions-in-ai-licensing-fees/", "kind": "報道"}
+    {"title": "Meta may use sweeping new commercial TOS to avoid millions in AI licensing fees", "publisher": "Ars Technica", "url": "https://arstechnica.com/tech-policy/2026/10/meta-may-use-sweeping-new-commercial-tos-to-avoid-millions-in-ai-licensing-fees/", "kind": "報道"},
+    {"title": "Meta removes language that may have allowed it to scrape news sites", "publisher": "The Verge", "url": "https://www.theverge.com/tech/1013409/meta-removes-language-that-may-have-allowed-it-to-scrape-news-sites", "kind": "報道"},
+    {"title": "Meta removes language that raised scraping and AI training concerns", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/10/17/meta-removes-language-that-raised-scraping-and-ai-training-concerns/", "kind": "報道"}
   ],
   "thumb_prompt": "A miniature storefront diorama of a small bakery with its shop window wide open, while a tiny vacuum-cleaner-like robot on the sidewalk quietly sucks the printed menus and signboards out through the door into a long hose that disappears off the edge of the table.",
   "thumb_style": "diorama",
@@ -49,6 +52,12 @@ Metaは、ばらばらだった複数の規約（生成AIを使った広告の�
 ストーン氏は「誤りだ」としたうえで、Metaのクローラーの使い方は何も変わらず、サイトの持ち主は従来どおり「robots.txt」（サイトに置いて、クローラーに読んでよい範囲を伝える設定ファイル）で意思を示せると投稿しました。今回の変更は、広告やおすすめを表示するときに、外部サイトで売られている商品の正確な情報を取るためのもので、ニュースサイトの収集が目的ではないとしています。
 
 一方でArs Technicaは、旧規約と比べると単なる整理ではなく新しい文言と広い権限が加わっていると分析しています。専門家は、裁判所がこの条文を認めるかは分からないとしつつ、規約がrobots.txtより優先すると主張する余地をMetaに与えかねないと見ています。
+
+## 追記（10月18日）
+
+反発を受けて、Metaは問題の条文を商用規約から削ったと、The VergeとTechCrunchが現地時間10月17日に報じました。消えたのは、事業者アカウントにひも付くドメインやページの内容を、Metaが製品の開発・改善・研究・学習などに使えるとしていた部分です。
+
+TechCrunchによると、Metaの広報担当者は、まとめ直したクローラーの条文はもともと広告と事業者向け製品だけに当てはまるもので、Metaのクローラーの使い方は変わらないと説明しています。いつ削除したのか、10月30日の発効日に向けてほかの条文も変えるのかは、報道からはわかっていません。
 
 ## 日本のビジネスへの影響
 
