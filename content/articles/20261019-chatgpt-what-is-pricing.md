@@ -58,7 +58,7 @@ ChatGPTのGPT-6は、Plus・Pro・Business・EnterpriseではGPT-6 Solで、無�
 
 Go・Plus・Proはどれも月払いだけで、年払いはありません（ヘルプ）。ProはPro 200の利用枠が9月末に見直され、同じ200ドルでも新規契約は以前より使える量が少なくなっています。
 
-会社でまとめて契約するなら「Business」です。標準の席は年払いで1人月20ドル、月払いで1人月25ドル、利用枠が5倍の席は年払いで1人月100ドルで、最低2席から契約できます。ヘルプには「OpenAI won’t train on your workspace’s data」とあり、社員の会話がAIの学習に使われないことが個人向けプランとの大きな違いです。
+会社でまとめて契約するなら「Business」です。標準の席は年払いで1人月20ドル、月払いで1人月25ドル、利用枠が5倍の席は年払いで1人月100ドルで、最低2席から契約できます。OpenAIのヘルプ「What is ChatGPT Business?」によると、会社のワークスペースのデータはAIの学習に使われません。社員の会話が学習に回らないことが、個人向けプランとの大きな違いです。
 
 {{card:https://chatgpt.com/ja-JP/pricing/|プランと料金 | ChatGPT|OpenAI}}
 
