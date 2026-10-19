@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 3,
   "created": "2026-09-30",
-  "updated": "2026-10-14",
+  "updated": "2026-10-20",
   "last_reviewed": "2026-10-10",
   "title": "AI資料作成・スライド生成のおすすめと料金比較",
   "short_name": "資料作成",
@@ -1093,16 +1093,53 @@
       "pricing": {
         "free": {
           "available": true,
-          "detail": "新規ユーザーは毎日の無料クレジットでスライド生成を試せる。料金の詳細は料金ページ",
-          "source_url": "https://manus.im/playbook/slide-generator",
-          "checked": "2026-10-10"
+          "detail": "毎日300クレジット。作業モードは Manus 2.0 Lite のみ、同時作業1・定期実行2",
+          "source_url": "https://help.manus.im/en/articles/11711111-what-is-the-current-membership-pricing-for-manus",
+          "checked": "2026-10-20"
         },
-        "plans": [],
+        "plans": [
+          {
+            "name": "Pro",
+            "amount": 20,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "Starting from $20/month (Enjoy a 17% discount with annual billing)",
+            "detail": "毎月4,000クレジットから。Manus 2.0 Max・2.0・2.0 Lite、同時作業20",
+            "source_url": "https://help.manus.im/en/articles/11711111-what-is-the-current-membership-pricing-for-manus",
+            "checked": "2026-10-20"
+          },
+          {
+            "name": "Pro（上位）",
+            "amount": 40,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "Starting from $40/month with 7-day free trial (Enjoy a 17% discount with annual billing)",
+            "detail": "毎月8,000クレジットから。7日間の無料体験あり",
+            "source_url": "https://help.manus.im/en/articles/11711111-what-is-the-current-membership-pricing-for-manus",
+            "checked": "2026-10-20"
+          },
+          {
+            "name": "Team",
+            "amount": 20,
+            "currency": "USD",
+            "per": "seat_month",
+            "as_shown": "Starting from $20 per seat/month (Enjoy a 17% discount with annual billing)",
+            "detail": "Proの全機能＋SSO・学習利用の拒否・利用分析・権限管理・共有テンプレート",
+            "source_url": "https://help.manus.im/en/articles/11711111-what-is-the-current-membership-pricing-for-manus",
+            "checked": "2026-10-20"
+          }
+        ],
         "jpy_official": false,
-        "note": ""
+        "note": "クレジット制。消費量は作業の複雑さで変わる。年払いで17%引き"
       },
       "checked": "2026-10-10",
-      "retired_note": ""
+      "retired_note": "",
+      "commercial_use": {
+        "value": "yes",
+        "note": "生成物は個人・商用で利用可（法令・第三者の権利の範囲内）とヘルプセンターに記載",
+        "source_url": "https://help.manus.im/en/articles/13125514-do-i-own-the-assets-websites-images-videos-slides-generated-via-manus",
+        "checked": "2026-10-20"
+      }
     },
     {
       "id": "genspark",
@@ -1214,6 +1251,12 @@
       "date": "2026-10-14",
       "text": "Genspark（AI Slides）を調査中の候補に追加",
       "article": "/news/20261014-genspark-what-is-pricing/",
+      "by": "writer"
+    },
+    {
+      "date": "2026-10-20",
+      "text": "Manus の料金（無料は毎日300クレジット、Pro 月20ドルから、Team 1人月20ドルから）と商用利用の条件を追加",
+      "article": "/news/20261020-manus-what-is-pricing/",
       "by": "writer"
     }
   ],
