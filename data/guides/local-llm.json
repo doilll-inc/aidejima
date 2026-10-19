@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 3,
   "created": "2026-09-30",
-  "updated": "2026-10-16",
+  "updated": "2026-10-19",
   "last_reviewed": "2026-10-06",
   "title": "ローカルLLM・オープンウェイトモデルのおすすめ",
   "short_name": "ローカルLLM",
@@ -392,10 +392,10 @@
         "deepseek-v4-1-flash"
       ],
       "latest": {
-        "name": "DeepSeek-V4.1-Flash",
-        "released": "2026-09-10",
-        "source_url": "https://www.deepseek.com/en/news/deepseek-v4-1-flash/",
-        "checked": "2026-10-06"
+        "name": "DeepSeek-V4.1-Flash-1017",
+        "released": "2026-10-17",
+        "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+        "checked": "2026-10-19"
       },
       "access": [
         "api"
@@ -1285,6 +1285,12 @@
       "date": "2026-10-16",
       "text": "Metaの公開モデル「Muse Spark Open」（Mac Studio 2台で動く）を様子見に追加",
       "article": "/news/20261016-meta-muse-spark-open-mac-studio/",
+      "by": "writer"
+    },
+    {
+      "date": "2026-10-19",
+      "text": "DeepSeek-V4.1-Flash の最新版を、中身を MIT ライセンスで公開した更新版 DeepSeek-V4.1-Flash-1017（10月17日）に更新",
+      "article": "/news/20261019-deepseek-v4-1-flash-1017-update/",
       "by": "writer"
     }
   ],

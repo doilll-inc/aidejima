@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-16",
+  "updated": "2026-10-19",
   "last_reviewed": "2026-10-16",
   "title": "AI API（LLM）の料金比較と選び方",
   "short_name": "AI API",
@@ -797,10 +797,10 @@
       ],
       "model_slugs": [],
       "latest": {
-        "name": "DeepSeek-V4.1-Flash",
-        "released": "2026-09-10",
-        "source_url": "https://www.deepseek.com/en/news/deepseek-v4-1-flash/",
-        "checked": "2026-10-16"
+        "name": "DeepSeek-V4.1-Flash-1017",
+        "released": "2026-10-17",
+        "source_url": "https://api-docs.deepseek.com/news/news261017",
+        "checked": "2026-10-19"
       },
       "access": [
         "api"
@@ -1334,6 +1334,12 @@
       "date": "2026-10-16",
       "text": "判断専用のAI「Jev」（TypeSafe AI、入力10億トークンあたり$42）を「その他の選択肢」に追加",
       "by": "reviewer"
+    },
+    {
+      "date": "2026-10-19",
+      "text": "DeepSeek API の最新モデルを、料金据え置きの更新版 DeepSeek-V4.1-Flash-1017（10月17日公開）に更新",
+      "article": "/news/20261019-deepseek-v4-1-flash-1017-update/",
+      "by": "writer"
     }
   ],
   "editor_note": "",

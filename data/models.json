@@ -299,9 +299,10 @@
       "max_output": 384000,
       "api_id": "deepseek-flash",
       "status": "current",
-      "note": "単価はピーク時間帯（日本時間の平日10〜13時・15〜19時、中国の祝日を除く）のもので、それ以外のオフピークは半額",
+      "note": "10月17日から deepseek-flash は更新版 DeepSeek-V4.1-Flash-1017 を指す（料金は据え置き）。単価はピーク時間帯（日本時間の平日10〜13時・15〜19時、中国の祝日を除く）のもので、それ以外のオフピークは半額",
       "official_url": "https://api-docs.deepseek.com/quick_start/pricing",
-      "checked": "2026-10-16"
+      "article": "/news/20261019-deepseek-v4-1-flash-1017-update/",
+      "checked": "2026-10-19"
     },
     {
       "slug": "deepseek-v4-pro",
