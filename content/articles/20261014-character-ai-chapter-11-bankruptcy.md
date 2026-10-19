@@ -3,6 +3,7 @@
   "title": "AIキャラと話せる「Character.AI」が破産申請、買い手がつかなければサービス終了へ",
   "description": "AIのキャラクターと会話できるCharacter.AIが米連邦破産法11条の適用を申請した。11月末〜12月初めの売却で買い手がなければサービスを終える。ディズニーが資産の一部を2,000万ドルで買う契約を結んだと報じられている。",
   "date": "2026-10-14T01:15:00+09:00",
+  "updated": "2026-10-19T10:30:00+09:00",
   "category": "business",
   "tags": ["Character.AI", "Disney", "破産", "AIコンパニオン", "子ども", "Google"],
   "summary": [
@@ -15,6 +16,8 @@
     {"title": "Character.ai Files for Bankruptcy（議論）", "publisher": "Hacker News", "url": "https://news.ycombinator.com/item?id=50069942", "kind": "コミュニティ"},
     {"title": "Just 5 years in, interactive chatbot platform Character.AI files for bankruptcy", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/10/13/just-5-years-in-interactive-chatbot-platform-character-ai-files-for-bankruptcy/", "kind": "報道"},
     {"title": "Character.AI just filed for bankruptcy, and former foe Disney may buy it for parts", "publisher": "Engadget", "url": "https://www.engadget.com/2285177/character-ai-just-filed-for-bankruptcy-and-former-foe-disney-may-buy-it-for-parts/", "kind": "報道"},
+    {"title": "Disney agrees to hire the majority of Character.AI’s workforce", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/", "kind": "報道"},
+    {"title": "After Hiring its CEO, Disney is Spending $60 million on Character.ai Employees", "publisher": "Laughing Place", "url": "https://www.laughingplace.com/disney-business/disney-character-ai-employees-60-million/", "kind": "報道"},
     {"title": "Character.ai will shut down if no buyer emerges, capping a fall from $2.7 billion Google deal to bankruptcy", "publisher": "The Decoder", "url": "https://the-decoder.com/character-ai-will-shut-down-if-no-buyer-emerges-capping-a-fall-from-2-7-billion-google-deal-to-bankruptcy/", "kind": "報道"}
   ],
   "thumb_prompt": "An empty late-night storefront with dozens of cheerful cartoon-like character masks hanging on the wall, and a single 'closing sale' style red price tag dangling from one mask, lit by a lone streetlight.",
@@ -58,6 +61,12 @@ Character.AIは2021年末、Google出身の技術者ノーム・シャジール�
 会話データの行方を心配する声もあります。破産した会社の資産としてデータが売られ、以前のプライバシーの約束が守られなくなる例がある、という指摘です。公式ブログは今のところデータの扱いは変わらないとしていますが、買い手が決まった後の方針はまだわかりません。
 
 一方で、利用者はこのサービスに価値を感じていたのだから、挑戦して失敗すること自体は新興企業によくある結末だ、と擁護する意見もありました。Googleとの取引のお金は主に創業者や株主に渡っており、会社の資金にはならなかったという指摘もあります。
+
+## 追記（10月19日）
+
+ディズニーがCharacter.AIの社員の大半を雇い入れることでも合意していたと、TechCrunchがBloombergの報道を引いて現地時間10月18日に伝えました。裁判所に出された書類によると、ディズニーは少なくとも60人の社員に採用を申し出て、その年間の報酬は合計で約6,000万ドルと見積もられています。申し出を受けた社員の「大多数」が受け入れたとされます。Business Insiderを引いた別の報道は、対象を66人としており、人数には報道によって幅があります。
+
+TechCrunchによると、書類は、多くの熱心な利用者がいたにもかかわらず、高い費用と訴訟や規制への対応の負担が経営を圧迫したと説明しています。同社の前CEOカランディープ・アナンド氏は、最近ディズニー初のCTO（最高技術責任者）に就いています。ディズニーの提案は、より高い買収提案が出れば覆る「最初の入札」の位置づけで、ほかの会社が名乗りを上げる余地は残っています。サービスの存続が決まったわけではない点は変わりません。
 
 ## 日本のビジネスへの影響
 
