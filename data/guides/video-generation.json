@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-14",
+  "updated": "2026-10-20",
   "last_reviewed": "2026-10-14",
   "title": "動画生成AIのおすすめと料金比較",
   "short_name": "動画生成",
@@ -363,9 +363,9 @@
       "model_slugs": [],
       "latest": {
         "name": "Kling 4.0",
-        "released": "2026-09-28",
-        "source_url": "https://kling.ai/release-note",
-        "checked": "2026-10-01"
+        "released": "2026-10-15",
+        "source_url": "https://x.com/Kling_ai/status/2110747537187709424",
+        "checked": "2026-10-20"
       },
       "access": [
         "web",
@@ -1447,6 +1447,12 @@
       "date": "2026-10-14",
       "text": "Synthesiaの料金を更新（無料は月500クレジット、上位プランはPro $89・月6,000クレジット）。Dreaminaの日本語対応の記載を訂正し、Artificial Analysisの順位を更新",
       "by": "reviewer"
+    },
+    {
+      "date": "2026-10-20",
+      "text": "Kling 4.0が10月15日に一般公開（9月28日は先行版）。最長30秒の動画を1回で作成、画像10枚で場面を指定できる",
+      "article": "/news/20261020-kling-4-0-30-second-video/",
+      "by": "writer"
     }
   ],
   "editor_note": "",
