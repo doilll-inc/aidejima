@@ -30,7 +30,7 @@ Googleは現地時間10月20日、AIアシスタント「Gemini」のアプリ�
 中心になるのは、事業者向けの新しい「ビジネス用ページ」です。Geminiアプリの中に、ブランドづくり・お金の分析・お客さんの声の確認をまとめて扱う入口ができます。発表したのはGeminiアプリ担当のシニアディレクター、ヴィシュヌ・シヴァジ氏です。
 
 :::quote https://blog.google/innovation-and-ai/products/gemini-app/new-tools-small-business-owners/ | Google公式ブログ「New Gemini tools for small business owners」
-> We're introducing a new business landing page designed to help small business owners streamline their daily tasks.
+> We’re introducing a new business landing page designed to help small business owners streamline their daily tasks.
 小規模事業者の日々の作業を効率化するための、新しいビジネス用ページを導入します。
 :::
 
