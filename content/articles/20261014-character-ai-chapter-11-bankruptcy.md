@@ -3,7 +3,7 @@
   "title": "AIキャラと話せる「Character.AI」が破産申請、買い手がつかなければサービス終了へ",
   "description": "AIのキャラクターと会話できるCharacter.AIが米連邦破産法11条の適用を申請した。11月末〜12月初めの売却で買い手がなければサービスを終える。ディズニーが資産の一部を2,000万ドルで買う契約を結んだと報じられている。",
   "date": "2026-10-14T01:15:00+09:00",
-  "updated": "2026-10-19T10:30:00+09:00",
+  "updated": "2026-10-20T10:40:00+09:00",
   "category": "business",
   "tags": ["Character.AI", "Disney", "破産", "AIコンパニオン", "子ども", "Google"],
   "summary": [
@@ -18,6 +18,10 @@
     {"title": "Character.AI just filed for bankruptcy, and former foe Disney may buy it for parts", "publisher": "Engadget", "url": "https://www.engadget.com/2285177/character-ai-just-filed-for-bankruptcy-and-former-foe-disney-may-buy-it-for-parts/", "kind": "報道"},
     {"title": "Disney agrees to hire the majority of Character.AI’s workforce", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/", "kind": "報道"},
     {"title": "After Hiring its CEO, Disney is Spending $60 million on Character.ai Employees", "publisher": "Laughing Place", "url": "https://www.laughingplace.com/disney-business/disney-character-ai-employees-60-million/", "kind": "報道"},
+    {"title": "Character.ai drew one unusable offer from 28 potential buyers", "publisher": "PPC Land", "url": "https://ppc.land/character-ai-drew-one-unusable-offer-from-28-potential-buyers/", "kind": "報道"},
+    {"title": "Disney found a way to buy Character.AI without buying its lawsuits", "publisher": "Ars Technica", "url": "https://arstechnica.com/tech-policy/2026/10/disney-found-a-way-to-buy-character-ai-without-buying-its-lawsuits/", "kind": "報道"},
+    {"title": "Disney Asked Character.AI to Go Bankrupt for a Get-Out-of-Lawsuits Card", "publisher": "WIRED", "url": "https://www.wired.com/story/disney-asked-characterai-to-go-bankrupt-for-a-get-out-of-lawsuits-card/", "kind": "報道"},
+    {"title": "Character.ai files for bankruptcy following lawsuits alleging ties to teen suicides", "publisher": "CNN（KION経由）", "url": "https://kioncentralcoast.com/money/cnn-business-consumer/2026/10/13/character-ai-files-for-bankruptcy-following-lawsuits-alleging-ties-to-teen-suicides/", "kind": "報道"},
     {"title": "Character.ai will shut down if no buyer emerges, capping a fall from $2.7 billion Google deal to bankruptcy", "publisher": "The Decoder", "url": "https://the-decoder.com/character-ai-will-shut-down-if-no-buyer-emerges-capping-a-fall-from-2-7-billion-google-deal-to-bankruptcy/", "kind": "報道"}
   ],
   "thumb_prompt": "An empty late-night storefront with dozens of cheerful cartoon-like character masks hanging on the wall, and a single 'closing sale' style red price tag dangling from one mask, lit by a lone streetlight.",
@@ -69,6 +73,16 @@ Character.AIは2021年末、Google出身の技術者ノーム・シャジール�
 両社のつながりは以前からあります。Character.AIの前CEOカランディープ・アナンド氏は、最近ディズニー初のCTO（最高技術責任者）に就きました。経営が行き詰まった理由について書類は、高い運営費用に加え、訴訟や規制当局への対応の負担を挙げているとTechCrunchは伝えています。
 
 ただし、ディズニーの提案は、より高い買収提案が出れば覆る「最初の入札」という扱いです。ほかの会社が名乗りを上げる余地は残っており、サービスの存続が決まったわけではありません。
+
+## 追記（10月20日）
+
+破産手続きを選んだのは、ディズニー側の条件だったことが裁判所の書類からわかってきました。PPC Landが伝えた、売却を担う投資銀行の担当者の宣誓書（現地時間10月13日にデラウェア州の破産裁判所へ提出）によると、ディズニーは9月に結んだ事前の合意で、取引を破産手続きの中で行うことを求めていました。破産手続きを通した売却なら、買い手は前の会社の訴訟や賠償の責任を引き継がずに済みます。ディズニーはその保護がある場合にだけ買う、という立場です。
+
+米WIREDとArs Technicaも現地時間10月19日、「訴訟を買わずにCharacter.AIを買う」方法だという趣旨の見出しでこの点を報じました。CNNによると、同社は自殺した14歳の少年の母親による訴えを含む5件で和解に合意していました。
+
+同じ宣誓書では、2025年8月から別の投資銀行が約28社に買収を打診したものの、実行できる提案は1件も得られなかったとされます。理由として「訴訟と規制の重荷が大きすぎた」という声が挙がったと記されています。ディズニーは2,000万ドルのうち750万ドルを申請前に支払い済みで、取引の最終期限は12月17日と報じられています。
+
+訴えている家族の側から見ると、会社が売られた後に賠償を求める先がどこまで残るかが論点になります。手続きの中で訴訟の扱いがどう決まるかは、まだ明らかになっていません。
 
 ## 日本のビジネスへの影響
 
