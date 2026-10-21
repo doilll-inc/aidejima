@@ -28,16 +28,9 @@ OpenAIは現地時間10月21日、ChatGPTの広告を新たに26か国で始め�
 
 ## 何が発表されたか
 
-新しく広告が始まったのは、すでに提供していたメキシコとブラジルに続く中南米の14か国（アルゼンチン、チリ、コロンビア、ペルーなど）と、ナイジェリア、南アフリカ、セルビア、ウクライナ、カンボジア、バングラデシュ、パキスタンなどです。OpenAIはこれまでに欧州と東南アジア・台湾にも提供を広げており、今回はその続きです。
+利用者から見ると、広告が出るかどうかは契約しているプランで決まります。対象は無料版と低価格の「Go」で、Plus・Pro・企業向けのEnterpriseでは広告は表示されません。出稿する企業は、自分で申し込める管理画面「Ads Manager」を使うか、OpenAIと組む広告技術会社を経由します。
 
-広告が表示されるのは、無料版と低価格の「Go」プランだけです。Plus・Pro・企業向けのEnterpriseには広告は出ません。広告主は、OpenAIの提携先の広告技術会社を通すか、自分で出稿できる管理画面「Ads Manager」から申し込めます。
-
-:::quote https://openai.com/index/chatgpt-ads-expands-26-new-countries/ | OpenAI公式ブログ「ChatGPT Ads expands to 26 new countries」
-> Since we launched ads just over eight months ago, over 100,000 advertisers have run campaigns on ChatGPT. Today, we’re expanding ChatGPT Ads to 26 additional countries, extending availability to 89 countries worldwide.
-広告を始めて8か月あまりで、10万を超える広告主がChatGPTでキャンペーンを出した。本日、ChatGPTの広告を26か国に広げ、世界89か国で利用できるようにする。
-:::
-
-今後については、広告の形式や目的の種類、買い方、効果測定の機能を増やすとしています。
+今回の対象は、ナイジェリアや南アフリカ、セルビア、ウクライナ、カンボジア、バングラデシュ、パキスタンなどと、アルゼンチン・チリ・コロンビア・ペルーを含む中南米14か国です。中南米ではメキシコとブラジルが先行していました。欧州、東南アジア・台湾への拡大に続く動きで、OpenAIは今後、広告の形式や目的の種類、買い方、効果測定の機能を増やすとしています。
 
 ## 広告はどう選ばれるのか
 
