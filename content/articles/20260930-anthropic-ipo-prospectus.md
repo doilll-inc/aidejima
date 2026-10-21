@@ -3,7 +3,7 @@
   "title": "上場目論見書を各社が報道、Claudeの開発元Anthropicは売上12倍も計算資源に5180億ドルの約束",
   "description": "非公開で提出されたAnthropicの上場目論見書の内容をロイターやFTが報じた。2025年の売上高は約46億ドルと前年の約12倍、最終赤字は約420億ドル。今後約10年で5180億ドル超の計算資源を約束し、AIの存亡リスクも明記した。",
   "date": "2026-09-30T20:49:00+09:00",
-  "updated": "2026-10-15T18:10:00+09:00",
+  "updated": "2026-10-21T17:50:00+09:00",
   "category": "business",
   "tags": ["Anthropic", "Claude", "IPO", "安全性"],
   "summary": [
@@ -26,6 +26,9 @@
     {"title": "Anthropic Hits $16.8B Revenue Ahead Of Planned Holiday Listing: Report", "publisher": "Stocktwits", "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-hits-16-8-b-revenue-ahead-of-planned-holiday-listing-report/cZxQ5ywRBqA", "kind": "報道"},
     {"title": "Anthropic Third-Quarter Revenue Rises to $16.8 Billion as It Achieves Adjusted Profitability", "publisher": "TradingKey", "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262217602-anthropic-q3-revenue-rises-16-8-billion-achieving-adjusted-profit-tradingkey", "kind": "報道"},
     {"title": "Anthropic Reports $16.8 billion in Third-Quarter Revenue", "publisher": "The Information", "url": "https://www.theinformation.com/briefings/anthropic-reports-16-8-billion-third-quarter-revenue", "kind": "報道"},
+    {"title": "Anthropic posts $80bn loss in first half of 2026: WSJ", "publisher": "Al Jazeera", "url": "https://www.aljazeera.com/news/2026/10/21/anthropic-posts-80bn-loss-in-first-half-of-2026-wsj", "kind": "報道"},
+    {"title": "Anthropic posts $80.7 billion first-half loss, largely from accounting charges: Report", "publisher": "National Herald", "url": "https://www.nationalheraldindia.com/business/anthropic-posts-807-billion-first-half-loss-largely-from-accounting-charges-report", "kind": "報道"},
+    {"title": "Anthropic Lost Over $80 Billion in First Half of Year Amid Soaring Revenue", "publisher": "The AI Innovator", "url": "https://theaiinnovator.com/anthropic-ipo-filing-80-billion-loss-revenue-growth/", "kind": "報道"},
     {"title": "Anthropic's Rapid But Slowing Growth Could Weigh on IPO Valuation", "publisher": "The Information", "url": "https://www.theinformation.com/articles/anthropics-rapid-slowing-growth-weigh-ipo-valuation", "kind": "報道"}
   ],
   "thumb_style": "photo",
@@ -109,6 +112,21 @@ Anthropicが上場に向けた投資家向けの説明会で、2026年7〜9月�
 | 評価額 | 投資家からは1.8兆〜2兆ドルが妥当との声 |
 
 この四半期だけで、上の表にある2025年の通年売上高（約46億ドル）の3倍を超えたことになります。一方でThe Informationは、伸び率が前の四半期より鈍ったため、説明会に出た一部の投資家は評価額の目標を抑える必要があるとみていると報じています。調整後の黒字は、正式な損益計算書が公開されていない段階での会社側の説明で、目論見書が公開されるまで第三者が確かめることはできません。
+
+## 追記（10月21日）
+
+米ウォール・ストリート・ジャーナル（WSJ）が目論見書の草案を確認したとして、2026年1〜6月期（上半期）の最終赤字が800億ドルを超えたと現地時間10月20日に報じました。カタールのアルジャジーラやインドのNational Heraldなどが、この報道を引用して伝えています。Anthropicはコメントの求めに応じていません。
+
+| 項目 | 2026年1〜6月期（報道ベース） | 前年同期 |
+|---|---|---|
+| 売上高 | 約163億ドル | 約11億ドル |
+| 最終赤字 | 約807億ドル | 約130億ドル |
+| うち会計上の費用 | 約720億ドル | ― |
+| 計算資源・インフラへの支出 | 約90億ドル（前年の約4倍） | ― |
+
+赤字の9割近くは、資金集めのために発行した転換社債など（あとで株に替えられる借金）の評価額の変動を、会計上の費用として計上したものと報じられています。日々の事業で現金が出ていったわけではなく、9月に報じられた2025年の赤字約420億ドルと同じ構造です。一方、売上高は前年同期の約15倍に伸び、上の追記にある7〜9月期の168億ドルと合わせると、2026年は9か月で約330億ドルに達する計算になります。
+
+ほかにも、売上の約5分の1が2社の顧客に集中していること、交渉中の契約を含めて今後数年で最大7500億ドルを計算資源に使う可能性を示したことが報じられました。9月の報道で明らかになった約5180億ドルの約束をさらに上回る規模です。上場は11月を目指していると伝えられています。
 
 ## 日本のビジネスへの影響
 
