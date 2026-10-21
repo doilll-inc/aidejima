@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 2,
   "created": "2026-09-30",
-  "updated": "2026-10-15",
+  "updated": "2026-10-21",
   "last_reviewed": "2026-10-12",
   "title": "AI文字起こし・議事録ツールのおすすめと料金比較",
   "short_name": "文字起こし",
@@ -544,10 +544,10 @@
             "amount": 16.99,
             "currency": "USD",
             "per": "seat_month",
-            "as_shown": "$16.99 /user/month（Annual: $8.33 /user/month）",
+            "as_shown": "$16.99 /user/month（Annual: $8.33 /user/month）。10月21日時点で50%オフの表示（月払い$8.49・年払い$4.17）",
             "detail": "アプリ内録音1,200分、1会議90分まで、ファイル取り込み月10件",
             "source_url": "https://otter.ai/pricing",
-            "checked": "2026-10-12"
+            "checked": "2026-10-21"
           },
           {
             "name": "Business",
@@ -1134,6 +1134,12 @@
       "date": "2026-10-15",
       "text": "会話を聞き取って要約するAmazon傘下の機器「Bee」の新型を調査中の候補に追加",
       "article": "/news/20261015-amazon-bee-frontier-eclipse/",
+      "by": "writer"
+    },
+    {
+      "date": "2026-10-21",
+      "text": "Otter.aiのProに定価から50%オフの表示（月払い8.49ドル）が出ていることを確認",
+      "article": "/news/20261021-otter-ai-320m-general-catalyst-cvf/",
       "by": "writer"
     }
   ],
