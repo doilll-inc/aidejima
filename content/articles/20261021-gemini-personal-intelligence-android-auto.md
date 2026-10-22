@@ -3,6 +3,7 @@
   "title": "車で「病院の予約に連れてって」と言うだけ、GeminiがGmailや予定表を見て道案内 Android Autoで開始",
   "description": "Googleは10月20日、車の中のGeminiがGmailやカレンダー、写真の情報を使って答える「パーソナル インテリジェンス」をAndroid Autoで提供し始めた。18歳以上の個人アカウントが対象で、日本も含まれる。車に組み込まれたGoogleには数か月以内に届く。",
   "date": "2026-10-21T10:20:00+09:00",
+  "updated": "2026-10-22T18:10:00+09:00",
   "category": "products",
   "tags": ["Gemini", "Google", "Android Auto", "Personal Intelligence", "プライバシー"],
   "summary": [
@@ -14,7 +15,9 @@
     {"title": "Get hands-free personalized help on the road with Gemini", "publisher": "Google The Keyword", "url": "https://blog.google/products-and-platforms/platforms/android/android-auto-cars-with-google-built-in-gemini-personal-intelligence/", "kind": "公式発表"},
     {"title": "パーソナル インテリジェンス", "publisher": "Google Gemini", "url": "https://gemini.google/jp/overview/personal-intelligence/?hl=ja", "kind": "公式ドキュメント"},
     {"title": "Google’s more personalized Gemini AI is heading to your car", "publisher": "The Verge", "url": "https://www.theverge.com/tech/1014999/google-gemini-ai-cars-android-auto", "kind": "報道"},
-    {"title": "Gemini's Personal Intelligence is coming to cars", "publisher": "Ars Technica", "url": "https://arstechnica.com/google/2026/10/geminis-personal-intelligence-is-coming-to-cars/", "kind": "報道"}
+    {"title": "Gemini's Personal Intelligence is coming to cars", "publisher": "Ars Technica", "url": "https://arstechnica.com/google/2026/10/geminis-personal-intelligence-is-coming-to-cars/", "kind": "報道"},
+    {"title": "Google Maps on CarPlay rolling out Gemini when navigating", "publisher": "9to5Google", "url": "https://9to5google.com/2026/10/21/google-maps-carplay-gemini/", "kind": "報道"},
+    {"title": "Now you can chat with Gemini while using Google Maps through CarPlay", "publisher": "Engadget", "url": "https://www.engadget.com/2292912/now-you-can-chat-with-gemini-while-using-google-maps-through-carplay/", "kind": "報道"}
   ],
   "thumb_prompt": "Inside a car at night seen from the back seat, a dashboard screen glows with a route line leading to a small clinic icon, while a floating paper envelope and a polaroid photo of a car wash hover above the steering wheel as if the car itself pulled them out of the driver's pocket.",
   "thumb_style": "photo",
@@ -67,6 +70,14 @@ Ars Technicaは、新しい車向け機能はふつうGoogle built-inの車が�
 Googleは、アプリは本人が有効にするまでつながらず、Geminiの設定からいつでも外せると説明しています。Google built-inの車では、スマートフォンをつないで乗っているときだけ個人向けの答えを返します。機能を使わなくても、ナビや音楽、電話、質問といった車での操作は今までどおり使えます。
 
 Geminiの基本的な使い方とプランは[Geminiとは、無料版と有料プランの違い](/news/20261012-gemini-what-is-plans/)でまとめています。
+
+## 追記（10月22日）
+
+iPhoneを車につないで使うAppleの「CarPlay」でも、Googleマップで道案内をしている最中にGeminiと会話できるようになりました。9to5GoogleとEngadgetが現地時間10月21日に報じています。米国ではすでに使え、ほかの国にも順次広げているとされますが、日本での開始時期は示されていません。
+
+案内中の画面の右側に出るGeminiのアイコンを押すと話しかけられ、「市街を見渡せる公園は？」「混んでいなくて天気が崩れない時間に行きたいけど、今がいい？」「そこへ案内して、有料道路は避けて」のように続けて頼めると報じられています。途中の給油所や駐車場探し、渋滞や事故の報告も声でできます。これまでCarPlayのGoogleマップでは、こうした音声アシスタントは使えませんでした。
+
+一方、本記事で紹介したGmailや予定表を使って答える「パーソナル インテリジェンス」は、各社の報道ではCarPlayでの提供は確認されていません。Googleからの公式な発表文も、現時点では見当たりません。
 
 ## 日本のビジネスへの影響
 
