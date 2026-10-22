@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 3,
   "created": "2026-09-30",
-  "updated": "2026-10-20",
+  "updated": "2026-10-22",
   "last_reviewed": "2026-10-20",
   "title": "ローカルLLM・オープンウェイトモデルのおすすめ",
   "short_name": "ローカルLLM",
@@ -1160,6 +1160,23 @@
       "note": "Meta 系ドメインは社内ルールで開かないため未調査（名前のみ）",
       "checked": "",
       "retired_note": ""
+    },
+    {
+      "id": "recursive-flint",
+      "name": "Recursive Flint",
+      "vendor": "Recursive",
+      "url": "https://huggingface.co/RecursiveSI/flint",
+      "status": "watch",
+      "latest": {
+        "name": "Flint（全体約400億・1語あたり約25億パラメーターの混合エキスパート型、Apache 2.0）",
+        "released": "2026-10-21",
+        "source_url": "https://www.recursive.com/updates/introducing-recursive-flint",
+        "checked": "2026-10-22"
+      },
+      "tags": [
+        "Recursive",
+        "Recursive Flint"
+      ]
     }
   ],
   "criteria": [
@@ -1353,6 +1370,12 @@
       "date": "2026-10-20",
       "text": "Strata が Mac に対応したこと、ds4 の対応モデル追加を反映",
       "by": "reviewer"
+    },
+    {
+      "date": "2026-10-22",
+      "text": "Recursiveが手元のPCで動くプログラミング用AI「Flint」を無料公開。注目枠に追加",
+      "article": "/news/20261022-recursive-flint-ai-built-local-model/",
+      "by": "writer"
     }
   ],
   "editor_note": "",
