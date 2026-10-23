@@ -425,6 +425,8 @@
     "推論": "reasoning",
     "マルチモーダル": "multimodal",
     "電力": "energy",
+    "環境": "environment",
+    "形式検証": "formal-verification",
     "クラウド": "cloud",
     "自動運転": "autonomous-driving",
     "金融": "finance",
