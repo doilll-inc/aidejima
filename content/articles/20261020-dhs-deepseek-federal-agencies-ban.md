@@ -3,6 +3,7 @@
   "title": "DeepSeekを米国の政府機関から締め出し、DeepSeekを使って作った他社の製品も撤去の対象に",
   "description": "米国土安全保障省は、中国DeepSeekの製品を連邦政府の文民機関の調達から外し、使っているものは撤去するよう命じた。DeepSeekを使って作った他社の製品やサービスも撤去の対象で、命令は10月20日付の米官報に載った。",
   "date": "2026-10-20T18:15:00+09:00",
+  "updated": "2026-10-23T18:05:00+09:00",
   "category": "policy",
   "tags": ["DeepSeek", "米国政府", "中国AI", "規制", "セキュリティ"],
   "summary": [
@@ -13,7 +14,9 @@
   "sources": [
     {"title": "Order: Exclusion and Removal of DeepSeek Products from Federal Civilian Executive Branch Information Technology Systems and Procurements", "publisher": "Federal Register（米国土安全保障省）", "url": "https://www.federalregister.gov/public-inspection/2026-21447/order-exclusion-and-removal-of-deepseek-products-from-federal-civilian-executive-branch-information", "kind": "公式発表"},
     {"title": "Homeland Security bans DeepSeek use in federal civilian agencies", "publisher": "Engadget", "url": "https://www.engadget.com/2290535/homeland-security-bans-deepseek-use-in-federal-civilian-agencies/", "kind": "報道"},
-    {"title": "DeepSeek deep-sixed at all US federal civilian agencies", "publisher": "The Register", "url": "https://www.theregister.com/security/2026/10/20/deepseek-deep-sixed-at-all-us-federal-civilian-agencies/5304010", "kind": "報道"}
+    {"title": "DeepSeek deep-sixed at all US federal civilian agencies", "publisher": "The Register", "url": "https://www.theregister.com/security/2026/10/20/deepseek-deep-sixed-at-all-us-federal-civilian-agencies/5304010", "kind": "報道"},
+    {"title": "DeepSeek reportedly raises $15B days after US restrictions", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/10/22/deepseek-reportedly-raises-15b-days-after-us-restrictions/", "kind": "報道"},
+    {"title": "DeepSeek Raises Nearly $16 billion in Second Funding Round", "publisher": "The Information", "url": "https://www.theinformation.com/briefings/deepseek-raises-nearly-16-billion-second-funding-round", "kind": "報道"}
   ],
   "thumb_prompt": "A miniature government office building with tiny workers carrying out small blue whale-shaped boxes through the front door into a waiting truck, while one worker squints at a stack of unlabeled boxes unsure which ones to remove.",
   "thumb_style": "diorama",
@@ -55,6 +58,14 @@ DeepSeekは料金の安さで人気を集めており、つい先日も料金を
 セキュリティ企業Luta SecurityのCEO、ケイティ・ムスーリス氏はThe Registerに対し、DeepSeekのアプリや窓口を禁じるのは現実的だとしつつ、他社製品の部分は実際に確かめる方法がないと述べています。米国内のサーバーで動かせばデータが中国に流れる心配の多くは避けられ、弱点がありうるのはどのモデルも同じだ、という見方も示しました。
 
 The Registerはまた、性能と安さで人気の中国製の無料公開モデルを政府が使えなくなれば、米国のAI企業の料金を受け入れるしかなくなり、米国企業に有利に働くとも書いています。
+
+## 追記（10月23日）
+
+命令から数日で、DeepSeekが巨額の資金を集めたと報じられました。TechCrunchは米ブルームバーグの報道として、DeepSeekが約1000億元（約150億ドル）を調達し、中国の電池大手CATLやWeChatを運営するTencent（テンセント）などが出資者に入っていると現地時間10月22日に伝えました。中国のAI企業としては最大級の調達の1つです。
+
+米The Informationも続けて、DeepSeekが2回目の調達を完了し、集めた額は1060億元（約159億ドル）で当初の目標の500億元の2倍を超えたと、関係者3人の話として報じています。報道によって金額に差があり、評価額も明らかになっていません。DeepSeekは取材に応じておらず、会社としての発表もありません。
+
+TechCrunchによると、DeepSeekは6月の最初の調達で70億ドル超を集めていました。米国の締め出しが続く中でも、中国国内の大手から資金が集まり、計算設備や無料公開のモデルへの投資を広げる見通しだと報じられています。
 
 ## 日本のビジネスへの影響
 
