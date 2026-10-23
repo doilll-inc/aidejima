@@ -1,0 +1,299 @@
+[
+ {
+  "date": "2026-10-23",
+  "engine": "chatgpt",
+  "q": "Claude Code 料金 いくら",
+  "target": "https://aidejima.doilll.com/news/20261008-claude-code-pricing-plans/",
+  "domain": "aidejima.doilll.com",
+  "model": "codex-cli web_search",
+  "cited": false,
+  "cited_target": false,
+  "seen": false,
+  "our_urls": [],
+  "cited_domains": [
+   "claude.com",
+   "support.claude.com"
+  ],
+  "answer_head": "**Claude Codeは、個人向けなら月額20米ドルのProプランから使えます。** 公式サイトで確認した料金は次のとおりです（税別）。\n\n| プラン | 料金 | 利用枠 |\n|---|---:|---|\n| Pro | 月額20ドル／年払い200ドル | 基本枠 |\n| Max 5x | 月額100ドル | Proの5倍のセッション利用枠 |\n| Max 20x | 月額200ドル | P"
+ },
+ {
+  "date": "2026-10-23",
+  "engine": "chatgpt",
+  "q": "画像生成AI 料金 比較",
+  "target": "https://aidejima.doilll.com/best/image-generation/",
+  "domain": "aidejima.doilll.com",
+  "model": "codex-cli web_search",
+  "cited": false,
+  "cited_target": false,
+  "seen": false,
+  "our_urls": [],
+  "cited_domains": [
+   "adobe.com",
+   "docs.midjourney.com",
+   "toolist.ai",
+   "ideogram.ai"
+  ],
+  "answer_head": "**安く試すなら無料枠、大量に作るなら「無制限」の対象範囲で選ぶ**と比較しやすいです。2026年10月23日にWebで確認した主な料金です。\n\n| サービス | 料金の目安 | 生成量・注意点 |\n|---|---|---|\n| [Adobe Firefly](https://www.adobe.com/jp/products/firefly/plans.html) | 無料あり。Standar"
+ },
+ {
+  "date": "2026-10-23",
+  "engine": "chatgpt",
+  "q": "Gemini 画像生成 無料でどこまで使える",
+  "target": "https://aidejima.doilll.com/news/20261010-gemini-image-generation-how-to-use/",
+  "domain": "aidejima.doilll.com",
+  "model": "codex-cli web_search",
+  "cited": false,
+  "cited_target": false,
+  "seen": false,
+  "our_urls": [],
+  "cited_domains": [
+   "gemini.google",
+   "support.google.com"
+  ],
+  "answer_head": "**Geminiは無料でも画像の生成・編集ができます。ただし、無制限ではありません。** 2026年10月23日時点の公式情報では、個人向けGeminiアプリの無料枠は次のとおりです。[公式プラン](https://gemini.google/jp/subscriptions/?hl=ja)\n\n- **できること**：文章から画像を作る、画像をアップロードして加工する。\n- **画質**：無料でダ"
+ },
+ {
+  "date": "2026-10-23",
+  "engine": "chatgpt",
+  "q": "Microsoft MAI-DxO 診断 精度 医師と比較",
+  "target": "https://aidejima.doilll.com/news/20261023-microsoft-mai-dxo-science-diagnosis/",
+  "domain": "aidejima.doilll.com",
+  "model": "codex-cli web_search",
+  "cited": false,
+  "cited_target": false,
+  "seen": false,
+  "our_urls": [],
+  "cited_domains": [
+   "microsoft.com",
+   "arxiv.org"
+  ],
+  "answer_head": "**「MAI-DxOは医師の約4倍の診断精度」という数字は、2025年発表の難症例ベンチマークでの結果です。** 日常診療全般で4倍優れるという意味ではありません。[Microsoft研究概要](https://www.microsoft.com/en-us/research/publication/sequential-diagnosis-with-language-models/)\n\n| 比較"
+ },
+ {
+  "date": "2026-10-23",
+  "engine": "chatgpt",
+  "q": "Canva Craft とは",
+  "target": "https://aidejima.doilll.com/news/20261023-canva-craft-image-model/",
+  "domain": "aidejima.doilll.com",
+  "model": "codex-cli web_search",
+  "cited": false,
+  "cited_target": false,
+  "seen": false,
+  "our_urls": [],
+  "cited_domains": [
+   "canva.com"
+  ],
+  "answer_head": "**Canva Craftは、Canvaが独自開発した、デザイン制作向けの画像生成AIモデルです。** 文章で指示すると、ポスターやSNS投稿、広告素材などの画像を生成できます。\n\n特徴は、画像を描く前に**文字や要素の配置を計画する**こと。Canvaによると、文字の読みやすさやレイアウトの正確さを重視し、最大2Kの画像生成に対応しています。Canva内の「Dream Lab」から利用できます。"
+ },
+ {
+  "date": "2026-10-23",
+  "engine": "chatgpt",
+  "q": "海外のAIニュース 日本語で読める",
+  "target": "https://aidejima.doilll.com/",
+  "domain": "aidejima.doilll.com",
+  "model": "codex-cli web_search",
+  "cited": false,
+  "cited_target": false,
+  "seen": true,
+  "our_urls": [
+   "https://aidejima.doilll.com/"
+  ],
+  "cited_domains": [
+   "itmedia.co.jp",
+   "technologyreview.jp",
+   "saitotechplus.com"
+  ],
+  "answer_head": "海外のAIニュースを日本語で読むなら、次の3サイトが便利です。\n\n- **[ITmedia AI＋](https://www.itmedia.co.jp/aiplus/archive/2610)**：海外AI企業の新モデル・サービスの動きを日本語で確認できます。日々のニュースを追いたい人向け。\n- **[MITテクノロジーレビュー日本版](https://www.technologyreview."
+ },
+ {
+  "date": "2026-10-23",
+  "engine": "chatgpt",
+  "q": "ChatGPT Claude Gemini 違い 料金",
+  "target": "https://aidejima.doilll.com/best/chat/",
+  "domain": "aidejima.doilll.com",
+  "model": "codex-cli web_search",
+  "cited": false,
+  "cited_target": false,
+  "seen": false,
+  "our_urls": [],
+  "cited_domains": [
+   "learn.chatgpt.com",
+   "claude.com",
+   "gemini.google",
+   "chatgpt.com",
+   "help.openai.com"
+  ],
+  "answer_head": "**幅広い用途ならChatGPT、文書・開発作業ならClaude、Google連携ならGemini**が選び方の目安です。\n\n2026年10月23日時点の公式情報による、個人向け主要プランの比較です。\n\n| サービス | 主な違い・用途 | 月額料金 |\n|---|---|---|\n| **ChatGPT** | 調査、画像生成、音声会話、データ分析など幅広い用途 | 無料／Plus **20米ド"
+ },
+ {
+  "date": "2026-10-23",
+  "engine": "chatgpt",
+  "q": "LLM API 料金 比較",
+  "target": "https://aidejima.doilll.com/best/api/",
+  "domain": "aidejima.doilll.com",
+  "model": "codex-cli web_search",
+  "cited": false,
+  "cited_target": false,
+  "seen": false,
+  "our_urls": [],
+  "cited_domains": [
+   "developers.openai.com",
+   "platform.claude.com",
+   "ai.google.dev"
+  ],
+  "answer_head": "公式料金を確認した主要3社の比較です（2026年10月23日時点）。**100万トークンあたりの米ドル、通常処理・キャッシュなし**で比較しています。\n\n| 提供元 | モデル | 入力 | 出力 |\n|---|---|---:|---:|\n| OpenAI | GPT-6 Luna | $0.10 | $0.50 |\n| OpenAI | GPT-6.1 Sol | $2.00 | $10.00"
+ },
+ {
+  "date": "2026-10-23",
+  "engine": "claude-websearch",
+  "q": "Claude Code 料金 いくら",
+  "target": "https://aidejima.doilll.com/news/20261008-claude-code-pricing-plans/",
+  "domain": "aidejima.doilll.com",
+  "model": "claude-websearch",
+  "cited": false,
+  "cited_target": false,
+  "seen": false,
+  "our_urls": [],
+  "cited_domains": [
+   "ai.zenken.co.jp",
+   "gihyo.jp",
+   "ai-orchestra.ai",
+   "cad-kenkyujo.com",
+   "aiagentrank.io"
+  ],
+  "answer_head": ""
+ },
+ {
+  "date": "2026-10-23",
+  "engine": "claude-websearch",
+  "q": "画像生成AI 料金 比較",
+  "target": "https://aidejima.doilll.com/best/image-generation/",
+  "domain": "aidejima.doilll.com",
+  "model": "claude-websearch",
+  "cited": false,
+  "cited_target": false,
+  "seen": false,
+  "our_urls": [],
+  "cited_domains": [
+   "crystal-method.com",
+   "aiagent-navi.com",
+   "aireiter.com",
+   "book.st-hakky.com"
+  ],
+  "answer_head": ""
+ },
+ {
+  "date": "2026-10-23",
+  "engine": "claude-websearch",
+  "q": "Gemini 画像生成 無料でどこまで使える",
+  "target": "https://aidejima.doilll.com/news/20261010-gemini-image-generation-how-to-use/",
+  "domain": "aidejima.doilll.com",
+  "model": "claude-websearch",
+  "cited": false,
+  "cited_target": false,
+  "seen": false,
+  "our_urls": [],
+  "cited_domains": [
+   "ai.zenken.co.jp",
+   "luft.co.jp",
+   "ai-keiei.shift-ai.co.jp"
+  ],
+  "answer_head": ""
+ },
+ {
+  "date": "2026-10-23",
+  "engine": "claude-websearch",
+  "q": "Microsoft MAI-DxO 診断 精度 医師と比較",
+  "target": "https://aidejima.doilll.com/news/20261023-microsoft-mai-dxo-science-diagnosis/",
+  "domain": "aidejima.doilll.com",
+  "model": "claude-websearch",
+  "cited": false,
+  "cited_target": false,
+  "seen": false,
+  "our_urls": [],
+  "cited_domains": [
+   "microsoft.ai",
+   "coronishealth.com",
+   "gigazine.net"
+  ],
+  "answer_head": ""
+ },
+ {
+  "date": "2026-10-23",
+  "engine": "claude-websearch",
+  "q": "Canva Craft とは",
+  "target": "https://aidejima.doilll.com/news/20261023-canva-craft-image-model/",
+  "domain": "aidejima.doilll.com",
+  "model": "claude-websearch",
+  "cited": false,
+  "cited_target": false,
+  "seen": false,
+  "our_urls": [],
+  "cited_domains": [
+   "g2.com",
+   "framer.com",
+   "jennifermaker.com",
+   "canvascraftcreations.gumroad.com",
+   "mountainbizworks.org"
+  ],
+  "answer_head": ""
+ },
+ {
+  "date": "2026-10-23",
+  "engine": "claude-websearch",
+  "q": "海外のAIニュース 日本語で読める",
+  "target": "https://aidejima.doilll.com/",
+  "domain": "aidejima.doilll.com",
+  "model": "claude-websearch",
+  "cited": false,
+  "cited_target": false,
+  "seen": false,
+  "our_urls": [],
+  "cited_domains": [
+   "luft.co.jp",
+   "nikkan.co.jp",
+   "toolnavs.com",
+   "newswitch.jp"
+  ],
+  "answer_head": ""
+ },
+ {
+  "date": "2026-10-23",
+  "engine": "claude-websearch",
+  "q": "ChatGPT Claude Gemini 違い 料金",
+  "target": "https://aidejima.doilll.com/best/chat/",
+  "domain": "aidejima.doilll.com",
+  "model": "claude-websearch",
+  "cited": false,
+  "cited_target": false,
+  "seen": false,
+  "our_urls": [],
+  "cited_domains": [
+   "biz.moneyforward.com",
+   "issoh.co.jp",
+   "generative-ai.sejuku.net",
+   "tech-insider.org"
+  ],
+  "answer_head": ""
+ },
+ {
+  "date": "2026-10-23",
+  "engine": "claude-websearch",
+  "q": "LLM API 料金 比較",
+  "target": "https://aidejima.doilll.com/best/api/",
+  "domain": "aidejima.doilll.com",
+  "model": "claude-websearch",
+  "cited": false,
+  "cited_target": false,
+  "seen": false,
+  "our_urls": [],
+  "cited_domains": [
+   "blogs.novita.ai",
+   "hyper.ai",
+   "hunted.space",
+   "modelcompare.dev",
+   "producthunt.com"
+  ],
+  "answer_head": ""
+ }
+]
