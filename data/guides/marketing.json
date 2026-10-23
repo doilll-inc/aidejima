@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 2,
   "created": "2026-09-30",
-  "updated": "2026-10-21",
+  "updated": "2026-10-24",
   "last_reviewed": "2026-10-21",
   "title": "広告・マーケティング向けAIのおすすめ：広告クリエイティブ・SNS・LP制作",
   "short_name": "広告・マーケ",
@@ -1305,6 +1305,22 @@
       "editorial_take": "Gemini アプリに小規模事業者向けのページを追加。サイト・ロゴ・フォント・配色を覚えさせ、Nano Banana 2.1 でブランドに沿った販促画像を作れる。Google 広告・Canva・Shopify などと連携（公式発表 2026-10-20、全利用者へ順次提供、料金・対応言語の記載なし）。",
       "checked": "2026-10-21",
       "retired_note": ""
+    },
+    {
+      "id": "suno",
+      "name": "Suno",
+      "vendor": "Suno, Inc.",
+      "url": "https://suno.com/",
+      "status": "watch",
+      "latest": {
+        "name": "Suno v6",
+        "released": "2026-09-09",
+        "source_url": "https://suno.com/blog/introducing-v6",
+        "checked": "2026-10-24"
+      },
+      "tags": [
+        "Suno"
+      ]
     }
   ],
   "criteria": [
@@ -1443,6 +1459,12 @@
       "date": "2026-10-21",
       "text": "Gemini の小規模事業者向けページ（ブランドを覚えて販促画像を作る）を「その他の選択肢」に追加",
       "by": "reviewer"
+    },
+    {
+      "date": "2026-10-24",
+      "text": "動画や店頭のBGMを作れるAI音楽のSunoを調査候補に追加",
+      "article": "/news/20261024-suno-pricing-plans-downloads/",
+      "by": "writer"
     }
   ],
   "editor_note": "",
