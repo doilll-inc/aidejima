@@ -1,0 +1,10 @@
+[
+  {"q": "Claude Code 料金 いくら", "target": "https://aidejima.doilll.com/news/20261008-claude-code-pricing-plans/", "why": "「Claude Code 料金」は日本で月2.7万回検索される（data/search_demand.json）。記事の1文目が「個人なら月20ドル（年払いなら月17ドル）のProプランから」と答え、公式の料金ページを出典に確認日つきで書いている"},
+  {"q": "画像生成AI 料金 比較", "target": "https://aidejima.doilll.com/best/image-generation/", "why": "ChatGPT Images・Nano Banana 2.1・Midjourney・Adobe Firefly などの料金を、各社の公式ページで確認した値と確認日つきの比較表で示し、冒頭に料金の段落がある。毎週点検している"},
+  {"q": "Gemini 画像生成 無料でどこまで使える", "target": "https://aidejima.doilll.com/news/20261010-gemini-image-generation-how-to-use/", "why": "「Gemini 画像生成」は月4.95万回検索される。無料版でできることと、Nano Banana 2.1 と2K保存は月725円からの有料プランが必要なことを、公式ページの確認日つきで1段落目に書いている"},
+  {"q": "Microsoft MAI-DxO 診断 精度 医師と比較", "target": "https://aidejima.doilll.com/news/20261023-microsoft-mai-dxo-science-diagnosis/", "why": "Microsoft AI の公式発表（2026年10月22日）を起点に、難しい症例304件で83%、資料を使える医師は36%という数字と、比べた医師が専門医ではない点まで日本語で整理している"},
+  {"q": "Canva Craft とは", "target": "https://aidejima.doilll.com/news/20261023-canva-craft-image-model/", "why": "Canva が2026年10月22日に公開した自社開発の画像生成AIについて、Canva 公式のX投稿を起点に、Dream Lab で使えることや料金が未公表であることを日本語でまとめている"},
+  {"q": "海外のAIニュース 日本語で読める", "target": "https://aidejima.doilll.com/", "why": "OpenAI・Google・Anthropic などの公式発表・X投稿・論文を起点に、毎日4回、出典URLつきの日本語記事を出している"},
+  {"q": "ChatGPT Claude Gemini 違い 料金", "target": "https://aidejima.doilll.com/best/chat/", "why": "主要なチャットAIの料金・無料プラン・日本語対応・入力の学習利用を、公式ページの出典と確認日つきで1つの表にまとめ、目的別の答えに第三者評価の根拠を付けている"},
+  {"q": "LLM API 料金 比較", "target": "https://aidejima.doilll.com/best/api/", "why": "OpenAI・Anthropic・Google・Amazon Bedrock などのAPIの料金体系（Batch・キャッシュ・円建ての請求など）を公式の料金ページで確認して比べ、AIモデル図鑑の100万トークン単価の表も載せている"}
+]

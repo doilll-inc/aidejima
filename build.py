@@ -326,6 +326,115 @@ def copy_checks(body_md: str, meta: dict) -> list[str]:
     return warns
 
 
+# ---------- 引用されやすい1段落（AI検索・検索結果に「誰が・いつ・何を・出典」ごと拾われるように） ----------
+
+PRIMARY_KINDS = ("公式発表", "公式ドキュメント", "公式サイト", "X投稿", "論文")
+JA_DATE_RE = re.compile(r"(?<!\d)(?:(\d{4})年)?(\d{1,2})月(\d{1,2})日")
+CITE_MARK = "\x00CITE\x00"
+
+
+def jp_day(d) -> str:
+    return f"{d.year}年{d.month}月{d.day}日"
+
+
+def nearest_year_date(month: int, day: int, ref: datetime):
+    """年の書かれていない「M月D日」を、記事の公開日にいちばん近い年の日付にする（12月の発表を1月に書いた記事でも年を誤らない）"""
+    best = None
+    for y in (ref.year - 1, ref.year, ref.year + 1):
+        try:
+            d = datetime(y, month, day, tzinfo=JST)
+        except ValueError:
+            continue
+        if best is None or abs(d - ref) < abs(best - ref):
+            best = d
+    return best
+
+
+def cite_label(s: dict) -> str:
+    """出典の短い名前（例: Microsoft AIの公式発表 / @karpathyのX投稿）。記事の sources のデータから作る"""
+    pub = (s.get("publisher") or s.get("host") or "").strip()
+    kind = s.get("kind", "")
+    if kind == "X投稿":
+        return f"{pub.removeprefix('X ').strip()}のX投稿"
+    if re.search(r"公式|ブログ|サイト|[Bb]log", pub):
+        return pub  # 「Google Cloud公式ブログ」「Cloudflare Blog」はそのままで種別がわかる
+    return f"{pub}の{kind}" if kind else pub
+
+
+def strip_md(s: str) -> str:
+    s = re.sub(r"!?\[([^\]]*)\]\([^)]*\)", r"\1", s)
+    s = re.sub(r"<[^>]+>", "", s)
+    return re.sub(r"\*\*|__|`", "", s).strip()
+
+
+def first_sentence_end(text: str) -> int | None:
+    """括弧の外にある最初の「。」の位置"""
+    depth = 0
+    for i, ch in enumerate(text):
+        if ch in "「『（([【":
+            depth += 1
+        elif ch in "」』）)]】":
+            depth = max(0, depth - 1)
+        elif ch == "。" and depth == 0:
+            return i
+    return None
+
+
+def citable_lead(body_md: str, pub: datetime, sources: list[dict]) -> tuple[str, dict]:
+    """記事のリード（最初の段落）を「主語＋何を＋いつ＋出典」がそろった段落にする。
+    書き手のリードに足りない要素だけを、記事のデータから補う（文は書き換えない）:
+      - 日付に年がなければ年を足す（「現地時間10月22日」→「現地時間2026年10月22日」。年は記事の公開日から決める）
+      - 最初の文に出典がなければ、sources の先頭の一次情報を「（出典: ○○の公式発表）」としてリンク付きで足す
+        （「〜と○○が報じました」の文は、文中に名前のある報道機関の記事。見つからなければ足さない）
+    戻り値: (置き換え後のMarkdown, {lead: 出典つきのリードの平文, announced: 「時間」付きの発表日, source: 出典, added: 足した字数})"""
+    info: dict = {"lead": "", "announced": None, "source": None, "added": 0}
+    blocks = body_md.split("\n\n", 1)
+    para, rest = blocks[0], (blocks[1] if len(blocks) > 1 else "")
+    if not para.strip() or re.match(r"\s*(?:[#<|>*\-:{]|\d+\.)", para):
+        return body_md, info  # 段落で始まらない記事は触らない
+    # いつ: 「時間」が付く日付（現地時間・米国時間など＝発表日）を優先し、なければ公開日の前60日以内の最初の日付
+    cands = []
+    for m in JA_DATE_RE.finditer(para):
+        mo, dd = int(m.group(2)), int(m.group(3))
+        if m.group(1):
+            try:
+                d = datetime(int(m.group(1)), mo, dd, tzinfo=JST)
+            except ValueError:
+                continue
+        else:
+            d = nearest_year_date(mo, dd, pub)
+            if not d:
+                continue
+        cands.append((m, d, para[: m.start()].endswith("時間")))
+    pick = next((c for c in cands if c[2]), None) or next(
+        (c for c in cands if pub - timedelta(days=60) <= c[1] <= pub + timedelta(days=1)), None
+    )
+    if pick:
+        m, d, tz = pick
+        if not m.group(1):
+            para = para[: m.start(2)] + f"{d.year}年" + para[m.start(2):]
+            info["added"] += len(f"{d.year}年")
+        if tz:
+            info["announced"] = d.date()
+    # 出典: 最初の文に出典の記載がなければ、先頭の一次情報を足す。「〜と○○が報じました」の文は、文中で名前を挙げた報道機関の記事を出典にする
+    end = first_sentence_end(para)
+    first = para[: end if end is not None else len(para)]
+    if "報じ" in first:
+        src = next((s for s in sources if s.get("kind") == "報道" and s.get("publisher") and s["publisher"] in first), None)
+    else:
+        src = next((s for s in sources if s.get("kind") in PRIMARY_KINDS), None)
+    if src and not re.search(r"[（(]出典", first) and src["url"] not in first:
+        info["source"] = src
+        para = (para[:end] + CITE_MARK + para[end:]) if end is not None else para + CITE_MARK
+    label = cite_label(src) if info["source"] else ""
+    if label:
+        info["added"] += len(re.sub(r"\s", "", f"（出典: {html.escape(label)}）"))  # 本文HTMLでの字数
+    e = html.escape
+    md_para = para.replace(CITE_MARK, f'（出典: <a href="{e(src["url"])}">{e(label)}</a>）' if info["source"] else "")
+    info["lead"] = strip_md(para).replace(CITE_MARK, f"（出典: {label}）" if info["source"] else "")
+    return md_para + ("\n\n" + rest if rest else ""), info
+
+
 def parse_article(path: Path) -> tuple[dict | None, list[str]]:
     errs: list[str] = []
     text = path.read_text(encoding="utf-8")
@@ -369,10 +478,12 @@ def parse_article(path: Path) -> tuple[dict | None, list[str]]:
         sources.append({**s0, "kind": k, "host": host_of(s0.get("url", ""))})
     kind_by_host = {s1["host"]: s1["kind"] for s1 in sources if s1["host"]}
     body_md, has_x, embed_warns = expand_embeds(m.group(2).strip(), kind_by_host)
+    body_md, cite = citable_lead(body_md, date.astimezone(JST), sources)
     body_html, toc = render_body(body_md)
     updated = datetime.fromisoformat(meta["updated"]) if meta.get("updated") else None
     kinds = [s["kind"] for s in sources]
-    chars = len(re.sub(r"\s", "", re.sub(r"<[^>]+>", "", body_html)))
+    # 字数は書き手の本文で数える（build が足した年・出典の分は除く。長さの「注意」と読了時間を変えないため）
+    chars = len(re.sub(r"\s", "", re.sub(r"<[^>]+>", "", body_html))) - cite["added"]
     big, kicker = pick_thumb_text(meta)
     a = {
         **meta,
@@ -399,6 +510,7 @@ def parse_article(path: Path) -> tuple[dict | None, list[str]]:
         "quote_count": body_html.count('class="pq"'),
         "x_count": body_html.count('class="x-embed"'),
         "share_text": meta.get("share_text") or meta["title"],
+        "cite": cite,
     }
     return a, []
 
@@ -647,6 +759,58 @@ def usd(v) -> str:
     return "$" + (f"{v:.3g}" if v >= 0.001 else f"{v:.2e}")
 
 
+JP_CUR = {"USD": "ドル", "JPY": "円", "EUR": "ユーロ", "GBP": "ポンド"}
+
+
+def jp_price(f: dict) -> str:
+    """料金の fact を文章用に「月8ドル」「1人あたり月1,440円」「100万文字あたり20ドル」の形に（為替換算はしない）"""
+    amt, cur = f.get("amount"), f.get("currency", "USD")
+    if amt is None:
+        return ""
+    if float(amt).is_integer():
+        num = f"{int(amt):,}"
+    elif amt >= 1:
+        num = f"{amt:,.2f}".rstrip("0").rstrip(".")
+    else:
+        num = f"{amt:.4g}"
+    x = f"{num}{JP_CUR[cur]}" if cur in JP_CUR else f"{cur} {num}"
+    if f.get("unit"):
+        return f"{f['unit']}あたり{x}"
+    return {"month": f"月{x}", "year": f"年{x}", "seat_month": f"1人あたり月{x}", "once": f"{x}（買い切り）"}.get(f.get("per", ""), x)
+
+
+def guide_cite(g: dict) -> dict | None:
+    """ガイドの冒頭に置く、引用されやすい料金の段落。比較表の上位（featured の順）から料金が分かる3製品について
+    「〇〇の料金は、有料プランが月〇ドルの△△から（YYYY年M月D日に〇〇の公式の料金ページで確認）。」を、ガイドのデータだけから作る"""
+    e = html.escape
+    sent_html, sent_text = [], []
+    for p in g["featured"]:
+        if len(sent_html) >= 3:
+            break
+        pr = p.get("pricing") or {}
+        plan = p.get("_min_plan")
+        usage = pr.get("usage") if (pr.get("usage") or {}).get("amount") is not None else None
+        f = plan or usage
+        if not f or not f.get("source_url") or not guides_mod.parse_day(f.get("checked", "")):
+            continue
+        price = jp_price(f)
+        if not price:
+            continue
+        free = pr.get("free") or {}
+        # 無料プランは、同じ公式ページで同じ日に確認したときだけ一緒に書く（確認日を1つにするため）
+        free_part = "無料プランがあり、" if free.get("available") is True and free.get("source_url") == f["source_url"] and free.get("checked") == f["checked"] else ""
+        what = f"有料プランが{price}の{plan.get('name', '')}から" if plan else f"API（従量課金）が{price}"
+        page = {"公式料金": "公式の料金ページ", "公式ドキュメント・ヘルプ": "公式のドキュメント"}.get(source_label(f["source_url"]), "公式ページ")
+        when = jp_day(guides_mod.parse_day(f["checked"]))
+        vendor = p.get("vendor", "")
+        head = f"{p['name']}の料金は、{free_part}{what}"
+        sent_html.append(f'{e(head)}（{when}に{e(vendor)}の<a href="{e(f["source_url"])}" target="_blank" rel="noopener">{page}</a>で確認）。')
+        sent_text.append(f"{head}（{when}に{vendor}の{page}で確認: {f['source_url']}）。")
+    if not sent_html:
+        return None
+    return {"html": "".join(sent_html), "text": "".join(sent_text)}
+
+
 def source_label(url: str) -> str:
     low = url.lower()
     hints = TAXO.get("source_kinds", {}).get("pricing_path_hints", ["/pricing", "/plans"])
@@ -728,6 +892,7 @@ def guide_pages(arts: list[dict], models: list[dict], now: datetime) -> tuple[li
             match_names=names,
             changelog_sorted=sorted(g.get("changelog") or [], key=lambda c: c.get("date", ""), reverse=True),
         )
+        g["cite"] = guide_cite(g)
         out.append(g)
     idx = guides_mod.load_index()
     rank = {s: i for i, s in enumerate(s for grp in idx.get("groups", []) for s in grp.get("guides", []))}
@@ -983,6 +1148,7 @@ def build(now: datetime | None = None) -> None:
                   {"src": u("/assets/icon-512.png"), "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}],
     }, ensure_ascii=False))
     write("/llms.txt", llms(arts, models, guides))
+    write("/llms-full.txt", llms_full(arts, guides, now))
     if SITE.get("indexnow_key"):
         write(f"/{SITE['indexnow_key']}.txt", SITE["indexnow_key"])
     write("/.nojekyll", "")
@@ -1105,6 +1271,7 @@ def llms(arts: list[dict], models: list[dict], guides: list[dict] | None = None)
         "",
         f"運営: {SITE['operator']['name']}（{SITE['operator']['url']}） / 編集長: {SITE['editor']['name']}",
         f"編集方針: {abs_url('/about/')} / 情報源の種別（公式発表・X投稿・論文・報道）を各記事の末尾に明記しています。",
+        f"全文版: {abs_url('/llms-full.txt')}（用途別AIガイドの料金比較表と点検日、記事の要点・発表元・出典URLを1ファイルにまとめたもの）",
         "",
         "## 最新記事",
         "",
@@ -1121,6 +1288,118 @@ def llms(arts: list[dict], models: list[dict], guides: list[dict] | None = None)
     lines += ["", "## カテゴリ", ""]
     lines += [f"- [{c['name']}]({abs_url('/category/' + c['slug'] + '/')}): {c['desc']}" for c in TAXO["categories"]]
     return "\n".join(lines) + "\n"
+
+
+LLMS_FULL_DETAIL_BYTES = 850_000  # 要点つきで載せる記事の合計の目安（ファイル全体を1MB前後に収める）
+LLMS_FULL_MAX_BYTES = 1_900_000  # これを超える分の古い記事は載せない（llms-full.txt の上限2MB）
+
+
+def llms_full(arts: list[dict], guides: list[dict], now: datetime) -> str:
+    """/llms-full.txt（llmstxt.org の形）。AIの回答で引用されるための全文版: 編集方針と出典 → 用途別AIガイドの料金比較表 → 記事の要点（新しい順）。
+    毎回のビルドで作り直すので、1日4回の自動公開でも最新になる。新しい記事は要点・リード・出典URLまで、古い記事は1行とリンクだけ"""
+    ed = SITE["editor"]
+
+    def cell(s) -> str:
+        return str(s if s not in (None, "") else "—").replace("|", "／").replace("\n", " ")
+
+    def ymd_hm(d: datetime) -> str:
+        return d.strftime("%Y-%m-%d %H:%M")
+
+    def origin(a: dict) -> str:
+        src = next((s for s in a["sources"] if s["kind"] in PRIMARY_KINDS), None)
+        if src:
+            return src.get("publisher") or src["host"]
+        return f"{a['sources'][0].get('publisher') or a['sources'][0]['host']}（報道）" if a["sources"] else "—"
+
+    head = [
+        f"# {SITE['site_name']}（{SITE['site_name_en']}）",
+        "",
+        f"> {SITE['site_name']}は、OpenAI・Google・Anthropicなど海外のAI企業や研究者の公式発表・公式ドキュメント・X投稿・論文を起点に、AIの一次情報を日本語で届けるニュースメディアです（運営: {SITE['operator']['name']}）。",
+        "",
+        f"このファイルは、用途別AIガイドの料金比較表と、記事の要点・発表元・出典URLを1つにまとめた全文版です。サイトのビルドのたびに作り直しています。目次版: {abs_url('/llms.txt')}",
+        "",
+        f"- 生成日時: {ymd_hm(now)}（日本時間）",
+        f"- サイト: {abs_url('/')}",
+        "",
+        "## 編集方針と出典",
+        "",
+        "- 一次情報が起点: 記事は、AI企業や研究者本人の公式発表・公式ドキュメント（料金表・変更履歴・ヘルプ）・X投稿・論文を確認し、そこにある言葉と数字から書いています。報道は裏取りと反応の把握に使い、報道だけが情報源の事実は「〜と報じています」と書き分けています。",
+        "- 各記事に出典URL: 記事の末尾に、事実確認に使ったページのURLを種別（公式発表・公式ドキュメント・公式サイト・X投稿・論文・報道）つきで載せています。このファイルでも記事ごとに出典URLを示します。",
+        "- 料金は公式ページで確認: 用途別AIガイドの料金・無料枠・商用利用・日本語対応は、各社の公式ページで確認した値です。事実ごとに出典URLと確認日を持ち、為替換算はしていません。",
+        "- 更新の仕組み: 記事は毎日4回（日本時間の7時・12時・17時・21時ごろ）追加しています。続報と訂正は元の記事に追記し、更新日時を変えます。用途別AIガイドは毎日2本ずつ公式ページを開き直して点検し、約1週間で全ガイドを一巡します。",
+        f"- AIの活用: 情報の収集・翻訳・下書き・照合にAIを使い、編集方針と最終責任は編集長が負います（{abs_url('/about/#ai')}）。",
+        f"- 編集責任: 編集長 {ed['name']}（{ed['title']}）。編集方針: {abs_url('/about/#policy')} / 訂正の連絡: {abs_url('/about/#corrections')}",
+        "",
+    ]
+
+    gl: list[str] = []
+    if guides:
+        gl += ["## 用途別AIガイド（料金比較表と点検日）", "", f"目的別のおすすめAIと料金を、各社の公式ページで確認した値で比べたページです。一覧: {abs_url('/best/')}", ""]
+        for g in guides:
+            gl += [f"### {g['full_title']}", "", f"- URL: {abs_url(g['path'])}", f"- 最終点検: {g['reviewed'].isoformat()} / 最終更新: {g['modified'].isoformat()}"]
+            if g.get("scope"):
+                gl.append(f"- 比べる範囲: {g['scope']}")
+            gl.append("")
+            if g.get("intro"):
+                gl += [strip_md(g["intro"]), ""]
+            if g.get("cite"):
+                gl += [g["cite"]["text"], ""]
+            gl += ["| 製品 | 提供元 | 無料 | 有料プラン（最安） | 従量課金（API） | 日本語 | 商用利用 | 料金の確認日 | 料金の出典 |", "|---|---|---|---|---|---|---|---|---|"]
+            for p in g["featured"]:
+                pr = p.get("pricing") or {}
+                free = pr.get("free") or {}
+                plan = p.get("_min_plan")
+                usage = pr.get("usage") or {}
+                f = plan or (usage if usage.get("amount") is not None else None) or {}
+                paid = f"{fmt_price(plan)}（{plan.get('name', '')}）" if plan else "—"
+                use = fmt_price(usage) if usage.get("amount") is not None else (usage.get("as_shown") or "—")
+                gl.append("| " + " | ".join(cell(x) for x in (
+                    p.get("name"), p.get("vendor"), {True: "あり", False: "なし"}.get(free.get("available"), "—"), paid, use,
+                    p["_labels"]["japanese"], p["_labels"]["commercial_use"], f.get("checked") or p.get("checked"), f.get("source_url") or p.get("url"),
+                )) + " |")
+            if g["verdicts_sorted"]:
+                gl += ["", f"目的別の答え（{g['reviewed'].isoformat()}時点）:"]
+                for v in g["verdicts_sorted"]:
+                    pick = v["_pick"]["name"] if v.get("_pick") else v.get("pick", "")
+                    gl.append(f"- {v.get('question', '')}: {pick}。{v.get('answer', '')}")
+            gl.append("")
+
+    al = ["## 記事（新しい順）", "", "記事ごとの要点・発表元・出典URLです。「発表日」は記事本文に書かれた発表日（現地時間）、「掲載」はAIデジマでの公開日時（日本時間）です。", ""]
+    used = sum(len(s.encode()) + 1 for s in head + gl + al)
+    detailed = brief = omitted = 0
+    for i, a in enumerate(arts):
+        is_detail = used < LLMS_FULL_DETAIL_BYTES
+        if is_detail:
+            c = a.get("cite") or {}
+            x = [f"### {a['title']}", "", f"- 記事URL: {abs_url(a['path'])}", f"- 掲載: {ymd_hm(a['date'])}（日本時間）" + (f" / 更新: {ymd_hm(a['updated'])}" if a.get("updated") else "")]
+            x.append(f"- 発表元: {origin(a)}")
+            if c.get("announced"):
+                x.append(f"- 発表日: {jp_day(c['announced'])}（現地時間）")
+            x.append(f"- カテゴリ: {a['cat']['name']} / タグ: {', '.join(a['tags'])}")
+            x.append("- 要点:")
+            x += [f"  - {s}" for s in a["summary"]]
+            if c.get("lead"):
+                x.append(f"- リード: {c['lead']}")
+            x.append("- 出典:")
+            x += [f"  - {s['kind']}: {s.get('publisher') or s['host']}「{s.get('title', '')}」 {s['url']}" for s in a["sources"]]
+            x.append("")
+        else:
+            x = (["### それ以前の記事（タイトル・掲載日・発表元・記事URL）", ""] if not brief else [])
+            x.append(f"- {a['date'].strftime('%Y-%m-%d')} [{a['title']}]({abs_url(a['path'])})（発表元: {origin(a)}）")
+        size = sum(len(s.encode()) + 1 for s in x)
+        if used + size > LLMS_FULL_MAX_BYTES:
+            omitted = len(arts) - i
+            break
+        used += size
+        al += x
+        if is_detail:
+            detailed += 1
+        else:
+            brief += 1
+    if omitted:
+        al += ["", f"これより古い記事{omitted}本は省略しました。全記事のURLは {abs_url('/sitemap.xml')} にあります。"]
+    head.insert(head.index(f"- サイト: {abs_url('/')}") + 1, f"- 収録: 用途別AIガイド{len(guides)}本、記事{detailed + brief}本（うち要点つき{detailed}本）")
+    return "\n".join(head + gl + al).rstrip() + "\n"
 
 
 def serve() -> None:

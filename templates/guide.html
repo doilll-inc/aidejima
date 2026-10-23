@@ -21,7 +21,7 @@
       </header>
       {% if g.stale %}<p class="guide-stale">この情報は {{ g.reviewed.month }}月{{ g.reviewed.day }}日 に確認したものです。最新の料金・仕様は各社の公式ページでご確認ください。</p>{% endif %}
 
-      {% if g.intro %}<div class="post-body guide-intro">{{ g.intro | md }}</div>{% endif %}
+      {% if g.intro or g.cite %}<div class="post-body guide-intro">{% if g.intro %}{{ g.intro | md }}{% endif %}{% if g.cite %}<p>{{ g.cite.html | safe }}</p>{% endif %}</div>{% endif %}
 
       {% if g.verdicts_sorted %}
       <section class="verdicts" aria-label="目的別の答え">
