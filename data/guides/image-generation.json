@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-19",
+  "updated": "2026-10-23",
   "last_reviewed": "2026-10-19",
   "title": "画像生成AIのおすすめと料金比較",
   "short_name": "画像生成",
@@ -1258,7 +1258,8 @@
       "rank": 30,
       "segment": "",
       "tags": [
-        "Canva"
+        "Canva",
+        "Canva Craft"
       ],
       "model_slugs": [],
       "access": [
@@ -1273,9 +1274,10 @@
       "checked": "2026-10-01",
       "retired_note": "",
       "latest": {
-        "name": "Canva AI（Text to Image）",
-        "source_url": "https://www.canva.com/ai-image-generator/",
-        "checked": "2026-10-01"
+        "name": "Canva Craft",
+        "released": "2026-10-22",
+        "source_url": "https://x.com/canva/status/2113348707223753165",
+        "checked": "2026-10-23"
       }
     },
     {
@@ -1468,6 +1470,12 @@
       "date": "2026-10-19",
       "text": "画質の第三者評価（Artificial Analysis）を10月19日時点に更新。Nano Banana 2.1がOpenAI以外で最上位に",
       "by": "reviewer"
+    },
+    {
+      "date": "2026-10-23",
+      "text": "Canvaの最新モデルを自社開発の「Canva Craft」に更新",
+      "article": "/news/20261023-canva-craft-image-model/",
+      "by": "writer"
     }
   ],
   "editor_note": "",
