@@ -3,7 +3,7 @@
   "title": "OpenAIが評価額1.4兆ドルで300億ドル調達を協議と報道、上場までのつなぎ資金に",
   "description": "OpenAIが評価額約1.4兆ドルで300億ドル規模の調達を協議しているとブルームバーグが報じた。3月の評価額8520億ドルから約半年で約1.6倍になる。年内の上場は見送る方針で、上場までのつなぎ資金とみられる。",
   "date": "2026-09-30T20:43:00+09:00",
-  "updated": "2026-10-01T19:04:00+09:00",
+  "updated": "2026-10-23T18:00:00+09:00",
   "category": "business",
   "tags": [
     "OpenAI",
@@ -62,6 +62,18 @@
       "title": "OpenAI Targets $30B in New Funding at $1.4T Value",
       "publisher": "Hacker News",
       "url": "https://news.ycombinator.com/item?id=49897336"
+    },
+    {
+      "title": "OpenAI working on new $30B raise at $1.25T valuation ahead of IPO",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/22/openai-working-on-new-30b-raise-at-1-25t-valuation-ahead-of-ipo/",
+      "kind": "報道"
+    },
+    {
+      "title": "OpenAI Fundraising Round Set to Close Soon With UAE Investors, Coatue Leading Investment",
+      "publisher": "The Information",
+      "url": "https://www.theinformation.com/briefings/openai-fundraising-round-set-close-soon-uae-investors-coatue-leading-investment",
+      "kind": "報道"
     }
   ],
   "thumb_style": "3d",
@@ -109,6 +121,14 @@ Hacker Newsのスレッドは40ポイント程度と、Anthropicの目論見書�
 一方で、OpenAIとAnthropicの時価総額の合計は2027年までに2.5兆ドルを超えると別のスレッドで賭けた、という強気の書き込みもありました。評価額1.4兆ドルは、報じられた年換算売上高400億ドルの約35倍にあたります。
 
 安全面との兼ね合いも論点です。OpenAIは米国時間9月26日、最も高性能なモデルでツールを使う訓練や評価を一時停止すると発表しました。オーストラリア政府のサイトへの無断アクセスでも謝罪したばかりです（「[OpenAIがオーストラリアに謝罪](/news/20260930-openai-australia-agent-breach-apology/)」参照）。安全性を理由に上場を先送りしながら、巨額の資金集めを続ける姿勢をどう評価するかは、投資家の間でも分かれそうです。
+
+## 追記（10月23日）
+
+この調達の条件が具体的になってきました。TechCrunchは米CNBCの報道として、OpenAIが最大300億ドルを、出資前の評価額1.25兆ドルで集める方向で交渉していると現地時間10月22日に報じました。9月の報道の約1.4兆ドルより低い水準です。米The Informationも同じ日に、評価額は最大1.25兆ドル（新たな出資分を含まない）で、来週末までの完了を目指していると関係者の話として伝えています。
+
+両社の報道によると、出資を主導するのは米投資会社のCoatue Managementとアラブ首長国連邦（UAE）の投資家です。TechCrunchは、UAEからの出資がOpenAI向けの計算資源の追加と組み合わされる可能性があるというCNBCの報道も紹介しています。条件はまだ交渉中で変わる可能性があり、OpenAIはコメントしていません。
+
+1兆ドルを超える評価額で決まれば、非公開企業として史上最高になると報じられています。TechCrunchによると、OpenAIは6月に非公開で上場の書類を提出していますが、当面は上場ではなくこの調達を優先しています。
 
 ## 日本のビジネスへの影響
 
