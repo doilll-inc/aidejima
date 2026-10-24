@@ -16,8 +16,7 @@
     {"title": "Kimi.ai の投稿", "publisher": "X @Kimi_Moonshot", "url": "https://x.com/Kimi_Moonshot/status/2113680701770068067", "kind": "X投稿"},
     {"title": "Artificial Analysis の投稿", "publisher": "X @ArtificialAnlys", "url": "https://x.com/ArtificialAnlys/status/2113688083145314416", "kind": "X投稿"},
     {"title": "Introducing Kimi K3.1 Pro", "publisher": "Simon Willison's Weblog", "url": "https://simonwillison.net/2026/Oct/23/kimi-k31-pro/", "kind": "報道"},
-    {"title": "Chinese AI model Kimi K3.1 Pro is closing in on Anthropic's Claude Opus 5.5", "publisher": "The Decoder", "url": "https://the-decoder.com/chinese-ai-model-kimi-k3-1-pro-is-closing-in-on-anthropics-claude-opus-5-5/", "kind": "報道"},
-    {"title": "Moonshot AI Launches New Kimi K3.1 Pro Model", "publisher": "The Information", "url": "https://www.theinformation.com/briefings/moonshot-ai-launches-new-kimi-k3-1-pro-model", "kind": "報道"}
+    {"title": "Chinese AI model Kimi K3.1 Pro is closing in on Anthropic's Claude Opus 5.5", "publisher": "The Decoder", "url": "https://the-decoder.com/chinese-ai-model-kimi-k3-1-pro-is-closing-in-on-anthropics-claude-opus-5-5/", "kind": "報道"}
   ],
   "thumb_prompt": "A tiny runner in a red tracking suit closing the gap on a much larger runner on a miniature stadium track, with a price tag cut in half lying on the lane.",
   "thumb_style": "diorama",
