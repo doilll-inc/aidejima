@@ -115,6 +115,23 @@
       "checked": "2026-10-16"
     },
     {
+      "slug": "kimi-k3-1-pro",
+      "name": "Kimi K3.1 Pro",
+      "vendor": "Moonshot AI",
+      "tier": "上位",
+      "released": "2026-10-23",
+      "input_per_m": 2.0,
+      "cached_input_per_m": 0.2,
+      "output_per_m": 10.0,
+      "context": 1048576,
+      "api_id": "kimi-k3.1-pro",
+      "status": "current",
+      "note": "Kimi K3を追加訓練した改良版。2〜3倍速いHighspeed版（kimi-k3.1-pro-highspeed）は入力4ドル・出力20ドル。重みは11月4日までに公開予定",
+      "official_url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+      "article": "/news/20261024-kimi-k3-1-pro-moonshot/",
+      "checked": "2026-10-24"
+    },
+    {
       "slug": "claude-sonnet-5-5",
       "name": "Claude Sonnet 5.5",
       "vendor": "Anthropic",

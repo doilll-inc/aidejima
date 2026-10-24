@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 3,
   "created": "2026-09-30",
-  "updated": "2026-10-22",
+  "updated": "2026-10-24",
   "last_reviewed": "2026-10-20",
   "title": "ローカルLLM・オープンウェイトモデルのおすすめ",
   "short_name": "ローカルLLM",
@@ -287,9 +287,10 @@
       ],
       "model_slugs": [],
       "latest": {
-        "name": "Kimi K3",
-        "source_url": "https://www.kimi.ai/blog/kimi-k3",
-        "checked": "2026-10-20"
+        "name": "Kimi K3.1 Pro（APIとKimiアプリで提供中、重みは11月4日までに公開予定）",
+        "released": "2026-10-23",
+        "source_url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+        "checked": "2026-10-24"
       },
       "access": [
         "api"
@@ -1375,6 +1376,12 @@
       "date": "2026-10-22",
       "text": "Recursiveが手元のPCで動くプログラミング用AI「Flint」を無料公開。注目枠に追加",
       "article": "/news/20261022-recursive-flint-ai-built-local-model/",
+      "by": "writer"
+    },
+    {
+      "date": "2026-10-24",
+      "text": "Kimiの改良版「Kimi K3.1 Pro」が登場。重みは11月4日までに公開予定",
+      "article": "/news/20261024-kimi-k3-1-pro-moonshot/",
       "by": "writer"
     }
   ],
