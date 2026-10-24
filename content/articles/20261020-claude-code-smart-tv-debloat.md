@@ -3,6 +3,7 @@
   "title": "テレビの広告がClaude Codeで消えた、型番を伝えるだけで家のスマートテレビを作り直す人が続出",
   "description": "スマートテレビの広告や視聴データの収集を、Claude CodeなどのAIに頼んで止める人が海外で増えている。手順を公開したGitHubの「cleanyourtv」は2日で数千人が試したと作者が話し、54機種・23ブランドで動作が確かめられている。",
   "date": "2026-10-20T04:15:00+09:00",
+  "updated": "2026-10-24T21:55:00+09:00",
   "category": "usecases",
   "tags": ["Claude Code", "cleanyourtv", "dumbtv", "活用事例", "プライバシー", "広告"],
   "summary": [
@@ -18,7 +19,10 @@
     {"title": "Mihir Gupta の投稿", "publisher": "X @0900mihir", "url": "https://x.com/0900mihir/status/2111746030228455883", "kind": "X投稿"},
     {"title": "Ryan Doyle の投稿", "publisher": "X @doooyle", "url": "https://x.com/doooyle/status/2111196679680540724", "kind": "X投稿"},
     {"title": "@jihadsinwar の投稿", "publisher": "X @jihadsinwar", "url": "https://x.com/jihadsinwar/status/2112135188733989173", "kind": "X投稿"},
-    {"title": "People are using AI to make their smart TVs dumb again", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/10/19/people-are-using-ai-to-make-their-smart-tvs-dumb-again/", "kind": "報道"}
+    {"title": "Jake Stevens の投稿", "publisher": "X @stake_jevens", "url": "https://x.com/stake_jevens/status/2112851884901794284", "kind": "X投稿"},
+    {"title": "Quiet Tizen", "publisher": "GitHub jss8649", "url": "https://github.com/jss8649/quiet-tizen", "kind": "公式サイト"},
+    {"title": "People are using AI to make their smart TVs dumb again", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/10/19/people-are-using-ai-to-make-their-smart-tvs-dumb-again/", "kind": "報道"},
+    {"title": "Developer guts Samsung TV of features that sold his personal data, made it 3x faster", "publisher": "TweakTown", "url": "https://www.tweaktown.com/news/114227/developer-guts-samsung-tv-of-features-that-sold-his-personal-data-made-it-3x-faster/index.html", "kind": "報道"}
   ],
   "thumb_prompt": "A living room at night where a large flat TV shows a clean, minimal home screen, while a pile of tiny colorful advertisement banners lies swept onto the floor beneath it like confetti, a laptop glowing on the sofa.",
   "thumb_style": "photo",
@@ -69,6 +73,23 @@ cleanyourtvの説明書きも、テレビが頼っているアプリを止める
 - **必要なもの**: Android TVかGoogle TVのテレビ（TechCrunchによると、ソニーやTCL、シャオミなどの機種で試した報告がある）、同じWi-Fiにつながるパソコン、Claude Code（Claudeの有料プラン、月20ドルのPro以上）。料金は「[Claude Codeの料金](/news/20261008-claude-code-pricing-plans/)」にまとめています
 - **始める前に**: 自分の機種がcleanyourtvの一覧に載っているか確かめます。載っていない機種は、AIが手探りで進めることになり、失敗しやすくなります
 - **注意点**: メーカーの保証やサポートの対象外になる可能性があります。日本向けのテレビに入っている地上波の番組表やリモコンの専用ボタンの機能を止めてしまうと、普段の視聴に困ります。止めるアプリはAIの提案をそのまま受け入れず、名前を確認してから進めてください
+
+## 追記（10月24日）
+
+この記事で「対象外」と書いたサムスンのテレビでも、同じことをした人が出てきました。米国のJake Stevens氏は現地時間10月21日、OpenAIのプログラミングAI「Codex」を使って、自宅のサムスン製テレビから利用者を追跡する機能を取り除いたとXに投稿しました。Claudeにはテレビの管理者権限を取る作業を断られたため、Codexに切り替えたと書いています。
+
+{{x:https://x.com/stake_jevens/status/2112851884901794284}}
+
+投稿では、止めた機能で動作が「3倍速くなった」としています。TweakTownによると、止めたのは画面に映る番組を読み取って視聴履歴を集める機能（ACR）、HDMIでつないだ機器の監視、音声アシスタント「Bixby」の呼びかけ待ちなどです。
+
+本人とみられるGitHubの「Quiet Tizen」は、投稿よりずっと慎重です。試したのは2025年モデルの75型（UN75U8000FFXZA）1台だけで、サムスンが公開していない内部の仕組みに頼っていると説明しています。
+
+:::quote https://github.com/jss8649/quiet-tizen | GitHub「Quiet Tizen」
+> It is a working case study with a reusable toolkit, not a universal installer or a replacement operating system.
+1台で試した記録と道具一式であり、どのテレビにも入る万能のインストーラーや、基本ソフトの代わりではない。
+:::
+
+説明書きでは、Netflixの操作の遅れが直ったかはまだ確かめられていないとも書いています。メーカーの更新で設定が元に戻ることがあることも明記されています。サムスンのテレビで試すには一時的に管理者権限を取る必要があり、Android TVの手順より危険が大きい点に注意が必要です。
 
 ## 日本のビジネスへの影響
 
