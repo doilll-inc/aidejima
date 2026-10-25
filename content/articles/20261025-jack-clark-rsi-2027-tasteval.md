@@ -44,10 +44,7 @@ Claudeを開発するAnthropicの共同創業者ジャック・クラーク氏�
 
 P-Zeroは研究のセンスを「面白い問題を選ぶ」「実験を設計する」「結果を読み解く」の3つに分け、TasteValではあとの2つを測ります。課題は、AIの学習データの選び方や、悪意ある指示への強さを上げる工夫など、AI開発の現場に近い8つ。プログラムを書く作業は別のAIが一律に担当し、評価されるAIは「次に何を試すか」と「結果から何がわかるか」だけを考えます。
 
-:::quote https://pzeroresearch.com/work/tasteval/ | P-Zero Research「Introducing TasteVal」
-> A model that reaches the experts' score with half the experimental compute has twice their experimental research taste.
-専門家と同じ点数に半分の実験用の計算量で届くモデルは、専門家の2倍の実験の目利きがある、とみなす。
-:::
+採点の物差しは「実験にどれだけ計算を使ったか」です。人間の専門家と同じ点数に、AIが半分の計算量でたどり着けば、目利きは専門家の2倍と数えます。
 
 結果は次のとおりです。
 
