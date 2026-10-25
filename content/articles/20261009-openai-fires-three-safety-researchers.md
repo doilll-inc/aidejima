@@ -3,6 +3,7 @@
   "title": "OpenAIが安全性の研究者3人を解雇、本人たちは「安全を優先したから」と公開書簡で反論",
   "description": "OpenAIが安全性の研究者3人を解雇した。3人は10月8日に公開書簡で「機密の扱いに違反はない」と反論し、OpenAIは翌9日にXで「規定違反で、懸念を口にしたからではない」と決定を変えない考えを示した。",
   "date": "2026-10-09T19:50:00+09:00",
+  "updated": "2026-10-25T22:35:00+09:00",
   "category": "business",
   "tags": ["OpenAI", "安全性", "人事", "エージェント", "METR"],
   "summary": [
@@ -14,7 +15,9 @@
     {"title": "OpenAI Newsroom の投稿（2026年10月9日）", "publisher": "X @OpenAINewsroom", "url": "https://x.com/OpenAINewsroom/status/2108441580806025712", "kind": "X投稿"},
     {"title": "Jasmine Wang の投稿（2026年10月8日）", "publisher": "X @j_asminewang", "url": "https://x.com/j_asminewang/status/2108263312291180680", "kind": "X投稿"},
     {"title": "Fired OpenAI safety researchers dispute misconduct claims, warn of chilling effect", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect/", "kind": "報道"},
-    {"title": "OpenAI says it has fired three researchers for violating sensitive information policy（Reuters配信）", "publisher": "Free Malaysia Today", "url": "https://www.freemalaysiatoday.com/category/business/2026/10/09/openai-says-it-has-fired-three-researchers-for-violating-sensitive-information-policy", "kind": "報道"}
+    {"title": "OpenAI says it has fired three researchers for violating sensitive information policy（Reuters配信）", "publisher": "Free Malaysia Today", "url": "https://www.freemalaysiatoday.com/category/business/2026/10/09/openai-says-it-has-fired-three-researchers-for-violating-sensitive-information-policy", "kind": "報道"},
+    {"title": "Three fired OpenAI safety researchers say they were never told what they actually leaked", "publisher": "The Decoder", "url": "https://the-decoder.com/three-fired-openai-safety-researchers-say-they-were-never-told-what-they-actually-leaked/", "kind": "報道"},
+    {"title": "OpenAI Fires Three Safety Researchers Over Signal Chats, Suspecting Leak Of Sensitive Information To Outside Expert", "publisher": "Free Press Journal", "url": "https://www.freepressjournal.in/tech/openai-fires-three-safety-researchers-over-signal-chats-suspecting-leak-of-sensitive-information-to-outside-expert", "kind": "報道"}
   ],
   "thumb_text": "OpenAI 解雇",
   "share_text": "OpenAIが安全性の研究者3人を解雇。本人たちは公開書簡で反論、OpenAIは「懸念を口にしたからではない」",
@@ -64,6 +67,12 @@ TechCrunchによると、書簡はOpenAIに3つのことを求めています。
 OpenAIの研究部門の責任者のものとされる社内メモをTechCrunchが入手しています。メモは3人の安全性への貢献を認めたうえで、懸念を口にしたことへの報復ではないと否定しました。書簡の求める3点には同意するとも書かれています。
 
 論点は、会社の機密を守ることと、安全性の担当者が外部の評価団体と情報を共有することの境目です。外部の評価団体と組むことはOpenAI自身が掲げてきた方針で、その窓口役が解雇されたことになります。3人は書簡で、突然の解雇が残った社員を萎縮させ、懸念を口にする文化を弱めると訴えました。一方、OpenAIは「書簡に書かれた以上の違反」があるとしており、その中身が明かされない限り、外からはどちらの言い分が正しいか判断できません。
+
+## 追記（10月25日）
+
+米ウォール・ストリート・ジャーナル（WSJ）が3人への取材をもとに解雇までの経緯を報じ、The DecoderやFree Press Journalなどが伝えています。発端は9月に米The Informationが報じた、AIの考えの途中経過が見えにくくなるという新モデル「Astra」の記事でした。OpenAIは、3人が社外の安全性研究者ライアン・グリーンブラット氏に内部の設計情報を渡したと疑い、私物のスマートフォンのロックを外させて、消えるメッセージアプリ「Signal」でのやりとりを確認。約1週間後に3人を解雇したと報じられています。
+
+The Decoderによると、3人は漏えいを否定し、どの情報を不適切に扱ったのか書面で示されたことはないと話しています。グリーンブラット氏も情報の受け取りを否定しています。OpenAIは、Signalは認めた連絡手段ではないものの解雇の理由ではないと説明し、安全上の問題は解消して10月初めにAIの学習を再開したとしています。その後、外部の専門家がOpenAI社内に常駐して点検した結果も公表されました（[OpenAI社内のAIの作業、最大4分の1が見張りの外に](/news/20261024-metr-redwood-openai-monitoring-audit/)）。
 
 ## 日本のビジネスへの影響
 
