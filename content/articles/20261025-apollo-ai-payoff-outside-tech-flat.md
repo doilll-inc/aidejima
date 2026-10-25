@@ -27,36 +27,35 @@
 
 ## 何が示されたか
 
-スロック氏は、Apolloが毎日出している経済の短信「The Daily Spark」で、5枚のグラフを示して論じています。
+分析は、Apolloが毎日出している経済の短信「The Daily Spark」に、5枚のグラフ付きで載りました。スロック氏の結論は、AIが経済全体で成功するかどうかを決めるのはIT大手7社ではなく残りの493社で、その493社にはまだ成果が見えない、というものです。
 
 :::quote https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector | Apollo「No Signs of AI Payoff Outside the Tech Sector」
 > Despite massive investments and widespread hype around artificial intelligence, the technology has delivered zero financial payoff to corporate America outside of tech.
 人工知能への巨額の投資と幅広い熱狂にもかかわらず、この技術はIT業界以外の米国企業に、お金の面での成果をまったくもたらしていない。
 :::
 
-グラフが示す内容は次のとおりです。
+ここでいうIT大手7社は、一般に「マグニフィセント・セブン」と呼ばれるApple・Microsoft・Alphabet（Google）・Amazon・NVIDIA・Meta・Teslaです。グラフを2つのグループで並べると、差ははっきりしています。
 
 | 見ているもの | IT大手7社 | 残りの493社 |
 |---|---|---|
 | 社員1人あたりの売上（物価の影響を除く） | 上昇 | 横ばい |
 | 利益率 | 上昇 | 横ばい |
 
-IT大手7社は、一般に「マグニフィセント・セブン」と呼ばれるApple・Microsoft・Alphabet（Google）・Amazon・NVIDIA・Meta・Teslaを指します。3枚目のグラフでは、米サンフランシスコ連銀が出している、景気の波をならした生産性の指標を使い、AIが米国全体の生産性の伸びを押し上げている兆しはまだないとしています。
+国全体で見ても同じです。米サンフランシスコ連銀が出す、景気の波をならした生産性の指標には、AIで伸びが加速した跡はまだ見られないとしています。
 
-スロック氏はさらに、一般の企業の姿勢が変わり始めていると指摘します。
+スロック氏がこの見方を示すのは初めてではありません。8月の短信でも、493社はAIに多額のお金を使っているのに利益率には表れず、恩恵はAIを「売る側」の利益率にしか出ていないと書いていました。
 
-:::quote https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector | Apollo「No Signs of AI Payoff Outside the Tech Sector」
-> VC-backed companies are spending more and more on tokens, but mainstream corporate America does not need the latest model and is unwilling to pay for it.
-ベンチャー投資を受けた企業はAIの利用料にますますお金を使っているが、米国の一般的な企業は最新のモデルを必要としておらず、その代金を払う気もない。
-:::
+## 一般企業はAI代を「コスト」と見始めた
 
-ここでいう「トークン」はAIの利用量の単位で、使った分だけ払う従量課金の料金のもとになります。スロック氏は、成果が利益に表れないため、一般の企業はAIの利用料を「成長の源」ではなく「利益率を圧迫するコスト」と見始めていると書いています。AIの利用がごく一部の企業に集中している限り、経済全体への効果は限られるという見方です。
+今回の短信で新しく踏み込んだのは、AIの利用料に対する企業の見方です。AIの利用量は「トークン」という単位で数え、使った分だけ払う従量課金が一般的です。スロック氏によると、ベンチャー投資を受けた新興企業はこの利用料をどんどん増やしている一方、一般の大企業は最新で高価なモデルを必要とせず、その代金を払うつもりもないといいます。
+
+利益に表れない以上、一般の企業はAIの利用料を伸びの源ではなく、利益率を削る経費として扱い始めている、というのが氏の見立てです。AIを本格的に使うのが経済のごく一部にとどまる間は、マクロ経済への効果も小さいままだとしています。
 
 ## 「計算は得意でも、仕事は判断」
 
-スロック氏が今後の焦点として挙げるのは、AIの値段がどんどん下がっても、一般の企業がそれを売上や利益の伸びに変えられるかどうかです。氏はこれを「思ったより難しいかもしれない」としています。AIは優れた計算機かもしれないが、ビジネスで求められる知性の多くは判断であり、その判断は状況に左右され、聞く相手（人でもAIでも）によって答えが変わる、という理由です。責任・信頼・社風・暗黙のルール・倫理的な兼ね合いといった、評判を左右し、最終的に売上と利益を決めるものを、AIは理解していないとも書いています。
+では、AIの値段が下がり続ければ一般企業も成果を出せるのか。スロック氏はこれに慎重で、「思ったより難しいかもしれない」と見ています。
 
-結論は、AIの成否を決めるのはIT大手7社ではなく残りの493社で、今のところIT業界の外で売上の伸びや利益率が良くなっている証拠はない、というものです。スロック氏は8月の短信でも、493社はAIに多額のお金を使っているのに利益率には表れておらず、AI投資の恩恵は「売る側」の利益率にしか出ていないと書いていました。
+理由として挙げるのは、ビジネスで求められる力の多くが計算ではなく判断だという点です。判断は状況しだいで、誰に聞くかで答えが変わります。さらに、責任の所在や信頼、社風、明文化されていない決まり、倫理面の兼ね合いといった、会社の評判と最終的な売上・利益を左右する要素を、AIはまだ理解していないと氏は書いています。
 
 {{card:https://www.apollo.com/institutional/insights-news/insights/daily-spark/the-buyers-of-ai-are-still-waiting-for-the-payoff|The Buyers of AI Are Still Waiting for the Payoff|Apollo}}
 
