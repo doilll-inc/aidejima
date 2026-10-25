@@ -359,6 +359,7 @@
   },
   "tag_slugs": {
     "エージェント": "agents",
+    "業務自動化": "workflow-automation",
     "開発者": "developers",
     "資金調達": "funding",
     "判断モデル": "decision-models",
