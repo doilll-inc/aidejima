@@ -3,7 +3,7 @@
   "title": "上場目論見書を各社が報道、Claudeの開発元Anthropicは売上12倍も計算資源に5180億ドルの約束",
   "description": "非公開で提出されたAnthropicの上場目論見書の内容をロイターやFTが報じた。2025年の売上高は約46億ドルと前年の約12倍、最終赤字は約420億ドル。今後約10年で5180億ドル超の計算資源を約束し、AIの存亡リスクも明記した。",
   "date": "2026-09-30T20:49:00+09:00",
-  "updated": "2026-10-21T17:50:00+09:00",
+  "updated": "2026-10-27T00:50:00+09:00",
   "category": "business",
   "tags": ["Anthropic", "Claude", "IPO", "安全性"],
   "summary": [
@@ -12,6 +12,7 @@
     "約80ページのリスク要因でAIの存亡リスクを明記、創業者7人が議決権の50.1%を握る設計"
   ],
   "sources": [
+    {"title": "Form S-1 Registration Statement, Anthropic, PBC", "publisher": "米SEC EDGAR", "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm", "kind": "公式ドキュメント"},
     {"title": "Anthropic confidentially submits draft S-1 to the SEC", "publisher": "Anthropic", "url": "https://www.anthropic.com/news/confidential-draft-s1-sec"},
     {"title": "Anthropic の投稿（S-1草案の非公開提出）", "publisher": "X @AnthropicAI", "url": "https://x.com/AnthropicAI/status/2061478052257841495", "kind": "X投稿"},
     {"title": "Anthropic's $518 billion AI buildout hinges largely on deals that cannot be canceled, filing shows", "publisher": "Reuters（93.3 The Drive掲載）", "url": "https://www.933thedrive.com/2026/09/29/anthropics-518-billion-ai-buildout-hinges-largely-on-deals-that-cannot-be-canceled-filing-shows/"},
@@ -29,7 +30,9 @@
     {"title": "Anthropic posts $80bn loss in first half of 2026: WSJ", "publisher": "Al Jazeera", "url": "https://www.aljazeera.com/news/2026/10/21/anthropic-posts-80bn-loss-in-first-half-of-2026-wsj", "kind": "報道"},
     {"title": "Anthropic posts $80.7 billion first-half loss, largely from accounting charges: Report", "publisher": "National Herald", "url": "https://www.nationalheraldindia.com/business/anthropic-posts-807-billion-first-half-loss-largely-from-accounting-charges-report", "kind": "報道"},
     {"title": "Anthropic Lost Over $80 Billion in First Half of Year Amid Soaring Revenue", "publisher": "The AI Innovator", "url": "https://theaiinnovator.com/anthropic-ipo-filing-80-billion-loss-revenue-growth/", "kind": "報道"},
-    {"title": "Anthropic's Rapid But Slowing Growth Could Weigh on IPO Valuation", "publisher": "The Information", "url": "https://www.theinformation.com/articles/anthropics-rapid-slowing-growth-weigh-ipo-valuation", "kind": "報道"}
+    {"title": "Anthropic's Rapid But Slowing Growth Could Weigh on IPO Valuation", "publisher": "The Information", "url": "https://www.theinformation.com/articles/anthropics-rapid-slowing-growth-weigh-ipo-valuation", "kind": "報道"},
+    {"title": "Anthropic officially files for its public debut", "publisher": "TechCrunch", "url": "https://techcrunch.com/2026/10/26/anthropic-officially-files-for-its-public-debut/", "kind": "報道"},
+    {"title": "Anthropic's IPO filing lays out a plan to 'revolutionize every area of human endeavor' with AI", "publisher": "The Verge", "url": "https://www.theverge.com/ai-artificial-intelligence/1018476/anthropic-ipo-details-s1-filed-sec", "kind": "報道"}
   ],
   "thumb_style": "photo",
   "thumb_prompt": "A thick bound financial document on a boardroom table with a stock ticker board glowing in the background and a rising arrow of light.",
@@ -127,6 +130,33 @@ Anthropicが上場に向けた投資家向けの説明会で、2026年7〜9月�
 赤字の9割近くは、資金集めのために発行した転換社債など（あとで株に替えられる借金）の評価額の変動を、会計上の費用として計上したものと報じられています。日々の事業で現金が出ていったわけではなく、9月に報じられた2025年の赤字約420億ドルと同じ構造です。一方、売上高は前年同期の約15倍に伸び、上の追記にある7〜9月期の168億ドルと合わせると、2026年は9か月で約330億ドルに達する計算になります。
 
 ほかにも、売上の約5分の1が2社の顧客に集中していること、交渉中の契約を含めて今後数年で最大7500億ドルを計算資源に使う可能性を示したことが報じられました。9月の報道で明らかになった約5180億ドルの約束をさらに上回る規模です。上場は11月を目指していると伝えられています。
+
+## 追記（10月27日）
+
+Anthropicは現地時間10月26日、上場目論見書（S-1）を米証券取引委員会（SEC）の公開データベースEDGARに掲載しました。これまで報道でしか伝わっていなかった数字を、会社自身の書類で確かめられるようになりました。株は米ナスダックに「ANT」の銘柄コードで上場する予定です。1株あたりの想定価格や調達額は、まだ空欄のままです。
+
+AIデジマ編集部がS-1の本文で確かめた主な数字は次のとおりです。
+
+| 項目 | S-1の記載 |
+|---|---|
+| 売上高 | 2023年4100万ドル、2024年3億8600万ドル、2025年約46億ドル |
+| 2026年1〜6月期の売上高 | 約163億ドル（前年同期の約11.6億ドルから約14倍） |
+| 営業損益 | 2025年は約81億ドルの赤字、2026年1〜6月期は約6.9億ドルの赤字に縮小 |
+| 最終損益 | 2025年は420億ドルの赤字、2026年1〜6月期は807億ドルの赤字（大半は転換社債などの評価の変動） |
+| 大口の顧客（9月末） | 年10万ドル以上の支払いが1万1900社超、100万ドル以上が1900社超、1000万ドル以上が約250社 |
+| 顧客の集中 | 1社で売上の10%を超える顧客はなく、上位5社で2026年1〜9月の売上の約25% |
+| 従業員 | 約5300人（9月末） |
+
+これまでの追記で紹介した報道の数字は、売上高・最終赤字ともS-1の記載とほぼ一致しました。一方で「売上の約5分の1が2社に集中」という報道に対し、S-1は「1社で10%を超える顧客はいない」としています。2025年の費用には、著作者による海賊版書籍をめぐる訴訟（Bartz事件）の和解金15億ドルも計上されていました。
+
+日本の読者に関係が深いのは、株の売り出しに日本が含まれている点です。日本で株を買える形の募集を予定していますが、日本の証券取引所に上場する予定はないとしています。引受の証券会社には、ゴールドマン・サックスやモルガン・スタンレーと並んで、みずほと三菱UFJ（MUFG）の名前があります。
+
+:::quote https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm | Anthropic, PBC「Form S-1 Registration Statement」（米SEC EDGAR）
+> This offering includes public offerings in Australia, Canada, certain member states of the European Economic Area, Japan, Switzerland, and the United Kingdom.
+この売り出しには、オーストラリア、カナダ、欧州経済領域の一部加盟国、日本、スイス、英国での公募が含まれます。
+:::
+
+会社の仕組みは、9月の報道どおりでした。CEOのダリオ・アモデイ氏ら共同創業者7人がつくる組織が議決権の50.1%を持ち、AIの安全の専門家などでつくる「長期利益信託（LTBT）」が取締役の過半数を選んだり外したりできます。S-1は売上の伸びについて「同じような伸び率が続くとは考えておらず、伸び続ける保証もない」とも書いています。米TechCrunchや米The Vergeも同日、S-1の公開を報じました。
 
 ## 日本のビジネスへの影響
 
