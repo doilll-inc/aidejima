@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-20",
+  "updated": "2026-10-27",
   "last_reviewed": "2026-10-14",
   "title": "動画生成AIのおすすめと料金比較",
   "short_name": "動画生成",
@@ -1103,8 +1103,8 @@
       "model_slugs": [],
       "latest": {
         "name": "Gen-4.5",
-        "source_url": "https://runwayml.com/pricing",
-        "checked": "2026-10-01"
+        "source_url": "https://runway.com/pricing",
+        "checked": "2026-10-27"
       },
       "access": [],
       "strengths": [
@@ -1113,7 +1113,55 @@
       "weaknesses": [],
       "editorial_take": "",
       "checked": "2026-10-01",
-      "retired_note": ""
+      "retired_note": "",
+      "pricing": {
+        "free": {
+          "available": true,
+          "detail": "1回きりの125クレジット（期限なし）。一部のモデルだけ試せる",
+          "source_url": "https://runway.com/pricing",
+          "checked": "2026-10-27"
+        },
+        "plans": [
+          {
+            "name": "Standard",
+            "amount": 15,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$15/month（Billed annually: $12/month）",
+            "detail": "625クレジット/月（Gen-4.5で約52秒）・透かしなし",
+            "source_url": "https://runway.com/pricing",
+            "checked": "2026-10-27"
+          },
+          {
+            "name": "Pro",
+            "amount": 35,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$35/month（Billed annually: $28/month）",
+            "detail": "2,250クレジット/月（Gen-4.5で約187秒）",
+            "source_url": "https://runway.com/pricing",
+            "checked": "2026-10-27"
+          },
+          {
+            "name": "Max",
+            "amount": 95,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$95/month（Billed annually: $76/month）",
+            "detail": "9,500クレジット/月（Gen-4.5で約791秒）・1か月繰り越し",
+            "source_url": "https://runway.com/pricing",
+            "checked": "2026-10-27"
+          }
+        ],
+        "jpy_official": false,
+        "note": "Gen-4.5は1秒12クレジット。追加クレジットは1,000から購入でき期限なし"
+      },
+      "commercial_use": {
+        "value": "yes",
+        "note": "利用規約4.4で、規約を守る限り生成物の商用利用を制限しないと明記。入力と生成物はRunwayのAI学習に使われうる",
+        "source_url": "https://runway.com/terms-of-use",
+        "checked": "2026-10-27"
+      }
     },
     {
       "id": "luma-ray",
@@ -1452,6 +1500,12 @@
       "date": "2026-10-20",
       "text": "Kling 4.0が10月15日に一般公開（9月28日は先行版）。最長30秒の動画を1回で作成、画像10枚で場面を指定できる",
       "article": "/news/20261020-kling-4-0-30-second-video/",
+      "by": "writer"
+    },
+    {
+      "date": "2026-10-27",
+      "text": "Runwayの料金を追加（無料は1回きりの125クレジット、有料は月15ドルのStandardから）。生成物の商用利用は規約で制限なし",
+      "article": "/news/20261027-runway-how-to-use-pricing/",
       "by": "writer"
     }
   ],
