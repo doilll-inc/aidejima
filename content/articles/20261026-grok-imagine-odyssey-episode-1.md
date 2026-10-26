@@ -8,7 +8,7 @@
   "summary": [
     "Grokの動画生成機能Grok Imagineの公式アカウントが10月23日、AIで作った「オデュッセイア」シリーズの第1話（約7分）をXで公開した",
     "イーロン・マスク氏は7月に「年内にGrok Imagineで長編映画を作る」と投稿していたが、出てきたのは連続ものの1話目で、全何話かは明かされていない",
-    "米TechCrunchは「映像は思ったより見られるが、物語に引き込む力がない」と評価。AI動画で1本の作品を作る手間と限界が見える例になった"
+    "米TechCrunchは、映像の出来は予想を上回る一方で物語としての魅力に欠けると評価した。AI動画で1本の作品を作る手間と限界が見える例になった"
   ],
   "sources": [
     {"title": "Grok Imagine の投稿（Odyssey Episode 1）", "publisher": "X @imagine", "url": "https://x.com/imagine/status/2113712964419063911", "kind": "X投稿"},
