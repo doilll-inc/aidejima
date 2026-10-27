@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-19",
+  "updated": "2026-10-27",
   "last_reviewed": "2026-10-16",
   "title": "AI API（LLM）の料金比較と選び方",
   "short_name": "AI API",
@@ -214,6 +214,7 @@
       ],
       "model_slugs": [
         "gpt-6-1-sol",
+        "gpt-6-1-terra",
         "gpt-6-astra",
         "gpt-6-luna"
       ],
@@ -1339,6 +1340,12 @@
       "date": "2026-10-19",
       "text": "DeepSeek API の最新モデルを、料金据え置きの更新版 DeepSeek-V4.1-Flash-1017（10月17日公開）に更新",
       "article": "/news/20261019-deepseek-v4-1-flash-1017-update/",
+      "by": "writer"
+    },
+    {
+      "date": "2026-10-27",
+      "text": "OpenAI の中位モデル GPT-6.1 Terra（入力100万トークンあたり1ドル・出力5ドル。GPT-5.6 Terra の半額）を OpenAI API の行に追加",
+      "article": "/news/20261027-openai-gpt-6-1-terra/",
       "by": "writer"
     }
   ],

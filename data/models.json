@@ -2,6 +2,25 @@
   "_comment": "AIモデル図鑑（/models/）の元データ。記事で公式の料金・仕様を確認したときに記者が追加・更新する（公式ページで確認できた値だけ。不明な項目は入れない）。料金は100万トークンあたりの米ドル。context/max_output はトークン数。released は提供開始日（現地）。article は根拠になる当サイトの記事パス。status=current / deprecated / preview",
   "models": [
     {
+      "slug": "gpt-6-1-terra",
+      "name": "GPT-6.1 Terra",
+      "vendor": "OpenAI",
+      "tier": "中位",
+      "released": "2026-10-26",
+      "input_per_m": 1.0,
+      "cached_input_per_m": 0.05,
+      "output_per_m": 5.0,
+      "context": 1050000,
+      "max_output": 128000,
+      "knowledge_cutoff": "2026-06-01",
+      "api_id": "gpt-6.1-terra",
+      "status": "current",
+      "note": "GPT-5.6 Terraの後継。画面の読み取りとパソコン操作が得意な実務向けモデルで、APIの標準料金はGPT-5.6 Terraの半分。入力は最大92.2万トークン。ChatGPTではPlus・Pro・Enterprise・EduのChatGPT WorkとCodexで提供",
+      "official_url": "https://developers.openai.com/api/docs/models/gpt-6.1-terra",
+      "article": "/news/20261027-openai-gpt-6-1-terra/",
+      "checked": "2026-10-27"
+    },
+    {
       "slug": "gpt-6-1-sol",
       "name": "GPT-6.1 Sol",
       "vendor": "OpenAI",
