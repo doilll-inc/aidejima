@@ -26,27 +26,27 @@
 ---
 Appleは現地時間10月26日、iPhoneなどの基本ソフトの更新「iOS 27.2」に合わせて、作り直した新しいSiri「Siri AI」を日本語でも使えるようにしました。9月の公開時は英語だけでしたが、今回フランス語・日本語・韓国語・ポルトガル語・スペイン語の5言語が加わりました。まだベータ版（試験提供）で、iPhone 15 Pro以降などApple Intelligenceに対応した機種が対象です。
 
-## 何が発表されたか
+## 何ができるようになるか
 
-Siri AIとは、AppleのAI機能「Apple Intelligence」を土台に一から作り直したSiriです。これまでのSiriが決まった命令に答える仕組みだったのに対し、持ち主のメール・メッセージ・写真などの中身をふまえて答え、アプリの操作まで代わりに行います。
+Siri AIとは、AppleのAI機能「Apple Intelligence」を土台に一から作り直したSiriです。これまでのSiriは、タイマーや天気のような決まった命令に答えるのが中心でした。新しいSiriは、持ち主の端末にある情報や今の画面をふまえて答え、アプリの操作まで引き受けます。
+
+日々の使い方に置き換えると、次のような頼み方ができます。
+
+- **画面を見ながら聞く**: 開いているWebページやメッセージについて「これは何？」と尋ねたり、その内容をもとに次の操作を頼んだりする
+- **端末の中から探す**: 「先週届いたメールの待ち合わせ場所」のように、メール・メッセージ・写真などにまたがって探させる
+- **作業を任せる**: メールを書かせる、写真を直して誰かに送る、といったアプリをまたぐ作業を代わりにやらせる
+- **調べものをする**: 端末の外の話題でも、最新の情報を調べて答える
+
+作業を任せる例として、Appleは発表文で次の2つを挙げています。
 
 :::quote https://www.apple.com/newsroom/2026/10/siri-ai-is-available-in-more-languages-starting-today/ | Apple Newsroom「Siri AI is available in more languages starting today」
 > With even more systemwide app actions, Siri AI can help users with tasks such as drafting an email from scratch or editing and sharing a set of photos.
 アプリをまたいだ操作が増えたことで、Siri AIはメールを一から下書きしたり、複数の写真を編集して共有したりといった作業を手伝えます。
 :::
 
-Appleが挙げる主な機能は4つです。
-
-- **自分の情報から探す**: メッセージ、メール、写真などから、その場で必要な情報を見つける
-- **アプリを操作する**: メールの下書き、写真の編集や共有などを頼める
-- **画面を読む**: 今見ている画面の内容について質問したり、それをもとに操作させたりできる
-- **一般的な知識で答える**: ほぼどんな話題でも最新の情報を調べて答える
-
-更新は同じ日にiPad、Mac、Apple Watch、Apple Vision Pro向けにも配られ、それぞれでSiri AIを使えます。年内には中国語（繁体字）、ノルウェー語、トルコ語、ベトナム語にも広げる予定です。
-
 ## 使える機種と条件
 
-Appleのサポートページ（10月27日時点）によると、Apple Intelligenceが使えるのは、iPhoneではiPhone 16シリーズ以降、iPhone 15 Pro・15 Pro Max、iPhone Air、iPhone Duoです。iPadとMacはM1以降のチップを積んだ機種などが対象で、端末の空き容量も最大14GB必要です。iPhoneの言語とSiriの言語の両方を日本語にしておく必要があります。
+今回の更新はiPhoneだけでなく、iPad、Mac、Apple Watch、Apple Vision Pro向けにも同じ日に配られ、どれでもSiri AIを使えます。Appleのサポートページ（10月27日時点）によると、Apple Intelligenceが使えるのは、iPhoneではiPhone 16シリーズ以降、iPhone 15 Pro・15 Pro Max、iPhone Air、iPhone Duoです。iPadとMacはM1以降のチップを積んだ機種などが対象で、端末の空き容量も最大14GB必要です。iPhoneの言語とSiriの言語の両方を日本語にしておく必要があります。
 
 {{card:https://support.apple.com/en-us/121115|How to get Apple Intelligence（対応機種と使い方）|Apple サポート}}
 
@@ -61,7 +61,7 @@ Appleのサポートページ（10月27日時点）によると、Apple Intellig
 
 ## 背景と論点
 
-Siri AIは9月のiOS 27で、英語だけのベータ版として始まりました。日本語への対応はそれから約1か月半後で、英語以外の言語へまとめて広げるのは今回が初めてだと報じられています。
+Siri AIは9月のiOS 27で、英語だけのベータ版として始まりました。日本語への対応はそれから約1か月半後で、英語以外の言語へまとめて広げるのは今回が初めてだと報じられています。Appleは年内に、中国語（繁体字）、ノルウェー語、トルコ語、ベトナム語も加える予定です。
 
 Siri AIは端末とSiriの言語が対応言語であることが条件のため、これまで日本語の設定のままでは使えませんでした。日本語に対応したことで、ChatGPTやGeminiのアプリを開かなくても、iPhoneに標準で入っているSiriに話しかけるだけでメールの下書きや写真探しを頼めるようになります。
 
