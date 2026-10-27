@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-17",
+  "updated": "2026-10-27",
   "last_reviewed": "2026-10-17",
   "title": "チャットAIのおすすめと料金比較（ChatGPT・Claude・Gemini など）",
   "short_name": "チャットAI",
@@ -1014,6 +1014,24 @@
       "note": "Meta 系ドメインは社内ルールで開かないため未調査（名前のみ）",
       "checked": "",
       "retired_note": ""
+    },
+    {
+      "id": "siri-ai",
+      "name": "Siri AI",
+      "vendor": "Apple",
+      "url": "https://www.apple.com/newsroom/2026/10/siri-ai-is-available-in-more-languages-starting-today/",
+      "status": "watch",
+      "latest": {
+        "name": "Siri AI（ベータ。iOS 27.2 で日本語に対応）",
+        "released": "2026-10-26",
+        "source_url": "https://www.apple.com/newsroom/2026/10/siri-ai-is-available-in-more-languages-starting-today/",
+        "checked": "2026-10-27"
+      },
+      "tags": [
+        "Apple",
+        "Siri AI",
+        "Apple Intelligence"
+      ]
     }
   ],
   "criteria": [
@@ -1193,6 +1211,12 @@
       "date": "2026-10-17",
       "text": "Mistral Vibe の Pro に毎月15ドル分の API クレジットが付くことを追記。Claude の Enterprise は20席からと追記",
       "by": "reviewer"
+    },
+    {
+      "date": "2026-10-27",
+      "text": "iOS 27.2 で日本語に対応した Apple の新しい Siri「Siri AI」（ベータ）を、様子見の候補に追加",
+      "article": "/news/20261027-apple-siri-ai-japanese-ios-27-2/",
+      "by": "writer"
     }
   ],
   "editor_note": "",
