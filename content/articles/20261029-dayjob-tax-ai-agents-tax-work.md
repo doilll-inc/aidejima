@@ -33,8 +33,8 @@ DAYJOB: Taxとは、税理士や税務の担当者が実際にこなしている
 課題は、大手会計事務所での経験を持つ税の専門家が実務の流れをもとに作り、3段階の専門家の点検を経ています。採点は厳しめで、計算・根拠・重要な論点・納品物について決められた基準の95%以上を満たした場合だけ「合格」になります。
 
 :::quote https://surgehq.ai/blog/dayjob-tax | Surge AI公式ブログ「DAYJOB: Tax — Benchmarking AI Agents on Professional Tax Work」
-> Success requires more than tax knowledge and accurate calculations.
-合格するには、税の知識と正確な計算だけでは足りません。
+> These assignments test professional judgment alongside tax knowledge, calculations, retrieval, and instruction following.
+これらの課題は、税の知識や計算、資料探し、指示どおりに進める力とあわせて、専門家としての判断力を試します。
 :::
 
 ## 結果
