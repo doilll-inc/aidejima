@@ -206,6 +206,21 @@
       "checked": "2026-10-16"
     },
     {
+      "slug": "gemini-4-carbon",
+      "name": "Gemini 4 Carbon",
+      "vendor": "Google",
+      "tier": "最上位",
+      "released": "2026-10-28",
+      "input_per_m": 2.0,
+      "cached_input_per_m": 0.1,
+      "output_per_m": 10.0,
+      "status": "preview",
+      "note": "導入価格。期間終了後は入力$4・出力$20。2026年10月28日時点ではFairwind Programのサイバー防御者のみに提供し、開発者・企業・一般向けの提供日は未発表",
+      "official_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "article": "/news/20261029-google-gemini-4-carbon/",
+      "checked": "2026-10-29"
+    },
+    {
       "slug": "gemini-4-argon",
       "name": "Gemini 4 Argon",
       "vendor": "Google",
