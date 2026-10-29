@@ -368,7 +368,9 @@
     "歴史": "history",
     "買収": "acquisition",
     "安全性": "safety",
-    "セキュリティ": "security", "暗号": "cryptography", "量子コンピューター": "quantum-computing",
+    "セキュリティ": "security",
+    "暗号": "cryptography",
+    "量子コンピューター": "quantum-computing",
     "プライバシー": "privacy",
     "詐欺": "scams",
     "家計簿": "budgeting",
@@ -482,6 +484,7 @@
     "決済": "payments",
     "破産": "bankruptcy",
     "AIコンパニオン": "ai-companion",
-    "暗号資産": "crypto"
+    "暗号資産": "crypto",
+    "税務": "tax"
   }
 }
