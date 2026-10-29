@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-27",
+  "updated": "2026-10-29",
   "last_reviewed": "2026-10-27",
   "title": "動画生成AIのおすすめと料金比較",
   "short_name": "動画生成",
@@ -894,10 +894,10 @@
         "checked": "2026-10-27"
       },
       "commercial_use": {
-        "value": "yes",
-        "note": "公式FAQで、HeyGenで作った動画は有料・オーガニックの広告に使えると明記。無料プランの動画は透かし入り",
-        "source_url": "https://www.heygen.com/tool/video-ad-creator",
-        "checked": "2026-10-27"
+        "value": "conditional",
+        "note": "有料（Creator・Pro・Business）で作った動画は権利が利用者にあり商用可。無料プランの動画は個人・非商用・社内の試用に限られ、販売・広告・クライアントワークには使えない（利用規約 第3条・第4条、2026年10月16日更新）",
+        "source_url": "https://www.heygen.com/terms",
+        "checked": "2026-10-29"
       },
       "data_policy": {
         "training_default": "opt_out_available",
@@ -1512,6 +1512,12 @@
       "date": "2026-10-27",
       "text": "Synthesiaの料金を更新（Starterは月$19に値下げ、初月割引あり）。MiniMaxの安価なAPIモデル（H3-Lite 1秒$0.04から）とDreaminaの初月キャンペーン価格を反映し、Artificial Analysisの順位を更新（MiniMax H3が3位、HeyGen Video 1が4位）",
       "by": "reviewer"
+    },
+    {
+      "date": "2026-10-29",
+      "text": "HeyGenの商用利用を「有料プランのみ」に修正（規約で無料版の動画は広告や納品に使えないと明記）",
+      "article": "/news/20261029-heygen-how-to-use-pricing/",
+      "by": "writer"
     }
   ],
   "editor_note": "",
