@@ -45,6 +45,10 @@ CATS = {c["slug"]: c for c in TAXO["categories"]}
 BASE_PATH = SITE["base_path"].rstrip("/")
 BASE_URL = SITE["base_url"].rstrip("/")
 TAG_INDEX_MIN = SITE.get("tag_index_min", 3)  # タグページをこの本数未満なら noindex（薄いページを検索に出さない）
+# 検索に載せないページ（noindex,follow・サイトマップから外す）。一覧は scripts/pick_noindex.py が作る
+# （2026-10-23 にサイトごと Google の登録から外れたため、読まれた実績のないページを減らす）
+NOINDEX_FILE = ROOT / "data" / "noindex.json"
+NOINDEX = set(json.loads(NOINDEX_FILE.read_text(encoding="utf-8"))["paths"]) if NOINDEX_FILE.exists() else set()
 NEW_HOURS = SITE.get("new_badge_hours", 12)
 
 # 情報源の種別（記事ページで「公式発表／X投稿／論文／報道」と見せる）。sources[].kind で明示しなければドメインで判定
@@ -1026,6 +1030,7 @@ def build(now: datetime | None = None) -> None:
                 ld=article_ld(a),
                 canonical=a["path"],
                 og_image=f"/og/{a['slug']}.jpg",
+                noindex=a["path"] in NOINDEX,
             ),
         )
 
@@ -1058,7 +1063,7 @@ def build(now: datetime | None = None) -> None:
                     base=base,
                     canonical=path,
                     ld=[breadcrumb_ld(crumbs)] + ([itemlist_ld(chunk)] if chunk else []),
-                    noindex=noindex_all or not chunk,
+                    noindex=noindex_all or not chunk or base in NOINDEX,
                 ),
             )
 
@@ -1235,8 +1240,9 @@ def sitemap(arts: list[dict], by_cat: dict, by_tag: dict, by_month: dict, models
         urls.append((abs_url("/best/"), max(datetime.combine(g["modified"], datetime.min.time(), JST) for g in guides)))
     urls += [(abs_url(g["path"]), datetime.combine(g["modified"], datetime.min.time(), JST)) for g in guides if not g["noindex"]]
     urls += [(abs_url(p), None) for p in ("/about/", "/about/editor/", "/privacy/")]
+    skip = {abs_url(p) for p in NOINDEX}
     body = "".join(
-        f"<url><loc>{xml_escape(loc)}</loc>" + (f"<lastmod>{d.isoformat()}</lastmod>" if d else "") + "</url>" for loc, d in urls
+        f"<url><loc>{xml_escape(loc)}</loc>" + (f"<lastmod>{d.isoformat()}</lastmod>" if d else "") + "</url>" for loc, d in urls if loc not in skip
     )
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{body}</urlset>\n'
 
@@ -1247,7 +1253,7 @@ def news_sitemap(arts: list[dict], now: datetime) -> str:
     body = "".join(
         f"""<url><loc>{xml_escape(abs_url(a['path']))}</loc><news:news><news:publication><news:name>{xml_escape(SITE['site_name'])}</news:name><news:language>ja</news:language></news:publication><news:publication_date>{a['date'].isoformat()}</news:publication_date><news:title>{xml_escape(a['title'])}</news:title><news:keywords>{xml_escape(', '.join(a['tags']))}</news:keywords></news:news></url>"""
         for a in arts
-        if a["date"] >= cutoff
+        if a["date"] >= cutoff and a["path"] not in NOINDEX
     )
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">{body}</urlset>\n'
 

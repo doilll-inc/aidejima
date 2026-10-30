@@ -41,11 +41,14 @@ env:
   COLLECT_HOURS: ${{ inputs.hours || '24' }}
   MAX_PER_DAY: 30 # 1日の記事数の安全上限（4回×3本=12本が通常。手で書いた記事も数えるので余裕を持たせる）
   WRITER_MODEL: claude-opus-5-5 # 記事の執筆モデル（固定）
-  WANT_WRITE: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.write) }}
+  WANT_WRITE: ${{ (github.event_name == 'schedule' && vars.PAUSE_NEW != '1') || (github.event_name == 'workflow_dispatch' && inputs.write) }}
   HAS_CLAUDE: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' }}
 
 jobs:
   publish:
+    # 新しい記事を増やさない期間（repo の変数 PAUSE_NEW=1）は定時の回を飛ばし、push（ガイド点検・手直しのコミット）の公開だけ行う。
+    # 2026-10-22〜23 にサイトごと Google の登録から外れた（1日12本の量産と見られた見立て）ため 10-30 から。再開は `gh variable delete PAUSE_NEW -R doilll-inc/aidejima`
+    if: github.event_name != 'schedule' || vars.PAUSE_NEW != '1'
     runs-on: ubuntu-latest
     timeout-minutes: 50
     environment:
