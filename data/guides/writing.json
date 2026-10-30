@@ -3,8 +3,8 @@
   "status": "published",
   "priority": 2,
   "created": "2026-09-30",
-  "updated": "2026-10-15",
-  "last_reviewed": "2026-10-15",
+  "updated": "2026-10-30",
+  "last_reviewed": "2026-10-30",
   "title": "文章作成AIのおすすめと料金比較（ビジネス文書・記事・メール）",
   "short_name": "文章作成",
   "seo": {
@@ -342,7 +342,7 @@
         "name": "Claude Opus 5.5",
         "released": "2026-09-22",
         "source_url": "https://www.anthropic.com/claude-opus-5-5",
-        "checked": "2026-10-15"
+        "checked": "2026-10-30"
       },
       "access": [
         "web",
@@ -364,7 +364,7 @@
           "available": true,
           "detail": "Web・デスクトップ・モバイルでチャット、ファイル作成、メモリ、Claude Design・Slides・Docs。モデルは Sonnet と Haiku",
           "source_url": "https://claude.com/pricing",
-          "checked": "2026-10-15"
+          "checked": "2026-10-30"
         },
         "plans": [
           {
@@ -375,7 +375,7 @@
             "as_shown": "$17 Per month with annual subscription discount ($200 billed up front). $20 if billed monthly.",
             "detail": "Opus・Sonnet・Haiku、Claude in Chrome・Microsoft 365、Claude Code、Projects、Claude Dashboards（ベータ）。Fable は利用クレジットで",
             "source_url": "https://claude.com/pricing",
-            "checked": "2026-10-15"
+            "checked": "2026-10-30"
           },
           {
             "name": "Max",
@@ -385,7 +385,7 @@
             "as_shown": "From $100 Per month",
             "detail": "Pro の5倍か20倍の利用量",
             "source_url": "https://claude.com/pricing",
-            "checked": "2026-10-15"
+            "checked": "2026-10-30"
           },
           {
             "name": "Team（標準シート）",
@@ -395,7 +395,7 @@
             "as_shown": "$20 Per seat / month if billed annually. $25 if billed monthly.",
             "detail": "2〜150人。既定でコンテンツを学習に使わない。プレミアムシートは $100（年払い）・$125（月払い）",
             "source_url": "https://claude.com/pricing",
-            "checked": "2026-10-15"
+            "checked": "2026-10-30"
           }
         ],
         "jpy_official": false,
@@ -406,27 +406,27 @@
         "output": "yes",
         "note": "ヘルプの対応言語に日本語。表示言語を変えても、会話は使った言語で返す",
         "source_url": "https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language",
-        "checked": "2026-10-15"
+        "checked": "2026-10-30"
       },
       "commercial_use": {
         "value": "yes",
         "note": "消費者向け規約で出力の権利を利用者に譲渡（4条）",
         "source_url": "https://www.anthropic.com/legal/consumer-terms",
-        "checked": "2026-10-15"
+        "checked": "2026-10-30"
       },
       "data_policy": {
         "training_default": "opt_out_available",
         "note": "Free・Pro・Max は設定で学習利用をオフにできる（Opt-out）。Team・Enterprise は既定で学習に使わない",
         "source_url": "https://claude.com/pricing",
-        "checked": "2026-10-15"
+        "checked": "2026-10-30"
       },
       "availability_japan": {
         "value": "yes",
         "note": "公式の提供国・地域一覧に日本",
         "source_url": "https://www.anthropic.com/supported-countries",
-        "checked": "2026-10-15"
+        "checked": "2026-10-30"
       },
-      "checked": "2026-10-15",
+      "checked": "2026-10-30",
       "retired_note": ""
     },
     {
@@ -449,7 +449,7 @@
         "name": "Gemini 4 Argon",
         "released": "2026-10-13",
         "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
-        "checked": "2026-10-15"
+        "checked": "2026-10-30"
       },
       "access": [
         "web",
@@ -471,7 +471,7 @@
           "available": true,
           "detail": "Flash-Lite モデル、Canvas、Gem、Deep Research、Gemini Live、画像の生成と編集",
           "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-          "checked": "2026-10-15"
+          "checked": "2026-10-30"
         },
         "plans": [
           {
@@ -482,7 +482,7 @@
             "as_shown": "￥725 JPY / 月",
             "detail": "Flash モデル、無料版の2倍の使用量上限、Gemini in Gmail、400GB",
             "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-            "checked": "2026-10-15"
+            "checked": "2026-10-30"
           },
           {
             "name": "Google AI Pro",
@@ -492,7 +492,7 @@
             "as_shown": "￥2,900 JPY / 月",
             "detail": "Gemini 4 Argon・Pro・Flash モデル、無料版の4倍の使用量上限、Gemini in Gmail・Google ドキュメント、5TB",
             "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-            "checked": "2026-10-15"
+            "checked": "2026-10-30"
           },
           {
             "name": "Google Workspace Business Standard",
@@ -513,25 +513,25 @@
         "output": "yes",
         "note": "Gemini ウェブアプリの対応言語一覧に日本語",
         "source_url": "https://support.google.com/gemini/answer/13575153?hl=en",
-        "checked": "2026-10-15"
+        "checked": "2026-10-30"
       },
       "commercial_use": {
         "value": "yes",
         "note": "Google 利用規約で、生成されたオリジナルのコンテンツの所有権を Google は主張しない。生成AI禁止使用ポリシーの遵守が条件",
         "source_url": "https://policies.google.com/terms?hl=en",
-        "checked": "2026-10-15"
+        "checked": "2026-10-30"
       },
       "data_policy": {
         "training_default": "opt_out_available",
         "note": "個人の Google アカウントでは「アクティビティを保持」がオンのとき、会話がサービス改善（生成AIモデルの学習を含む）に使われ、一部は人が確認する。オフにすると今後の会話は使われない。仕事用・学校用アカウントは別のデータ取扱い条件（Google Workspace は許可なく学習に使わない）",
         "source_url": "https://support.google.com/gemini/answer/13594961?hl=en",
-        "checked": "2026-10-15"
+        "checked": "2026-10-30"
       },
       "availability_japan": {
         "value": "yes",
         "note": "Gemini ウェブアプリの対応国一覧に日本",
         "source_url": "https://support.google.com/gemini/answer/13575153?hl=en",
-        "checked": "2026-10-15"
+        "checked": "2026-10-30"
       },
       "checked": "2026-10-01",
       "retired_note": ""
@@ -569,7 +569,7 @@
           "available": true,
           "detail": "機能と使用量が限定された Copilot を無料で提供",
           "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing/individuals",
-          "checked": "2026-10-15"
+          "checked": "2026-10-30"
         },
         "plans": [
           {
@@ -580,7 +580,7 @@
             "as_shown": "¥2,130 /月",
             "detail": "1人用。Copilot 搭載の Word・Excel・PowerPoint・Outlook。年払いは ¥21,300/年",
             "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing/individuals",
-            "checked": "2026-10-15"
+            "checked": "2026-10-30"
           },
           {
             "name": "Microsoft 365 Premium",
@@ -590,7 +590,7 @@
             "as_shown": "¥3,200 /月",
             "detail": "より高い AI 使用上限、リサーチや分析を代行するエージェント機能",
             "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing/individuals",
-            "checked": "2026-10-15"
+            "checked": "2026-10-30"
           },
           {
             "name": "Microsoft 365 Pro",
@@ -600,7 +600,7 @@
             "as_shown": "¥16,000/月",
             "detail": "最も高い利用上限。月額請求のみ",
             "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing/individuals",
-            "checked": "2026-10-15"
+            "checked": "2026-10-30"
           },
           {
             "name": "Microsoft 365 Business Standard と Microsoft 365 Copilot Business",
@@ -610,7 +610,7 @@
             "as_shown": "¥3,523 ユーザー/月相当、年払い（価格には消費税は含まれていません）",
             "detail": "Word・Excel・PowerPoint・Outlook・Teams のアプリ内の Copilot。月払いは ¥4,228",
             "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing",
-            "checked": "2026-10-15"
+            "checked": "2026-10-30"
           },
           {
             "name": "Microsoft 365 Copilot Business（アドオン）",
@@ -620,7 +620,7 @@
             "as_shown": "¥3,148 ユーザー/月相当、年払い（2026年12月31日まで初年度 ¥2,698。税抜）",
             "detail": "既存の Microsoft 365 法人プランに追加",
             "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing",
-            "checked": "2026-10-15"
+            "checked": "2026-10-30"
           }
         ],
         "jpy_official": true,
@@ -631,27 +631,27 @@
         "output": "yes",
         "note": "プロンプトと応答の対応言語一覧に日本語。アプリ画面の言語の記載はこのページになし",
         "source_url": "https://support.microsoft.com/en-au/microsoft-365-copilot/supported-languages-for-microsoft-365-copilot",
-        "checked": "2026-10-15"
+        "checked": "2026-10-30"
       },
       "commercial_use": {
         "value": "conditional",
         "note": "個人向け Copilot 利用規約は「自分の個人的な利用に限る」。業務では一般法人向けプラン（Microsoft は出力の所有権を主張しないと Microsoft Learn に記載）を使う",
         "source_url": "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals/termsofuse",
-        "checked": "2026-10-15"
+        "checked": "2026-10-30"
       },
       "data_policy": {
         "training_default": "not_used",
         "note": "法人向け：Microsoft Graph 経由でアクセスされるプロンプト・応答・データは基礎 LLM のトレーニングに使用しない（個人向けアプリはチャットAIガイド参照）",
         "source_url": "https://learn.microsoft.com/ja-jp/copilot/microsoft-365/microsoft-365-copilot-privacy",
-        "checked": "2026-10-15"
+        "checked": "2026-10-30"
       },
       "availability_japan": {
         "value": "yes",
         "note": "日本向けに円建ての個人・法人プランを表示",
         "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing",
-        "checked": "2026-10-15"
+        "checked": "2026-10-30"
       },
-      "checked": "2026-10-15",
+      "checked": "2026-10-30",
       "retired_note": ""
     },
     {
@@ -686,7 +686,7 @@
           "available": true,
           "detail": "Notion AI の体験版（限られた数の無料のAI回答）",
           "source_url": "https://www.notion.com/ja/pricing",
-          "checked": "2026-10-15"
+          "checked": "2026-10-30"
         },
         "plans": [
           {
@@ -716,30 +716,39 @@
             "as_shown": "カスタム料金（要問い合わせ）",
             "detail": "LLM プロバイダーによるゼロデータ保持、SCIM、監査ログ",
             "source_url": "https://www.notion.com/ja/pricing",
-            "checked": "2026-10-15"
+            "checked": "2026-10-30"
           }
         ],
         "jpy_official": true,
-        "note": "料金ページに「日本の消費税（該当する場合）」と表記。"
+        "note": "料金ページに「日本の消費税（該当する場合）」と表記。",
+        "usage": {
+          "unit": "1,000 Notion クレジット",
+          "amount": 10,
+          "currency": "USD",
+          "as_shown": "$10 per 1,000 credits.",
+          "detail": "ビジネス・エンタープライズのアドオン（カスタムエージェントなどに使う）。年次購入は $13。新規ワークスペースは2026年10月19日、既存ワークスペースは11月2日から新しいクレジット制",
+          "source_url": "https://www.notion.com/help/what-are-notion-credits",
+          "checked": "2026-10-30"
+        }
       },
       "japanese": {
         "ui": "yes",
         "output": "unknown",
         "note": "料金ページとヘルプは日本語。Notion AI が対応する言語の一覧は見つからず",
         "source_url": "https://www.notion.com/ja/help/notion-ai-faqs",
-        "checked": "2026-10-15"
+        "checked": "2026-10-30"
       },
       "commercial_use": {
         "value": "yes",
         "note": "Notion は入力と生成された出力の所有権を主張しない。Notion AI 補足規約で入力と出力は利用者の顧客データ。コンテンツ利用ポリシーが AI の生成物にも適用される",
         "source_url": "https://www.notion.com/help/notion-ai-security-practices",
-        "checked": "2026-10-15"
+        "checked": "2026-10-30"
       },
       "data_policy": {
         "training_default": "not_used",
         "note": "Notion と AI サブプロセッサーは既定でユーザーデータをモデルの学習に使わない。エンタープライズ以外は LLM プロバイダーが最大30日保持",
         "source_url": "https://www.notion.com/ja/help/notion-ai-security-practices",
-        "checked": "2026-10-15"
+        "checked": "2026-10-30"
       },
       "availability_japan": {
         "value": "yes",
@@ -871,7 +880,7 @@
           "available": true,
           "detail": "文章校正（1万文字まで/回）、生成AI校正（週間制限あり）、記事の執筆・共有",
           "source_url": "https://shodo.ink/pricing/",
-          "checked": "2026-10-15"
+          "checked": "2026-10-30"
         },
         "plans": [
           {
@@ -882,7 +891,7 @@
             "as_shown": "税込 1,000 円 / 月",
             "detail": "1回4万文字、Word アドイン、Docs アドオン、ブラウザ拡張、表記ゆれ・二重敬語の検知",
             "source_url": "https://shodo.ink/pricing/",
-            "checked": "2026-10-15"
+            "checked": "2026-10-30"
           },
           {
             "name": "マックス",
@@ -892,7 +901,7 @@
             "as_shown": "税込 5,000 円 / 月",
             "detail": "1回10万文字、生成AI校正の制限を5倍に緩和、AI校閲、PDF校正",
             "source_url": "https://shodo.ink/pricing/",
-            "checked": "2026-10-15"
+            "checked": "2026-10-30"
           },
           {
             "name": "ビジネス",
@@ -900,9 +909,9 @@
             "currency": "JPY",
             "per": "seat_month",
             "as_shown": "税込 2,000 円 / 名様 / 月",
-            "detail": "3名から。カスタム辞書、IPアドレス制限、ルールの共有",
+            "detail": "3名から。AI校閲、PDF校正、My辞書、Slack への通知、優先サポート",
             "source_url": "https://shodo.ink/pricing/",
-            "checked": "2026-10-15"
+            "checked": "2026-10-30"
           }
         ],
         "jpy_official": true,
@@ -913,21 +922,21 @@
         "output": "yes",
         "note": "日本語の校正専用サービス",
         "source_url": "https://shodo.ink/pricing/",
-        "checked": "2026-10-15"
+        "checked": "2026-10-30"
       },
       "data_policy": {
         "training_default": "not_used",
         "note": "無料・有料プランに関係なく、投稿した文章を AI の学習に使わない（料金ページのよくある質問）",
         "source_url": "https://shodo.ink/pricing/",
-        "checked": "2026-10-15"
+        "checked": "2026-10-30"
       },
       "availability_japan": {
         "value": "yes",
         "note": "国内向けに円建て・税込で提供",
         "source_url": "https://shodo.ink/pricing/",
-        "checked": "2026-10-15"
+        "checked": "2026-10-30"
       },
-      "checked": "2026-10-15",
+      "checked": "2026-10-30",
       "retired_note": ""
     },
     {
@@ -994,7 +1003,7 @@
           "available": true,
           "detail": "スペル・文法の修正、トーンの確認、AIプロンプト月100回",
           "source_url": "https://www.grammarly.com/plans",
-          "checked": "2026-10-15"
+          "checked": "2026-10-30"
         },
         "plans": [
           {
@@ -1005,7 +1014,7 @@
             "as_shown": "$12 USD",
             "detail": "文の書き直し、トーン調整、盗用・AI生成文の検出、AIプロンプト月2,000回",
             "source_url": "https://www.grammarly.com/plans",
-            "checked": "2026-10-15"
+            "checked": "2026-10-30"
           }
         ],
         "jpy_official": false,
@@ -1016,9 +1025,9 @@
         "output": "partial",
         "note": "提案の対応言語に Japanese。段落単位の書き直しはスペイン語・フランス語など6言語のみ",
         "source_url": "https://support.grammarly.com/hc/en-us/articles/115000090971-Does-Grammarly-support-languages-other-than-English",
-        "checked": "2026-10-15"
+        "checked": "2026-10-30"
       },
-      "checked": "2026-10-15",
+      "checked": "2026-10-30",
       "retired_note": ""
     },
     {
@@ -1042,7 +1051,7 @@
           "available": true,
           "detail": "毎月10クレジット",
           "source_url": "https://lp.ai-copywriter.jp/",
-          "checked": "2026-10-15"
+          "checked": "2026-10-30"
         },
         "plans": [
           {
@@ -1053,7 +1062,7 @@
             "as_shown": "¥3,000〜/月",
             "detail": "100クレジット。クレジットの追加購入可",
             "source_url": "https://lp.ai-copywriter.jp/",
-            "checked": "2026-10-15"
+            "checked": "2026-10-30"
           },
           {
             "name": "Pro",
@@ -1063,13 +1072,13 @@
             "as_shown": "¥9,800/月",
             "detail": "無制限使い放題",
             "source_url": "https://lp.ai-copywriter.jp/",
-            "checked": "2026-10-15"
+            "checked": "2026-10-30"
           }
         ],
         "jpy_official": true,
         "note": ""
       },
-      "checked": "2026-10-15",
+      "checked": "2026-10-30",
       "retired_note": ""
     },
     {
@@ -1098,13 +1107,13 @@
             "as_shown": "$59/month per seat（年払い。月払いは $69）",
             "detail": "7日間の無料トライアル",
             "source_url": "https://www.jasper.ai/pricing",
-            "checked": "2026-10-15"
+            "checked": "2026-10-30"
           }
         ],
         "jpy_official": false,
         "note": ""
       },
-      "checked": "2026-10-15",
+      "checked": "2026-10-30",
       "retired_note": ""
     },
     {
@@ -1133,13 +1142,13 @@
             "as_shown": "$24/month（年払い。月払いは $29）",
             "detail": "5シート、チャットの文字数無制限",
             "source_url": "https://www.copy.ai/prices",
-            "checked": "2026-10-15"
+            "checked": "2026-10-30"
           }
         ],
         "jpy_official": false,
         "note": ""
       },
-      "checked": "2026-10-15",
+      "checked": "2026-10-30",
       "retired_note": ""
     }
   ],
@@ -1263,6 +1272,11 @@
     {
       "date": "2026-10-15",
       "text": "Claude の無料版・Pro の内容を料金ページに合わせて更新",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-10-30",
+      "text": "Notion AI に追加購入用の Notion クレジットの料金（1,000クレジット $10）を追加し、Shodo のビジネスプランの内容を更新",
       "by": "reviewer"
     }
   ],
