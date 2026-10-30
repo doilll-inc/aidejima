@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-27",
+  "updated": "2026-10-30",
   "last_reviewed": "2026-10-16",
   "title": "AI API（LLM）の料金比較と選び方",
   "short_name": "AI API",
@@ -280,6 +280,13 @@
             "detail": "不正監視の制限かゼロデータ保持の承認が必要。2026年3月5日以降のモデルは単価10%増し。GPT-6.1 Sol は米国・EU のみ",
             "source_url": "https://developers.openai.com/api/docs/guides/your-data",
             "checked": "2026-10-16"
+          },
+          {
+            "name": "ChatGPT 契約者向けの API クレジット",
+            "as_shown": "Pro: $100 / $200 / $500 per monthly billing period ／ Business: $20 per Standard seat・$100 per Premium seat（$500 cap）",
+            "detail": "ChatGPT Pro・Business の契約者が毎月受け取れる（契約7日以上、要手続き、繰り越しなし）。1つの API 組織にだけひも付け。Codex の API 利用には使えない",
+            "source_url": "https://help.openai.com/en/articles/20001626-api-credits-benefit-for-eligible-chatgpt-subscriptions",
+            "checked": "2026-10-30"
           }
         ],
         "jpy_official": false,
@@ -1346,6 +1353,12 @@
       "date": "2026-10-27",
       "text": "OpenAI の中位モデル GPT-6.1 Terra（入力100万トークンあたり1ドル・出力5ドル。GPT-5.6 Terra の半額）を OpenAI API の行に追加",
       "article": "/news/20261027-openai-gpt-6-1-terra/",
+      "by": "writer"
+    },
+    {
+      "date": "2026-10-30",
+      "text": "ChatGPT Pro・Business の契約者が毎月最大500ドル分の OpenAI API クレジットを受け取れる特典を追加",
+      "article": "/news/20261030-chatgpt-pro-limits-doubled-api-credits/",
       "by": "writer"
     }
   ],

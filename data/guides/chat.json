@@ -3,7 +3,7 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-27",
+  "updated": "2026-10-30",
   "last_reviewed": "2026-10-17",
   "title": "チャットAIのおすすめと料金比較（ChatGPT・Claude・Gemini など）",
   "short_name": "チャットAI",
@@ -345,9 +345,9 @@
             "currency": "USD",
             "per": "month",
             "as_shown": "$500（Monthly price, USD）",
-            "detail": "Pro の最上位。高速モード Ultrafast は Pro 500 のみ。月払いのみ",
+            "detail": "Pro の最上位。高速モード Ultrafast は Pro 500 のみ。月払いのみ。10月29日に ChatGPT Work と Codex の利用枠が2倍に。毎月500ドル分の API クレジットを受け取れる（要手続き）",
             "source_url": "https://help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers",
-            "checked": "2026-10-01"
+            "checked": "2026-10-30"
           },
           {
             "name": "Business（標準シート）",
@@ -1216,6 +1216,12 @@
       "date": "2026-10-27",
       "text": "iOS 27.2 で日本語に対応した Apple の新しい Siri「Siri AI」（ベータ）を、様子見の候補に追加",
       "article": "/news/20261027-apple-siri-ai-japanese-ios-27-2/",
+      "by": "writer"
+    },
+    {
+      "date": "2026-10-30",
+      "text": "ChatGPT Pro の ChatGPT Work・Codex の利用枠が2倍になり、Pro 200 の削減が撤回されたこと、Pro に月額と同額の API クレジットが付くことを反映",
+      "article": "/news/20261030-chatgpt-pro-limits-doubled-api-credits/",
       "by": "writer"
     }
   ],
