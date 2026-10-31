@@ -18,7 +18,7 @@
       "note": "GPT-5.6 Terraの後継。画面の読み取りとパソコン操作が得意な実務向けモデルで、APIの標準料金はGPT-5.6 Terraの半分。入力は最大92.2万トークン。ChatGPTではPlus・Pro・Enterprise・EduのChatGPT WorkとCodexで提供",
       "official_url": "https://developers.openai.com/api/docs/models/gpt-6.1-terra",
       "article": "/news/20261027-openai-gpt-6-1-terra/",
-      "checked": "2026-10-27"
+      "checked": "2026-10-31"
     },
     {
       "slug": "gpt-6-1-sol",
@@ -37,7 +37,7 @@
       "note": "GPT-6 Solの改良版。27.2万トークン超の入力は入力2倍・出力1.5倍の単価。ChatGPTではChatGPT WorkとCodexで提供",
       "official_url": "https://openai.com/index/introducing-gpt-6-1-sol/",
       "article": "/news/20260930-openai-gpt-6-1-sol/",
-      "checked": "2026-10-16"
+      "checked": "2026-10-31"
     },
     {
       "slug": "gpt-6-astra",
@@ -56,7 +56,7 @@
       "note": "GPT-6世代の最上位で、OpenAIは最も難しい研究用途に推奨。27.2万トークン超の入力は入力2倍・出力1.5倍の単価",
       "official_url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
       "article": "/news/20260930-openai-gpt-6-1-sol/",
-      "checked": "2026-10-16"
+      "checked": "2026-10-31"
     },
     {
       "slug": "gpt-6-sol",
@@ -94,7 +94,7 @@
       "note": "GPT-6世代の軽量モデルで、大量処理向け。27.2万トークン超の入力は入力2倍・出力1.5倍の単価",
       "official_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
       "article": "/news/20260930-openai-gpt-6-1-sol/",
-      "checked": "2026-10-16"
+      "checked": "2026-10-31"
     },
     {
       "slug": "claude-fable-5-1",
@@ -112,7 +112,7 @@
       "status": "current",
       "note": "難しい推論や長時間のエージェント作業向けの最上位。キャッシュ読み込みは入力単価の2.5%で、100万トークンまで同じ単価",
       "official_url": "https://platform.claude.com/docs/en/about-claude/pricing",
-      "checked": "2026-10-16"
+      "checked": "2026-10-31"
     },
     {
       "slug": "claude-opus-5-5",
@@ -131,7 +131,7 @@
       "note": "Anthropicが大半の用途で最初に勧めるモデル。キャッシュ読み込みは入力単価の5%で、100万トークンまで同じ単価",
       "official_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "article": "/news/20260930-claude-opus-5-5-prompting-guide/",
-      "checked": "2026-10-16"
+      "checked": "2026-10-31"
     },
     {
       "slug": "kimi-k3-1-pro",
@@ -148,7 +148,7 @@
       "note": "Kimi K3を追加訓練した改良版。2〜3倍速いHighspeed版（kimi-k3.1-pro-highspeed）は入力4ドル・出力20ドル。重みは11月4日までに公開予定",
       "official_url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
       "article": "/news/20261024-kimi-k3-1-pro-moonshot/",
-      "checked": "2026-10-24"
+      "checked": "2026-10-31"
     },
     {
       "slug": "claude-sonnet-5-5",
@@ -166,7 +166,7 @@
       "status": "current",
       "note": "速さと性能の釣り合いを重視したモデルで、100万トークンまで同じ単価。10月7日にキャッシュ読み込みを$0.20から$0.10に値下げ",
       "official_url": "https://platform.claude.com/docs/en/about-claude/pricing",
-      "checked": "2026-10-16"
+      "checked": "2026-10-31"
     },
     {
       "slug": "claude-haiku-5-5",
@@ -185,7 +185,7 @@
       "note": "Claudeで最も安く速い軽量モデル。単価は10万トークン以下の依頼のもので、超えると入力$0.50・出力$2.50・キャッシュ読み込み$0.05。Haikuで初めて考える量（effort）を選べる",
       "official_url": "https://www.anthropic.com/claude-haiku-5-5",
       "article": "/news/20261008-anthropic-claude-haiku-5-5/",
-      "checked": "2026-10-16"
+      "checked": "2026-10-31"
     },
     {
       "slug": "claude-haiku-4-5",
@@ -203,7 +203,7 @@
       "status": "current",
       "note": "Claudeで最も速い軽量モデル。別名claude-haiku-4-5は固定版claude-haiku-4-5-20251001を指す",
       "official_url": "https://platform.claude.com/docs/en/about-claude/pricing",
-      "checked": "2026-10-16"
+      "checked": "2026-10-31"
     },
     {
       "slug": "gemini-4-carbon",
@@ -236,7 +236,7 @@
       "note": "導入価格（2026年11月30日まで）。12月1日から入力$4・出力$20・キャッシュ$0.20。API無料枠では使えない。10月13日に一般公開し、GeminiアプリとAIモードはGoogle AI Pro・Ultraの加入者が対象。入出力は合わせて100万トークンまで",
       "official_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "article": "/news/20261014-gemini-4-argon-gemini-app-ai-mode/",
-      "checked": "2026-10-16"
+      "checked": "2026-10-31"
     },
     {
       "slug": "gemini-3-1-pro-preview",
@@ -270,7 +270,7 @@
       "status": "current",
       "note": "最も賢いFlashモデル。単価は2026年12月31日までのもので、2027年1月1日から入力$1.50・出力$7.50に上がる（無料枠あり）",
       "official_url": "https://ai.google.dev/gemini-api/docs/pricing",
-      "checked": "2026-10-16"
+      "checked": "2026-10-31"
     },
     {
       "slug": "gemini-3-5-flash-lite",
@@ -287,7 +287,7 @@
       "status": "current",
       "note": "大量処理やサブエージェント向けの低価格モデル（無料枠あり）",
       "official_url": "https://ai.google.dev/gemini-api/docs/pricing",
-      "checked": "2026-10-16"
+      "checked": "2026-10-31"
     },
     {
       "slug": "grok-4-7",
@@ -304,7 +304,7 @@
       "status": "current",
       "note": "xAI APIの旗艦モデル。入力が20万トークン以上のリクエストは全体が入力$4・出力$12の単価",
       "official_url": "https://docs.x.ai/developers/pricing",
-      "checked": "2026-10-16"
+      "checked": "2026-10-31"
     },
     {
       "slug": "grok-build-0-1",
@@ -320,7 +320,7 @@
       "status": "current",
       "note": "エージェント型コーディング向けの専用モデルで、旧名grok-code-fast-1でも呼べる。入力20万トークン以上は単価2倍",
       "official_url": "https://docs.x.ai/developers/pricing",
-      "checked": "2026-10-16"
+      "checked": "2026-10-31"
     },
     {
       "slug": "grok-4-3",
@@ -335,7 +335,7 @@
       "status": "current",
       "note": "道具の呼び出しと指示への追従に強い高速モデル。入力20万トークン以上は単価2倍、Batch APIは20%引き",
       "official_url": "https://docs.x.ai/developers/pricing",
-      "checked": "2026-10-16"
+      "checked": "2026-10-31"
     },
     {
       "slug": "deepseek-v4-1-flash",
@@ -353,7 +353,7 @@
       "note": "10月17日から deepseek-flash は更新版 DeepSeek-V4.1-Flash-1017 を指す（料金は据え置き）。単価はピーク時間帯（日本時間の平日10〜13時・15〜19時、中国の祝日を除く）のもので、それ以外のオフピークは半額",
       "official_url": "https://api-docs.deepseek.com/quick_start/pricing",
       "article": "/news/20261019-deepseek-v4-1-flash-1017-update/",
-      "checked": "2026-10-19"
+      "checked": "2026-10-31"
     },
     {
       "slug": "deepseek-v4-pro",
@@ -369,7 +369,7 @@
       "status": "current",
       "note": "DeepSeek-V4-Pro-0813。単価はピーク時間帯のもので、オフピークは半額。画像入力には対応しない",
       "official_url": "https://api-docs.deepseek.com/quick_start/pricing",
-      "checked": "2026-10-16"
+      "checked": "2026-10-31"
     },
     {
       "slug": "mistral-large-4",
@@ -377,15 +377,15 @@
       "vendor": "Mistral AI",
       "tier": "最上位",
       "released": "2026-10-06",
-      "input_per_m": 1.36,
-      "cached_input_per_m": 0.14,
-      "output_per_m": 4.18,
+      "input_per_m": 0.7,
+      "cached_input_per_m": 0.07,
+      "output_per_m": 2.1,
       "context": 1000000,
       "api_id": "mistral-large-4",
       "status": "current",
-      "note": "総パラメータ1兆（アクティブ490億）のマルチモーダルMoE。パブリックプレビューで、プレビュー期間中は入力$0.68・キャッシュ入力$0.07・出力$2.09。重みは10月末に公開予定",
+      "note": "総パラメータ1兆（アクティブ490億）のマルチモーダルMoE。パブリックプレビュー。モデルページと料金ページの単価は入力$0.7・キャッシュ入力$0.07・出力$2.1で、プレビュー後の価格の記載はない（2026年10月31日時点）",
       "official_url": "https://docs.mistral.ai/models/mistral-large-4-0",
-      "checked": "2026-10-16"
+      "checked": "2026-10-31"
     },
     {
       "slug": "mistral-medium-3-5",
@@ -433,7 +433,7 @@
       "status": "current",
       "note": "指示追従・推論・コーディングを1つにまとめた低価格モデル（総1190億・アクティブ65億パラメータ、Apache 2.0）",
       "official_url": "https://docs.mistral.ai/inference/pricing",
-      "checked": "2026-10-16"
+      "checked": "2026-10-31"
     },
     {
       "slug": "qwen3-8-max",
@@ -449,7 +449,7 @@
       "status": "current",
       "note": "2.4兆パラメータのMoEの旗艦。単価はシンガポール（国際）デプロイのもので、デプロイ先の地域により異なる",
       "official_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "checked": "2026-10-16"
+      "checked": "2026-10-31"
     },
     {
       "slug": "qwen3-7-plus",
@@ -465,7 +465,7 @@
       "status": "current",
       "note": "シンガポール（国際）デプロイの定価（期間限定20%引きあり）で、25.6万トークン超の入力は入力$1.2・出力$4.8",
       "official_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "checked": "2026-10-16"
+      "checked": "2026-10-31"
     },
     {
       "slug": "qwen3-8-flash",
@@ -481,7 +481,7 @@
       "status": "current",
       "note": "低価格で速いマルチモーダルモデル。単価はシンガポール（国際）デプロイのもので、デプロイ先の地域により異なる",
       "official_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
-      "checked": "2026-10-16"
+      "checked": "2026-10-31"
     }
   ]
 }
