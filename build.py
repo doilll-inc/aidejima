@@ -28,6 +28,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 import demand as demand_mod
 import guides as guides_mod
 import og
+import ryoukin as ryoukin_mod
 
 ROOT = Path(__file__).resolve().parent
 # 出力先。複数の作業者が同時にビルドするときは AIDEJIMA_DIST で分ける
@@ -944,6 +945,72 @@ def guides_for_article(a: dict, guides: list[dict]) -> list[dict]:
     return [g for _, g in hits[:2]]
 
 
+# ---------- AIの料金計算（/tools/ryoukin/） ----------
+
+CALC_TITLE = "AIの料金計算：ChatGPT・Claude・Gemini・Copilotの月額と年額を人数で比べる"
+CALC_DESC = (
+    "ChatGPT・Claude・Gemini・Copilot などのAIを選び、使う人数と月払い・年払いを入れると、プランごとの月額・年額と、"
+    "個人向けとチーム・ビジネス向けのどちらが安いかが出ます。料金は各社の公式ページで確認した値で、確認日つきです。"
+)
+
+
+def attach_calc_links(calc: dict, guides_by_slug: dict, models: list[dict]) -> None:
+    """ガイドの製品行とモデルのページに、その製品を選んだ状態の料金計算へのリンク（_calc）を付ける"""
+    in_calc = {(g["slug"], p["id"]): p for g in calc["guides"] for p in g["products"]}
+    for slug, g in guides_by_slug.items():
+        g["_calc"] = any(s == slug for s, _ in in_calc)
+        for p in g.get("products") or []:
+            if (slug, p["id"]) in in_calc:
+                p["_calc"] = ryoukin_mod.link_for(slug, p["id"])
+    vendor_products = ryoukin_mod.load_overlay().get("vendor_products") or {}
+    def by_model(slug: str, model_slug: str):
+        for p in (guides_by_slug.get(slug) or {}).get("products") or []:
+            if model_slug in (p.get("model_slugs") or []) and (slug, p["id"]) in in_calc:
+                return (slug, p)
+        return None
+
+    for m in models:
+        # チャットAIのガイドでそのモデルを載せている製品 → 提供元のチャットAI → ほかのガイドでそのモデルを載せている製品
+        hit = by_model("chat", m["slug"])
+        if not hit and ("chat", vendor_products.get(m.get("vendor"), "")) in in_calc:
+            hit = ("chat", in_calc[("chat", vendor_products[m["vendor"]])])
+        for slug in guides_by_slug:
+            if hit:
+                break
+            hit = by_model(slug, m["slug"])
+        if hit:
+            m["_calc"] = {"url": ryoukin_mod.link_for(hit[0], hit[1]["id"]), "name": hit[1]["name"]}
+
+
+def calc_home(calc: dict) -> list[dict]:
+    """トップの入口で選べる製品（チャットAIのガイドから）"""
+    chat = next((g for g in calc["guides"] if g["slug"] == "chat"), None)
+    if not chat:
+        return []
+    by_id = {p["id"]: p for p in chat["products"]}
+    return [{"id": i, "name": by_id[i]["name"]} for i in calc.get("home") or [] if i in by_id] or [{"id": p["id"], "name": p["name"]} for p in chat["products"][:6]]
+
+
+def calc_static_table(calc: dict) -> dict | None:
+    """料金計算のページに最初から出す、チャットAIの1人あたりの料金表（JS が無くても読める）"""
+    chat = next((g for g in calc["guides"] if g["slug"] == "chat"), None)
+    if not chat:
+        return None
+    return {"guide": chat, "products": [{"p": p, "rows": ryoukin_mod.static_rows(p)} for p in chat["products"]]}
+
+
+def calc_ld(calc: dict) -> list[dict]:
+    return [
+        {
+            "@context": "https://schema.org", "@type": "WebApplication", "name": "AIの料金計算", "url": abs_url(ryoukin_mod.PATH),
+            "description": CALC_DESC, "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "inLanguage": "ja",
+            "offers": {"@type": "Offer", "price": 0, "priceCurrency": "JPY"}, "publisher": org_ld(),
+            "isPartOf": {"@type": "WebSite", "@id": abs_url("/"), "name": SITE["site_name"]},
+        },
+        breadcrumb_ld([("ホーム", "/"), ("AIの料金計算", ryoukin_mod.PATH)]),
+    ]
+
+
 def build(now: datetime | None = None) -> None:
     now = now or datetime.now(JST)
     arts = load_articles()
@@ -975,6 +1042,8 @@ def build(now: datetime | None = None) -> None:
         sys.exit(1)
     guide_index = guides_mod.load_index()
     guides_by_slug = {g["slug"]: g for g in guides}
+    calc, calc_warns = ryoukin_mod.build_data(guides, BASE_PATH)
+    attach_calc_links(calc, guides_by_slug, models)
 
     env.globals.update(
         site=SITE,
@@ -1015,6 +1084,10 @@ def build(now: datetime | None = None) -> None:
             [{"slug": f"best-{g['slug']}", "thumb_text": g["short_name"], "thumb_kicker": "用途別AIガイド", "title": g["full_title"], "date": now, "category": "guide"} for g in guides],
             {**CATS, "guide": GUIDE_CAT}, DIST / "og", ROOT / ".cache" / "og",
         )
+        og.render_all(
+            [{"slug": "tools-ryoukin", "thumb_text": "料金計算", "thumb_kicker": "人数と払い方で", "title": CALC_TITLE, "date": now, "category": "guide"}],
+            {"guide": GUIDE_CAT}, DIST / "og", ROOT / ".cache" / "og",
+        )
 
     # 記事ページ
     for i, a in enumerate(arts):
@@ -1042,7 +1115,7 @@ def build(now: datetime | None = None) -> None:
         {"@context": "https://schema.org", **org_ld()},
     ]
     per = SITE["articles_per_page"]
-    write("/", render("index.html", hero=arts[:5], days=group_by_day(arts[5:per]), more=len(arts) > per, ld=ld_home, canonical="/"))
+    write("/", render("index.html", hero=arts[:5], days=group_by_day(arts[5:per]), more=len(arts) > per, ld=ld_home, canonical="/", calc_home=calc_home(calc)))
 
     # 一覧（全記事・カテゴリ・タグ・月別）
     def list_pages(base: str, items: list, title: str, desc: str, crumbs: list, heading: str, noindex_all: bool = False, intro: str = "") -> None:
@@ -1080,9 +1153,9 @@ def build(now: datetime | None = None) -> None:
         # 検索される製品のまとめページ（版ごとの記事もここに集まる）は、何がわかるページかを先に言う
         desc = (
             f"{name}に関する記事{len(items)}本を新しい順にまとめています。開発元の公式発表・公式ドキュメント・開発者本人の発信をもとに、"
-            f"新しい版や機能、料金の変更、海外の活用事例を、日本で仕事に使う人の目線で解説します。"
+            f"新しい版や機能、料金の変更、海外の活用事例を、日本で仕事に使う人向けに書いています。"
             if topic else
-            f"{name}に関する海外の最新ニュース{len(items)}本を日本語でまとめています。公式発表・論文・海外メディアの報道をもとに、ビジネスへの影響まで解説します。"
+            f"{name}に関する海外の最新ニュース{len(items)}本を日本語でまとめています。公式発表・論文・海外メディアの報道をもとに、ビジネスへの影響まで書いています。"
         )
         list_pages(
             f"/tag/{slug}/", items, f"{name}の最新ニュース・情報まとめ", desc,
@@ -1118,6 +1191,14 @@ def build(now: datetime | None = None) -> None:
                 embed=[m for m in models if m.get("status", "current") == "current"] if g.get("embed_models") else [],
             ))
 
+    # AIの料金計算（/tools/ryoukin/。ガイドの料金データで、人数と払い方から月額・年額を出す道具）
+    if calc["guides"]:
+        write(ryoukin_mod.PATH, render(
+            "ryoukin.html", calc=calc, calc_stats=ryoukin_mod.stats(calc), calc_static=calc_static_table(calc),
+            data_json=json.dumps(calc, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"),
+            canonical=ryoukin_mod.PATH, og_image="/og/tools-ryoukin.jpg", ld=calc_ld(calc),
+        ))
+
     # 固定ページ
     for p in sorted(PAGES.glob("*.md")):
         text = p.read_text(encoding="utf-8")
@@ -1142,7 +1223,7 @@ def build(now: datetime | None = None) -> None:
     # 読了の記録（static/reward.js）が「今日の新着を何本読んだか」「未読いくつ」を数えるための一覧。直近48時間の記事だけ
     recent = [{"s": a["slug"], "d": a["date"].isoformat(), "t": a["title"]} for a in arts if now - a["date"] <= timedelta(hours=48)]
     write("/recent.json", json.dumps(recent, ensure_ascii=False, separators=(",", ":")))
-    write("/sitemap.xml", sitemap(arts, by_cat, by_tag, by_month, models, now, guides))
+    write("/sitemap.xml", sitemap(arts, by_cat, by_tag, by_month, models, now, guides, calc))
     write("/news-sitemap.xml", news_sitemap(arts, now))
     write("/robots.txt", robots())
     # ホーム画面に追加したときにアプリのように開く（PWA）
@@ -1152,7 +1233,7 @@ def build(now: datetime | None = None) -> None:
         "icons": [{"src": u("/assets/apple-touch-icon.png"), "sizes": "180x180", "type": "image/png"},
                   {"src": u("/assets/icon-512.png"), "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}],
     }, ensure_ascii=False))
-    write("/llms.txt", llms(arts, models, guides))
+    write("/llms.txt", llms(arts, models, guides, calc))
     write("/llms-full.txt", llms_full(arts, guides, now))
     if SITE.get("indexnow_key"):
         write(f"/{SITE['indexnow_key']}.txt", SITE["indexnow_key"])
@@ -1163,6 +1244,8 @@ def build(now: datetime | None = None) -> None:
     warn_quality(arts)
     for w in guide_warns:
         print(f"  注意 ガイド {w}")
+    for w in calc_warns:
+        print(f"  注意 料金計算 {w}")
 
 
 def warn_quality(arts: list[dict]) -> None:
@@ -1227,7 +1310,7 @@ def rss(arts: list[dict], now: datetime) -> str:
 """
 
 
-def sitemap(arts: list[dict], by_cat: dict, by_tag: dict, by_month: dict, models: list[dict], now: datetime, guides: list[dict] | None = None) -> str:
+def sitemap(arts: list[dict], by_cat: dict, by_tag: dict, by_month: dict, models: list[dict], now: datetime, guides: list[dict] | None = None, calc: dict | None = None) -> str:
     latest = arts[0]["date"] if arts else now
     urls = [(abs_url("/"), latest), (abs_url("/news/"), latest), (abs_url("/models/"), latest)]
     urls += [(abs_url(a["path"]), a["updated"] or a["date"]) for a in arts]
@@ -1239,6 +1322,9 @@ def sitemap(arts: list[dict], by_cat: dict, by_tag: dict, by_month: dict, models
     if guides:
         urls.append((abs_url("/best/"), max(datetime.combine(g["modified"], datetime.min.time(), JST) for g in guides)))
     urls += [(abs_url(g["path"]), datetime.combine(g["modified"], datetime.min.time(), JST)) for g in guides if not g["noindex"]]
+    if calc and calc["guides"]:
+        last = max(guides_mod.parse_day(g["reviewed"]) or now.date() for g in calc["guides"])
+        urls.append((abs_url(ryoukin_mod.PATH), datetime.combine(last, datetime.min.time(), JST)))
     urls += [(abs_url(p), None) for p in ("/about/", "/about/editor/", "/privacy/")]
     skip = {abs_url(p) for p in NOINDEX}
     body = "".join(
@@ -1269,7 +1355,7 @@ Sitemap: {abs_url('/news-sitemap.xml')}
 """
 
 
-def llms(arts: list[dict], models: list[dict], guides: list[dict] | None = None) -> str:
+def llms(arts: list[dict], models: list[dict], guides: list[dict] | None = None, calc: dict | None = None) -> str:
     lines = [
         f"# {SITE['site_name']}（{SITE['site_name_en']}）",
         "",
@@ -1289,6 +1375,8 @@ def llms(arts: list[dict], models: list[dict], guides: list[dict] | None = None)
             v = g["verdicts_sorted"][0] if g["verdicts_sorted"] else None
             head = f"（{v['question']}→{v['_pick']['name']}）" if v and v.get("_pick") else ""
             lines.append(f"- [{g['full_title']}]({abs_url(g['path'])}): {g['seo']['description']}{head}")
+    if calc and calc["guides"]:
+        lines += ["", "## 道具", "", f"- [{CALC_TITLE}]({abs_url(ryoukin_mod.PATH)}): {CALC_DESC}"]
     lines += ["", "## AIモデル図鑑（料金・仕様の比較。記事から自動更新）", "", f"- {abs_url('/models/')}"]
     lines += [f"- [{m['name']}]({abs_url(m['path'])}): {m['vendor']}" + (f"、入力${m['input_per_m']}/出力${m['output_per_m']}（100万トークン）" if m.get("input_per_m") is not None else "") for m in models[:30]]
     lines += ["", "## カテゴリ", ""]

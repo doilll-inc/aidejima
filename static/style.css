@@ -2616,3 +2616,532 @@ button {
     padding-bottom: 12px;
   }
 }
+
+/* ---------- AIの料金計算（/tools/ryoukin/ とトップの入口） ----------
+   道具のページ。表で答えを出す。角は4〜6px、色はオレンジを「一番安い行」と操作中の部品にだけ使う */
+.calc-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px 24px;
+  margin: 14px 0 6px;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--bg-soft);
+}
+.calc-entry-h {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+.calc-entry-h a:hover {
+  text-decoration: underline;
+}
+.calc-entry-p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+.calc-entry-f {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.calc-entry-f select,
+.calc-entry-f input,
+.rk select,
+.rk input[type="number"] {
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #c9cdd2;
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+  font-size: 15px;
+}
+.calc-entry-f select {
+  max-width: 13em;
+}
+.calc-entry-n {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.calc-entry-n input {
+  width: 4.2em;
+  text-align: right;
+}
+.calc-entry-f button {
+  height: 40px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--ink);
+  color: var(--bg);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.calc-entry-f button:hover {
+  background: var(--accent-text);
+}
+
+.rk-head {
+  padding: 8px 0 14px;
+  border-bottom: 2px solid var(--ink);
+}
+.rk-title {
+  margin: 8px 0 6px;
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+.rk-lead {
+  margin: 0;
+  max-width: 46em;
+  font-size: 15px;
+  color: var(--ink-2);
+}
+.rk-lead a,
+.rk-guide a,
+.rk-cap a,
+.rk-dl a {
+  color: var(--accent-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.rk-asof {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+.rk-grid {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 36px;
+  align-items: start;
+  padding: 24px 0 8px;
+}
+.rk-form {
+  position: sticky;
+  top: 12px;
+}
+.rk-field {
+  margin: 0 0 18px;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+.rk-label {
+  display: block;
+  margin: 0 0 6px;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--ink);
+}
+.rk-label span {
+  margin-left: 8px;
+  font-weight: 600;
+  color: var(--muted);
+}
+.rk select {
+  width: 100%;
+}
+.rk-products {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+.rk-products li {
+  border-bottom: 1px solid var(--line);
+}
+.rk-products label {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  align-items: center;
+  column-gap: 8px;
+  padding: 8px 2px;
+  cursor: pointer;
+}
+.rk-products input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--accent);
+}
+.rk-pname {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.rk-pvendor {
+  grid-column: 2;
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.3;
+}
+.rk-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 18px;
+}
+.rk-num {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.rk-num input {
+  width: 4.6em;
+  text-align: right;
+}
+.rk-num button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #c9cdd2;
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+.rk-num button:hover {
+  border-color: var(--ink);
+}
+.rk-seg {
+  display: inline-flex;
+  border: 1px solid #c9cdd2;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.rk-seg label {
+  position: relative;
+  cursor: pointer;
+}
+.rk-seg label + label {
+  border-left: 1px solid #c9cdd2;
+}
+.rk-seg input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.rk-seg span {
+  display: block;
+  padding: 0 14px;
+  line-height: 38px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.rk-seg input:checked + span {
+  background: var(--ink);
+  color: var(--bg);
+}
+.rk-seg input:focus-visible + span {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+.rk-out {
+  min-width: 0;
+}
+.rk-empty {
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px dashed #c9cdd2;
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+.rk-h {
+  margin: 0 0 8px;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.45;
+}
+.rk-src .rk-h {
+  margin-top: 32px;
+  font-size: 16px;
+}
+.rk-cap {
+  margin: 0 0 10px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.rk-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.rk-table th,
+.rk-table td {
+  padding: 9px 10px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.rk-table thead th {
+  background: var(--bg-soft);
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.rk-table td {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  text-align: right;
+}
+.rk-table thead th:not(:first-child) {
+  text-align: right;
+}
+.rk-table tbody th {
+  min-width: 150px;
+  font-weight: 400;
+}
+.rk-table tr:last-child th,
+.rk-table tr:last-child td {
+  border-bottom: 0;
+}
+.rk-table tr.is-best th,
+.rk-table tr.is-best td {
+  background: #fff6ee;
+}
+.rk-table tr.is-best th {
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+.rk-table tr.is-best td {
+  font-weight: 800;
+}
+.rk-table tr.rk-na td {
+  color: var(--muted);
+  white-space: normal;
+  text-align: left;
+}
+.rk-overview tbody th a {
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+}
+.rk-overview td:nth-child(2),
+.rk-overview thead th:nth-child(2) {
+  text-align: left;
+  white-space: normal;
+}
+.rk-plan {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+}
+.rk-kind,
+.rk-chk {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+}
+.rk-flag {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  color: #8a4b00;
+}
+.rk-shown {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.rk-prod {
+  margin: 28px 0 0;
+  padding: 16px 0 0;
+  border-top: 2px solid var(--ink);
+}
+.rk-prod-h {
+  margin: 0 0 6px;
+  font-size: 19px;
+  font-weight: 800;
+}
+.rk-prod-h span {
+  margin-left: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+}
+.rk-sum {
+  margin: 0 0 12px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+.rk-out .table-wrap {
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+.rk-free,
+.rk-guide {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: var(--ink-2);
+}
+.rk-free b {
+  margin-right: 6px;
+  color: var(--ink);
+}
+.rk-more {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: var(--ink-2);
+}
+.rk-more summary {
+  cursor: pointer;
+  color: var(--ink);
+  font-weight: 700;
+}
+.rk-more p {
+  margin: 4px 0 0;
+}
+.rk-src ul {
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+}
+.rk-src li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 10px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+}
+.rk-src li a {
+  color: var(--accent-text);
+  overflow-wrap: anywhere;
+}
+.rk-src li span {
+  color: var(--muted);
+  font-size: 12px;
+}
+.rk-static {
+  max-width: 720px;
+}
+.rk-how {
+  max-width: 860px;
+}
+.rk-table .rk-group th {
+  background: var(--bg-soft);
+  font-size: 14px;
+  font-weight: 800;
+}
+.rk-table .rk-group th span {
+  margin-left: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+}
+.rk-static .rk-table td {
+  white-space: normal;
+}
+.rk-dl {
+  margin: 0;
+}
+.rk-dl dt {
+  margin: 14px 0 2px;
+  font-size: 14px;
+  font-weight: 800;
+}
+.rk-dl dd {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+.rk-how .sources-note {
+  margin: 20px 0 56px;
+}
+.gt-calc {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+}
+.listed .gt-calc {
+  margin: 0 0 0 8px;
+}
+.calc-link {
+  margin: 10px 0 20px;
+  font-size: 13px;
+  color: var(--ink-2);
+}
+.calc-link a {
+  font-weight: 700;
+  color: var(--accent-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+@media (max-width: 860px) {
+  .rk-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding-top: 18px;
+  }
+  .rk-form {
+    position: static;
+  }
+  .calc-entry {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .rk-title {
+    font-size: 23px;
+  }
+  .rk-lead {
+    font-size: 14px;
+  }
+  .rk-products {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 12px;
+  }
+  .rk-table th,
+  .rk-table td {
+    padding: 8px 6px;
+  }
+  .rk-table tbody th {
+    min-width: 128px;
+  }
+  .rk-table {
+    font-size: 12px;
+  }
+  .rk-plan {
+    font-size: 13px;
+  }
+  .calc-entry {
+    margin: 10px 0 14px;
+    padding: 12px;
+  }
+  .calc-entry-f select {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}

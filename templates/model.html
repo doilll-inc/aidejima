@@ -28,6 +28,7 @@
         </table>
       </div>
       <p class="models-note">値は公式発表・公式ドキュメントで確認できたもののみ。料金や仕様は変わることがあるので、利用前に公式ページで確認してください。</p>
+      {% if m._calc %}<p class="calc-link">上はAPIの料金です。{{ m.vendor }}のアプリ {{ m._calc.name }} の月額・年額は、<a href="{{ u(m._calc.url) }}">AIの料金計算</a>で人数と払い方を入れて出せます。</p>{% endif %}
       <h2 class="section-h">{{ m.name }}の記事</h2>
       {% if m.articles %}{% for a in m.articles %}{{ item(a) }}{% endfor %}{% else %}<p class="empty">まだ記事がありません。</p>{% endif %}
       <p><a class="btn-more" href="{{ u('/models/') }}">AIモデル図鑑に戻る</a></p>

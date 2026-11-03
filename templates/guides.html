@@ -9,6 +9,7 @@
       <header class="list-head">
         <h1>用途別AIガイド</h1>
         <p>{{ desc }}</p>
+        <p class="calc-link">選んだAIの月額・年額を人数と払い方で出すときは、<a href="{{ u('/tools/ryoukin/') }}">AIの料金計算</a>を使えます。</p>
       </header>
       {% for grp in groups if grp['items'] %}
       <section class="guide-group">

@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{# AIの料金計算。料金は data/guides/*.json（/best/）のものを ryoukin.py が計算用に読み替え、下の JSON に埋め込む。
+   計算は static/ryoukin.js がブラウザの中だけで行う（入力は送信しない）。JS が無いときは、下のチャットAIの料金表だけが読める #}
+{% set title = "AIの料金計算：ChatGPT・Claude・Gemini・Copilotの月額と年額を人数で比べる" %}
+{% set desc = "ChatGPT・Claude・Gemini・Copilot などのAIを選び、使う人数と月払い・年払いを入れると、プランごとの月額・年額と、個人向けとチーム・ビジネス向けのどちらが安いかが出ます。料金は各社の公式ページで確認した値で、確認日つきです。" %}
+{% set chat = calc_static.guide if calc_static else none %}
+{% block body_class %}tool-page{% endblock %}
+{% block main %}
+<div class="wrap">
+  <nav class="crumbs" aria-label="パンくず"><a href="{{ u('/') }}">ホーム</a><span>AIの料金計算</span></nav>
+  <div class="rk" data-ryoukin>
+    <header class="rk-head">
+      <h1 class="rk-title">AIの料金計算</h1>
+      <p class="rk-lead">使うAIと人数、払い方を選ぶと、プランごとの月額・年額と、個人向けとチーム・ビジネス向けのどちらが安いかが出ます。料金は<a href="{{ u('/best/') }}">用途別AIガイド</a>で各社の公式料金ページを確かめた値（確認日つき）です。入力した内容はどこにも送られません。</p>
+      <p class="rk-asof">対象は{{ calc_stats.guides }}の用途の{{ calc_stats.products }}製品・{{ calc_stats.plans }}プラン{% if chat %}。チャットAIの料金は{{ chat.reviewed[5:7] | int }}月{{ chat.reviewed[8:10] | int }}日に点検{% endif %}</p>
+    </header>
+
+    <div class="rk-grid">
+      <form class="rk-form" data-form onsubmit="return false" aria-label="計算の条件">
+        <div class="rk-field">
+          <label class="rk-label" for="rk-g">用途</label>
+          <select id="rk-g" name="g" data-guide>
+            {% for g in calc.guides %}<option value="{{ g.slug }}"{% if g.slug == 'chat' %} selected{% endif %}>{{ g.name }}</option>{% endfor %}
+          </select>
+        </div>
+        <div class="rk-row">
+          <div class="rk-field">
+            <label class="rk-label" for="rk-n">使う人数</label>
+            <div class="rk-num">
+              <button type="button" data-step="-1" aria-label="1人減らす">−</button>
+              <input id="rk-n" name="n" type="number" inputmode="numeric" min="1" max="1000" step="1" value="1" data-n>
+              <button type="button" data-step="1" aria-label="1人増やす">＋</button>
+              <span>人</span>
+            </div>
+          </div>
+          <fieldset class="rk-field">
+            <legend class="rk-label">払い方</legend>
+            <div class="rk-seg">
+              <label><input type="radio" name="b" value="m" checked><span>月払い</span></label>
+              <label><input type="radio" name="b" value="y"><span>年払い</span></label>
+            </div>
+          </fieldset>
+        </div>
+        <fieldset class="rk-field">
+          <legend class="rk-label">使うAI<span>いくつでも選べます</span></legend>
+          <ul class="rk-products" data-products>
+            {% if chat %}{% for p in chat.products %}<li><label><input type="checkbox" name="p" value="{{ p.id }}"{% if p.id in chat.defaults %} checked{% endif %}><span class="rk-pname">{{ p.name }}</span><span class="rk-pvendor">{{ p.vendor }}</span></label></li>{% endfor %}{% endif %}
+          </ul>
+        </fieldset>
+      </form>
+
+      <section class="rk-out" data-out aria-live="polite" aria-label="計算結果">
+        <noscript><p class="rk-empty">計算には JavaScript が必要です。下に、主なチャットAIの1人あたりの料金（月払い・年払い）を載せています。</p></noscript>
+      </section>
+    </div>
+
+    {% if calc_static %}
+    <section class="rk-static" aria-labelledby="rk-static-h">
+      <h2 class="guide-h" id="rk-static-h">チャットAIの1人あたりの料金（月払いと年払い）</h2>
+      <p class="guide-note">{{ chat.title }}のデータです（{{ chat.reviewed }} 点検）。プランの中身の違いは<a href="{{ chat.path }}">ガイドの製品ごとの詳細</a>にあります。</p>
+      <div class="table-wrap">
+        <table class="rk-table">
+          <thead><tr><th scope="col">プラン</th><th scope="col">月払い</th><th scope="col">年払い</th></tr></thead>
+          {% for item in calc_static.products %}
+          <tbody>
+            <tr class="rk-group"><th scope="rowgroup" colspan="3">{{ item.p.name }}<span>{{ item.p.vendor }}</span></th></tr>
+            {% for r in item.rows %}
+            <tr{% if r.na %} class="rk-na"{% endif %}>
+              <th scope="row"><span class="rk-plan">{{ r.plan }}</span>{% if r.seat %}<span class="rk-kind">1人あたり</span>{% endif %}<span class="rk-chk">{{ r.checked }} 確認</span></th>
+              {% if r.na %}<td colspan="2">{{ r.monthly }}</td>{% else %}<td>{{ r.monthly }}</td><td>{{ r.annual }}</td>{% endif %}
+            </tr>
+            {% endfor %}
+          </tbody>
+          {% endfor %}
+        </table>
+      </div>
+    </section>
+    {% endif %}
+
+    <section class="rk-how" aria-labelledby="rk-how-h">
+      <h2 class="guide-h" id="rk-how-h">計算のしかたとデータの出どころ</h2>
+      <dl class="rk-dl">
+        <dt>料金のデータ</dt>
+        <dd>用途別AIガイド（<a href="{{ u('/best/') }}">/best/</a>）の料金を使っています。プランごとに、確かめた公式ページのURLと確認日を持っています。ガイドは毎日2本ずつ公式ページを開き直して点検し、料金が変わっていれば直します（約1週間で全ガイドを一巡）。</dd>
+        <dt>月払いと年払い</dt>
+        <dd>公式ページに年払いの年額があるプランはその額で計算します。年払いの「月あたりの額」しか書かれていないプランは、その額の12か月分を目安（「約」）として出します。年払いの記載がないプランは、月払いの12か月分です。どの出し方をしたかは結果の各行に書いています。</dd>
+        <dt>人数の数え方</dt>
+        <dd>「1人あたり」の料金のプランは人数分（最低人数があるプランは最低人数分）、1人用のプランは人数分の契約、1契約でチームが使えるプランは1契約として計算します。</dd>
+        <dt>ドル建ての料金</dt>
+        <dd>円に換算していません。円での支払額は、支払う日の為替レートとカード会社の手数料で変わります。</dd>
+        <dt>税と値引き</dt>
+        <dd>税込か税抜かは各社の表示のままです（結果の各行に公式の表記を載せています）。初月割引や期間限定の値引きは計算に入れず、通常の料金で出しています。</dd>
+      </dl>
+      <p class="sources-note">料金・条件は変わるので、申し込む前に各社の公式ページで確かめてください。当サイトはアフィリエイトリンクを使っていません。誤りを見つけた場合は<a href="{{ u('/about/#corrections') }}">訂正のご連絡</a>をお願いします。</p>
+    </section>
+  </div>
+</div>
+<script type="application/json" id="ryoukin-data">{{ data_json | safe }}</script>
+{% endblock %}
+{% block scripts %}<script src="{{ u('/assets/ryoukin.js') }}?v={{ v }}" defer></script>{% endblock %}

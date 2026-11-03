@@ -1,0 +1,212 @@
+[
+  {
+    "keyword": "AI 料金 比較",
+    "targetPath": "/tools/ryoukin/",
+    "priority": "high",
+    "status": "active"
+  },
+  {
+    "keyword": "AI 料金 計算",
+    "targetPath": "/tools/ryoukin/",
+    "priority": "high",
+    "status": "active"
+  },
+  {
+    "keyword": "ChatGPT Claude Gemini 料金 比較",
+    "targetPath": "/tools/ryoukin/",
+    "priority": "high",
+    "status": "active"
+  },
+  {
+    "keyword": "ChatGPT 料金",
+    "targetPath": "/best/chat/",
+    "priority": "high",
+    "status": "active"
+  },
+  {
+    "keyword": "Claude 料金",
+    "targetPath": "/best/chat/",
+    "priority": "high",
+    "status": "active"
+  },
+  {
+    "keyword": "Claude Code 料金",
+    "targetPath": "/best/coding/",
+    "priority": "high",
+    "status": "active"
+  },
+  {
+    "keyword": "生成AI 料金 比較",
+    "targetPath": "/tools/ryoukin/",
+    "priority": "medium",
+    "status": "active"
+  },
+  {
+    "keyword": "ChatGPT Business 料金",
+    "targetPath": "/tools/ryoukin/",
+    "priority": "medium",
+    "status": "active"
+  },
+  {
+    "keyword": "Claude Team 料金",
+    "targetPath": "/tools/ryoukin/",
+    "priority": "medium",
+    "status": "active"
+  },
+  {
+    "keyword": "ChatGPT Plus 年払い",
+    "targetPath": "/tools/ryoukin/",
+    "priority": "medium",
+    "status": "active"
+  },
+  {
+    "keyword": "Gemini 料金",
+    "targetPath": "/best/chat/",
+    "priority": "medium",
+    "status": "active"
+  },
+  {
+    "keyword": "Copilot 料金",
+    "targetPath": "/best/chat/",
+    "priority": "medium",
+    "status": "active"
+  },
+  {
+    "keyword": "Grok 料金",
+    "targetPath": "/best/chat/",
+    "priority": "medium",
+    "status": "active"
+  },
+  {
+    "keyword": "Codex 料金",
+    "targetPath": "/best/coding/",
+    "priority": "medium",
+    "status": "active"
+  },
+  {
+    "keyword": "Midjourney 料金",
+    "targetPath": "/best/image-generation/",
+    "priority": "medium",
+    "status": "active"
+  },
+  {
+    "keyword": "画像生成AI 料金 比較",
+    "targetPath": "/best/image-generation/",
+    "priority": "medium",
+    "status": "active"
+  },
+  {
+    "keyword": "LLM API 料金 比較",
+    "targetPath": "/best/api/",
+    "priority": "medium",
+    "status": "active"
+  },
+  {
+    "keyword": "Perplexity 料金",
+    "targetPath": "/best/research/",
+    "priority": "low",
+    "status": "active"
+  },
+  {
+    "keyword": "Notion AI 料金",
+    "targetPath": "/best/writing/",
+    "priority": "low",
+    "status": "active"
+  },
+  {
+    "keyword": "chatgpt claude geminiを0円で - 無料aiモデル図鑑",
+    "targetPath": "/best/chat/",
+    "priority": "medium",
+    "status": "active"
+  },
+  {
+    "keyword": "無料aiモデル図鑑",
+    "targetPath": "/models/",
+    "priority": "medium",
+    "status": "active"
+  },
+  {
+    "keyword": "niko1221",
+    "targetPath": "/news/20261004-strata-qwen38-flash-next-gaming-pc/",
+    "priority": "low",
+    "status": "active"
+  },
+  {
+    "keyword": "niko1221 strata",
+    "targetPath": "/news/20261004-strata-qwen38-flash-next-gaming-pc/",
+    "priority": "low",
+    "status": "active"
+  },
+  {
+    "keyword": "niko1221/strata",
+    "targetPath": "/news/20261004-strata-qwen38-flash-next-gaming-pc/",
+    "priority": "low",
+    "status": "active"
+  },
+  {
+    "keyword": "strata qwen",
+    "targetPath": "/news/20261004-strata-qwen38-flash-next-gaming-pc/",
+    "priority": "low",
+    "status": "active"
+  },
+  {
+    "keyword": "strata radeon",
+    "targetPath": "/news/20261004-strata-qwen38-flash-next-gaming-pc/",
+    "priority": "low",
+    "status": "active"
+  },
+  {
+    "keyword": "strata niko1221",
+    "targetPath": "/news/20261004-strata-qwen38-flash-next-gaming-pc/",
+    "priority": "low",
+    "status": "active"
+  },
+  {
+    "keyword": "deepseek harness 日本語化",
+    "targetPath": "/news/20261003-deepseek-harness-desktop/",
+    "priority": "low",
+    "status": "active"
+  },
+  {
+    "keyword": "rrsi",
+    "targetPath": "/news/20261004-google-rrsi-agent-harness-overfitting/",
+    "priority": "low",
+    "status": "active"
+  },
+  {
+    "keyword": "llm api",
+    "targetPath": "/best/api/",
+    "priority": "low",
+    "status": "active"
+  },
+  {
+    "keyword": "deepseek harness 日本語",
+    "targetPath": "/news/20261003-deepseek-harness-desktop/",
+    "priority": "low",
+    "status": "active"
+  },
+  {
+    "keyword": "strata mac llm",
+    "targetPath": "/news/20261004-strata-qwen38-flash-next-gaming-pc/",
+    "priority": "low",
+    "status": "active"
+  },
+  {
+    "keyword": "google ai edge foresight 日本語",
+    "targetPath": "/news/20261009-google-ai-edge-foresight-offline-meeting-notes/",
+    "priority": "low",
+    "status": "active"
+  },
+  {
+    "keyword": "田中智大",
+    "targetPath": "/about/editor/",
+    "priority": "low",
+    "status": "active"
+  },
+  {
+    "keyword": "ideogram 4.5",
+    "targetPath": "/news/20261002-ideogram-4-5-precise-edit/",
+    "priority": "low",
+    "status": "active"
+  }
+]

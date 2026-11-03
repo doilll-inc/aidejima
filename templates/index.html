@@ -4,6 +4,21 @@
 {% block main %}
 <div class="wrap">
   <h1 class="visually-hidden">{{ site.site_name }} - {{ site.tagline }}</h1>
+  {% if calc_home %}
+  <section class="calc-entry" aria-labelledby="calc-entry-h">
+    <div>
+      <h2 class="calc-entry-h" id="calc-entry-h"><a href="{{ u('/tools/ryoukin/') }}">AIの料金計算</a></h2>
+      <p class="calc-entry-p">ChatGPT・Claude・Gemini などの月額と年額を、人数と払い方から出します。料金は公式ページで確認した値です。</p>
+    </div>
+    <form class="calc-entry-f" action="{{ u('/tools/ryoukin/') }}" method="get">
+      <input type="hidden" name="g" value="chat">
+      <label class="visually-hidden" for="calc-entry-p">使うAI</label>
+      <select id="calc-entry-p" name="p">{% for p in calc_home %}<option value="{{ p.id }}">{{ p.name }}</option>{% endfor %}</select>
+      <label class="calc-entry-n"><input type="number" name="n" value="1" min="1" max="1000" inputmode="numeric" aria-label="使う人数">人</label>
+      <button type="submit">計算する</button>
+    </form>
+  </section>
+  {% endif %}
   {% if hero %}
   <section class="hero" aria-label="最新のニュース">
     {% set h = hero[0] %}

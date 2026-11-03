@@ -58,6 +58,7 @@
                 <td data-label="料金">
                   {% if pr.free %}<span class="gt-free">{% if pr.free.available %}無料あり{% else %}無料なし{% endif %}</span>{% endif %}
                   {% if p._min_plan %}<span class="gt-price" title="{{ p._min_plan.as_shown }}">{{ fmt_price(p._min_plan) }}〜</span>{% elif pr.usage %}<span class="gt-price" title="{{ pr.usage.as_shown }}">{{ fmt_price(pr.usage) }}</span>{% elif pr.plans %}<span class="gt-price">{{ pr.plans[0].as_shown }}</span>{% else %}<span class="gt-price">—</span>{% endif %}
+                  {% if p._calc %}<a class="gt-calc" href="{{ u(p._calc) }}">人数で計算</a>{% endif %}
                 </td>
                 <td data-label="日本語">{{ fact_cell(p._labels.japanese, p.japanese) }}</td>
                 <td data-label="商用利用">{{ fact_cell(p._labels.commercial_use, p.commercial_use) }}</td>
@@ -69,6 +70,7 @@
           </table>
         </div>
         <p class="guide-note">料金は公式ページの表記のまま（為替換算なし）。「—」は公式ページで確認できていない項目です。各製品の詳細と出典は下の一覧にあります。</p>
+        {% if g._calc %}<p class="calc-link">この表の製品の月額・年額は、<a href="{{ u('/tools/ryoukin/?g=' ~ g.slug) }}">AIの料金計算</a>で人数と払い方（月払い・年払い）を入れて出せます。</p>{% endif %}
       </section>
 
       <section class="products" aria-label="製品ごとの詳細">
@@ -103,7 +105,7 @@
       <section aria-label="その他の選択肢">
         <h2 class="guide-h">その他の選択肢</h2>
         <ul class="listed">
-          {% for p in g.listed %}<li{% if p.status == 'retired' %} class="retired"{% endif %}><a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.name }}</a><span class="gt-vendor">{{ p.vendor }}</span>{% if p.editorial_take %}<span class="listed-take">{{ p.editorial_take }}</span>{% elif p.strengths %}<span class="listed-take">{{ p.strengths[0] }}</span>{% endif %}{% if p.status == 'retired' and p.retired_note %}<span class="listed-take">{{ p.retired_note }}</span>{% endif %}</li>{% endfor %}
+          {% for p in g.listed %}<li{% if p.status == 'retired' %} class="retired"{% endif %}><a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.name }}</a><span class="gt-vendor">{{ p.vendor }}</span>{% if p.editorial_take %}<span class="listed-take">{{ p.editorial_take }}</span>{% elif p.strengths %}<span class="listed-take">{{ p.strengths[0] }}</span>{% endif %}{% if p.status == 'retired' and p.retired_note %}<span class="listed-take">{{ p.retired_note }}</span>{% endif %}{% if p._calc %}<a class="gt-calc" href="{{ u(p._calc) }}">人数で計算</a>{% endif %}</li>{% endfor %}
         </ul>
       </section>
       {% endif %}
