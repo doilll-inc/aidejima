@@ -18,7 +18,7 @@
    e. **答えの整合**: `verdicts[]` の `pick` が `retired` や `watch` になっていないか、`free`・`commercial`・`business` の答えが表の fact と矛盾していないかを確認して直す。
    f. **更新履歴**: 事実を変えたときだけ `changelog` に読者向けの1行を足す（`by: "reviewer"`）。変更が無ければ書かない。
    g. `updated`（事実を変えたときだけ今日）・`products[].checked`（点検した行は今日）・`last_reviewed`（今日）を更新する。
-   h. `python3 build.py` を実行し、エラーと「注意」を直す（出典のない料金・未来日・`title` の【】など）。
+   h. `python3 build.py` を実行し、エラーと「注意」を直す（出典のない料金・未来日・`title` の【】など）。プランの `as_shown` を変えたり足したりしたら、AIの料金計算（/tools/ryoukin/）の補助データ `data/ryoukin.json` の `plans` も合わせる（月払いか年払いか・最低人数など、新しい表記に書いてあることだけ。書き方はファイル先頭の `_comment`）。`python3 ryoukin.py check` の「注意」が0件になるまで直し、変えたら `data/ryoukin.json` も手順 i で一緒に add する。
    i. `git add data/guides/<slug>.json`（`data/models.json`・`data/taxonomy.json` を変えたならそれも）してコミットする。メッセージは `chore(guides): <title> を点検（料金N件更新・製品M件追加）` のように内容が分かる形で。**`git push` はしない**（後の手順で行う）。
 
 4. 対象に `api` が含まれる回は、`data/models.json` の `status: "current"` のモデルについて `official_url` か公式料金ページで単価（`input_per_m` `cached_input_per_m` `output_per_m`）を再確認し、各モデルに `"checked": "今日"` を足す。変わっていれば値を直し、`api.json` の `changelog` に書く。
