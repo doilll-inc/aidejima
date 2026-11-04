@@ -21,7 +21,7 @@ PATH = "/tools/ryoukin/"
 # 公式の表記に年払いをにおわせる語があるのに補助データが無いプランは、月払いか年払いかを決めつけない
 ANNUAL_CUE = re.compile(r"年|annual|yearly|billed|/yr|\byear\b", re.I)
 NUM_FIELDS = ("m", "ym", "y", "min", "max")
-TEXT_FIELDS = ("note", "who")
+TEXT_FIELDS = ("note", "who", "y_mult_why")
 CUR_SYMBOL = {"USD": "$", "JPY": "¥", "EUR": "€", "GBP": "£"}
 
 
@@ -89,6 +89,8 @@ def row_problems(row: dict, text: str) -> list[str]:
         bad.append("evidence が配列でない")
     else:
         bad += [f"evidence「{e}」" for e in ev if not isinstance(e, str) or e not in text]
+    if row.get("y_mult") is not None and not row.get("y_mult_why"):
+        bad.append("y_mult_why が無い（年払いの倍率の根拠になるガイドの文言）")
     if row.get("only") not in (None, "m", "y"):
         bad.append(f"only={row.get('only')!r}")
     if row.get("kind") not in (None, "personal", "seat", "team"):
@@ -157,7 +159,8 @@ def normalize_plan(pl: dict, row: dict | None, where: str, warns: list[str], dro
             m = amount
     if row.get("y_mult") and m is not None and y is None:
         y = round(m * row["y_mult"], 2)
-        out["yrule"] = f"年払いは月額×{row['y_mult']}"
+        out["yrule"] = row["y_mult_why"]  # ガイドに書いてある言い回しのまま（例「年払いは2か月分無料」）
+        out["ymult"] = row["y_mult"]
     for k, v in (("m", m), ("ym", ym), ("y", y)):
         if v is not None:
             out[k] = v

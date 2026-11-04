@@ -59,7 +59,7 @@
         r.mon = y / 12;
         r.yr = y;
         r.unit = "y";
-        if (pl.yrule) r.flags.push("年額は公式の「" + pl.yrule + "」から計算");
+        if (pl.yrule) r.flags.push("年額はガイドにある「" + pl.yrule + "」から" + multText(pl) + "計算");
       } else if (ym != null) {
         r.mon = ym;
         r.yr = ym * 12;
@@ -76,6 +76,11 @@
     }
     if (pl.usage) r.flags.push("シート料金だけの額（従量課金は別）");
     return r.mon == null ? null : r;
+  }
+
+  // 年払いの倍率の言い方（ガイドの文言に「×10」があれば繰り返さない）
+  function multText(pl) {
+    return String(pl.yrule).indexOf("×" + pl.ymult) >= 0 ? "" : "月額×" + pl.ymult + "で";
   }
 
   // 人数 n で何契約・何人分払うか
@@ -206,135 +211,98 @@
     return ns.join("・") + (list.length > 3 ? "など" : "");
   }
 
-  // 製品ごとの要約。「一番安い」「同じ額」は、選んだ払い方の料金がそのまま書かれたプランどうしでだけ言う。
-  // 目安の額（月払い×12・年払いの月あたり・「〜から」・従量課金つき・払い方の区別なし）は、出し方を文に書いて別に扱う
-  function summary(c, s) {
+  // 製品ごとの要約。「一番安い」「同じ額」は、選んだ払い方の料金がそのまま書かれたプランどうしで決める。
+  // そのとき、比べなかったプラン（月払い×12・年払いの月あたり・「〜から」・従量課金つき・払い方の区別なし）の目安の額の
+  // ほうが安ければ、「〇払いの額がそのまま書かれたプランの中では」と範囲を付け、その安い目安の額も同じ段落で必ず名前と額を出す。
+  // 戻り値: { text, mentioned（文中で名前と額を出した行）}
+  function summarize(c, s) {
     var per = s.b === "m" ? "月" : "年";
     var key = s.b === "m" ? "mon" : "yr";
     var bl = s.b === "m" ? "月払い" : "年払い";
     var who = s.n + "人・" + bl;
-    if (!c.pool.length)
-      return "この人数で計算できるプランがデータにありません。";
+    var mentioned = [];
+    if (!c.pool.length) return { text: "この人数で計算できるプランがデータにありません。", mentioned: mentioned };
     function amounts(r) {
-      return s.b === "m"
-        ? "月" + amt(r, "mon") + "（1年で" + amt(r, "yr") + "）"
-        : "1年で" + amt(r, "yr") + "（月あたり" + amt(r, "mon") + "）";
+      return s.b === "m" ? "月" + amt(r, "mon") + "（1年で" + amt(r, "yr") + "）" : "1年で" + amt(r, "yr") + "（月あたり" + amt(r, "mon") + "）";
+    }
+    function item(r) {
+      return basis(r, s.b) + "の" + r.pl.name + "（" + per + amt(r, key) + "）";
     }
     var others = c.pool.filter(function (r) {
       return !r.direct;
     });
+    // ref より目安の額で安い、比べなかった行（filter で個人向け・チーム向けに絞る）
+    function cheaper(ref, filter) {
+      return others
+        .filter(function (r) {
+          return r.yr < ref.yr - 1e-9 && (!filter || filter(r));
+        })
+        .sort(function (x, y) {
+          return x.yr - y.yr;
+        });
+    }
+    // まだ名前を出していない安い目安の額を「ほかに〜があります。」で出す
+    function alsoCheaper(list) {
+      var fresh = list.filter(function (r) {
+        return mentioned.indexOf(r) < 0;
+      });
+      if (!fresh.length) return "";
+      fresh.forEach(function (r) {
+        mentioned.push(r);
+      });
+      return "ほかに、" + fresh.map(item).join("、") + "があります（目安の額）。";
+    }
+    var t;
     if (!c.best) {
       var X = cheapest(others);
-      return (
-        who +
-        "の料金がそのまま書かれたプランは、このデータにありません。表の額は目安で、そのうち一番安いのは" +
-        X.pl.name +
-        "（" +
-        basis(X, s.b) +
-        "）の" +
-        per +
-        amt(X, key) +
-        "です。"
-      );
+      mentioned.push(X);
+      t = who + "の料金がそのまま書かれたプランは、このデータにありません。表の額は目安で、そのうち一番安いのは" + X.pl.name + "（" + basis(X, s.b) + "）の" + per + amt(X, key) + "です。";
+      return { text: t, mentioned: mentioned };
     }
     var B = c.best;
-    var mentioned = [B];
-    var t =
-      who +
-      "で一番安い有料プランは" +
-      B.pl.name +
-      "で、" +
-      amounts(B) +
-      "です。";
-    if (B.pl.yrule && s.b === "y")
-      t += "年額は公式の「" + B.pl.yrule + "」から出しています。";
-    var P = cheapest(
-      c.direct.filter(function (r) {
-        return !isTeam(r);
-      }),
-    );
+    mentioned.push(B);
+    var below = cheaper(B);
+    if (below.length) t = who + "で、" + bl + "の額がそのまま書かれたプランの中では" + B.pl.name + "が一番安く、" + amounts(B) + "です。" + alsoCheaper(below);
+    else t = who + "で一番安い有料プランは" + B.pl.name + "で、" + amounts(B) + "です。";
+    if (B.pl.yrule && s.b === "y") t += "年額は、ガイドにある「" + B.pl.yrule + "」から" + multText(B.pl) + "出しています。";
+    var P = cheapest(c.direct.filter(function (r) {
+      return !isTeam(r);
+    }));
     var T = cheapest(c.direct.filter(isTeam));
     if (P && T) {
       // 一番安い方はもう書いたので、もう一方（個人向け⇔チーム・ビジネス向け）の一番安いプランとの差を書く
       var d = Math.abs(T[key] - P[key]);
       var minNote = T.st.u > s.n ? "（最低" + T.pl.min + "人分）" : "";
-      if (d < 0.005)
-        t +=
-          "個人向けの" +
-          P.pl.name +
-          "とチーム・ビジネス向けの" +
-          T.pl.name +
-          minNote +
-          "は、" +
-          s.n +
-          "人だと同じ額です。";
-      else if (B === P)
-        t +=
-          "チーム・ビジネス向けで一番安い" +
-          T.pl.name +
-          "は" +
-          per +
-          amt(T, key) +
-          minNote +
-          "で、" +
-          P.pl.name +
-          "より" +
-          per +
-          money(d, c.cur) +
-          "高くなります。";
-      else
-        t +=
-          "個人向けで一番安い" +
-          P.pl.name +
-          "を" +
-          s.n +
-          "人分契約すると" +
-          per +
-          amt(P, key) +
-          "で、" +
-          T.pl.name +
-          "より" +
-          per +
-          money(d, c.cur) +
-          "高くなります。";
-      mentioned.push(P, T);
+      if (mentioned.indexOf(P) < 0) mentioned.push(P);
+      if (mentioned.indexOf(T) < 0) mentioned.push(T);
+      if (d < 0.005) {
+        t += "個人向けの" + P.pl.name + "とチーム・ビジネス向けの" + T.pl.name + minNote + "は、" + s.n + "人だと同じ額です。";
+      } else if (B === P) {
+        var tb = cheaper(T, isTeam);
+        t += (tb.length ? "チーム・ビジネス向けでは、額がそのまま書かれたプランの中で一番安い" : "チーム・ビジネス向けで一番安い") + T.pl.name + "は" + per + amt(T, key) + minNote + "で、" + P.pl.name + "より" + per + money(d, c.cur) + "高くなります。" + alsoCheaper(tb);
+      } else {
+        var pb = cheaper(P, function (r) {
+          return !isTeam(r);
+        });
+        t += (pb.length ? "個人向けでは、額がそのまま書かれたプランの中で一番安い" : "個人向けで一番安い") + P.pl.name + "を" + s.n + "人分契約すると" + per + amt(P, key) + "で、" + T.pl.name + "より" + per + money(d, c.cur) + "高くなります。" + alsoCheaper(pb);
+      }
     } else {
       // 片方（個人向けかチーム・ビジネス向け）が、そのままの額のプランに無い
       var wantTeam = !!P;
       var label = wantTeam ? "チーム・ビジネス向け" : "個人向け";
-      var Y = cheapest(
-        others.filter(function (r) {
-          return isTeam(r) === wantTeam;
-        }),
-      );
+      var Y = cheapest(others.filter(function (r) {
+        return isTeam(r) === wantTeam;
+      }));
       if (Y) {
-        t +=
-          label +
-          "の" +
-          Y.pl.name +
-          "は" +
-          basis(Y, s.b) +
-          "で" +
-          per +
-          amt(Y, key) +
-          "のため、並べて比べていません。";
-        mentioned.push(Y);
+        if (mentioned.indexOf(Y) < 0) {
+          t += label + "の" + Y.pl.name + "は" + basis(Y, s.b) + "で" + per + amt(Y, key) + "のため、並べて比べていません。";
+          mentioned.push(Y);
+        }
       } else if (wantTeam && c.otherCur) {
-        t +=
-          "チーム・ビジネス向けの" +
-          c.otherCur.pl.name +
-          "は通貨が違う（" +
-          c.otherCur.pl.cur +
-          "）ため、並べて比べていません。";
+        t += "チーム・ビジネス向けの" + c.otherCur.pl.name + "は通貨が違う（" + c.otherCur.pl.cur + "）ため、並べて比べていません。";
       } else if (wantTeam && c.tNa.length) {
         var x = c.tNa[0];
-        t +=
-          "チーム・ビジネス向けの" +
-          x.pl.name +
-          "は" +
-          (x.pl.na
-            ? "金額の記載がありません。"
-            : s.n + "人では使えません（" + x.st.why + "）。");
+        t += "チーム・ビジネス向けの" + x.pl.name + "は" + (x.pl.na ? "金額の記載がありません。" : s.n + "人では使えません（" + x.st.why + "）。");
       } else if (wantTeam) {
         t += "このデータには、チーム・ビジネス向けのプランの料金がありません。";
       }
@@ -345,16 +313,16 @@
     if (skipped.length) {
       var why = [];
       skipped.forEach(function (r) {
-        var w = r.pl.from
-          ? "「〜から」の額"
-          : r.pl.usage
-            ? "従量課金が別"
-            : bl + "の額が書かれていない";
+        var w = r.pl.from ? "「〜から」の額" : r.pl.usage ? "従量課金が別" : bl + "の額が書かれていない";
         if (why.indexOf(w) < 0) why.push(w);
       });
       t += names(skipped) + "は比べていません（" + why.join("・") + "）。";
     }
-    return t;
+    return { text: t, mentioned: mentioned };
+  }
+
+  function summary(c, s) {
+    return summarize(c, s).text;
   }
 
   if (typeof module !== "undefined" && module.exports) {
@@ -364,6 +332,8 @@
       seats: seats,
       calcProduct: calcProduct,
       summary: summary,
+      summarize: summarize,
+      isTeam: isTeam,
     };
     return;
   }
