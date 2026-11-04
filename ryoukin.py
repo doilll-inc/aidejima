@@ -20,15 +20,29 @@ OVERLAY_FILE = ROOT / "data" / "ryoukin.json"
 PATH = "/tools/ryoukin/"
 # 公式の表記に年払いをにおわせる語があるのに補助データが無いプランは、月払いか年払いかを決めつけない
 ANNUAL_CUE = re.compile(r"年|annual|yearly|billed|/yr|\byear\b", re.I)
-NUM_FIELDS = ("m", "ym", "y", "min", "max", "then", "promo_months")
+NUM_FIELDS = ("m", "ym", "y", "min", "max")
 TEXT_FIELDS = ("note", "who")
 CUR_SYMBOL = {"USD": "$", "JPY": "¥", "EUR": "€", "GBP": "£"}
 
 
-def load_overlay() -> dict:
+def load_overlay_checked() -> tuple[dict, list[str]]:
+    """data/ryoukin.json を読む。壊れていても止めず、補助データなしで動けるようにして注意を返す"""
     if not OVERLAY_FILE.exists():
-        return {"plans": []}
-    return json.loads(OVERLAY_FILE.read_text(encoding="utf-8"))
+        return {"plans": []}, []
+    try:
+        data = json.loads(OVERLAY_FILE.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as e:
+        return {"plans": []}, [f"data/ryoukin.json を読めない（{e}）。補助データなしで計算する（年払いの語がある料金は「区別なし」になる）"]
+    if not isinstance(data, dict):
+        return {"plans": []}, ["data/ryoukin.json の形が違う（全体が {…} でない）。補助データなしで計算する"]
+    if not isinstance(data.get("plans", []), list):
+        data["plans"] = []
+        return data, ["data/ryoukin.json の plans が配列でない。補助データなしで計算する"]
+    return data, []
+
+
+def load_overlay() -> dict:
+    return load_overlay_checked()[0]
 
 
 def numbers_in(text: str) -> set[float]:
@@ -54,42 +68,63 @@ def host_of(url: str) -> str:
         return ""
 
 
-def _plan_texts(guides: list[dict]) -> dict[str, list[str]]:
-    """公式の表記 → それが出てくる全プランの文（表記・説明・製品の注記）"""
-    out: dict[str, list[str]] = {}
-    for g in guides:
-        for p in g.get("products") or []:
-            pr = p.get("pricing") or {}
-            for pl in pr.get("plans") or []:
-                if pl.get("as_shown"):
-                    out.setdefault(pl["as_shown"], []).append(" ".join([pl["as_shown"], pl.get("detail", ""), pr.get("note", "")]))
-    return out
+def row_problems(row: dict, text: str) -> list[str]:
+    """補助データの1行が、そのプラン自身の文（公式の表記・説明・製品の注記）と合っているか。合わない点を返す"""
+    nums = numbers_in(text)
+    bad: list[str] = []
+    for k in NUM_FIELDS + ("y_mult",):
+        v = row.get(k)
+        if v is None:
+            continue
+        if isinstance(v, bool) or not isinstance(v, (int, float)):
+            bad.append(f"{k}={v!r}（数値でない）")
+        elif k != "y_mult" and float(v) not in nums:
+            bad.append(f"{k}={v}")
+    for k in TEXT_FIELDS:
+        v = row.get(k)
+        if v not in (None, "") and (not isinstance(v, str) or v not in text):
+            bad.append(f"{k}「{v}」")
+    ev = row.get("evidence") or []
+    if not isinstance(ev, list):
+        bad.append("evidence が配列でない")
+    else:
+        bad += [f"evidence「{e}」" for e in ev if not isinstance(e, str) or e not in text]
+    if row.get("only") not in (None, "m", "y"):
+        bad.append(f"only={row.get('only')!r}")
+    if row.get("kind") not in (None, "personal", "seat", "team"):
+        bad.append(f"kind={row.get('kind')!r}")
+    return bad
 
 
-def check_overlay(overlay: dict, guides: list[dict]) -> tuple[dict[str, dict], list[str]]:
-    """補助データの各行を、今のガイドの文と照合する。使える行（as_shown → 行）と注意を返す"""
-    texts = _plan_texts(guides)
-    ok: dict[str, dict] = {}
+def index_rows(overlay: dict) -> tuple[dict[str, list[dict]], list[str]]:
+    """公式の表記 → 補助データの行（ファイルの順）。形の壊れた行は使わない"""
+    by_shown: dict[str, list[dict]] = {}
     warns: list[str] = []
-    for row in overlay.get("plans") or []:
-        key = row.get("as_shown", "")
-        if key not in texts:
-            warns.append(f"補助データの行がどのプランにも当たらない（ガイドの点検で表記が変わった？）: {key[:50]}")
+    for i, row in enumerate(overlay.get("plans") or []):
+        if not isinstance(row, dict) or not isinstance(row.get("as_shown"), str) or not row["as_shown"]:
+            warns.append(f"補助データの plans[{i}] の形が違う（as_shown が無い）ので使わない")
             continue
-        union = " ".join(texts[key])
-        nums = numbers_in(union)
-        bad = [f"{k}={row[k]}" for k in NUM_FIELDS if row.get(k) is not None and float(row[k]) not in nums]
-        bad += [f"{k}「{row[k]}」" for k in TEXT_FIELDS if row.get(k) and row[k] not in union]
-        bad += [f"evidence「{e}」" for e in row.get("evidence") or [] if e not in union]
-        if bad:
-            warns.append(f"補助データの {', '.join(bad)} がガイドの文に無いので使わない（料金が変わった？ data/ryoukin.json を直す）: {key[:50]}")
+        if "guides" in row and not (isinstance(row["guides"], list) and all(isinstance(x, str) for x in row["guides"])):
+            warns.append(f"補助データの guides が配列でないので使わない: {row['as_shown'][:50]}")
             continue
-        ok[key] = row
-    return ok, warns
+        by_shown.setdefault(row["as_shown"], []).append(row)
+    return by_shown, warns
 
 
-def normalize_plan(pl: dict, row: dict | None, where: str, warns: list[str]) -> dict:
-    """ガイドのプラン1つ → 計算用の形。数字はガイドの amount か、照合済みの補助データだけ"""
+def pick_row(cands: list[dict], text: str) -> tuple[dict | None, list[str]]:
+    """候補の行のうち、そのプランの文と合う最初の行。どれも合わなければ (None, 合わない点)"""
+    fails: list[str] = []
+    for r in cands:
+        bad = row_problems(r, text)
+        if not bad:
+            return r, []
+        fails += bad
+    return None, fails
+
+
+def normalize_plan(pl: dict, row: dict | None, where: str, warns: list[str], dropped: bool = False, quiet: bool = False) -> dict:
+    """ガイドのプラン1つ → 計算用の形。数字はガイドの amount か、照合済みの補助データだけ。
+    dropped=補助データの行があったのにこのプランの文と合わなかった（料金や注記が変わった）。月払いか年払いかを決めつけない"""
     amount, per, shown = pl.get("amount"), pl.get("per"), pl.get("as_shown") or ""
     out = {
         "name": pl.get("name", ""),
@@ -102,7 +137,10 @@ def normalize_plan(pl: dict, row: dict | None, where: str, warns: list[str]) -> 
     row = row or {}
     has_num = any(row.get(k) is not None for k in ("m", "ym", "y"))
     m = ym = y = None
-    if row.get("unk"):
+    if dropped:
+        if amount is not None:
+            out["p"] = amount
+    elif row.get("unk"):
         if amount is not None:
             out["p"] = amount
     elif has_num:
@@ -111,7 +149,8 @@ def normalize_plan(pl: dict, row: dict | None, where: str, warns: list[str]) -> 
         if not row and ANNUAL_CUE.search(shown):
             # 年払いの表記があるのに読み方が無い。月払いと決めつけず「区別なし」で出す
             out["p"] = amount
-            warns.append(f"{where}「{pl.get('name')}」: 公式の表記に年払いの語があるが補助データが無い（data/ryoukin.json に足す）: {shown[:50]}")
+            if not quiet:
+                warns.append(f"{where}「{pl.get('name')}」: 公式の表記に年払いの語があるが補助データが無い（data/ryoukin.json に足す）: {shown[:50]}")
         elif per == "year":
             y = amount
         else:
@@ -122,11 +161,12 @@ def normalize_plan(pl: dict, row: dict | None, where: str, warns: list[str]) -> 
     for k, v in (("m", m), ("ym", ym), ("y", y)):
         if v is not None:
             out[k] = v
-    for k in ("only", "min", "max", "then", "promo_months", "note", "who"):
+    for k in ("only", "min", "max", "note", "who"):
         if row.get(k) not in (None, ""):
-            out["pm" if k == "promo_months" else k] = row[k]
-    if row.get("from"):
-        out["from"] = True
+            out[k] = row[k]
+    for k in ("from", "usage"):
+        if row.get(k):
+            out[k] = True
     if row.get("kind"):
         out["kind"] = row["kind"]
     if not any(k in out for k in ("m", "ym", "y", "p")):
@@ -136,10 +176,21 @@ def normalize_plan(pl: dict, row: dict | None, where: str, warns: list[str]) -> 
 
 def build_data(guides: list[dict], base_path: str = "") -> tuple[dict, list[str]]:
     """公開中のガイド → ブラウザ用のデータ。戻り値: (データ, 注意)"""
-    overlay = load_overlay()
-    rows, warns = check_overlay(overlay, guides)
-    skip = set(overlay.get("skip_guides") or [])
-    defaults = overlay.get("defaults") or {}
+    overlay, warns = load_overlay_checked()
+    quiet = bool(warns)  # ファイルごと読めないときは、プランごとの「補助データが無い」は出さない（原因は1つ）
+    rows, w = index_rows(overlay)
+    warns += w
+    used: set[int] = set()
+    tried: set[int] = set()
+    def typed(key: str, kind: type):
+        v = overlay.get(key)
+        if v is not None and not isinstance(v, kind):
+            warns.append(f"data/ryoukin.json の {key} の形が違うので使わない")
+            return kind()
+        return v or kind()
+
+    skip = set(typed("skip_guides", list))
+    defaults = typed("defaults", dict)
     out_guides = []
     for g in guides:
         if g.get("status") != "published" or g.get("slug") in skip:
@@ -152,7 +203,22 @@ def build_data(guides: list[dict], base_path: str = "") -> tuple[dict, list[str]
         items = []
         for p in prods:
             pr = p.get("pricing") or {}
-            plans = [normalize_plan(pl, rows.get(pl.get("as_shown", "")), f"{slug}/{p['id']}", warns) for pl in pr.get("plans") or []]
+            plans = []
+            for pl in pr.get("plans") or []:
+                shown = pl.get("as_shown", "")
+                where = f"{slug}/{p['id']}"
+                # 同じ表記でもガイドごとに、そのプラン自身の文（表記・説明・その製品の注記）だけで照合する
+                cands = [r for r in rows.get(shown, []) if not r.get("guides") or slug in r["guides"]]
+                row, fails = pick_row(cands, " ".join([shown, pl.get("detail", ""), pr.get("note", "")]))
+                tried.update(id(r) for r in cands)
+                if row:
+                    used.add(id(row))
+                elif cands:
+                    warns.append(
+                        f"{where}「{pl.get('name')}」: 補助データが合わないので使わず、月払いか年払いか分からない扱いにする（{', '.join(fails)}。"
+                        f"このガイドの文に無い数字・語句か、形の誤り。料金が変わったら data/ryoukin.json を直す）: {shown[:50]}"
+                    )
+                plans.append(normalize_plan(pl, row, where, warns, dropped=bool(cands) and not row, quiet=quiet))
             if not any(not pl.get("na") for pl in plans):
                 continue
             free = pr.get("free") or {}
@@ -184,10 +250,15 @@ def build_data(guides: list[dict], base_path: str = "") -> tuple[dict, list[str]
             "defaults": want,
             "products": items,
         })
+    for shown, rs in rows.items():
+        for r in rs:
+            if id(r) not in used and id(r) not in tried:
+                scope = f"（{','.join(r['guides'])}）" if r.get("guides") else ""
+                warns.append(f"補助データの行がどのプランにも当たらない（ガイドの点検で表記が変わった？）: {shown[:50]}{scope}")
     data = {
         "path": base_path + PATH,
         "guides": out_guides,
-        "home": [i for i in overlay.get("home_products") or []],
+        "home": [i for i in typed("home_products", list) if isinstance(i, str)],
     }
     return data, warns
 
@@ -223,8 +294,6 @@ def static_rows(product: dict) -> list[dict]:
         else:
             if pl.get("m") is not None:
                 mo = fmt_money(pl["m"], cur) + frm
-                if pl.get("then") is not None:
-                    mo += f"（{pl['pm']}か月後から{fmt_money(pl['then'], cur)}）"
             else:
                 mo = "年払いのみ" if pl.get("only") == "y" else "記載なし"
             if pl.get("y") is not None:
@@ -246,8 +315,6 @@ def main(argv: list[str]) -> int:
     import guides as guides_mod
 
     gs = [g for g in guides_mod.load_all() if g.get("status") == "published"]
-    overlay = load_overlay()
-    _, overlay_warns = check_overlay(overlay, gs)
     data, warns = build_data(gs)
     s = stats(data)
     print(f"料金計算: ガイド{s['guides']}本・製品{s['products']}・計算できるプラン{s['plans']}（月払いと年払いの両方が分かる {s['both']}・区別なし {s['unknown_basis']}）")
@@ -255,8 +322,7 @@ def main(argv: list[str]) -> int:
         print(f"  {g['slug']}: " + "、".join(p["name"] for p in g["products"]))
     for w in warns:
         print("  注意:", w)
-    bad = [w for w in overlay_warns if "使わない" in w]
-    return 1 if bad else 0
+    return 1 if warns else 0
 
 
 if __name__ == "__main__":

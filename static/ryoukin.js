@@ -1,8 +1,8 @@
 /* AIの料金計算（/tools/ryoukin/）
    データはページに埋め込んだ JSON（build.py → ryoukin.py が data/guides/*.json から作る）。
    計算はこのブラウザの中だけで行い、入力はどこにも送らない。条件は URL（?g=&p=&n=&b=）に残すので、そのまま共有できる。
-   数字はデータにあるものだけを使う。年払いの年額がなく「月あたり」だけのものは12か月分を「約」で出し、
-   どの出し方をしたかを各行に書く */
+   数字はデータにあるものだけを使う。選んだ払い方の料金が無いプランは別の出し方（月払い×12・年払いの月あたり など）で
+   表に出すが、その出し方を各行に書き、要約の「一番安い」「同じ額」は、選んだ払い方の料金がそのまま書かれたプランどうしでだけ言う */
 (function () {
   "use strict";
   var SYM = { JPY: "¥", USD: "$", EUR: "€", GBP: "£" };
@@ -23,22 +23,17 @@
   }
 
   // プラン1つを、払い方 b（"m"=月払い / "y"=年払い）で払うときの1人（1契約）あたりの料金
-  // mon=月あたり / yr=1年分 / approx=目安（約）/ tag=払い方の制約 / flags=出し方の説明
+  // mon=月あたり / yr=1年分 / unit=どの数字から出したか（m・y・ym）/ approx=目安（約）/ tag=払い方の制約 / flags=出し方の説明
   function price(pl, b) {
     if (pl.na) return null;
     var r = { approx: false, flags: [], tag: "" };
     var m = pl.m,
       y = pl.y,
       ym = pl.ym;
-    function yearOfM() {
-      return pl.then != null && pl.pm
-        ? m * pl.pm + pl.then * (12 - pl.pm)
-        : m * 12;
-    }
     if (pl.p != null) {
       r.mon = pl.p;
       r.yr = pl.p * 12;
-      r.unit = "m";
+      r.unit = "p";
       r.approx = true;
       r.flags.push(
         "公式の表記からは月払いか年払いかが分からないため、表示の月額の12か月分",
@@ -46,7 +41,7 @@
     } else if (b === "m") {
       if (m != null) {
         r.mon = m;
-        r.yr = yearOfM();
+        r.yr = m * 12;
         r.unit = "m";
         if (pl.only === "m") r.tag = "月払いのみ";
       } else if (y != null || ym != null) {
@@ -72,24 +67,14 @@
         r.approx = true;
         r.flags.push("年額の記載がないため、年払いの月あたりの額の12か月分");
       } else if (m != null) {
-        r.yr = yearOfM();
-        r.mon = r.yr / 12;
+        r.mon = m;
+        r.yr = m * 12;
         r.unit = "m";
         if (pl.only === "m") r.tag = "月払いのみ";
         else r.flags.push("年払いの料金がデータにないため、月払いの12か月分");
       }
     }
-    if (pl.then != null && r.unit === "m" && pl.p == null) {
-      r.flags.push(
-        "最初の" +
-          pl.pm +
-          "か月は月" +
-          money(m, pl.cur) +
-          "、その後は月" +
-          money(pl.then, pl.cur) +
-          "（1年分はその合計）",
-      );
-    }
+    if (pl.usage) r.flags.push("シート料金だけの額（従量課金は別）");
     return r.mon == null ? null : r;
   }
 
@@ -112,10 +97,50 @@
     return { ok: true, u: n, label: n === 1 ? "1人" : n + "人分の契約" };
   }
 
+  // 選んだ払い方の料金がデータにそのまま書かれていて、「〜から」でも従量課金つきでもない行。要約で比べるのはこれだけ
+  function isDirect(r, b) {
+    var pl = r.pl;
+    if (!r.pr || !r.st.ok || pl.p != null || pl.from || pl.usage) return false;
+    return b === "m"
+      ? r.pr.unit === "m" && pl.m != null
+      : r.pr.unit === "y" && pl.y != null;
+  }
+
+  // 要約に書く「その額をどう出したか」（そのままの額なら空）
+  function basis(r, b) {
+    var pl = r.pl,
+      out = [];
+    if (pl.p != null) out.push("月払いか年払いか分からない表示の額");
+    else if (b === "m" && r.pr.unit === "y")
+      out.push(
+        (pl.only === "y" ? "年払いのみで" : "月払いの額が書かれておらず") +
+          "、年額の12分の1",
+      );
+    else if (b === "m" && r.pr.unit === "ym")
+      out.push(
+        (pl.only === "y" ? "年払いのみで" : "月払いの額が書かれておらず") +
+          "、年払いの月あたりの額",
+      );
+    else if (b === "y" && r.pr.unit === "ym")
+      out.push("年払いの月あたり" + money(pl.ym, pl.cur) + "の12か月分");
+    else if (b === "y" && r.pr.unit === "m")
+      out.push(
+        (pl.only === "m" ? "年払いがなく" : "年払いの額が書かれておらず") +
+          "、月払いの12か月分",
+      );
+    if (pl.from) out.push("「〜から」の一番低い額");
+    if (pl.usage) out.push("従量課金は別");
+    return out.join("・");
+  }
+
   function cheapest(list) {
     return list.reduce(function (a, r) {
       return !a || r.yr < a.yr - 1e-9 ? r : a;
     }, null);
+  }
+
+  function isTeam(r) {
+    return r.pl.kind !== "personal";
   }
 
   function calcProduct(prod, n, b) {
@@ -127,6 +152,7 @@
         row.mon = pr.mon * st.u;
         row.yr = pr.yr * st.u;
       }
+      row.direct = isDirect(row, b);
       return row;
     });
     var ok = rows.filter(function (r) {
@@ -144,25 +170,191 @@
     var pool = ok.filter(function (r) {
       return r.pl.cur === cur;
     });
-    var isTeam = function (r) {
-      return r.pl.kind !== "personal";
-    };
-    var tBest = cheapest(pool.filter(isTeam));
+    var direct = pool.filter(function (r) {
+      return r.direct;
+    });
     return {
       rows: rows,
       cur: cur,
-      best: cheapest(pool),
-      pBest: cheapest(
-        pool.filter(function (r) {
-          return !isTeam(r);
+      pool: pool,
+      direct: direct,
+      best: cheapest(direct), // 選んだ払い方の料金がそのまま書かれたプランで一番安いもの（無ければ null）
+      bestAny: cheapest(pool), // 目安の額も含めて一番安いもの（表と一覧の「目安」に使う）
+      otherCur: cheapest(
+        ok.filter(function (r) {
+          return r.pl.cur !== cur && isTeam(r);
         }),
       ),
-      tBest: tBest,
-      tOther: tBest ? null : cheapest(ok.filter(isTeam)),
       tNa: rows.filter(function (r) {
         return isTeam(r) && (r.pl.na || !r.st.ok);
       }),
     };
+  }
+
+  function amt(r, key) {
+    return (
+      (r.pr.approx ? "約" : "") +
+      money(r[key], r.pl.cur) +
+      (r.pl.from ? "〜" : "")
+    );
+  }
+
+  function names(list) {
+    var ns = list.slice(0, 3).map(function (r) {
+      return r.pl.name;
+    });
+    return ns.join("・") + (list.length > 3 ? "など" : "");
+  }
+
+  // 製品ごとの要約。「一番安い」「同じ額」は、選んだ払い方の料金がそのまま書かれたプランどうしでだけ言う。
+  // 目安の額（月払い×12・年払いの月あたり・「〜から」・従量課金つき・払い方の区別なし）は、出し方を文に書いて別に扱う
+  function summary(c, s) {
+    var per = s.b === "m" ? "月" : "年";
+    var key = s.b === "m" ? "mon" : "yr";
+    var bl = s.b === "m" ? "月払い" : "年払い";
+    var who = s.n + "人・" + bl;
+    if (!c.pool.length)
+      return "この人数で計算できるプランがデータにありません。";
+    function amounts(r) {
+      return s.b === "m"
+        ? "月" + amt(r, "mon") + "（1年で" + amt(r, "yr") + "）"
+        : "1年で" + amt(r, "yr") + "（月あたり" + amt(r, "mon") + "）";
+    }
+    var others = c.pool.filter(function (r) {
+      return !r.direct;
+    });
+    if (!c.best) {
+      var X = cheapest(others);
+      return (
+        who +
+        "の料金がそのまま書かれたプランは、このデータにありません。表の額は目安で、そのうち一番安いのは" +
+        X.pl.name +
+        "（" +
+        basis(X, s.b) +
+        "）の" +
+        per +
+        amt(X, key) +
+        "です。"
+      );
+    }
+    var B = c.best;
+    var mentioned = [B];
+    var t =
+      who +
+      "で一番安い有料プランは" +
+      B.pl.name +
+      "で、" +
+      amounts(B) +
+      "です。";
+    if (B.pl.yrule && s.b === "y")
+      t += "年額は公式の「" + B.pl.yrule + "」から出しています。";
+    var P = cheapest(
+      c.direct.filter(function (r) {
+        return !isTeam(r);
+      }),
+    );
+    var T = cheapest(c.direct.filter(isTeam));
+    if (P && T) {
+      // 一番安い方はもう書いたので、もう一方（個人向け⇔チーム・ビジネス向け）の一番安いプランとの差を書く
+      var d = Math.abs(T[key] - P[key]);
+      var minNote = T.st.u > s.n ? "（最低" + T.pl.min + "人分）" : "";
+      if (d < 0.005)
+        t +=
+          "個人向けの" +
+          P.pl.name +
+          "とチーム・ビジネス向けの" +
+          T.pl.name +
+          minNote +
+          "は、" +
+          s.n +
+          "人だと同じ額です。";
+      else if (B === P)
+        t +=
+          "チーム・ビジネス向けで一番安い" +
+          T.pl.name +
+          "は" +
+          per +
+          amt(T, key) +
+          minNote +
+          "で、" +
+          P.pl.name +
+          "より" +
+          per +
+          money(d, c.cur) +
+          "高くなります。";
+      else
+        t +=
+          "個人向けで一番安い" +
+          P.pl.name +
+          "を" +
+          s.n +
+          "人分契約すると" +
+          per +
+          amt(P, key) +
+          "で、" +
+          T.pl.name +
+          "より" +
+          per +
+          money(d, c.cur) +
+          "高くなります。";
+      mentioned.push(P, T);
+    } else {
+      // 片方（個人向けかチーム・ビジネス向け）が、そのままの額のプランに無い
+      var wantTeam = !!P;
+      var label = wantTeam ? "チーム・ビジネス向け" : "個人向け";
+      var Y = cheapest(
+        others.filter(function (r) {
+          return isTeam(r) === wantTeam;
+        }),
+      );
+      if (Y) {
+        t +=
+          label +
+          "の" +
+          Y.pl.name +
+          "は" +
+          basis(Y, s.b) +
+          "で" +
+          per +
+          amt(Y, key) +
+          "のため、並べて比べていません。";
+        mentioned.push(Y);
+      } else if (wantTeam && c.otherCur) {
+        t +=
+          "チーム・ビジネス向けの" +
+          c.otherCur.pl.name +
+          "は通貨が違う（" +
+          c.otherCur.pl.cur +
+          "）ため、並べて比べていません。";
+      } else if (wantTeam && c.tNa.length) {
+        var x = c.tNa[0];
+        t +=
+          "チーム・ビジネス向けの" +
+          x.pl.name +
+          "は" +
+          (x.pl.na
+            ? "金額の記載がありません。"
+            : s.n + "人では使えません（" + x.st.why + "）。");
+      } else if (wantTeam) {
+        t += "このデータには、チーム・ビジネス向けのプランの料金がありません。";
+      }
+    }
+    var skipped = others.filter(function (r) {
+      return mentioned.indexOf(r) < 0;
+    });
+    if (skipped.length) {
+      var why = [];
+      skipped.forEach(function (r) {
+        var w = r.pl.from
+          ? "「〜から」の額"
+          : r.pl.usage
+            ? "従量課金が別"
+            : bl + "の額が書かれていない";
+        if (why.indexOf(w) < 0) why.push(w);
+      });
+      t += names(skipped) + "は比べていません（" + why.join("・") + "）。";
+    }
+    return t;
   }
 
   if (typeof module !== "undefined" && module.exports) {
@@ -171,6 +363,7 @@
       price: price,
       seats: seats,
       calcProduct: calcProduct,
+      summary: summary,
     };
     return;
   }
@@ -204,13 +397,6 @@
   function day(s) {
     var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || "");
     return m ? +m[2] + "月" + +m[3] + "日" : s || "";
-  }
-  function amt(r, key) {
-    return (
-      (r.pr.approx ? "約" : "") +
-      money(r[key], r.pl.cur) +
-      (r.pl.from ? "〜" : "")
-    );
   }
   function shortUrl(u) {
     var s = u.replace(/^https?:\/\/(www\.)?/, "");
@@ -260,92 +446,75 @@
   // プラン名の下に出す「何の料金か」と単価（例: 1人あたり ¥3,850/月・5人分）
   function unitLine(r, s) {
     var pl = r.pl;
-    var kind = pl.kind === "seat" ? "1人あたり" : pl.kind === "team" ? "1契約でチーム" + (pl.who ? "（" + esc(pl.who) + "）" : "") : "1人用";
+    var kind =
+      pl.kind === "seat"
+        ? "1人あたり"
+        : pl.kind === "team"
+          ? "1契約でチーム" + (pl.who ? "（" + esc(pl.who) + "）" : "")
+          : "1人用";
     if (!r.pr || !r.st.ok) return kind;
     var per =
-      r.pr.unit === "y" ? money(pl.y, pl.cur) + "/年"
-      : r.pr.unit === "ym" ? "月" + money(pl.ym, pl.cur) + "（年払い）"
-      : pl.p != null ? money(pl.p, pl.cur) + "/月"
-      : money(pl.m, pl.cur) + "/月";
+      r.pr.unit === "y"
+        ? money(pl.y, pl.cur) + "/年"
+        : r.pr.unit === "ym"
+          ? "月" + money(pl.ym, pl.cur) + "（年払い）"
+          : r.pr.unit === "p"
+            ? money(pl.p, pl.cur) + "/月"
+            : money(pl.m, pl.cur) + "/月";
     if (pl.from) per += "〜";
     var cnt = "";
-    if (pl.kind === "seat" && (s.n > 1 || r.st.u > s.n)) cnt = "・" + esc(r.st.label);
+    if (pl.kind === "seat" && (s.n > 1 || r.st.u > s.n))
+      cnt = "・" + esc(r.st.label);
     else if (pl.kind === "personal" && s.n > 1) cnt = "・" + s.n + "人分";
     return kind + " " + per + cnt;
   }
 
   function planRow(r, s, isBest) {
     var pl = r.pl;
-    var head = '<span class="rk-plan">' + esc(pl.name) + '</span><span class="rk-kind">' + unitLine(r, s) + "</span>";
+    var head =
+      '<span class="rk-plan">' +
+      esc(pl.name) +
+      '</span><span class="rk-kind">' +
+      unitLine(r, s) +
+      "</span>";
     var notes = [];
     if (r.pr && r.pr.tag) notes.push(r.pr.tag);
     if (r.pr) notes = notes.concat(r.pr.flags);
     if (pl.note) notes.push(pl.note);
-    if (notes.length) head += '<span class="rk-flag">' + notes.map(esc).join("。") + "</span>";
-    head += '<span class="rk-shown">公式の表記：' + esc(pl.shown) + (pl.checked ? "（" + esc(pl.checked) + " 確認）" : "") + "</span>";
-    if (pl.na) return '<tr class="rk-na"><th scope="row">' + head + '</th><td colspan="2">金額の記載なし</td></tr>';
-    if (!r.st.ok) return '<tr class="rk-na"><th scope="row">' + head + '</th><td colspan="2">' + s.n + "人では使えない（" + esc(r.st.why) + "）</td></tr>";
-    return "<tr" + (isBest ? ' class="is-best"' : "") + '><th scope="row">' + head + "</th><td>" + amt(r, "mon") + "</td><td>" + amt(r, "yr") + "</td></tr>";
-  }
-
-  function summary(c, s) {
-    if (!c.best) return "この人数で計算できるプランがデータにありません。";
-    var B = c.best;
-    var who = s.n + "人・" + (s.b === "m" ? "月払い" : "年払い");
-    var t =
-      s.b === "m"
-        ? who +
-          "で一番安い有料プランは" +
-          B.pl.name +
-          "で、月" +
-          amt(B, "mon") +
-          "（1年で" +
-          amt(B, "yr") +
-          "）です。"
-        : who +
-          "で一番安い有料プランは" +
-          B.pl.name +
-          "で、1年で" +
-          amt(B, "yr") +
-          "（月あたり" +
-          amt(B, "mon") +
-          "）です。";
-    var key = s.b === "m" ? "mon" : "yr";
-    var per = s.b === "m" ? "月" : "年";
-    var P = c.pBest,
-      T = c.tBest;
-    if (P && T) {
-      // 一番安い方はもう書いたので、もう一方（個人向け⇔チーム・ビジネス向け）の一番安いプランとの差を書く
-      var d = Math.abs(T[key] - P[key]);
-      var ap = P.pr.approx || T.pr.approx ? "約" : "";
-      var minNote = T.st.u > s.n ? "（最低" + T.pl.min + "人分）" : "";
-      if (d < 0.005) {
-        t += "個人向けの" + P.pl.name + "とチーム・ビジネス向けの" + T.pl.name + minNote + "は、" + s.n + "人だと同じ額です。";
-      } else if (B === P) {
-        t += "チーム・ビジネス向けで一番安い" + T.pl.name + "は" + per + amt(T, key) + minNote + "で、" + P.pl.name + "より" + per + ap + money(d, c.cur) + "高くなります。";
-      } else {
-        t += "個人向けで一番安い" + P.pl.name + "を" + s.n + "人分契約すると" + per + amt(P, key) + "で、" + T.pl.name + "より" + per + ap + money(d, c.cur) + "高くなります。";
-      }
-    } else if (P && c.tOther) {
-      t +=
-        "チーム・ビジネス向けの" +
-        c.tOther.pl.name +
-        "は通貨が違う（" +
-        c.tOther.pl.cur +
-        "）ため、並べて比べていません。";
-    } else if (P && c.tNa.length) {
-      var x = c.tNa[0];
-      t +=
-        "チーム・ビジネス向けの" +
-        x.pl.name +
-        "は" +
-        (x.pl.na
-          ? "金額の記載がありません。"
-          : s.n + "人では使えません（" + x.st.why + "）。");
-    } else if (P) {
-      t += "このデータには、チーム・ビジネス向けのプランの料金がありません。";
-    }
-    return t;
+    if (notes.length)
+      head += '<span class="rk-flag">' + notes.map(esc).join("。") + "</span>";
+    head +=
+      '<span class="rk-shown">公式の表記：' +
+      esc(pl.shown) +
+      (pl.checked ? "（" + esc(pl.checked) + " 確認）" : "") +
+      "</span>";
+    if (pl.na)
+      return (
+        '<tr class="rk-na"><th scope="row">' +
+        head +
+        '</th><td colspan="2">金額の記載なし</td></tr>'
+      );
+    if (!r.st.ok)
+      return (
+        '<tr class="rk-na"><th scope="row">' +
+        head +
+        '</th><td colspan="2">' +
+        s.n +
+        "人では使えない（" +
+        esc(r.st.why) +
+        "）</td></tr>"
+      );
+    return (
+      "<tr" +
+      (isBest ? ' class="is-best"' : "") +
+      '><th scope="row">' +
+      head +
+      "</th><td>" +
+      amt(r, "mon") +
+      "</td><td>" +
+      amt(r, "yr") +
+      "</td></tr>"
+    );
   }
 
   function render() {
@@ -387,7 +556,9 @@
     var colN = s.n === 1 ? "" : s.n + "人の";
     if (calcs.length > 1) {
       h +=
-        '<p class="rk-cap">各製品で一番安い有料プランです。プランの中身は製品によって違います。</p>';
+        '<p class="rk-cap">各製品で、' +
+        bl +
+        "の料金が書かれたプランのうち一番安いものです（無い製品は目安の額で一番安いもの）。プランの中身は製品によって違います。</p>";
       h +=
         '<div class="table-wrap"><table class="rk-table rk-overview"><thead><tr><th scope="col">AI</th><th scope="col">プラン</th><th scope="col">' +
         colN +
@@ -395,7 +566,7 @@
         colN +
         "年額</th></tr></thead><tbody>";
       calcs.forEach(function (x) {
-        var B = x.c.best;
+        var B = x.c.best || x.c.bestAny;
         var free =
           x.p.free && x.p.free.available === true
             ? "無料プランあり"
@@ -413,6 +584,9 @@
         h += B
           ? "<td>" +
             esc(B.pl.name) +
+            (x.c.best
+              ? ""
+              : '<span class="rk-flag">目安</span>') +
             "</td><td>" +
             amt(B, "mon") +
             "</td><td>" +

@@ -962,7 +962,9 @@ def attach_calc_links(calc: dict, guides_by_slug: dict, models: list[dict]) -> N
         for p in g.get("products") or []:
             if (slug, p["id"]) in in_calc:
                 p["_calc"] = ryoukin_mod.link_for(slug, p["id"])
-    vendor_products = ryoukin_mod.load_overlay().get("vendor_products") or {}
+    vendor_products = ryoukin_mod.load_overlay().get("vendor_products")
+    if not isinstance(vendor_products, dict):
+        vendor_products = {}
     def by_model(slug: str, model_slug: str):
         for p in (guides_by_slug.get(slug) or {}).get("products") or []:
             if model_slug in (p.get("model_slugs") or []) and (slug, p["id"]) in in_calc:
