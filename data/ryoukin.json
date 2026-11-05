@@ -79,6 +79,8 @@
   {"as_shown": "$5 /month（1 channel · $60 billed yearly）", "ym": 5, "y": 60},
   {"as_shown": "$10 /month（1 channel · $120 billed yearly）", "ym": 10, "y": 120, "kind": "team", "who": "チームメンバー無制限", "evidence": ["チームメンバー無制限"]},
   {"as_shown": "$39 /month（20 Credits / Month・1 Brand）", "m": 39, "ym": 20, "evidence": ["年払い（50% Off、$20/month）"]},
+  {"as_shown": "$8/month（billed $96/year）", "ym": 8, "y": 96, "only": "y"},
+  {"as_shown": "$24/month（billed $288/year）", "ym": 24, "y": 288, "only": "y"},
   {"as_shown": "$19 /month（$230 billed yearly）", "m": 32, "ym": 19, "y": 230, "evidence": ["月払いは $32"]},
   {"as_shown": "$12/mo（$144 annually）", "ym": 12, "y": 144},
   {"as_shown": "$49 Per user/month, billed as $588 annually", "ym": 49, "y": 588},
