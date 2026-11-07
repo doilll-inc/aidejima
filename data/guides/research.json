@@ -3,8 +3,8 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-22",
-  "last_reviewed": "2026-10-22",
+  "updated": "2026-11-07",
+  "last_reviewed": "2026-11-07",
   "title": "調べもの・リサーチに強いAIのおすすめ：検索AIと情報の正確さの比較",
   "short_name": "調べもの",
   "seo": {
@@ -70,8 +70,8 @@
           "kind": "third_party",
           "name": "AA-Omniscience（Artificial Analysis）",
           "url": "https://artificialanalysis.ai/evaluations/omniscience",
-          "date": "2026-10-22",
-          "note": "指数は Claude Opus 5.5（max）46.4が1位、GPT-6 Astra（high）43.7が2位。幻覚率は GPT-6 Astra 44.8%、Claude Opus 5.5 58.6%（2026-10-22時点）"
+          "date": "2026-11-07",
+          "note": "v1.1 の指数は Gemini 4 Carbon（High）54が1位（一部のセキュリティ専門家向けで一般提供前）、Claude Opus 5.5（Max）48が2位。GPT-6 Astra の数値はページで読めず（2026-11-07時点）"
         },
         {
           "kind": "official",
@@ -137,7 +137,7 @@
         "perplexity",
         "chatgpt"
       ],
-      "answer": "Gemini の無料版は Deep Research と、資料を読み込ませる Gemini Notebook を使えます（無料版のモデルは Flash-Lite）。Perplexity の無料版はすべての回答に引用が付き（Deep Research は月1回）、ChatGPT の無料版も検索と Deep Research（上限あり）を使えます。",
+      "answer": "Gemini の無料版は Deep Research と、資料を読み込ませる Gemini Notebook を使えます（無料版は多くの質問を Flash-Lite で答える）。Perplexity の無料版はすべての回答に引用が付き（Deep Research は月1回）、ChatGPT の無料版も検索と Deep Research（上限あり）を使えます。",
       "evidence": [
         {
           "kind": "official",
@@ -337,7 +337,7 @@
           "available": true,
           "detail": "検索は利用可。Deep Research は上限あり",
           "source_url": "https://chatgpt.com/ja-JP/pricing/",
-          "checked": "2026-10-01"
+          "checked": "2026-11-07"
         },
         "plans": [
           {
@@ -417,7 +417,7 @@
       "latest": {
         "name": "Deep Research in Computer",
         "source_url": "https://www.perplexity.ai/hub/blog/deep-research-now-in-computer",
-        "checked": "2026-10-22"
+        "checked": "2026-11-07"
       },
       "access": [
         "web",
@@ -439,7 +439,7 @@
           "available": true,
           "detail": "検索のみ。すべての回答に引用。基本的なAIモデル。Deep Research は月1回まで（ヘルプ）",
           "source_url": "https://www.perplexity.ai/hub/pricing",
-          "checked": "2026-10-22"
+          "checked": "2026-11-07"
         },
         "plans": [
           {
@@ -450,7 +450,7 @@
             "as_shown": "$17/month（when billed annually）",
             "detail": "Deep research、トップAIモデルの選択、Computer の利用枠拡大と4,000ボーナスクレジット",
             "source_url": "https://www.perplexity.ai/hub/pricing",
-            "checked": "2026-10-22"
+            "checked": "2026-11-07"
           },
           {
             "name": "Max",
@@ -460,7 +460,7 @@
             "as_shown": "$167/month（when billed annually）",
             "detail": "専門家レベルのリサーチ、最先端モデル、月10,000クレジットと35,000ボーナスクレジット",
             "source_url": "https://www.perplexity.ai/hub/pricing",
-            "checked": "2026-10-22"
+            "checked": "2026-11-07"
           },
           {
             "name": "Enterprise Pro",
@@ -470,7 +470,7 @@
             "as_shown": "Each seat is $40 per month or $400 per year",
             "detail": "学習に使わない、SSO、SOC 2 Type II。Deep Research 月50回",
             "source_url": "https://www.perplexity.ai/help-center/en/articles/10352986-enterprise-pricing-and-billing-frequently-asked-questions",
-            "checked": "2026-10-22"
+            "checked": "2026-11-07"
           },
           {
             "name": "Enterprise Max",
@@ -480,7 +480,7 @@
             "as_shown": "Each seat is $325 per month or $3,250 per year",
             "detail": "最上位モデルと最も高い利用上限。Deep Research 月500回",
             "source_url": "https://www.perplexity.ai/help-center/en/articles/10352986-enterprise-pricing-and-billing-frequently-asked-questions",
-            "checked": "2026-10-22"
+            "checked": "2026-11-07"
           }
         ],
         "jpy_official": false,
@@ -491,27 +491,27 @@
         "output": "unknown",
         "note": "アカウント設定で表示言語と回答言語を選べる。料金ページに日本語版あり。対応言語の一覧は見つからず",
         "source_url": "https://www.perplexity.ai/help-center/en/articles/10352990-account-settings",
-        "checked": "2026-10-22"
+        "checked": "2026-11-07"
       },
       "commercial_use": {
         "value": "conditional",
         "note": "個人向け利用規約は「個人的・非商用の利用に限る」（5.1）。出力を公開するときは Perplexity を明示する必要がある（1.1.2）。法人向けは Enterprise",
         "source_url": "https://www.perplexity.ai/hub/legal/terms-of-service",
-        "checked": "2026-10-22"
+        "checked": "2026-11-07"
       },
       "data_policy": {
         "training_default": "opt_out_available",
         "note": "Free・Pro・Max は「AI Data Retention」が既定でオン。設定でオフにできる（それ以降のデータが対象）。Enterprise のデータは学習に使わない",
         "source_url": "https://www.perplexity.ai/help-center/en/articles/11564572-data-collection-at-perplexity",
-        "checked": "2026-10-22"
+        "checked": "2026-11-07"
       },
       "availability_japan": {
         "value": "yes",
         "note": "日本で Enterprise Pro を導入する場合はパートナーのソフトバンクが窓口（ヘルプ）",
         "source_url": "https://www.perplexity.ai/help-center/en/articles/10352973-what-is-enterprise-pro",
-        "checked": "2026-10-22"
+        "checked": "2026-11-07"
       },
-      "checked": "2026-10-22",
+      "checked": "2026-11-07",
       "retired_note": ""
     },
     {
@@ -531,7 +531,7 @@
         "name": "Gemini 4 Argon",
         "released": "2026-10-13",
         "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/",
-        "checked": "2026-10-22"
+        "checked": "2026-11-07"
       },
       "access": [
         "web",
@@ -550,9 +550,9 @@
       "pricing": {
         "free": {
           "available": true,
-          "detail": "使えるモデルは Flash-Lite（日本の料金ページ・ヘルプ）。Deep Research と Gemini Notebook も無料版の機能に記載",
+          "detail": "既定の「Auto」で多くの質問は Flash-Lite、深い推論が要る質問は Flash や Pro に振り分けられる（ヘルプ）。Deep Research と Gemini Notebook も無料版の機能に記載",
           "source_url": "https://support.google.com/gemini/answer/17004136?hl=en",
-          "checked": "2026-10-22"
+          "checked": "2026-11-07"
         },
         "plans": [
           {
@@ -563,7 +563,7 @@
             "as_shown": "￥725 JPY / 月",
             "detail": "無料版の2倍の使用量上限。Flash まで使え、Pro モデルは使えない（変更時期はメールで通知）",
             "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-            "checked": "2026-10-22"
+            "checked": "2026-11-07"
           },
           {
             "name": "Google AI Pro",
@@ -573,7 +573,7 @@
             "as_shown": "￥2,900 JPY / 月",
             "detail": "Gemini 4 Argon・Pro モデル・Flash モデル。Gemini Notebook の利用上限5倍、5TB のストレージ",
             "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-            "checked": "2026-10-22"
+            "checked": "2026-11-07"
           },
           {
             "name": "Google AI Ultra",
@@ -583,7 +583,7 @@
             "as_shown": "￥14,500 JPY/月（AI Pro の 5 倍）／￥32,000 JPY /月（AI Pro の 20 倍）",
             "detail": "Gemini 4 Argon・Pro モデルへの最上位アクセス、Deep Think などへの先行アクセス",
             "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-            "checked": "2026-10-22"
+            "checked": "2026-11-07"
           }
         ],
         "jpy_official": true,
@@ -594,27 +594,27 @@
         "output": "yes",
         "note": "Gemini ウェブアプリの対応言語一覧に日本語",
         "source_url": "https://support.google.com/gemini/answer/13575153?hl=en",
-        "checked": "2026-10-22"
+        "checked": "2026-11-07"
       },
       "commercial_use": {
         "value": "yes",
         "note": "Google 利用規約で、生成されたオリジナルのコンテンツの所有権を Google は主張しない。出力を機械学習モデルの開発に使うことは禁止",
         "source_url": "https://policies.google.com/terms?hl=en",
-        "checked": "2026-10-22"
+        "checked": "2026-11-07"
       },
       "data_policy": {
         "training_default": "opt_out_available",
         "note": "既定では会話がサービス改善（生成AIモデルを含む）に使われ、一部は人が確認する。「アクティビティを保持」をオフにすると今後の会話は改善に使われない",
         "source_url": "https://support.google.com/gemini/answer/13594961?hl=en",
-        "checked": "2026-10-22"
+        "checked": "2026-11-07"
       },
       "availability_japan": {
         "value": "yes",
         "note": "Gemini ウェブアプリの対応国一覧に日本",
         "source_url": "https://support.google.com/gemini/answer/13575153?hl=en",
-        "checked": "2026-10-22"
+        "checked": "2026-11-07"
       },
-      "checked": "2026-10-22",
+      "checked": "2026-11-07",
       "retired_note": ""
     },
     {
@@ -634,7 +634,7 @@
         "name": "Claude Opus 5.5",
         "released": "2026-09-22",
         "source_url": "https://www.anthropic.com/claude-opus-5-5",
-        "checked": "2026-10-22"
+        "checked": "2026-11-07"
       },
       "access": [
         "web",
@@ -643,20 +643,19 @@
       ],
       "strengths": [
         "Opus 5.5 が FACTS Search で3位",
-        "AA-Omniscience 指数で Opus 5.5 が首位",
+        "AA-Omniscience v1.1 で Opus 5.5 が2位",
         "Research で Gmail・ドキュメントも横断"
       ],
       "weaknesses": [
-        "Research は有料プランのみ（無料は検索まで）",
-        "AA の幻覚率は58.6%（GPT-6 Astra 44.8%）"
+        "Research は有料プランのみ（無料は検索まで）"
       ],
-      "editorial_take": "知識の正答率は最上位だが、わからない問いにも答えてしまう率は GPT-6 Astra より高い。Research の結果は引用を開いて確かめる前提で使う。",
+      "editorial_take": "知識問題の評価 AA-Omniscience v1.1 では Opus 5.5 が2位。Research の結果は引用を開いて確かめる前提で使う。",
       "pricing": {
         "free": {
           "available": true,
           "detail": "Web 検索は利用可。Research は使えない。モデルは Sonnet と Haiku",
           "source_url": "https://claude.com/pricing",
-          "checked": "2026-10-22"
+          "checked": "2026-11-07"
         },
         "plans": [
           {
@@ -667,17 +666,27 @@
             "as_shown": "$17 Per month with annual subscription discount ($200 billed up front). $20 if billed monthly.",
             "detail": "Research、Opus 5.5",
             "source_url": "https://claude.com/pricing",
-            "checked": "2026-10-22"
+            "checked": "2026-11-07"
           },
           {
             "name": "Max",
             "amount": 100,
             "currency": "USD",
             "per": "month",
-            "as_shown": "From $100 Per month",
-            "detail": "Pro の5倍か20倍の利用量。月払いのみ",
+            "as_shown": "$100 Per month",
+            "detail": "Pro の5倍の利用量。月払いのみ",
             "source_url": "https://claude.com/pricing",
-            "checked": "2026-10-22"
+            "checked": "2026-11-07"
+          },
+          {
+            "name": "Ultra",
+            "amount": 200,
+            "currency": "USD",
+            "per": "month",
+            "as_shown": "$200 Per month",
+            "detail": "週の利用量は Pro の10倍、5時間ごとの上限なし（認証済みアカウント）、月$200分の API クレジット。月払いのみ",
+            "source_url": "https://claude.com/pricing",
+            "checked": "2026-11-07"
           },
           {
             "name": "Team（標準シート）",
@@ -687,7 +696,7 @@
             "as_shown": "$20 Per seat / month if billed annually. $25 if billed monthly.",
             "detail": "2〜150人。既定で学習に使わない。社内データの横断検索（Enterprise search）",
             "source_url": "https://claude.com/pricing",
-            "checked": "2026-10-22"
+            "checked": "2026-11-07"
           }
         ],
         "jpy_official": false,
@@ -698,27 +707,27 @@
         "output": "yes",
         "note": "ヘルプの対応言語に日本語",
         "source_url": "https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language",
-        "checked": "2026-10-22"
+        "checked": "2026-11-07"
       },
       "commercial_use": {
         "value": "yes",
         "note": "消費者向け規約で出力の権利を利用者に譲渡（4条）。出力は不正確な場合があり、独自に確認するよう求めている",
         "source_url": "https://www.anthropic.com/legal/consumer-terms",
-        "checked": "2026-10-22"
+        "checked": "2026-11-07"
       },
       "data_policy": {
         "training_default": "opt_out_available",
         "note": "Free・Pro・Max は学習利用を設定でオフにできる（Opt-out）。Team・Enterprise は既定で学習に使わない",
         "source_url": "https://claude.com/pricing",
-        "checked": "2026-10-22"
+        "checked": "2026-11-07"
       },
       "availability_japan": {
         "value": "yes",
         "note": "公式の提供国・地域一覧に日本",
         "source_url": "https://www.anthropic.com/supported-countries",
-        "checked": "2026-10-22"
+        "checked": "2026-11-07"
       },
-      "checked": "2026-10-22",
+      "checked": "2026-11-07",
       "retired_note": ""
     },
     {
@@ -753,7 +762,7 @@
           "available": true,
           "detail": "ノートブックあたり最大50ソース、ノートブックは100冊まで（Gemini Notebook Standard）",
           "source_url": "https://support.google.com/gemininotebook/answer/16213268?hl=en",
-          "checked": "2026-10-22"
+          "checked": "2026-11-07"
         },
         "plans": [
           {
@@ -762,7 +771,7 @@
             "as_shown": "Google AI Plus に含まれる",
             "detail": "ノートブックあたり最大100ソース、ノートブックは200冊まで",
             "source_url": "https://support.google.com/gemininotebook/answer/16213268?hl=en",
-            "checked": "2026-10-22"
+            "checked": "2026-11-07"
           },
           {
             "name": "Gemini Notebook in Pro",
@@ -770,7 +779,7 @@
             "as_shown": "Google AI Pro に含まれる",
             "detail": "ノートブックあたり最大300ソース、ノートブックは500冊まで",
             "source_url": "https://support.google.com/gemininotebook/answer/16213268?hl=en",
-            "checked": "2026-10-22"
+            "checked": "2026-11-07"
           },
           {
             "name": "Gemini Notebook in Ultra",
@@ -778,7 +787,7 @@
             "as_shown": "Google AI Ultra に含まれる",
             "detail": "ノートブックあたり最大500ソース（20TBプラン）・600ソース（30TBプラン）、ノートブックは500冊まで",
             "source_url": "https://support.google.com/gemininotebook/answer/16213268?hl=en",
-            "checked": "2026-10-22"
+            "checked": "2026-11-07"
           }
         ],
         "jpy_official": false,
@@ -789,27 +798,27 @@
         "output": "yes",
         "note": "対応言語（80以上）に日本語。出力言語は設定で選べる",
         "source_url": "https://support.google.com/gemininotebook/answer/16261963?hl=en",
-        "checked": "2026-10-22"
+        "checked": "2026-11-07"
       },
       "commercial_use": {
         "value": "yes",
         "note": "Google 利用規約で、生成されたオリジナルのコンテンツの所有権を Google は主張しない",
         "source_url": "https://policies.google.com/terms?hl=en",
-        "checked": "2026-10-22"
+        "checked": "2026-11-07"
       },
       "data_policy": {
         "training_default": "not_used",
         "note": "個人ユーザーのデータも、フィードバックを送らない限り学習に使わない。Workspace ユーザーは人による確認もない",
         "source_url": "https://support.google.com/gemininotebook/answer/16164461?hl=en&co=GENIE.Platform%3DDesktop",
-        "checked": "2026-10-22"
+        "checked": "2026-11-07"
       },
       "availability_japan": {
         "value": "yes",
         "note": "ブラウザ版の対応国・地域に日本",
         "source_url": "https://support.google.com/gemininotebook/answer/16164461?hl=en&co=GENIE.Platform%3DDesktop",
-        "checked": "2026-10-22"
+        "checked": "2026-11-07"
       },
-      "checked": "2026-10-22",
+      "checked": "2026-11-07",
       "retired_note": ""
     },
     {
@@ -844,7 +853,7 @@
           "available": true,
           "detail": "Google 検索から無料で使える（Auto・Fast）。Gemini 4 Argon は Google AI Pro・Ultra（18歳以上）が対象で、1日の利用上限がある",
           "source_url": "https://support.google.com/websearch/answer/16011537?hl=en",
-          "checked": "2026-10-22"
+          "checked": "2026-11-07"
         },
         "plans": [],
         "jpy_official": false,
@@ -855,21 +864,21 @@
         "output": "yes",
         "note": "AI モードの対応言語に日本語。Gemini 4 Argon の提供国にも日本",
         "source_url": "https://support.google.com/websearch/answer/16011537?hl=en",
-        "checked": "2026-10-22"
+        "checked": "2026-11-07"
       },
       "data_policy": {
         "training_default": "unknown",
         "note": "検索と AI 機能でのやりとりを生成AIの改善に使うとヘルプに記載。学習利用を拒否する設定の記載は見つからず",
         "source_url": "https://support.google.com/websearch/answer/16011537?hl=en",
-        "checked": "2026-10-22"
+        "checked": "2026-11-07"
       },
       "availability_japan": {
         "value": "yes",
         "note": "AI モードの提供国に日本",
         "source_url": "https://support.google.com/websearch/answer/16011537?hl=en",
-        "checked": "2026-10-22"
+        "checked": "2026-11-07"
       },
-      "checked": "2026-10-22",
+      "checked": "2026-11-07",
       "retired_note": ""
     },
     {
@@ -894,7 +903,7 @@
           "available": true,
           "detail": "Free $0：利用量は限定（Limited）",
           "source_url": "https://docs.x.ai/x-subscription/pricing",
-          "checked": "2026-10-22"
+          "checked": "2026-11-07"
         },
         "plans": [
           {
@@ -905,13 +914,13 @@
             "as_shown": "$8/mo（$80/yr）",
             "detail": "X Subscription の最安プラン。上位に Premium $30/mo・Super $100/mo・Ultra $200/mo（利用量はそれぞれ Plus の4倍・15倍・50倍）",
             "source_url": "https://docs.x.ai/x-subscription/pricing",
-            "checked": "2026-10-22"
+            "checked": "2026-11-07"
           }
         ],
         "jpy_official": false,
         "note": "Grok の有料機能は X・Cursor と共通の X Subscription に一本化された。"
       },
-      "checked": "2026-10-22",
+      "checked": "2026-11-07",
       "retired_note": ""
     },
     {
@@ -942,13 +951,13 @@
             "as_shown": "¥3,200 /月（¥32,000 /年）",
             "detail": "高度なリサーチや分析などをユーザーに代わって行うエージェント型 AI 機能",
             "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing/individuals",
-            "checked": "2026-10-22"
+            "checked": "2026-11-07"
           }
         ],
         "jpy_official": true,
         "note": ""
       },
-      "checked": "2026-10-22",
+      "checked": "2026-11-07",
       "retired_note": ""
     },
     {
@@ -1014,7 +1023,7 @@
           "available": true,
           "detail": "論文検索と要約は無制限。Research Agent・Research Reports は上限あり",
           "source_url": "https://elicit.com/pricing",
-          "checked": "2026-10-22"
+          "checked": "2026-11-07"
         },
         "plans": [
           {
@@ -1025,13 +1034,13 @@
             "as_shown": "$49 Per user/month, billed as $588 annually",
             "detail": "系統的レビューで5,000本をスクリーニング、API",
             "source_url": "https://elicit.com/pricing",
-            "checked": "2026-10-22"
+            "checked": "2026-11-07"
           }
         ],
         "jpy_official": false,
         "note": ""
       },
-      "checked": "2026-10-22",
+      "checked": "2026-11-07",
       "retired_note": ""
     },
     {
@@ -1055,7 +1064,7 @@
           "available": true,
           "detail": "お試しは100検索・アシスタント100回まで",
           "source_url": "https://kagi.com/pricing",
-          "checked": "2026-10-22"
+          "checked": "2026-11-07"
         },
         "plans": [
           {
@@ -1066,13 +1075,13 @@
             "as_shown": "$25 /mo (+ Sales Tax)",
             "detail": "無制限の検索、Kagi Assistant の Research モード",
             "source_url": "https://kagi.com/pricing",
-            "checked": "2026-10-22"
+            "checked": "2026-11-07"
           }
         ],
         "jpy_official": false,
         "note": ""
       },
-      "checked": "2026-10-22",
+      "checked": "2026-11-07",
       "retired_note": ""
     },
     {
@@ -1094,9 +1103,9 @@
       "pricing": {
         "free": {
           "available": true,
-          "detail": "Web Search API は1日100クエリまで無料",
+          "detail": "MCP サーバー経由のライブ検索は API キー不要で1日100クエリまで",
           "source_url": "https://you.com/pricing",
-          "checked": "2026-10-22"
+          "checked": "2026-11-07"
         },
         "usage": {
           "unit": "1,000回",
@@ -1105,13 +1114,13 @@
           "as_shown": "$5.00 /1k calls",
           "detail": "Web Search API",
           "source_url": "https://you.com/pricing",
-          "checked": "2026-10-22"
+          "checked": "2026-11-07"
         },
         "plans": [],
         "jpy_official": false,
         "note": ""
       },
-      "checked": "2026-10-22",
+      "checked": "2026-11-07",
       "retired_note": ""
     },
     {
@@ -1123,7 +1132,7 @@
       "latest": {
         "name": "Claude Science（ベータ）",
         "source_url": "https://claude.com/product/claude-science",
-        "checked": "2026-10-22"
+        "checked": "2026-11-07"
       },
       "tags": [
         "Claude Science"
@@ -1138,18 +1147,18 @@
       "pricing": {
         "plans": [
           {
-            "name": "Claude の Pro・Max・Team・Enterprise",
+            "name": "Claude の Pro・Max・Ultra・Team・Enterprise",
             "per": "month",
-            "as_shown": "in beta for macOS, Windows, and Linux on Pro, Max, Team, and Enterprise plans",
+            "as_shown": "in beta for macOS, Windows, and Linux on Pro, Max, Ultra, Team, and Enterprise plans",
             "detail": "プランに含まれる Claude のモデルを使う。Team・Enterprise は管理者が有効化。学術・非営利の研究者向けに割引の Team plan for Scientists あり",
             "source_url": "https://claude.com/product/claude-science",
-            "checked": "2026-10-22"
+            "checked": "2026-11-07"
           }
         ],
         "jpy_official": false,
         "note": "料金は Claude の行を参照。"
       },
-      "checked": "2026-10-22",
+      "checked": "2026-11-07",
       "retired_note": ""
     }
   ],
@@ -1218,9 +1227,9 @@
       "name": "AA-Omniscience",
       "operator": "Artificial Analysis",
       "url": "https://artificialanalysis.ai/evaluations/omniscience",
-      "what": "6分野6,000問の知識問題。正答を加点し、誤答を減点する指数（-100〜100）。幻覚率は正答以外の回答のうち誤答した割合（低いほど、知らないときに答えを控える）",
-      "snapshot": "指数1位 Claude Opus 5.5（max）46.4（正答率66.2%・幻覚率58.6%）、2位 GPT-6 Astra（high）43.7（幻覚率44.8%）、3位 Claude Fable 5.1（max）43.5（幻覚率72.6%）、Gemini 4 Argon（high）42.4（幻覚率15.1%）、GPT-6.1 Sol（max）41.5、Grok 4.7（xhigh）32.0、Gemini 3.8 Flash（high）29.6（2026-10-22時点）",
-      "checked": "2026-10-22"
+      "what": "6分野の知識問題（v1.1 は3,000問）。正答を加点し、誤答を減点する指数（Net Score）。幻覚率は正答以外の回答のうち誤答した割合（低いほど、知らないときに答えを控える）",
+      "snapshot": "v1.1（2026年10月公開）で指数1位 Gemini 4 Carbon（High）54（幻覚率11%）、2位 Claude Opus 5.5（Max）48、3位 Gemini 4 Carbon（Medium）47（幻覚率4%）。正答率の上位は Claude Fable 5.1（Max）68%、幻覚率の低さは Gemini 4 Carbon（Medium）と Gemini 4 Argon（High）が4%。GPT-6 Astra の数値はページで読めず（2026-11-07確認）",
+      "checked": "2026-11-07"
     },
     {
       "id": "vectara-hhem",
@@ -1228,8 +1237,8 @@
       "operator": "Vectara",
       "url": "https://github.com/vectara/hallucination-leaderboard",
       "what": "文書を要約させたとき、元の文書にない内容を加える割合（HHEM モデルで判定）",
-      "snapshot": "GPT-6 Sol 6.5%、GPT-6 Astra 8.7%、Gemini 3.1 Pro Preview 10.4%、Claude Opus 4.7 12.0%、Gemini 4 Argon 12.1%。Claude Opus 5.5・GPT-6.1 Sol・Gemini 3.8 Flash は未掲載（2026-10-16更新・2026-10-22確認）",
-      "checked": "2026-10-22"
+      "snapshot": "GPT-6 Sol 6.5%、GPT-6 Astra 8.7%、Claude Opus 5.5 9.9%、Gemini 3.1 Pro Preview 10.4%、Claude Opus 4.7 12.0%、Gemini 4 Argon 12.1%。GPT-6.1 Sol・Gemini 4 Carbon・Gemini 3.8 Flash は未掲載（2026-10-22更新・2026-11-07確認）",
+      "checked": "2026-11-07"
     },
     {
       "id": "lmarena-search",
@@ -1237,8 +1246,8 @@
       "operator": "LMArena",
       "url": "https://arena.ai/leaderboard/search",
       "what": "検索付きの回答を利用者が見比べて投票する一対比較。正確さではなく好みの評価",
-      "snapshot": "1位 gpt-5.6-sol-xhigh 1257、2位 claude-opus-4-6-search 1253、9位 gemini-3.1-pro-grounding 1210、29位 ppl-sonar-reasoning-pro-high 1139。GPT-6 系・Claude Opus 5.5 は未掲載（2026-08-24更新・2026-10-09確認）",
-      "checked": "2026-10-09"
+      "snapshot": "1位 Qwen3.8-Max 1260、2位 GPT-5.6 Sol（xHigh）1259、3位 Claude Opus 4.6（Search）1252、7位 GPT-6 Astra（Max）1232、9位 GPT-6.1 Sol（Max）1229、14位 Claude Opus 5.5（Medium）1214、15位 Gemini 3.1 Pro（Grounding）1209、37位 Sonar Reasoning Pro（High）1139（2026-11-06更新・2026-11-07確認）",
+      "checked": "2026-11-07"
     },
     {
       "id": "openai-gpt-6-1-sol-factuality",
@@ -1256,7 +1265,7 @@
       "url": "https://www.anthropic.com/claude-opus-5-5",
       "what": "見つけにくい決算資料を探して報告書を書かせ、すべての数値と引用を出典と自動照合（捏造が1つでもあれば不合格）",
       "snapshot": "Opus 5.5 は18回中16回で合格基準を満たし、Fable 5.1 と Opus 5 は合格0回（2026-09-22発表）",
-      "checked": "2026-10-22"
+      "checked": "2026-11-07"
     },
     {
       "id": "perplexity-deep-research",
@@ -1265,13 +1274,13 @@
       "url": "https://www.perplexity.ai/hub/products/deep-research",
       "what": "BrowseComp（OpenAI）・DeepSearchQA（Google DeepMind）・Humanity's Last Exam での自社測定",
       "snapshot": "Computer の Deep Research は BrowseComp 83.8%（旧版40.7%）、DeepSearchQA 85.0%（同81.9%）、HLE 50.5%（同36.4%）（評価の日付の記載なし。紹介ブログは2026-06-11・2026-10-22確認）",
-      "checked": "2026-10-22"
+      "checked": "2026-11-07"
     }
   ],
   "faq": [
     {
       "q": "調べものAIの答えはどこまで信用できますか？",
-      "a": "検索を使った事実性の評価 FACTS Search では、首位の GPT-6 Astra でも正答の指標は89.9%で、難しい問いの約1割は誤ります（2026年10月1日確認）。知識問題の評価 AA-Omniscience では、知らない問いで誤答する割合（幻覚率）が GPT-6 Astra で44.8%、Claude Opus 5.5 で58.6%でした。回答の引用元を開いて、書いてある内容と一致するか確かめてください。"
+      "a": "検索を使った事実性の評価 FACTS Search では、首位の GPT-6 Astra でも正答の指標は89.9%で、難しい問いの約1割は誤ります（2026年10月1日確認）。知識問題の評価 AA-Omniscience（v1.1）では、知らない問いで誤答する割合（幻覚率）が最も低い Gemini 4 Argon でも4%でした（2026年11月7日確認）。回答の引用元を開いて、書いてある内容と一致するか確かめてください。"
     },
     {
       "q": "無料で使える調べものAIは？",
@@ -1354,6 +1363,21 @@
     {
       "date": "2026-10-22",
       "text": "研究者向けアプリ「Claude Science」をその他の選択肢に追加",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-11-07",
+      "text": "Claude の料金を更新（Max は月$100・Pro の5倍、新プラン Ultra 月$200 を追加）",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-11-07",
+      "text": "Gemini 無料版の説明を更新（既定の Auto で多くは Flash-Lite、深い推論が要る質問は Flash や Pro に振り分け）",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-11-07",
+      "text": "AA-Omniscience の評価を v1.1 の結果に更新（首位は一般提供前の Gemini 4 Carbon、Claude Opus 5.5 は2位）",
       "by": "reviewer"
     }
   ],
