@@ -3,8 +3,8 @@
   "status": "published",
   "priority": 2,
   "created": "2026-09-30",
-  "updated": "2026-10-25",
-  "last_reviewed": "2026-10-25",
+  "updated": "2026-11-12",
+  "last_reviewed": "2026-11-12",
   "title": "AI文字起こし・議事録ツールのおすすめと料金比較",
   "short_name": "文字起こし",
   "seo": {
@@ -18,7 +18,7 @@
       "Whisper"
     ]
   },
-  "intro": "会議の議事録を日本語で手軽に作るなら **Notta**、機密を扱う会社の会議なら全プランでAI学習なしの **Rimo Voice**、文字起こしの精度で選ぶなら **ElevenLabs Scribe v2** が出発点です。Artificial Analysis の誤り率（AA-WER）では Scribe v2 が2.2%、Microsoft の MAI-Transcribe-2 が2.0%で、Open ASR Leaderboard の多言語部門は Scribe v2 が1位です（2026年10月12日確認）。ただしどちらも英語・欧州言語などでの評価で、日本語の精度を比べた継続運営の公開評価は見つけられませんでした。",
+  "intro": "会議の議事録を日本語で手軽に作るなら **Notta**、機密を扱う会社の会議なら全プランでAI学習なしの **Rimo Voice**、文字起こしの精度で選ぶなら **ElevenLabs Scribe v3** が出発点です。Artificial Analysis の誤り率（AA-WER）では Scribe v3 が1.9%、Microsoft の MAI-Transcribe-2 が2.0%で、Open ASR Leaderboard の多言語部門は Azure Speech が1位、Scribe v2 が2位です（2026年11月12日確認）。ただしどちらも英語・欧州言語などでの評価で、日本語の精度を比べた継続運営の公開評価は見つけられませんでした。",
   "scope": "会議に参加して記録・要約するツール、音声ファイルを文字にするサービス、開発者向けの音声認識APIを比べる。読み上げは「音声合成」ガイドで扱う。",
   "audience": [
     "ビジネスパーソン全般",
@@ -51,28 +51,28 @@
         "azure-speech-stt",
         "gemini-transcribe"
       ],
-      "answer": "ElevenLabs の Scribe v2 は Open ASR Leaderboard の多言語部門で1位（平均WER 3.56）、Artificial Analysis でも誤り率2.2%で、公式は日本語の誤り率を5%以下と公表しています。英語だけなら Microsoft の MAI-Transcribe-2（AA 2.0%）がわずかに上です。",
+      "answer": "ElevenLabs の Scribe v3（2026年11月10日公開）は Artificial Analysis の誤り率が1.9%で、表の製品では最も低く、MAI-Transcribe-2（2.0%）が続きます。Open ASR Leaderboard の多言語部門では Microsoft の Azure Speech が1位（3.47）、Scribe v2 が2位（3.57）で、Scribe v3 はまだ載っていません。公式は Scribe v2 の日本語の誤り率を5%以下と公表しています。",
       "evidence": [
-        {
-          "kind": "third_party",
-          "name": "Open ASR Leaderboard",
-          "url": "https://huggingface.co/spaces/hf-audio/open_asr_leaderboard",
-          "date": "2026-10-01",
-          "note": "多言語部門 1位 elevenlabs/scribe_v2 3.56、2位 microsoft/azure-speech-06-2026 3.73（2026-09-25更新）。日本語は対象外"
-        },
         {
           "kind": "third_party",
           "name": "Artificial Analysis Speech to Text",
           "url": "https://artificialanalysis.ai/speech-to-text",
-          "date": "2026-10-01",
-          "note": "MAI-Transcribe-2 2.0%（3位）、Scribe v2 2.2%（4位）、Gemini 3.5 Transcribe 2.6%（2026-10-01時点・英語）"
+          "date": "2026-11-12",
+          "note": "Scribe v3 1.9%（2位）、MAI-Transcribe-2 2.0%（3位）、Scribe v2 2.2%、Gemini 3.5 Transcribe 2.6%（2026-11-12時点・英語）"
+        },
+        {
+          "kind": "third_party",
+          "name": "Open ASR Leaderboard",
+          "url": "https://huggingface.co/spaces/hf-audio/open_asr_leaderboard",
+          "date": "2026-11-12",
+          "note": "多言語部門 1位 microsoft/azure-speech-09-2026 3.47、2位 elevenlabs/scribe_v2 3.57（2026-11-10更新）。日本語は対象外"
         },
         {
           "kind": "official",
-          "name": "ElevenLabs Speech to Text",
+          "name": "ElevenLabs Transcription",
           "url": "https://elevenlabs.io/docs/overview/capabilities/speech-to-text",
-          "date": "2026-10-01",
-          "note": "Scribe v2 の言語別誤り率で Japanese は Excellent（≤ 5% WER）"
+          "date": "2026-11-12",
+          "note": "Scribe v2 の言語別誤り率で Japanese は Excellent（≤ 5% WER）。Scribe v3 は FLEURS で Scribe v2 より誤り27%減"
         }
       ]
     },
@@ -83,7 +83,7 @@
       "runner_up": [
         "elevenlabs-scribe"
       ],
-      "answer": "Azure の MAI-Transcribe-2 は1時間$0.10（1,000分あたり約$1.67）で、Artificial Analysis の誤り率は2.0%。Scribe v2（1時間$0.22）より安く、英語の評価では誤りも少なめです。",
+      "answer": "Azure の MAI-Transcribe-2 は1時間$0.10（1,000分あたり約$1.67）で、Artificial Analysis の誤り率は2.0%。Scribe v3（1時間$0.20、誤り率1.9%）の約半額です。ただし Azure の料金はプロモーション価格で、2026年11月12日時点では料金ページの金額表示を確認できませんでした。",
       "evidence": [
         {
           "kind": "official",
@@ -96,8 +96,8 @@
           "kind": "third_party",
           "name": "Artificial Analysis Speech to Text",
           "url": "https://artificialanalysis.ai/speech-to-text",
-          "date": "2026-10-01",
-          "note": "MAI-Transcribe-2 2.0%・$1.67/1,000分、Scribe v2 2.2%・$3.67/1,000分（2026-10-01時点）"
+          "date": "2026-11-12",
+          "note": "MAI-Transcribe-2 2.0%・$1.67/1,000分、Scribe v3 1.9%・$3.33/1,000分（2026-11-12時点）"
         }
       ]
     },
@@ -114,21 +114,21 @@
           "kind": "official",
           "name": "Otter.ai Pricing",
           "url": "https://otter.ai/pricing",
-          "date": "2026-10-01",
+          "date": "2026-11-12",
           "note": "Basic（Free）：300 monthly transcription minutes。対応言語に Japanese"
         },
         {
           "kind": "official",
           "name": "Otter.ai Privacy & Security",
           "url": "https://otter.ai/privacy-security",
-          "date": "2026-10-01",
+          "date": "2026-11-12",
           "note": "匿名化したデータでモデルを学習"
         },
         {
           "kind": "official",
           "name": "Notta 料金プラン",
           "url": "https://www.notta.ai/pricing",
-          "date": "2026-10-01",
+          "date": "2026-11-12",
           "note": "フリー：文字起こし月120分、1回につき3分まで"
         }
       ]
@@ -146,15 +146,15 @@
           "kind": "official",
           "name": "Notta 料金プラン",
           "url": "https://www.notta.ai/pricing",
-          "date": "2026-10-01",
+          "date": "2026-11-12",
           "note": "プレミアム ￥1,185/月（12ヶ月分一括払い・税込）、単語登録200語、Zoom・Teams・Google Meet・Webex"
         },
         {
           "kind": "official",
-          "name": "Rimo Voice",
-          "url": "https://rimo.app/",
-          "date": "2026-10-01",
-          "note": "プロ ¥4,950/月（月払い・税込）、単語登録、60以上の言語"
+          "name": "Rimo 料金プラン",
+          "url": "https://rimo.app/about/voice/plans",
+          "date": "2026-11-12",
+          "note": "プロ ¥4,950/月（月払い・税込）。トップページに単語登録、60以上の言語"
         },
         {
           "kind": "editorial",
@@ -178,14 +178,14 @@
           "kind": "official",
           "name": "Rimo Voice",
           "url": "https://rimo.app/",
-          "date": "2026-10-01",
+          "date": "2026-11-12",
           "note": "全プランに「AI学習なし」、日本国内でのデータ保管、ISO27001・ISO27017"
         },
         {
           "kind": "official",
           "name": "Google Workspace の生成 AI に関するプライバシー ハブ",
           "url": "https://knowledge.workspace.google.com/admin/generative-ai/generative-ai-in-google-workspace-privacy-hub?hl=ja",
-          "date": "2026-10-01",
+          "date": "2026-11-12",
           "note": "コンテンツは許可なく生成AIモデルのトレーニングに使用されない"
         },
         {
@@ -205,28 +205,28 @@
         "azure-speech-stt",
         "gemini-transcribe"
       ],
-      "answer": "Scribe v2 は1時間$0.22で、話者分離（最大32人）、専門用語の指定（最大1,000語）、単語単位の時刻に対応します。大量に処理して単価を下げたいなら Azure の MAI-Transcribe-2（1時間$0.10）、無料枠で試すなら Gemini 3.5 Transcribe です。",
+      "answer": "Scribe v3 は1時間$0.20で、話者分離（最大32人）、専門用語の指定（最大1,000語、1時間$0.05の追加料金）に対応します。大量に処理して単価を下げたいなら Azure の MAI-Transcribe-2（1時間$0.10）、無料枠で試すなら Gemini 3.5 Transcribe です。",
       "evidence": [
         {
           "kind": "official",
           "name": "ElevenLabs Models",
           "url": "https://elevenlabs.io/docs/overview/models",
-          "date": "2026-10-01",
-          "note": "Scribe v2：Keyterm prompting up to 1000 terms、Speaker diarization up to 32 speakers"
+          "date": "2026-11-12",
+          "note": "Scribe v3：Keyterm prompting up to 1000 terms、Speaker diarization 32 speakers"
         },
         {
           "kind": "official",
           "name": "ElevenLabs API Pricing",
           "url": "https://elevenlabs.io/pricing/api",
-          "date": "2026-10-01",
-          "note": "Scribe v2 $0.22 Price per hour"
+          "date": "2026-11-12",
+          "note": "Scribe v3 $0.20 Price per hour、Keyterm prompting $0.05（バッチ）"
         },
         {
           "kind": "third_party",
-          "name": "Open ASR Leaderboard",
-          "url": "https://huggingface.co/spaces/hf-audio/open_asr_leaderboard",
-          "date": "2026-10-01",
-          "note": "多言語部門 1位 elevenlabs/scribe_v2（2026-09-25更新）"
+          "name": "Artificial Analysis Speech to Text",
+          "url": "https://artificialanalysis.ai/speech-to-text",
+          "date": "2026-11-12",
+          "note": "Scribe v3 1.9%（2026-11-12時点）"
         }
       ]
     }
@@ -265,7 +265,7 @@
           "available": true,
           "detail": "文字起こし月120分（1回3分まで）、ファイルインポート月50個、AI要約月10回",
           "source_url": "https://www.notta.ai/pricing",
-          "checked": "2026-10-25"
+          "checked": "2026-11-12"
         },
         "plans": [
           {
@@ -276,7 +276,7 @@
             "as_shown": "￥1,185 円/月（総額 ￥14,220（税込）・12ヶ月分一括払い）",
             "detail": "文字起こし月1,800分（1回5時間まで）、AI要約月100回、翻訳、データのダウンロード",
             "source_url": "https://www.notta.ai/pricing",
-            "checked": "2026-10-25"
+            "checked": "2026-11-12"
           },
           {
             "name": "ビジネス",
@@ -286,7 +286,7 @@
             "as_shown": "￥2,508 円/月（総額 ￥30,096（税込）・12ヶ月分一括払い）",
             "detail": "文字起こし時間無制限、Web会議の録画、CRM・Zapier連携",
             "source_url": "https://www.notta.ai/pricing",
-            "checked": "2026-10-25"
+            "checked": "2026-11-12"
           },
           {
             "name": "ビジネス Plus",
@@ -296,7 +296,7 @@
             "as_shown": "月額：9,000円／月、年額：64,800円／年（いずれも税抜・1アカウントあたり）",
             "detail": "ビジネスの機能に加え、AI学習なし、Notta Brain（月8,000クレジット／アカウント）。2026年7月27日発表",
             "source_url": "https://www.notta.ai/news/info/notta-business-plus",
-            "checked": "2026-10-25"
+            "checked": "2026-11-12"
           },
           {
             "name": "エンタープライズ",
@@ -305,7 +305,7 @@
             "as_shown": "要相談",
             "detail": "SAML SSO、AI学習なし、操作ログ",
             "source_url": "https://www.notta.ai/pricing",
-            "checked": "2026-10-25"
+            "checked": "2026-11-12"
           }
         ],
         "jpy_official": true,
@@ -316,7 +316,7 @@
         "output": "yes",
         "note": "料金ページ・ヘルプが日本語。Zoom・Teams・Google Meet・Webex の会議の文字起こしに対応",
         "source_url": "https://www.notta.ai/pricing",
-        "checked": "2026-10-25"
+        "checked": "2026-11-12"
       },
       "data_policy": {
         "training_default": "opt_out_available",
@@ -328,7 +328,7 @@
         "value": "yes",
         "note": "日本向けに円建て・税込で表示",
         "source_url": "https://www.notta.ai/pricing",
-        "checked": "2026-10-25"
+        "checked": "2026-11-12"
       },
       "checked": "2026-10-01",
       "retired_note": ""
@@ -364,7 +364,7 @@
           "available": false,
           "detail": "クレジットカード登録なしで各プランを試せる無料トライアルあり（期間の記載なし）",
           "source_url": "https://rimo.app/about/voice/plans",
-          "checked": "2026-10-25"
+          "checked": "2026-11-12"
         },
         "plans": [
           {
@@ -373,9 +373,9 @@
             "currency": "JPY",
             "per": "month",
             "as_shown": "¥1,650/ 月 月払い（税込）",
-            "detail": "文字起こし向け。データ保管30日、AI学習なし",
+            "detail": "文字起こし向け（月2,100分）。話者分離、データ保管30日、AI学習なし",
             "source_url": "https://rimo.app/about/voice/plans",
-            "checked": "2026-10-25"
+            "checked": "2026-11-12"
           },
           {
             "name": "プロ",
@@ -385,7 +385,7 @@
             "as_shown": "¥ 4,950 / 月 月払い（税込）",
             "detail": "Botによる無制限録画、文字起こし時間無制限、AI要約、AI学習なし",
             "source_url": "https://rimo.app/about/voice/plans",
-            "checked": "2026-10-25"
+            "checked": "2026-11-12"
           },
           {
             "name": "チーム",
@@ -395,7 +395,7 @@
             "as_shown": "¥ 6,600 / 月 月払い（税込）",
             "detail": "チームメンバーの招待・管理、チームフォルダでの共同作業",
             "source_url": "https://rimo.app/about/voice/plans",
-            "checked": "2026-10-25"
+            "checked": "2026-11-12"
           },
           {
             "name": "法人",
@@ -404,7 +404,7 @@
             "as_shown": "お見積り",
             "detail": "11アカウントから。IPアドレス制限・SSO、請求書対応",
             "source_url": "https://rimo.app/about/voice/plans",
-            "checked": "2026-10-25"
+            "checked": "2026-11-12"
           }
         ],
         "jpy_official": true,
@@ -415,21 +415,21 @@
         "output": "yes",
         "note": "日本語のサービス。60以上の言語に対応し、単語登録で専門用語に対応",
         "source_url": "https://rimo.app/",
-        "checked": "2026-10-25"
+        "checked": "2026-11-12"
       },
       "data_policy": {
         "training_default": "not_used",
         "note": "料金表の全プランに「AI学習なし」と記載。データは日本国内で保管",
         "source_url": "https://rimo.app/",
-        "checked": "2026-10-25"
+        "checked": "2026-11-12"
       },
       "availability_japan": {
         "value": "yes",
         "note": "料金プランのページに円建て・税込の料金を表示",
         "source_url": "https://rimo.app/about/voice/plans",
-        "checked": "2026-10-25"
+        "checked": "2026-11-12"
       },
-      "checked": "2026-10-25",
+      "checked": "2026-11-12",
       "retired_note": ""
     },
     {
@@ -464,7 +464,7 @@
           "available": false,
           "detail": "対象の Google Workspace エディションか Google AI プランが必要",
           "source_url": "https://support.google.com/meet/answer/14754931?hl=ja",
-          "checked": "2026-10-25"
+          "checked": "2026-11-12"
         },
         "plans": [
           {
@@ -496,13 +496,13 @@
         "output": "yes",
         "note": "自動メモ生成の対応言語に日本語。決定事項などのセクション機能は日本語ではベータ版ユーザー向け",
         "source_url": "https://support.google.com/meet/answer/14754931?hl=ja",
-        "checked": "2026-10-25"
+        "checked": "2026-11-12"
       },
       "data_policy": {
         "training_default": "not_used",
         "note": "プロンプト・Workspace のコンテンツ・生成された回答を、許可なく生成AIモデルの学習に使わず、人もレビューしない",
         "source_url": "https://knowledge.workspace.google.com/admin/generative-ai/generative-ai-in-google-workspace-privacy-hub?hl=ja",
-        "checked": "2026-10-25"
+        "checked": "2026-11-12"
       },
       "availability_japan": {
         "value": "yes",
@@ -544,9 +544,9 @@
       "pricing": {
         "free": {
           "available": true,
-          "detail": "Basic：文字起こし月300分、音声・動画ファイルの取り込みは通算3件",
+          "detail": "Basic：文字起こし月300分、1会話30分まで、音声・動画ファイルの取り込みは通算3件",
           "source_url": "https://otter.ai/pricing",
-          "checked": "2026-10-25"
+          "checked": "2026-11-12"
         },
         "plans": [
           {
@@ -557,7 +557,7 @@
             "as_shown": "$16.99 /user/month（Annual: $8.33 /user/month）。50%オフの表示（月払い$8.49・年払い$4.17）はインド発行のクレジットカードのみ有効と注記",
             "detail": "アプリ内録音1,200分、1会議90分まで、ファイル取り込み月10件",
             "source_url": "https://otter.ai/pricing",
-            "checked": "2026-10-25"
+            "checked": "2026-11-12"
           },
           {
             "name": "Business",
@@ -567,7 +567,7 @@
             "as_shown": "$30 /user/month（Annual: $19.99 /user/month）",
             "detail": "会議・録音無制限、ファイル取り込み月6,000分、1会議4時間まで、3会議に同時参加",
             "source_url": "https://otter.ai/pricing",
-            "checked": "2026-10-25"
+            "checked": "2026-11-12"
           },
           {
             "name": "Enterprise",
@@ -576,26 +576,26 @@
             "as_shown": "Schedule a demo（要問い合わせ）",
             "detail": "SSO・SCIM、Otter API",
             "source_url": "https://otter.ai/pricing",
-            "checked": "2026-10-25"
+            "checked": "2026-11-12"
           }
         ],
         "jpy_official": false,
-        "note": "Prices in USD。月払いの Business は最初の3か月20%オフの表示あり。"
+        "note": "Prices in USD。月払いの Business は初めての契約者に限り最初の3か月20%オフ（$24）の表示あり。"
       },
       "japanese": {
         "ui": "unknown",
         "output": "yes",
         "note": "料金ページの比較表に「AI transcription in English, Spanish, French, German, Japanese, and Chinese」。画面の日本語対応の記載は見つけられず",
         "source_url": "https://otter.ai/pricing",
-        "checked": "2026-10-25"
+        "checked": "2026-11-12"
       },
       "data_policy": {
         "training_default": "used",
         "note": "独自の方法で個人を特定できないよう匿名化したうえで、録音と文字起こしをモデルの学習に使う（自動処理で人は確認しない）。拒否する設定の記載は見つけられず",
         "source_url": "https://otter.ai/privacy-security",
-        "checked": "2026-10-25"
+        "checked": "2026-11-12"
       },
-      "checked": "2026-10-25",
+      "checked": "2026-11-12",
       "retired_note": ""
     },
     {
@@ -611,40 +611,41 @@
       ],
       "model_slugs": [],
       "latest": {
-        "name": "Scribe v2",
-        "source_url": "https://elevenlabs.io/docs/overview/models",
-        "checked": "2026-10-25"
+        "name": "Scribe v3（リアルタイム用は Scribe v3 Live）",
+        "released": "2026-11-10",
+        "source_url": "https://elevenlabs.io/blog/scribe-v3",
+        "checked": "2026-11-12"
       },
       "access": [
         "web",
         "api"
       ],
       "strengths": [
-        "Open ASRの多言語部門で1位",
-        "日本語は誤り率5%以下と公式が公表",
+        "AAの誤り率1.9%（Scribe v3）",
+        "Scribe v2の日本語は誤り率5%以下と公式が公表",
         "話者分離（最大32人）・専門用語1,000語"
       ],
       "weaknesses": [
         "料金はドル建てで、クレジットは他機能と共通",
         "Enterprise以外は既定で入力が学習に使われる"
       ],
-      "editorial_take": "録音ファイルを高精度で文字にしたい人と、APIで組み込む開発者向け。Web画面からもファイルを文字起こしできる。",
+      "editorial_take": "録音ファイルを高精度で文字にしたい人と、APIで組み込む開発者向け。2026年11月10日に Scribe v3 が出て、ElevenLabs のアプリの既定になった。",
       "pricing": {
         "free": {
           "available": true,
           "detail": "無料プランの月10,000クレジットで使える（文字起こしは1分330クレジット）",
           "source_url": "https://elevenlabs.io/pricing",
-          "checked": "2026-10-25"
+          "checked": "2026-11-12"
         },
         "plans": [],
         "usage": {
           "unit": "1時間",
-          "amount": 0.22,
+          "amount": 0.2,
           "currency": "USD",
-          "as_shown": "Scribe v2: $0.22 Price per hour",
-          "detail": "API。リアルタイム版の Scribe v2 Realtime は$0.39/時間、医療向けの Scribe v2 Medical は$0.22/時間",
+          "as_shown": "Scribe v3: $0.20 Price per hour",
+          "detail": "API。Scribe v2・Scribe v2 Medical も$0.20/時間、リアルタイム版の Scribe v3 Live・Scribe v2 Realtime は$0.22/時間。専門用語の指定（Keyterm prompting）はバッチで1時間$0.05の追加料金",
           "source_url": "https://elevenlabs.io/pricing/api",
-          "checked": "2026-10-25"
+          "checked": "2026-11-12"
         },
         "jpy_official": false,
         "note": "Web画面で使う場合は有料プラン（月$6の Starter から）のクレジットを読み上げなど全製品で共通に使う。料金は税抜。"
@@ -653,28 +654,28 @@
         "value": "conditional",
         "note": "有料プランはすべて商用ライセンス付き（ベータ機能を除く）。無料プランは商用利用不可",
         "source_url": "https://elevenlabs.io/docs/help-center/legal/can-i-publish-the-content-i-generate-on-the-platform",
-        "checked": "2026-10-25"
+        "checked": "2026-11-12"
       },
       "japanese": {
         "ui": "partial",
         "output": "yes",
-        "note": "公式の言語別の誤り率で日本語は「Excellent（WER 5%以下）」。公式サイトは日本語表示あり",
+        "note": "公式の言語別の誤り率で Scribe v2 の日本語は「Excellent（WER 5%以下）」。Scribe v3 は FLEURS で Scribe v2 より誤りが27%少ないとするが、日本語別の値は記載なし。公式サイトは日本語表示あり",
         "source_url": "https://elevenlabs.io/docs/overview/capabilities/speech-to-text",
-        "checked": "2026-10-25"
+        "checked": "2026-11-12"
       },
       "data_policy": {
         "training_default": "opt_out_available",
         "note": "既定では提供データを音声モデルの改善に使う。設定の「Improve the models for everyone」をオフにすれば以後は使われない。Enterprise は既定で使わない",
         "source_url": "https://elevenlabs.io/docs/help-center/legal/is-my-data-used-to-improve-eleven-labs-ai-models",
-        "checked": "2026-10-25"
+        "checked": "2026-11-12"
       },
       "availability_japan": {
         "value": "yes",
         "note": "アクセス制限の対象国に日本は含まれない",
         "source_url": "https://elevenlabs.io/docs/help-center/legal/do-you-restrict-access-to-the-service-and-platform-for-any-specific-countries",
-        "checked": "2026-10-25"
+        "checked": "2026-11-12"
       },
-      "checked": "2026-10-25",
+      "checked": "2026-11-12",
       "retired_note": ""
     },
     {
@@ -694,7 +695,7 @@
         "name": "MAI-Transcribe-2-Streaming（公開プレビュー）",
         "released": "2026-10-01",
         "source_url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/mai-transcribe-2-streaming-realtime",
-        "checked": "2026-10-25"
+        "checked": "2026-11-12"
       },
       "access": [
         "api"
@@ -714,7 +715,7 @@
           "available": true,
           "detail": "Free (F0)：リアルタイム文字起こし月5時間まで無料",
           "source_url": "https://azure.microsoft.com/en-us/pricing/details/speech/",
-          "checked": "2026-10-25"
+          "checked": "2026-11-12"
         },
         "plans": [],
         "usage": {
@@ -734,19 +735,19 @@
         "output": "yes",
         "note": "MAI-Transcribe-2 の対応言語に日本語（ja）。ドキュメントは日本語版あり",
         "source_url": "https://learn.microsoft.com/ja-jp/azure/ai-services/speech-service/language-support?tabs=stt",
-        "checked": "2026-10-25"
+        "checked": "2026-11-12"
       },
       "data_policy": {
         "training_default": "not_used",
         "note": "リアルタイム文字起こしの音声はサーバーのメモリ上でだけ処理し保存しない。Microsoft は顧客が提供したデータを保持しない（バッチは顧客指定のストレージ）",
         "source_url": "https://learn.microsoft.com/en-us/azure/foundry/responsible-ai/speech-service/speech-to-text/data-privacy-security",
-        "checked": "2026-10-25"
+        "checked": "2026-11-12"
       },
       "availability_japan": {
         "value": "yes",
         "note": "料金ページのリージョンに Japan East・Japan West",
         "source_url": "https://azure.microsoft.com/en-us/pricing/details/speech/",
-        "checked": "2026-10-25"
+        "checked": "2026-11-12"
       },
       "checked": "2026-10-01",
       "retired_note": ""
@@ -755,7 +756,7 @@
       "id": "gemini-transcribe",
       "name": "Gemini 3.5 Transcribe（Gemini API）",
       "vendor": "Google",
-      "url": "https://ai.google.dev/gemini-api/docs/transcribe",
+      "url": "https://aistudio.google.com/docs/transcribe",
       "status": "featured",
       "rank": 7,
       "segment": "api",
@@ -767,8 +768,8 @@
       "latest": {
         "name": "Gemini 3.5 Transcribe",
         "released": "2026-08-26",
-        "source_url": "https://ai.google.dev/gemini-api/docs/changelog?hl=en",
-        "checked": "2026-10-25"
+        "source_url": "https://aistudio.google.com/docs/changelog?hl=en",
+        "checked": "2026-11-12"
       },
       "access": [
         "web",
@@ -788,8 +789,8 @@
         "free": {
           "available": true,
           "detail": "Standard の無料枠（Free Tier）は無料",
-          "source_url": "https://ai.google.dev/gemini-api/docs/pricing?hl=en",
-          "checked": "2026-10-25"
+          "source_url": "https://aistudio.google.com/docs/pricing?hl=en",
+          "checked": "2026-11-12"
         },
         "plans": [],
         "usage": {
@@ -798,8 +799,8 @@
           "currency": "USD",
           "as_shown": "Input price $2.00 or $0.003/min (audio)／Output price $12.00 or $0.002/min (text)",
           "detail": "有料枠。入力と出力を合わせて1分約$0.005の見積もり（公式）",
-          "source_url": "https://ai.google.dev/gemini-api/docs/pricing?hl=en",
-          "checked": "2026-10-25"
+          "source_url": "https://aistudio.google.com/docs/pricing?hl=en",
+          "checked": "2026-11-12"
         },
         "jpy_official": false,
         "note": "Live 版（gemini-3.5-transcribe-live）は合計で1分約$0.009の見積もり。"
@@ -807,29 +808,29 @@
       "commercial_use": {
         "value": "yes",
         "note": "Gemini API 追加利用規約で、生成されたコンテンツの所有権を Google は主張しないと記載",
-        "source_url": "https://ai.google.dev/gemini-api/terms?hl=en",
-        "checked": "2026-10-25"
+        "source_url": "https://aistudio.google.com/docs/terms?hl=en",
+        "checked": "2026-11-12"
       },
       "japanese": {
         "ui": "partial",
         "output": "yes",
-        "note": "対応言語の表に日本語（ja-JP）。ドキュメントに日本語版あり（機械翻訳）",
-        "source_url": "https://ai.google.dev/gemini-api/docs/transcribe?hl=ja",
-        "checked": "2026-10-25"
+        "note": "対応言語の表に日本語（ja-JP）。85以上のロケールに対応",
+        "source_url": "https://aistudio.google.com/docs/transcribe?hl=ja",
+        "checked": "2026-11-12"
       },
       "data_policy": {
         "training_default": "opt_out_available",
         "note": "無料枠・Google AI Studio の入力と出力は製品改善に使われ、人が確認することもある。有料枠では改善に使わない",
-        "source_url": "https://ai.google.dev/gemini-api/terms?hl=en",
-        "checked": "2026-10-25"
+        "source_url": "https://aistudio.google.com/docs/terms?hl=en",
+        "checked": "2026-11-12"
       },
       "availability_japan": {
         "value": "yes",
         "note": "Gemini API の提供地域一覧に日本",
-        "source_url": "https://ai.google.dev/gemini-api/docs/available-regions?hl=en",
-        "checked": "2026-10-25"
+        "source_url": "https://aistudio.google.com/docs/available-regions?hl=en",
+        "checked": "2026-11-12"
       },
-      "checked": "2026-10-25",
+      "checked": "2026-11-12",
       "retired_note": ""
     },
     {
@@ -898,12 +899,12 @@
       "model_slugs": [],
       "access": [],
       "editorial_take": "ファイルの文字起こしは1分$0.0045。AAの誤り率は3.3%。whisper-1 などの旧モデルは2027年2月26日に終了予定。",
-      "checked": "2026-10-25",
+      "checked": "2026-11-12",
       "retired_note": "",
       "latest": {
         "name": "GPT Transcribe",
         "source_url": "https://developers.openai.com/api/docs/models/gpt-transcribe",
-        "checked": "2026-10-25"
+        "checked": "2026-11-12"
       }
     },
     {
@@ -937,7 +938,7 @@
       "model_slugs": [],
       "access": [],
       "editorial_take": "音声認識API。AAの誤り率は Universal-3 Pro が3.1%、Open ASR の多言語部門では Universal-3.5 Pro が5位。",
-      "checked": "2026-10-12",
+      "checked": "2026-11-12",
       "retired_note": ""
     },
     {
@@ -956,7 +957,7 @@
         "name": "Voxtral Small Transcribe 3・Voxtral Mini Transcribe 3（公開プレビュー）",
         "released": "2026-10-20",
         "source_url": "https://docs.mistral.ai/models/voxtral-small-transcribe-3-0",
-        "checked": "2026-10-25"
+        "checked": "2026-11-12"
       },
       "access": [
         "api"
@@ -970,12 +971,12 @@
           "as_shown": "Voxtral Small Transcribe 3: $0.0040/min",
           "detail": "Voxtral Mini Transcribe 3（バッチ）は$0.0035/分、Voxtral Mini Transcribe Realtime 3 は$0.008/分",
           "source_url": "https://mistral.ai/news/voxtral-3/",
-          "checked": "2026-10-25"
+          "checked": "2026-11-12"
         },
         "jpy_official": false,
         "note": ""
       },
-      "checked": "2026-10-25",
+      "checked": "2026-11-12",
       "retired_note": ""
     },
     {
@@ -987,7 +988,7 @@
       "latest": {
         "name": "mlsubgen 0.6.2（ローカルで45言語の字幕を生成、Qwen3-ASRとWhisperを併用）",
         "source_url": "https://github.com/dodgypast/mlsubgen",
-        "checked": "2026-10-25"
+        "checked": "2026-11-12"
       },
       "tags": [
         "mlsubgen",
@@ -1002,7 +1003,7 @@
         "cli"
       ],
       "editorial_take": "個人が公開するOSS（Apache-2.0）。Linux と NVIDIA GPU（8GB以上）で動画の字幕を手元だけで作り、Qwen3-ASR と faster-whisper を併用。45言語に対応（うち8言語は既知の誤りありと明記）。",
-      "checked": "2026-10-25",
+      "checked": "2026-11-12",
       "retired_note": ""
     },
     {
@@ -1015,7 +1016,7 @@
         "name": "Google AI Edge Foresight（Mac用の試験版。文字起こし・メモ作成を端末内で処理）",
         "released": "2026-10-06",
         "source_url": "https://developers.googleblog.com/google-ai-edge-with-embeddinggemma-2/",
-        "checked": "2026-10-25"
+        "checked": "2026-11-12"
       },
       "tags": [
         "Google AI Edge Foresight",
@@ -1030,7 +1031,7 @@
         "desktop"
       ],
       "editorial_take": "Google の試験版の Mac アプリ。システム音声とマイクから会議を端末内で文字起こし・索引化し、走り書きのメモを補う。クラウドのサブスク費用は不要とされるが、日本語対応の記載は見つけられなかった。",
-      "checked": "2026-10-25",
+      "checked": "2026-11-12",
       "retired_note": ""
     },
     {
@@ -1043,7 +1044,7 @@
         "name": "Bee Frontier（74.99ドル）・Bee Eclipse（99.99ドル）。会話を聞き取って要約する身に着ける機器",
         "released": "2026-10-15",
         "source_url": "https://bee.computer/products/frontier",
-        "checked": "2026-10-25"
+        "checked": "2026-11-12"
       },
       "tags": [
         "Bee",
@@ -1055,7 +1056,7 @@
       "model_slugs": [],
       "access": [],
       "editorial_take": "Amazon傘下の、会話を聞き取って要約する身に着ける機器。Bee Frontier は74.99ドルで amazon.com で販売。40以上の言語に対応とするが、日本語と日本での販売の記載は見つけられなかった。",
-      "checked": "2026-10-25",
+      "checked": "2026-11-12",
       "retired_note": ""
     }
   ],
@@ -1098,8 +1099,8 @@
       "operator": "Artificial Analysis",
       "url": "https://artificialanalysis.ai/speech-to-text",
       "what": "単語の誤り率（低いほど良い）。AA-AgentTalk（50%）・VoxPopuli（25%）・Earnings22（25%）の英語音声約8時間で評価",
-      "snapshot": "1位 Fun-Realtime-ASR-preview（Alibaba Cloud）1.7%、2位 MAI-Transcribe-2（Microsoft）2.0%、3位 Voxtral Small Transcribe 3（Mistral）2.1%、4位 Scribe v2（ElevenLabs）2.2%、5位 Voxtral Mini Transcribe 3 2.2%。Gemini 3.5 Transcribe 2.6%（9位）、Universal-3 Pro 3.1%、GPT Transcribe 3.3%、Nova-3 5.2%。最速は Parakeet TDT 0.6B V3（Together AI、664.7倍）（2026-10-25時点）",
-      "checked": "2026-10-25"
+      "snapshot": "1位 Fun-Realtime-ASR-preview（Alibaba Cloud）1.7%、2位 Scribe v3（ElevenLabs）1.9%、3位 MAI-Transcribe-2（Microsoft）2.0%、4位 Voxtral Small Transcribe 3（Mistral）2.1%、5位 Scribe v2 2.2%、6位 Voxtral Mini Transcribe 3 2.2%。Gemini 3.5 Transcribe 2.6%、Universal-3 Pro 3.1%、GPT Transcribe 3.3%、Nova-3 5.2%。1,000分あたり MAI-Transcribe-2 $1.67・Scribe v3 $3.33。最速は Parakeet TDT 0.6B V3（Together AI、655.5倍）（2026-11-12時点）",
+      "checked": "2026-11-12"
     },
     {
       "id": "open-asr",
@@ -1107,14 +1108,14 @@
       "operator": "Hugging Face（hf-audio）",
       "url": "https://huggingface.co/spaces/hf-audio/open_asr_leaderboard",
       "what": "公開データセットでの平均単語誤り率。英語部門と、独・仏・伊・西・葡・ヒンディー・蘭の多言語部門（日本語は対象外）",
-      "snapshot": "英語：1位 OtterAI/speech-v3.1 4.55、2位 zoom/scribe_v2_pro 4.7、3位 microsoft/azure-speech-07-2026 5.02、7位 elevenlabs/scribe_v2 5.24。多言語：1位 elevenlabs/scribe_v2 3.56、2位 microsoft/azure-speech-06-2026 3.73、4位 openai/gpt-transcribe 4.36、5位 assemblyai/universal-3-5-pro 4.48（2026-10-22更新・10-25確認）",
-      "checked": "2026-10-25"
+      "snapshot": "英語：1位 zoom/scribe_v2.1_pro 4.87、2位 OtterAI/speech-v3.1 5.21、3位 microsoft/azure-speech-09-2026 5.55、6位 elevenlabs/scribe_v2 5.93。多言語：1位 microsoft/azure-speech-09-2026 3.47、2位 elevenlabs/scribe_v2 3.57、3位 openai/gpt-transcribe 4.36、5位 assemblyai/universal-3-5-pro 4.48。Scribe v3 は未掲載（2026-11-10更新・11-12確認）",
+      "checked": "2026-11-12"
     }
   ],
   "faq": [
     {
       "q": "日本語の文字起こしが一番正確なのはどれですか？",
-      "a": "日本語の精度を比べた継続運営の公開評価は見つけられませんでした。Artificial Analysis は英語、Open ASR Leaderboard は英語と欧州言語・ヒンディー語での評価です。公式の公表値では、ElevenLabs が Scribe v2 の日本語の誤り率を5%以下としています。社名や製品名を含む同じ録音で、各サービスの誤りを数えて比べてください。"
+      "a": "日本語の精度を比べた継続運営の公開評価は見つけられませんでした。Artificial Analysis は英語、Open ASR Leaderboard は英語と欧州言語・ヒンディー語での評価です。公式の公表値では、ElevenLabs が Scribe v2 の日本語の誤り率を5%以下としています（後継の Scribe v3 の日本語の値は未公表）。社名や製品名を含む同じ録音で、各サービスの誤りを数えて比べてください。"
     },
     {
       "q": "会議の内容がAIの学習に使われないものは？",
@@ -1126,11 +1127,11 @@
     },
     {
       "q": "話者ごとに分けて文字起こしできますか？",
-      "a": "Notta と Otter.ai は話者識別に対応しています。APIでは ElevenLabs Scribe v2 が最大32人の話者分離、Gemini 3.5 Transcribe も話者分離に対応します（Gemini は専門用語の指定と同時には使えません）。"
+      "a": "Notta と Otter.ai は話者識別に対応しています。APIでは ElevenLabs Scribe v3 が最大32人の話者分離、Gemini 3.5 Transcribe も話者分離に対応します（Gemini は専門用語の指定と同時には使えません）。"
     },
     {
       "q": "料金はどう比べればいいですか？",
-      "a": "会議ツールは1人あたりの月額（Notta プレミアムは年払いで月1,185円、Rimo Voice プロは月4,950円、いずれも税込）、APIは音声の長さ単位（Azure MAI-Transcribe-2 は1時間$0.10、ElevenLabs Scribe v2 は1時間$0.22、Gemini 3.5 Transcribe は1分約$0.005）です。月に何時間の会議を文字にするかで比べてください。"
+      "a": "会議ツールは1人あたりの月額（Notta プレミアムは年払いで月1,185円、Rimo Voice プロは月4,950円、いずれも税込）、APIは音声の長さ単位（Azure MAI-Transcribe-2 は1時間$0.10、ElevenLabs Scribe v3 は1時間$0.20、Gemini 3.5 Transcribe は1分約$0.005）です。月に何時間の会議を文字にするかで比べてください。"
     }
   ],
   "related": {
@@ -1210,6 +1211,16 @@
     {
       "date": "2026-10-25",
       "text": "Mistral の音声認識API「Voxtral Transcribe 3」と Amazon の「Bee」をその他の選択肢に追加",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-11-12",
+      "text": "ElevenLabs の新モデル Scribe v3 を反映し、API料金を1時間$0.22から$0.20に更新",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-11-12",
+      "text": "Artificial Analysis と Open ASR Leaderboard の最新順位で「最高品質」「APIで組み込むなら」の答えの根拠を更新",
       "by": "reviewer"
     }
   ],
