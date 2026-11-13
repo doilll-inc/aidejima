@@ -3,12 +3,12 @@
   "status": "published",
   "priority": 2,
   "created": "2026-09-30",
-  "updated": "2026-10-26",
-  "last_reviewed": "2026-10-26",
+  "updated": "2026-11-13",
+  "last_reviewed": "2026-11-13",
   "title": "AI翻訳のおすすめと料金比較",
   "short_name": "AI翻訳",
   "seo": {
-    "description": "DeepL・Google 翻訳・みらい翻訳などの翻訳サービスと ChatGPT・Gemini・Claude を、公式ページで確かめた料金、無料版の範囲、翻訳文の学習利用で比較。WMT25 の人手評価にもとづく目的別のおすすめも紹介。",
+    "description": "DeepL・Google 翻訳・みらい翻訳などの翻訳サービスと ChatGPT・Gemini・Claude を、公式ページで確かめた料金、無料版の範囲、翻訳文の学習利用で比較。WMT26 の人手評価にもとづく目的別のおすすめも紹介。",
     "keywords": [
       "AI翻訳",
       "翻訳ツール",
@@ -19,7 +19,7 @@
       "Google翻訳"
     ]
   },
-  "intro": "訳の品質を公開評価で選ぶなら **Gemini**、社外秘の文書を訳すなら学習に使わない **DeepL Pro**、安く安全に済ませるなら **みらい翻訳 Plus**（月495円から）が出発点です。第三者の人手評価 WMT25 の英→日では Gemini 2.5 Pro が機械翻訳の中で最高点でした。無料なら約250言語の **Google 翻訳**、システムに組み込むなら毎月200万文字まで無料の **Microsoft Translator** の API が手頃です。",
+  "intro": "訳の品質を公開評価で選ぶなら **Gemini**、社外秘の文書を訳すなら学習に使わない **DeepL Pro**、安く安全に済ませるなら **みらい翻訳 Plus**（月495円から）が出発点です。第三者の人手評価 WMT26（2026年10月公表）の英→日では、Gemini 3.1 Pro が最上位グループに入りました。無料なら約250言語の **Google 翻訳**、システムに組み込むなら毎月200万文字まで無料の **Microsoft Translator** の API が手頃です。",
   "scope": "文書・Webページ・会話の翻訳を、翻訳専用サービスと汎用の対話AIの両方で比べる。文章の作成・校正は「文章作成AI」ガイドで扱う。",
   "audience": [
     "ビジネスパーソン全般",
@@ -47,20 +47,20 @@
         "deepl",
         "chatgpt"
       ],
-      "answer": "第三者の人手評価 WMT25 の英→日で、Gemini 2.5 Pro が機械翻訳の中で最高の85.8（人の翻訳は89.2、GPT-4.1 は83.7）。DeepL は自社の2026年6月のブラインドテストで、GPT-5.5・Gemini 3.1 Pro・Claude Opus 4.8 などとの比較の89%（74組中66組）に勝ったと公表しています。どちらも評価対象は現行より前のモデルです。",
+      "answer": "第三者の人手評価 WMT26（2026年10月公表）の英→日で、Gemini 3.1 Pro は90.3で最上位グループ（1〜4位）に入り、GPT-5.5 は86.1（6〜11位）、Google 翻訳は69.4でした。DeepL は自社の2026年6月のブラインドテストで、GPT-5.5・Gemini 3.1 Pro・Claude Opus 4.8 などとの比較の89%（74組中66組）に勝ったと公表しています（DeepL は WMT26 の評価対象外）。",
       "evidence": [
         {
           "kind": "third_party",
-          "name": "WMT25 General Machine Translation（人手評価）",
-          "url": "https://aclanthology.org/2025.wmt-1.22/",
-          "date": "2026-10-01",
-          "note": "英→日：人の翻訳 89.2、Gemini-2.5-Pro 85.8、Mistral-Medium 84.8、GPT-4.1 83.7、Claude-4 79.3、匿名の翻訳サービス ONLINE-B 78.0。全体の最良システムは Gemini 2.5 Pro（2025年11月公表）"
+          "name": "WMT26 General Machine Translation（人手評価）",
+          "url": "https://aclanthology.org/2026.wmt-main.48/",
+          "date": "2026-11-13",
+          "note": "英→日（cESA）：1〜4位 Lumen 90.6・Wayfinder 90.6・SCIR-TG-MT 90.4・Gemini 3.1 Pro 90.3、6〜11位 GPT 5.5 86.1・人の翻訳（ポストエディット）86.0、26〜29位 GoogleTranslate 69.4。全体の最良は Wayfinder（23言語ペア中17で最上位グループ）、次いで Gemini 3.1 Pro（15）（2026年10月公表、2026-11-13確認）"
         },
         {
           "kind": "official",
           "name": "DeepL Translation Quality",
           "url": "https://www.deepl.com/en/quality",
-          "date": "2026-10-26",
+          "date": "2026-11-13",
           "note": "2026年6月のブラインドテスト（18言語ペア）で74組中66組（89%）に勝利。比較相手は GPT-5.5・Gemini 3.1 Pro・Claude Opus 4.8・Google 翻訳・Microsoft Copilot など7社。DeepL 自身による公表"
         }
       ]
@@ -78,7 +78,7 @@
           "kind": "official",
           "name": "みらい翻訳 Plus 料金プラン",
           "url": "https://plus.miraitranslate.com/",
-          "date": "2026-10-01",
+          "date": "2026-11-13",
           "note": "Starter 495円 1ユーザー/月換算（税込）、テキスト翻訳20,000文字まで・文字量制限なし、月10ファイル、投入文章の二次利用なし"
         },
         {
@@ -104,28 +104,28 @@
           "kind": "official",
           "name": "Google 翻訳 20周年（Google 公式ブログ）",
           "url": "https://blog.google/products-and-platforms/products/translate/fun-facts-google-translate-20-years/",
-          "date": "2026-10-01",
+          "date": "2026-11-13",
           "note": "約250言語に対応（2026-04-28）"
         },
         {
           "kind": "official",
           "name": "Google 翻訳ヘルプ：ドキュメントやウェブサイトを翻訳する",
           "url": "https://support.google.com/translate/answer/2534559?hl=ja",
-          "date": "2026-10-26",
+          "date": "2026-11-13",
           "note": ".docx・.pdf・.pptx・.xlsx を最大10MBまで（PDF は300ページ以下）"
         },
         {
           "kind": "official",
           "name": "DeepL 個人情報保護方針",
           "url": "https://www.deepl.com/en/privacy",
-          "date": "2026-10-01",
+          "date": "2026-11-13",
           "note": "無料版の入力と訳文は一定期間、学習と改善に使う"
         },
         {
           "kind": "official",
           "name": "みらい翻訳 Plus",
           "url": "https://plus.miraitranslate.com/",
-          "date": "2026-10-01",
+          "date": "2026-11-13",
           "note": "Free：テキスト翻訳5,000文字まで、投入文章の二次利用なし"
         }
       ]
@@ -151,14 +151,14 @@
           "kind": "official",
           "name": "DeepL 個人情報保護方針",
           "url": "https://www.deepl.com/en/privacy",
-          "date": "2026-10-01",
+          "date": "2026-11-13",
           "note": "Pro・API Pro・Write Pro の文章は翻訳後に削除し、品質改善に使わない"
         },
         {
           "kind": "official",
           "name": "みらい翻訳 Plus",
           "url": "https://plus.miraitranslate.com/",
-          "date": "2026-10-01",
+          "date": "2026-11-13",
           "note": "無料プランでも二次利用なし、翻訳完了時にサーバーから削除、ISO27001"
         }
       ]
@@ -184,7 +184,7 @@
           "kind": "official",
           "name": "Azure Translator のデータ・プライバシー",
           "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/responsible-ai/translator/data-privacy-security",
-          "date": "2026-10-01",
+          "date": "2026-11-13",
           "note": "テキスト翻訳は顧客データを保存しない"
         },
         {
@@ -239,7 +239,7 @@
           "available": true,
           "detail": "1か月50,000文字、ファイル翻訳は月1件（5MBまで）、用語集1個",
           "source_url": "https://www.deepl.com/ja/pro",
-          "checked": "2026-10-26"
+          "checked": "2026-11-13"
         },
         "plans": [
           {
@@ -306,7 +306,7 @@
         "training_default": "used",
         "note": "無料版は入力と訳文を一定期間、ニューラルネットワークの学習と改善に使う。Pro・API Pro・Write Pro は翻訳後に削除し、品質改善に使わない",
         "source_url": "https://www.deepl.com/en/privacy",
-        "checked": "2026-10-26"
+        "checked": "2026-11-13"
       },
       "availability_japan": {
         "value": "yes",
@@ -315,7 +315,13 @@
         "checked": "2026-10-01"
       },
       "checked": "2026-10-01",
-      "retired_note": ""
+      "retired_note": "",
+      "latest": {
+        "name": "Aure（DeepL Voice の音声翻訳モデル）",
+        "released": "2026-11-11",
+        "source_url": "https://www.deepl.com/en/press-release/aure-voice-ai-model",
+        "checked": "2026-11-13"
+      }
     },
     {
       "id": "google-translate",
@@ -334,7 +340,7 @@
         "name": "Gemini 3.5 Live Translate（音声翻訳）",
         "released": "2026-06-09",
         "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-live-3-5-translate/",
-        "checked": "2026-10-26"
+        "checked": "2026-11-13"
       },
       "access": [
         "web",
@@ -357,7 +363,7 @@
           "available": true,
           "detail": ".docx・.pdf・.pptx・.xlsx を10MBまで（PDF は300ページ以下）無料で翻訳",
           "source_url": "https://support.google.com/translate/answer/2534559?hl=ja&co=GENIE.Platform%3DDesktop",
-          "checked": "2026-10-26"
+          "checked": "2026-11-13"
         },
         "plans": [],
         "usage": {
@@ -377,13 +383,13 @@
         "output": "yes",
         "note": "ヘルプは日本語。Cloud Translation の対応言語一覧にも Japanese",
         "source_url": "https://support.google.com/translate/answer/6142478?hl=ja&co=GENIE.Platform%3DDesktop",
-        "checked": "2026-10-26"
+        "checked": "2026-11-13"
       },
       "data_policy": {
         "training_default": "unknown",
         "note": "Cloud Translation API は送信内容を翻訳の学習・改善に使わない。無料の Web・アプリ版の学習利用については公式の記載を見つけられず",
         "source_url": "https://docs.cloud.google.com/translate/data-usage",
-        "checked": "2026-10-26"
+        "checked": "2026-11-13"
       },
       "checked": "2026-10-26",
       "retired_note": ""
@@ -419,7 +425,7 @@
           "available": true,
           "detail": "API の F0：標準翻訳とカスタム翻訳の学習を合わせて月200万文字まで無料",
           "source_url": "https://azure.microsoft.com/en-us/pricing/details/translator/",
-          "checked": "2026-10-26"
+          "checked": "2026-11-13"
         },
         "plans": [],
         "usage": {
@@ -439,13 +445,13 @@
         "output": "yes",
         "note": "Translator の対応言語一覧に Japanese",
         "source_url": "https://learn.microsoft.com/en-us/azure/ai-services/translator/language-support",
-        "checked": "2026-10-26"
+        "checked": "2026-11-13"
       },
       "data_policy": {
         "training_default": "not_used",
         "note": "テキスト翻訳は顧客データを保存しない。文書翻訳は処理中だけ一時保存し、処理後に完全に削除（No Trace）",
         "source_url": "https://learn.microsoft.com/en-us/azure/foundry/responsible-ai/translator/data-privacy-security",
-        "checked": "2026-10-26"
+        "checked": "2026-11-13"
       },
       "checked": "2026-10-26",
       "retired_note": ""
@@ -482,7 +488,7 @@
           "available": true,
           "detail": "Free：テキスト翻訳は5,000文字まで（1日の量に制限あり）、ファイル翻訳は月1件（25MBまで）、用語集",
           "source_url": "https://plus.miraitranslate.com/",
-          "checked": "2026-10-26"
+          "checked": "2026-11-13"
         },
         "plans": [
           {
@@ -491,9 +497,9 @@
             "currency": "JPY",
             "per": "seat_month",
             "as_shown": "495円 1ユーザー / 月換算（税込）",
-            "detail": "年払い。テキスト翻訳は20,000文字まで（量の制限なし）、ファイル翻訳月10件、Web サイト翻訳（Chrome 拡張）",
+            "detail": "年払い。最大10ユーザー。テキスト翻訳は20,000文字まで（量の制限なし）、ファイル翻訳月10件、Web サイト翻訳（Chrome 拡張）",
             "source_url": "https://plus.miraitranslate.com/",
-            "checked": "2026-10-26"
+            "checked": "2026-11-13"
           },
           {
             "name": "Plus Standard",
@@ -501,9 +507,9 @@
             "currency": "JPY",
             "per": "seat_month",
             "as_shown": "2,475円 1ユーザー / 月換算（税込）",
-            "detail": "年払い。テキスト翻訳の文字数無制限、ファイル翻訳月30件",
+            "detail": "年払い。最大50ユーザー。テキスト翻訳の文字数無制限、ファイル翻訳月30件",
             "source_url": "https://plus.miraitranslate.com/",
-            "checked": "2026-10-26"
+            "checked": "2026-11-13"
           },
           {
             "name": "Plus Premium",
@@ -511,9 +517,9 @@
             "currency": "JPY",
             "per": "seat_month",
             "as_shown": "4,950円 1ユーザー / 月換算（税込）",
-            "detail": "年払い。ファイル翻訳月120件",
+            "detail": "年払い。最大50ユーザー。ファイル翻訳月120件",
             "source_url": "https://plus.miraitranslate.com/",
-            "checked": "2026-10-26"
+            "checked": "2026-11-13"
           },
           {
             "name": "FLaT（組織向け）",
@@ -523,7 +529,7 @@
             "as_shown": "翻訳量・ID数無制限 25万円〜/月",
             "detail": "20言語。SSO・音声翻訳・API はオプション",
             "source_url": "https://miraitranslate.com/text-translate/flat/",
-            "checked": "2026-10-26"
+            "checked": "2026-11-13"
           }
         ],
         "jpy_official": true,
@@ -534,21 +540,21 @@
         "output": "yes",
         "note": "日本語・英語・中国語（簡・繁）・韓国語など14言語（Plus）",
         "source_url": "https://plus.miraitranslate.com/",
-        "checked": "2026-10-26"
+        "checked": "2026-11-13"
       },
       "data_policy": {
         "training_default": "not_used",
         "note": "無料プランでも入力文を二次利用せず、翻訳完了時にサーバーから削除（技術的な問題があった場合のみ最大72時間保存）",
         "source_url": "https://plus.miraitranslate.com/",
-        "checked": "2026-10-26"
+        "checked": "2026-11-13"
       },
       "availability_japan": {
         "value": "yes",
         "note": "国内向けに円建て・税込で提供",
         "source_url": "https://plus.miraitranslate.com/",
-        "checked": "2026-10-26"
+        "checked": "2026-11-13"
       },
-      "checked": "2026-10-26",
+      "checked": "2026-11-13",
       "retired_note": ""
     },
     {
@@ -567,10 +573,10 @@
         "gemini-3-1-pro-preview"
       ],
       "latest": {
-        "name": "Gemini 4 Argon",
-        "released": "2026-10-13",
-        "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/",
-        "checked": "2026-10-26"
+        "name": "Gemini 4 Carbon（Google AI Ultra）",
+        "released": "2026-11-10",
+        "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+        "checked": "2026-11-13"
       },
       "access": [
         "web",
@@ -578,21 +584,21 @@
         "desktop"
       ],
       "strengths": [
-        "WMT25 英→日で 2.5 Pro が機械翻訳の最高点",
+        "WMT26 英→日で 3.1 Pro が最上位グループ（90.3）",
         "Gemini 4 Argon は AI Pro（月2,900円）から使える",
         "円建て。AI Pro は月2,900円"
       ],
       "weaknesses": [
-        "評価された 2.5 Pro は現行より前のモデル",
+        "評価された 3.1 Pro は現行の Gemini 4 より前のモデル",
         "会話の一部を人が確認する（既定の設定）"
       ],
       "editorial_take": "訳の自然さを公開評価で選ぶなら最有力。前後の文脈や用途を伝えて訳させたいときに向く。",
       "pricing": {
         "free": {
           "available": true,
-          "detail": "Flash-Lite モデル（Flash・Pro・Gemini 4 Argon は有料プランから）",
+          "detail": "Flash-Lite モデル（Gemini 4 Hydrogen は Plus から、Gemini 4 Argon・Pro は AI Pro から）",
           "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-          "checked": "2026-10-26"
+          "checked": "2026-11-13"
         },
         "plans": [
           {
@@ -601,9 +607,9 @@
             "currency": "JPY",
             "per": "month",
             "as_shown": "￥725 JPY / 月",
-            "detail": "Flash モデル、無料版の2倍の使用量上限、400GB",
+            "detail": "Gemini 4 Hydrogen、無料版の2倍の使用量上限、400GB",
             "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-            "checked": "2026-10-26"
+            "checked": "2026-11-13"
           },
           {
             "name": "Google AI Pro",
@@ -611,9 +617,9 @@
             "currency": "JPY",
             "per": "month",
             "as_shown": "￥2,900 JPY / 月",
-            "detail": "Gemini 4 Argon・Pro・Flash モデル、無料版の4倍の使用量上限、5TB",
+            "detail": "Gemini 4 Argon・Pro モデル・Gemini 4 Hydrogen、無料版の4倍の使用量上限、5TB",
             "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-            "checked": "2026-10-26"
+            "checked": "2026-11-13"
           },
           {
             "name": "Google AI Ultra",
@@ -621,9 +627,9 @@
             "currency": "JPY",
             "per": "month",
             "as_shown": "￥14,500 JPY/月（AI Pro の 5 倍の使用量上限。20 倍は ￥32,000 JPY /月）",
-            "detail": "Gemini 4 Argon・Pro・Flash モデルの最上位アクセス、20TB から",
+            "detail": "Gemini 4 Carbon を最大限に利用可能、Gemini 4 Argon・Hydrogen の最上位アクセス、20TB から",
             "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-            "checked": "2026-10-26"
+            "checked": "2026-11-13"
           }
         ],
         "jpy_official": true,
@@ -634,27 +640,27 @@
         "output": "yes",
         "note": "Gemini ウェブアプリの対応言語一覧に日本語",
         "source_url": "https://support.google.com/gemini/answer/13575153?hl=en",
-        "checked": "2026-10-26"
+        "checked": "2026-11-13"
       },
       "commercial_use": {
         "value": "yes",
         "note": "Google 利用規約で、生成されたオリジナルのコンテンツの所有権を Google は主張しない。生成AI禁止使用ポリシーの遵守が条件",
         "source_url": "https://policies.google.com/terms?hl=en",
-        "checked": "2026-10-26"
+        "checked": "2026-11-13"
       },
       "data_policy": {
         "training_default": "opt_out_available",
         "note": "「アクティビティを保持」がオンの間は、会話が生成AIモデルの学習を含むサービス改善に使われ、一部は人が確認する。オフにすると今後の会話は学習に使われない（応答と安全のため72時間は保存）",
         "source_url": "https://support.google.com/gemini/answer/13594961?hl=en",
-        "checked": "2026-10-26"
+        "checked": "2026-11-13"
       },
       "availability_japan": {
         "value": "yes",
         "note": "Gemini ウェブアプリの対応国一覧に日本",
         "source_url": "https://support.google.com/gemini/answer/13575153?hl=en",
-        "checked": "2026-10-26"
+        "checked": "2026-11-13"
       },
-      "checked": "2026-10-26",
+      "checked": "2026-11-13",
       "retired_note": ""
     },
     {
@@ -687,20 +693,20 @@
       ],
       "strengths": [
         "翻訳専用画面（Translate with ChatGPT）",
-        "WMT25 英→日で GPT-4.1 が83.7（旧モデル）",
-        "無料版でもテキストチャットは無制限"
+        "WMT26 英→日で GPT-5.5 が86.1（6〜11位）",
+        "無料版でも GPT-6 Luna を使える"
       ],
       "weaknesses": [
         "翻訳画面の会話も学習に使われる場合あり",
-        "無料版と Go では GPT-6 系モデルを使えない"
+        "無料版と Go では GPT-6.1 Sol・GPT-6 Astra を使えない"
       ],
       "editorial_take": "訳したあとに「もっと丁寧に」「やさしく」と言い換えまで頼める。社外秘を訳すなら学習利用をオフにするか Business を使う。",
       "pricing": {
         "free": {
           "available": true,
-          "detail": "GPT-5.6 Luna でのテキストチャットは無制限",
+          "detail": "GPT-6 Luna・GPT-5 Thinking Mini を利用可（Deep Research・Codex は上限あり）",
           "source_url": "https://chatgpt.com/ja-JP/pricing/",
-          "checked": "2026-10-01"
+          "checked": "2026-11-13"
         },
         "plans": [
           {
@@ -782,10 +788,10 @@
         "claude-fable-5-1"
       ],
       "latest": {
-        "name": "Claude Opus 5.5",
-        "released": "2026-09-22",
-        "source_url": "https://www.anthropic.com/claude-opus-5-5",
-        "checked": "2026-10-26"
+        "name": "Claude Fable 5.2",
+        "released": "2026-11-09",
+        "source_url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+        "checked": "2026-11-13"
       },
       "access": [
         "web",
@@ -806,7 +812,7 @@
           "available": true,
           "detail": "Web・デスクトップ・モバイルでチャット、ファイル作成。モデルは Sonnet と Haiku",
           "source_url": "https://claude.com/pricing",
-          "checked": "2026-10-26"
+          "checked": "2026-11-13"
         },
         "plans": [
           {
@@ -817,7 +823,7 @@
             "as_shown": "$17 Per month with annual subscription discount ($200 billed up front). $20 if billed monthly.",
             "detail": "Opus 5.5、Projects、Claude for Microsoft 365",
             "source_url": "https://claude.com/pricing",
-            "checked": "2026-10-26"
+            "checked": "2026-11-13"
           },
           {
             "name": "Team（標準シート）",
@@ -827,7 +833,7 @@
             "as_shown": "$20 Per seat / month if billed annually. $25 if billed monthly.",
             "detail": "2〜150人。既定でコンテンツを学習に使わない。SSO",
             "source_url": "https://claude.com/pricing",
-            "checked": "2026-10-26"
+            "checked": "2026-11-13"
           }
         ],
         "jpy_official": false,
@@ -838,27 +844,27 @@
         "output": "yes",
         "note": "ヘルプの対応言語に日本語",
         "source_url": "https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language",
-        "checked": "2026-10-26"
+        "checked": "2026-11-13"
       },
       "commercial_use": {
         "value": "yes",
         "note": "消費者向け規約で出力の権利を利用者に譲渡（4条）",
         "source_url": "https://www.anthropic.com/legal/consumer-terms",
-        "checked": "2026-10-26"
+        "checked": "2026-11-13"
       },
       "data_policy": {
         "training_default": "opt_out_available",
         "note": "Free・Pro・Max は設定で学習利用をオフにできる（Opt-out）。Team・Enterprise は既定で学習に使わない",
         "source_url": "https://claude.com/pricing",
-        "checked": "2026-10-26"
+        "checked": "2026-11-13"
       },
       "availability_japan": {
         "value": "yes",
         "note": "公式の提供国・地域一覧に日本",
         "source_url": "https://www.anthropic.com/supported-countries",
-        "checked": "2026-10-26"
+        "checked": "2026-11-13"
       },
-      "checked": "2026-10-26",
+      "checked": "2026-11-13",
       "retired_note": ""
     },
     {
@@ -882,7 +888,7 @@
           "available": true,
           "detail": "AWS 無料利用枠：最初の翻訳から12か月間、月200万文字まで",
           "source_url": "https://aws.amazon.com/translate/pricing/",
-          "checked": "2026-10-26"
+          "checked": "2026-11-13"
         },
         "plans": [],
         "usage": {
@@ -892,12 +898,12 @@
           "as_shown": "$15.00 per million characters",
           "detail": "標準のテキスト翻訳",
           "source_url": "https://aws.amazon.com/translate/pricing/",
-          "checked": "2026-10-26"
+          "checked": "2026-11-13"
         },
         "jpy_official": false,
         "note": ""
       },
-      "checked": "2026-10-26",
+      "checked": "2026-11-13",
       "retired_note": ""
     },
     {
@@ -921,13 +927,13 @@
           "available": true,
           "detail": "ダウンロード・利用とも無料（通信料は利用者負担）。研究目的のサーバーを使用",
           "source_url": "https://voicetra.nict.go.jp/",
-          "checked": "2026-10-26"
+          "checked": "2026-11-13"
         },
         "plans": [],
         "jpy_official": false,
         "note": ""
       },
-      "checked": "2026-10-26",
+      "checked": "2026-11-13",
       "retired_note": ""
     },
     {
@@ -937,10 +943,10 @@
       "url": "https://github.com/bilibili/Index-Translate",
       "status": "listed",
       "latest": {
-        "name": "Index-Translate-35B-A3B（プレビュー）",
-        "released": "2026-09-30",
+        "name": "Index-Translate-Omni（2B / 9B / 35BA3B）",
+        "released": "2026-11-05",
         "source_url": "https://github.com/bilibili/Index-Translate",
-        "checked": "2026-10-26"
+        "checked": "2026-11-13"
       },
       "rank": 22,
       "segment": "service",
@@ -954,13 +960,13 @@
           "available": true,
           "detail": "モデルの重みを公開。35B-A3B（プレビュー）は OpenAI 互換の無料公開 API でも試せる",
           "source_url": "https://github.com/bilibili/Index-Translate",
-          "checked": "2026-10-26"
+          "checked": "2026-11-13"
         },
         "plans": [],
         "jpy_official": false,
         "note": ""
       },
-      "checked": "2026-10-26",
+      "checked": "2026-11-13",
       "retired_note": "",
       "tags": [
         "Index-Translate",
@@ -984,7 +990,7 @@
         "name": "North-Small-Translate-1.0",
         "released": "2026-09-10",
         "source_url": "https://cohere.com/blog/north-small-translate",
-        "checked": "2026-10-26"
+        "checked": "2026-11-13"
       },
       "access": [
         "api"
@@ -995,7 +1001,7 @@
           "available": true,
           "detail": "モデルの重みを Hugging Face で公開（CC BY-NC 4.0、研究・非商用のみ）",
           "source_url": "https://cohere.com/blog/north-small-translate",
-          "checked": "2026-10-26"
+          "checked": "2026-11-13"
         },
         "plans": [],
         "jpy_official": false,
@@ -1005,9 +1011,9 @@
         "value": "conditional",
         "note": "公開の重みは CC BY-NC 4.0（研究・非商用のみ）。企業は RWS の Language Weaver 経由で使える",
         "source_url": "https://cohere.com/blog/north-small-translate",
-        "checked": "2026-10-26"
+        "checked": "2026-11-13"
       },
-      "checked": "2026-10-26",
+      "checked": "2026-11-13",
       "retired_note": ""
     }
   ],
@@ -1045,13 +1051,22 @@
   ],
   "benchmarks": [
     {
+      "id": "wmt26-general-mt",
+      "name": "WMT26 General Machine Translation（人手評価）",
+      "operator": "WMT（Conference on Machine Translation）",
+      "url": "https://aclanthology.org/2026.wmt-main.48/",
+      "what": "毎年開かれる機械翻訳の国際評価。2026年は23言語ペア・46システム（参加30、主催者が加えた LLM・翻訳サービス16）を、訳文を並べて誤り箇所に印を付ける方式（cESA、0〜100点）で人手採点",
+      "snapshot": "英→日：1〜4位 Lumen 90.6・Wayfinder 90.6・SCIR-TG-MT 90.4・Gemini 3.1 Pro 90.3、5位 TRIVE 88.3、6〜11位 HW-TSC 86.2・GPT 5.5 86.1・人の翻訳（ポストエディット）86.0、12〜16位 Cohere CAT+ 83.2、26〜29位 GoogleTranslate 69.4。全体の最良は Wayfinder（23言語ペア中17で最上位グループ）、次いで Gemini 3.1 Pro（15）。DeepL と Claude 単体は評価対象外（2026年10月公表、2026-11-13確認）",
+      "checked": "2026-11-13"
+    },
+    {
       "id": "wmt25-general-mt",
       "name": "WMT25 General Machine Translation（人手評価）",
       "operator": "WMT（Conference on Machine Translation）",
       "url": "https://aclanthology.org/2025.wmt-1.22/",
       "what": "毎年開かれる機械翻訳の国際評価。プロの評価者が誤り箇所に印を付ける方式（ESA）で、英→日を含む言語ペアを人手で採点",
-      "snapshot": "英→日：人の翻訳 89.2、Gemini-2.5-Pro 85.8、Algharb 85.7、Mistral-Medium 84.8、GPT-4.1 83.7、Claude-4 79.3、ONLINE-B（匿名の翻訳サービス）78.0。全体の最良は Gemini 2.5 Pro（2025年11月公表）。WMT26 は2026年6〜7月に評価を実施、会議は10月28〜29日。主催者は自動評価による暫定結果を出さない方針で、人手評価の結果は未公表（2026-10-26確認）",
-      "checked": "2026-10-26"
+      "snapshot": "英→日：人の翻訳 89.2、Gemini-2.5-Pro 85.8、Algharb 85.7、Mistral-Medium 84.8、GPT-4.1 83.7、Claude-4 79.3、ONLINE-B（匿名の翻訳サービス）78.0。全体の最良は Gemini 2.5 Pro（2025年11月公表、2026-11-13確認）。後継の WMT26 の結果は別項目",
+      "checked": "2026-11-13"
     },
     {
       "id": "deepl-blind-test-2026",
@@ -1059,14 +1074,14 @@
       "operator": "DeepL（自社公表）",
       "url": "https://www.deepl.com/en/quality",
       "what": "プロの言語専門家が訳文を見比べる比較。18言語ペア・7社の比較相手",
-      "snapshot": "DeepL が74組中66組（89%）で勝利。比較相手に GPT-5.5（高推論）・Gemini 3.1 Pro・Claude Opus 4.8・Google 翻訳・Microsoft Copilot。GPT-5.5 には83%（18言語ペア中15）、Google 翻訳には100%（18中18）（2026-10-26確認）",
-      "checked": "2026-10-26"
+      "snapshot": "DeepL が74組中66組（89%）で勝利。比較相手に GPT-5.5（高推論）・Gemini 3.1 Pro・Claude Opus 4.8・Google 翻訳・Microsoft Copilot。GPT-5.5 には83%（18言語ペア中15）、Google 翻訳には100%（18中18）（2026-11-13確認）",
+      "checked": "2026-11-13"
     }
   ],
   "faq": [
     {
       "q": "いちばん正確な翻訳AIはどれですか？",
-      "a": "第三者の人手評価 WMT25（2025年11月公表）の英→日では、Gemini 2.5 Pro が機械翻訳の中で最高点（85.8、人の翻訳は89.2）でした。DeepL は自社の2026年3月のブラインドテストで、GPT-5.2・Gemini 3.1 Pro などとの比較の94%に勝ったとしています。どちらも現行より前のモデルの評価で、WMT26 の結果はまだ公表されていません（2026年10月13日確認）。"
+      "a": "第三者の人手評価 WMT26（2026年10月公表）の英→日では、Gemini 3.1 Pro が90.3で最上位グループ（1〜4位）に入り、GPT-5.5 は86.1、Google 翻訳は69.4でした。DeepL は自社の2026年6月のブラインドテストで、GPT-5.5・Gemini 3.1 Pro・Claude Opus 4.8 などとの比較の89%に勝ったとしています。DeepL と Claude 単体は WMT26 の評価対象外です。"
     },
     {
       "q": "無料で使える翻訳サービスは？",
@@ -1141,6 +1156,41 @@
     {
       "date": "2026-10-26",
       "text": "Cohere の翻訳特化モデル North Small Translate を「その他の選択肢」に追加",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-11-13",
+      "text": "第三者の人手評価を WMT26（2026年10月公表）の結果に更新（英→日で Gemini 3.1 Pro が最上位グループ）",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-11-13",
+      "text": "Gemini の最新モデルを Gemini 4 Carbon（Google AI Ultra）に更新し、各プランで使えるモデルに Gemini 4 Hydrogen を追記",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-11-13",
+      "text": "Claude の最新モデルを Claude Fable 5.2 に更新",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-11-13",
+      "text": "ChatGPT の無料版で使えるモデルを GPT-6 Luna・GPT-5 Thinking Mini に更新",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-11-13",
+      "text": "DeepL の最新モデルに音声翻訳モデル Aure を追記",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-11-13",
+      "text": "Index-Translate の最新モデルを Index-Translate-Omni に更新",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-11-13",
+      "text": "みらい翻訳 Plus の各プランの最大ユーザー数を追記",
       "by": "reviewer"
     }
   ],
