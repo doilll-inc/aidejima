@@ -3,8 +3,8 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-29",
-  "last_reviewed": "2026-10-27",
+  "updated": "2026-11-14",
+  "last_reviewed": "2026-11-14",
   "title": "動画生成AIのおすすめと料金比較",
   "short_name": "動画生成",
   "seo": {
@@ -46,7 +46,7 @@
         "wan",
         "dreamina-seedance"
       ],
-      "answer": "GoogleのGemini OmniがArenaの動画生成で1位（1516）・2位（1513）を占める。ただしArtificial Analysisでは10位で、1位はWan 3.0、5位はSeedance 2.5と評価が割れているため、両方の上位を試して選びたい。",
+      "answer": "GoogleのGemini OmniがArenaの動画生成で1位（1516）・2位（1513）を占める。Artificial Analysisでは11月公開の1.2 Flashが5位で、1位はWan 3.0、4位はSeedance 2.5と評価が割れているため、両方の上位を試して選びたい。",
       "evidence": [
         {
           "kind": "third_party",
@@ -59,8 +59,8 @@
           "kind": "third_party",
           "name": "Artificial Analysis Text-to-Video Leaderboard",
           "url": "https://artificialanalysis.ai/video/leaderboard/text-to-video",
-          "date": "2026-10-27",
-          "note": "1位 Wan 3.0（1174）、5位 Dreamina Seedance 2.5（1156）、10位 Gemini Omni Flash 1.1（1128）（2026-10-27時点）"
+          "date": "2026-11-14",
+          "note": "1位 Wan 3.0（1175）、4位 Dreamina Seedance 2.5（1157）、5位 Gemini Omni Flash 1.2（1152）（2026-11-14時点）"
         }
       ]
     },
@@ -72,13 +72,13 @@
         "kling",
         "heygen"
       ],
-      "answer": "MiniMax H3はArtificial Analysisで3位の品質で、APIは768Pで1秒$0.08、AA換算の1分$4.80は上位3モデルで最も安い。月額ならHailuoのStandard（$14.99/月）から。次点のKling 3.0もAPIは720P・音声なしで1秒$0.084。AA 4位のHeyGen Video 1はAA換算で1分$2.40とさらに安い。",
+      "answer": "MiniMax H3はArtificial Analysisで3位の品質で、APIは768Pで1秒$0.08、AA換算の1分$4.80は上位3モデルで最も安い。月額ならHailuoのStandard（$14.99/月）から。次点のKling 3.0もAPIは720P・音声なしで1秒$0.084。AA 7位のHeyGen Video 1はAA換算で1分$2.40とさらに安い。",
       "evidence": [
         {
           "kind": "official",
           "name": "MiniMax API Pay as You Go",
           "url": "https://platform.minimax.io/docs/guides/pricing-paygo",
-          "date": "2026-10-27",
+          "date": "2026-11-14",
           "note": "MiniMax-H3 768P $0.08 / second"
         },
         {
@@ -92,14 +92,14 @@
           "kind": "third_party",
           "name": "Artificial Analysis Text-to-Video Leaderboard",
           "url": "https://artificialanalysis.ai/video/leaderboard/text-to-video",
-          "date": "2026-10-27",
-          "note": "MiniMax H3（768p）3位・$4.80/分、HeyGen Video 1 4位・$2.40/分、H3 Max 7位・$4.80/分（2026-10-27時点）"
+          "date": "2026-11-14",
+          "note": "MiniMax H3（768p）3位・$4.80/分、HeyGen Video 1 7位・$2.40/分、H3 Max 8位・$9.60/分（2026-11-14時点）"
         },
         {
           "kind": "official",
           "name": "Kling API Pricing",
           "url": "https://kling.ai/dev/pricing",
-          "date": "2026-10-01",
+          "date": "2026-11-14",
           "note": "Kling 3.0 720P $0.084 /s（No Native Audio）"
         }
       ]
@@ -110,9 +110,10 @@
       "pick": "kling",
       "runner_up": [
         "heygen",
-        "synthesia"
+        "synthesia",
+        "gemini-omni"
       ],
-      "answer": "Kling AIは毎日の無料クレジットで生成でき、無料のままでも試せる（透かし入り・商用不可）。アバター動画ならHeyGen（月3本・1分まで）とSynthesia（月500クレジット、動画作成または吹き替え10分）に無料プランがある。",
+      "answer": "Kling AIは毎日の無料クレジットで生成でき、無料のままでも試せる（透かし入り・商用不可）。アバター動画ならHeyGen（月3本・1分まで）とSynthesia（月500クレジット、動画作成または吹き替え10分）に無料プランがある。GoogleのGemini Omni 1.2 FlashはGoogle Vidsで月3本（15秒）まで無料。",
       "evidence": [
         {
           "kind": "official",
@@ -125,15 +126,22 @@
           "kind": "official",
           "name": "HeyGen Pricing",
           "url": "https://www.heygen.com/pricing",
-          "date": "2026-10-14",
+          "date": "2026-11-14",
           "note": "Free: 3 videos per month, up to 1 min"
         },
         {
           "kind": "official",
           "name": "Synthesia Pricing",
           "url": "https://www.synthesia.io/pricing",
-          "date": "2026-10-14",
+          "date": "2026-11-14",
           "note": "Basic $0 per month, 500 credits / month, 10 minutes of video creation or dubbing"
+        },
+        {
+          "kind": "official",
+          "name": "Generate longer AI videos with Omni 1.2 Flash in Google Vids at no cost",
+          "url": "https://blog.google/products-and-platforms/products/workspace/omni-1-2-flash-google-vids/",
+          "date": "2026-11-14",
+          "note": "up to three 15-second videos per month in Vids at no cost"
         }
       ]
     },
@@ -151,21 +159,21 @@
           "kind": "official",
           "name": "Kling VIDEO 3.0 Model User Guide",
           "url": "https://kling.ai/quickstart/klingai-video-3-model-user-guide",
-          "date": "2026-10-14",
+          "date": "2026-11-14",
           "note": "Chinese, English, Japanese, Korean, Spanish のセリフ生成"
         },
         {
           "kind": "official",
           "name": "HeyGen Voice: Languages We Support",
           "url": "https://help.heygen.com/en/articles/11391932-voice-languages-we-support",
-          "date": "2026-10-14",
+          "date": "2026-11-14",
           "note": "Japanese (Japan)"
         },
         {
           "kind": "official",
           "name": "Synthesia Supported Languages",
           "url": "https://docs.synthesia.io/docs/supported-languages",
-          "date": "2026-10-27",
+          "date": "2026-11-14",
           "note": "Japanese (Plain)・Japanese (Polite)"
         }
       ]
@@ -181,14 +189,14 @@
           "kind": "official",
           "name": "Adobe Firefly AI Video Generator",
           "url": "https://www.adobe.com/products/firefly/features/ai-video-generator.html",
-          "date": "2026-10-14",
+          "date": "2026-11-14",
           "note": "Videos generated with the Adobe Firefly model are safe for commercial use"
         },
         {
           "kind": "official",
           "name": "Approach to generative AI with Adobe Firefly",
           "url": "https://www.adobe.com/ai/overview/firefly/gen-ai-approach.html",
-          "date": "2026-10-14",
+          "date": "2026-11-14",
           "note": "顧客のコンテンツで学習しない"
         }
       ]
@@ -201,34 +209,34 @@
         "minimax-hailuo",
         "kling"
       ],
-      "answer": "Gemini Omni 1.1 Flashは一般提供（GA）のAPIで、1秒約$0.10、シーン延長で最長40秒、4Kアップスケールに対応。単価を抑えるならMiniMax H3（768P $0.08/秒）、Kling 3.0（720P・音声なし $0.084/秒）。",
+      "answer": "Gemini Omni 1.2 Flash（2026年11月5日に一般提供）はAPIで720p 1秒約$0.07と1.1から30%値下げし、1回で最長15秒の動画を作れる。単価を抑えるならMiniMax H3（768P $0.08/秒）、Kling 3.0（720P・音声なし $0.084/秒）。",
       "evidence": [
         {
           "kind": "official",
           "name": "Gemini Developer API pricing",
-          "url": "https://ai.google.dev/gemini-api/docs/pricing",
-          "date": "2026-10-14",
-          "note": "gemini-omni-1.1-flash approximately $0.10 per second"
+          "url": "https://aistudio.google.com/docs/pricing",
+          "date": "2026-11-14",
+          "note": "gemini-omni-1.2-flash 720p about $0.07 per second"
         },
         {
           "kind": "official",
-          "name": "Gemini Omni 1.1 Flash lets you build with more control",
-          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/",
-          "date": "2026-10-14",
-          "note": "シーン延長で最長40秒、4Kアップスケール"
+          "name": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+          "date": "2026-11-14",
+          "note": "最長15秒（1.1は10秒）、720pで$0.07/秒（1.1から30%値下げ）"
         },
         {
           "kind": "official",
           "name": "MiniMax API Pay as You Go",
           "url": "https://platform.minimax.io/docs/guides/pricing-paygo",
-          "date": "2026-10-14",
+          "date": "2026-11-14",
           "note": "MiniMax-H3 768P $0.08 / second"
         },
         {
           "kind": "official",
           "name": "Kling API Pricing",
           "url": "https://kling.ai/dev/pricing",
-          "date": "2026-10-01",
+          "date": "2026-11-14",
           "note": "Kling 3.0 720P $0.084 /s（音声なし）"
         }
       ]
@@ -251,10 +259,10 @@
       ],
       "model_slugs": [],
       "latest": {
-        "name": "Gemini Omni 1.1 Flash",
-        "released": "2026-08-27",
-        "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/",
-        "checked": "2026-10-27"
+        "name": "Gemini Omni 1.2 Flash",
+        "released": "2026-11-05",
+        "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+        "checked": "2026-11-14"
       },
       "access": [
         "web",
@@ -273,10 +281,10 @@
       "editorial_take": "文章・画像・動画・音声を組み合わせた指示で生成し、会話で修正を重ねられる。Artificial Analysisでは10位（10月27日時点）で、Arenaとは評価が割れている。",
       "pricing": {
         "free": {
-          "available": false,
-          "detail": "GeminiアプリとGoogle Flowでの提供はGoogle AI Plus・Pro・Ultraの加入者が対象（YouTubeショートでは無料提供を開始と発表）",
-          "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/",
-          "checked": "2026-10-27"
+          "available": true,
+          "detail": "Google Vidsで月3本（15秒）まで無料（Googleアカウントがあれば利用可）。GeminiアプリとGoogle FlowのOmniはGoogle AI Plus・Pro・Ultraの加入者が対象",
+          "source_url": "https://blog.google/products-and-platforms/products/workspace/omni-1-2-flash-google-vids/",
+          "checked": "2026-11-14"
         },
         "plans": [
           {
@@ -287,7 +295,7 @@
             "as_shown": "￥725 JPY / 月",
             "detail": "Google Flowクレジット200",
             "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-            "checked": "2026-10-27"
+            "checked": "2026-11-14"
           },
           {
             "name": "Google AI Pro",
@@ -297,7 +305,7 @@
             "as_shown": "￥2,900 JPY / 月",
             "detail": "Google Flowクレジット1,000",
             "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-            "checked": "2026-10-27"
+            "checked": "2026-11-14"
           },
           {
             "name": "Google AI Ultra",
@@ -307,17 +315,17 @@
             "as_shown": "最小構成価格: ￥14,500 JPY/月",
             "detail": "Google Flowクレジット10,000（￥32,000で25,000）",
             "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-            "checked": "2026-10-27"
+            "checked": "2026-11-14"
           }
         ],
         "usage": {
           "unit": "1秒（720p）",
-          "amount": 0.1,
+          "amount": 0.07,
           "currency": "USD",
-          "as_shown": "approximately $0.10 per second（video output $17.50 / 1M tokens）",
-          "detail": "Gemini API・gemini-omni-1.1-flash。720pの動画1秒を5,792トークンとして課金",
-          "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
-          "checked": "2026-10-27"
+          "as_shown": "about $0.07 per second（720p、video output $12.00 / 1M tokens）",
+          "detail": "Gemini API・gemini-omni-1.2-flash。720pの動画1秒を5,792トークンとして課金。360pは$0.023/秒、1080p（アップサンプリング）は$0.104/秒、4Kは$0.209/秒。1.1 Flashへのリクエストは2026年12月3日から1.2 Flashに自動で切り替わる",
+          "source_url": "https://aistudio.google.com/docs/pricing",
+          "checked": "2026-11-14"
         },
         "jpy_official": true,
         "note": "アプリのプランは円建て、APIは米ドル（公式表記）"
@@ -327,27 +335,27 @@
         "output": "unknown",
         "note": "Geminiの画面は日本語に対応。日本語のセリフ生成・口の動きへの対応の記載は公式に見つけられず",
         "source_url": "https://support.google.com/gemini/answer/13575153?hl=en",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
       "commercial_use": {
         "value": "yes",
         "note": "Google利用規約で、生成されたオリジナルのコンテンツの所有権をGoogleは主張しないと明記。Omniで作った動画には見えない電子透かしSynthIDが入る",
         "source_url": "https://policies.google.com/terms?hl=en",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
       "data_policy": {
         "training_default": "opt_out_available",
         "note": "Geminiアプリは既定で会話がGoogleのAI改善に使われ、「Geminiアプリ アクティビティ」の設定で拒否できる。Gemini APIの有料枠は改善に使わない",
         "source_url": "https://support.google.com/gemini/answer/13594961?hl=en",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
       "availability_japan": {
         "value": "yes",
         "note": "日本向けにGoogle AIプランを円建てで提供。Omni FlashはAI Plus・Pro・Ultraの加入者にグローバルで提供と発表",
         "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
-      "checked": "2026-10-27",
+      "checked": "2026-11-14",
       "retired_note": ""
     },
     {
@@ -365,8 +373,8 @@
       "latest": {
         "name": "Kling 4.0",
         "released": "2026-10-15",
-        "source_url": "https://x.com/Kling_ai/status/2110747537187709424",
-        "checked": "2026-10-20"
+        "source_url": "https://kling.ai/blog/ai-video-generation-news",
+        "checked": "2026-11-14"
       },
       "access": [
         "web",
@@ -439,7 +447,7 @@
           "as_shown": "0.6 Units ($0.084) /s（Kling 3.0・No Native Audio・720P）",
           "detail": "音声ありは$0.126/秒。1 Unit = $0.14（定価）。前払いパッケージは$700から",
           "source_url": "https://kling.ai/dev/pricing",
-          "checked": "2026-10-01"
+          "checked": "2026-11-14"
         },
         "jpy_official": false,
         "note": "初月は割引価格（初回のみ）。年払いの割引あり"
@@ -449,7 +457,7 @@
         "output": "yes",
         "note": "公式サイトは日本語表示に対応。Video 3.0は中国語・英語・日本語・韓国語・スペイン語の5言語でセリフを生成できると公式ガイドに記載",
         "source_url": "https://kling.ai/quickstart/klingai-video-3-model-user-guide",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
       "commercial_use": {
         "value": "conditional",
@@ -461,15 +469,15 @@
         "training_default": "opt_out_available",
         "note": "利用規約で入力・出力をAIモデルの学習・改善に使えると明記。support@kling.aiへのメールで利用の許諾を取り消せる",
         "source_url": "https://kling.ai/docs/user-policy",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
       "availability_japan": {
         "value": "unknown",
         "note": "公式サイトは日本語表示に対応するが、提供国の一覧は見つけられず",
         "source_url": "https://kling.ai/docs/user-policy",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-11-14",
       "retired_note": ""
     },
     {
@@ -491,7 +499,7 @@
         "name": "Dreamina Seedance 2.5",
         "released": "2026-07-31",
         "source_url": "https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
       "access": [
         "web",
@@ -512,7 +520,7 @@
           "available": true,
           "detail": "毎日の無料クレジットで画像・動画を生成できる（公式トップ）。有料プランで透かし除去",
           "source_url": "https://dreamina.capcut.com/",
-          "checked": "2026-10-27"
+          "checked": "2026-11-14"
         },
         "plans": [
           {
@@ -564,13 +572,13 @@
         "output": "unknown",
         "note": "日本語の画面・日本語のセリフ生成への対応の記載は見つけられず（同じ発表で「日本語を含む10以上の言語」での文字描画を強化したのは画像モデルDola Seedream 5.0 Pro）",
         "source_url": "https://www.capcut.com/newsroom/giving-creators-more-control-with-dreamina-seedance-2-5-and-dola-seedream-5-0-pro",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
       "commercial_use": {
         "value": "unknown",
         "note": "日本向けの利用規約を確認できなかった（閲覧時に表示された米国向け規約では、規約順守を条件に入力と出力は利用者のものとしている）",
         "source_url": "https://dreamina.capcut.com/clause/dreamina-terms-of-service",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
       "data_policy": {
         "training_default": "unknown",
@@ -582,9 +590,9 @@
         "value": "unknown",
         "note": "Seedance 2.5は欧州・アジア・中東・南米の有料会員に順次提供と発表。国別の一覧は見つけられず",
         "source_url": "https://www.capcut.com/newsroom/giving-creators-more-control-with-dreamina-seedance-2-5-and-dola-seedream-5-0-pro",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
-      "checked": "2026-10-27",
+      "checked": "2026-11-14",
       "retired_note": ""
     },
     {
@@ -604,7 +612,7 @@
         "name": "MiniMax H3",
         "released": "2026-07-31",
         "source_url": "https://www.minimax.io/blog/minimax-h3",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
       "access": [
         "web",
@@ -666,7 +674,7 @@
           "as_shown": "$0.08 / second（MiniMax-H3・768P）",
           "detail": "2Kは$0.13/秒。MiniMax-H3-Maxは480P $0.05/秒・768P $0.08/秒、H3-Highspeedは768P $0.06/秒、H3-Liteは768P $0.04/秒・480P $0.025/秒",
           "source_url": "https://platform.minimax.io/docs/guides/pricing-paygo",
-          "checked": "2026-10-27"
+          "checked": "2026-11-14"
         },
         "jpy_official": false,
         "note": ""
@@ -676,27 +684,27 @@
         "output": "unknown",
         "note": "日本語の画面・セリフ生成への対応の記載は公式に見つけられず",
         "source_url": "https://www.minimax.io/blog/minimax-h3",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
       "commercial_use": {
         "value": "unknown",
         "note": "利用規約は生成物の所有権を主張しない一方、サービスは個人・非商用の利用に限ると記載。有料会員の商用権についてのFAQは回答を読み取れなかった",
         "source_url": "https://hailuoai.video/doc/terms-of-service.html",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
       "data_policy": {
         "training_default": "unknown",
         "note": "利用規約で入力・生成物に広い利用許諾を運営会社に与える。学習利用の明記と拒否設定の記載は見つけられず",
         "source_url": "https://hailuoai.video/doc/terms-of-service.html",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
       "availability_japan": {
         "value": "unknown",
         "note": "提供国の一覧は公式に見つけられず",
         "source_url": "https://hailuoai.video/doc/terms-of-service.html",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-11-14",
       "retired_note": ""
     },
     {
@@ -715,7 +723,7 @@
       "latest": {
         "name": "Firefly Video Model",
         "source_url": "https://www.adobe.com/products/firefly/features/ai-video-generator.html",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
       "access": [
         "web",
@@ -737,7 +745,7 @@
           "available": true,
           "detail": "1日あたりの生成回数に制限がある無料プラン",
           "source_url": "https://www.adobe.com/jp/products/firefly/plans.html",
-          "checked": "2026-10-27"
+          "checked": "2026-11-14"
         },
         "plans": [
           {
@@ -746,29 +754,29 @@
             "currency": "JPY",
             "per": "month",
             "as_shown": "1,580 円/月（税込）",
-            "detail": "生成クレジット2,000/月",
+            "detail": "生成クレジット2,000/月（5秒動画最大20本）",
             "source_url": "https://www.adobe.com/jp/products/firefly/plans.html",
-            "checked": "2026-10-27"
+            "checked": "2026-11-14"
           },
           {
             "name": "Firefly Pro",
             "amount": 3180,
             "currency": "JPY",
             "per": "month",
-            "as_shown": "3,180 円/月（税込）",
-            "detail": "生成クレジット4,000/月",
+            "as_shown": "通常価格：3,180 円/月 特別価格 : 1,589 円/月（税込）",
+            "detail": "生成クレジット4,000/月（5秒動画最大40本）",
             "source_url": "https://www.adobe.com/jp/products/firefly/plans.html",
-            "checked": "2026-10-27"
+            "checked": "2026-11-14"
           },
           {
             "name": "Firefly Pro Plus",
             "amount": 6600,
             "currency": "JPY",
             "per": "month",
-            "as_shown": "通常価格 : 6,600 円/月（税込）",
-            "detail": "生成クレジット10,000/月",
+            "as_shown": "通常価格：6,600 円/月 特別価格 : 2,640 円/月（税込）",
+            "detail": "生成クレジット10,000/月（5秒動画最大100本）。初年度は対象モデルで動画を無制限に生成",
             "source_url": "https://www.adobe.com/jp/products/firefly/plans.html",
-            "checked": "2026-10-27"
+            "checked": "2026-11-14"
           },
           {
             "name": "Firefly Premium",
@@ -778,11 +786,11 @@
             "as_shown": "通常価格 : 31,680 円/月（税込）",
             "detail": "生成クレジット50,000/月＋Firefly Video Model無制限",
             "source_url": "https://www.adobe.com/jp/products/firefly/plans.html",
-            "checked": "2026-10-27"
+            "checked": "2026-11-14"
           }
         ],
         "jpy_official": true,
-        "note": "動画は生成クレジットを消費（公式の動画生成ページではProの4,000クレジットで5秒動画最大80本と記載）。価格は税込"
+        "note": "動画は生成クレジットを消費（料金ページではProの4,000クレジットで5秒動画最大40本と記載）。特別価格はProが最初の6か月間50%OFF、Pro Plusが60%OFFの期間限定（12月6日終了）。価格は税込"
       },
       "japanese": {
         "ui": "yes",
@@ -795,21 +803,21 @@
         "value": "yes",
         "note": "Adobe Firefly Video Modelで作った動画は商用利用に安全と明記。パートナーモデルの生成物は利用者が適否を判断",
         "source_url": "https://www.adobe.com/products/firefly/features/ai-video-generator.html",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
       "data_policy": {
         "training_default": "not_used",
         "note": "顧客のコンテンツでFireflyを学習させたことはないと明記",
         "source_url": "https://www.adobe.com/ai/overview/firefly/gen-ai-approach.html",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
       "availability_japan": {
         "value": "yes",
         "note": "日本向けの料金ページで円建て販売",
         "source_url": "https://www.adobe.com/jp/products/firefly/plans.html",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
-      "checked": "2026-10-01",
+      "checked": "2026-11-14",
       "retired_note": ""
     },
     {
@@ -828,7 +836,7 @@
       "latest": {
         "name": "HeyGen Video 1（動画生成モデル）",
         "source_url": "https://www.heygen.com/blog/introducing-heygen-video",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
       "access": [
         "web",
@@ -849,7 +857,7 @@
           "available": true,
           "detail": "月3本・1本1分まで",
           "source_url": "https://www.heygen.com/pricing",
-          "checked": "2026-10-27"
+          "checked": "2026-11-14"
         },
         "plans": [
           {
@@ -860,7 +868,7 @@
             "as_shown": "$29 / mo（年払いは$24/mo）",
             "detail": "600クレジット/月・透かし除去・175以上の言語",
             "source_url": "https://www.heygen.com/pricing",
-            "checked": "2026-10-27"
+            "checked": "2026-11-14"
           },
           {
             "name": "Pro",
@@ -870,7 +878,7 @@
             "as_shown": "$49 / mo",
             "detail": "1,000クレジット/月・4K書き出し（上位の階層あり）",
             "source_url": "https://www.heygen.com/pricing",
-            "checked": "2026-10-27"
+            "checked": "2026-11-14"
           },
           {
             "name": "Business",
@@ -880,7 +888,7 @@
             "as_shown": "$149 / mo（追加1席$20/月）",
             "detail": "1,500クレジット/月・チーム管理",
             "source_url": "https://www.heygen.com/pricing",
-            "checked": "2026-10-27"
+            "checked": "2026-11-14"
           }
         ],
         "jpy_official": false,
@@ -891,27 +899,27 @@
         "output": "yes",
         "note": "音声の対応言語に「Japanese (Japan)」（公式ヘルプ）。日本語の画面の記載は見つけられず",
         "source_url": "https://help.heygen.com/en/articles/11391932-voice-languages-we-support",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
       "commercial_use": {
         "value": "conditional",
         "note": "有料（Creator・Pro・Business）で作った動画は権利が利用者にあり商用可。無料プランの動画は個人・非商用・社内の試用に限られ、販売・広告・クライアントワークには使えない（利用規約 第3条・第4条、2026年10月16日更新）",
         "source_url": "https://www.heygen.com/terms",
-        "checked": "2026-10-29"
+        "checked": "2026-11-14"
       },
       "data_policy": {
         "training_default": "opt_out_available",
         "note": "プライバシーポリシーで入力をモデルの学習・改善に使うと記載。privacy@heygen.comへの連絡で拒否できる",
         "source_url": "https://www.heygen.com/privacy",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
       "availability_japan": {
         "value": "unknown",
         "note": "提供国の一覧は公式に見つけられず",
         "source_url": "https://www.heygen.com/terms",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
-      "checked": "2026-10-27",
+      "checked": "2026-11-14",
       "retired_note": ""
     },
     {
@@ -929,7 +937,7 @@
       "latest": {
         "name": "Express-3（アバターモデル）",
         "source_url": "https://www.synthesia.io/assistant-express-3",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
       "access": [
         "web",
@@ -950,7 +958,7 @@
           "available": true,
           "detail": "Basic：月500クレジット（動画作成または吹き替え10分）。動画は透かし入り",
           "source_url": "https://www.synthesia.io/pricing",
-          "checked": "2026-10-27"
+          "checked": "2026-11-14"
         },
         "plans": [
           {
@@ -961,7 +969,7 @@
             "as_shown": "$9 first month, then $19 per month（1,250 credits / month）",
             "detail": "月1,250クレジット（約12分）・ロゴ透かしなし",
             "source_url": "https://www.synthesia.io/pricing",
-            "checked": "2026-10-27"
+            "checked": "2026-11-14"
           },
           {
             "name": "Pro",
@@ -971,7 +979,7 @@
             "as_shown": "$49 first month, then $89 per month（6,000 credits / month）",
             "detail": "月6,000クレジット（約60分）・パーソナルアバター5体",
             "source_url": "https://www.synthesia.io/pricing",
-            "checked": "2026-10-27"
+            "checked": "2026-11-14"
           }
         ],
         "jpy_official": false,
@@ -982,27 +990,27 @@
         "output": "yes",
         "note": "対応言語の一覧にJapanese（Plain・Politeの2種）（公式ドキュメント）。日本語の画面の記載は見つけられず",
         "source_url": "https://docs.synthesia.io/docs/supported-languages",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
       "commercial_use": {
         "value": "yes",
         "note": "作成した動画はマーケティング・顧客向け研修などに商用利用できると公式FAQに明記。Basic（無料）はロゴ透かし入り",
         "source_url": "https://www.synthesia.io/features/text-to-video",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
       "data_policy": {
         "training_default": "unknown",
         "note": "規約で顧客データはサービスの提供・維持・改善に必要な範囲で利用し、サービスと切り離したAIモデルの開発には使わないと記載。学習利用を拒否する設定の記載は見つけられず",
         "source_url": "https://www.synthesia.io/legal/customer-terms-of-service",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
       "availability_japan": {
         "value": "unknown",
         "note": "提供国の一覧は公式に見つけられず",
         "source_url": "https://www.synthesia.io/legal/customer-terms-of-service",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
-      "checked": "2026-10-27",
+      "checked": "2026-11-14",
       "retired_note": ""
     },
     {
@@ -1020,9 +1028,9 @@
       "model_slugs": [],
       "latest": {
         "name": "Wan3.0",
-        "released": "2026-08-23",
+        "released": "2026-08-24",
         "source_url": "https://www.alibabacloud.com/en/news/product/video-generation-model-wan30-officially-launched-nsb",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
       "access": [],
       "strengths": [
@@ -1030,7 +1038,7 @@
       ],
       "weaknesses": [],
       "editorial_take": "",
-      "checked": "2026-10-27",
+      "checked": "2026-11-14",
       "retired_note": ""
     },
     {
@@ -1050,7 +1058,7 @@
         "name": "FLUX 3 Video",
         "released": "2026-08-04",
         "source_url": "https://bfl.ai/blog/flux-3-video",
-        "checked": "2026-10-01"
+        "checked": "2026-11-14"
       },
       "access": [],
       "strengths": [
@@ -1058,7 +1066,7 @@
       ],
       "weaknesses": [],
       "editorial_take": "",
-      "checked": "2026-10-01",
+      "checked": "2026-11-14",
       "retired_note": ""
     },
     {
@@ -1078,7 +1086,7 @@
         "name": "Grok Imagine Video 1.5",
         "released": "2026-06-16",
         "source_url": "https://x.ai/news/grok-imagine-video-1-5",
-        "checked": "2026-10-01"
+        "checked": "2026-11-14"
       },
       "access": [],
       "strengths": [
@@ -1086,7 +1094,7 @@
       ],
       "weaknesses": [],
       "editorial_take": "",
-      "checked": "2026-10-01",
+      "checked": "2026-11-14",
       "retired_note": ""
     },
     {
@@ -1104,7 +1112,7 @@
       "latest": {
         "name": "Gen-4.5",
         "source_url": "https://runway.com/pricing",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       },
       "access": [],
       "strengths": [
@@ -1112,14 +1120,14 @@
       ],
       "weaknesses": [],
       "editorial_take": "",
-      "checked": "2026-10-01",
+      "checked": "2026-11-14",
       "retired_note": "",
       "pricing": {
         "free": {
           "available": true,
           "detail": "1回きりの125クレジット（期限なし）。一部のモデルだけ試せる",
           "source_url": "https://runway.com/pricing",
-          "checked": "2026-10-27"
+          "checked": "2026-11-14"
         },
         "plans": [
           {
@@ -1130,7 +1138,7 @@
             "as_shown": "$15/month（Billed annually: $12/month）",
             "detail": "625クレジット/月（Gen-4.5で約52秒）・透かしなし",
             "source_url": "https://runway.com/pricing",
-            "checked": "2026-10-27"
+            "checked": "2026-11-14"
           },
           {
             "name": "Pro",
@@ -1140,7 +1148,7 @@
             "as_shown": "$35/month（Billed annually: $28/month）",
             "detail": "2,250クレジット/月（Gen-4.5で約187秒）",
             "source_url": "https://runway.com/pricing",
-            "checked": "2026-10-27"
+            "checked": "2026-11-14"
           },
           {
             "name": "Max",
@@ -1150,7 +1158,7 @@
             "as_shown": "$95/month（Billed annually: $76/month）",
             "detail": "9,500クレジット/月（Gen-4.5で約791秒）・1か月繰り越し",
             "source_url": "https://runway.com/pricing",
-            "checked": "2026-10-27"
+            "checked": "2026-11-14"
           }
         ],
         "jpy_official": false,
@@ -1160,7 +1168,7 @@
         "value": "yes",
         "note": "利用規約4.4で、規約を守る限り生成物の商用利用を制限しないと明記。入力と生成物はRunwayのAI学習に使われうる",
         "source_url": "https://runway.com/terms-of-use",
-        "checked": "2026-10-27"
+        "checked": "2026-11-14"
       }
     },
     {
@@ -1179,7 +1187,7 @@
         "name": "Ray3.2",
         "released": "2026-06-09",
         "source_url": "https://lumalabs.ai/news/introducing-ray-3-2",
-        "checked": "2026-10-01"
+        "checked": "2026-11-14"
       },
       "access": [],
       "strengths": [
@@ -1187,7 +1195,7 @@
       ],
       "weaknesses": [],
       "editorial_take": "",
-      "checked": "2026-10-01",
+      "checked": "2026-11-14",
       "retired_note": ""
     },
     {
@@ -1427,8 +1435,8 @@
       "operator": "Artificial Analysis",
       "url": "https://artificialanalysis.ai/video/leaderboard/text-to-video",
       "what": "採用した評価者パネルの盲検一対比較によるElo",
-      "snapshot": "1位 Wan 3.0（1174）、2位 Utopai X（1168）、3位 MiniMax H3（768p）（1158）、4位 HeyGen Video 1（1157）、5位 Dreamina Seedance 2.5（1156）、6位 FLUX 3 Max（720p）（1155）、7位 MiniMax H3 Max（1152）、8位 FLUX 3（1142）、10位 Gemini Omni Flash 1.1（1128）。Kling 3.0 Omni 17位、Veo 3.1 21位（2026-10-27時点）",
-      "checked": "2026-10-27"
+      "snapshot": "1位 Wan 3.0（1175）、2位 Utopai X（1172）、3位 MiniMax H3（768p）（1161）、4位 Dreamina Seedance 2.5（1157）、5位 Gemini Omni Flash 1.2（1152）、6位 FLUX 3 Max（1152）、7位 HeyGen Video 1（1151）、8位 MiniMax H3 Max（1150）、13位 Gemini Omni Flash 1.1（1127）。Kling 3.0 Omni 21位、Veo 3.1 25位（2026-11-14時点）",
+      "checked": "2026-11-14"
     },
     {
       "id": "arena-t2v",
@@ -1518,6 +1526,11 @@
       "text": "HeyGenの商用利用を「有料プランのみ」に修正（規約で無料版の動画は広告や納品に使えないと明記）",
       "article": "/news/20261029-heygen-how-to-use-pricing/",
       "by": "writer"
+    },
+    {
+      "date": "2026-11-14",
+      "text": "Gemini Omni 1.2 Flashを反映（APIは720pで1秒$0.07に値下げ、Google Vidsで月3本まで無料）。Adobe FireflyのPro・Pro Plusの期間限定価格と動画本数の目安、Artificial Analysisの順位を更新",
+      "by": "reviewer"
     }
   ],
   "editor_note": "",
