@@ -3,8 +3,8 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-10-31",
-  "last_reviewed": "2026-10-31",
+  "updated": "2026-11-18",
+  "last_reviewed": "2026-11-18",
   "title": "AI API（LLM）の料金比較と選び方",
   "short_name": "AI API",
   "seo": {
@@ -18,7 +18,7 @@
       "選び方"
     ]
   },
-  "intro": "性能で選ぶなら **Anthropic**（Claude Opus 5.5）、費用対効果なら **OpenAI**（GPT-6.1 Sol）、まず無料で試すなら **Gemini API** が出発点です。Artificial Analysis の総合指数は、API で使えるモデルでは Opus 5.5 が58で最も高く、GPT-6.1 Sol は55ですが、評価1タスクあたりの費用は約8分の1でした（2026年10月31日時点）。日本国内のリージョンや円建ての請求が必要なら、Amazon Bedrock か Microsoft Foundry 経由が選択肢になります。",
+  "intro": "性能で選ぶなら **Anthropic**（Claude Fable 5.2）、費用対効果なら **OpenAI**（GPT-6.2 Sol）、まず無料で試すなら **Gemini API** が出発点です。Artificial Analysis の総合指数は Claude Fable 5.2 が65で最も高く、GPT-6.2 Sol は57ですが、評価1タスクあたりの費用は約26分の1でした（2026年11月18日時点）。日本国内のリージョンや円建ての請求が必要なら、Amazon Bedrock か Microsoft Foundry 経由が選択肢になります。",
   "scope": "自社サービスや業務ツールに組み込むためのAI APIを、プロバイダ単位（無料枠・バッチ/キャッシュ割引・レート制限・日本リージョン・データの扱い・支払い）で比べる。モデルごとの100万トークン単価は「AIモデル図鑑」（/models/）が正本で、このページに表を埋め込む。",
   "audience": [
     "開発者",
@@ -32,30 +32,31 @@
       "question": "最高品質で選ぶなら",
       "pick": "anthropic-api",
       "runner_up": [
-        "openai-api"
+        "openai-api",
+        "google-gemini-api"
       ],
-      "answer": "Artificial Analysis の総合指数の首位は Gemini 4 Carbon（59）ですが、一部のサイバー防御の専門家向けで、開発者向けの提供日は未発表です。API で使えるモデルでは Claude Opus 5.5 が58で最も高く、OpenAI の GPT-6 Astra が57、GPT-6.1 Sol が55で続きます（2026年10月31日時点）。",
+      "answer": "Artificial Analysis の総合指数では Claude Fable 5.2 が65で首位、OpenAI の GPT-6.2 Astra が62、11月10日に開発者向けに提供が始まった Gemini 4 Carbon が60で続きます（2026年11月18日時点）。Fable 5.2 は入力 $8・出力 $40 と高く、指数59の Claude Opus 5.5（入力 $4・出力 $20）も選択肢です。",
       "evidence": [
         {
           "kind": "third_party",
           "name": "Artificial Analysis Intelligence Index",
           "url": "https://artificialanalysis.ai/leaderboards/models",
-          "date": "2026-10-31",
-          "note": "Gemini 4 Carbon（high）59、Claude Opus 5.5（max with fallback）58、GPT-6 Astra（max）57、GPT-6.1 Sol（max）55、Claude Sonnet 5.5（max with fallback）54（2026-10-31時点）"
-        },
-        {
-          "kind": "official",
-          "name": "Introducing Gemini 4 Carbon（Google）",
-          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
-          "date": "2026-10-31",
-          "note": "2026年10月28日発表。まず一部のサイバー防御者に提供し、Fairwind Program で対象を広げる。開発者・企業・一般向けの提供日は記載なし"
+          "date": "2026-11-18",
+          "note": "Claude Fable 5.2（max, default fallback）65、GPT-6.2 Astra（max）62、Gemini 4 Carbon（high）60、Claude Opus 5.5（max, default fallback）59、GPT-6.2 Sol（max）57（2026-11-18時点）"
         },
         {
           "kind": "official",
           "name": "Claude Platform 料金",
           "url": "https://platform.claude.com/docs/en/about-claude/pricing",
-          "date": "2026-10-31",
-          "note": "Claude Opus 5.5 は入力 $4・出力 $20、Claude Sonnet 5.5 は入力 $2・出力 $10（100万トークンあたり）"
+          "date": "2026-11-18",
+          "note": "Claude Fable 5.2 は入力 $8・出力 $40、Claude Opus 5.5 は入力 $4・出力 $20（100万トークンあたり）"
+        },
+        {
+          "kind": "official",
+          "name": "Gemini 4 Carbon is now available（Google）",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+          "date": "2026-11-18",
+          "note": "2026年11月10日。開発者は Gemini API の有料枠で利用できる。導入価格は入力 $2・出力 $10（11月30日以降は $4・$20）"
         }
       ]
     },
@@ -67,27 +68,27 @@
         "deepseek-api",
         "google-gemini-api"
       ],
-      "answer": "GPT-6.1 Sol（max）は総合指数55で、指数の評価にかかった1タスクあたりの費用は$1.27と、Opus 5.5（max with fallback）の$10.04の約8分の1です。Batch か Flex を使えば単価はさらに半額になります。もっと安く済ませるなら DeepSeek-V4.1-Flash-1017（指数32・$0.60）で、オフピーク時間帯は半額です。",
+      "answer": "GPT-6.2 Sol（max）は総合指数57で、指数の評価にかかった1タスクあたりの費用は$1.01と、首位の Claude Fable 5.2（$26.54）の約26分の1、Opus 5.5（$10.04）の約10分の1です。Batch を使えば単価は半額になります。もっと安く済ませるなら DeepSeek-V4.1-Flash-1017（指数33・$0.60）で、オフピーク時間帯は半額です。",
       "evidence": [
         {
           "kind": "third_party",
           "name": "Artificial Analysis Intelligence Index",
           "url": "https://artificialanalysis.ai/leaderboards/models",
-          "date": "2026-10-31",
-          "note": "Cost per Task：Claude Opus 5.5（max with fallback）$10.04、GPT-6 Astra（max）$6.24、GPT-6.1 Sol（max）$1.27、GPT-6.1 Terra（max）$0.96、DeepSeek V4.1 Flash 1017（max）$0.60（2026-10-31時点）"
+          "date": "2026-11-18",
+          "note": "Cost per Task：Claude Fable 5.2（max, default fallback）$26.54、Claude Opus 5.5 $10.04、GPT-6.2 Astra（max）$4.00、GPT-6.2 Sol（max）$1.01、GPT-6.1 Terra（max）$0.96、DeepSeek V4.1 Flash 1017（max）$0.60（2026-11-18時点）"
         },
         {
           "kind": "official",
           "name": "OpenAI API 料金",
           "url": "https://developers.openai.com/api/docs/pricing",
-          "date": "2026-10-31",
-          "note": "gpt-6.1-sol は Standard 入力 $2.00・出力 $10.00、Batch と Flex は入力 $1.00・出力 $5.00"
+          "date": "2026-11-18",
+          "note": "gpt-6.2-sol は Standard 入力 $2.00・出力 $10.00、Batch は入力 $1.00・出力 $5.00"
         },
         {
           "kind": "official",
           "name": "DeepSeek API 料金",
           "url": "https://api-docs.deepseek.com/quick_start/pricing",
-          "date": "2026-10-31",
+          "date": "2026-11-18",
           "note": "Off-peak rates are half of the peak rates"
         }
       ]
@@ -99,28 +100,28 @@
       "runner_up": [
         "anthropic-api"
       ],
-      "answer": "Gemini API の無料枠では Gemini 3.8 Flash の入出力が無料です（上限あり）。ただし無料枠の内容は製品の改善に使われ、人が読むこともあるので、機密情報は入れないでください。Anthropic は新規ユーザーに少額の試用クレジットを付けています。",
+      "answer": "Gemini API の無料枠では Gemini 4 Hydrogen や Gemini 3.8 Flash の入出力が無料です（上限あり）。ただし無料枠の内容は製品の改善に使われ、人が読むこともあるので、機密情報は入れないでください。Anthropic は新規ユーザーに試用の無料クレジットを付けています。",
       "evidence": [
         {
           "kind": "official",
           "name": "Gemini API 料金",
-          "url": "https://ai.google.dev/gemini-api/docs/pricing",
-          "date": "2026-10-16",
-          "note": "Gemini 3.8 Flash の Free Tier は入力・出力とも Free of charge。無料枠は製品改善への利用が Yes"
+          "url": "https://aistudio.google.com/docs/pricing",
+          "date": "2026-11-18",
+          "note": "Gemini 4 Hydrogen と Gemini 3.8 Flash の Free Tier は入力・出力とも Free of charge。無料枠は製品改善への利用が Yes"
         },
         {
           "kind": "official",
           "name": "Gemini API 追加利用規約",
-          "url": "https://ai.google.dev/gemini-api/terms",
-          "date": "2026-10-16",
+          "url": "https://aistudio.google.com/docs/terms",
+          "date": "2026-11-18",
           "note": "Unpaid Services の入出力は製品と機械学習技術の改善に使い、人が読む場合がある"
         },
         {
           "kind": "official",
           "name": "Claude Platform 料金",
           "url": "https://platform.claude.com/docs/en/about-claude/pricing",
-          "date": "2026-10-16",
-          "note": "New users receive a small amount of free credits to test the API"
+          "date": "2026-11-18",
+          "note": "New users receive free credits to test the API"
         }
       ]
     },
@@ -209,63 +210,73 @@
       "segment": "",
       "tags": [
         "OpenAI",
+        "GPT-6.2",
         "GPT-6.1",
         "API"
       ],
       "model_slugs": [
+        "gpt-6-2-astra",
+        "gpt-6-2-sol",
         "gpt-6-1-sol",
         "gpt-6-1-terra",
         "gpt-6-astra",
         "gpt-6-luna"
       ],
       "latest": {
-        "name": "GPT-6.1 Terra",
-        "released": "2026-10-26",
+        "name": "GPT-6.2 Astra／GPT-6.2 Sol",
+        "released": "2026-11-17",
         "source_url": "https://developers.openai.com/api/docs/changelog",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
       "access": [
         "api"
       ],
       "strengths": [
-        "GPT-6.1 Sol は指数55を1タスク$1.27で（AA）",
-        "Batch・Flex は標準の半額",
-        "GPT-6.1 Sol のキャッシュ入力は95%引き"
+        "GPT-6.2 Sol は指数57を1タスク$1.01で（AA）",
+        "Batch は標準の半額",
+        "GPT-6.2 Sol のキャッシュ入力は95%引き"
       ],
       "weaknesses": [
-        "日本のデータ所在地は保存のみで処理は対象外",
-        "所在地の指定は審査制で単価10%増し"
+        "日本での処理は GPT-6 Luna のみ（データ所在地）",
+        "データ所在地の利用は単価10%増し"
       ],
       "editorial_take": "性能と費用の釣り合いで最有力。前払いクレジット（最低$5）ですぐ始められ、利用額に応じて上限が自動で上がる。",
       "pricing": {
         "plans": [
           {
             "name": "Batch API",
-            "as_shown": "Batch：入力・出力とも標準の50%",
-            "detail": "非同期の一括処理。gpt-6.1-sol は入力 $1.00・出力 $5.00（Standard は $2.00・$10.00）",
+            "as_shown": "gpt-6.2-sol Batch：入力 $1.00・出力 $5.00（Standard $2.00・$10.00）",
+            "detail": "非同期の一括処理。料金表の Batch 単価は各モデルとも Standard の半額",
             "source_url": "https://developers.openai.com/api/docs/pricing",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           },
           {
             "name": "Flex 処理",
-            "as_shown": "Flex：入力・出力とも標準の50%",
-            "detail": "応答が遅くてもよい処理向け。gpt-6.1-sol は入力 $1.00・出力 $5.00",
+            "as_shown": "gpt-6.1-sol Flex：入力 $1.00・出力 $5.00（Standard の半額）",
+            "detail": "応答が遅くてもよい処理向け。GPT-6.2 Astra・Sol は料金表に Flex の単価がない",
             "source_url": "https://developers.openai.com/api/docs/pricing",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           },
           {
             "name": "キャッシュ入力",
-            "as_shown": "gpt-6.1-sol Cached input $0.10（Input $2.00）",
-            "detail": "繰り返す文脈は入力単価の5%（GPT-6 Astra は10%）。キャッシュの書き込みは30分保持で1.25倍、12時間保持（10月20日追加）で2.5倍",
+            "as_shown": "gpt-6.2-sol Cached input $0.10（Input $2.00）",
+            "detail": "繰り返す文脈は入力単価の5%（GPT-6 Astra は10%）。キャッシュの書き込みは30分保持で1.25倍、12時間保持で2.5倍",
             "source_url": "https://developers.openai.com/api/docs/pricing",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
+          },
+          {
+            "name": "バックグラウンド処理（2時間・8時間）",
+            "as_shown": "2‑hour completion window: 30% below Standard ／ 8‑hour: 40% below Standard",
+            "detail": "Responses API の公開ベータ（2026年11月17日）。GPT-6.2 Astra・Sol、GPT-6.1 Terra、GPT-6 Luna が対象",
+            "source_url": "https://developers.openai.com/api/docs/pricing",
+            "checked": "2026-11-18"
           },
           {
             "name": "利用上限の段階",
             "as_shown": "Build（$5 購入）月$500 ／ Launch（$100 購入）月$5,000 ／ Grow（$500 購入）月$200,000",
             "detail": "クレジットの累計購入額に応じて自動で昇格（2026年10月6日に5段階から3段階に整理）。無料の Free は月$100まで",
             "source_url": "https://developers.openai.com/api/docs/guides/rate-limits",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           },
           {
             "name": "支払い",
@@ -276,10 +287,10 @@
           },
           {
             "name": "データ所在地（日本）",
-            "as_shown": "jp.api.openai.com：保存 Yes・処理 No",
-            "detail": "不正監視の制限かゼロデータ保持の承認が必要。2026年3月5日以降のモデルは単価10%増し。GPT-6.1 Sol と GPT-6.1 Terra は米国・EU のみ",
-            "source_url": "https://developers.openai.com/api/docs/guides/your-data",
-            "checked": "2026-10-31"
+            "as_shown": "jp.api.openai.com：保存 Yes・処理は gpt-6-luna のみ Yes",
+            "detail": "2026年3月5日以降のモデルは単価10%増し。GPT-6.2 Astra・Sol と GPT-6.1 Sol・Terra は米国・EU のみ",
+            "source_url": "https://developers.openai.com/api/docs/guides/data-residency",
+            "checked": "2026-11-18"
           },
           {
             "name": "ChatGPT 契約者向けの API クレジット",
@@ -290,7 +301,7 @@
           }
         ],
         "jpy_official": false,
-        "note": "モデル別の単価は下の表（AIモデル図鑑）を参照。Fast モード（旧 Priority）は標準の2倍の単価。GPT-6.1 Sol と GPT-6 Astra の Ultrafast モードは標準の6倍（GPT-6.1 Sol は入力 $12・出力 $60）。"
+        "note": "モデル別の単価は下の表（AIモデル図鑑）を参照。Fast モード（旧 Priority）は標準の2倍の単価。GPT-6.1 Sol と GPT-6 Astra の Ultrafast モードは標準の6倍（GPT-6.1 Sol は入力 $12・出力 $60）。GPT-6.2 Astra・Sol の Ultrafast は2027年2月28日まで標準の3倍、3月1日から6倍。"
       },
       "commercial_use": {
         "value": "yes",
@@ -302,15 +313,15 @@
         "training_default": "not_used",
         "note": "2023年3月1日以降、API に送ったデータは学習に使わない（明示的に同意した場合を除く）。不正監視ログは最長30日保持。ゼロデータ保持は審査制",
         "source_url": "https://developers.openai.com/api/docs/guides/your-data",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
       "availability_japan": {
         "value": "yes",
         "note": "API の提供国一覧に日本",
         "source_url": "https://developers.openai.com/api/docs/supported-countries",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
-      "checked": "2026-10-31",
+      "checked": "2026-11-18",
       "retired_note": ""
     },
     {
@@ -324,20 +335,21 @@
       "tags": [
         "Anthropic",
         "Claude",
+        "Claude Fable 5.2",
         "API"
       ],
       "model_slugs": [],
       "latest": {
-        "name": "Claude Haiku 5.5",
-        "released": "2026-10-07",
-        "source_url": "https://www.anthropic.com/claude-haiku-5-5",
-        "checked": "2026-10-31"
+        "name": "Claude Fable 5.2",
+        "released": "2026-11-09",
+        "source_url": "https://platform.claude.com/docs/en/models/fable-5-2/overview",
+        "checked": "2026-11-18"
       },
       "access": [
         "api"
       ],
       "strengths": [
-        "AA 指数で提供中モデルの首位（Opus 5.5・58）",
+        "AA 指数の首位（Fable 5.2・65）",
         "Batch は入力・出力とも50%引き",
         "公式ドキュメントに日本語版あり"
       ],
@@ -345,13 +357,13 @@
         "推論の場所は米国か指定なしの2択",
         "米国内の推論を指定すると単価1.1倍"
       ],
-      "editorial_take": "性能を最優先するなら第一候補。Sonnet 5.5 は Opus 5.5 の半額で総合指数54。日本国内での処理が必要なら AWS や Google Cloud 経由も検討を。",
+      "editorial_take": "性能を最優先するなら第一候補。最上位の Fable 5.2 は Opus 5.5 の2倍の単価で、Sonnet 5.5 は Opus 5.5 の半額で総合指数55。日本国内での処理が必要なら AWS や Google Cloud 経由も検討を。",
       "pricing": {
         "free": {
           "available": true,
-          "detail": "新規ユーザーには試用の少額クレジット。企業向けの長期トライアルは営業に相談",
+          "detail": "新規ユーザーには API を試せる無料クレジット。企業向けの長期トライアルは営業に相談",
           "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
-          "checked": "2026-10-31"
+          "checked": "2026-11-18"
         },
         "plans": [
           {
@@ -359,35 +371,35 @@
             "as_shown": "Batch：入力・出力とも50%引き",
             "detail": "Claude Opus 5.5 は入力 $2・出力 $10（標準 $4・$20）。キャッシュ割引と併用可",
             "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           },
           {
             "name": "プロンプトキャッシュ",
-            "as_shown": "prompt cache reads cost 10% of the base input price (2.5% on Claude Fable 5.1 and Claude Mythos 5.1, 5% on Claude Opus 5.5 and Claude Sonnet 5.5)",
-            "detail": "キャッシュ読み込みは入力単価の0.1倍（Opus 5.5・Sonnet 5.5 は0.05倍）。5分キャッシュの書き込みは1.25倍、1時間は2倍",
+            "as_shown": "prompt cache reads cost 10% of the base input price (2.5% on Claude Fable 5.2 and Claude Fable 5.1, 5% on Claude Opus 5.5 and Claude Sonnet 5.5)",
+            "detail": "キャッシュ読み込みは入力単価の0.1倍（Fable 5.2・5.1 は0.025倍、Opus 5.5・Sonnet 5.5 は0.05倍）。5分キャッシュの書き込みは1.25倍、1時間は2倍",
             "source_url": "https://platform.claude.com/docs/en/about-claude/models/overview",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           },
           {
             "name": "利用上限の段階",
             "as_shown": "Start 月$500 ／ Build 月$1,000 ／ Scale 月$200,000",
             "detail": "利用実績で自動昇格。Custom は上限なし（個別契約）",
             "source_url": "https://platform.claude.com/docs/en/api/rate-limits",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           },
           {
             "name": "推論の場所",
             "as_shown": "inference_geo：global（既定）か us（単価1.1倍）",
             "detail": "ワークスペースの所在地は現在 us のみ",
             "source_url": "https://platform.claude.com/docs/en/manage-claude/data-residency",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           },
           {
             "name": "消費税・請求書",
             "as_shown": "日本の顧客に消費税10%を別途課税（2026年4月1日から）",
             "detail": "適格請求書発行事業者に登録済み（Claude ヘルプセンター）",
             "source_url": "https://support.claude.com/en/articles/14051822-notice-regarding-consumption-tax-jct-for-japanese-customers",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           }
         ],
         "jpy_official": false,
@@ -398,27 +410,27 @@
         "output": "yes",
         "note": "公式ドキュメントに日本語版。英語の多言語サポートのページでは、日本語の性能を英語の96.8%（Claude Sonnet 4.5）と記載",
         "source_url": "https://platform.claude.com/docs/ja/home",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
       "commercial_use": {
         "value": "yes",
         "note": "商用規約で出力は顧客が所有し、Anthropic は権利を譲渡。競合製品の開発や競合モデルの学習には使えない",
         "source_url": "https://www.anthropic.com/legal/commercial-terms",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
       "data_policy": {
         "training_default": "not_used",
         "note": "商用規約で「Anthropic は顧客コンテンツでモデルを学習しない」と規定",
         "source_url": "https://www.anthropic.com/legal/commercial-terms",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
       "availability_japan": {
         "value": "yes",
         "note": "公式の提供国・地域一覧に日本",
         "source_url": "https://www.anthropic.com/supported-countries",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
-      "checked": "2026-10-31",
+      "checked": "2026-11-18",
       "retired_note": ""
     },
     {
@@ -435,70 +447,86 @@
         "API"
       ],
       "model_slugs": [
+        "gemini-4-carbon",
+        "gemini-4-hydrogen",
         "gemini-3-8-flash",
         "gemini-4-argon"
       ],
       "latest": {
-        "name": "Gemini 4 Argon",
-        "released": "2026-10-13",
-        "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
-        "checked": "2026-10-31"
+        "name": "Gemini 4 Hydrogen",
+        "released": "2026-11-12",
+        "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+        "checked": "2026-11-18"
       },
       "access": [
         "api"
       ],
       "strengths": [
-        "無料枠で Gemini 3.8 Flash を使える",
+        "無料枠で Gemini 4 Hydrogen・3.8 Flash を使える",
         "有料枠は Batch で50%引き",
         "旧 Vertex AI で日本国内処理のモデルあり"
       ],
       "weaknesses": [
         "無料枠の入出力は製品改善に使われる",
-        "Gemini 3.8 Flash は国内処理の対象外"
+        "Gemini 4 Argon は国内処理の対象外"
       ],
       "editorial_take": "無料で試せる範囲が最も広い。本番の業務データは、請求先を設定した有料枠か Agent Platform（旧 Vertex AI）で扱う。",
       "pricing": {
         "free": {
           "available": true,
-          "detail": "Gemini 3.8 Flash などの入出力が無料（上限あり）。無料枠の入出力は製品改善に使われる",
-          "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
-          "checked": "2026-10-31"
+          "detail": "Gemini 4 Hydrogen・Gemini 3.8 Flash などの入出力が無料（上限あり）。無料枠の入出力は製品改善に使われる",
+          "source_url": "https://aistudio.google.com/docs/pricing",
+          "checked": "2026-11-18"
         },
         "plans": [
           {
             "name": "Batch API",
             "as_shown": "Batch API (50% cost reduction)",
             "detail": "有料枠で利用可",
-            "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
-            "checked": "2026-10-31"
+            "source_url": "https://aistudio.google.com/docs/pricing",
+            "checked": "2026-11-18"
           },
           {
             "name": "コンテキストキャッシュ",
             "as_shown": "Gemini 3.8 Flash $0.075（入力 $0.75）",
             "detail": "保存料は100万トークン1時間あたり$0.50（2026年12月31日まで）",
-            "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
-            "checked": "2026-10-31"
+            "source_url": "https://aistudio.google.com/docs/pricing",
+            "checked": "2026-11-18"
           },
           {
             "name": "Google 検索でのグラウンディング",
-            "as_shown": "月5,000リクエストまで無料、以降 $14 / 1,000リクエスト",
-            "detail": "Gemini 3.x 共通（有料枠）",
-            "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
-            "checked": "2026-10-31"
+            "as_shown": "5,000 free search requests per month（Gemini 3 以降で共通）、以降 $14 / 1,000 requests",
+            "detail": "Gemini 3.x・4 共通（有料枠）",
+            "source_url": "https://aistudio.google.com/docs/pricing",
+            "checked": "2026-11-18"
           },
           {
             "name": "日本国内での処理",
-            "as_shown": "Japan (asia-northeast1)：Gemini 3.5 Flash、2.5 Flash、2.5 Pro など",
-            "detail": "Agent Platform（旧 Vertex AI）。Gemini 4 Argon と Gemini 3.8 Flash は米国・EU のマルチリージョンのみ",
+            "as_shown": "Japan (asia-northeast1)：Gemini 3.8 Flash、3.5 Flash、2.5 Flash、2.5 Pro",
+            "detail": "Agent Platform（旧 Vertex AI）。Gemini 4 Argon は米国・EU のマルチリージョンと英国・シンガポールのみ",
             "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/resources/data-residency",
-            "checked": "2026-10-16"
+            "checked": "2026-11-18"
+          },
+          {
+            "name": "Gemini 4 Carbon",
+            "as_shown": "Input $2.00 through November 30, 2026 / $4.00 starting December 1, 2026（Output $10.00 → $20.00）",
+            "detail": "2026年11月10日に有料枠で開発者向けに提供開始（無料枠では使えない）。キャッシュ入力は $0.10（12月1日から $0.20）",
+            "source_url": "https://aistudio.google.com/docs/pricing",
+            "checked": "2026-11-18"
+          },
+          {
+            "name": "Gemini 4 Hydrogen",
+            "as_shown": "Input $1.50・Output $7.50（Free Tier: Free of charge）",
+            "detail": "2026年11月12日公開。100万トークンまで同じ単価。Batch は入力 $0.75・出力 $3.75",
+            "source_url": "https://aistudio.google.com/docs/pricing",
+            "checked": "2026-11-18"
           },
           {
             "name": "Gemini 4 Argon",
             "as_shown": "Input $2.00 through November 30, 2026 / $4.00 starting December 1, 2026（Output $10.00 → $20.00）",
             "detail": "有料枠で提供（無料枠と Google AI Pro プランでは使えない）。キャッシュ入力は $0.10（12月1日から $0.20）",
-            "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
-            "checked": "2026-10-31"
+            "source_url": "https://aistudio.google.com/docs/pricing",
+            "checked": "2026-11-18"
           }
         ],
         "jpy_official": false,
@@ -514,22 +542,22 @@
       "commercial_use": {
         "value": "yes",
         "note": "Gemini API 追加利用規約で、生成されたオリジナルのコンテンツの所有権を Google は主張しない",
-        "source_url": "https://ai.google.dev/gemini-api/terms",
-        "checked": "2026-10-31"
+        "source_url": "https://aistudio.google.com/docs/terms",
+        "checked": "2026-11-18"
       },
       "data_policy": {
         "training_default": "opt_out_available",
         "note": "無料枠（Unpaid Services）の入出力は製品改善に使い、人が読むことがある。請求先アカウントを設定した有料枠（Paid Services）では使わない",
-        "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
-        "checked": "2026-10-31"
+        "source_url": "https://aistudio.google.com/docs/pricing",
+        "checked": "2026-11-18"
       },
       "availability_japan": {
         "value": "yes",
         "note": "Gemini API の提供地域一覧に日本",
-        "source_url": "https://ai.google.dev/gemini-api/docs/available-regions",
-        "checked": "2026-10-31"
+        "source_url": "https://aistudio.google.com/docs/available-regions",
+        "checked": "2026-11-18"
       },
-      "checked": "2026-10-31",
+      "checked": "2026-11-18",
       "retired_note": ""
     },
     {
@@ -566,21 +594,21 @@
             "as_shown": "Batch：on-demand の50%引き（対象モデル）",
             "detail": "Anthropic・Meta・Mistral AI・Amazon などのモデル",
             "source_url": "https://aws.amazon.com/bedrock/pricing/",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           },
           {
             "name": "Flex ／ Priority",
             "as_shown": "Flex は Standard の50%引き、Priority は75%増し",
             "detail": "サービス階層は Standard・Flex・Priority・Reserved",
             "source_url": "https://aws.amazon.com/bedrock/pricing/",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           },
           {
             "name": "円建ての請求",
             "as_shown": "AWS ジャパンの請求書払いは USD か JPY（既定は JPY）",
             "detail": "カード払いは JPY。円の請求書払いは国内送金。料金は米ドルで計算し円に換算",
             "source_url": "https://aws.amazon.com/legal/awsjp/",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           }
         ],
         "jpy_official": false,
@@ -591,27 +619,27 @@
         "output": "unknown",
         "note": "公式ドキュメント（ユーザーガイド）に日本語版。日本語の出力品質はモデルごとに異なる",
         "source_url": "https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/what-is-bedrock.html",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
       "commercial_use": {
         "value": "conditional",
         "note": "第三者のモデルは「サードパーティコンテンツ」として提供され、各社の利用条件に同意して使う（AWS サービス条件 50.12.1）。一部モデルは不正検知のため入出力を最長30日保存（50.12.2）",
         "source_url": "https://aws.amazon.com/service-terms/",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
       "data_policy": {
         "training_default": "not_used",
         "note": "入出力はモデル提供元と共有されず、AWS と第三者のモデルの学習に使われない。処理した内容は利用リージョンで暗号化して保存",
         "source_url": "https://aws.amazon.com/bedrock/faqs/",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
       "availability_japan": {
         "value": "yes",
         "note": "Asia Pacific (Tokyo)（ap-northeast-1）と Asia Pacific (Osaka)（ap-northeast-3）にエンドポイント",
         "source_url": "https://docs.aws.amazon.com/general/latest/gr/bedrock.html",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
-      "checked": "2026-10-31",
+      "checked": "2026-11-18",
       "retired_note": ""
     },
     {
@@ -635,7 +663,7 @@
       "latest": {
         "name": "GPT-6.1 Terra",
         "source_url": "https://azure.microsoft.com/ja-jp/pricing/details/cognitive-services/openai-service/",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
       "access": [
         "api"
@@ -657,28 +685,28 @@
             "as_shown": "Batch：Global Standard の50%引き（24時間以内に返す）",
             "detail": "Global デプロイと3つのリージョンで利用可",
             "source_url": "https://azure.microsoft.com/ja-jp/pricing/details/cognitive-services/openai-service/",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           },
           {
             "name": "デプロイの種類",
             "as_shown": "Global ／ Data Zone（EU・US）／ Regional（最大27リージョン）",
             "detail": "GPT-6.1 Sol・Terra と GPT-6 Astra・Sol・Luna は Global と Data Zone のみ",
             "source_url": "https://azure.microsoft.com/ja-jp/pricing/details/cognitive-services/openai-service/",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           },
           {
             "name": "予約（PTU）",
             "as_shown": "Provisioned Throughput の月額・年額予約",
             "detail": "処理能力を確保し、予約で総額を抑える",
             "source_url": "https://azure.microsoft.com/ja-jp/pricing/details/cognitive-services/openai-service/",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           },
           {
             "name": "円での請求",
             "as_shown": "Azure は利用者の現地通貨で請求（JPY 対応）",
             "detail": "Microsoft 顧客契約の料金は米ドル建てで、請求時に換算",
             "source_url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/microsoft-customer-agreement/microsoft-customer-agreement-faq",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           }
         ],
         "jpy_official": false,
@@ -689,21 +717,21 @@
         "output": "unknown",
         "note": "Microsoft Learn の公式ドキュメントに日本語版",
         "source_url": "https://learn.microsoft.com/ja-jp/azure/foundry/responsible-ai/openai/data-privacy",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
       "data_policy": {
         "training_default": "not_used",
-        "note": "プロンプトと出力は他の顧客や OpenAI などのモデル提供元に提供されず、基盤モデルの学習や Microsoft・他社の製品改善に使われない",
+        "note": "プロンプトと出力は他の顧客や OpenAI などのモデル提供元に提供されず、基盤モデルの学習や Microsoft・他社の製品改善に使われない。2026年11月1日以降に提供されたモデルでは、不正使用監視の変更（Modified Abuse Monitoring）が今後使えなくなる予定",
         "source_url": "https://learn.microsoft.com/en-us/azure/foundry/responsible-ai/openai/data-privacy",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
       "availability_japan": {
         "value": "yes",
         "note": "日本は Microsoft 顧客契約で購入できる国に含まれ、請求は現地通貨",
         "source_url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/microsoft-customer-agreement/microsoft-customer-agreement-faq",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
-      "checked": "2026-10-31",
+      "checked": "2026-11-18",
       "retired_note": ""
     },
     {
@@ -719,10 +747,10 @@
       ],
       "model_slugs": [],
       "latest": {
-        "name": "Mistral Large 4（プレビュー）",
-        "released": "2026-10-06",
+        "name": "Mistral Large 4",
+        "released": "2026-11-05",
         "source_url": "https://docs.mistral.ai/models/mistral-large-4-0",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
       "access": [
         "api"
@@ -742,7 +770,7 @@
           "available": true,
           "detail": "Free プランでも Mistral Studio を使える。以前あった無料プランの API クレジット（月$10）は料金ページから無くなった",
           "source_url": "https://mistral.ai/pricing",
-          "checked": "2026-10-31"
+          "checked": "2026-11-18"
         },
         "plans": [
           {
@@ -750,21 +778,21 @@
             "as_shown": "Batch は50%引き、キャッシュ入力は入力単価の最大90%引き",
             "detail": "例：Mistral Large は入力 $0.5・出力 $1.5（100万トークン）",
             "source_url": "https://mistral.ai/pricing",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           },
           {
             "name": "Pro ／ Education プラン",
             "as_shown": "Pro：$14.99 /mo（Excluding taxes）、API クレジット $15 /mo ／ Education：API クレジット $25.5 /mo",
             "detail": "Vibe（旧 Le Chat）の上位プランと API クレジットのセット。認証済みの学生は Pro を $5.99/mo で使える（料金ページの FAQ）",
             "source_url": "https://mistral.ai/pricing",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           },
           {
             "name": "地域指定の推論",
             "as_shown": "api.eu.mistral.ai（EU）・api.us.mistral.ai（US）は単価1.1倍",
             "detail": "指定なしのグローバルエンドポイントは処理場所を約束しない",
             "source_url": "https://docs.mistral.ai/inference/regional-inference",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           }
         ],
         "jpy_official": false,
@@ -774,21 +802,21 @@
         "value": "yes",
         "note": "Vibe と API の入力・出力は利用者が所有し、Mistral は出力の著作権を主張しない",
         "source_url": "https://help.mistral.ai/en/articles/347630-who-owns-input-and-output-in-vibe-and-mistral-s-apis",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
       "data_policy": {
         "training_default": "opt_out_available",
         "note": "Studio の無料モードは入出力を学習に使うことがある。従量課金でも顧客が学習利用をいつでも拒否できる",
         "source_url": "https://help.mistral.ai/en/articles/347617-do-you-use-my-user-data-to-train-your-artificial-intelligence-models",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
       "availability_japan": {
         "value": "unknown",
         "note": "データは既定で EU に保存し、米国エンドポイントも選べる。日本での提供・日本リージョンの記載は見つからず",
         "source_url": "https://help.mistral.ai/en/articles/347629-where-do-you-store-my-data-or-my-organization-s-data",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
-      "checked": "2026-10-31",
+      "checked": "2026-11-18",
       "retired_note": ""
     },
     {
@@ -808,13 +836,13 @@
         "name": "DeepSeek-V4.1-Flash-1017",
         "released": "2026-10-17",
         "source_url": "https://api-docs.deepseek.com/news/news261017",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
       "access": [
         "api"
       ],
       "strengths": [
-        "V4.1-Flash は指数32を1タスク$0.60で（AA）",
+        "V4.1-Flash は指数33を1タスク$0.60で（AA）",
         "オフピーク時間帯は単価が半額",
         "キャッシュ命中で入力単価が98%引き"
       ],
@@ -830,35 +858,35 @@
             "as_shown": "オフピークは半額（Off-peak rates are half of the peak rates）",
             "detail": "ピークは平日 01:00〜04:00 と 06:00〜10:00（UTC）。それ以外と週末・中国の祝日は終日オフピーク",
             "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           },
           {
             "name": "キャッシュ命中",
             "as_shown": "deepseek-flash 入力 $0.006（キャッシュ命中）／ $0.3（未命中）・ピーク時",
             "detail": "出力はピーク時 $1.2、オフピーク $0.6",
             "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           },
           {
             "name": "上位モデル deepseek-v4-pro",
             "as_shown": "deepseek-v4-pro 入力 $1.32（未命中）／ $0.044（キャッシュ命中）・出力 $3.96（ピーク時）",
             "detail": "DeepSeek-V4-Pro-0813。オフピークは半額。画像入力は非対応",
             "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           },
           {
             "name": "支払い",
             "as_shown": "チャージした残高から従量で差し引き",
             "detail": "付与された残高があれば先に使う",
             "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           },
           {
             "name": "Search ／ Fetch API",
-            "as_shown": "$0.75 / 1,000 requests（Search・Fetch それぞれ）",
-            "detail": "成功したリクエストごとに課金。DeepSeek Harness・Claude Code・Codex 経由は北京時間2026年11月1日0時まで無料",
+            "as_shown": "Search・Web fetch：$0.75 / 1,000 requests（それぞれ）",
+            "detail": "使った回数ごとに課金。2026年11月13日にアプリの機能（検索・ファイル解析・音声）を API で公開し、ファイル解析・OCR は1,000ページ $0.225",
             "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           }
         ],
         "jpy_official": false,
@@ -868,15 +896,15 @@
         "value": "yes",
         "note": "出力の権利は利用者に譲渡され、他のモデルの学習（蒸留）を含む幅広い用途に使える（オープンプラットフォーム利用規約 4.2）",
         "source_url": "https://cdn.deepseek.com/policies/en-US/deepseek-open-platform-terms-of-service.html",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
       "data_policy": {
         "training_default": "opt_out_available",
         "note": "プライバシーポリシーは、提供されたデータをモデルの学習・改善に使うとし、学習への利用を拒否する権利を定める。データは中国で収集・処理・保存",
         "source_url": "https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
-      "checked": "2026-10-31",
+      "checked": "2026-11-18",
       "retired_note": ""
     },
     {
@@ -895,7 +923,7 @@
       "latest": {
         "name": "Grok 4.7",
         "source_url": "https://docs.x.ai/docs/models",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
       "access": [
         "api"
@@ -909,7 +937,7 @@
         "Batch 割引は20%（他社の多くは50%）",
         "地域指定は米国のみ（単価1.1倍）"
       ],
-      "editorial_take": "X の投稿を検索して答えさせたい用途で候補になる。総合指数は Grok 4.7（high）で35（2026年10月31日時点）。",
+      "editorial_take": "X の投稿を検索して答えさせたい用途で候補になる。総合指数は Grok 4.7（xhigh）で35（2026年11月18日時点）。",
       "pricing": {
         "plans": [
           {
@@ -917,28 +945,28 @@
             "as_shown": "キャッシュ：grok-4.7 Cached $0.50（Input $2.00）",
             "detail": "20万トークン以上は入力 $4.00・出力 $12.00",
             "source_url": "https://docs.x.ai/developers/pricing",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           },
           {
             "name": "Batch API",
             "as_shown": "grok-4.7・grok-4.6・grok-4.5・grok-4.3 は20%引き。grok-build-0.1 は割引なし",
             "detail": "多くは24時間以内に処理",
             "source_url": "https://docs.x.ai/developers/pricing",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           },
           {
             "name": "米国エンドポイント",
             "as_shown": "us.api.x.ai は単価1.1倍（grok-4.7 と grok-4.6 のみ）",
             "detail": "グローバルエンドポイントは処理場所を保証しない",
             "source_url": "https://docs.x.ai/developers/pricing",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           },
           {
             "name": "支払い",
             "as_shown": "前払いクレジット（カード・銀行振込）",
             "detail": "月次の請求書払いは営業に申請",
             "source_url": "https://docs.x.ai/docs/key-information/billing",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           }
         ],
         "jpy_official": false,
@@ -956,7 +984,7 @@
         "source_url": "https://x.ai/legal/enterprise/faq",
         "checked": "2026-10-01"
       },
-      "checked": "2026-10-31",
+      "checked": "2026-11-18",
       "retired_note": ""
     },
     {
@@ -982,13 +1010,13 @@
             "as_shown": "5.5% ($0.80 minimum) fee when you purchase credits",
             "detail": "モデルの料金は上乗せなし",
             "source_url": "https://openrouter.ai/docs/faq",
-            "checked": "2026-10-16"
+            "checked": "2026-11-18"
           }
         ],
         "jpy_official": false,
         "note": ""
       },
-      "checked": "2026-10-31",
+      "checked": "2026-11-18",
       "retired_note": ""
     },
     {
@@ -1014,13 +1042,13 @@
             "as_shown": "モデルごとに100万トークンあたりの入力・出力単価を掲載",
             "detail": "料金表に「Batch API price」の欄はあるが、モデル別の Batch 価格は未掲載",
             "source_url": "https://www.together.ai/pricing",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           }
         ],
         "jpy_official": false,
         "note": ""
       },
-      "checked": "2026-10-31",
+      "checked": "2026-11-18",
       "retired_note": ""
     },
     {
@@ -1044,7 +1072,7 @@
           "available": false,
           "detail": "料金ページに新規向けの無料クレジットの記載なし（以前は $1）",
           "source_url": "https://fireworks.ai/pricing",
-          "checked": "2026-10-31"
+          "checked": "2026-11-18"
         },
         "plans": [
           {
@@ -1052,13 +1080,13 @@
             "as_shown": "Pay per token with pre-paid, usage-based billing",
             "detail": "残高から差し引き。自動チャージと月の利用上限を設定できる",
             "source_url": "https://fireworks.ai/pricing",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           }
         ],
         "jpy_official": false,
         "note": ""
       },
-      "checked": "2026-10-31",
+      "checked": "2026-11-18",
       "retired_note": ""
     },
     {
@@ -1082,13 +1110,13 @@
           "available": true,
           "detail": "Trial API key は無料（レート制限あり、本番・商用は不可）",
           "source_url": "https://cohere.com/pricing",
-          "checked": "2026-10-31"
+          "checked": "2026-11-18"
         },
         "plans": [],
         "jpy_official": false,
         "note": ""
       },
-      "checked": "2026-10-31",
+      "checked": "2026-11-18",
       "retired_note": ""
     },
     {
@@ -1103,17 +1131,19 @@
         "Qwen",
         "中国AI"
       ],
-      "model_slugs": [],
+      "model_slugs": [
+        "qwen4-max"
+      ],
       "access": [
         "api"
       ],
-      "editorial_take": "Qwen シリーズ（qwen3.8-max・qwen3.8-flash など）を API で提供する Alibaba Cloud のサービス。",
+      "editorial_take": "Qwen シリーズ（qwen4-max・qwen3.8-flash など）を API で提供する Alibaba Cloud のサービス。",
       "latest": {
-        "name": "qwen3.8-max",
+        "name": "qwen4-max",
         "source_url": "https://www.alibabacloud.com/help/en/model-studio/models",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
-      "checked": "2026-10-31",
+      "checked": "2026-11-18",
       "retired_note": ""
     },
     {
@@ -1151,7 +1181,7 @@
       "latest": {
         "name": "Jev（早期提供）",
         "source_url": "https://typesafe.ai/",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
       "access": [
         "api"
@@ -1165,12 +1195,12 @@
           "as_shown": "$42 Per Billion input tokens",
           "detail": "早期提供中の価格",
           "source_url": "https://typesafe.ai/",
-          "checked": "2026-10-31"
+          "checked": "2026-11-18"
         },
         "jpy_official": false,
         "note": ""
       },
-      "checked": "2026-10-31",
+      "checked": "2026-11-18",
       "retired_note": ""
     },
     {
@@ -1192,7 +1222,7 @@
       "latest": {
         "name": "Kimi K3.1 Pro",
         "source_url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
-        "checked": "2026-10-31"
+        "checked": "2026-11-18"
       },
       "access": [
         "api"
@@ -1205,13 +1235,13 @@
             "as_shown": "Input（cache miss）$2.00・Input（cache hit）$0.20・Output $10.00 / 1M tokens",
             "detail": "2〜3倍速い kimi-k3.1-pro-highspeed は入力 $4.00・出力 $20.00",
             "source_url": "https://platform.kimi.ai/",
-            "checked": "2026-10-31"
+            "checked": "2026-11-18"
           }
         ],
         "jpy_official": false,
         "note": ""
       },
-      "checked": "2026-10-31",
+      "checked": "2026-11-18",
       "retired_note": ""
     },
     {
@@ -1272,8 +1302,8 @@
       "operator": "Artificial Analysis",
       "url": "https://artificialanalysis.ai/leaderboards/models",
       "what": "推論・知識・コーディングなど複数の評価をまとめた総合指数（モデル単位）。Cost per Task は指数の評価1タスクあたりにかかった費用",
-      "snapshot": "Gemini 4 Carbon（high）59・$7.76、Claude Opus 5.5（max with fallback）58・$10.04、GPT-6 Astra（max）57・$6.24、GPT-6.1 Sol（max）55・$1.27、Claude Sonnet 5.5（max with fallback）54・$10.02、GPT-6.1 Terra（max）51・$0.96、Gemini 4 Argon（high）50・$7.68、Muse Wonder Full（max）50・費用表示なし、Claude Fable 5.1（xhigh with fallback）50・$10.85、Kimi K3.1 Pro 46・$3.68、Claude Haiku 5.5（max）36・$0.41、Grok 4.7（high）35・$6.18、Qwen3.8 Max（0902）34・$10.02、DeepSeek V4.1 Flash 1017（max）32・$0.60、Gemini 3.8 Flash（high）31・$7.77、GPT-6 Luna（max）28・$0.15、Mistral Large 4（high）26・$2.06、DeepSeek V4 Pro 0813（max）23・$1.77（2026-10-31時点。指数は整数で表示。10月16日時点から全体に数値が変わっている）",
-      "checked": "2026-10-31"
+      "snapshot": "Claude Fable 5.2（max, default fallback）65・$26.54、GPT-6.2 Astra（max）62・$4.00、Gemini 4 Carbon（high）60・$5.48、Claude Opus 5.5（max, default fallback）59・$10.04、GPT-6.2 Sol（max）57・$1.01、Claude Sonnet 5.5（max, default fallback）55・$10.02、Gemini 4 Hydrogen（xhigh）54・$3.16、GPT-6.1 Terra（max）51・$0.96、Gemini 4 Argon（high）50・$4.97、Muse Wonder Full（max）50・費用表示なし、Kimi K3.1 Pro 46・$3.68、Qwen4 Max 43・$3.27、Claude Haiku 5.5（max）36・$0.41、Grok 4.7（xhigh）35・$7.77、DeepSeek V4.1 Flash 1017（max）33・$0.60、GPT-6 Luna（max）28・$0.15、Mistral Large 4（high）26・$2.06、DeepSeek V4 Pro 0813（max）23・$1.77（2026-11-18時点。指数は整数で表示）",
+      "checked": "2026-11-18"
     }
   ],
   "faq": [
@@ -1283,11 +1313,11 @@
     },
     {
       "q": "日本国内でデータを処理・保存できますか？",
-      "a": "Amazon Bedrock は東京と大阪にリージョンがあります。Google の Agent Platform（旧 Vertex AI）は Gemini 3.5 Flash や 2.5 系などで日本国内の処理に対応しますが、Gemini 3.8 Flash は米国・EU のみです。OpenAI の日本のデータ所在地は保存だけで処理は対象外、Anthropic の直接契約は米国か指定なしの2択です（2026年10月1日、各社の公式ページで確認）。"
+      "a": "Amazon Bedrock は東京と大阪にリージョンがあります。Google の Agent Platform（旧 Vertex AI）は Gemini 3.8 Flash や 3.5 Flash、2.5 系で日本国内の処理に対応しますが、Gemini 4 Argon は対象外です。OpenAI の日本のデータ所在地は保存に対応し、処理は GPT-6 Luna だけが対象です。Anthropic の直接契約は米国か指定なしの2択です（2026年11月18日、各社の公式ページで確認）。"
     },
     {
       "q": "API の料金を安くする方法は？",
-      "a": "非同期の一括処理（Batch）は OpenAI・Anthropic・Gemini・Bedrock・Azure・Mistral で標準の半額です。同じ文脈を繰り返す処理はキャッシュが効き、GPT-6.1 Sol は入力単価の5%、Claude は10%（Opus 5.5 は5%）、DeepSeek は約2%になります。DeepSeek はオフピーク時間帯の単価も半額です。"
+      "a": "非同期の一括処理（Batch）は OpenAI・Anthropic・Gemini・Bedrock・Azure・Mistral で標準の半額です。OpenAI は2時間・8時間以内に返すバックグラウンド処理も標準の30%・40%引きです。同じ文脈を繰り返す処理はキャッシュが効き、GPT-6.2 Sol は入力単価の5%、Claude は10%（Opus 5.5・Sonnet 5.5 は5%、Fable 5.2 は2.5%）、DeepSeek は約2%になります。DeepSeek はオフピーク時間帯の単価も半額です。"
     },
     {
       "q": "円で支払えますか？",
@@ -1295,7 +1325,7 @@
     },
     {
       "q": "無料で試せますか？",
-      "a": "Gemini API の無料枠では Gemini 3.8 Flash を無料で使えます（入出力は製品改善に使われます）。Anthropic は新規ユーザーに少額の試用クレジットを付けます。OpenAI は最低$5の前払いクレジットから始められます。Mistral は無料プランでも Mistral Studio を使えますが、以前あった月$10の API クレジットは料金ページから無くなりました。"
+      "a": "Gemini API の無料枠では Gemini 4 Hydrogen や Gemini 3.8 Flash を無料で使えます（入出力は製品改善に使われます）。Anthropic は新規ユーザーに試用の無料クレジットを付けます。OpenAI は最低$5の前払いクレジットから始められます。Mistral は無料プランでも Mistral Studio を使えますが、以前あった月$10の API クレジットは料金ページから無くなりました。"
     },
     {
       "q": "複数社のモデルを1つの窓口で使うには？",
@@ -1437,6 +1467,36 @@
     {
       "date": "2026-10-31",
       "text": "Artificial Analysis の総合指数を10月31日時点に更新。首位の Gemini 4 Carbon は開発者向けに未提供のため、「最高品質」の答えは Anthropic のまま",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-11-18",
+      "text": "OpenAI の GPT-6.2 Astra（入力$8・出力$40）と GPT-6.2 Sol（入力$2・出力$10）を追加し、2時間・8時間以内に返すバックグラウンド処理（標準の30%・40%引き）を追記",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-11-18",
+      "text": "Anthropic の最新モデルを Claude Fable 5.2（入力$8・出力$40、11月9日公開）に更新",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-11-18",
+      "text": "Gemini 4 Carbon が API の有料枠で開発者向けに提供開始（11月30日まで入力$2・出力$10）。無料枠でも使える Gemini 4 Hydrogen（入力$1.50・出力$7.50）を追加",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-11-18",
+      "text": "日本国内での処理の対象に、Google の Gemini 3.8 Flash と OpenAI の GPT-6 Luna が加わったため更新",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-11-18",
+      "text": "Mistral Large 4 が一般提供に。DeepSeek API の Search／Fetch の期間限定の無料扱いが終わり、ファイル解析などの料金を追記。Alibaba Cloud の最新モデルを qwen4-max に更新",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-11-18",
+      "text": "Artificial Analysis の総合指数を11月18日時点に更新。首位が Claude Fable 5.2 に代わり、「コスパ」の答えを GPT-6.2 Sol に更新",
       "by": "reviewer"
     }
   ],
