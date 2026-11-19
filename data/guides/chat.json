@@ -3,8 +3,8 @@
   "status": "published",
   "priority": 1,
   "created": "2026-09-30",
-  "updated": "2026-11-01",
-  "last_reviewed": "2026-11-01",
+  "updated": "2026-11-19",
+  "last_reviewed": "2026-11-19",
   "title": "チャットAIのおすすめと料金比較（ChatGPT・Claude・Gemini など）",
   "short_name": "チャットAI",
   "seo": {
@@ -19,7 +19,7 @@
       "Gemini"
     ]
   },
-  "intro": "回答の質で選ぶなら **Claude**（Opus 5.5）、まず無料で試すなら **Gemini** か **ChatGPT** が出発点です。Artificial Analysis の総合指数では、一般に使えるモデルのうち Claude Opus 5.5 が58で最も高く、GPT-6 Astra が57で続きます（2026年11月1日確認。首位の Gemini 4 Carbon は当面セキュリティの専門家向けのみ）。料金は ChatGPT・Gemini・Microsoft Copilot が円建て、Claude・Grok は米ドル建てで表示されます。",
+  "intro": "回答の質で選ぶなら **Claude**、まず無料で試すなら **Gemini** か **ChatGPT** が出発点です。Artificial Analysis の総合指数では、11月9日公開の Claude Fable 5.2 が65で首位、GPT-6.2 Astra が62、Gemini 4 Neon が61で続きます（2026年11月19日確認）。料金は ChatGPT・Gemini・Microsoft Copilot が円建て、Claude・Grok は米ドル建てで表示されます。",
   "scope": "汎用の対話AI（Web・アプリで使う個人〜法人プラン）を比べる。音声で会話する機能もここで扱う。APIの料金は「AI API」ガイド、コーディング専用ツールは「コーディングAI」ガイド、引用付きの検索・調査は「リサーチAI」ガイドで扱う。",
   "audience": [
     "ビジネスパーソン全般",
@@ -33,77 +33,92 @@
       "question": "最高品質で選ぶなら",
       "pick": "claude",
       "runner_up": [
-        "chatgpt"
+        "chatgpt",
+        "gemini"
       ],
-      "answer": "Artificial Analysis の総合指数で、いま一般に使えるモデルでは Claude Opus 5.5 が58で最も高く、GPT-6 Astra が57、GPT-6.1 Sol が55、Gemini 4 Argon が50で続きます。首位の Gemini 4 Carbon（59）は10月28日に発表されたばかりで、当面はサイバー防御の専門家だけが使えます（2026年11月1日確認）。",
+      "answer": "Artificial Analysis の総合指数で、11月9日公開の Claude Fable 5.2 が65で首位、GPT-6.2 Astra が62、Gemini 4 Neon が61、Claude Opus 5.5 が59で続きます（2026年11月19日確認）。Fable 5.2 は Claude の Pro（追加クレジット）・Max・Ultra・Team・Enterprise で使えます。",
       "evidence": [
         {
           "kind": "third_party",
           "name": "Artificial Analysis Intelligence Index",
           "url": "https://artificialanalysis.ai/leaderboards/models",
-          "date": "2026-11-01",
-          "note": "1位 Gemini 4 Carbon（high）59、2位 Claude Opus 5.5（max with fallback）58、GPT-6 Astra（max）57、GPT-6.1 Sol（max）55、Gemini 4 Argon（high）50（2026-11-01時点）"
+          "date": "2026-11-19",
+          "note": "1位 Claude Fable 5.2（Max）65、2位 GPT-6.2 Astra（Max）62、3位 Gemini 4 Neon（Xhigh）61、4位 Gemini 4 Carbon（High）60、5位 Claude Opus 5.5（Max）59（2026-11-19時点）"
         },
         {
           "kind": "official",
-          "name": "Gemini 4 Carbon（Google 公式ブログ）",
-          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
-          "date": "2026-11-01",
-          "note": "2026年10月28日発表。当面はサイバー防御の専門家の一部だけに提供し、開発者・企業・一般向けは後日"
+          "name": "Claude Fable 5.2（Anthropic 公式）",
+          "url": "https://www.anthropic.com/claude/fable",
+          "date": "2026-11-19",
+          "note": "2026年11月9日発表。Pro・Max・Ultra・Team・Enterprise で利用可"
+        },
+        {
+          "kind": "official",
+          "name": "GPT-6.2 Astra and Sol（ChatGPT の新機能）",
+          "url": "https://learn.chatgpt.com/docs/whats-new/gpt-62-astra-sol",
+          "date": "2026-11-19",
+          "note": "2026年11月17日公開。Plus・Pro・Business・Enterprise・Edu の ChatGPT Work と Codex で利用可"
         },
         {
           "kind": "third_party",
           "name": "LMArena Text Arena（総合）",
           "url": "https://arena.ai/leaderboard/text",
-          "date": "2026-10-01",
-          "note": "1位 gemini-4-argon-high 1525（Preliminary＝暫定・4,942票。一般向けには未提供）。2〜7位はすべて Claude のモデルで、claude-opus-5.5-high は1504で4位（2026-09-30更新）"
-        },
-        {
-          "kind": "official",
-          "name": "Introducing Gemini 4 Argon（Google 公式ブログ）",
-          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
-          "date": "2026-11-01",
-          "note": "2026年10月13日、Gemini アプリと AI モードで Google AI Ultra・Pro の加入者に提供開始。API でも提供"
+          "date": "2026-11-19",
+          "note": "1位 Gemini 4 Carbon（High）1526、2位 Gemini 4 Argon 1521、3位 Gemini 4 Neon 1518、5位 Claude Opus 5.5 1507。Fable 5.2・GPT-6.2 Astra は未掲載（2026-11-18更新）"
         }
       ]
     },
     {
       "id": "best-value",
       "question": "コスパで選ぶなら",
-      "pick": "claude",
+      "pick": "gemini",
       "runner_up": [
         "chatgpt",
-        "gemini"
+        "claude"
       ],
-      "answer": "月20ドル前後の帯では、Claude Pro（年払いで月$17、月払いは$20）で、一般に使えるモデルのうち総合指数が最も高い Opus 5.5 を使えます。円で払いたいなら ChatGPT Plus（月3,000円で GPT-6 Astra）、ストレージも欲しいなら Google AI Pro（月2,900円・5TB付きで Gemini 4 Argon も使える）。",
+      "answer": "月3,000円前後の帯では、Google AI Pro（月2,900円）で総合指数61の Gemini 4 Neon を使え、5TBのストレージも付きます。ChatGPT Plus（月3,000円）は Work と Codex で62の GPT-6.2 Astra、Claude Pro（年払いで月$17、月払い$20）は59の Opus 5.5 が使えます。",
       "evidence": [
         {
           "kind": "official",
-          "name": "Claude 料金ページ",
-          "url": "https://claude.com/pricing",
-          "date": "2026-11-01",
-          "note": "Pro は年払いで $17/月（$200前払い）、月払い $20"
+          "name": "Google AI プラン",
+          "url": "https://gemini.google/jp/subscriptions/?hl=ja",
+          "date": "2026-11-19",
+          "note": "Google AI Pro ￥2,900 JPY / 月、Gemini 4 Neon・Gemini 4 Hydrogen を利用可、5TB のストレージ"
+        },
+        {
+          "kind": "official",
+          "name": "Introducing Gemini 4 Neon（Google 公式ブログ）",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+          "date": "2026-11-19",
+          "note": "2026年11月18日、Gemini アプリで Pro・Ultra の加入者に提供"
         },
         {
           "kind": "official",
           "name": "ChatGPT 料金ページ",
           "url": "https://chatgpt.com/ja-JP/pricing/",
           "date": "2026-10-01",
-          "note": "Plus ￥3,000 / 月、GPT-6 Astra を利用可（上限あり）"
+          "note": "Plus ￥3,000 / 月"
         },
         {
           "kind": "official",
-          "name": "Google AI プラン",
-          "url": "https://gemini.google/jp/subscriptions/?hl=ja",
-          "date": "2026-11-01",
-          "note": "Google AI Pro ￥2,900 JPY / 月、Gemini 4 Argon を利用可、5TB のストレージ"
+          "name": "GPT-6.2 Astra and Sol（ChatGPT の新機能）",
+          "url": "https://learn.chatgpt.com/docs/whats-new/gpt-62-astra-sol",
+          "date": "2026-11-19",
+          "note": "Plus 以上の ChatGPT Work と Codex で GPT-6.2 Astra を利用可"
+        },
+        {
+          "kind": "official",
+          "name": "Claude 料金ページ",
+          "url": "https://claude.com/pricing",
+          "date": "2026-11-19",
+          "note": "Pro は年払いで $17/月（$200前払い）、月払い $20"
         },
         {
           "kind": "third_party",
           "name": "Artificial Analysis Intelligence Index",
           "url": "https://artificialanalysis.ai/leaderboards/models",
-          "date": "2026-11-01",
-          "note": "Claude Opus 5.5（max with fallback）58、GPT-6 Astra（max）57（2026-11-01時点）"
+          "date": "2026-11-19",
+          "note": "GPT-6.2 Astra（Max）62、Gemini 4 Neon（Xhigh）61、Claude Opus 5.5（Max）59（2026-11-19時点）"
         }
       ]
     },
@@ -114,68 +129,68 @@
       "runner_up": [
         "chatgpt"
       ],
-      "answer": "Gemini の無料版は、Deep Research、音声会話の Gemini Live、画像の生成と編集まで使えます（モデルは自動選択で、多くの質問は Flash-Lite が答える）。ChatGPT の無料版は10月8日から順次 GPT-6 Luna に切り替わり、図表やボタン付きの答え（Intelligent UI）も使えます。",
+      "answer": "Gemini の無料版は、Deep Research、音声会話の Gemini Live、画像の生成と編集まで使え、料金ページのモデル表記は Gemini 4 Hydrogen です（自動選択で、多くの質問は Flash-Lite が答える）。ChatGPT の無料版は GPT-6 Luna で、テキストチャットは無制限です。",
       "evidence": [
         {
           "kind": "official",
           "name": "Google AI プラン",
           "url": "https://gemini.google/jp/subscriptions/?hl=ja",
-          "date": "2026-11-01",
-          "note": "無料：Flash-Lite、画像の生成と編集、Deep Research、Gemini Live"
+          "date": "2026-11-19",
+          "note": "無料：Gemini 4 Hydrogen、自動モデル選択、画像の生成と編集、Deep Research、Gemini Live"
         },
         {
           "kind": "official",
           "name": "Gemini Apps Help（モデルの割り当てと上限）",
           "url": "https://support.google.com/gemini/answer/17004136?hl=en",
-          "date": "2026-11-01",
+          "date": "2026-11-19",
           "note": "無料版は自動選択が既定で、ほとんどの質問は Flash-Lite へ。難しい質問は Flash や Pro に回る"
         },
         {
           "kind": "official",
-          "name": "GPT-6 for everyone（OpenAI）",
-          "url": "https://openai.com/index/gpt-6-for-everyone/",
-          "date": "2026-10-08",
-          "note": "無料版と Go を GPT-6 Luna に切り替え、Intelligent UI も利用可"
+          "name": "ChatGPT 料金ページ",
+          "url": "https://chatgpt.com/ja-JP/pricing/",
+          "date": "2026-11-19",
+          "note": "無料版：GPT-6 Luna・GPT-5 Thinking Mini、GPT-6 でのテキストチャットは無制限"
         }
       ]
     },
     {
       "id": "japanese",
       "question": "日本語重視なら",
-      "pick": "gemini",
+      "pick": "claude",
       "runner_up": [
-        "claude",
+        "gemini",
         "chatgpt"
       ],
-      "answer": "円建ての公式料金と日本語の画面に加え、LMArena の日本語部門で Gemini 系が9位以内に4モデル（3 Pro 3位、3.7 Flash 5位、3.8 Flash 7位、3.1 Pro 9位）入っています。1・2位は Claude Fable 系ですが、Fable は Claude Pro では追加クレジットでの利用です。",
+      "answer": "LMArena の日本語部門で、1位 Claude Fable 5.1（1551）、2位 Claude Opus 5.5（1530）と Claude が上位2つを占めます。Opus 5.5 は Pro（年払いで月$17）で使えます。円建てで払いたいなら、3位に Gemini 4 Argon、4位・6位に Gemini 3.7 Flash・3.8 Flash が入る Gemini です（2026年11月18日更新）。",
       "evidence": [
         {
           "kind": "third_party",
           "name": "LMArena Text Arena（日本語）",
           "url": "https://arena.ai/leaderboard/text/japanese",
-          "date": "2026-10-03",
-          "note": "1位 claude-fable-5.1-max 1542、3位 gemini-3-pro 1508、5位 gemini-3.7-flash-high 1504（暫定）、7位 gemini-3.8-flash-high 1503（暫定）、9位 gemini-3.1-pro-preview 1499（2026-10-02更新）"
-        },
-        {
-          "kind": "official",
-          "name": "Google AI プラン",
-          "url": "https://gemini.google/jp/subscriptions/?hl=ja",
-          "date": "2026-11-01",
-          "note": "日本向けに円建てで表示（AI Pro ￥2,900 JPY / 月）"
-        },
-        {
-          "kind": "official",
-          "name": "Gemini の対応言語と国",
-          "url": "https://support.google.com/gemini/answer/13575153?hl=en",
-          "date": "2026-11-01",
-          "note": "対応言語に日本語、対応国に日本"
+          "date": "2026-11-19",
+          "note": "1位 Claude Fable 5.1（Max）1551、2位 Claude Opus 5.5（High）1530、3位 Gemini 4 Argon（High）1521、4位 Gemini 3.7 Flash（High）1519、6位 Gemini 3.8 Flash（High）1516（2026-11-18更新）"
         },
         {
           "kind": "official",
           "name": "Claude 料金ページ",
           "url": "https://claude.com/pricing",
-          "date": "2026-11-01",
-          "note": "Fable は Pro では Usage credits（追加クレジット）"
+          "date": "2026-11-19",
+          "note": "Pro は年払いで $17/月、Opus を利用可"
+        },
+        {
+          "kind": "official",
+          "name": "Claude の言語設定（公式ヘルプ）",
+          "url": "https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language",
+          "date": "2026-11-19",
+          "note": "表示言語に日本語。会話は使った言語で返す"
+        },
+        {
+          "kind": "official",
+          "name": "Google AI プラン",
+          "url": "https://gemini.google/jp/subscriptions/?hl=ja",
+          "date": "2026-11-19",
+          "note": "日本向けに円建てで表示（AI Pro ￥2,900 JPY / 月）"
         }
       ]
     },
@@ -206,7 +221,7 @@
           "kind": "official",
           "name": "Claude 料金ページ",
           "url": "https://claude.com/pricing",
-          "date": "2026-11-01",
+          "date": "2026-11-19",
           "note": "Team の Model training は None by default、標準シート $20（年払い）"
         }
       ]
@@ -243,28 +258,28 @@
       "runner_up": [
         "chatgpt"
       ],
-      "answer": "Gemini は無料版に音声会話の Gemini Live が含まれ、カメラの映像や画面を共有しながら話せます。ChatGPT の音声チャットは無料版で回数制限があり、Pro で無制限です。",
+      "answer": "Gemini は無料版に音声会話の Gemini Live が含まれ、カメラの映像や画面を共有しながら話せます（映像・画面共有は既定で学習に使われない）。ChatGPT の音声チャットは無料版で上限があり、Pro で無制限です。",
       "evidence": [
         {
           "kind": "official",
           "name": "Google AI プラン",
           "url": "https://gemini.google/jp/subscriptions/?hl=ja",
-          "date": "2026-11-01",
+          "date": "2026-11-19",
           "note": "無料版に Gemini Live"
         },
         {
           "kind": "official",
           "name": "Gemini アプリのプライバシーハブ",
           "url": "https://support.google.com/gemini/answer/13594961?hl=en",
-          "date": "2026-11-01",
-          "note": "Gemini Live の映像・画面共有の扱いを記載"
+          "date": "2026-11-19",
+          "note": "Gemini Live の映像・画面共有は既定ではサービス改善に使わない"
         },
         {
           "kind": "official",
           "name": "ChatGPT 料金ページ",
           "url": "https://chatgpt.com/ja-JP/pricing/",
-          "date": "2026-10-01",
-          "note": "音声：無料は上限あり、Pro は無制限"
+          "date": "2026-11-19",
+          "note": "音声：無料は上限あり、Go・Plus は拡張、Pro は無制限"
         }
       ]
     }
@@ -280,18 +295,21 @@
       "segment": "",
       "tags": [
         "ChatGPT",
+        "GPT-6.2",
         "GPT-6.1"
       ],
       "model_slugs": [
+        "gpt-6-2-astra",
+        "gpt-6-2-sol",
         "gpt-6-1-sol",
         "gpt-6-astra",
         "gpt-6-luna"
       ],
       "latest": {
-        "name": "GPT-6.1 Sol",
-        "released": "2026-09-29",
-        "source_url": "https://openai.com/index/introducing-gpt-6-1-sol/",
-        "checked": "2026-10-01"
+        "name": "GPT-6.2 Astra",
+        "released": "2026-11-17",
+        "source_url": "https://learn.chatgpt.com/docs/whats-new/gpt-62-astra-sol",
+        "checked": "2026-11-19"
       },
       "access": [
         "web",
@@ -299,7 +317,7 @@
         "desktop"
       ],
       "strengths": [
-        "Plus 以上で GPT-6 Astra・GPT-6.1 Sol を使える",
+        "Plus 以上で GPT-6.2 Astra（Work・Codex）",
         "無料版でもテキストチャットは無制限",
         "円建て料金。Go（月1,400円）から段階的に選べる"
       ],
@@ -307,13 +325,13 @@
         "無料版と Go の GPT-6 は軽量版の Luna",
         "Plus・Pro は月払いのみ（年払いなし）"
       ],
-      "editorial_take": "迷ったらまずこれ。無料で始められ、Plus（月3,000円）で最上位の GPT-6 Astra まで使える。",
+      "editorial_take": "迷ったらまずこれ。無料で始められ、Plus（月3,000円）なら Work と Codex で最新の GPT-6.2 Astra まで使える。",
       "pricing": {
         "free": {
           "available": true,
-          "detail": "10月8日から順次 GPT-6 Luna に切り替え（Go も同じ）。答えに図表やボタンが付く Intelligent UI も使える。アップロード・画像作成・音声・Deep Research・Codex は回数制限あり",
-          "source_url": "https://openai.com/index/gpt-6-for-everyone/",
-          "checked": "2026-10-08"
+          "detail": "GPT-6 Luna と GPT-5 Thinking Mini を利用可。GPT-6 でのテキストチャットは無制限（不正利用防止の安全対策あり）。アップロードを含むメッセージと音声チャットは上限あり。答えに図表やボタンが付く Intelligent UI も使える（10月8日から順次）",
+          "source_url": "https://chatgpt.com/ja-JP/pricing/",
+          "checked": "2026-11-19"
         },
         "plans": [
           {
@@ -377,7 +395,7 @@
           }
         ],
         "jpy_official": true,
-        "note": "日本からの表示は円建て（税の扱いは料金ページに記載なし）。Plus は年払いなし（ヘルプ記事）。"
+        "note": "日本からの表示は円建て（税の扱いは料金ページに記載なし）。Plus は年払いなし（ヘルプ記事）。2026年11月17日公開の GPT-6.2 Astra・Sol は、Plus・Pro・Business・Enterprise・Edu の ChatGPT Work と Codex で使える（Chat では Work を開いて使う）。"
       },
       "japanese": {
         "ui": "yes",
@@ -417,14 +435,18 @@
       "segment": "",
       "tags": [
         "Claude",
-        "Claude Opus 5.5"
+        "Claude Opus 5.5",
+        "Claude Fable 5.2"
       ],
-      "model_slugs": [],
+      "model_slugs": [
+        "claude-fable-5-2",
+        "claude-opus-5-5"
+      ],
       "latest": {
-        "name": "Claude Opus 5.5",
-        "released": "2026-09-22",
-        "source_url": "https://www.anthropic.com/claude-opus-5-5",
-        "checked": "2026-11-01"
+        "name": "Claude Fable 5.2",
+        "released": "2026-11-09",
+        "source_url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+        "checked": "2026-11-19"
       },
       "access": [
         "web",
@@ -432,21 +454,22 @@
         "desktop"
       ],
       "strengths": [
-        "総合指数58で一般提供モデルの首位（AA、11/1時点）",
-        "LMArena テキストの2〜7位がすべて Claude",
+        "Fable 5.2 が総合指数65で首位（AA、11/19時点）",
+        "LMArena 日本語部門の1・2位が Claude（11/18更新）",
         "Pro に Claude Code と Microsoft 365 連携が付く"
       ],
       "weaknesses": [
         "無料版では Opus を使えない（Sonnet・Haiku）",
+        "最上位の Fable は Pro では追加クレジットでの利用",
         "料金は米ドル表示・税別"
       ],
-      "editorial_take": "回答の質で選ぶなら最有力。Pro は年払いなら月17ドルで Opus 5.5 を使える。",
+      "editorial_take": "回答の質で選ぶなら最有力。Pro は年払いなら月17ドルで Opus 5.5 を使え、最上位の Fable 5.2 は Max 以上なら週の上限の半分まで使える。",
       "pricing": {
         "free": {
           "available": true,
           "detail": "Web・デスクトップ・モバイルでチャット、Web検索、ファイル作成とコード実行、メモリ、アプリ連携、Claude Design・Slides・Docs。モデルは Sonnet と Haiku",
           "source_url": "https://claude.com/pricing",
-          "checked": "2026-11-01"
+          "checked": "2026-11-19"
         },
         "plans": [
           {
@@ -455,9 +478,9 @@
             "currency": "USD",
             "per": "month",
             "as_shown": "$17 Per month with annual subscription discount ($200 billed up front). $20 if billed monthly.",
-            "detail": "Opus 5.5、Fable（追加クレジットで利用）、タスクの予約・代行、Claude Code、Claude Science、Claude Dashboards（ベータ）、Projects、Claude in Chrome・Microsoft 365",
+            "detail": "Opus 5.5、Fable（追加クレジットで利用）、タスクの予約・代行、Claude Data、Sheets・Whiteboards（ベータ）、Claude Code、Claude Science、Projects、Claude in Chrome・Microsoft 365",
             "source_url": "https://claude.com/pricing",
-            "checked": "2026-11-01"
+            "checked": "2026-11-19"
           },
           {
             "name": "Max",
@@ -467,7 +490,7 @@
             "as_shown": "$100 Per month",
             "detail": "Pro の5倍の利用量（5時間ごと・毎週）。Fable を週の上限の半分まで利用可、毎月100ドル分の API クレジット、混雑時の優先。月払いのみ",
             "source_url": "https://claude.com/pricing",
-            "checked": "2026-11-01"
+            "checked": "2026-11-19"
           },
           {
             "name": "Ultra",
@@ -477,7 +500,7 @@
             "as_shown": "$200 Per month",
             "detail": "Max の全機能に加え、Pro の10倍の週の利用量、5時間ごとの上限なし（本人確認済みのアカウント）、毎月200ドル分の API クレジット。月払いのみ",
             "source_url": "https://claude.com/pricing",
-            "checked": "2026-11-01"
+            "checked": "2026-11-19"
           },
           {
             "name": "Team（標準シート）",
@@ -485,9 +508,9 @@
             "currency": "USD",
             "per": "seat_month",
             "as_shown": "$20 Per seat / month if billed annually. $25 if billed monthly.",
-            "detail": "2〜150人。プレミアムシート（標準の5倍）は年払い $100・月払い $125。最大月500ドル分の API クレジットを共有",
+            "detail": "2〜150人。Fable はプレミアムシートのみ。プレミアムシート（標準の5倍）は年払い $100・月払い $125。最大月500ドル分の API クレジットを共有",
             "source_url": "https://claude.com/pricing",
-            "checked": "2026-11-01"
+            "checked": "2026-11-19"
           },
           {
             "name": "Enterprise",
@@ -497,7 +520,7 @@
             "as_shown": "US$20/seat/month, billed annually, 20 seat minimum. Usage cost scales with model and task.",
             "detail": "20席から。シート料金に加えて API 料金での従量課金",
             "source_url": "https://claude.com/pricing",
-            "checked": "2026-11-01"
+            "checked": "2026-11-19"
           }
         ],
         "jpy_official": false,
@@ -508,27 +531,27 @@
         "output": "yes",
         "note": "ヘルプの対応言語に日本語。表示言語を変えても、会話は使った言語で返す",
         "source_url": "https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language",
-        "checked": "2026-11-01"
+        "checked": "2026-11-19"
       },
       "commercial_use": {
         "value": "yes",
         "note": "消費者向け規約で出力の権利を利用者に譲渡（4条）。競合サービスの開発や再販は禁止",
         "source_url": "https://www.anthropic.com/legal/consumer-terms",
-        "checked": "2026-11-01"
+        "checked": "2026-11-19"
       },
       "data_policy": {
         "training_default": "opt_out_available",
         "note": "Free・Pro・Max・Ultra は設定で学習利用をオフにできる（Opt-out）。Team・Enterprise は既定で学習に使わない",
         "source_url": "https://claude.com/pricing",
-        "checked": "2026-11-01"
+        "checked": "2026-11-19"
       },
       "availability_japan": {
         "value": "yes",
         "note": "公式の提供国・地域一覧に日本",
         "source_url": "https://www.anthropic.com/supported-countries",
-        "checked": "2026-11-01"
+        "checked": "2026-11-19"
       },
-      "checked": "2026-11-01",
+      "checked": "2026-11-19",
       "retired_note": ""
     },
     {
@@ -542,12 +565,15 @@
       "tags": [
         "Gemini"
       ],
-      "model_slugs": [],
+      "model_slugs": [
+        "gemini-4-hydrogen",
+        "gemini-4-carbon"
+      ],
       "latest": {
-        "name": "Gemini 4 Argon",
-        "released": "2026-10-13",
-        "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
-        "checked": "2026-11-01"
+        "name": "Gemini 4 Neon",
+        "released": "2026-11-18",
+        "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+        "checked": "2026-11-19"
       },
       "access": [
         "web",
@@ -560,16 +586,16 @@
         "Gmail などの中でも使える（Plus 以上）"
       ],
       "weaknesses": [
-        "最上位の Argon は AI Pro 以上のみ",
+        "Neon は AI Pro 以上、Carbon は Ultra のみ",
         "会話の一部を人が確認する（既定の設定）"
       ],
       "editorial_take": "無料で試すなら最有力。Google のアプリやストレージと合わせて使うなら AI Pro が割安。",
       "pricing": {
         "free": {
           "available": true,
-          "detail": "既定はモデルの自動選択で、ほとんどの質問は Flash-Lite、深い推論が要る質問は Flash や Pro に送られる（自動選択をオフにすると Flash-Lite のみ）。利用上限は5時間ごとに回復する計算量ベース",
+          "detail": "料金ページでは無料版のモデルを Gemini 4 Hydrogen と表示（自動モデル選択で使われる）。ヘルプでは、自動選択が既定で、ほとんどの質問は Flash-Lite、深い推論が要る質問は Flash や Pro に送られる（自動選択をオフにすると Flash-Lite のみ）。利用上限は5時間ごとに回復する計算量ベース",
           "source_url": "https://support.google.com/gemini/answer/17004136?hl=en",
-          "checked": "2026-11-01"
+          "checked": "2026-11-19"
         },
         "plans": [
           {
@@ -578,9 +604,9 @@
             "currency": "JPY",
             "per": "month",
             "as_shown": "￥725 JPY / 月",
-            "detail": "Flash を利用可。無料版の2倍の使用量上限、動画生成、400GB のストレージ",
+            "detail": "Gemini 4 Hydrogen を利用可。無料版の2倍の使用量上限、動画生成、400GB のストレージ",
             "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-            "checked": "2026-11-01"
+            "checked": "2026-11-19"
           },
           {
             "name": "Google AI Pro",
@@ -588,9 +614,9 @@
             "currency": "JPY",
             "per": "month",
             "as_shown": "￥2,900 JPY / 月",
-            "detail": "Gemini 4 Argon・Pro・Flash を利用可。無料版の4倍の使用量上限、Gmail・Google ドキュメント内の Gemini、5TB のストレージ",
+            "detail": "Gemini 4 Neon・Gemini 4 Hydrogen を利用可。無料版の4倍の使用量上限、5TB のストレージ",
             "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-            "checked": "2026-11-01"
+            "checked": "2026-11-19"
           },
           {
             "name": "Google AI Ultra",
@@ -598,40 +624,40 @@
             "currency": "JPY",
             "per": "month",
             "as_shown": "最小構成価格: ￥14,500 JPY/月（AI Pro の 5 倍）／￥32,000 JPY /月（AI Pro の 20 倍）",
-            "detail": "Gemini 4 Argon・Pro・Flash を最上位の枠で利用可。Tasks in Gemini（一部の国）、20TB からのストレージ",
+            "detail": "Gemini 4 Carbon・Neon・Hydrogen を最上位の枠で利用可。Tasks in Gemini（一部の国）、20TB からのストレージ",
             "source_url": "https://gemini.google/jp/subscriptions/?hl=ja",
-            "checked": "2026-11-01"
+            "checked": "2026-11-19"
           }
         ],
         "jpy_official": true,
-        "note": "最上位の Gemini 4 Argon は2026年10月13日から Gemini アプリと検索の AI モードで AI Pro・Ultra の加入者が使える（Google 公式ブログ）。プラン表のモデルは、無料版が Flash-Lite（既定は自動選択で、難しい質問は Flash や Pro に回る）、AI Plus が Flash、AI Pro と Ultra が Gemini 4 Argon・Pro・Flash。使用量上限は計算量ベースで5時間ごとに回復し、週の上限もある。"
+        "note": "料金ページのモデル表記は、無料版と AI Plus が Gemini 4 Hydrogen、AI Pro が Gemini 4 Neon・Hydrogen、Ultra が Gemini 4 Carbon・Neon・Hydrogen。Gemini 4 Neon は2026年11月18日から Gemini アプリで AI Pro・Ultra の加入者に提供（Google 公式ブログ）。使用量上限は計算量ベースで5時間ごとに回復し、週の上限もある。"
       },
       "japanese": {
         "ui": "yes",
         "output": "yes",
         "note": "Gemini ウェブアプリの対応言語一覧に日本語",
         "source_url": "https://support.google.com/gemini/answer/13575153?hl=en",
-        "checked": "2026-11-01"
+        "checked": "2026-11-19"
       },
       "commercial_use": {
         "value": "yes",
         "note": "Google 利用規約で、生成されたオリジナルのコンテンツの所有権を Google は主張しない。生成AI禁止使用ポリシーの遵守と、出力を機械学習モデルの開発に使わないことが条件",
         "source_url": "https://policies.google.com/terms?hl=en",
-        "checked": "2026-11-01"
+        "checked": "2026-11-19"
       },
       "data_policy": {
         "training_default": "opt_out_available",
-        "note": "既定では会話がサービス改善（生成AIモデルを含む）に使われ、一部は人が確認する。「アクティビティを保持（Keep Activity）」をオフにすると今後の会話は改善に使われない",
-        "source_url": "https://support.google.com/gemini/answer/13594961?hl=en",
-        "checked": "2026-11-01"
+        "note": "18歳以上は設定「Chat content（テキストと添付ファイルを含むチャットの内容）」が既定でオンで、今後の会話が生成AIモデルの学習に使われる。設定の「履歴」でいつでもオフにできる。音声と Gemini Live の映像・画面共有は既定でオフ。オフでも一部の会話は人が確認する",
+        "source_url": "https://support.google.com/gemini/answer/13278892?hl=en",
+        "checked": "2026-11-19"
       },
       "availability_japan": {
         "value": "yes",
         "note": "Gemini ウェブアプリの対応国一覧に日本",
         "source_url": "https://support.google.com/gemini/answer/13575153?hl=en",
-        "checked": "2026-11-01"
+        "checked": "2026-11-19"
       },
-      "checked": "2026-11-01",
+      "checked": "2026-11-19",
       "retired_note": ""
     },
     {
@@ -650,7 +676,7 @@
         "name": "Grok 4.7",
         "released": "2026-09-21",
         "source_url": "https://x.ai/news/grok-4-7",
-        "checked": "2026-11-01"
+        "checked": "2026-11-19"
       },
       "access": [
         "web",
@@ -670,7 +696,7 @@
           "available": true,
           "detail": "Free（$0）：毎日 Grok を使える。Cursor のコーディングエージェントのお試し枠も付く",
           "source_url": "https://x.ai/news/x-subscription",
-          "checked": "2026-11-01"
+          "checked": "2026-11-19"
         },
         "plans": [
           {
@@ -681,7 +707,7 @@
             "as_shown": "$8/month",
             "detail": "Grok と Cursor の利用枠拡大、X の認証マーク・クリエイターツール・広告減。Cursor で他社モデルを使えるのは Premium 以上",
             "source_url": "https://x.ai/news/x-subscription",
-            "checked": "2026-11-01"
+            "checked": "2026-11-19"
           },
           {
             "name": "Premium",
@@ -691,7 +717,7 @@
             "as_shown": "$30/month",
             "detail": "Plus の4倍の利用枠。SuperGrok・Cursor Pro・X Premium+ 相当、Grok Bot、画像・動画生成",
             "source_url": "https://x.ai/news/x-subscription",
-            "checked": "2026-11-01"
+            "checked": "2026-11-19"
           },
           {
             "name": "Super",
@@ -701,7 +727,7 @@
             "as_shown": "$100/month",
             "detail": "Plus の15倍の利用枠、混雑時の優先利用",
             "source_url": "https://x.ai/news/x-subscription",
-            "checked": "2026-11-01"
+            "checked": "2026-11-19"
           },
           {
             "name": "Ultra",
@@ -711,7 +737,7 @@
             "as_shown": "$200/month",
             "detail": "Plus の50倍の利用枠、新製品・新モデルを最初に利用",
             "source_url": "https://x.ai/news/x-subscription",
-            "checked": "2026-11-01"
+            "checked": "2026-11-19"
           }
         ],
         "jpy_official": false,
@@ -777,7 +803,7 @@
           "available": true,
           "detail": "機能と使用量が限定された Copilot を無料で提供（上限に達したら待つか有料プランへ）",
           "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing/individuals",
-          "checked": "2026-11-01"
+          "checked": "2026-11-19"
         },
         "plans": [
           {
@@ -788,7 +814,7 @@
             "as_shown": "¥2,130 /月",
             "detail": "1人用。Copilot 搭載の Word・Excel・PowerPoint・Outlook、1TB",
             "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing/individuals",
-            "checked": "2026-11-01"
+            "checked": "2026-11-19"
           },
           {
             "name": "Microsoft 365 Family",
@@ -796,9 +822,9 @@
             "currency": "JPY",
             "per": "month",
             "as_shown": "¥2,740 /月",
-            "detail": "最大6人。AI はサブスクリプション所有者のみ",
+            "detail": "1〜6人。AI はサブスクリプション所有者のみ。2TB の共有ストレージ",
             "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing/individuals",
-            "checked": "2026-11-01"
+            "checked": "2026-11-19"
           },
           {
             "name": "Microsoft 365 Premium",
@@ -806,9 +832,9 @@
             "currency": "JPY",
             "per": "month",
             "as_shown": "¥3,200 /月",
-            "detail": "より高い AI 使用上限、リサーチや分析を代行するエージェント機能",
+            "detail": "1〜6人（AI は所有者のみ）。Family より大きい AI 使用上限、リサーチや分析を代行するエージェント機能、2TB の共有ストレージ",
             "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing/individuals",
-            "checked": "2026-11-01"
+            "checked": "2026-11-19"
           },
           {
             "name": "Microsoft 365 Pro",
@@ -816,40 +842,40 @@
             "currency": "JPY",
             "per": "month",
             "as_shown": "¥16,000 /月",
-            "detail": "最も高い AI 使用上限。月額請求のみ",
+            "detail": "1〜6人（AI は所有者のみ）。最も高い AI 使用上限、エージェント機能、5TB の共有ストレージ。月額請求のみ",
             "source_url": "https://www.microsoft.com/ja-jp/microsoft-365-copilot/pricing/individuals",
-            "checked": "2026-11-01"
+            "checked": "2026-11-19"
           }
         ],
         "jpy_official": true,
-        "note": "Personal・Family・Premium は年払いも選べる（Personal ¥21,300・Family ¥27,400・Premium ¥32,000 / 年）。Pro は月額請求のみ。料金ページに税込・税抜の記載なし。法人向けは別ページ。"
+        "note": "Personal・Family・Premium は年払いも選べる（Personal ¥21,300・Family ¥27,400・Premium ¥32,000 / 年）。Pro は月額請求のみ。2026年11月19日時点で Personal と Premium に期間限定の割引あり（Personal は最初の1か月 ¥1,910・最初の1年 ¥19,170、Premium は最初の1か月 ¥2,880・最初の1年 ¥28,800。1か月無料の試用版とは併用不可）。料金ページに税込・税抜の記載なし。法人向けは別ページ。"
       },
       "japanese": {
         "ui": "unknown",
         "output": "yes",
         "note": "入力と回答の対応言語一覧に日本語。アプリ画面の対応言語の記載は見つからず",
         "source_url": "https://support.microsoft.com/en-us/microsoft-copilot/supported-regions-and-languages-in-microsoft-copilot",
-        "checked": "2026-11-01"
+        "checked": "2026-11-19"
       },
       "commercial_use": {
         "value": "conditional",
         "note": "個人向け Copilot 利用規約は「自分の個人的な利用に限る」と定める。業務での利用は一般法人向け・大企業向けプランが別にある",
         "source_url": "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals/termsofuse",
-        "checked": "2026-11-01"
+        "checked": "2026-11-19"
       },
       "data_policy": {
         "training_default": "unknown",
         "note": "2026年8月18日以降の新しいアプリ向けのプライバシー設定ページに、学習利用の記載なし（旧アプリでは設定で学習利用を拒否できた）",
         "source_url": "https://support.microsoft.com/en-us/privacy/microsoft-copilot/privacy-controls",
-        "checked": "2026-11-01"
+        "checked": "2026-11-19"
       },
       "availability_japan": {
         "value": "yes",
         "note": "170以上の市場で提供。対象外は中国（香港を除く）や禁輸対象国など",
         "source_url": "https://support.microsoft.com/en-us/microsoft-copilot/supported-regions-and-languages-in-microsoft-copilot",
-        "checked": "2026-11-01"
+        "checked": "2026-11-19"
       },
-      "checked": "2026-11-01",
+      "checked": "2026-11-19",
       "retired_note": ""
     },
     {
@@ -874,7 +900,7 @@
           "available": true,
           "detail": "基本の検索と出典付きの回答。上位モデルは使えず、1日の利用量は少なめ",
           "source_url": "https://www.perplexity.ai/hub/pricing",
-          "checked": "2026-11-01"
+          "checked": "2026-11-19"
         },
         "plans": [
           {
@@ -885,7 +911,7 @@
             "as_shown": "$20/month or $200/year",
             "detail": "上位モデルの選択、Deep research、Computer の利用枠拡大と4,000ボーナスクレジット",
             "source_url": "https://www.perplexity.ai/help-center/en/articles/12167980-using-the-connector-for-slack",
-            "checked": "2026-11-01"
+            "checked": "2026-11-19"
           },
           {
             "name": "Max",
@@ -895,7 +921,7 @@
             "as_shown": "$200/monthly or $2000/annually",
             "detail": "最上位モデル、Computer の最大の利用枠（毎月10,000クレジット・35,000ボーナスクレジット）、新機能の先行利用",
             "source_url": "https://www.perplexity.ai/help-center/en/articles/11680686-perplexity-max",
-            "checked": "2026-11-01"
+            "checked": "2026-11-19"
           }
         ],
         "jpy_official": false,
@@ -905,15 +931,15 @@
         "value": "conditional",
         "note": "個人向け利用規約は「個人的・非商用の利用に限る」（5.1）。法人向けは Enterprise",
         "source_url": "https://www.perplexity.ai/hub/legal/terms-of-service",
-        "checked": "2026-11-01"
+        "checked": "2026-11-19"
       },
       "data_policy": {
         "training_default": "opt_out_available",
         "note": "Free・Pro・Max は「AI Data Retention」が既定でオン。設定でオフにできる。Enterprise のデータは学習に使わない",
         "source_url": "https://www.perplexity.ai/help-center/en/articles/11564572-data-collection-at-perplexity",
-        "checked": "2026-11-01"
+        "checked": "2026-11-19"
       },
-      "checked": "2026-11-01",
+      "checked": "2026-11-19",
       "retired_note": ""
     },
     {
@@ -936,9 +962,9 @@
       "pricing": {
         "free": {
           "available": true,
-          "detail": "メッセージ・Web検索・コーディングに上限あり",
+          "detail": "メッセージ・Web検索・コーディングに上限あり。基本的な画像生成・編集、100以上のコネクタ",
           "source_url": "https://mistral.ai/pricing",
-          "checked": "2026-11-01"
+          "checked": "2026-11-19"
         },
         "plans": [
           {
@@ -949,13 +975,13 @@
             "as_shown": "$14.99 /mo（Excluding taxes）",
             "detail": "メッセージ・Web検索・画像生成の上限拡大、CLI・IDE・Web でのコーディング、毎月15ドル分の API クレジット",
             "source_url": "https://mistral.ai/pricing",
-            "checked": "2026-11-01"
+            "checked": "2026-11-19"
           }
         ],
         "jpy_official": false,
         "note": ""
       },
-      "checked": "2026-11-01",
+      "checked": "2026-11-19",
       "retired_note": ""
     },
     {
@@ -979,9 +1005,9 @@
         "name": "DeepSeek-V4.1-Flash",
         "released": "2026-09-10",
         "source_url": "https://www.deepseek.com/en/news/deepseek-v4-1-flash/",
-        "checked": "2026-11-01"
+        "checked": "2026-11-19"
       },
-      "checked": "2026-11-01",
+      "checked": "2026-11-19",
       "retired_note": ""
     },
     {
@@ -1042,7 +1068,7 @@
         "name": "Siri AI（ベータ。iOS 27.2 で日本語に対応）",
         "released": "2026-10-26",
         "source_url": "https://www.apple.com/newsroom/2026/10/siri-ai-is-available-in-more-languages-starting-today/",
-        "checked": "2026-11-01"
+        "checked": "2026-11-19"
       },
       "tags": [
         "Apple",
@@ -1062,7 +1088,7 @@
           "available": true,
           "detail": "Apple Intelligence 対応機器で使える（ベータ）。サーバー側の機能には1日の利用上限があり、拡張した利用は将来有料になる予定",
           "source_url": "https://www.apple.com/newsroom/2026/10/siri-ai-is-available-in-more-languages-starting-today/",
-          "checked": "2026-11-01"
+          "checked": "2026-11-19"
         },
         "plans": [],
         "jpy_official": false,
@@ -1073,9 +1099,9 @@
         "output": "yes",
         "note": "2026年10月26日の iOS 27.2 などで日本語に対応（ベータ）。機器の言語を対応言語に設定する必要がある",
         "source_url": "https://www.apple.com/newsroom/2026/10/siri-ai-is-available-in-more-languages-starting-today/",
-        "checked": "2026-11-01"
+        "checked": "2026-11-19"
       },
-      "checked": "2026-11-01",
+      "checked": "2026-11-19",
       "retired_note": ""
     }
   ],
@@ -1118,8 +1144,8 @@
       "operator": "Artificial Analysis",
       "url": "https://artificialanalysis.ai/leaderboards/models",
       "what": "推論・知識・コーディングなど複数の評価をまとめた総合指数（モデル単位）",
-      "snapshot": "1位 Gemini 4 Carbon（high）59（一般向けは未提供）、2位 Claude Opus 5.5（max with fallback）58、GPT-6 Astra（max）57、GPT-6.1 Sol（max）55、Claude Sonnet 5.5（max with fallback）54、GPT-6.1 Terra（max）51、Gemini 4 Argon（high）50、Claude Fable 5.1（xhigh）50、Grok 4.7（high）35、Gemini 3.8 Flash（high）31（2026-11-01時点）",
-      "checked": "2026-11-01"
+      "snapshot": "1位 Claude Fable 5.2（Max）65、2位 GPT-6.2 Astra（Max）62、3位 Gemini 4 Neon（Xhigh）61、4位 Gemini 4 Carbon（High）60、5位 Claude Opus 5.5（Max）59、GPT-6.2 Sol（Max）57、Claude Sonnet 5.5（Max）55、Gemini 4 Hydrogen（Xhigh）54、GPT-6.1 Terra（Max）51、Gemini 4 Argon（High）50、Grok 4.7（Xhigh）35（2026-11-19時点）",
+      "checked": "2026-11-19"
     },
     {
       "id": "lmarena-text",
@@ -1127,8 +1153,8 @@
       "operator": "LMArena",
       "url": "https://arena.ai/leaderboard/text",
       "what": "利用者が2つの回答を見比べて投票する一対比較のスコア",
-      "snapshot": "1位 gemini-4-argon-high 1525（Preliminary＝暫定・4,932票。一般向けには未提供）。2〜7位はすべて Claude（claude-opus-5.5-high は1504で4位）。gemini-3.8-flash-high 1495で8位（暫定）、gemini-3.1-pro-preview 1487で18位、gpt-6.1-sol-max 1483で21位、gpt-6-astra-max 1477で29位（2026-10-02更新・2026-10-03確認）",
-      "checked": "2026-10-03"
+      "snapshot": "1位 Gemini 4 Carbon（High）1526、2位 Gemini 4 Argon（High）1521、3位 Gemini 4 Neon（High）1518、4位 Muse Wonder（Max）1511、5位 Claude Opus 5.5（High）1507、6位 Claude Fable 5（High）1504。Claude Fable 5.2・GPT-6.2 Astra は未掲載（2026-11-18更新・2026-11-19確認）",
+      "checked": "2026-11-19"
     },
     {
       "id": "lmarena-text-japanese",
@@ -1136,14 +1162,14 @@
       "operator": "LMArena",
       "url": "https://arena.ai/leaderboard/text/japanese",
       "what": "日本語の対話に限った一対比較のスコア",
-      "snapshot": "1位 claude-fable-5.1-max 1542（200票）、2位 claude-fable-5-high 1524、3位 gemini-3-pro 1508、5位 gemini-3.7-flash-high 1504（暫定）、7位 gemini-3.8-flash-high 1503（暫定）、9位 gemini-3.1-pro-preview 1499。gpt-6-astra-max は1418で68位（174票）。上位は票数が少なく順位の幅が大きい（2026-10-02更新・2026-10-03確認）",
-      "checked": "2026-10-03"
+      "snapshot": "1位 Claude Fable 5.1（Max）1551、2位 Claude Opus 5.5（High）1530、3位 Gemini 4 Argon（High）1521、4位 Gemini 3.7 Flash（High）1519、5位 Claude Fable 5（High）1519、6位 Gemini 3.8 Flash（High）1516、12位 Gemini 3 Pro 1503。GPT-6 系は順位の表示なし（2026-11-18更新・2026-11-19確認）",
+      "checked": "2026-11-19"
     }
   ],
   "faq": [
     {
       "q": "無料で使えるチャットAIはどれですか？",
-      "a": "ChatGPT・Claude・Gemini・Grok・Microsoft Copilot はいずれも無料版があります。ChatGPT の無料版は10月8日から順次 GPT-6 Luna に切り替わり、Gemini の無料版は Flash-Lite を中心とした自動選択で Deep Research や Gemini Live まで使えます。Claude の無料版で使えるのは Sonnet と Haiku です（2026年10月、各社の公式ページで確認）。"
+      "a": "ChatGPT・Claude・Gemini・Grok・Microsoft Copilot はいずれも無料版があります。ChatGPT の無料版は GPT-6 Luna でテキストチャットが無制限、Gemini の無料版は自動モデル選択（料金ページの表記は Gemini 4 Hydrogen）で Deep Research や Gemini Live まで使えます。Claude の無料版で使えるのは Sonnet と Haiku です（2026年11月、各社の公式ページで確認）。"
     },
     {
       "q": "入力した内容はAIの学習に使われますか？",
@@ -1159,7 +1185,7 @@
     },
     {
       "q": "いま一番性能が高いチャットAIは？",
-      "a": "Artificial Analysis の総合指数では、10月28日発表の Gemini 4 Carbon が59で首位ですが、当面はサイバー防御の専門家だけが使えます。一般に使えるモデルでは Claude Opus 5.5 が58、GPT-6 Astra が57、Gemini 4 Argon が50です（2026年11月1日時点）。LMArena のテキスト部門では Gemini 4 Argon が暫定1位でした（10月3日確認）。順位は短期間で入れ替わるので、表の確認日も見てください。"
+      "a": "Artificial Analysis の総合指数では、11月9日公開の Claude Fable 5.2 が65で首位、GPT-6.2 Astra が62、Gemini 4 Neon が61、Gemini 4 Carbon が60、Claude Opus 5.5 が59です（2026年11月19日時点）。LMArena のテキスト部門では Gemini 4 Carbon・Argon・Neon が1〜3位でした（11月18日更新）。順位は短期間で入れ替わるので、表の確認日も見てください。"
     }
   ],
   "related": {
@@ -1287,6 +1313,21 @@
     {
       "date": "2026-11-01",
       "text": "Microsoft Copilot の料金の注記を更新（料金ページに税込・税抜の記載なし）",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-11-19",
+      "text": "最新モデルを更新（Claude Fable 5.2・GPT-6.2 Astra・Gemini 4 Neon）。Gemini の各プランで使えるモデルを料金ページの表記（無料・AI Plus は Gemini 4 Hydrogen、AI Pro は Neon・Hydrogen、Ultra は Carbon・Neon・Hydrogen）に更新",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-11-19",
+      "text": "Artificial Analysis と LMArena の最新順位にあわせて「最高品質」の根拠を更新（答えは Claude のまま）。「コスパ」を Google AI Pro（月2,900円で Gemini 4 Neon）に、「日本語重視」を Claude（LMArena 日本語部門の1・2位）に変更",
+      "by": "reviewer"
+    },
+    {
+      "date": "2026-11-19",
+      "text": "Gemini の学習利用の設定名（Chat content。18歳以上は既定でオン）を更新。Microsoft Copilot の Personal・Premium の期間限定割引を注記",
       "by": "reviewer"
     }
   ],
