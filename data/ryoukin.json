@@ -52,7 +52,7 @@
   {"as_shown": "$50 / month", "kind": "team", "who": "Pro の全機能", "y_mult": 10, "y_mult_why": "年払いは2か月分無料", "evidence": ["2か月分無料", "Pro の全機能"]},
   {"as_shown": "$20（$18 / month, billed annually）", "m": 20, "ym": 18},
   {"as_shown": "$100（$90 / month, billed annually）", "m": 100, "ym": 90},
-  {"as_shown": "From $100 / month", "from": true},
+  {"as_shown": "Pro 100 $100 / Pro 200 $200 / Pro 500 $500", "guides": ["image-generation"], "m": 100, "from": true},
   {"as_shown": "$10（Annual: $96 = $8 / month）", "m": 10, "ym": 8, "y": 96},
   {"as_shown": "$30（Annual: $288 = $24 / month）", "m": 30, "ym": 24, "y": 288},
   {"as_shown": "$60（Annual: $576 = $48 / month）", "m": 60, "ym": 48, "y": 576},
